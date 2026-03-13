@@ -3,7 +3,7 @@ import {updateSequenceProps} from '../codemods/update-sequence-props';
 import {lineColumnToNodePath} from './test-utils';
 
 const nestedInput = `import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const Example: React.FC = () => {
 	return (

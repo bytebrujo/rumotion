@@ -1,14 +1,14 @@
 ---
 image: /generated/articles-docs-player-drag-and-drop-index.png
 sidebar_label: 'Drag & Drop'
-title: 'Drag & Drop in the Remotion Player'
-crumb: '@remotion/player'
+title: 'Drag & Drop in the Picus Player'
+crumb: '@picus/player'
 no_ai: true
 ---
 
 import {DragAndDropDemo} from './Demo';
 
-The Remotion Player supports reacting to mouse events allowing for building interactions on the canvas.  
+The Picus Player supports reacting to mouse events allowing for building interactions on the canvas.  
 Try to drag and resize the elements below.
 
 <br />
@@ -45,7 +45,7 @@ export type Item = {
 
 ```twoslash include ResizeHandle
 import React, {useCallback, useMemo} from 'react';
-import {useCurrentScale} from 'remotion';
+import {useCurrentScale} from 'picus';
 import type {Item} from './item';
 
 const HANDLE_SIZE = 8;
@@ -173,7 +173,7 @@ export const ResizeHandle: React.FC<{
 
 ```twoslash include Layer
 import React, {useMemo} from 'react';
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 import type {Item} from './item';
 
 export const Layer: React.FC<{
@@ -205,7 +205,7 @@ export const Layer: React.FC<{
 
 ```twoslash include SelectionOutline
 import React, {useCallback, useMemo} from 'react';
-import {useCurrentScale} from 'remotion';
+import {useCurrentScale} from 'picus';
 
 import {ResizeHandle} from './ResizeHandle';
 import type {Item} from './item';
@@ -320,7 +320,7 @@ export const SelectionOutline: React.FC<{
 
 ```twoslash include SortedOutlines
 import React from 'react';
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 import {SelectionOutline} from './SelectionOutline';
 import type {Item} from './item';
 
@@ -373,7 +373,7 @@ export const SortedOutlines: React.FC<{
 
 ```twoslash include Main
 import React, {useCallback} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import type {Item} from './item';
 import {Layer} from './Layer';
 import {SortedOutlines} from './SortedOutlines';
@@ -429,7 +429,7 @@ export const Main: React.FC<MainProps> = ({
 ```
 
 ```twoslash include Demo
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React, {useCallback, useMemo, useState} from 'react';
 import type {MainProps} from './Main';
 import {Main} from './Main';
@@ -638,7 +638,7 @@ Any event that was not stopped using `e.stopPropagation()` before will be treate
 
 ### <TitleStep>6</TitleStep> Rendering the Player
 
-We can now render the Main component that we created in the Remotion Player.
+We can now render the Main component that we created in the Picus Player.
 
 ```tsx twoslash title="Demo.tsx"
 // @filename: item.ts
@@ -668,7 +668,7 @@ We've now implemented thoughtful drag and drop interactions!
 
 ## See also
 
-- [Source code for this demo](https://github.com/remotion-dev/remotion/blob/main/packages/docs/docs/player/drag-and-drop/Demo.tsx)
+- [Source code for this demo](https://github.com/picus-dev/picus/blob/main/packages/docs/docs/player/drag-and-drop/Demo.tsx)
 - [Custom controls](/docs/player/custom-controls)
 - [`useCurrentScale()`](/docs/use-current-scale)
 - [`<Player />`](/docs/player/player)

@@ -1,10 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import type {LogLevel, LogOptions} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {LogLevel, LogOptions} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {chalk} from './chalk';
 import {EXTRA_PACKAGES, EXTRA_PACKAGES_DOCS} from './extra-packages';
-import {listOfRemotionPackages} from './list-of-remotion-packages';
+import {listOfPicusPackages} from './list-of-picus-packages';
 import {Log} from './log';
 import {parseCommandLine} from './parse-command-line';
 import {resolveFrom} from './resolve-from';
@@ -12,14 +12,14 @@ import {resolveFrom} from './resolve-from';
 export type VersionAndPath = {version: string; path: string};
 
 const getVersion = async (
-	remotionRoot: string,
+	picusRoot: string,
 	p: string,
 ): Promise<VersionAndPath | null> => {
 	try {
-		const remotionPkgJson = resolveFrom(remotionRoot, `${p}/package.json`);
-		const file = await fs.promises.readFile(remotionPkgJson, 'utf-8');
+		const picusPkgJson = resolveFrom(picusRoot, `${p}/package.json`);
+		const file = await fs.promises.readFile(picusPkgJson, 'utf-8');
 		const packageJson = JSON.parse(file);
-		return {version: packageJson.version, path: remotionPkgJson};
+		return {version: packageJson.version, path: picusPkgJson};
 	} catch {
 		return null;
 	}
@@ -47,13 +47,13 @@ const groupBy = (vals: [string, VersionAndPath][]) => {
 };
 
 const getAllVersions = async (
-	remotionRoot: string,
+	picusRoot: string,
 ): Promise<[string, VersionAndPath][]> => {
 	return (
 		await Promise.all(
-			listOfRemotionPackages.map(
+			listOfPicusPackages.map(
 				async (p) =>
-					[p, await getVersion(remotionRoot, p)] as [string, VersionAndPath],
+					[p, await getVersion(picusRoot, p)] as [string, VersionAndPath],
 			),
 		)
 	).filter(([, version]) => version);
@@ -68,12 +68,12 @@ type ExtraPackageStatus = {
 };
 
 const getExtraPackagesStatus = async (
-	remotionRoot: string,
+	picusRoot: string,
 ): Promise<ExtraPackageStatus[]> => {
 	const results: ExtraPackageStatus[] = [];
 
 	for (const [pkg, requiredVersion] of Object.entries(EXTRA_PACKAGES)) {
-		const versionAndPath = await getVersion(remotionRoot, pkg);
+		const versionAndPath = await getVersion(picusRoot, pkg);
 
 		if (versionAndPath) {
 			results.push({
@@ -100,29 +100,29 @@ const getExtraPackagesStatus = async (
 export const VERSIONS_COMMAND = 'versions';
 
 export const validateVersionsBeforeCommand = async (
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ) => {
-	const versions = await getAllVersions(remotionRoot);
+	const versions = await getAllVersions(picusRoot);
 
 	const grouped = groupBy(versions);
 
 	const installedVersions = Object.keys(grouped);
 
-	const hasRemotionMismatch =
+	const hasPicusMismatch =
 		installedVersions.length > 1 && installedVersions.length !== 0;
 
 	// Check extra packages
-	const extraPackagesStatus = await getExtraPackagesStatus(remotionRoot);
+	const extraPackagesStatus = await getExtraPackagesStatus(picusRoot);
 	const incorrectExtraPackages = extraPackagesStatus.filter(
 		(status) => !status.isCorrect,
 	);
 
-	if (!hasRemotionMismatch && incorrectExtraPackages.length === 0) {
+	if (!hasPicusMismatch && incorrectExtraPackages.length === 0) {
 		return;
 	}
 
-	// Could be a global install of @remotion/cli.
+	// Could be a global install of @picus/cli.
 	// If you render a bundle with a different version, it will give a warning accordingly.
 	if (installedVersions.length === 0 && incorrectExtraPackages.length === 0) {
 		return;
@@ -132,13 +132,13 @@ export const validateVersionsBeforeCommand = async (
 	Log.warn(logOptions, '-------------');
 	Log.warn(logOptions, 'Version mismatch:');
 
-	if (hasRemotionMismatch) {
+	if (hasPicusMismatch) {
 		for (const version of installedVersions) {
 			Log.warn(logOptions, `- On version: ${version}`);
 			for (const pkg of grouped[version] ?? []) {
 				Log.warn(
 					logOptions,
-					`  - ${pkg.pkg} ${chalk.gray(path.relative(remotionRoot, pkg.versionAndPath.path))}`,
+					`  - ${pkg.pkg} ${chalk.gray(path.relative(picusRoot, pkg.versionAndPath.path))}`,
 				);
 			}
 
@@ -170,7 +170,7 @@ export const validateVersionsBeforeCommand = async (
 	Log.warn(logOptions, 'To resolve:');
 	Log.warn(
 		logOptions,
-		'- Make sure your package.json has all Remotion packages pointing to the same version.',
+		'- Make sure your package.json has all Picus packages pointing to the same version.',
 	);
 	Log.warn(
 		logOptions,
@@ -179,14 +179,14 @@ export const validateVersionsBeforeCommand = async (
 	for (const incorrectPkg of incorrectExtraPackages) {
 		Log.warn(
 			logOptions,
-			`- For ${incorrectPkg.pkg}, install exact version ${incorrectPkg.requiredVersion} (run: npx remotion add ${incorrectPkg.pkg}).`,
+			`- For ${incorrectPkg.pkg}, install exact version ${incorrectPkg.requiredVersion} (run: npx picus add ${incorrectPkg.pkg}).`,
 		);
 	}
 
 	if (!RenderInternals.isEqualOrBelowLogLevel(logLevel, 'verbose')) {
 		Log.warn(
 			logOptions,
-			'- Run `npx remotion versions --log=verbose` to see the path of the modules resolved.',
+			'- Run `npx picus versions --log=verbose` to see the path of the modules resolved.',
 		);
 	}
 
@@ -195,11 +195,11 @@ export const validateVersionsBeforeCommand = async (
 };
 
 export const versionsCommand = async (
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ) => {
 	parseCommandLine();
-	const versions = await getAllVersions(remotionRoot);
+	const versions = await getAllVersions(picusRoot);
 
 	const grouped = groupBy(versions);
 
@@ -216,7 +216,7 @@ export const versionsCommand = async (
 			Log.info({indent: false, logLevel}, `- ${pkg.pkg}`);
 			Log.verbose(
 				{indent: false, logLevel},
-				`  ${resolveFrom(remotionRoot, `${pkg.pkg}/package.json`)}`,
+				`  ${resolveFrom(picusRoot, `${pkg.pkg}/package.json`)}`,
 			);
 		}
 
@@ -224,7 +224,7 @@ export const versionsCommand = async (
 	}
 
 	// Check extra packages
-	const extraPackagesStatus = await getExtraPackagesStatus(remotionRoot);
+	const extraPackagesStatus = await getExtraPackagesStatus(picusRoot);
 	const installedExtraPackages = extraPackagesStatus.filter(
 		(status) => status.installedVersion !== null,
 	);
@@ -247,10 +247,10 @@ export const versionsCommand = async (
 	}
 
 	if (installedVersions.length === 0) {
-		Log.info({indent: false, logLevel}, 'No Remotion packages found.');
+		Log.info({indent: false, logLevel}, 'No Picus packages found.');
 		Log.info(
 			{indent: false, logLevel},
-			'Maybe @remotion/cli is installed globally.',
+			'Maybe @picus/cli is installed globally.',
 		);
 
 		Log.info(
@@ -273,11 +273,11 @@ export const versionsCommand = async (
 		if (installedVersions.length !== 1) {
 			Log.error(
 				{indent: false, logLevel},
-				'Version mismatch: Not all Remotion packages have the same version.',
+				'Version mismatch: Not all Picus packages have the same version.',
 			);
 			Log.info(
 				{indent: false, logLevel},
-				'- Make sure your package.json has all Remotion packages pointing to the same version.',
+				'- Make sure your package.json has all Picus packages pointing to the same version.',
 			);
 			Log.info(
 				{indent: false, logLevel},
@@ -303,7 +303,7 @@ export const versionsCommand = async (
 
 			Log.info(
 				{indent: false, logLevel},
-				`To fix, run: npx remotion add ${incorrectExtraPackages.map((s) => s.pkg).join(' ')}`,
+				`To fix, run: npx picus add ${incorrectExtraPackages.map((s) => s.pkg).join(' ')}`,
 			);
 		}
 

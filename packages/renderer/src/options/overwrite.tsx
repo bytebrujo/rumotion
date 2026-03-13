@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let shouldOverwrite: boolean | null = null;
 const cliFlag = 'overwrite' as const;
@@ -21,7 +21,7 @@ export const overwriteOption = {
 		</>
 	),
 	ssrName: 'overwrite',
-	docLink: 'https://www.remotion.dev/docs/config#setoverwriteoutput',
+	docLink: 'https://www.picus.dev/docs/config#setoverwriteoutput',
 	type: false as boolean,
 	getValue: ({commandLine}, defaultValue: boolean) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -50,4 +50,4 @@ export const overwriteOption = {
 		shouldOverwrite = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

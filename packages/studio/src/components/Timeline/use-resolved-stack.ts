@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from 'react';
-import {Internals} from 'remotion';
-import type {ResolvedStackLocation} from 'remotion';
+import {Internals} from 'picus';
+import type {ResolvedStackLocation} from 'picus';
 import {getOriginalLocationFromStack} from './TimelineStack/get-stack';
 
 const resolvedCache = new Map<string, ResolvedStackLocation | null>();

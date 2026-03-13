@@ -1,4 +1,4 @@
-import {Button as RemotionButton} from '@remotion/design';
+import {Button as PicusButton} from '@picus/design';
 import React, {useCallback, useMemo} from 'react';
 import {Button} from './ui/button';
 import {
@@ -56,12 +56,12 @@ export const LoadFromUrl: React.FC = () => {
 
 	return (
 		<>
-			<RemotionButton
+			<PicusButton
 				className="font-brand text-brand rounded-full text-sm h-10"
 				onClick={onOpenUrl}
 			>
 				Load from URL
-			</RemotionButton>
+			</PicusButton>
 			<Dialog open={open} onOpenChange={onOpenChange}>
 				<DialogContent>
 					<DialogHeader>

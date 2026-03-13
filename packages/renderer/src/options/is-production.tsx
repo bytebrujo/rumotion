@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'is-production' as const;
 
@@ -10,12 +10,12 @@ export const isProductionOption = {
 	description: () => (
 		<>
 			Pass <code>false</code> if this a development render to not count it as a
-			billable render on remotion.pro. Only can be used in conjuction with{' '}
+			billable render on picus.pro. Only can be used in conjuction with{' '}
 			<code>licenseKey</code>.
 		</>
 	),
 	ssrName: 'isProduction' as const,
-	docLink: 'https://www.remotion.dev/docs/licensing',
+	docLink: 'https://www.picus.dev/docs/licensing',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -41,4 +41,4 @@ export const isProductionOption = {
 	},
 	type: false as boolean | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean | null>;
+} satisfies AnyPicusOption<boolean | null>;

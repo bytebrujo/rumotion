@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {Series} from 'remotion';
+import {Series} from 'picus';
 import ReactSvg from '../ReactSvg';
 import Tiles from '../Tiles';
 

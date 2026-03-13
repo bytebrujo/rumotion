@@ -1,19 +1,19 @@
 ---
 image: /generated/articles-docs-studio-toggle.png
 title: toggle()
-crumb: '@remotion/studio'
+crumb: '@picus/studio'
 ---
 
 # toggle()<AvailableFrom v="4.0.287"/>
 
-Toggles playback in the Remotion Studio. If the composition is currently playing, it will pause. If it's paused, it will start playing.
+Toggles playback in the Picus Studio. If the composition is currently playing, it will pause. If it's paused, it will start playing.
 
 The function accepts an optional event parameter which can be a `React.SyntheticEvent` or a [`PointerEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent). This allows the function to be used directly as an event handler.
 
 ## Examples
 
 ```tsx twoslash title="Toggle playback on button click"
-import {toggle} from '@remotion/studio';
+import {toggle} from '@picus/studio';
 
 const ToggleButton = () => {
   // Call with the event parameter for better browser audio autoplay
@@ -23,7 +23,7 @@ const ToggleButton = () => {
 ```
 
 ```tsx twoslash title="Toggle playback programmatically"
-import {toggle} from '@remotion/studio';
+import {toggle} from '@picus/studio';
 
 // Call without event parameter
 toggle();
@@ -34,4 +34,4 @@ toggle();
 - [play()](/docs/studio/play)
 - [pause()](/docs/studio/pause)
 - [seek()](/docs/studio/seek)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/studio/src/api/toggle.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/studio/src/api/toggle.ts)

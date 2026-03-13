@@ -1,9 +1,9 @@
 import {readFileSync, writeFileSync} from 'node:fs';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	ApplyCodemodRequest,
 	ApplyCodemodResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import {
 	formatOutput,
 	parseAndApplyCodemod,
@@ -16,10 +16,10 @@ import {checkIfTypeScriptFile} from './can-update-default-props';
 export const applyCodemodHandler: ApiHandler<
 	ApplyCodemodRequest,
 	ApplyCodemodResponse
-> = async ({input: {codemod, dryRun}, logLevel, remotionRoot, entryPoint}) => {
+> = async ({input: {codemod, dryRun}, logLevel, picusRoot, entryPoint}) => {
 	try {
 		const time = Date.now();
-		const projectInfo = await getProjectInfo(remotionRoot, entryPoint);
+		const projectInfo = await getProjectInfo(picusRoot, entryPoint);
 		if (!projectInfo.rootFile) {
 			throw new Error('Cannot find root file in project');
 		}

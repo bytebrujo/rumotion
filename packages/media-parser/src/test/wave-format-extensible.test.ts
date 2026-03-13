@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -8,7 +8,7 @@ test('should be able to parse WAVE_FORMAT_EXTENSIBLE', async () => {
 	await parseMedia({
 		src: exampleVideos.waveFormatExtensible,
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			container: true,
 			slowDurationInSeconds: true,

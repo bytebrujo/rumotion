@@ -1,9 +1,9 @@
-import {listOfRemotionPackages} from './list-of-remotion-packages';
+import {listOfPicusPackages} from './list-of-picus-packages';
 import {FEATURED_TEMPLATES} from './templates';
 
 export const CreateVideoInternals = {
 	FEATURED_TEMPLATES,
-	listOfRemotionPackages,
+	listOfPicusPackages,
 };
 
 export {Template} from './templates';

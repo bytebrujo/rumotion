@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 import {WEBCODECS_TIMESCALE} from '../webcodecs-timescale';
@@ -69,7 +69,7 @@ test('AVI file', async () => {
 				videoSamples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(container).toBe('avi');
 	expect(dimensions).toEqual({

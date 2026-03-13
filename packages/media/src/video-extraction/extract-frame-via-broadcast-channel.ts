@@ -1,4 +1,4 @@
-import {type LogLevel} from 'remotion';
+import {type LogLevel} from 'picus';
 import type {PcmS16AudioData} from '../convert-audiodata/convert-audiodata';
 import {extractFrameAndAudio} from '../extract-frame-and-audio';
 import type {
@@ -55,7 +55,7 @@ export const extractFrameViaBroadcastChannel = async ({
 	fps: number;
 	maxCacheSize: number;
 }): Promise<ExtractFrameViaBroadcastChannelResult> => {
-	if (isClientSideRendering || window.remotion_isMainTab) {
+	if (isClientSideRendering || window.picus_isMainTab) {
 		return extractFrameAndAudio({
 			logLevel,
 			src,
@@ -73,7 +73,7 @@ export const extractFrameViaBroadcastChannel = async ({
 		});
 	}
 
-	await waitForMainTabToBeReady(window.remotion_broadcastChannel!);
+	await waitForMainTabToBeReady(window.picus_broadcastChannel!);
 
 	const requestId = crypto.randomUUID();
 
@@ -113,7 +113,7 @@ export const extractFrameViaBroadcastChannel = async ({
 						? data.durationInSeconds
 						: null,
 				});
-				window.remotion_broadcastChannel!.removeEventListener(
+				window.picus_broadcastChannel!.removeEventListener(
 					'message',
 					onMessage,
 				);
@@ -122,7 +122,7 @@ export const extractFrameViaBroadcastChannel = async ({
 
 			if (data.type === 'response-error') {
 				reject(data.errorStack);
-				window.remotion_broadcastChannel!.removeEventListener(
+				window.picus_broadcastChannel!.removeEventListener(
 					'message',
 					onMessage,
 				);
@@ -134,7 +134,7 @@ export const extractFrameViaBroadcastChannel = async ({
 					type: 'cannot-decode',
 					durationInSeconds: data.durationInSeconds,
 				});
-				window.remotion_broadcastChannel!.removeEventListener(
+				window.picus_broadcastChannel!.removeEventListener(
 					'message',
 					onMessage,
 				);
@@ -143,7 +143,7 @@ export const extractFrameViaBroadcastChannel = async ({
 
 			if (data.type === 'response-network-error') {
 				resolve({type: 'network-error'});
-				window.remotion_broadcastChannel!.removeEventListener(
+				window.picus_broadcastChannel!.removeEventListener(
 					'message',
 					onMessage,
 				);
@@ -152,7 +152,7 @@ export const extractFrameViaBroadcastChannel = async ({
 
 			if (data.type === 'response-unknown-container-format') {
 				resolve({type: 'unknown-container-format'});
-				window.remotion_broadcastChannel!.removeEventListener(
+				window.picus_broadcastChannel!.removeEventListener(
 					'message',
 					onMessage,
 				);
@@ -164,7 +164,7 @@ export const extractFrameViaBroadcastChannel = async ({
 					type: 'cannot-decode-alpha',
 					durationInSeconds: data.durationInSeconds,
 				});
-				window.remotion_broadcastChannel!.removeEventListener(
+				window.picus_broadcastChannel!.removeEventListener(
 					'message',
 					onMessage,
 				);
@@ -176,7 +176,7 @@ export const extractFrameViaBroadcastChannel = async ({
 			);
 		};
 
-		window.remotion_broadcastChannel!.addEventListener('message', onMessage);
+		window.picus_broadcastChannel!.addEventListener('message', onMessage);
 	});
 
 	const request: ExtractFrameRequest = {
@@ -197,7 +197,7 @@ export const extractFrameViaBroadcastChannel = async ({
 		maxCacheSize,
 	};
 
-	window.remotion_broadcastChannel!.postMessage(request);
+	window.picus_broadcastChannel!.postMessage(request);
 
 	let timeoutId: NodeJS.Timeout | undefined;
 
@@ -215,7 +215,7 @@ export const extractFrameViaBroadcastChannel = async ({
 						),
 					);
 				},
-				Math.max(3_000, window.remotion_puppeteerTimeout - 5_000),
+				Math.max(3_000, window.picus_puppeteerTimeout - 5_000),
 			);
 		}),
 	]);

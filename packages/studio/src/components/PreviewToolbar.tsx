@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {checkFullscreenSupport} from '../helpers/check-fullscreen-support';
 import {BACKGROUND, BACKGROUND__TRANSPARENT} from '../helpers/colors';
 import {

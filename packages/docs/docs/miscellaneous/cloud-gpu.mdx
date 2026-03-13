@@ -7,9 +7,9 @@ crumb: 'FAQ'
 
 Here is an example workflow for how to use the GPU in the cloud to render your videos using EC2 instances.
 
-## Update Remotion
+## Update Picus
 
-Ensure you are using Remotion v4.0.248 or later for this guide to work.
+Ensure you are using Picus v4.0.248 or later for this guide to work.
 
 ## Launch an EC2 instance
 
@@ -43,7 +43,7 @@ sudo bash -c "apt update && export DEBIAN_FRONTEND=noninteractive && export NEED
 
 The instance will restart and therefore disconnect. Wait a few moments and then reconnect.
 
-Install the [Linux Dependencies](/docs/miscellaneous/linux-dependencies) for Remotion:
+Install the [Linux Dependencies](/docs/miscellaneous/linux-dependencies) for Picus:
 
 ```bash title="Install Linux Dependencies"
 sudo apt install -y \
@@ -106,12 +106,12 @@ sudo apt-get install nodejs -y
   <Step>4</Step> <strong>Render a video with the GPU</strong>
 </p>
 
-```bash title="Clone a Remotion GPU demo"
-git clone https://github.com/remotion-dev/gpu-scene
+```bash title="Clone a Picus GPU demo"
+git clone https://github.com/picus-dev/gpu-scene
 cd gpu-scene
 npm i
-npx remotion gpu --chrome-mode="chrome-for-testing" --gl=vulkan # Verify content is hardware accelerated
-npx remotion render --chrome-mode="chrome-for-testing" --gl=vulkan # Render a test video
+npx picus gpu --chrome-mode="chrome-for-testing" --gl=vulkan # Verify content is hardware accelerated
+npx picus render --chrome-mode="chrome-for-testing" --gl=vulkan # Render a test video
 ```
 
 With `--chrome-mode="chrome-for-testing"`, a flavor of Chrome is used that emulates a display, which can make use of the GPU.  

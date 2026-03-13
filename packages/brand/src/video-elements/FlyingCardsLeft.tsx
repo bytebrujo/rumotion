@@ -4,7 +4,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const POSTERIZE_FRAMES = 3;
 const FONT_SIZE = 52;

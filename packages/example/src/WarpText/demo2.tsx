@@ -1,7 +1,7 @@
-import {getBoundingBox, resetPath, warpPath, WarpPathFn} from '@remotion/paths';
+import {getBoundingBox, resetPath, warpPath, WarpPathFn} from '@picus/paths';
 import opentype from 'opentype.js';
 import {useEffect, useRef, useState} from 'react';
-import {AbsoluteFill, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, staticFile, useCurrentFrame} from 'picus';
 
 type FontInfo = {
 	path: string;

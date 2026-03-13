@@ -1,6 +1,6 @@
-import {remotionFlatConfig} from '@remotion/eslint-config-internal';
+import {picusFlatConfig} from '@picus/eslint-config-internal';
 
-const config = remotionFlatConfig({react: false});
+const config = picusFlatConfig({react: false});
 
 export default [
 	{
@@ -16,8 +16,8 @@ export default [
 			'no-restricted-imports': [
 				'error',
 				{
-					patterns: ['@remotion/cli', '@remotion/*/src/*', 'remotion/src/*'],
-					paths: ['remotion', 'react', 'react-dom'],
+					patterns: ['@picus/cli', '@picus/*/src/*', 'picus/src/*'],
+					paths: ['picus', 'react', 'react-dom'],
 				},
 			],
 		},
@@ -30,8 +30,8 @@ export default [
 			'no-restricted-imports': [
 				'error',
 				{
-					patterns: ['@remotion/*/src/*', 'remotion/src/*'],
-					paths: ['remotion', 'react', 'react-dom'],
+					patterns: ['@picus/*/src/*', 'picus/src/*'],
+					paths: ['picus', 'react', 'react-dom'],
 				},
 			],
 		},

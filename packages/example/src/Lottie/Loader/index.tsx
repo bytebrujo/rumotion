@@ -1,7 +1,7 @@
-import {getLottieMetadata, Lottie, LottieAnimationData} from '@remotion/lottie';
+import {getLottieMetadata, Lottie, LottieAnimationData} from '@picus/lottie';
 import {AnimationItem} from 'lottie-web';
 import {useCallback, useEffect, useState} from 'react';
-import {staticFile, useCurrentFrame, useDelayRender} from 'remotion';
+import {staticFile, useCurrentFrame, useDelayRender} from 'picus';
 
 const LottieLoader = () => {
 	const frame = useCurrentFrame();

@@ -4,23 +4,23 @@ id: preload-video
 slug: preload-video
 sidebar_label: preloadVideo()
 title: 'preloadVideo()'
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
-_This function is part of the [`@remotion/preload`](/docs/preload) package._
+_This function is part of the [`@picus/preload`](/docs/preload) package._
 
 This function preloads a video in the DOM so that when a video tag is mounted, it can play immediately.
 
 While preload is not necessary for rendering, it can help with seamless playback in the [`<Player />`](/docs/player) and in the Studio.
 
-An alternative to `preloadVideo()` is the [`prefetch()`](/docs/prefetch) API. See [`@remotion/preload` vs `prefetch()`](/docs/player/preloading#remotionpreload-vs-prefetch) to decide which one is better for your usecase.
+An alternative to `preloadVideo()` is the [`prefetch()`](/docs/prefetch) API. See [`@picus/preload` vs `prefetch()`](/docs/player/preloading#picuspreload-vs-prefetch) to decide which one is better for your usecase.
 
 ## Usage
 
 ```tsx twoslash
-import {preloadVideo} from '@remotion/preload';
+import {preloadVideo} from '@picus/preload';
 
-const unpreload = preloadVideo('https://remotion.media/BigBuckBunny.mp4');
+const unpreload = preloadVideo('https://picus.media/BigBuckBunny.mp4');
 
 // If you want to un-preload the video later
 unpreload();
@@ -42,8 +42,8 @@ If the resource does not support CORS, `resolveRedirect()` will fail. If the res
 This snippet tries to preload a video on a best-effort basis. If the redirect cannot be resolved, it tries to preload the original URL.
 
 ```tsx twoslash
-import {preloadVideo, resolveRedirect} from '@remotion/preload';
-import {OffthreadVideo} from 'remotion';
+import {preloadVideo, resolveRedirect} from '@picus/preload';
+import {OffthreadVideo} from 'picus';
 
 // This code gets executed immediately once the page loads
 let urlToLoad = 'https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=175&oauth2_token_id=57447761';
@@ -74,5 +74,5 @@ const MyComp: React.FC = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/preload/src/preload-video.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/preload/src/preload-video.ts)
 - [`resolveRedirect()`](/docs/preload/resolve-redirect)

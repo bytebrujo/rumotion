@@ -1,5 +1,5 @@
 import React from 'react';
-import type {CanUpdateSequencePropStatus} from 'remotion';
+import type {CanUpdateSequencePropStatus} from 'picus';
 import type {SchemaFieldInfo} from '../../helpers/timeline-layout';
 import {TimelineBooleanField} from './TimelineBooleanField';
 import {TimelineNumberField} from './TimelineNumberField';

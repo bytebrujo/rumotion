@@ -1,5 +1,5 @@
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {motionFixedPath} from './motion-fix';
 import {springA} from './springs';
 

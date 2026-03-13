@@ -4,14 +4,14 @@ import type {
 	MediaParserVideoSample,
 	MediaParserVideoTrack,
 	ParseMedia,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {
 	MediaParserAbortError,
 	WEBCODECS_TIMESCALE,
 	hasBeenAborted,
 	mediaParserController,
-} from '@remotion/media-parser';
-import type {ParseMediaOnWorker} from '@remotion/media-parser/worker';
+} from '@picus/media-parser';
+import type {ParseMediaOnWorker} from '@picus/media-parser/worker';
 import {createVideoDecoder} from './create-video-decoder';
 import {withResolvers} from './create/with-resolvers';
 import {Log} from './log';
@@ -27,7 +27,7 @@ export const internalExtractFrames = ({
 	onFrame,
 	signal,
 	timestampsInSeconds,
-	acknowledgeRemotionLicense,
+	acknowledgePicusLicense,
 	logLevel,
 	parseMediaImplementation,
 }: {
@@ -35,7 +35,7 @@ export const internalExtractFrames = ({
 	src: string;
 	onFrame: (frame: VideoFrame) => void;
 	signal: AbortSignal | null;
-	acknowledgeRemotionLicense: boolean;
+	acknowledgePicusLicense: boolean;
 	logLevel: MediaParserLogLevel;
 	parseMediaImplementation: ParseMediaOnWorker | ParseMedia;
 }) => {
@@ -59,7 +59,7 @@ export const internalExtractFrames = ({
 
 	parseMediaImplementation({
 		src: new URL(src, window.location.href),
-		acknowledgeRemotionLicense,
+		acknowledgePicusLicense,
 		controller,
 		logLevel,
 		onDurationInSeconds(durationInSeconds) {

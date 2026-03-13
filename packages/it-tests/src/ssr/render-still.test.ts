@@ -7,7 +7,7 @@ import {
 	getCompositions,
 	openBrowser,
 	renderStill,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 
 const exampleBuild = path.join(__dirname, '..', '..', '..', 'example', 'build');
 

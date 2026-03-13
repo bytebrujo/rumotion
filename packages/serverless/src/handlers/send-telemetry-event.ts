@@ -1,6 +1,6 @@
-import {LicensingInternals} from '@remotion/licensing';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import {LicensingInternals} from '@picus/licensing';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 
 export const sendTelemetryEvent = async ({
 	licenseKey,
@@ -18,7 +18,7 @@ export const sendTelemetryEvent = async ({
 	}
 
 	try {
-		// https://www.remotion.dev/docs/licensing
+		// https://www.picus.dev/docs/licensing
 		await LicensingInternals.internalRegisterUsageEvent({
 			licenseKey,
 			event: 'cloud-render',

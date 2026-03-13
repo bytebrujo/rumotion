@@ -11,12 +11,12 @@ import type {
 	OnMessage,
 	ServerlessRoutines,
 	StreamingMessage,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	formatMap,
 	makeStreamer,
 	messageTypeIdToMessageType,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {getLambdaClient} from './aws-clients';
 import type {AwsRegion} from './regions';
 
@@ -197,7 +197,7 @@ export const callFunctionWithStreamingImplementation = async <
 			(err as Error).message?.includes('ConcurrentInvocationLimitExceeded')
 		) {
 			throw new Error(
-				`AWS Concurrency limit reached (Original Error: ${(err as Error).message}). See https://www.remotion.dev/docs/lambda/troubleshooting/rate-limit for tips to fix this.`,
+				`AWS Concurrency limit reached (Original Error: ${(err as Error).message}). See https://www.picus.dev/docs/lambda/troubleshooting/rate-limit for tips to fix this.`,
 			);
 		}
 

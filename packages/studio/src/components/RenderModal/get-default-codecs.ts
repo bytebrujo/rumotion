@@ -1,6 +1,6 @@
-import type {AudioCodec, Codec} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {NoReactAPIs} from '@remotion/renderer/pure';
+import type {AudioCodec, Codec} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {NoReactAPIs} from '@picus/renderer/pure';
 import type {RenderType} from './RenderModalAdvanced';
 
 export const getDefaultCodecs = ({

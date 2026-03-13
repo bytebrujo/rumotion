@@ -1,16 +1,16 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/cli"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/cli"
 	},
-	"name": "@remotion/cli",
+	"name": "@picus/cli",
 	"version": "4.0.434",
-	"description": "Control Remotion features using the `npx remotion` command",
+	"description": "Control Picus features using the `npx picus` command",
 	"main": "dist/index.js",
 	"sideEffects": false,
 	"bin": {
-		"remotion": "remotion-cli.js",
-		"remotionb": "remotionb-cli.js",
-		"remotiond": "remotiond-cli.js"
+		"picus": "picus-cli.js",
+		"picusb": "picusb-cli.js",
+		"picusd": "picusd-cli.js"
 	},
 	"scripts": {
 		"formatting": "oxfmt src --check",
@@ -20,7 +20,7 @@
 		"make": "tsgo -d"
 	},
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"exports": {
 		".": "./dist/index.js",
@@ -34,20 +34,20 @@
 			]
 		}
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"dependencies": {
-		"@remotion/bundler": "workspace:*",
-		"@remotion/media-utils": "workspace:*",
-		"@remotion/player": "workspace:*",
-		"@remotion/renderer": "workspace:*",
-		"@remotion/studio-shared": "workspace:*",
-		"@remotion/studio-server": "workspace:*",
-		"@remotion/studio": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"@picus/media-utils": "workspace:*",
+		"@picus/player": "workspace:*",
+		"@picus/renderer": "workspace:*",
+		"@picus/studio-shared": "workspace:*",
+		"@picus/studio-server": "workspace:*",
+		"@picus/studio": "workspace:*",
 		"dotenv": "17.3.1",
 		"minimist": "1.2.6",
 		"prompts": "2.4.2",
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.0",
@@ -58,19 +58,19 @@
 		"@types/prompts": "^2.4.1",
 		"@types/prettier": "^2.7.2",
 		"@types/node": "catalog:",
-		"@remotion/zod-types": "workspace:*",
-		"@remotion/tailwind-v4": "workspace:*",
-		"@remotion/enable-scss": "workspace:*",
-		"@remotion/skia": "workspace:*",
+		"@picus/zod-types": "workspace:*",
+		"@picus/tailwind-v4": "workspace:*",
+		"@picus/enable-scss": "workspace:*",
+		"@picus/skia": "workspace:*",
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"zod": "catalog:",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"ffmpeg",
 		"video",
 		"react",
@@ -79,5 +79,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/cli"
+	"homepage": "https://www.picus.dev/docs/cli"
 }

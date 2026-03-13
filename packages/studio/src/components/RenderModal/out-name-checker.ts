@@ -1,5 +1,5 @@
-import type {AudioCodec, Codec, StillImageFormat} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {AudioCodec, Codec, StillImageFormat} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import type {RenderType} from './RenderModalAdvanced';
 
 const invalidCharacters = ['?', '*', '+', ':', '%'];

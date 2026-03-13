@@ -3,7 +3,7 @@ import {
 	reduceMatrices,
 	scaleX,
 	translateZ,
-} from '@remotion/svg-3d-engine';
+} from '@picus/svg-3d-engine';
 import {useRect} from './path-context';
 import {useTransformations} from './transformation-context';
 

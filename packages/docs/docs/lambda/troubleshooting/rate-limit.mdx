@@ -29,11 +29,11 @@ By default, the concurrency limit is 1000 functions per region, however in some 
 
 ## New accounts using AWS Lambda
 
-According to AWS, "some accounts" which are new to AWS Lambda might get a very low concurrency limit such as 10 when they first start with AWS Lambda. In that case, increase the limit via the AWS console or the Remotion CLI (see below).
+According to AWS, "some accounts" which are new to AWS Lambda might get a very low concurrency limit such as 10 when they first start with AWS Lambda. In that case, increase the limit via the AWS console or the Picus CLI (see below).
 
 ### Workaround
 
-If you want to test Remotion Lambda while you are waiting for AWS to approve a higher concurrency limit, you can pass a higher number to [`framesPerLambda`](/docs/lambda/rendermediaonlambda#framesperlambda).
+If you want to test Picus Lambda while you are waiting for AWS to approve a higher concurrency limit, you can pass a higher number to [`framesPerLambda`](/docs/lambda/rendermediaonlambda#framesperlambda).
 
 For example: If your account currently has a concurrency limit of 10 and you want to render a composition with 900 frames, you can set `framesPerLambda` to `100`.  
 9 Lambda renderer functions will be spawned: `900 / 100 = 9`.  
@@ -44,7 +44,7 @@ An additional Lambda function will be spawned for orchestration, meaning a total
 To see your limits, run
 
 ```
-npx remotion lambda quotas
+npx picus lambda quotas
 ```
 
 :::note
@@ -53,10 +53,10 @@ If you get a permission error, repeat the user policy step in the [Setup Guide](
 
 ## Request an increase
 
-You can request a quota increase under [`https://console.aws.amazon.com/servicequotas/home`](https://console.aws.amazon.com/servicequotas/home) or using the [Remotion CLI](/docs/lambda/cli/quotas):
+You can request a quota increase under [`https://console.aws.amazon.com/servicequotas/home`](https://console.aws.amazon.com/servicequotas/home) or using the [Picus CLI](/docs/lambda/cli/quotas):
 
 ```
-npx remotion lambda quotas increase
+npx picus lambda quotas increase
 ```
 
 :::note
@@ -67,4 +67,4 @@ This only works for AWS Root accounts, not the children of an organization. You 
 
 ## Unhelpful?
 
-Contact the Remotion team, preferrably via [Discord](https://remotion.dev/discord) and we will be happy to help you with your rate limit problem.
+Contact the Picus team, preferrably via [Discord](https://picus.dev/discord) and we will be happy to help you with your rate limit problem.

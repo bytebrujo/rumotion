@@ -1,5 +1,5 @@
-import type {LogLevel} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import type {LogLevel} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import type {SerializedInputProps} from './constants';
 import {internalGetOrCreateBucket} from './get-or-create-bucket';
 import {inputPropsKey, resolvedPropsKey} from './input-props-keys';

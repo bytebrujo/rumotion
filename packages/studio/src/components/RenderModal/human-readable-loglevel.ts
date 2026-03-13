@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 
 export const humanReadableLogLevel = (logLevel: LogLevel) => {
 	if (logLevel === 'trace') {

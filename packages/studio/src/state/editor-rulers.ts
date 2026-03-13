@@ -6,11 +6,11 @@ type State = {
 };
 
 export const persistEditorShowRulersOption = (option: boolean) => {
-	localStorage.setItem('remotion.editorShowRulers', String(option));
+	localStorage.setItem('picus.editorShowRulers', String(option));
 };
 
 export const loadEditorShowRulersOption = (): boolean => {
-	const item = localStorage.getItem('remotion.editorShowRulers');
+	const item = localStorage.getItem('picus.editorShowRulers');
 	return item === 'true';
 };
 

@@ -1,4 +1,4 @@
-# @remotion/serverless-client
+# @picus/serverless-client
 
 ## Usage
 

@@ -4,7 +4,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from '@remotion/design';
+} from '@picus/design';
 import {Label} from './ui/label';
 
 const formatSampleRate = (rate: number): string => {

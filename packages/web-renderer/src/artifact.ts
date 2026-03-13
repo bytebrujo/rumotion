@@ -1,5 +1,5 @@
-import type {DownloadBehavior, TRenderAsset} from 'remotion';
-import {NoReactInternals, type ArtifactAsset} from 'remotion/no-react';
+import type {DownloadBehavior, TRenderAsset} from 'picus';
+import {NoReactInternals, type ArtifactAsset} from 'picus/no-react';
 
 export type EmittedArtifact = {
 	filename: string;
@@ -100,7 +100,7 @@ export const handleArtifacts = () => {
 			);
 			if (previousArtifact) {
 				throw new Error(
-					`An artifact with output "${artifact.filename}" was already registered at frame ${previousArtifact.frame}, but now registered again at frame ${frame}. Artifacts must have unique names. https://remotion.dev/docs/artifacts`,
+					`An artifact with output "${artifact.filename}" was already registered at frame ${previousArtifact.frame}, but now registered again at frame ${frame}. Artifacts must have unique names. https://picus.dev/docs/artifacts`,
 				);
 			}
 

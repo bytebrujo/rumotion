@@ -1,7 +1,7 @@
 // Copied from https://stackblitz.com/edit/react-triangle-svg?file=index.js
 
-import type {Instruction} from '@remotion/paths';
-import {serializeInstructions} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
+import {serializeInstructions} from '@picus/paths';
 import {joinPoints} from './join-points';
 import type {ShapeInfo} from './shape-info';
 
@@ -20,7 +20,7 @@ export type MakeTriangleProps = {
  * @param {string} direction The direction of the triangle
  * @param {null|Number} edgeRoundness Allows to modify the shape by rounding the edges using bezier curves. Default null.
  * @param {Number} cornerRadius Rounds the corner using an arc. Similar to CSS's border-radius. Cannot be used together with edgeRoundness.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/make-triangle)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/make-triangle)
  */
 export const makeTriangle = ({
 	length,

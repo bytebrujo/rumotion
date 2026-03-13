@@ -1,10 +1,10 @@
 ---
 image: /generated/articles-docs-paths-extend-viewbox.png
 title: extendViewBox()
-crumb: "@remotion/paths"
+crumb: "@picus/paths"
 ---
 
-_Part of the [`@remotion/paths`](/docs/paths) package. Available since v3.2.25_
+_Part of the [`@picus/paths`](/docs/paths) package. Available since v3.2.25_
 
 Widens an SVG `viewBox` in all directions by a certain scale factor.
 
@@ -13,7 +13,7 @@ This function may be unnecessary: If you want the parts that go outside of the v
 :::
 
 ```tsx twoslash
-import { extendViewBox } from "@remotion/paths";
+import { extendViewBox } from "@picus/paths";
 
 const extended = extendViewBox("0 0 1000 1000", 2);
 console.log(extended); // "-500 -500 2000 2000"
@@ -45,7 +45,7 @@ We can fix the cutoff by doing two things:
 - Applying a 2x scale transform to the SVG.
 
 ```tsx twoslash
-import { extendViewBox } from "@remotion/paths";
+import { extendViewBox } from "@picus/paths";
 
 const viewBox = "0 0 1000 1000";
 
@@ -64,5 +64,5 @@ In this example, a factor of `2` was chosen because it is enough to fix the cuto
 
 ## See also
 
-- [`@remotion/paths`](/docs/paths)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/paths/src/extend-viewbox.ts)
+- [`@picus/paths`](/docs/paths)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/paths/src/extend-viewbox.ts)

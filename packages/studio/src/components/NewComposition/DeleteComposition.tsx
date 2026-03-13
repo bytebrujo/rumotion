@@ -1,4 +1,4 @@
-import type {RecastCodemod} from '@remotion/studio-shared';
+import type {RecastCodemod} from '@picus/studio-shared';
 import React, {useCallback, useContext, useMemo} from 'react';
 import {inlineCodeSnippet} from '../Menu/styles';
 import {ModalFooterContainer} from '../ModalFooter';

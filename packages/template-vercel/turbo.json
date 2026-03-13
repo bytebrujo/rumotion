@@ -1,7 +1,7 @@
 {
   "tasks": {
     "bundle": {
-      "outputs": [".remotion/**"]
+      "outputs": [".picus/**"]
     },
     "build": {
       "dependsOn": ["bundle"],

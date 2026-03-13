@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let videoBitrate: string | null = null;
 
@@ -17,7 +17,7 @@ export const videoBitrateOption = {
 		</>
 	),
 	ssrName: 'videoBitrate',
-	docLink: 'https://www.remotion.dev/docs/renderer/render-media#videobitrate',
+	docLink: 'https://www.picus.dev/docs/renderer/render-media#videobitrate',
 	type: '' as string | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -43,4 +43,4 @@ export const videoBitrateOption = {
 		videoBitrate = bitrate;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

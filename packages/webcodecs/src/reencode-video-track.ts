@@ -2,7 +2,7 @@ import type {
 	MediaParserLogLevel,
 	MediaParserOnVideoSample,
 	MediaParserVideoTrack,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {arrayBufferToUint8Array} from './arraybuffer-to-uint8-array';
 import {convertEncodedChunk} from './convert-encoded-chunk';
 import type {ConvertMediaOnVideoFrame} from './convert-media';

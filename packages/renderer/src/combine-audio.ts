@@ -1,6 +1,6 @@
 import {rmSync, writeFileSync} from 'fs';
 import {join} from 'path';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 import {callFf} from './call-ffmpeg';
 import type {LogLevel} from './log-level';
 import {Log} from './logger';
@@ -16,7 +16,7 @@ export const durationOf1Frame = (1024 / DEFAULT_SAMPLE_RATE) * 1_000_000;
 const roundWithFix = (targetTime: number) => {
 	// Round values where the fractional part is > 0.4999999 up to the next integer,
 	// otherwise round down. This addresses floating-point precision issues that can
-	// lead to audio imperfections, such as demonstrated in https://github.com/remotion-dev/remotion/issues/6010
+	// lead to audio imperfections, such as demonstrated in https://github.com/picus-dev/picus/issues/6010
 	if (targetTime % 1 > 0.4999999) {
 		return Math.ceil(targetTime);
 	}
@@ -40,7 +40,7 @@ const encodeAudio = async ({
 	output,
 	indent,
 	logLevel,
-	addRemotionMetadata,
+	addPicusMetadata,
 	fps,
 	binariesDirectory,
 	cancelSignal,
@@ -53,7 +53,7 @@ const encodeAudio = async ({
 	output: string;
 	indent: boolean;
 	logLevel: LogLevel;
-	addRemotionMetadata: boolean;
+	addPicusMetadata: boolean;
 	fps: number;
 	binariesDirectory: string | null;
 	cancelSignal: CancelSignal | undefined;
@@ -79,8 +79,8 @@ const encodeAudio = async ({
 		'-b:a',
 		audioBitrate ? audioBitrate : '320k',
 		'-vn',
-		addRemotionMetadata ? `-metadata` : null,
-		addRemotionMetadata ? `comment=Made with Remotion ${VERSION}` : null,
+		addPicusMetadata ? `-metadata` : null,
+		addPicusMetadata ? `comment=Made with Picus ${VERSION}` : null,
 		'-y',
 		output,
 	];
@@ -127,7 +127,7 @@ const combineAudioSeamlessly = async ({
 	logLevel,
 	output,
 	chunkDurationInSeconds,
-	addRemotionMetadata,
+	addPicusMetadata,
 	fps,
 	binariesDirectory,
 	cancelSignal,
@@ -138,7 +138,7 @@ const combineAudioSeamlessly = async ({
 	logLevel: LogLevel;
 	output: string;
 	chunkDurationInSeconds: number;
-	addRemotionMetadata: boolean;
+	addPicusMetadata: boolean;
 	fps: number;
 	binariesDirectory: string | null;
 	cancelSignal: CancelSignal | undefined;
@@ -195,8 +195,8 @@ const combineAudioSeamlessly = async ({
 		'-c:a',
 		'copy',
 		'-vn',
-		addRemotionMetadata ? `-metadata` : null,
-		addRemotionMetadata ? `comment=Made with Remotion ${VERSION}` : null,
+		addPicusMetadata ? `-metadata` : null,
+		addPicusMetadata ? `comment=Made with Picus ${VERSION}` : null,
 		'-y',
 		output,
 	];
@@ -245,7 +245,7 @@ export const createCombinedAudio = ({
 	resolvedAudioCodec,
 	output,
 	chunkDurationInSeconds,
-	addRemotionMetadata,
+	addPicusMetadata,
 	binariesDirectory,
 	fps,
 	cancelSignal,
@@ -260,7 +260,7 @@ export const createCombinedAudio = ({
 	resolvedAudioCodec: AudioCodec;
 	output: string;
 	chunkDurationInSeconds: number;
-	addRemotionMetadata: boolean;
+	addPicusMetadata: boolean;
 	binariesDirectory: string | null;
 	fps: number;
 	cancelSignal: CancelSignal | undefined;
@@ -274,7 +274,7 @@ export const createCombinedAudio = ({
 			logLevel,
 			output,
 			chunkDurationInSeconds,
-			addRemotionMetadata,
+			addPicusMetadata,
 			binariesDirectory,
 			fps,
 			cancelSignal,
@@ -290,7 +290,7 @@ export const createCombinedAudio = ({
 		output,
 		indent,
 		logLevel,
-		addRemotionMetadata,
+		addPicusMetadata,
 		binariesDirectory,
 		fps,
 		cancelSignal,

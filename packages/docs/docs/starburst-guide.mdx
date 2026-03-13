@@ -7,13 +7,13 @@ crumb: 'Techniques'
 
 # Starburst<AvailableFrom v="4.0.435"/>
 
-The [`<Starburst>`](/docs/starburst/starburst) component from [`@remotion/starburst`](/docs/starburst/api) renders a static WebGL-based retro starburst ray pattern.
+The [`<Starburst>`](/docs/starburst/starburst) component from [`@picus/starburst`](/docs/starburst/api) renders a static WebGL-based retro starburst ray pattern.
 
 <Demo type="starburst" />
 
 ```tsx twoslash title="MyComp.tsx"
-import {Starburst} from '@remotion/starburst';
-import {AbsoluteFill} from 'remotion';
+import {Starburst} from '@picus/starburst';
+import {AbsoluteFill} from 'picus';
 
 const MyComp = () => {
   return (
@@ -29,8 +29,8 @@ const MyComp = () => {
 Use [`rotation`](/docs/starburst/starburst#rotation) to offset the angle of the rays in degrees:
 
 ```tsx twoslash title="Rotated.tsx"
-import {Starburst} from '@remotion/starburst';
-import {AbsoluteFill} from 'remotion';
+import {Starburst} from '@picus/starburst';
+import {AbsoluteFill} from 'picus';
 
 // ---cut---
 const MyComp = () => {
@@ -45,4 +45,4 @@ const MyComp = () => {
 ## See also
 
 - [`<Starburst>` API reference](/docs/starburst/starburst)
-- [`@remotion/starburst`](/docs/starburst/api)
+- [`@picus/starburst`](/docs/starburst/api)

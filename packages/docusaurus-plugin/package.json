@@ -1,5 +1,5 @@
 {
-	"name": "@remotion/docusaurus-plugin",
+	"name": "@picus/docusaurus-plugin",
 	"version": "4.0.434",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -8,10 +8,10 @@
 		"lint": "eslint src",
 		"make": "tsgo -d"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "UNLICENSED",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
 		"shiki": "3.22.0",
@@ -24,12 +24,12 @@
 		"@types/dom-webcodecs": "catalog:"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"private": true,
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/docusaurus-plugin"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/docusaurus-plugin"
 	}
 }

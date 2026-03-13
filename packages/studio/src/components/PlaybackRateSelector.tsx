@@ -1,5 +1,5 @@
 import React, {useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {useIsStill} from '../helpers/is-current-selected-still';
 import {Checkmark} from '../icons/Checkmark';
 import {persistPlaybackRate} from '../state/playbackrate';

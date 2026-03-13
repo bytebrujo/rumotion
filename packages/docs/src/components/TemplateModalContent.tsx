@@ -1,1 +1,1 @@
-export {TemplateModalContent} from '@remotion/promo-pages/dist/template-modal-content.js';
+export {TemplateModalContent} from '@picus/promo-pages/dist/template-modal-content.js';

@@ -1,6 +1,6 @@
 import { AnnotationHandler, InlineAnnotation, InnerToken } from "codehike/code";
 import { mix, readableColor } from "polished";
-import { interpolate, useCurrentFrame } from "remotion";
+import { interpolate, useCurrentFrame } from "picus";
 import { useThemeColors } from "../calculate-metadata/theme";
 
 export const errorInline: AnnotationHandler = {

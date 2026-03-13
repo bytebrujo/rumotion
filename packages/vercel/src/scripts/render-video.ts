@@ -1,7 +1,7 @@
 import {statSync} from 'fs';
-import type {InternalRenderMediaOptions} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {NoReactInternals} from 'remotion/no-react';
+import type {InternalRenderMediaOptions} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {NoReactInternals} from 'picus/no-react';
 
 type RenderVideoConfig = {
 	compositionId: string;

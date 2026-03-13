@@ -30,7 +30,7 @@ export const LambdaFast: React.FC = () => {
 				<p>
 					Because you write videos declaratively in React, rendering can be
 					distributed to many Lambda functions which can each perform work
-					independently. The Remotion masterplan has come alive.
+					independently. The Picus masterplan has come alive.
 				</p>
 			</div>
 		</div>

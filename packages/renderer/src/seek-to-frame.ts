@@ -34,7 +34,7 @@ export const waitForReady = ({
 	const retrieveCancelledErrorAndReject = () => {
 		return new Promise((_, reject) => {
 			puppeteerEvaluateWithCatch({
-				pageFunction: () => window.remotion_cancelledError,
+				pageFunction: () => window.picus_cancelledError,
 				args: [],
 				frame: null,
 				page,
@@ -69,7 +69,7 @@ export const waitForReady = ({
 			browser: page.browser,
 			// Increase timeout so the delayRender() timeout fires earlier
 			timeout: timeoutInMilliseconds + 3000,
-			pageFunction: `window.remotion_renderReady === true ? "${readyToken}" : window.remotion_cancelledError !== undefined ? "${cancelledToken}" : false`,
+			pageFunction: `window.picus_renderReady === true ? "${readyToken}" : window.picus_cancelledError !== undefined ? "${cancelledToken}" : false`,
 			title:
 				frame === null
 					? 'the page to render the React component'
@@ -100,9 +100,9 @@ export const waitForReady = ({
 				) {
 					puppeteerEvaluateWithCatchAndTimeout({
 						pageFunction: () => {
-							return Object.keys(window.remotion_delayRenderTimeouts)
+							return Object.keys(window.picus_delayRenderTimeouts)
 								.map((id, i) => {
-									const {label} = window.remotion_delayRenderTimeouts[id];
+									const {label} = window.picus_delayRenderTimeouts[id];
 									if (label === null) {
 										return `${i + 1}. (no label)`;
 									}
@@ -203,7 +203,7 @@ export const seekToFrame = async ({
 	});
 	await puppeteerEvaluateWithCatchAndTimeout({
 		pageFunction: (f: number, c: string, a: number) => {
-			window.remotion_setFrame(f, c, a);
+			window.picus_setFrame(f, c, a);
 		},
 		args: [frame, composition, attempt],
 		frame,

@@ -6,12 +6,12 @@ import {
 
 beforeEach(() => {
 	delete process.env.GCLOUD_PROJECT;
-	delete process.env.REMOTION_GCP_PROJECT_ID;
+	delete process.env.PICUS_GCP_PROJECT_ID;
 	delete process.env.K_CONFIGURATION;
 });
 
 test('is running in cloud tasks = true', () => {
-	process.env.GCLOUD_PROJECT = 'remotion-test-cloudtask';
+	process.env.GCLOUD_PROJECT = 'picus-test-cloudtask';
 	process.env.K_CONFIGURATION = 'config';
 	const isInCloud = isInCloudTask();
 
@@ -19,20 +19,20 @@ test('is running in cloud tasks = true', () => {
 });
 
 test('is running in cloud tasks = false', () => {
-	process.env.REMOTION_GCP_PROJECT_ID = 'remotion-test-cloudtask';
+	process.env.PICUS_GCP_PROJECT_ID = 'picus-test-cloudtask';
 	const isInCloud = isInCloudTask();
 	expect(isInCloud).toBe(false);
 });
 
-test('which project Id = remotion-test', () => {
-	process.env.REMOTION_GCP_PROJECT_ID = 'remotion-test';
+test('which project Id = picus-test', () => {
+	process.env.PICUS_GCP_PROJECT_ID = 'picus-test';
 	const projectId = getProjectId();
-	expect(projectId).toBe('remotion-test');
+	expect(projectId).toBe('picus-test');
 });
 
-test('which project Id = remotion-test-cloudtask', () => {
-	process.env.GCLOUD_PROJECT = 'remotion-test-cloudtask';
+test('which project Id = picus-test-cloudtask', () => {
+	process.env.GCLOUD_PROJECT = 'picus-test-cloudtask';
 	process.env.K_CONFIGURATION = 'config';
 	const projectId = getProjectId();
-	expect(projectId).toBe('remotion-test-cloudtask');
+	expect(projectId).toBe('picus-test-cloudtask');
 });

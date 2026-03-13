@@ -42,31 +42,31 @@ export const Footer: React.FC<{
 			<a
 				className="hidden group lg:flex flex-row items-center ml-[-8px]"
 				target="_blank"
-				href="https://remotion.dev/?utm_source=convert"
+				href="https://picus.dev/?utm_source=convert"
 			>
 				<Logo />
 				<div className="w-1" />
 				<div className="opacity-0 transition-opacity duration-200 font-brand text-sm text-muted-foreground group-hover:opacity-100">
-					Remotion
+					Picus
 				</div>
 			</a>
 			<a
 				className="lg:hidden font-medium"
 				target="_blank"
-				href="https://remotion.dev/?utm_source=convert"
+				href="https://picus.dev/?utm_source=convert"
 			>
 				<div className="text-sm text-muted-foreground hover:text-foreground">
-					A Remotion Product
+					A Picus Product
 				</div>
 			</a>
 			<div className="flex-1" />
 			{routeAction.type === 'transcribe' ? (
 				<a
 					target="_blank"
-					href="https://remotion.dev/docs/whisper-web"
+					href="https://picus.dev/docs/whisper-web"
 					className="text-sm text-muted-foreground font-medium hover:text-foreground"
 				>
-					Powered by @remotion/whisper-web
+					Powered by @picus/whisper-web
 				</a>
 			) : (
 				<div className="row flex items-center">
@@ -83,7 +83,7 @@ export const Footer: React.FC<{
 			<div className="w-6" />
 			<a
 				target="_blank"
-				href="https://remotion.dev/report"
+				href="https://picus.dev/report"
 				className="text-sm text-muted-foreground font-medium hover:text-foreground"
 			>
 				Report bug
@@ -91,7 +91,7 @@ export const Footer: React.FC<{
 			<div className="w-6" />
 			<a
 				target="_blank"
-				href="https://github.com/remotion-dev/remotion/tree/main/packages/convert"
+				href="https://github.com/picus-dev/picus/tree/main/packages/convert"
 				className="text-sm text-muted-foreground font-medium hover:text-foreground"
 			>
 				Source Code

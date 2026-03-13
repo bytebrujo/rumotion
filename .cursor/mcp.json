@@ -1,8 +1,8 @@
 {
 	"mcpServers": {
-		"remotion-documentation-own": {
+		"picus-documentation-own": {
 			"command": "npx",
-			"args": ["@remotion/mcp@latest"]
+			"args": ["@picus/mcp@latest"]
 		}
 	}
 }

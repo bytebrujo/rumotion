@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let askAIEnabled = true;
 
@@ -14,7 +14,7 @@ export const askAIOption = {
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setaskaienabled',
+	docLink: 'https://www.picus.dev/docs/config#setaskaienabled',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -34,4 +34,4 @@ export const askAIOption = {
 		askAIEnabled = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

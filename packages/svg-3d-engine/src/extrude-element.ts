@@ -1,4 +1,4 @@
-import type {Instruction} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
 import type {ThreeDReducedInstruction} from './3d-svg';
 import {turnInto3D} from './fix-z';
 import type {FaceType} from './map-face';

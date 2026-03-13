@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {isCompositionStill} from './is-composition-still';
 
 export type Dimensions = {

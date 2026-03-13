@@ -1,7 +1,7 @@
-export const MENU_INITIATOR_CLASSNAME = '__remotion-studio-menu-initiator';
-export const MENU_ITEM_CLASSNAME = '__remotion-studio-menu-item';
-export const HORIZONTAL_SCROLLBAR_CLASSNAME = '__remotion-horizontal-scrollbar';
-export const VERTICAL_SCROLLBAR_CLASSNAME = '__remotion-vertical-scrollbar';
+export const MENU_INITIATOR_CLASSNAME = '__picus-studio-menu-initiator';
+export const MENU_ITEM_CLASSNAME = '__picus-studio-menu-item';
+export const HORIZONTAL_SCROLLBAR_CLASSNAME = '__picus-horizontal-scrollbar';
+export const VERTICAL_SCROLLBAR_CLASSNAME = '__picus-vertical-scrollbar';
 
 export const isMenuItem = (el: HTMLElement): boolean => {
 	return Boolean(

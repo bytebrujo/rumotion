@@ -4,7 +4,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from '@remotion/design';
+} from '@picus/design';
 import React from 'react';
 import {ReplayButton} from './ReplayButton';
 

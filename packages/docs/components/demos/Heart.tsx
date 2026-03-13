@@ -1,6 +1,6 @@
-import {Heart} from '@remotion/shapes';
+import {Heart} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const HeartDemo: React.FC<{
 	readonly darkMode: boolean;

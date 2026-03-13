@@ -1,12 +1,12 @@
-import type {CompletedClientRender} from '@remotion/studio-shared';
+import type {CompletedClientRender} from '@picus/studio-shared';
 import type {
 	RenderStillOnWebImageFormat,
 	WebRendererAudioCodec,
 	WebRendererContainer,
 	WebRendererQuality,
 	WebRendererVideoCodec,
-} from '@remotion/web-renderer';
-import type {LogLevel} from 'remotion';
+} from '@picus/web-renderer';
+import type {LogLevel} from 'picus';
 
 export type ClientRenderJobProgress = {
 	encodedFrames: number;

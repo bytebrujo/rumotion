@@ -1,11 +1,11 @@
 import type {
 	WebRendererContainer,
 	WebRendererVideoCodec,
-} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
 import {
 	getEncodableVideoCodecs,
 	getSupportedVideoCodecsForContainer,
-} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
 import {useEffect, useRef, useState} from 'react';
 
 type CacheEntry = {

@@ -1,6 +1,6 @@
-import {LightLeak} from '@remotion/light-leaks';
+import {LightLeak} from '@picus/light-leaks';
 import React from 'react';
-import {AbsoluteFill, useVideoConfig} from 'remotion';
+import {AbsoluteFill, useVideoConfig} from 'picus';
 
 interface Props {
 	readonly seed: number;

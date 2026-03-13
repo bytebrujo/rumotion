@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -13,7 +13,7 @@ test('should be able to get keyframes from webm', async () => {
 			internalStats: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(slowKeyframes).toEqual([
 		{
@@ -52,7 +52,7 @@ test('should be able to get keyframes from avi', async () => {
 			internalStats: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(slowKeyframes).toEqual([
 		{
@@ -99,7 +99,7 @@ test('should be able to get keyframes from .ts', async () => {
 			slowNumberOfFrames: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(slowNumberOfFrames).toEqual(298);
 	expect(slowKeyframes).toEqual([

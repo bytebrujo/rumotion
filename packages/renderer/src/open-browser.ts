@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import type {NoReactInternals} from 'remotion/no-react';
+import type {NoReactInternals} from 'picus/no-react';
 import type {Browser} from './browser';
 import type {HeadlessBrowser} from './browser/Browser';
 import {defaultBrowserDownloadProgress} from './browser/browser-download-progress-bar';
@@ -263,7 +263,7 @@ export const internalOpenBrowser = async ({
 
 /*
  * @description Opens a Chrome or Chromium browser instance. By reusing an instance across various rendering and compositional API calls, significant time can be saved by avoiding the repeated opening and closing of browsers.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/open-browser)
+ * @see [Documentation](https://www.picus.dev/docs/renderer/open-browser)
  */
 export const openBrowser = (
 	browser: Browser,

@@ -1,6 +1,6 @@
 import {z} from 'zod';
 
-export const REMOTION_MATRIX_BRAND = '__remotion-matrix';
+export const PICUS_MATRIX_BRAND = '__picus-matrix';
 
 export const zMatrix = () =>
 	z
@@ -13,4 +13,4 @@ export const zMatrix = () =>
 			},
 			{message: 'Invalid matrix, must be a square matrix'},
 		)
-		.describe(REMOTION_MATRIX_BRAND);
+		.describe(PICUS_MATRIX_BRAND);

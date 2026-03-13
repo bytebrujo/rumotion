@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export type ProResProfile =
 	| '4444-xq'
@@ -35,7 +35,7 @@ export const proResProfileOption = {
 		</>
 	),
 	ssrName: 'proResProfile' as const,
-	docLink: 'https://www.remotion.dev/docs/config#setproresprofile',
+	docLink: 'https://www.picus.dev/docs/config#setproresprofile',
 	type: undefined as ProResProfile | undefined,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -61,4 +61,4 @@ export const proResProfileOption = {
 		proResProfile = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<ProResProfile | undefined>;
+} satisfies AnyPicusOption<ProResProfile | undefined>;

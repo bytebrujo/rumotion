@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {VERY_LIGHT_TEXT} from '../../../helpers/colors';
 import {Spacing} from '../../layout';
-import {RemotionInput} from '../../NewComposition/RemInput';
+import {PicusInput} from '../../NewComposition/RemInput';
 import {Fieldset} from './Fieldset';
 import {useLocalState} from './local-state';
 import {SchemaLabel} from './SchemaLabel';
@@ -113,7 +113,7 @@ export const ZodDateEditor: React.FC<{
 				suffix={null}
 			/>
 			<div style={fullWidth}>
-				<RemotionInput
+				<PicusInput
 					value={formatDate(localValue.value)}
 					type="datetime-local"
 					status={localValue.zodValidation.success ? 'ok' : 'error'}

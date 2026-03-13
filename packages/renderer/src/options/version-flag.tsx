@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'version' as const;
 
@@ -11,7 +11,7 @@ export const versionFlagOption = {
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/cli/upgrade#--version',
+	docLink: 'https://www.picus.dev/docs/cli/upgrade#--version',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -30,4 +30,4 @@ export const versionFlagOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

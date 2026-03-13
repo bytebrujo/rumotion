@@ -1,4 +1,4 @@
-import type {EmojiName} from '@remotion/animated-emoji';
+import type {EmojiName} from '@picus/animated-emoji';
 import React, {
 	createRef,
 	useCallback,
@@ -6,7 +6,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {AbsoluteFill, useRemotionEnvironment} from 'remotion';
+import {AbsoluteFill, usePicusEnvironment} from 'picus';
 import {Card} from './Card';
 import type {RemoteData} from './Comp';
 import {CurrentCountry} from './CurrentCountry';
@@ -47,7 +47,7 @@ export const Cards: React.FC<{
 
 	const positions = useRef(getInitialPositions());
 	const shouldBePositions = useRef(getInitialPositions());
-	const {isRendering} = useRemotionEnvironment();
+	const {isRendering} = usePicusEnvironment();
 
 	useEffect(() => {
 		const {current} = container;

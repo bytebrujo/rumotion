@@ -2,17 +2,17 @@
 image: /generated/articles-docs-lambda.png
 id: lambda
 sidebar_label: Overview
-title: '@remotion/lambda'
+title: '@picus/lambda'
 ---
 
 <YouTube
   minutes={11}
   href="https://youtu.be/dQyPUasZY7I"
   thumb="https://i.ytimg.com/vi/dQyPUasZY7I/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCn-snZSKGnDuNkm0fIQYnQ9gJz4w"
-  title="Integrate Remotion Lambda into your app"
+  title="Integrate Picus Lambda into your app"
 />
 
-Render Remotion videos on [AWS Lambda](https://aws.amazon.com/lambda/). This is the fastest and most scalable way to render Remotion videos.  
+Render Picus videos on [AWS Lambda](https://aws.amazon.com/lambda/). This is the fastest and most scalable way to render Picus videos.  
 You only pay while you are rendering, making it very cost-effective.
 
 import {LambdaRegionList} from '../components/lambda/regions.tsx';
@@ -29,19 +29,19 @@ See also: [Comparison of server-side rendering options](/docs/compare-ssr)
 ## How it works
 
 - A Lambda function and a S3 bucket is created on AWS.
-- A Remotion project gets deployed to a S3 bucket as a website.
-- The Lambda function gets invoked and opens the Remotion project.
+- A Picus project gets deployed to a S3 bucket as a website.
+- The Lambda function gets invoked and opens the Picus project.
 - A lot of Lambda functions are created in parallel which each render a small part of the video
 - The initial Lambda function downloads the videos and stitches them together.
 - The final video gets uploaded to S3 and is available for download.
 
-See in more detail: [How Remotion Lambda works](/docs/lambda/how-lambda-works)
+See in more detail: [How Picus Lambda works](/docs/lambda/how-lambda-works)
 
 ## Architecture
 
-- **Lambda function**: Requires a layer with Chromium, currently hosted by Remotion. Only one Lambda function is required, but it can execute different actions.
+- **Lambda function**: Requires a layer with Chromium, currently hosted by Picus. Only one Lambda function is required, but it can execute different actions.
 - **S3 bucket**: Stores the projects, the renders, and render metadata.
-- **CLI**: Allows to control the overall architecture from the command line. Is installed by adding `@remotion/lambda` to a project.
+- **CLI**: Allows to control the overall architecture from the command line. Is installed by adding `@picus/lambda` to a project.
 - **Node.JS API**: Has the same features as the CLI but is easier to use programmatically
 
 ## Setup / Installation
@@ -50,7 +50,7 @@ See in more detail: [How Remotion Lambda works](/docs/lambda/how-lambda-works)
 
 ## Region selection
 
-The following regions are available for Remotion Lambda:
+The following regions are available for Picus Lambda:
 
 <LambdaRegionList />
 
@@ -63,17 +63,17 @@ The following regions are available for Remotion Lambda:
 
 ## Cost
 
-Most of our users render multiple minutes of video for just a few pennies. The exact cost is dependent on the region, assigned memory, type of video, parallelization and other parameters. For each render, we estimate a cost and display it to you. You might also need a Remotion license (see below).
+Most of our users render multiple minutes of video for just a few pennies. The exact cost is dependent on the region, assigned memory, type of video, parallelization and other parameters. For each render, we estimate a cost and display it to you. You might also need a Picus license (see below).
 
 ## AWS permissions
 
-Remotion Lambda requires you to create an AWS account and create a user with some permissions attached to it. We require only the minimal amount of permissions required for operating Remotion Lambda.
+Picus Lambda requires you to create an AWS account and create a user with some permissions attached to it. We require only the minimal amount of permissions required for operating Picus Lambda.
 
 [**Read more about permissions**](/docs/lambda/permissions)
 
 ## CLI
 
-You can control Remotion Lambda using the `npx remotion lambda` command.
+You can control Picus Lambda using the `npx picus lambda` command.
 
 [**Read more about the CLI**](/docs/lambda/cli)
 
@@ -83,12 +83,12 @@ Everything you can do using the CLI, you can also control using Node.JS APIs. Se
 
 ## License
 
-The standard Remotion license applies: https://github.com/remotion-dev/remotion/blob/main/LICENSE.md
+The standard Picus license applies: https://github.com/picus-dev/picus/blob/main/LICENSE.md
 
-Companies needing a license and using cloud rendering must set it up with Cloud Rendering Units. Please visit: https://remotion.pro/license
+Companies needing a license and using cloud rendering must set it up with Cloud Rendering Units. Please visit: https://picus.pro/license
 
 ## Uninstalling
 
-We make it easy to remove all Remotion resources from your AWS account without leaving any traces or causing further costs.
+We make it easy to remove all Picus resources from your AWS account without leaving any traces or causing further costs.
 
-[**How to uninstall Remotion Lambda**](/docs/lambda/uninstall)
+[**How to uninstall Picus Lambda**](/docs/lambda/uninstall)

@@ -1,5 +1,5 @@
-import type {AudioCodec} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {AudioCodec} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import type {ChangeEvent} from 'react';
 import React, {useCallback, useMemo} from 'react';
 import {useFileExistence} from '../../helpers/use-file-existence';

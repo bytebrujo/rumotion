@@ -2,7 +2,7 @@
 image: /generated/articles-docs-player-scaling.png
 id: scaling
 title: 'Sizing'
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 The following algorithm is used for calculating the size of the Player:
@@ -21,7 +21,7 @@ ration of the video. <br />
 <br />
 
 :::note
-Before v3.3.43, if case <InlineStep>3</InlineStep> or <InlineStep>4</InlineStep> happened, a layout shift would occur during mounting because the element was measured. Using a newer version of Remotion will fix this, because it uses the `aspect-ratio` CSS property.
+Before v3.3.43, if case <InlineStep>3</InlineStep> or <InlineStep>4</InlineStep> happened, a layout shift would occur during mounting because the element was measured. Using a newer version of Picus will fix this, because it uses the `aspect-ratio` CSS property.
 :::
 
 ## Full width
@@ -42,9 +42,9 @@ This is how you can make the Player fill out a container but keep the aspect rat
 <br />
 
 ```tsx twoslash title="Canvas.tsx"
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const MyComp: React.FC = () => {
   return <AbsoluteFill style={{backgroundColor: 'black'}} />;

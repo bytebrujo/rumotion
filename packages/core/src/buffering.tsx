@@ -10,7 +10,7 @@ import React, {
 import type {LogLevel} from './log';
 import {LogLevelContext} from './log-level-context';
 import {playbackLogging} from './playback-logging';
-import {useRemotionEnvironment} from './use-remotion-environment';
+import {usePicusEnvironment} from './use-picus-environment';
 
 type Block = {
 	id: string;
@@ -50,7 +50,7 @@ const useBufferManager = (
 		OnBufferingCallback[]
 	>([]);
 
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 	const rendering = env.isRendering;
 
 	const buffering = useRef(false);

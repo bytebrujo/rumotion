@@ -5,7 +5,7 @@ import {BackgroundAnimation} from './homepage/BackgroundAnimation';
 import CommunityStats from './homepage/CommunityStats';
 import {Demo} from './homepage/Demo';
 import EditorStarterSection from './homepage/EditorStarterSection';
-import EvaluateRemotionSection from './homepage/EvaluateRemotion';
+import EvaluatePicusSection from './homepage/EvaluatePicus';
 import {IfYouKnowReact} from './homepage/IfYouKnowReact';
 import type {ColorMode} from './homepage/layout/use-color-mode';
 import {ColorModeProvider} from './homepage/layout/use-color-mode';
@@ -53,7 +53,7 @@ export const NewLanding: React.FC<{
 						<Pricing />
 						<TrustedByBanner />
 						<br />
-						<EvaluateRemotionSection />
+						<EvaluatePicusSection />
 						<br />
 						<br />
 						<br />

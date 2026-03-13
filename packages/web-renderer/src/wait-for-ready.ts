@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type {DelayRenderScope} from 'remotion';
+import type {DelayRenderScope} from 'picus';
 import type {BackgroundKeepalive} from './background-keepalive';
 import type {InternalState} from './internal-state';
 import {withResolvers} from './with-resolvers';
@@ -36,16 +36,16 @@ export const waitForReady = ({
 			return;
 		}
 
-		if (scope.remotion_renderReady === true) {
+		if (scope.picus_renderReady === true) {
 			internalState?.addWaitForReadyTime(performance.now() - start);
 			resolve();
 			return;
 		}
 
-		if (scope.remotion_cancelledError !== undefined) {
+		if (scope.picus_cancelledError !== undefined) {
 			cancelled = true;
 			internalState?.addWaitForReadyTime(performance.now() - start);
-			const stack = scope.remotion_cancelledError;
+			const stack = scope.picus_cancelledError;
 			const message = stack.split('\n')[0].replace(/^Error: /, '');
 			const error = new Error(message);
 			error.stack = stack;
@@ -58,7 +58,7 @@ export const waitForReady = ({
 			internalState?.addWaitForReadyTime(performance.now() - start);
 			reject(
 				new Error(
-					Object.values(scope.remotion_delayRenderTimeouts)
+					Object.values(scope.picus_delayRenderTimeouts)
 						.map((d) => d.label)
 						.join(', '),
 				),

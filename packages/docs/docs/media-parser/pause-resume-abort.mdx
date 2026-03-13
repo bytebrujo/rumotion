@@ -4,7 +4,7 @@ id: pause-resume-abort
 title: Pause, resume and abort parsing
 sidebar_label: Pause, resume and abort
 slug: /media-parser/pause-resume-abort
-crumb: '@remotion/media-parser'
+crumb: '@picus/media-parser'
 ---
 
 :::warning
@@ -18,7 +18,7 @@ Create a [`mediaParserController()`](/docs/media-parser/media-parser-controller)
 ## Pause and resume
 
 ```tsx twoslash title="Pause and resume"
-import {mediaParserController, parseMedia} from '@remotion/media-parser';
+import {mediaParserController, parseMedia} from '@picus/media-parser';
 
 const controller = mediaParserController();
 
@@ -43,7 +43,7 @@ controller.resume();
 ## Cancel a parsing process
 
 ```tsx twoslash title="Cancel a parsing process"
-import {mediaParserController, parseMedia} from '@remotion/media-parser';
+import {mediaParserController, parseMedia} from '@picus/media-parser';
 
 const controller = mediaParserController();
 
@@ -68,7 +68,7 @@ controller.abort();
 Use the [`hasBeenAborted()`](/docs/media-parser/has-been-aborted) function to check if a parse was aborted using the `.abort()` method.
 
 ```tsx twoslash title="Checking if a parse was aborted"
-import {mediaParserController, parseMedia, hasBeenAborted} from '@remotion/media-parser';
+import {mediaParserController, parseMedia, hasBeenAborted} from '@picus/media-parser';
 
 const controller = mediaParserController();
 

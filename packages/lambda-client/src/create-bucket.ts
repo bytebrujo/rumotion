@@ -5,7 +5,7 @@ import {
 	PutBucketAclCommand,
 	PutBucketPolicyCommand,
 } from '@aws-sdk/client-s3';
-import type {ProviderSpecifics} from '@remotion/serverless-client';
+import type {ProviderSpecifics} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
 import {getS3Client} from './get-s3-client';
 
@@ -36,7 +36,7 @@ export const createBucket: ProviderSpecifics<AwsProvider>['createBucket'] =
 		} catch (err) {
 			if ((err as Error).message.includes('Access Denied')) {
 				throw new Error(
-					'Since April 2023, more AWS permissions are required to create an S3 bucket. You need to update your user policy to continue. See https://remotion.dev/docs/lambda/s3-public-access for instructions on how to resolve this issue.',
+					'Since April 2023, more AWS permissions are required to create an S3 bucket. You need to update your user policy to continue. See https://picus.dev/docs/lambda/s3-public-access for instructions on how to resolve this issue.',
 				);
 			}
 
@@ -57,7 +57,7 @@ export const createBucket: ProviderSpecifics<AwsProvider>['createBucket'] =
 		} catch (err) {
 			if ((err as Error).message.includes('Access Denied')) {
 				throw new Error(
-					'PARTIAL SUCCESS: The s3:PutBucketOwnershipControls was found, but the s3:PutBucketPublicAccessBlock permission is not given. Since April 2023, more AWS permissions are required to create an S3 bucket. You need to update your user policy to continue. You need to update your user policy to continue. See https://remotion.dev/docs/lambda/s3-public-access for instructions on how to resolve this issue.',
+					'PARTIAL SUCCESS: The s3:PutBucketOwnershipControls was found, but the s3:PutBucketPublicAccessBlock permission is not given. Since April 2023, more AWS permissions are required to create an S3 bucket. You need to update your user policy to continue. You need to update your user policy to continue. See https://picus.dev/docs/lambda/s3-public-access for instructions on how to resolve this issue.',
 				);
 			}
 
@@ -93,7 +93,7 @@ export const createBucket: ProviderSpecifics<AwsProvider>['createBucket'] =
 		} catch {
 			// eslint-disable-next-line no-console
 			console.warn(
-				'Could not apply a bucket policy to restrict public access to s3:GetObject only. Falling back to public-read ACL which also allows listing objects. To fix this, add the s3:PutBucketPolicy permission to your IAM user. See https://remotion.dev/docs/lambda/bucket-security',
+				'Could not apply a bucket policy to restrict public access to s3:GetObject only. Falling back to public-read ACL which also allows listing objects. To fix this, add the s3:PutBucketPolicy permission to your IAM user. See https://picus.dev/docs/lambda/bucket-security',
 			);
 		}
 

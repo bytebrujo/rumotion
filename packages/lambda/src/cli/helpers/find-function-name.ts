@@ -1,8 +1,8 @@
-import {AwsProvider, LambdaClientInternals} from '@remotion/lambda-client';
-import {BINARY_NAME} from '@remotion/lambda-client/constants';
-import type {LogLevel, LogOptions} from '@remotion/renderer';
-import {ProviderSpecifics} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+import {AwsProvider, LambdaClientInternals} from '@picus/lambda-client';
+import {BINARY_NAME} from '@picus/lambda-client/constants';
+import type {LogLevel, LogOptions} from '@picus/renderer';
+import {ProviderSpecifics} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 import {parsedLambdaCli} from '../args';
 import {FUNCTIONS_COMMAND} from '../commands/functions';
 import {FUNCTIONS_DEPLOY_SUBCOMMAND} from '../commands/functions/deploy';
@@ -19,11 +19,11 @@ export const findFunctionName = async ({
 	logLevel: LogLevel;
 	providerSpecifics: ProviderSpecifics<AwsProvider>;
 }) => {
-	const remotionLambdas = await providerSpecifics.getFunctions({
+	const picusLambdas = await providerSpecifics.getFunctions({
 		region: getAwsRegion(),
 		compatibleOnly: false,
 	});
-	const lambdasWithMatchingVersion = remotionLambdas.filter(
+	const lambdasWithMatchingVersion = picusLambdas.filter(
 		(l) => l.version === VERSION,
 	);
 	const logOptions: LogOptions = {
@@ -44,7 +44,7 @@ export const findFunctionName = async ({
 			);
 			Log.warn(
 				{indent: false, logLevel},
-				'Remotion relies on the naming to determine function information. This is an unsupported workflow.',
+				'Picus relies on the naming to determine function information. This is an unsupported workflow.',
 			);
 
 			if (lambdasWithMatchingVersion.length > 0) {
@@ -68,7 +68,7 @@ export const findFunctionName = async ({
 			{indent: false, logLevel},
 			`No Lambda functions with version ${VERSION} found in your account.`,
 		);
-		if (remotionLambdas.length > 0) {
+		if (picusLambdas.length > 0) {
 			Log.error(
 				{indent: false, logLevel},
 				'Other functions were found, but are not compatible with this version of the CLI.',

@@ -1,11 +1,11 @@
 import {existsSync} from 'fs';
 import path from 'path';
-import type {MandatoryLegacyBundleOptions} from '@remotion/bundler';
-import {BundlerInternals} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {BundlingState, CopyingState} from '@remotion/studio-server';
-import type {GitSource} from '@remotion/studio-shared';
+import type {MandatoryLegacyBundleOptions} from '@picus/bundler';
+import {BundlerInternals} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {BundlingState, CopyingState} from '@picus/studio-server';
+import type {GitSource} from '@picus/studio-shared';
 import {ConfigInternals} from './config';
 import {getRenderDefaults} from './get-render-defaults';
 import {Log} from './log';
@@ -18,7 +18,7 @@ import {shouldUseNonOverlayingLogger} from './should-use-non-overlaying-logger';
 
 export const bundleOnCliOrTakeServeUrl = async ({
 	fullPath,
-	remotionRoot,
+	picusRoot,
 	publicDir,
 	onProgress,
 	indentOutput,
@@ -40,7 +40,7 @@ export const bundleOnCliOrTakeServeUrl = async ({
 	shouldCache,
 }: {
 	fullPath: string;
-	remotionRoot: string;
+	picusRoot: string;
 	publicDir: string | null;
 	onProgress: (params: {
 		bundling: BundlingState;
@@ -89,7 +89,7 @@ export const bundleOnCliOrTakeServeUrl = async ({
 
 	const bundled = await bundleOnCli({
 		fullPath,
-		remotionRoot,
+		picusRoot,
 		publicDir,
 		onProgressCallback: onProgress,
 		indent: indentOutput,
@@ -119,7 +119,7 @@ export const bundleOnCliOrTakeServeUrl = async ({
 
 export const bundleOnCli = async ({
 	fullPath,
-	remotionRoot,
+	picusRoot,
 	publicDir,
 	onProgressCallback,
 	indent,
@@ -141,7 +141,7 @@ export const bundleOnCli = async ({
 	shouldCache,
 }: {
 	fullPath: string;
-	remotionRoot: string;
+	picusRoot: string;
 	publicDir: string | null;
 	onProgressCallback: (params: {
 		bundling: BundlingState;
@@ -219,7 +219,7 @@ export const bundleOnCli = async ({
 	const options: MandatoryLegacyBundleOptions = {
 		enableCaching: shouldCache,
 		webpackOverride: ConfigInternals.getWebpackOverrideFn() ?? ((f) => f),
-		rootDir: remotionRoot,
+		rootDir: picusRoot,
 		publicDir,
 		onPublicDirCopyProgress,
 		onSymlinkDetected,
@@ -235,20 +235,20 @@ export const bundleOnCli = async ({
 		entryPoint: fullPath,
 		onProgress,
 		options,
-		resolvedRemotionRoot: remotionRoot,
+		resolvedPicusRoot: picusRoot,
 		bufferStateDelayInMilliseconds,
 		maxTimelineTracks,
 		experimentalClientSideRenderingEnabled,
 		experimentalVisualModeEnabled,
 	});
 	const cacheExistedBefore = BundlerInternals.cacheExists(
-		remotionRoot,
+		picusRoot,
 		'production',
 		hash,
 	);
 	if (cacheExistedBefore !== 'does-not-exist' && !shouldCache) {
 		Log.info({indent, logLevel}, '🧹 Cache disabled but found. Deleting... ');
-		await BundlerInternals.clearCache(remotionRoot, 'production');
+		await BundlerInternals.clearCache(picusRoot, 'production');
 	}
 
 	if (cacheExistedBefore === 'other-exists' && shouldCache) {
@@ -256,7 +256,7 @@ export const bundleOnCli = async ({
 			{indent, logLevel},
 			'🧹 Webpack config change detected. Clearing cache... ',
 		);
-		await BundlerInternals.clearCache(remotionRoot, 'production');
+		await BundlerInternals.clearCache(picusRoot, 'production');
 	}
 
 	const bundleStartTime = Date.now();
@@ -307,7 +307,7 @@ export const bundleOnCli = async ({
 
 	Log.verbose({indent, logLevel}, 'Bundled under', bundled);
 	const cacheExistedAfter =
-		BundlerInternals.cacheExists(remotionRoot, 'production', hash) === 'exists';
+		BundlerInternals.cacheExists(picusRoot, 'production', hash) === 'exists';
 
 	if (cacheExistedAfter) {
 		if (

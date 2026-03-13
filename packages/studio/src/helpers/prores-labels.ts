@@ -1,4 +1,4 @@
-import type {_InternalTypes} from 'remotion';
+import type {_InternalTypes} from 'picus';
 
 export const labelProResProfile = (
 	profile: _InternalTypes['ProResProfile'],

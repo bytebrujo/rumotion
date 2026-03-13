@@ -1,5 +1,5 @@
-import type {AnyComposition, AnyZodObject} from 'remotion';
-import {Internals, getRemotionEnvironment} from 'remotion';
+import type {AnyComposition, AnyZodObject} from 'picus';
+import {Internals, getPicusEnvironment} from 'picus';
 
 export type UpdateDefaultPropsFunction = (currentValues: {
 	schema: AnyZodObject | null;
@@ -14,9 +14,9 @@ export const calcNewProps = (
 	composition: AnyComposition;
 	generatedDefaultProps: Record<string, unknown>;
 } => {
-	if (!getRemotionEnvironment().isStudio) {
+	if (!getPicusEnvironment().isStudio) {
 		throw new Error(
-			'saveDefaultProps can only be called in the Remotion Studio.',
+			'saveDefaultProps can only be called in the Picus Studio.',
 		);
 	}
 
@@ -25,7 +25,7 @@ export const calcNewProps = (
 	const compositionsStore = compositionsRef.current;
 	if (!compositionsStore) {
 		throw new Error(
-			'No compositions ref found. Are you in the Remotion Studio and are the Remotion versions aligned?',
+			'No compositions ref found. Are you in the Picus Studio and are the Picus versions aligned?',
 		);
 	}
 
@@ -40,7 +40,7 @@ export const calcNewProps = (
 	const propsStore = editorPropsProviderRef.current;
 	if (!propsStore) {
 		throw new Error(
-			'No props store found. Are you in the Remotion Studio and are the Remotion versions aligned?',
+			'No props store found. Are you in the Picus Studio and are the Picus versions aligned?',
 		);
 	}
 

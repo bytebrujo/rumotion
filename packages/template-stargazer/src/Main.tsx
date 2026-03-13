@@ -1,4 +1,4 @@
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig } from "picus";
 import { z } from "zod";
 import { Stargazer } from "./cache";
 import { Content } from "./Content";

@@ -1,11 +1,11 @@
 import {
   getRenderProgress,
   speculateFunctionName,
-} from "@remotion/lambda/client";
+} from "@picus/lambda/client";
 import { ActionFunction } from "react-router";
 import { errorAsJson } from "./lib/return-error-as-json";
-import { ProgressRequest, ProgressResponse } from "./remotion/schemata";
-import { DISK, RAM, REGION, TIMEOUT } from "./remotion/constants.mjs";
+import { ProgressRequest, ProgressResponse } from "./picus/schemata";
+import { DISK, RAM, REGION, TIMEOUT } from "./picus/constants.mjs";
 
 export const action: ActionFunction = errorAsJson(
   async ({ request }): Promise<ProgressResponse> => {

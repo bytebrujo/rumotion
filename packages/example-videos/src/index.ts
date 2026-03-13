@@ -89,7 +89,7 @@ export const exampleVideos = {
 		docsPackage,
 		'static',
 		'documents',
-		'RemotionSeedFundingPressRelease.pdf',
+		'PicusSeedFundingPressRelease.pdf',
 	),
 	unknown: __filename,
 	unevendim: path.join(__dirname, '..', 'videos', 'unevendim.webm'),

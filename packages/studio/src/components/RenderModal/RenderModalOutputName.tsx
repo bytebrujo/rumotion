@@ -1,6 +1,6 @@
 import React from 'react';
 import {Column, Spacing} from '../layout';
-import {RemotionInput} from '../NewComposition/RemInput';
+import {PicusInput} from '../NewComposition/RemInput';
 import {ValidationMessage} from '../NewComposition/ValidationMessage';
 import {label, optionRow, rightRow} from './layout';
 
@@ -28,7 +28,7 @@ export const RenderModalOutputName = ({
 			</Column>
 			<div style={rightRow}>
 				<div>
-					<RemotionInput
+					<PicusInput
 						status={validationMessage ? 'error' : existence ? 'warning' : 'ok'}
 						style={inputStyle}
 						type="text"

@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -13,7 +13,7 @@ test('Should skip media data if just wanting header', async () => {
 			internalStats: true,
 			container: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(name).toEqual('example.avi');
@@ -33,7 +33,7 @@ test('Should skip media data if just wanting dimensions', async () => {
 			dimensions: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(internalStats).toEqual({
@@ -54,7 +54,7 @@ test('Should skip if just a video track is requested', async () => {
 		onVideoTrack: () => {
 			return null;
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(internalStats).toEqual({
@@ -76,7 +76,7 @@ test('Should not skip if just a video track is requested', async () => {
 		onVideoTrack: () => {
 			return () => undefined;
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(internalStats).toEqual({

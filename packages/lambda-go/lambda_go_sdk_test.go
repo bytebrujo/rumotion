@@ -7,14 +7,14 @@ import (
 )
 
 func TestPrintVersion(t *testing.T) {
-	payload, err := constructRenderInternals(&RemotionOptions{
+	payload, err := constructRenderInternals(&PicusOptions{
 		Region:       "us-east-1",
 		Composition:  "react-svg",
-		FunctionName: "remotion-render",
+		FunctionName: "picus-render",
 		ServeUrl:     "testbed",
 		Codec:        "h264",
 		Metadata: map[string]string{
-			"Author": "Remotion",
+			"Author": "Picus",
 		},
 	})
 	if err != nil {

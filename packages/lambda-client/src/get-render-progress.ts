@@ -1,5 +1,5 @@
-import type {CustomCredentials, LogLevel} from '@remotion/serverless-client';
-import {getProgress, ServerlessRoutines} from '@remotion/serverless-client';
+import type {CustomCredentials, LogLevel} from '@picus/serverless-client';
+import {getProgress, ServerlessRoutines} from '@picus/serverless-client';
 import {awsImplementation, type AwsProvider} from './aws-provider';
 import type {RenderProgress} from './constants';
 import {getRenderProgressPayload} from './make-lambda-payload';
@@ -21,7 +21,7 @@ export type GetRenderProgressInput = {
 
 /*
  * @description Gets the current status of a render originally triggered via renderMediaOnLambda().
- * @see [Documentation](https://remotion.dev/docs/lambda/getrenderprogress)
+ * @see [Documentation](https://picus.dev/docs/lambda/getrenderprogress)
  */
 export const getRenderProgress = async (
 	input: GetRenderProgressInput,
@@ -31,7 +31,7 @@ export const getRenderProgress = async (
 		if (!parsed) {
 			throw new Error(
 				[
-					`The function name ${input.functionName} does not adhere to the function name convention (https://www.remotion.dev/docs/lambda/naming-convention).`,
+					`The function name ${input.functionName} does not adhere to the function name convention (https://www.picus.dev/docs/lambda/naming-convention).`,
 					'Cannot determine memory and disk size from the function name.',
 					'You must call getRenderProgress with `skipLambdaInvocation` set to false.',
 				].join('\n'),

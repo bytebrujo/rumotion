@@ -1,5 +1,5 @@
 import {mix} from 'polished';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'picus';
 import {BLUE} from './colors';
 
 export const Arc: React.FC<{

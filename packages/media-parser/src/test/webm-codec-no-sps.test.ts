@@ -1,12 +1,12 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
 test('webm with codec derived from SPS', async () => {
 	await parseMedia({
 		src: exampleVideos.webmCodecDerivedFromSps,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			tracks: true,
 		},

@@ -1,6 +1,6 @@
 import { put } from "@vercel/blob";
-import { addBundleToSandbox, createSandbox } from "@remotion/vercel";
-import { bundleRemotionProject } from "./src/app/api/render/helpers";
+import { addBundleToSandbox, createSandbox } from "@picus/vercel";
+import { bundlePicusProject } from "./src/app/api/render/helpers";
 
 const getSnapshotBlobKey = () =>
   `snapshot-cache/${process.env.VERCEL_DEPLOYMENT_ID ?? "local"}.json`;
@@ -12,9 +12,9 @@ const sandbox = await createSandbox({
   },
 });
 
-console.log("[create-snapshot] Adding Remotion bundle...");
-bundleRemotionProject(".remotion");
-await addBundleToSandbox({ sandbox, bundleDir: ".remotion" });
+console.log("[create-snapshot] Adding Picus bundle...");
+bundlePicusProject(".picus");
+await addBundleToSandbox({ sandbox, bundleDir: ".picus" });
 
 console.log("[create-snapshot] Taking snapshot...");
 const snapshot = await sandbox.snapshot({ expiration: 0 });

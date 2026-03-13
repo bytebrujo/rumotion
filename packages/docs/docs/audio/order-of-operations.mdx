@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {AvailableFrom} from '../../src/components/AvailableFrom';
 
-Since Remotion v4.0.141, the order of operations is guaranteed to be the following for `<Video>`, `<Audio>`, `<Html5Audio>`, `<Html5Video>` and `<OffthreadVideo>`, :
+Since Picus v4.0.141, the order of operations is guaranteed to be the following for `<Video>`, `<Audio>`, `<Html5Audio>`, `<Html5Video>` and `<OffthreadVideo>`, :
 
 1. Trim audio (using [`trimBefore`](/docs/html5-audio#trimbefore--trimafter)).
 2. Offset audio (by putting it in a [`<Sequence>`](/docs/sequence)).
@@ -24,4 +24,4 @@ Example for a 30 FPS composition which is 60 frames long:
 4. The composition is 60 frames long, so the audio must stop at the 3.5 second mark:
    > (comp_duration - offset) \* playback_rate + start_from  
    > (60 - 30) \* 2 + 45 => frame 105 or the 3.5 second mark
-5. Result: The section of 1.5sec - 3.5sec gets cut out of the audio and is played in the Remotion timeline between frames 30 and 59 at 2x speed.
+5. Result: The section of 1.5sec - 3.5sec gets cut out of the audio and is played in the Picus timeline between frames 30 and 59 at 2x speed.

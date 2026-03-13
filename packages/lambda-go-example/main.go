@@ -8,7 +8,7 @@ import (
 
 	"github.com/go-playground/validator/v10"
 	"github.com/joho/godotenv"
-	"github.com/remotion-dev/lambda_go_sdk"
+	"github.com/picus-dev/lambda_go_sdk"
 )
 
 type ValidationError struct {
@@ -34,14 +34,14 @@ func main() {
 	}
 
 	// Specify the URL to your Webpack bundle
-	serveUrl := os.Getenv("REMOTION_APP_SERVE_URL")
+	serveUrl := os.Getenv("PICUS_APP_SERVE_URL")
 	// Specify the function you would like to call
-	functionName := os.Getenv("REMOTION_APP_FUNCTION_NAME")
+	functionName := os.Getenv("PICUS_APP_FUNCTION_NAME")
 	// Specify the region you deployed to, for example "us-east-1"
-	region := os.Getenv("REMOTION_APP_REGION")
+	region := os.Getenv("PICUS_APP_REGION")
 
 	// Set parameters for render
-	renderInputRequest := lambda_go_sdk.RemotionOptions{
+	renderInputRequest := lambda_go_sdk.PicusOptions{
 		ServeUrl:     serveUrl,
 		FunctionName: functionName,
 		Region:       region,

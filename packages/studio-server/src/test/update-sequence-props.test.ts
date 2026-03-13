@@ -2,9 +2,9 @@ import {expect, test} from 'bun:test';
 import {updateSequenceProps} from '../codemods/update-sequence-props';
 import {lineColumnToNodePath} from './test-utils';
 
-const lightLeakInput = `import {LightLeak} from '@remotion/light-leaks';
+const lightLeakInput = `import {LightLeak} from '@picus/light-leaks';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const LightLeakExample: React.FC = () => {
 	return (

@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {type SequenceControls, type SequenceSchema} from 'remotion';
+import {type SequenceControls, type SequenceSchema} from 'picus';
 import {
 	AbsoluteFill,
 	Internals,
@@ -10,7 +10,7 @@ import {
 	type AbsoluteFillLayout,
 	type LayoutAndStyle,
 	type SequenceProps,
-} from 'remotion';
+} from 'picus';
 
 export type LightLeakProps = Omit<
 	SequenceProps,
@@ -232,7 +232,7 @@ const LightLeakCanvas: React.FC<{
 
 /*
  * @description Renders a WebGL-based light leak effect as a Sequence.
- * @see [Documentation](https://www.remotion.dev/docs/light-leaks/light-leak)
+ * @see [Documentation](https://www.picus.dev/docs/light-leaks/light-leak)
  */
 const lightLeakSchema = {
 	seed: {type: 'number', default: 0, description: 'Seed'},

@@ -3,8 +3,8 @@ import type {
 	PixelFormat,
 	StillImageFormat,
 	VideoImageFormat,
-} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import type {ChangeEvent} from 'react';
 import React, {useCallback, useMemo} from 'react';
 import {Checkmark} from '../../icons/Checkmark';
@@ -13,7 +13,7 @@ import {Spacing} from '../layout';
 import {VERTICAL_SCROLLBAR_CLASSNAME} from '../Menu/is-menu-item';
 import type {ComboboxValue} from '../NewComposition/ComboBox';
 import {Combobox} from '../NewComposition/ComboBox';
-import {RemotionInput} from '../NewComposition/RemInput';
+import {PicusInput} from '../NewComposition/RemInput';
 import type {SegmentedControlItem} from '../SegmentedControl';
 import {SegmentedControl} from '../SegmentedControl';
 import {CrfSetting} from './CrfSetting';
@@ -222,7 +222,7 @@ export const RenderModalPicture: React.FC<{
 
 					<div style={rightRow}>
 						<div>
-							<RemotionInput
+							<PicusInput
 								style={input}
 								value={customTargetVideoBitrate}
 								onChange={onTargetVideoBitrateChanged}
@@ -254,7 +254,7 @@ export const RenderModalPicture: React.FC<{
 							<div style={label}>-bufsize value</div>
 							<div style={rightRow}>
 								<div>
-									<RemotionInput
+									<PicusInput
 										style={input}
 										value={encodingBufferSize}
 										onChange={onEncodingBufferSizeChanged}
@@ -284,7 +284,7 @@ export const RenderModalPicture: React.FC<{
 							<div style={label}>-maxrate value</div>
 							<div style={rightRow}>
 								<div>
-									<RemotionInput
+									<PicusInput
 										style={input}
 										value={encodingMaxRate}
 										onChange={onEncodingMaxRateChanged}

@@ -24,7 +24,7 @@ The body that was received by the endpoint - takes a parsed JSON object, not a `
 
 ### `signatureHeader`
 
-The `X-Remotion-Signature` header from the request that was received by the endpoint.
+The `X-Picus-Signature` header from the request that was received by the endpoint.
 
 ## Example
 
@@ -39,13 +39,13 @@ type NextApiResponse = {
   status: (code: number) => {json: (body: object) => void};
 };
 // ---cut---
-import {validateWebhookSignature, WebhookPayload} from '@remotion/lambda/client';
+import {validateWebhookSignature, WebhookPayload} from '@picus/lambda/client';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   validateWebhookSignature({
     secret: process.env.WEBHOOK_SECRET as string,
     body: req.body,
-    signatureHeader: req.headers['x-remotion-signature'] as string,
+    signatureHeader: req.headers['x-picus-signature'] as string,
   });
 
   // If code reaches this path, the webhook is authentic.
@@ -67,4 +67,4 @@ See [Webhooks](/docs/lambda/webhooks) for an Express example.
 ## See also
 
 - [Webhooks](/docs/lambda/webhooks)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/validate-webhook-signature.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/validate-webhook-signature.ts)

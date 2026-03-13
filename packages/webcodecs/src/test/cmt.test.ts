@@ -9,5 +9,5 @@ const reference = new Uint8Array([
 ]);
 
 test('create cmt', () => {
-	expect(createCmt('Made with Remotion 4.0.227')).toEqual(reference);
+	expect(createCmt('Made with Picus 4.0.227')).toEqual(reference);
 });

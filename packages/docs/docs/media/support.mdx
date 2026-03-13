@@ -2,10 +2,10 @@
 image: /generated/articles-docs-media-support.png
 title: Supported media
 sidebar_label: Supported media
-crumb: '@remotion/media'
+crumb: '@picus/media'
 ---
 
-The new [`<Audio>`](/docs/media/audio) and [`<Video>`](/docs/media/video) tags from `@remotion/media` are based on [Mediabunny](https://mediabunny.dev) and WebCodecs.
+The new [`<Audio>`](/docs/media/audio) and [`<Video>`](/docs/media/video) tags from `@picus/media` are based on [Mediabunny](https://mediabunny.dev) and WebCodecs.
 
 ## CORS
 
@@ -25,6 +25,6 @@ Prefer non-Matroska-based files (`.mp4`, `.mov`, `.m4a`) when you are doing dist
 
 ## Fallback to `<OffthreadVideo>`
 
-If a media file cannot be decoded, be it because of an unsupported codec or because it does not support CORS, or it has an alpha channel and the browser does not support WebGL which is required to decode the alpha channel, then `@remotion/media` automatically falls back to [`<OffthreadVideo>`](/docs/offthreadvideo) or [`<Html5Audio>`](/docs/html5-audio) from the [`remotion`](/docs/remotion) package.
+If a media file cannot be decoded, be it because of an unsupported codec or because it does not support CORS, or it has an alpha channel and the browser does not support WebGL which is required to decode the alpha channel, then `@picus/media` automatically falls back to [`<OffthreadVideo>`](/docs/offthreadvideo) or [`<Html5Audio>`](/docs/html5-audio) from the [`picus`](/docs/picus) package.
 
-See: [Fallback from `@remotion/media` to `<OffthreadVideo>` or `<Html5Audio>`](/docs/media/fallback)
+See: [Fallback from `@picus/media` to `<OffthreadVideo>` or `<Html5Audio>`](/docs/media/fallback)

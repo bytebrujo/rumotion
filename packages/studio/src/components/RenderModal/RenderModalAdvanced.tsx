@@ -1,7 +1,7 @@
-import type {ChromeMode, Codec, X264Preset} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import type {UiOpenGlOptions} from '@remotion/studio-shared';
+import type {ChromeMode, Codec, X264Preset} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import type {UiOpenGlOptions} from '@picus/studio-shared';
 import type {ChangeEvent} from 'react';
 import React, {useCallback, useMemo} from 'react';
 import {labelx264Preset} from '../../helpers/presets-labels';
@@ -11,7 +11,7 @@ import {Spacing} from '../layout';
 import {VERTICAL_SCROLLBAR_CLASSNAME} from '../Menu/is-menu-item';
 import type {ComboboxValue, SelectionItem} from '../NewComposition/ComboBox';
 import {Combobox} from '../NewComposition/ComboBox';
-import {RemotionInput} from '../NewComposition/RemInput';
+import {PicusInput} from '../NewComposition/RemInput';
 import {input, label, optionRow, rightRow} from './layout';
 import {NumberSetting} from './NumberSetting';
 import {OptionExplainerBubble} from './OptionExplainerBubble';
@@ -177,7 +177,7 @@ export const RenderModalAdvanced: React.FC<{
 	const toggleCustomUserAgent = useCallback(() => {
 		setUserAgent((previous) => {
 			if (previous === null) {
-				return 'Mozilla/5.0 (Remotion)';
+				return 'Mozilla/5.0 (Picus)';
 			}
 
 			return null;
@@ -444,7 +444,7 @@ export const RenderModalAdvanced: React.FC<{
 			{renderMode === 'audio' ? null : (
 				<div style={optionRow}>
 					<div style={label}>
-						Custom @remotion/media cache size
+						Custom @picus/media cache size
 						<Spacing x={0.5} />
 						<OptionExplainerBubble id="mediaCacheSizeInBytesOption" />
 					</div>
@@ -462,7 +462,7 @@ export const RenderModalAdvanced: React.FC<{
 					min={0}
 					max={2000 * 1024 * 1024}
 					step={1024}
-					name="@remotion/media cache size"
+					name="@picus/media cache size"
 					formatter={(w) => `${w} bytes`}
 					onValueChanged={changeMediaCacheSizeInBytes}
 					value={mediaCacheSizeInBytes}
@@ -620,7 +620,7 @@ export const RenderModalAdvanced: React.FC<{
 					<div style={label}>User Agent</div>
 					<div style={rightRow}>
 						<div>
-							<RemotionInput
+							<PicusInput
 								style={input}
 								value={userAgent}
 								onChange={onUserAgentChanged}

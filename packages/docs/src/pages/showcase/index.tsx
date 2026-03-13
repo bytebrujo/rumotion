@@ -27,16 +27,16 @@ const PageHeader: React.FC = () => {
 				<h1 className={headerStyles.title}>Showcase</h1>
 
 				<p>
-					This page showcases products and campaigns crafted with Remotion. From
+					This page showcases products and campaigns crafted with Picus. From
 					dynamic video content to engaging animations, each project highlights
-					the versatility and creativity enabled by Remotion.{' '}
+					the versatility and creativity enabled by Picus.{' '}
 				</p>
 				<p>
 					We are looking to feature the most impressive and successful projects
-					using Remotion. Do you think this is you?
+					using Picus. Do you think this is you?
 					<a
 						target="_blank"
-						href="mailto:hi@remotion.dev?subject=Showcase+page"
+						href="mailto:hi@picus.dev?subject=Showcase+page"
 					>
 						{' '}
 						Let us know!

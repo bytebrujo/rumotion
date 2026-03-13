@@ -1,4 +1,4 @@
-import {formatBytes} from '@remotion/studio-shared';
+import {formatBytes} from '@picus/studio-shared';
 import React from 'react';
 import {LIGHT_TEXT} from '../../helpers/colors';
 import {Spacing} from '../layout';

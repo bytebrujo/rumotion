@@ -15,13 +15,13 @@ To deploy a function, use [`deployFunction()`](/docs/lambda/deployfunction).
 ## Example
 
 ```ts twoslash
-import {getFunctionInfo} from '@remotion/lambda';
+import {getFunctionInfo} from '@picus/lambda';
 
 const info = await getFunctionInfo({
-  functionName: 'remotion-render-d7nd2a9f',
+  functionName: 'picus-render-d7nd2a9f',
   region: 'eu-central-1',
 });
-console.log(info.functionName); // remotion-render-d7nd2a9f
+console.log(info.functionName); // picus-render-d7nd2a9f
 console.log(info.memorySizeInMb); // 1500
 console.log(info.diskSizeInMb); // 2048
 console.log(info.version); // '2021-07-14'
@@ -63,7 +63,7 @@ The name of the function.
 
 ### `version`
 
-The version of the function. Remotion is versioning the Lambda function and a render can only be triggered from a version of `@remotion/lambda` that is matching the one of the function.
+The version of the function. Picus is versioning the Lambda function and a render can only be triggered from a version of `@picus/lambda` that is matching the one of the function.
 
 ### `timeoutInSeconds`
 
@@ -71,7 +71,7 @@ The timeout that has been assigned to the Lambda function.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/get-function-info.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/get-function-info.ts)
 - [`getFunctions()`](/docs/lambda/getfunctions)
 - [`deployFunction()`](/docs/lambda/deployfunction)
 - [`deleteFunction()`](/docs/lambda/deletefunction)

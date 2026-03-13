@@ -9,8 +9,8 @@ export const Layout = ({children}: {readonly children: React.ReactNode}) => {
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<title>Remotion Convert</title>
-				<meta name="description" content="Remotion Convert" />
+				<title>Picus Convert</title>
+				<meta name="description" content="Picus Convert" />
 				<link rel="icon" href={DEFAULT_FAVICON} />
 				<link
 					rel="manifest"

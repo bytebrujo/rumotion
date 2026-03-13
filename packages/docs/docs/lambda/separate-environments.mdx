@@ -8,7 +8,7 @@ slug: /lambda/separate-environments
 
 The code that is inside the Lambda function is always the same, no matter if you are calling it from a local, staging or production environment.
 
-Also, each render executed with Remotion Lambda is completely isolated from another, in terms of compute and storage.
+Also, each render executed with Picus Lambda is completely isolated from another, in terms of compute and storage.
 
 ## Functions
 
@@ -17,7 +17,7 @@ Each Lambda function has a configuration that determines its unique name:
 - Timeout
 - Memory size
 - Disk size
-- Remotion version
+- Picus version
 
 If you have the same configuration in different environments, you can safely re-use the same function since each execution is isolated – in fact, duplicating the function is not supported because it achieves nothing.
 
@@ -27,14 +27,14 @@ You don't incur any costs for functions that are deployed but not used.
 
 ## Sites
 
-We recommend to scope the site to a specific environment using [`--site-name`](/docs/lambda/cli/sites/create#--site-name) when creating a site. For example, use `--site-name=remotion-production` and `--site-name=remotion-staging`.
+We recommend to scope the site to a specific environment using [`--site-name`](/docs/lambda/cli/sites/create#--site-name) when creating a site. For example, use `--site-name=picus-production` and `--site-name=picus-staging`.
 
-A site contains your React / Remotion code and might change frequently.  
-Make sure to update your site whenever you make changes to your code or upgrade Remotion, and to not use the site for other environments if they differ.
+A site contains your React / Picus code and might change frequently.  
+Make sure to update your site whenever you make changes to your code or upgrade Picus, and to not use the site for other environments if they differ.
 
 ## Buckets
 
-Just one bucket per region can be used for Remotion Lambda, but the resources in it can be scoped.
+Just one bucket per region can be used for Picus Lambda, but the resources in it can be scoped.
 
 A bucket contains 2 folders:
 
@@ -52,8 +52,8 @@ The sites must be public because they are accessed via HTTP.
 
 ### Why can't I rename the function?
 
-- The [`npx remotion lambda render`](/docs/lambda/cli/render) command looks for functions that match this convention.
-- With the default user policy, Remotion Lambda restricts itself from accessing functions that don't match this convention.
+- The [`npx picus lambda render`](/docs/lambda/cli/render) command looks for functions that match this convention.
+- With the default user policy, Picus Lambda restricts itself from accessing functions that don't match this convention.
 - You can use the [`speculateFunctionName()`](/docs/lambda/speculatefunctionname) function save one API call.
 - The function is more likely to be warm from a previous invocation if you only have 1 function with the same configuration.
 - There is no benefit to renaming the function.
@@ -63,7 +63,7 @@ The sites must be public because they are accessed via HTTP.
 A function is not tied to a project.
 
 Each function is a binary that contains the same code.  
-Every Remotion Lambda user runs the exact same code in their function.
+Every Picus Lambda user runs the exact same code in their function.
 
 The React code you write is not contained in the function, it is hosted on the Serve URL.
 
@@ -72,7 +72,7 @@ Each function invocation is isolated and they cannot conflict each other. There 
 ### I need to separate production, staging and development
 
 Function invocations don't conflict each other.  
-Functions also don't contain any code that you write, they are binary and every Remotion Lambda user runs the exact same code.
+Functions also don't contain any code that you write, they are binary and every Picus Lambda user runs the exact same code.
 
 It is impossible for a bad staging deployment to affect the production function.  
 Therefore, we recommend to use the same function for all environments.
@@ -86,10 +86,10 @@ It is only not possible to have multiple functions that share the exact same con
 - RAM
 - Region
 - Disk size
-- Remotion version
+- Picus version
 
 To distinguish which function should be used, pass the function name explicitly to [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda).  
-You can pass [`--function-name`](/docs/lambda/cli/render#--function-name) to [`npx remotion lambda render`](/docs/lambda/cli/render)
+You can pass [`--function-name`](/docs/lambda/cli/render#--function-name) to [`npx picus lambda render`](/docs/lambda/cli/render)
 
 ### I want to deploy multiple projects
 
@@ -105,4 +105,4 @@ Therefore there is no benefit in having multiple identical functions in the same
 ## See also
 
 - [Function naming convention](/docs/lambda/naming-convention)
-- [Upgrading Remotion Lambda](/docs/lambda/upgrading)
+- [Upgrading Picus Lambda](/docs/lambda/upgrading)

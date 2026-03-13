@@ -1,6 +1,6 @@
 import {mix} from 'polished';
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 const makeSquircle = (w = 100, h = 100, curvature = 0.5): string => {
 	const curveWidth = (w / 2) * (1 - curvature);

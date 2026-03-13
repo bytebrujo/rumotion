@@ -5,7 +5,7 @@ import {
 	random,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const gradients = [
 	['#845ec2', '#ff5e78'],
@@ -144,7 +144,7 @@ const DropDots: React.FC<{
 									marginLeft: d.size * 0.05,
 									opacity: 0.55,
 								}}
-								src="https://github.com/remotion-dev/brand/blob/main/withouttitle/element-0.png?raw=true"
+								src="https://github.com/picus-dev/brand/blob/main/withouttitle/element-0.png?raw=true"
 							/>
 						</div>
 					</div>

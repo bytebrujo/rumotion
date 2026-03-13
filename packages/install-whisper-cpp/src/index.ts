@@ -14,7 +14,7 @@ import {convertToCaptions as deprecatedConvertToCaptions} from './convert-to-cap
 
 /**
  *
- * @deprecated convertToCaptions() has been deprecated as of Remotion v4.0.216.
+ * @deprecated convertToCaptions() has been deprecated as of Picus v4.0.216.
  * Use the toCaptions() function instead.
  */
 export const convertToCaptions = deprecatedConvertToCaptions;

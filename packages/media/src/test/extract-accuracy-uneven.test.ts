@@ -17,7 +17,7 @@ test('Extract accuracy over 100 frames with playback rate 1.75', async () => {
 			fps: FPS,
 			logLevel: 'info',
 			loop: false,
-			src: 'https://remotion.media/video.mp4',
+			src: 'https://picus.media/video.mp4',
 			trimBefore: undefined,
 			trimAfter: undefined,
 			maxCacheSize: getMaxVideoCacheSize('info'),

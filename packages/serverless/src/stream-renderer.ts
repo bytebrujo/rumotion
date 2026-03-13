@@ -1,17 +1,17 @@
 import {writeFileSync} from 'fs';
 import {join} from 'path';
-import type {EmittedArtifact, LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {EmittedArtifact, LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	CloudProvider,
 	OnMessage,
 	ProviderSpecifics,
 	ServerlessPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	deserializeArtifact,
 	ServerlessRoutines,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import type {OverallProgressHelper} from './overall-render-progress';
 import type {InsideFunctionSpecifics} from './provider-implementation';
 
@@ -123,7 +123,7 @@ const streamRenderer = <Provider extends CloudProvider>({
 				if (alreadyExisted) {
 					return resolve({
 						type: 'error',
-						error: `Chunk ${payload.chunk} emitted an asset filename ${message.payload.artifact.filename} at frame ${message.payload.artifact.frame} but there is already another artifact with the same name. https://remotion.dev/docs/artifacts`,
+						error: `Chunk ${payload.chunk} emitted an asset filename ${message.payload.artifact.filename} at frame ${message.payload.artifact.frame} but there is already another artifact with the same name. https://picus.dev/docs/artifacts`,
 						shouldRetry: false,
 					});
 				}

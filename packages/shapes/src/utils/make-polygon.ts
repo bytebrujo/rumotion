@@ -1,10 +1,10 @@
-import type {Instruction} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
 import {
 	PathInternals,
 	reduceInstructions,
 	resetPath,
 	serializeInstructions,
-} from '@remotion/paths';
+} from '@picus/paths';
 import {joinPoints} from './join-points';
 import type {ShapeInfo} from './shape-info';
 

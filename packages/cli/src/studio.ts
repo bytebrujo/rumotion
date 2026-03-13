@@ -1,6 +1,6 @@
-import type {LogLevel} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {StudioServerInternals} from '@remotion/studio-server';
+import type {LogLevel} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {StudioServerInternals} from '@picus/studio-server';
 import {ConfigInternals} from './config';
 import {convertEntryPointToServeUrl} from './convert-entry-point-to-serve-url';
 import {findEntryPoint} from './entry-point';
@@ -38,13 +38,13 @@ const {
 } = BrowserSafeApis.options;
 
 export const studioCommand = async (
-	remotionRoot: string,
+	picusRoot: string,
 	args: string[],
 	logLevel: LogLevel,
 ) => {
 	const {file, reason} = findEntryPoint({
 		args,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		allowDirectory: false,
 	});
@@ -60,12 +60,12 @@ export const studioCommand = async (
 	if (!file) {
 		Log.error(
 			{indent: false, logLevel},
-			'No Remotion entrypoint was found. Specify an additional argument manually:',
+			'No Picus entrypoint was found. Specify an additional argument manually:',
 		);
-		Log.error({indent: false, logLevel}, '  npx remotion studio src/index.ts');
+		Log.error({indent: false, logLevel}, '  npx picus studio src/index.ts');
 		Log.error(
 			{indent: false, logLevel},
-			'See https://www.remotion.dev/docs/register-root for more information.',
+			'See https://www.picus.dev/docs/register-root for more information.',
 		);
 		process.exit(1);
 	}
@@ -112,7 +112,7 @@ export const studioCommand = async (
 	if (experimentalClientSideRenderingEnabled) {
 		Log.warn(
 			{indent: false, logLevel},
-			'Enabling WIP client-side rendering. Please see caveats on https://www.remotion.dev/docs/client-side-rendering/.',
+			'Enabling WIP client-side rendering. Please see caveats on https://www.picus.dev/docs/client-side-rendering/.',
 		);
 	}
 
@@ -136,7 +136,7 @@ export const studioCommand = async (
 		commandLine: parsedCli,
 	}).value;
 
-	const gitSource = getGitSource({remotionRoot, disableGitSource, logLevel});
+	const gitSource = getGitSource({picusRoot, disableGitSource, logLevel});
 
 	const useRspack = rspackOption.getValue({commandLine: parsedCli}).value;
 
@@ -156,7 +156,7 @@ export const studioCommand = async (
 	}
 
 	const result = await StudioServerInternals.startStudio({
-		previewEntry: require.resolve('@remotion/studio/previewEntry'),
+		previewEntry: require.resolve('@picus/studio/previewEntry'),
 		browserArgs: parsedCli['browser-args'],
 		browserFlag: browserOption.getValue({commandLine: parsedCli}).value ?? '',
 		logLevel,
@@ -169,7 +169,7 @@ export const studioCommand = async (
 		experimentalClientSideRenderingEnabled,
 		experimentalVisualModeEnabled: useVisualMode,
 		maxTimelineTracks: ConfigInternals.getMaxTimelineTracks(),
-		remotionRoot,
+		picusRoot,
 		relativePublicDir,
 		webpackOverride: ConfigInternals.getWebpackOverrideFn(),
 		poll: webpackPollOption.getValue({commandLine: parsedCli}).value,
@@ -202,5 +202,5 @@ export const studioCommand = async (
 	}
 
 	// If the server is restarted through the UI, let's do the whole thing again.
-	await studioCommand(remotionRoot, args, logLevel);
+	await studioCommand(picusRoot, args, logLevel);
 };

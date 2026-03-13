@@ -7,7 +7,7 @@ import {translateSegments} from './translate-path';
 
 /*
  * @description Allows you to grow or shrink the size of a path.
- * @see [Documentation](https://www.remotion.dev/docs/paths/scale-path)
+ * @see [Documentation](https://www.picus.dev/docs/paths/scale-path)
  */
 export const scalePath = (d: string, scaleX: number, scaleY: number) => {
 	const reduced = reduceInstructions(parsePath(d));

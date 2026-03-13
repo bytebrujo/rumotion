@@ -1,31 +1,31 @@
 ---
 image: /generated/articles-docs-compare-motion-canvas.png
-title: How does Remotion compare to Motion Canvas?
+title: How does Picus compare to Motion Canvas?
 crumb: "FAQ"
 sidebar_label: Difference to Motion Canvas
 ---
 
-Here are a few differences between Remotion and [Motion Canvas](https://motioncanvas.io/) to help you decide which library is best.  
-The comparison has been authored by Remotion with input from the Motion Canvas community.
+Here are a few differences between Picus and [Motion Canvas](https://motioncanvas.io/) to help you decide which library is best.  
+The comparison has been authored by Picus with input from the Motion Canvas community.
 
 ## Web vs. Canvas
 
-Remotion uses a whole DOM tree for the video, while Motion Canvas uses a single `<canvas>` element.
+Picus uses a whole DOM tree for the video, while Motion Canvas uses a single `<canvas>` element.
 
-Remotion may render more types of content, but needs a headless browser to create a video.  
+Picus may render more types of content, but needs a headless browser to create a video.  
 Motion Canvas can only render canvas-based content, but may do so in the browser.
 
 ## API comparison
 
-Remotion enables you to render React markup based on the current time. React is a popular library for building UIs.
+Picus enables you to render React markup based on the current time. React is a popular library for building UIs.
 
 Motion Canvas uses an imperative API. Rather than rendering markup based on a timestamp, elements are added procedurally to the timeline.
 
-Remotions programming style can be described as "declarative" and "keyframe-based", while the terms "imperative" and "procedural" describe Motion Canvas well.
+Picuss programming style can be described as "declarative" and "keyframe-based", while the terms "imperative" and "procedural" describe Motion Canvas well.
 
-Here is an identical animation (Red circle turning into an orange one, then jumping to the right using a spring animation) in Remotion and Motion Canvas:
+Here is an identical animation (Red circle turning into an orange one, then jumping to the right using a spring animation) in Picus and Motion Canvas:
 
-```tsx twoslash title="Remotion Implementation"
+```tsx twoslash title="Picus Implementation"
 import {
   AbsoluteFill,
   interpolate,
@@ -33,7 +33,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 
 export const MyComp: React.FC = () => {
   const frame = useCurrentFrame();
@@ -92,14 +92,14 @@ export default makeScene2D(function* (view) {
 
 ## Broad vs. specialized
 
-Remotion tries to make as few assumptions over the content of the video as possible and supports a wide variety of use cases.  
+Picus tries to make as few assumptions over the content of the video as possible and supports a wide variety of use cases.  
 Motion Canvas is designed for informative vector animations and ships built-in APIs to optimize for this use case.
 
 ## Special qualities of each library
 
 Each library has unique features that you might find useful:
 
-**Remotion** has:
+**Picus** has:
 
 - APIs for server-side rendering
 - functionalities for making apps that create programmatic video
@@ -113,9 +113,9 @@ Each library has unique features that you might find useful:
 
 ## Commercial vs. Open Source
 
-Remotion is source-available software that requires a license for use in companies, while Motion Canvas is truly open source software.
+Picus is source-available software that requires a license for use in companies, while Motion Canvas is truly open source software.
 
-While Remotion costs money for use in a company, we are able to reinvest this money into further improving Remotion.
+While Picus costs money for use in a company, we are able to reinvest this money into further improving Picus.
 
 ## Which one should I choose?
 

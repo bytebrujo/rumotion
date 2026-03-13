@@ -1,7 +1,7 @@
 import {execSync} from 'child_process';
 import {colorCode} from './colorCodes.mjs';
 /****************************************
- * Splash screen for Remotion Cloud Run
+ * Splash screen for Picus Cloud Run
  ****************************************/
 
 export function cloudRunSplashScreen() {
@@ -11,7 +11,7 @@ export function cloudRunSplashScreen() {
 			stdio: 'inherit',
 		},
 	);
-	execSync('echo "    GCP project setup for Remotion Cloud Run    "', {
+	execSync('echo "    GCP project setup for Picus Cloud Run    "', {
 		stdio: 'inherit',
 	});
 	execSync(

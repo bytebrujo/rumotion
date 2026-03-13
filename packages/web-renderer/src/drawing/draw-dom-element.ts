@@ -16,7 +16,7 @@ const getReadableImageError = (
 			`Could not draw image with src="${node.src}" to canvas: ` +
 				`The image is tainted due to CORS restrictions. ` +
 				`The server hosting this image must respond with the "Access-Control-Allow-Origin" header. ` +
-				`See: https://remotion.dev/docs/client-side-rendering/migration`,
+				`See: https://picus.dev/docs/client-side-rendering/migration`,
 		);
 	}
 

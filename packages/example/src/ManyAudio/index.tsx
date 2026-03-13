@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Html5Audio, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, staticFile} from 'picus';
 
 export const ManyAudio: React.FC = () => {
 	return (

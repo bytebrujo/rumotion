@@ -26,7 +26,7 @@ const style: React.CSSProperties = {
 This component is useful for layering content on top of each other. For example, you can use it to create a full-screen video background:
 
 ```tsx twoslash title="Layer example"
-import {AbsoluteFill, OffthreadVideo} from 'remotion';
+import {AbsoluteFill, OffthreadVideo} from 'picus';
 
 const MyComp = () => {
   return (
@@ -50,7 +50,7 @@ You can add a [React ref](https://react.dev/learn/manipulating-the-dom-with-refs
 
 ```tsx twoslash
 import {useRef} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const content = <div>Hello, World</div>;
 // ---cut---
@@ -70,7 +70,7 @@ In order to make this behave like you expect (row layout):
 <AbsoluteFill className="flex flex-row" />
 ```
 
-We detect conflicting Tailwind classes and disable the corresponding inline styles if they are present from Remotion v4.0.249.  
+We detect conflicting Tailwind classes and disable the corresponding inline styles if they are present from Picus v4.0.249.  
 Review the source code below to see how we detect Tailwind classes.
 
 ## Compatibility
@@ -79,4 +79,4 @@ Review the source code below to see how we detect Tailwind classes.
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/AbsoluteFill.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/core/src/AbsoluteFill.tsx)

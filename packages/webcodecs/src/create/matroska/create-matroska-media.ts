@@ -1,8 +1,8 @@
 import type {
 	MediaParserAudioSample,
 	MediaParserVideoSample,
-} from '@remotion/media-parser';
-import {MediaParserInternals} from '@remotion/media-parser';
+} from '@picus/media-parser';
+import {MediaParserInternals} from '@picus/media-parser';
 import type {MakeTrackAudio, MakeTrackVideo} from '../make-track-info';
 import type {MediaFn, MediaFnGeneratorInput} from '../media-fn';
 import {makeCluster, timestampToClusterTimestamp} from './cluster';

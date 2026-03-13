@@ -1,5 +1,5 @@
 import type {Sandbox} from '@vercel/sandbox';
-import {REMOTION_SANDBOX_BUNDLE_DIR} from './internals/add-bundle';
+import {PICUS_SANDBOX_BUNDLE_DIR} from './internals/add-bundle';
 import type {
 	ChromiumOptions,
 	LogLevel,
@@ -45,7 +45,7 @@ export async function renderStillOnVercel({
 	offthreadVideoThreads?: number | null;
 	licenseKey?: string | null;
 }): Promise<{sandboxFilePath: string; contentType: string}> {
-	const serveUrl = `/vercel/sandbox/${REMOTION_SANDBOX_BUNDLE_DIR}`;
+	const serveUrl = `/vercel/sandbox/${PICUS_SANDBOX_BUNDLE_DIR}`;
 
 	const renderConfig = {
 		serveUrl,

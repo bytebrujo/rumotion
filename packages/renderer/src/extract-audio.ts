@@ -3,7 +3,7 @@ import type {LogLevel} from './log-level';
 
 /*
  * @description Extracts the audio from a video source and saves it to the specified output path. It does not convert the audio to a different format.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/extract-audio)
+ * @see [Documentation](https://www.picus.dev/docs/renderer/extract-audio)
  */
 export const extractAudio = async (options: {
 	videoSource: string;

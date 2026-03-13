@@ -50,7 +50,7 @@ export const MyComponent: React.FC<MyComponentProps> = ({text}) => {
 // @filename: Vid.tsx
 // ---cut---
 import React from 'react';
-import {CalculateMetadataFunction, Composition} from 'remotion';
+import {CalculateMetadataFunction, Composition} from 'picus';
 import {MyComponent, MyComponentProps} from './MyComp';
 
 const calculateMetadata: CalculateMetadataFunction<MyComponentProps> = ({props, defaultProps, abortSignal, isRendering}) => {
@@ -91,7 +91,7 @@ export const Root: React.FC = () => {
 
 As argument, you get an object with the following properties:
 
-- `defaultProps`: Only the default props, taken from the [`defaultProps`](/docs/composition#defaultprops) prop or the Remotion Studio Data sidebar.
+- `defaultProps`: Only the default props, taken from the [`defaultProps`](/docs/composition#defaultprops) prop or the Picus Studio Data sidebar.
 - `props`: The [resolved props](/docs/props-resolution), taking input props into account.
 - `abortSignal`: An [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) which you can use to abort network requests if [the default props have been changed](/docs/data-fetching#aborting-stale-requests) in the meanwhile.
 - `compositionId` (_available from v4.0.98_): The ID of the current composition
@@ -116,7 +116,7 @@ The function may be `async`.
 
 The function must resolve within the [timeout](/docs/delay-render#timeout).
 
-The function will get executed every time the props in the [Remotion Studio](/docs/visual-editing) changes.
+The function will get executed every time the props in the [Picus Studio](/docs/visual-editing) changes.
 
 ## Compatibility
 

@@ -5,16 +5,16 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {z} from 'zod';
 
 export const logoCollabSchema = z.object({
 	partnerLogoUrl: z.string(),
 	theme: z.enum(['light', 'dark']),
 	partnerLogoScale: z.number().min(0.1).max(3).default(1),
-	remotionLogoScale: z.number().min(0.1).max(3).default(1),
+	picusLogoScale: z.number().min(0.1).max(3).default(1),
 	partnerLogoX: z.number().min(-500).max(500).default(0),
-	remotionLogoX: z.number().min(-500).max(500).default(0),
+	picusLogoX: z.number().min(-500).max(500).default(0),
 });
 
 type LogoCollabProps = z.infer<typeof logoCollabSchema>;
@@ -25,18 +25,18 @@ const COLORS = {
 	dark: {bg: '#2E2E2E', text: '#FFFFFF'},
 };
 
-const REMOTION_LOGO = {
-	light: staticFile('logo/remotion/withtitle.png'),
-	dark: staticFile('logo/remotion/withtitle-dark.png'),
+const PICUS_LOGO = {
+	light: staticFile('logo/picus/withtitle.png'),
+	dark: staticFile('logo/picus/withtitle-dark.png'),
 };
 
 export const LogoCollab: React.FC<LogoCollabProps> = ({
 	partnerLogoUrl,
 	theme,
 	partnerLogoScale,
-	remotionLogoScale,
+	picusLogoScale,
 	partnerLogoX,
-	remotionLogoX,
+	picusLogoX,
 }) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
@@ -45,7 +45,7 @@ export const LogoCollab: React.FC<LogoCollabProps> = ({
 
 	const partnerDelay = 0;
 	const plusDelay = 15;
-	const remotionDelay = 25;
+	const picusDelay = 25;
 
 	const partnerProgress = spring({
 		frame: frame - partnerDelay,
@@ -59,8 +59,8 @@ export const LogoCollab: React.FC<LogoCollabProps> = ({
 		config: {damping: 200},
 	});
 
-	const remotionProgress = spring({
-		frame: frame - remotionDelay,
+	const picusProgress = spring({
+		frame: frame - picusDelay,
 		fps,
 		config: {damping: 200},
 	});
@@ -106,14 +106,14 @@ export const LogoCollab: React.FC<LogoCollabProps> = ({
 			/>
 
 			<Img
-				src={REMOTION_LOGO[theme]}
+				src={PICUS_LOGO[theme]}
 				style={{
 					position: 'absolute',
 					top: '50%',
 					left: '50%',
-					transform: `translate(calc(50px + ${remotionLogoX}px), -50%) scale(${(0.9 + remotionProgress * 0.1) * remotionLogoScale})`,
+					transform: `translate(calc(50px + ${picusLogoX}px), -50%) scale(${(0.9 + picusProgress * 0.1) * picusLogoScale})`,
 					transformOrigin: 'left center',
-					opacity: remotionProgress,
+					opacity: picusProgress,
 					height: logoHeight,
 					objectFit: 'contain',
 				}}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Sequence, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Sequence, useVideoConfig} from 'picus';
 
 const Inner: React.FC = () => {
 	const {width, height} = useVideoConfig();

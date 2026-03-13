@@ -1,7 +1,7 @@
-// Remotion exports all videos with 2 channels.
+// Picus exports all videos with 2 channels.
 export const TARGET_NUMBER_OF_CHANNELS = 2;
 
-// Remotion exports all videos with 48kHz sample rate.
+// Picus exports all videos with 48kHz sample rate.
 export const TARGET_SAMPLE_RATE = 48000;
 
 const fixFloatingPoint = (value: number) => {

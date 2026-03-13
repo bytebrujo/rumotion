@@ -1,5 +1,5 @@
 import React from 'react';
-import {Img} from 'remotion';
+import {Img} from 'picus';
 
 export const Expert: React.FC = () => {
 	return (
@@ -36,7 +36,7 @@ export const Expert: React.FC = () => {
 			<Img
 				width="350"
 				height="350"
-				src="https://www.remotion.dev/img/freelancers/benjamin.jpeg"
+				src="https://www.picus.dev/img/freelancers/benjamin.jpeg"
 				style={{
 					top: 230,
 					left: 750,

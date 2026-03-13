@@ -1,6 +1,6 @@
-import {remotionFlatConfig} from '@remotion/eslint-config-internal';
+import {picusFlatConfig} from '@picus/eslint-config-internal';
 
-const config = remotionFlatConfig({react: false});
+const config = picusFlatConfig({react: false});
 
 export default [
 	{
@@ -16,10 +16,10 @@ export default [
 			'@typescript-eslint/no-restricted-imports': [
 				'error',
 				{
-					patterns: ['@remotion/*/src/*', 'remotion/src/*'],
+					patterns: ['@picus/*/src/*', 'picus/src/*'],
 					paths: [
 						{
-							name: 'remotion',
+							name: 'picus',
 							message: 'Dont import the runtime',
 							allowTypeImports: true,
 						},

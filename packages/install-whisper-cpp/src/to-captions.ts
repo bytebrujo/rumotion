@@ -1,4 +1,4 @@
-import type {Caption} from '@remotion/captions';
+import type {Caption} from '@picus/captions';
 import type {TranscriptionJson} from './transcribe';
 
 type ToCaptionsInput = {

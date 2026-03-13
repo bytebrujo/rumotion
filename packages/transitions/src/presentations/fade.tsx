@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import type {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
@@ -39,7 +39,7 @@ const FadePresentation: React.FC<
 };
 /*
  * @description Provides a simple fade transition component for sliding elements in and out.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/presentations/fade)
+ * @see [Documentation](https://www.picus.dev/docs/transitions/presentations/fade)
  */
 
 export const fade = (props?: FadeProps): TransitionPresentation<FadeProps> => {

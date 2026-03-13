@@ -1,9 +1,9 @@
-import type {MediaParserLogLevel, Writer} from '@remotion/media-parser';
+import type {MediaParserLogLevel, Writer} from '@picus/media-parser';
 import {
 	MediaParserInternals,
 	type MediaParserAudioSample,
 	type MediaParserVideoSample,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {Log} from '../../log';
 import {
 	CLUSTER_MIN_VINT_WIDTH,

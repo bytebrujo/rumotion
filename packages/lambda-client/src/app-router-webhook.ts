@@ -3,7 +3,7 @@ import type {
 	WebhookPayload,
 	WebhookSuccessPayload,
 	WebhookTimeoutPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {validateWebhookSignature} from './validate-webhook-signature';
 
 export type NextWebhookArgs = {
@@ -25,9 +25,9 @@ export const appRouterWebhook = (
 
 		if (testing) {
 			const testingheaders = {
-				'Access-Control-Allow-Origin': 'https://www.remotion.dev',
+				'Access-Control-Allow-Origin': 'https://www.picus.dev',
 				'Access-Control-Allow-Headers':
-					'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Remotion-Status, X-Remotion-Signature, X-Remotion-Mode',
+					'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Picus-Status, X-Picus-Signature, X-Picus-Mode',
 				'Access-Control-Allow-Methods': 'OPTIONS,POST',
 			};
 			headers = {...headers, ...testingheaders};
@@ -47,7 +47,7 @@ export const appRouterWebhook = (
 			validateWebhookSignature({
 				secret,
 				body,
-				signatureHeader: req.headers.get('X-Remotion-Signature') as string,
+				signatureHeader: req.headers.get('X-Picus-Signature') as string,
 			});
 
 			const payload = body as WebhookPayload;

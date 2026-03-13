@@ -1,4 +1,4 @@
-import { fontFamily, loadFont } from "@remotion/google-fonts/IBMPlexSans";
+import { fontFamily, loadFont } from "@picus/google-fonts/IBMPlexSans";
 
 export const MEDIUM_FONT_WEIGHT = "500" as const;
 export const BOLD_FONT_WEIGHT = "700" as const;

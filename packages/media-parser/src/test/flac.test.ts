@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 import {WEBCODECS_TIMESCALE} from '../webcodecs-timescale';
@@ -71,7 +71,7 @@ test('parse flac', async () => {
 				samples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(durationInSeconds).toBe(19.714285714285715);
 	expect(tracks.filter((t) => t.type === 'audio')).toEqual([
@@ -233,7 +233,7 @@ test('parse flac minimal seek', async () => {
 			container: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(audioCodec).toBe('flac');
@@ -255,7 +255,7 @@ test('parse flac get duration and metadata', async () => {
 			durationInSeconds: true,
 			metadata: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(audioCodec).toBe('flac');

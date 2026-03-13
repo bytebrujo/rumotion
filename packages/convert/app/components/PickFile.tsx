@@ -5,7 +5,7 @@ import type {RouteAction} from '~/seo';
 import {AlternativePickFileOptions} from './AlternativePickFileOptions';
 import {DropFileBox} from './DropFileBox';
 import {TextMarkLogo} from './TextMarkLogo';
-import {WhyRemotionConvert} from './WhyRemotionConvert';
+import {WhyPicusConvert} from './WhyPicusConvert';
 
 export const PickFile: React.FC<{
 	readonly setSrc: React.Dispatch<React.SetStateAction<Source | null>>;
@@ -47,7 +47,7 @@ export const PickFile: React.FC<{
 		>
 			<div className="bg-[#F9FAFC] w-full">
 				<div className="h-10" />
-				<TextMarkLogo text="Remotion Convert" />
+				<TextMarkLogo text="Picus Convert" />
 				<div className="h-5" />
 				<div className="w-full pb-4">
 					<h1 className="text-center text-3xl font-brand font-black max-w-[600px] m-auto text-balance px-4">
@@ -64,7 +64,7 @@ export const PickFile: React.FC<{
 				<div className="h-10" />
 			</div>
 			<div className="w-full bg-slate-50">
-				<WhyRemotionConvert />
+				<WhyPicusConvert />
 			</div>
 		</div>
 	);

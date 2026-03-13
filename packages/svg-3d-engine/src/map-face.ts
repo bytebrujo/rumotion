@@ -1,4 +1,4 @@
-import {parsePath, reduceInstructions} from '@remotion/paths';
+import {parsePath, reduceInstructions} from '@picus/paths';
 import {threeDIntoSvgPath, type ThreeDReducedInstruction} from './3d-svg';
 import {turnInto3D} from './fix-z';
 import type {MatrixTransform4D, Vector4D} from './matrix';

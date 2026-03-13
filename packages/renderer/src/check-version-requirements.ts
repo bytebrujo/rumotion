@@ -1,4 +1,4 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {isMusl} from './compositor/get-executable-path';
 import type {LogLevel} from './log-level';
 import {Log} from './logger';
@@ -81,7 +81,7 @@ const checkNodeVersion = () => {
 
 	if (majorVersion < NoReactInternals.MIN_NODE_VERSION) {
 		throw new Error(
-			`Remotion requires at least Node ${NoReactInternals.MIN_NODE_VERSION}. You currently have ${process.version}. Update your node version to ${NoReactInternals.MIN_NODE_VERSION} to use Remotion.`,
+			`Picus requires at least Node ${NoReactInternals.MIN_NODE_VERSION}. You currently have ${process.version}. Update your node version to ${NoReactInternals.MIN_NODE_VERSION} to use Picus.`,
 		);
 	}
 };
@@ -91,7 +91,7 @@ const checkBunVersion = () => {
 		!Bun.semver.satisfies(Bun.version, `>=${NoReactInternals.MIN_BUN_VERSION}`)
 	) {
 		throw new Error(
-			`Remotion requires at least Bun ${NoReactInternals.MIN_BUN_VERSION}. You currently have ${Bun.version}. Update your Bun version to ${NoReactInternals.MIN_BUN_VERSION} to use Remotion.`,
+			`Picus requires at least Bun ${NoReactInternals.MIN_BUN_VERSION}. You currently have ${Bun.version}. Update your Bun version to ${NoReactInternals.MIN_BUN_VERSION} to use Picus.`,
 		);
 	}
 };

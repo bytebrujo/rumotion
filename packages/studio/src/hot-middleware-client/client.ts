@@ -7,8 +7,8 @@
  * https://github.com/webpack-contrib/webpack-hot-middleware#readme
  * and rewritten in TypeScript. This file is MIT licensed
  */
-import type {HotMiddlewareMessage} from '@remotion/studio-shared';
-import {hotMiddlewareOptions, stripAnsi} from '@remotion/studio-shared';
+import type {HotMiddlewareMessage} from '@picus/studio-shared';
+import {hotMiddlewareOptions, stripAnsi} from '@picus/studio-shared';
 import {processUpdate} from './process-update';
 
 function eventSourceWrapper() {
@@ -159,7 +159,7 @@ function createReporter() {
 function processMessage(obj: HotMiddlewareMessage) {
 	switch (obj.action) {
 		case 'building':
-			window.remotion_isBuilding?.();
+			window.picus_isBuilding?.();
 
 			break;
 		case 'sync':
@@ -179,7 +179,7 @@ function processMessage(obj: HotMiddlewareMessage) {
 			}
 
 			if (applyUpdate) {
-				window.remotion_finishedBuilding?.();
+				window.picus_finishedBuilding?.();
 				processUpdate(obj.hash, obj.modules, hotMiddlewareOptions);
 			}
 

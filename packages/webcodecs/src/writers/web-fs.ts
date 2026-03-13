@@ -2,11 +2,11 @@ import type {
 	CreateContent,
 	Writer,
 	WriterInterface,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 
 const createContent: CreateContent = async ({filename}) => {
 	const directoryHandle = await navigator.storage.getDirectory();
-	const actualFilename = `__remotion_mediaparser:${filename}`;
+	const actualFilename = `__picus_mediaparser:${filename}`;
 
 	const remove = async () => {
 		try {
@@ -88,7 +88,7 @@ export const canUseWebFsWriter = async () => {
 	try {
 		const directoryHandle = await navigator.storage.getDirectory();
 		const fileHandle = await directoryHandle.getFileHandle(
-			'remotion-probe-web-fs-support',
+			'picus-probe-web-fs-support',
 			{
 				create: true,
 			},

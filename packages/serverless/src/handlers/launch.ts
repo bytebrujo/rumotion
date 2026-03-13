@@ -2,16 +2,16 @@ import {existsSync, mkdirSync, rmSync} from 'fs';
 import {type EventEmitter} from 'node:events';
 import {join} from 'path';
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type {EmittedArtifact, LogOptions} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {validateCodec, VERSION} from '@remotion/serverless-client';
+import type {EmittedArtifact, LogOptions} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {validateCodec, VERSION} from '@picus/serverless-client';
 import type {
 	CloudProvider,
 	PostRenderData,
 	ProviderSpecifics,
 	RenderMetadata,
 	ServerlessPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	artifactName,
 	compressInputProps,
@@ -26,7 +26,7 @@ import {
 	validateFramesPerFunction,
 	validateOutname,
 	validatePrivacy,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {cleanupProps} from '../cleanup-props';
 import {findOutputFileInBucket} from '../find-output-file-in-bucket';
 import type {LaunchedBrowser} from '../get-browser-instance';

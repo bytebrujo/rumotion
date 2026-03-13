@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://www.remotion.dev/docs/4-0-migration`;
+	return `https://www.picus.dev/docs/4-0-migration`;
 });
 
 type Options = [];
@@ -9,7 +9,7 @@ type Options = [];
 type MessageIds = 'ImportConfig';
 
 const ImportConfig =
-	"Update the import to the new V4 location: import {Config} from '@remotion/cli/config'";
+	"Update the import to the new V4 location: import {Config} from '@picus/cli/config'";
 
 const rule = createRule<Options, MessageIds>({
 	name: 'v4-config-import',
@@ -29,7 +29,7 @@ const rule = createRule<Options, MessageIds>({
 	create: (context) => {
 		return {
 			ImportDeclaration: (node) => {
-				if (node.source.value !== 'remotion') {
+				if (node.source.value !== 'picus') {
 					return;
 				}
 				const config = node.specifiers.find(

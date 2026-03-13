@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import type {PcmS16AudioData} from '../convert-audiodata/convert-audiodata';
 import {extractFrameAndAudio} from '../extract-frame-and-audio';
 
@@ -75,14 +75,14 @@ export const addBroadcastChannelListener = () => {
 	if (
 		!(
 			typeof window !== 'undefined' &&
-			window.remotion_broadcastChannel &&
-			window.remotion_isMainTab
+			window.picus_broadcastChannel &&
+			window.picus_isMainTab
 		)
 	) {
 		return;
 	}
 
-	window.remotion_broadcastChannel.addEventListener(
+	window.picus_broadcastChannel.addEventListener(
 		'message',
 		async (event) => {
 			const data = event.data as ExtractFrameRequest;
@@ -111,7 +111,7 @@ export const addBroadcastChannelListener = () => {
 							durationInSeconds: result.durationInSeconds,
 						};
 
-						window.remotion_broadcastChannel!.postMessage(cannotDecodeResponse);
+						window.picus_broadcastChannel!.postMessage(cannotDecodeResponse);
 						return;
 					}
 
@@ -122,7 +122,7 @@ export const addBroadcastChannelListener = () => {
 							durationInSeconds: result.durationInSeconds,
 						};
 
-						window.remotion_broadcastChannel!.postMessage(
+						window.picus_broadcastChannel!.postMessage(
 							cannotDecodeAlphaResponse,
 						);
 						return;
@@ -134,7 +134,7 @@ export const addBroadcastChannelListener = () => {
 							id: data.id,
 						};
 
-						window.remotion_broadcastChannel!.postMessage(networkErrorResponse);
+						window.picus_broadcastChannel!.postMessage(networkErrorResponse);
 						return;
 					}
 
@@ -144,7 +144,7 @@ export const addBroadcastChannelListener = () => {
 							id: data.id,
 						};
 
-						window.remotion_broadcastChannel!.postMessage(
+						window.picus_broadcastChannel!.postMessage(
 							unknownContainerFormatResponse,
 						);
 						return;
@@ -165,7 +165,7 @@ export const addBroadcastChannelListener = () => {
 						durationInSeconds: durationInSeconds ?? null,
 					};
 
-					window.remotion_broadcastChannel!.postMessage(response);
+					window.picus_broadcastChannel!.postMessage(response);
 				} catch (error) {
 					const response: MessageFromMainTab = {
 						type: 'response-error',
@@ -173,7 +173,7 @@ export const addBroadcastChannelListener = () => {
 						errorStack: (error as Error).stack ?? 'No stack trace',
 					};
 
-					window.remotion_broadcastChannel!.postMessage(response);
+					window.picus_broadcastChannel!.postMessage(response);
 				}
 			} else if (data.type === 'main-tab-ready') {
 				// can happen: https://discord.com/channels/809501355504959528/990308056627806238/1471899489978679387
@@ -183,7 +183,7 @@ export const addBroadcastChannelListener = () => {
 		},
 	);
 
-	emitReadiness(window.remotion_broadcastChannel!);
+	emitReadiness(window.picus_broadcastChannel!);
 };
 
 let mainTabIsReadyProm = null as Promise<void> | null;

@@ -1,4 +1,4 @@
-import type {PackageManager} from '@remotion/studio-shared';
+import type {PackageManager} from '@picus/studio-shared';
 
 export const getInstallCommand = ({
 	manager,

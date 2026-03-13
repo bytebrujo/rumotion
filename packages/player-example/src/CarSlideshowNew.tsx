@@ -4,7 +4,7 @@ import {
 	interpolateColors,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const CarSlideshow: React.FC<{
 	readonly title: string;

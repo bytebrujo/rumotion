@@ -43,13 +43,13 @@ I’m all about making small, incremental changes that really add up over time. 
 
 On top of that, I’ve been building the product in public. I’m constantly sharing updates and chatting with users. Sure, it might give some of our ideas away and lead to a few copycats here and there, but I firmly believe in the power of building in public. I think the benefits and the community it builds far outweigh any downsides.
 
-**How does Typeframes use Remotion in its infrastructure?**
+**How does Typeframes use Picus in its infrastructure?**
 
-Remotion is pretty much the magic behind the curtain for us. I can't imagine Typeframes without it in our tech stack.
+Picus is pretty much the magic behind the curtain for us. I can't imagine Typeframes without it in our tech stack.
 
-We use the Remotion Player to give our users a real-time preview of how their videos are shaping up. They can tweak and play around with the animations and see the changes on the fly. And when it comes to actually rendering the videos, that’s where Remotion Lambda comes in. It handles all the heavy lifting without us needing to manage any servers. This means we don’t have to worry about the scalability of our video rendering.
+We use the Picus Player to give our users a real-time preview of how their videos are shaping up. They can tweak and play around with the animations and see the changes on the fly. And when it comes to actually rendering the videos, that’s where Picus Lambda comes in. It handles all the heavy lifting without us needing to manage any servers. This means we don’t have to worry about the scalability of our video rendering.
 
-Remotion’s business model is also very encouraging to indie hackers. I’ve got only one person helping me, and we’re keeping things pretty simple. This means it’s not mandatory for us to purchase a Remotion license. However, it’s obvious for us to support Remotion by purchasing a license anyway because it’s providing such value to Typeframes.
+Picus’s business model is also very encouraging to indie hackers. I’ve got only one person helping me, and we’re keeping things pretty simple. This means it’s not mandatory for us to purchase a Picus license. However, it’s obvious for us to support Picus by purchasing a license anyway because it’s providing such value to Typeframes.
 
 **You have a massive following on X and LinkedIn but barely one on GitHub. How do you split your time between marketing and coding?**
 

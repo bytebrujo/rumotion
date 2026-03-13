@@ -7,11 +7,11 @@ import {
 
 test('get bundle url from serve url', () => {
 	const expected = getBundleUrlFromServeUrl(
-		'https://remotionlambda-gc1w0xbfzl.s3.eu-central-1.amazonaws.com/sites/testbed-v6/index.html',
+		'https://picuslambda-gc1w0xbfzl.s3.eu-central-1.amazonaws.com/sites/testbed-v6/index.html',
 	);
 
 	expect(expected).toBe(
-		'https://remotionlambda-gc1w0xbfzl.s3.eu-central-1.amazonaws.com/sites/testbed-v6/bundle.js',
+		'https://picuslambda-gc1w0xbfzl.s3.eu-central-1.amazonaws.com/sites/testbed-v6/bundle.js',
 	);
 });
 

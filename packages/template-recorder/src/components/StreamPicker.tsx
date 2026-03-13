@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 import { DeviceItem } from "../DeviceItem";
 import { useDevices } from "../WaitingForDevices";
 import { Label, formatDeviceLabel } from "../helpers/format-device-label";

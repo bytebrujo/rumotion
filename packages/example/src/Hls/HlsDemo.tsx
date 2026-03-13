@@ -1,8 +1,8 @@
 import Hls from 'hls.js';
 import React, {useEffect, useRef} from 'react';
-import {AbsoluteFill, Html5Video, RemotionVideoProps} from 'remotion';
+import {AbsoluteFill, Html5Video, PicusVideoProps} from 'picus';
 
-const HlsVideo: React.FC<RemotionVideoProps> = ({src}) => {
+const HlsVideo: React.FC<PicusVideoProps> = ({src}) => {
 	const videoRef = useRef<HTMLVideoElement>(null);
 
 	useEffect(() => {

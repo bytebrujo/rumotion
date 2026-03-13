@@ -5,9 +5,9 @@ import React, {
 	useMemo,
 	useState,
 } from 'react';
-import type {_InternalTypes, SerializedJSONWithCustomFields} from 'remotion';
-import {getInputProps, Internals} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import type {_InternalTypes, SerializedJSONWithCustomFields} from 'picus';
+import {getInputProps, Internals} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {FastRefreshContext} from '../../fast-refresh-context';
 import {StudioServerConnectionCtx} from '../../helpers/client-id';
 import {BACKGROUND, BORDER_COLOR, LIGHT_TEXT} from '../../helpers/colors';
@@ -101,7 +101,7 @@ const tabWrapper: React.CSSProperties = {
 	alignItems: 'center',
 };
 
-const persistanceKey = 'remotion.show-render-modalwarning';
+const persistanceKey = 'picus.show-render-modalwarning';
 
 const getPersistedShowWarningState = () => {
 	const val = localStorage.getItem(persistanceKey);
@@ -155,7 +155,7 @@ export const DataEditor: React.FC<{
 		return NoReactInternals.serializeJSONWithSpecialTypes({
 			data: value,
 			indent: 2,
-			staticBase: window.remotion_staticBase,
+			staticBase: window.picus_staticBase,
 		});
 	}, [inJSONEditor, defaultProps]);
 
@@ -331,7 +331,7 @@ export const DataEditor: React.FC<{
 				return;
 			}
 
-			window.remotion_ignoreFastRefreshUpdate = fastRefreshes + 1;
+			window.picus_ignoreFastRefreshUpdate = fastRefreshes + 1;
 			setSaving(true);
 			const newDefaultProps = updater(unresolvedComposition.defaultProps ?? {});
 			callUpdateDefaultPropsApi(

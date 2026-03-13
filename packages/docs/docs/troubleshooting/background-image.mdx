@@ -5,7 +5,7 @@ title: Flickering when using background-image or mask-image
 crumb: "Common mistakes"
 ---
 
-The following code is discouraged in Remotion:
+The following code is discouraged in Picus:
 
 ```tsx twoslash title="❌ Don't do this"
 const src = "abc";
@@ -23,7 +23,7 @@ const myMarkup = (
 
 ## Problem
 
-Remotion has no way of knowing when the image is finished loading because it is impossible to determine so when loading an image through `background-image`, `mask-image`, or other CSS properties. This will lead to Remotion not waiting for the image to be loaded during rendering and cause visible flickers.
+Picus has no way of knowing when the image is finished loading because it is impossible to determine so when loading an image through `background-image`, `mask-image`, or other CSS properties. This will lead to Picus not waiting for the image to be loaded during rendering and cause visible flickers.
 
 ## Solution
 
@@ -32,7 +32,7 @@ Use the [`<Img>`](/docs/img) tag instead and place it in an [`<AbsoluteFill>`](/
 ```tsx twoslash title="✅ Do this"
 const src = "abc";
 // ---cut---
-import { AbsoluteFill, Img } from "remotion";
+import { AbsoluteFill, Img } from "picus";
 
 const myMarkup = (
   <AbsoluteFill>
@@ -60,7 +60,7 @@ If you cannot use an [`<Img>`](/docs/img) tag, for example because you need to u
 ```tsx twoslash title="✅ Do this"
 const src = "abc";
 // ---cut---
-import { Img } from "remotion";
+import { Img } from "picus";
 
 const myMarkup = (
   <>

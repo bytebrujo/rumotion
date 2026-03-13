@@ -1,6 +1,6 @@
 import type {TimelineInOutContextValue} from './in-out';
 
-const localStorageKey = () => `remotion.editor.marksv2`;
+const localStorageKey = () => `picus.editor.marksv2`;
 
 export const persistMarks = (marks: TimelineInOutContextValue) => {
 	localStorage.setItem(localStorageKey(), JSON.stringify(marks));

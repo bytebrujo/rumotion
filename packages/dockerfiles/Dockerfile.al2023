@@ -3,7 +3,7 @@ FROM amazonlinux:2023
 WORKDIR /usr/app
 RUN yum install git -y
 RUN yum install nodejs -y
-RUN npm i -g @remotion/cli
+RUN npm i -g @picus/cli
 RUN yum install -y \
   mesa-libgbm	\
   libX11 \
@@ -29,5 +29,5 @@ RUN node ensure.mjs
 # Copy the pre-built bundle
 COPY bundle/ /usr/app/bundle/
 
-RUN npx remotion compositions /usr/app/bundle
-RUN npx remotion render /usr/app/bundle browser-test /usr/app/out.mp4
+RUN npx picus compositions /usr/app/bundle
+RUN npx picus render /usr/app/bundle browser-test /usr/app/out.mp4

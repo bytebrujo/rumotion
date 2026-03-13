@@ -8,7 +8,7 @@ crumb: 'Troubleshooting'
 If you receive the following error:
 
 ```
- ⨯ ./node_modules/@remotion/bundler/node_modules/webpack/lib/FileSystemInfo.js:9:0
+ ⨯ ./node_modules/@picus/bundler/node_modules/webpack/lib/FileSystemInfo.js:9:0
 Module not found: Can't resolve 'module'
 Did you mean './module'?
 Requests that should resolve in the current directory need to start with './'.
@@ -17,7 +17,7 @@ Requests that should resolve in the current directory need to start with './'.
 or
 
 ```
- ⨯ ./node_modules/@remotion/compositor-darwin-arm64/remotion
+ ⨯ ./node_modules/@picus/compositor-darwin-arm64/picus
 Module parse failed: Unexpected character '�' (1:0)
 You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
 ```
@@ -42,7 +42,7 @@ See how to parametrize the [content with input props](/docs/passing-props) as we
 
 **If you are using a long-running server:** we recommend to call `bundle()` once in a Node.js context and then reusing it for the lifetime of the server. See: [Rendering in Node.js](/docs/ssr-node)
 
-**If you are rendering on Lambda**: Create a bundle and deploy it once either via [`npx remotion sites create`](/docs/lambda/cli/sites/create) or using [`deploySite()`](/docs/lambda/deploysite) in a non-bundled Node.js script and then refer to the bundle via the URL that you get back.
+**If you are rendering on Lambda**: Create a bundle and deploy it once either via [`npx picus sites create`](/docs/lambda/cli/sites/create) or using [`deploySite()`](/docs/lambda/deploysite) in a non-bundled Node.js script and then refer to the bundle via the URL that you get back.
 
 In both cases, do all parameterization of the video using [input props](/docs/parameterized-rendering).
 

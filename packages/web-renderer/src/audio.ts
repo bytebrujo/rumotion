@@ -1,4 +1,4 @@
-import type {TRenderAsset} from 'remotion';
+import type {TRenderAsset} from 'picus';
 
 const TARGET_NUMBER_OF_CHANNELS = 2;
 const TARGET_SAMPLE_RATE = 48000;

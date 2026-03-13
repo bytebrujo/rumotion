@@ -2,7 +2,7 @@
 image: /generated/articles-docs-player-thumbnail.png
 id: thumbnail
 title: '<Thumbnail>'
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 <AvailableFrom v="3.2.41" />
@@ -11,13 +11,13 @@ A component which can be rendered in a regular React App (for example: for examp
 
 ```tsx twoslash title="MyApp.tsx"
 // @allowUmdGlobalAccess
-// @filename: ./remotion/MyVideo.tsx
+// @filename: ./picus/MyVideo.tsx
 export const MyVideo: React.FC<{title: string}> = ({title}) => <>{title}</>;
 
 // @filename: index.tsx
 // ---cut---
-import {Thumbnail} from '@remotion/player';
-import {MyVideo} from './remotion/MyVideo';
+import {Thumbnail} from '@picus/player';
+import {MyVideo} from './picus/MyVideo';
 
 export const App: React.FC = () => {
   return (
@@ -94,16 +94,16 @@ A callback function that allows you to return a custom UI that gets displayed wh
 The first parameter of the callback function contains the `height` and `width` of the thumbnail as it gets rendered.
 
 ```tsx twoslash
-import {RenderLoading, Thumbnail} from '@remotion/player';
+import {RenderLoading, Thumbnail} from '@picus/player';
 import {useCallback} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Component: React.FC = () => null;
 
 // ---cut---
 
 const MyApp: React.FC = () => {
-  // `RenderLoading` type can be imported from "@remotion/player"
+  // `RenderLoading` type can be imported from "@picus/player"
   const renderLoading: RenderLoading = useCallback(({height, width}) => {
     return (
       <AbsoluteFill style={{backgroundColor: 'gray'}}>
@@ -156,7 +156,7 @@ export const MyComposition: React.FC = () => null;
 
 // @filename: index.tsx
 // ---cut---
-import {Thumbnail, ThumbnailRef} from '@remotion/player';
+import {Thumbnail, ThumbnailRef} from '@picus/player';
 import {useEffect, useRef} from 'react';
 import {MyComposition} from './MyComposition';
 
@@ -191,7 +191,7 @@ The following methods are available on the thumbnail ref:
 Gets the container `HTMLDivElement` of the thumbnail. Useful if you'd like to manually attach listeners to the thumbnail element.
 
 ```tsx twoslash
-import {ThumbnailRef} from '@remotion/player';
+import {ThumbnailRef} from '@picus/player';
 import {useEffect, useRef} from 'react';
 // ---cut---
 const thumbnailRef = useRef<ThumbnailRef>(null);
@@ -233,7 +233,7 @@ Stop listening to an event. See the [Events](#events) section to see the functio
 Using a [thumbnail ref](#thumbnailref), you can bind event listeners to get notified of certain events of the thumbnail.
 
 ```tsx twoslash
-import {ThumbnailRef} from '@remotion/player';
+import {ThumbnailRef} from '@picus/player';
 import {useEffect, useRef} from 'react';
 // ---cut---
 const thumbnailRef = useRef<ThumbnailRef>(null);
@@ -256,7 +256,7 @@ Fires when an error or uncaught exception has happened in the thumbnail.
 You may get the error by reading the `e.detail.error` value:
 
 ```tsx twoslash
-import {ThumbnailRef} from '@remotion/player';
+import {ThumbnailRef} from '@picus/player';
 import {useRef} from 'react';
 const ref = useRef<ThumbnailRef>(null);
 // ---cut---
@@ -283,7 +283,7 @@ See: [`<Player>` -> Handling errors](/docs/player/player#handling-errors)
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/player/src/Thumbnail.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/player/src/Thumbnail.tsx)
 - [`<Composition>`](/docs/composition)
 - [`<Player>`](/docs/player)
 

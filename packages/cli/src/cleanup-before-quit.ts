@@ -1,4 +1,4 @@
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {Log} from './log';
 
 const cleanupJobs: {label: string; job: () => void}[] = [];

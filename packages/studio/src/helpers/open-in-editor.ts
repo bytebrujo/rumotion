@@ -1,4 +1,4 @@
-import type {SymbolicatedStackFrame} from '@remotion/studio-shared';
+import type {SymbolicatedStackFrame} from '@picus/studio-shared';
 import type {OriginalPosition} from '../error-overlay/react-overlay/utils/get-source-map';
 
 export const openInEditor = (stack: SymbolicatedStackFrame) => {

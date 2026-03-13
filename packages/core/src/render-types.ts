@@ -1,4 +1,4 @@
-// Types copied from @remotion/renderer for use in core composition metadata
+// Types copied from @picus/renderer for use in core composition metadata
 // This avoids circular dependencies while keeping renderer as the source of truth
 
 export const validVideoImageFormats = ['png', 'jpeg', 'none'] as const;

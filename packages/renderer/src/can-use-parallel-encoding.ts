@@ -15,6 +15,6 @@ export const canUseParallelEncoding = (codec: Codec) => {
 
 export const getShouldUsePartitionedRendering = () => {
 	const shouldUsePartitionedRendering =
-		process.env.REMOTION_PARTITIONED_RENDERING === 'true';
+		process.env.PICUS_PARTITIONED_RENDERING === 'true';
 	return shouldUsePartitionedRendering;
 };

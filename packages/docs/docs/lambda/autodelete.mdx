@@ -22,9 +22,9 @@ To automatically delete renders and associated files after some time, you need t
 
 To put a lifecycle rule on the bucket, you need to have the `s3:PutLifecycleConfiguration` permission for your user.
 
-- If you set up Remotion Lambda after 4.0.32, you have it automatically.
-- If you set up Remotion Lambda previously, execute the following:
-  1. Upgrade to at least Remotion 4.0.32.
+- If you set up Picus Lambda after 4.0.32, you have it automatically.
+- If you set up Picus Lambda previously, execute the following:
+  1. Upgrade to at least Picus 4.0.32.
   2. [Click here](https://us-east-1.console.aws.amazon.com/iamv2/home) to go to the users section in the AWS console.
   3. Select your user.
   4. Under "Permissions policies", click your policy (underlined in blue)
@@ -47,7 +47,7 @@ values={[
 <TabItem value="cli">
 
 ```bash title="In the command line"
-npx remotion lambda sites create --site-name=my-site-name --enable-folder-expiry
+npx picus lambda sites create --site-name=my-site-name --enable-folder-expiry
 ```
 
   </TabItem>
@@ -55,7 +55,7 @@ npx remotion lambda sites create --site-name=my-site-name --enable-folder-expiry
   <TabItem value="bucket">
 
 ```ts twoslash title="deploy.mjs" {6}
-import {deploySite, getOrCreateBucket} from '@remotion/lambda';
+import {deploySite, getOrCreateBucket} from '@picus/lambda';
 import path from 'path';
 
 const {bucketName} = await getOrCreateBucket({
@@ -98,7 +98,7 @@ values={[
 <TabItem value="cli">
 
 ```bash
-npx remotion lambda render testbed-v6 react-svg --delete-after="1-day"
+npx picus lambda render testbed-v6 react-svg --delete-after="1-day"
 ```
 
   </TabItem>
@@ -107,13 +107,13 @@ npx remotion lambda render testbed-v6 react-svg --delete-after="1-day"
 
 ```tsx twoslash title="render.ts" {10}
 // ---cut---
-import {renderMediaOnLambda} from '@remotion/lambda/client';
+import {renderMediaOnLambda} from '@picus/lambda/client';
 
 const {bucketName, renderId} = await renderMediaOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
+  functionName: 'picus-render-bds9aab',
   composition: 'MyVideo',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   codec: 'h264',
   deleteAfter: '1-day',
 });
@@ -124,13 +124,13 @@ const {bucketName, renderId} = await renderMediaOnLambda({
 
 ```tsx twoslash title="render.ts" {12}
 // ---cut---
-import {renderStillOnLambda} from '@remotion/lambda/client';
+import {renderStillOnLambda} from '@picus/lambda/client';
 
 const {bucketName, renderId} = await renderStillOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
+  functionName: 'picus-render-bds9aab',
   composition: 'MyVideo',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   inputProps: {},
   privacy: 'public',
   imageFormat: 'png',

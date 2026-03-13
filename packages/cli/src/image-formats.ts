@@ -1,6 +1,6 @@
-import type {VideoImageFormat} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {NoReactAPIs} from '@remotion/renderer/pure';
+import type {VideoImageFormat} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {NoReactAPIs} from '@picus/renderer/pure';
 import type {ConfigInternals} from './config';
 import {parsedCli} from './parsed-cli';
 

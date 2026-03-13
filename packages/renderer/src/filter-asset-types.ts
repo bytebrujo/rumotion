@@ -3,7 +3,7 @@ import type {
 	AudioOrVideoAsset,
 	InlineAudioAsset,
 	TRenderAsset,
-} from 'remotion/no-react';
+} from 'picus/no-react';
 import type {EmittedArtifact} from './serialize-artifact';
 import {truthy} from './truthy';
 

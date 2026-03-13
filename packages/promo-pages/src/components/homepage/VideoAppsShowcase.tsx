@@ -15,7 +15,7 @@ const videoApps = [
 		title: 'Banger.Show',
 		description:
 			'The all-in-one 3D visual creation tool for ambitious artists. Seamlessly craft visuals that match your sound and propel your brand forward.',
-		link: 'https://banger.show?ref=remotion',
+		link: 'https://banger.show?ref=picus',
 		videoWidth: 1080,
 		videoHeight: 1080,
 		muxId: 'Kg02XHfkR6x8400BtO4Ica54XlSPimmmTRpqDHHUaeACk',
@@ -26,17 +26,17 @@ const videoApps = [
 		description:
 			'A video editor for creating short-form content fast. Designed for creators, teams and agencies, it accelerates video editing with AI-powered features such as descriptions, zooms, sound effects and music.',
 		additionalInfo: '',
-		link: 'https://www.submagic.co/?ref=remotion',
+		link: 'https://www.submagic.co/?ref=picus',
 		videoWidth: 540,
 		videoHeight: 1080,
 		muxId: 'pxqGEjlBBntnXrEe4v00pYUBw3FPgUPKumfhSym00Vs004',
 		buttonText: 'Submagic website',
 	},
 	{
-		title: 'Remotion Recorder',
+		title: 'Picus Recorder',
 		description:
-			'The Remotion Recorder is a video production tool built entirely in JavaScript. Create high-quality videos that feel native on each platform while only editing them once.',
-		link: 'https://www.remotion.dev/recorder',
+			'The Picus Recorder is a video production tool built entirely in JavaScript. Create high-quality videos that feel native on each platform while only editing them once.',
+		link: 'https://www.picus.dev/recorder',
 		videoWidth: 1080,
 		videoHeight: 1080,
 		muxId: 'pHlwqDZFUH00Aubo9M001ty3gZ6YW8z689XTd9R479ayE',

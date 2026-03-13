@@ -1,5 +1,5 @@
 import {z} from 'zod';
 
-export const REMOTION_TEXTAREA_BRAND = '__remotion-textarea';
+export const PICUS_TEXTAREA_BRAND = '__picus-textarea';
 
-export const zTextarea = () => z.string().describe(REMOTION_TEXTAREA_BRAND);
+export const zTextarea = () => z.string().describe(PICUS_TEXTAREA_BRAND);

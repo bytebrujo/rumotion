@@ -13,7 +13,7 @@
 
 # Python virtual environments
 test-env/
-remotion-env-lint/
+picus-env-lint/
 .idea
 
 justfile

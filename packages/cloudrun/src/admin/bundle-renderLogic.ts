@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import {BundlerInternals} from '@remotion/bundler';
-import {dir} from '@remotion/compositor-linux-x64-gnu';
+import {BundlerInternals} from '@picus/bundler';
+import {dir} from '@picus/compositor-linux-x64-gnu';
 
 export const bundleRenderLogic = async () => {
 	const outdir = path.join(__dirname, '../../container/dist');
@@ -23,13 +23,13 @@ export const bundleRenderLogic = async () => {
 		outfile,
 		entryPoints: [template],
 		treeShaking: true,
-		external: ['./remotion', './remotion.exe', './mappings.wasm'],
+		external: ['./picus', './picus.exe', './mappings.wasm'],
 	});
 
 	const filesInCwd = fs.readdirSync(dir);
 	const filesToCopy = filesInCwd.filter(
 		(f) =>
-			f.startsWith('remotion') ||
+			f.startsWith('picus') ||
 			f.endsWith('.so') ||
 			f.endsWith('.dll') ||
 			f.endsWith('.dylib') ||

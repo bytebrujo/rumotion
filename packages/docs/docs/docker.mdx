@@ -2,7 +2,7 @@
 image: /generated/articles-docs-docker.png
 id: docker
 sidebar_label: Docker
-title: Dockerizing a Remotion app
+title: Dockerizing a Picus app
 crumb: 'Building video apps'
 ---
 
@@ -30,7 +30,7 @@ RUN apt install -y \
   libcups2
 
 # Copy everything from your project to the Docker image. Adjust if needed.
-COPY package.json package*.json yarn.lock* pnpm-lock.yaml* bun.lockb* bun.lock* tsconfig.json* remotion.config.* ./
+COPY package.json package*.json yarn.lock* pnpm-lock.yaml* bun.lockb* bun.lock* tsconfig.json* picus.config.* ./
 COPY src ./src
 
 # If you have a public folder:
@@ -40,7 +40,7 @@ COPY public ./public
 RUN npm i
 
 # Install Chrome
-RUN npx remotion browser ensure
+RUN npx picus browser ensure
 
 # Run your application
 COPY render.mjs render.mjs
@@ -88,7 +88,7 @@ RUN apt install -y \
 </p>
 
 ```docker
-COPY package.json package*.json yarn.lock* pnpm-lock.yaml* bun.lockb* bun.lock* tsconfig.json* remotion.config.* ./
+COPY package.json package*.json yarn.lock* pnpm-lock.yaml* bun.lockb* bun.lock* tsconfig.json* picus.config.* ./
 COPY src ./src
 COPY public ./public
 ```
@@ -120,7 +120,7 @@ COPY public ./public
 </p>
 
 ```docker
-RUN npx remotion browser ensure
+RUN npx picus browser ensure
 ```
 
 <p>
@@ -137,15 +137,15 @@ CMD ["node", "render.mjs"]
 Assuming you want to render the composition `MyComp`:
 
 ```tsx twoslash title="render.mjs"
-import {bundle} from '@remotion/bundler';
-import {renderMedia, selectComposition} from '@remotion/renderer';
+import {bundle} from '@picus/bundler';
+import {renderMedia, selectComposition} from '@picus/renderer';
 import {createRequire} from 'node:module';
 
 const require = createRequire(import.meta.url);
 
 const bundled = await bundle({
   entryPoint: require.resolve('./src/index.ts'),
-  // If you have a webpack override in remotion.config.ts, pass it here as well.
+  // If you have a webpack override in picus.config.ts, pass it here as well.
   webpackOverride: (config) => config,
 });
 
@@ -182,14 +182,14 @@ We recommend setting the `enableMultiProcessOnLinux` option for this Docker imag
 Run
 
 ```sh
-docker build -t remotion-app .
+docker build -t picus-app .
 ```
 
-to build a Docker image called `remotion-app`.  
+to build a Docker image called `picus-app`.  
 Use the following command to run the image:
 
 ```sh
-docker run remotion-app
+docker run picus-app
 ```
 
 ## Giving access to the CPUs
@@ -227,7 +227,7 @@ In Debian (and also Alpine), old packages are removed from the repositories once
   RUN apt-get install -y nodejs ffmpeg npm chromium
   ```
 
-- If you are on Remotion `v3.3.80` or lower, tell Remotion where Chrome is installed:
+- If you are on Picus `v3.3.80` or lower, tell Picus where Chrome is installed:
 
   ```docker
   ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
@@ -235,9 +235,9 @@ In Debian (and also Alpine), old packages are removed from the repositories once
 
 ## Recommendation: Don't use Alpine Linux
 
-Alpine Linux is a lightweight distribution often used in Docker. There are two known issues with it when used in conjunction with Remotion:
+Alpine Linux is a lightweight distribution often used in Docker. There are two known issues with it when used in conjunction with Picus:
 
-- The launch of the Rust parts of Remotion may be very slow (>10sec slowdown per render)
+- The launch of the Rust parts of Picus may be very slow (>10sec slowdown per render)
 - If a new version of Chrome gets released in the registry, you might be unable to downgrade because old versions are not kept and breaking changes can not be ruled out.
 
 ## Changelog
@@ -247,7 +247,7 @@ Alpine Linux is a lightweight distribution often used in Docker. There are two k
 
 **September 25th, 2023**: Recommend setting `enableMultiProcessOnLinux`.
 
-**May 30th, 2023**: Update document for Remotion 4.0.
+**May 30th, 2023**: Update document for Picus 4.0.
 
 **April 15th, 2023**: Unpinning the versions in Debian since it would cause breakage.
 
@@ -255,4 +255,4 @@ Alpine Linux is a lightweight distribution often used in Docker. There are two k
 
 ## See also
 
-- [Deploying the Remotion Studio](/docs/studio/deploy-server)
+- [Deploying the Picus Studio](/docs/studio/deploy-server)

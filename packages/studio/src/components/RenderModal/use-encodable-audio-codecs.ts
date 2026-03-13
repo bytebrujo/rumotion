@@ -1,11 +1,11 @@
 import type {
 	WebRendererAudioCodec,
 	WebRendererContainer,
-} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
 import {
 	getEncodableAudioCodecs,
 	getSupportedAudioCodecsForContainer,
-} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
 import {useEffect, useRef, useState} from 'react';
 
 type CacheEntry = {

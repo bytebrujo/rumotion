@@ -224,10 +224,10 @@ const ReactRefreshLoader: LoaderDefinition = function (source, inputSourceMap) {
 	// Importing a module that declares the global variables _a and _b
 	// will conflict with the global variables that React Fast Refresh uses.
 
-	// https://github.com/remotion-dev/remotion/issues/3699
+	// https://github.com/picus-dev/picus/issues/3699
 	const renamedSymbols = refreshModuleRuntime
-		.replace(/_a/g, '_remotion_globalVariableA')
-		.replace(/_b/g, '_remotion_globalVariableB');
+		.replace(/_a/g, '_picus_globalVariableA')
+		.replace(/_b/g, '_picus_globalVariableB');
 
 	this.callback(null, `${source}\n;${renamedSymbols}`, inputSourceMap);
 };

@@ -6,7 +6,7 @@ sidebar_label: Build a timeline
 crumb: 'Building video apps'
 ---
 
-This document describes on a high-level how the [Remotion Player](/player) can be synchronized with a timeline.  
+This document describes on a high-level how the [Picus Player](/player) can be synchronized with a timeline.  
 Read this document for guidance on building a video editor with the following characteristics:
 
 - Multiple tracks that overlay each other
@@ -15,15 +15,15 @@ Read this document for guidance on building a video editor with the following ch
 
 ## Get the `<Timeline>` component
 
-We offer a copy-pasteable `<Timeline>` component that follows Remotion's best practices and also already handles zoom.  
-If you want to save time and get a head start, you can [purchase it in the Remotion Store](https://www.remotion.pro/timeline).
+We offer a copy-pasteable `<Timeline>` component that follows Picus's best practices and also already handles zoom.  
+If you want to save time and get a head start, you can [purchase it in the Picus Store](https://www.picus.pro/timeline).
 
 You can also build your own timeline component.  
 The following steps will use the same approach we used to build our Timeline component.
 
 ## Watch the "Build a video editor in React" talk
 
-Watch the talk "Build a video editor in React" by Jonny Burger, the creator of Remotion [here](https://www.youtube.com/watch?v=gYf_FWZGHng).  
+Watch the talk "Build a video editor in React" by Jonny Burger, the creator of Picus [here](https://www.youtube.com/watch?v=gYf_FWZGHng).  
 You'll receive an outline of how to build a timeline, canvas, captioning and exporting functionality in just 30 minutes.
 
 ## Build your own timeline
@@ -66,7 +66,7 @@ export type Track = {
 
 <Step>2</Step> Create a component that can render a list of tracks.
 
-```tsx twoslash title="remotion/Main.tsx"
+```tsx twoslash title="picus/Main.tsx"
 // @filename: types.ts
 type BaseItem = {
   from: number;
@@ -101,7 +101,7 @@ export type Track = {
 // ---cut---
 import type {Track, Item} from './types';
 import React from 'react';
-import {AbsoluteFill, Sequence, OffthreadVideo} from 'remotion';
+import {AbsoluteFill, Sequence, OffthreadVideo} from 'picus';
 
 const ItemComp: React.FC<{
   item: Item;
@@ -189,7 +189,7 @@ export type Track = {
   items: Item[];
 };
 
-// @filename: remotion/Main.tsx
+// @filename: picus/Main.tsx
 import React from 'react';
 import type {Track} from '../types';
 export const Main: React.FC<{
@@ -201,9 +201,9 @@ export const Main: React.FC<{
 // @filename: Editor.tsx
 // ---cut---
 import React, {useMemo, useState} from 'react';
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import type {Item} from './types';
-import {Main} from './remotion/Main';
+import {Main} from './picus/Main';
 
 type Track = {
   name: string;
@@ -234,13 +234,13 @@ export const Editor = () => {
 
 We do not currently provide samples how to build a timeline component, since everybody has different needs and styling preferences.
 
-An opinionated sample implementation is [available for purchase in the Remotion Store](https://www.remotion.pro/timeline).
+An opinionated sample implementation is [available for purchase in the Picus Store](https://www.picus.pro/timeline).
 
-```tsx twoslash title="remotion/Timeline.tsx" {23}
+```tsx twoslash title="picus/Timeline.tsx" {23}
 type Item = {};
 type Track = {};
 const inputProps = {};
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import {useState, useMemo} from 'react';
 
 const Main: React.FC<{

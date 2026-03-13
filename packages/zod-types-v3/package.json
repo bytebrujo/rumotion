@@ -1,12 +1,12 @@
 {
-	"name": "@remotion/zod-types-v3",
+	"name": "@picus/zod-types-v3",
 	"version": "4.0.434",
-	"description": "Zod 3.22.3 types for Remotion",
+	"description": "Zod 3.22.3 types for Picus",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/esm/index.mjs",
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/zod-types-v3"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/zod-types-v3"
 	},
 	"sideEffects": false,
 	"type": "module",
@@ -17,15 +17,15 @@
 		"watch": "tsgo -w",
 		"make": "tsgo && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*",
-		"@remotion/zod-types": "workspace:*"
+		"picus": "workspace:*",
+		"@picus/zod-types": "workspace:*"
 	},
 	"peerDependencies": {
 		"zod": ">=3.0.0 <4.0.0"
@@ -40,17 +40,17 @@
 	},
 	"devDependencies": {
 		"zod": "3.22.3",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"zod",
 		"zod-v3"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/zod-types/v3"
+	"homepage": "https://www.picus.dev/docs/zod-types/v3"
 }

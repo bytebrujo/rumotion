@@ -1,6 +1,6 @@
-import {fitText} from '@remotion/layout-utils';
+import {fitText} from '@picus/layout-utils';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {z} from 'zod';
 
 const boxWidth = 600;

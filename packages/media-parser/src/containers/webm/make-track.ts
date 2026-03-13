@@ -91,7 +91,7 @@ const getMatroskaVideoCodecString = ({
 		const priv = getPrivateData(track);
 		if (priv) {
 			throw new Error(
-				'@remotion/media-parser cannot handle the private data for VP9. Do you have an example file you could send so we can implement it? https://remotion.dev/report',
+				'@picus/media-parser cannot handle the private data for VP9. Do you have an example file you could send so we can implement it? https://picus.dev/report',
 			);
 		}
 

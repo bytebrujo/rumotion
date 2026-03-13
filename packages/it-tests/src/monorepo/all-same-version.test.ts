@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import {existsSync, readFileSync} from 'fs';
 import {getAllPackages} from './get-all-packages';
 
-test('All monorepo packages need to have workspace:* as remotion version', () => {
+test('All monorepo packages need to have workspace:* as picus version', () => {
 	const folders = getAllPackages();
 
 	let deps = 0;
@@ -24,13 +24,13 @@ test('All monorepo packages need to have workspace:* as remotion version', () =>
 			...optionalDependencies,
 		};
 
-		const onlyRemotionDeps = Object.keys(allDeps).filter(
-			(dep) => dep.startsWith('@remotion') || dep === 'remotion',
+		const onlyPicusDeps = Object.keys(allDeps).filter(
+			(dep) => dep.startsWith('@picus') || dep === 'picus',
 		);
 
-		for (const dep of onlyRemotionDeps) {
+		for (const dep of onlyPicusDeps) {
 			expect(
-				allDeps[dep] === 'workspace:*' || allDeps[dep].includes('remotion.pro'),
+				allDeps[dep] === 'workspace:*' || allDeps[dep].includes('picus.pro'),
 			).toBeTruthy();
 			deps++;
 		}

@@ -3,7 +3,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".react-router/types/**/*",
-    "app/remotion/constants.mjs",
+    "app/picus/constants.mjs",
     "deploy.mjs"
   ],
   "compilerOptions": {
@@ -29,5 +29,5 @@
     "rootDirs": [".", "./.react-router/types"],
     "module": "ESNext"
   },
-  "exclude": ["remotion.config.ts"]
+  "exclude": ["picus.config.ts"]
 }

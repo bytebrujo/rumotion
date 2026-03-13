@@ -1,7 +1,7 @@
 import {describe, expect, test} from 'bun:test';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 
 const {logLevelOption} = BrowserSafeApis.options;
 

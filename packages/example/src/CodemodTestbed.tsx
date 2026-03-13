@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {CalculateMetadataFunction, Composition, Folder} from 'remotion';
+import {CalculateMetadataFunction, Composition, Folder} from 'picus';
 import {z} from 'zod';
 import {DynamicDuration, dynamicDurationSchema} from './DynamicDuration';
 

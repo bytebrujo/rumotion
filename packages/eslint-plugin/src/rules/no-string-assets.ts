@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://github.com/remotion-dev/remotion`;
+	return `https://github.com/picus-dev/picus`;
 });
 
 type Options = [];
@@ -10,7 +10,7 @@ type MessageIds = 'NoStringAssets';
 
 const NoStringAssets = [
 	"Don't reference local assets by string, use an import statement or staticFile() instead.",
-	'See: https://www.remotion.dev/docs/assets',
+	'See: https://www.picus.dev/docs/assets',
 ].join('\n');
 
 export default createRule<Options, MessageIds>({

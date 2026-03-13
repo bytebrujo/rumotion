@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let disallowParallelEncoding = false;
 
@@ -15,7 +15,7 @@ export const disallowParallelEncodingOption = {
 		</>
 	),
 	ssrName: 'disallowParallelEncoding',
-	docLink: 'https://www.remotion.dev/docs/config#setdisallowparallelencoding',
+	docLink: 'https://www.picus.dev/docs/config#setdisallowparallelencoding',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -41,4 +41,4 @@ export const disallowParallelEncodingOption = {
 		disallowParallelEncoding = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

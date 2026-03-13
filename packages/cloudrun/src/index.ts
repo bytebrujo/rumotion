@@ -24,17 +24,17 @@ import {CloudrunInternals} from './internals';
 import type {GcpRegion} from './pricing/gcp-regions';
 
 /**
- * @deprecated  Import this from `@remotion/cloudrun/client` instead
+ * @deprecated  Import this from `@picus/cloudrun/client` instead
  */
 const renderMediaOnCloudrun = deprecatedRenderMediaOnCloudrun;
 
 /**
- * @deprecated  Import this from `@remotion/cloudrun/client` instead
+ * @deprecated  Import this from `@picus/cloudrun/client` instead
  */
 const renderStillOnCloudrun = deprecatedRenderStillOnCloudrun;
 
 /**
- * @deprecated Import this from `@remotion/lambda/client` instead
+ * @deprecated Import this from `@picus/lambda/client` instead
  */
 const getSites = deprecatedGetSites;
 

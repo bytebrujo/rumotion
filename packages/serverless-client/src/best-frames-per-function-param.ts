@@ -1,6 +1,6 @@
 // Always update the code in docs/lambda/concurrency.md too
 
-import {interpolate} from 'remotion/no-react';
+import {interpolate} from 'picus/no-react';
 
 export const bestFramesPerFunctionParam = (frameCount: number) => {
 	// Between 0 and 10 minutes (at 30fps), interpolate the concurrency from 75 to 150

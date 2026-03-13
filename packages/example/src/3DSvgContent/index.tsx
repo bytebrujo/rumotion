@@ -1,5 +1,5 @@
-import {translatePath} from '@remotion/paths';
-import {makeCircle, makeRect} from '@remotion/shapes';
+import {translatePath} from '@picus/paths';
+import {makeCircle, makeRect} from '@picus/shapes';
 import React from 'react';
 import {RotateX} from '../3DContext/transformation-context';
 import {G3D} from './G3D';
@@ -17,9 +17,9 @@ export const ThreeDSvgContent: React.FC = () => {
 			<rect width="574" height="434" fill="#F8FAFC" />
 			<RotateX radians={0}>
 				<G3D backFace="red" d="M 0 0 L 574 434" depth={0}>
-					<g id="remotionwebcodecs">
+					<g id="picuswebcodecs">
 						<text
-							id="@remotion/webcodecs"
+							id="@picus/webcodecs"
 							fill="black"
 							xmlSpace="preserve"
 							style={{whiteSpace: 'pre'}}
@@ -29,7 +29,7 @@ export const ThreeDSvgContent: React.FC = () => {
 							letterSpacing="0em"
 						>
 							<tspan x="171.172" y="34.001">
-								@remotion/webcodecs
+								@picus/webcodecs
 							</tspan>
 						</text>
 						<g id="Video Conversion in the browser Experimental">
@@ -370,7 +370,7 @@ export const ThreeDSvgContent: React.FC = () => {
 										fill="white"
 									/>
 									<text
-										id="remotion.dev/convert"
+										id="picus.dev/convert"
 										fill="#0B84F3"
 										xmlSpace="preserve"
 										style={{whiteSpace: 'pre'}}
@@ -380,7 +380,7 @@ export const ThreeDSvgContent: React.FC = () => {
 										textDecoration="underline"
 									>
 										<tspan x="90" y="222.691">
-											remotion.dev/convert
+											picus.dev/convert
 										</tspan>
 									</text>
 									<rect
@@ -403,7 +403,7 @@ export const ThreeDSvgContent: React.FC = () => {
 										mask="url(#path-26-inside-1_0_1)"
 									/>
 								</g>
-								<g id="Try: remotion.dev/convert">
+								<g id="Try: picus.dev/convert">
 									<text
 										fill="black"
 										xmlSpace="preserve"
@@ -428,7 +428,7 @@ export const ThreeDSvgContent: React.FC = () => {
 										textDecoration="underline"
 									>
 										<tspan x="64.75" y="311.572">
-											remotion.dev/convert
+											picus.dev/convert
 										</tspan>
 									</text>
 								</g>
@@ -754,7 +754,7 @@ export const ThreeDSvgContent: React.FC = () => {
 								stroke="black"
 								strokeWidth="2"
 							/>
-							<g id="Remotion License Free for teams &#60;4">
+							<g id="Picus License Free for teams &#60;4">
 								<text
 									fill="black"
 									xmlSpace="preserve"
@@ -765,7 +765,7 @@ export const ThreeDSvgContent: React.FC = () => {
 									letterSpacing="0em"
 								>
 									<tspan x="410" y="205.691">
-										Remotion License&#10;
+										Picus License&#10;
 									</tspan>
 								</text>
 								<text
@@ -907,7 +907,7 @@ export const ThreeDSvgContent: React.FC = () => {
 								fill="url(#pattern2_0_1)"
 							/>
 						</g>
-						<g id="[1] Tested on a M2 MacBook Air. See github.com/remotion-dev/webcodecs-benchmark for elaboration.">
+						<g id="[1] Tested on a M2 MacBook Air. See github.com/picus-dev/webcodecs-benchmark for elaboration.">
 							<text
 								fill="#666666"
 								fillOpacity="0.59"
@@ -952,7 +952,7 @@ export const ThreeDSvgContent: React.FC = () => {
 								textDecoration="underline"
 							>
 								<tspan x="167.409" y="409.548">
-									github.com/remotion-dev/webcodecs-benchmark
+									github.com/picus-dev/webcodecs-benchmark
 								</tspan>
 							</text>
 						</g>

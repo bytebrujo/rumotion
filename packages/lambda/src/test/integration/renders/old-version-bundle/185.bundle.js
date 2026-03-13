@@ -1,6 +1,6 @@
 'use strict';
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[185],
 	{
 		/***/ 1185:
@@ -16,11 +16,11 @@
 				});
 				/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(2386);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_2__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_2__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_2___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_2___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_2__,
+						picus__WEBPACK_IMPORTED_MODULE_2__,
 					);
 				/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ =
 					__webpack_require__(2922);
@@ -59,7 +59,7 @@
 				};
 				const Rating = () => {
 					const [handle] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(
-						() => (0, remotion__WEBPACK_IMPORTED_MODULE_2__.delayRender)(),
+						() => (0, picus__WEBPACK_IMPORTED_MODULE_2__.delayRender)(),
 					);
 					const [data, setData] = (0,
 					react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
@@ -70,13 +70,13 @@
 						setData(json);
 					}, []);
 					(0, react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-						(0, remotion__WEBPACK_IMPORTED_MODULE_2__.continueRender)(handle);
+						(0, picus__WEBPACK_IMPORTED_MODULE_2__.continueRender)(handle);
 					}, [data, handle]);
 					(0, react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
 						fetchData();
 					}, [fetchData]);
 					const frame = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_2__.useCurrentFrame)();
+					picus__WEBPACK_IMPORTED_MODULE_2__.useCurrentFrame)();
 					if (!data) {
 						return null;
 					}
@@ -113,7 +113,7 @@
 									? void 0
 									: data.data.pack.stickers.slice(0, 12).map((d, i) =>
 											/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-												remotion__WEBPACK_IMPORTED_MODULE_2__.Img,
+												picus__WEBPACK_IMPORTED_MODULE_2__.Img,
 												{
 													key: d.id,
 													src: `https://anysticker.imgix.net/${d.source}`,
@@ -145,7 +145,7 @@
 								},
 							},
 							/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-								remotion__WEBPACK_IMPORTED_MODULE_2__.Img,
+								picus__WEBPACK_IMPORTED_MODULE_2__.Img,
 								{
 									src: 'https://www.anysticker.app/logo-transparent.png',
 									style: {height: 200, width: 200, marginRight: 40},

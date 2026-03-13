@@ -2,7 +2,7 @@ import {
 	getFunctions,
 	getRenderProgress,
 	renderMediaOnLambda,
-} from '@remotion/lambda/client';
+} from '@picus/lambda/client';
 import assert from 'assert';
 import {config} from 'dotenv';
 

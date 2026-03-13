@@ -1,7 +1,7 @@
 import { useThree } from "@react-three/fiber";
-import { Video } from "@remotion/media";
+import { Video } from "@picus/media";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from "picus";
 import { CanvasTexture, Texture } from "three";
 import { MediabunnyMetadata } from "./helpers/get-media-metadata";
 import {

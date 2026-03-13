@@ -1,5 +1,5 @@
-import { useWindowedAudioData, visualizeAudio } from "@remotion/media-utils";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useWindowedAudioData, visualizeAudio } from "@picus/media-utils";
+import { useCurrentFrame, useVideoConfig } from "picus";
 import { AudioVizContainer } from "./AudioVizContainer";
 import { BASE_SIZE } from "./constants";
 

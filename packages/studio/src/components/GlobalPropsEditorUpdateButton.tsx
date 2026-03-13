@@ -1,5 +1,5 @@
 import React, {useCallback, useContext} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {saveDefaultProps} from '../api/save-default-props';
 import {FastRefreshContext} from '../fast-refresh-context';
 import {showNotification} from './Notifications/NotificationCenter';
@@ -21,7 +21,7 @@ export const GlobalPropsEditorUpdateButton: React.FC<{
 
 	const onClicked = useCallback(() => {
 		setDisabled(true);
-		window.remotion_ignoreFastRefreshUpdate = fastRefreshes + 1;
+		window.picus_ignoreFastRefreshUpdate = fastRefreshes + 1;
 
 		saveDefaultProps({
 			compositionId,
@@ -36,7 +36,7 @@ export const GlobalPropsEditorUpdateButton: React.FC<{
 	}, [compositionId, currentDefaultProps, fastRefreshes]);
 
 	const onReset = useCallback(() => {
-		window.remotion_ignoreFastRefreshUpdate = null;
+		window.picus_ignoreFastRefreshUpdate = null;
 		window.dispatchEvent(
 			new CustomEvent<{resetUnsaved: string | null}>(
 				Internals.PROPS_UPDATED_EXTERNALLY,

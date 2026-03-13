@@ -1,7 +1,7 @@
 import type {VolumeProp} from '../volume-prop.js';
 import type {LoopVolumeCurveBehavior} from './use-audio-frame.js';
 
-export type RemotionMainAudioProps = {
+export type PicusMainAudioProps = {
 	/**
 	 * @deprecated `startFrom` was renamed to `trimBefore`
 	 */
@@ -34,7 +34,7 @@ export type NativeAudioProps = Omit<
 	| 'onError'
 >;
 
-export type RemotionAudioProps = NativeAudioProps & {
+export type PicusAudioProps = NativeAudioProps & {
 	name?: string;
 	volume?: VolumeProp;
 	playbackRate?: number;
@@ -43,8 +43,8 @@ export type RemotionAudioProps = NativeAudioProps & {
 	 * @deprecated Amplification is now always enabled. To prevent amplification, set `volume` to a value less than 1.
 	 */
 	allowAmplificationDuringRender?: boolean;
-	_remotionInternalNeedsDurationCalculation?: boolean;
-	_remotionInternalNativeLoopPassed?: boolean;
+	_picusInternalNeedsDurationCalculation?: boolean;
+	_picusInternalNativeLoopPassed?: boolean;
 	toneFrequency?: number;
 	useWebAudioApi?: boolean;
 	pauseWhenBuffering?: boolean;

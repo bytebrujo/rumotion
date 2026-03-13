@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../controller/media-parser-controller';
 import {hasBeenAborted, IsAnImageError} from '../errors';
 import {parseMediaOnServerWorker} from '../server-worker.module';
@@ -10,7 +10,7 @@ test('worker should work', async () => {
 		fields: {
 			audioCodec: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(audioCodec).toBe('aac');
@@ -23,7 +23,7 @@ test('worker should throw error as normal', () => {
 			fields: {
 				audioCodec: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		}),
 	).toThrow('File does not exist: wrongurl');
 });
@@ -41,7 +41,7 @@ test('hasBeenAborted() should still work', async () => {
 				controller.abort();
 			},
 			controller,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 		throw new Error('Should not resolve');
 	} catch (err) {
@@ -60,7 +60,7 @@ test('Custom errors should still work', async () => {
 			fields: {
 				dimensions: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 		throw new Error('Should not resolve');
 	} catch (err) {
@@ -75,7 +75,7 @@ test('onAudioCodec() callback should still work', async () => {
 	let called = false;
 	await parseMediaOnServerWorker({
 		src: 'https://test-streams.mux.dev/x36xhzz/url_0/url_525/193039199_mp4_h264_aac_hd_7.ts',
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		onAudioCodec: (audioCodec) => {
 			expect(audioCodec).toBe('aac');
 			called = true;
@@ -88,7 +88,7 @@ test('should do something smart when throwing inside a callback', async () => {
 	try {
 		await parseMediaOnServerWorker({
 			src: 'https://test-streams.mux.dev/x36xhzz/url_0/url_525/193039199_mp4_h264_aac_hd_7.ts',
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			onAudioCodec: () => {
 				throw new Error('test');
 			},
@@ -123,7 +123,7 @@ test('should get samples and be able to select stuff', async () => {
 				dimensionsCalled = true;
 				expect(dimensions).toEqual({width: 1280, height: 720});
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			controller,
 			onAudioTrack: ({track}) => {
 				expect(track.trackId).toBe(257);

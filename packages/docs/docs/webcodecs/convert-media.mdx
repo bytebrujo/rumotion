@@ -3,16 +3,16 @@ image: /generated/articles-docs-webcodecs-convert-media.png
 id: convert-media
 title: convertMedia()
 slug: /webcodecs/convert-media
-crumb: '@remotion/webcodecs'
+crumb: '@picus/webcodecs'
 ---
 
 :::warning
-[We are phasing out Remotion WebCodecs and are moving to Mediabunny](/blog/mediabunny)!
+[We are phasing out Picus WebCodecs and are moving to Mediabunny](/blog/mediabunny)!
 :::
 
 # convertMedia()<AvailableFrom v="4.0.229"/>
 
-_Part of the [`@remotion/webcodecs`](/docs/webcodecs) package._
+_Part of the [`@picus/webcodecs`](/docs/webcodecs) package._
 
 import {LicenseDisclaimer} from './LicenseDisclaimer';
 import {UnstableDisclaimer} from './UnstableDisclaimer';
@@ -26,13 +26,13 @@ import {UnstableDisclaimer} from './UnstableDisclaimer';
   <UnstableDisclaimer />
 </details>
 
-Re-encodes a video using [WebCodecs](https://developer.mozilla.org/en-US/docs/Web/API/WebCodecs_API) and [`@remotion/media-parser`](/docs/media-parser).
+Re-encodes a video using [WebCodecs](https://developer.mozilla.org/en-US/docs/Web/API/WebCodecs_API) and [`@picus/media-parser`](/docs/media-parser).
 
 ```tsx twoslash title="Converting a video"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 const result = await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
 });
 
@@ -56,10 +56,10 @@ Call this function to get the converted video as a `Blob`. You can then use this
 - Store in IndexedDB
 
 ```tsx twoslash title="Saving and downloading a converted video"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 const result = await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
 });
 
@@ -98,7 +98,7 @@ If passing a local file, tracks can only be copied, and the [`reader`](#reader) 
 
 ### `container`
 
-_string_ <TsType type="ConvertMediaContainer" source="@remotion/webcodecs"/>
+_string_ <TsType type="ConvertMediaContainer" source="@picus/webcodecs"/>
 
 The container format to convert to. Currently, `"mp4"`, `"webm"` and `"wav"` is supported.
 
@@ -118,7 +118,7 @@ Pass the expected frame rate of the output video, so that the size of the MP4 me
 
 ### `videoCodec?`
 
-_string_ <TsType type="ConvertMediaVideoCodec" source="@remotion/webcodecs"/>
+_string_ <TsType type="ConvertMediaVideoCodec" source="@picus/webcodecs"/>
 
 The video codec to convert to. Currently, `"h264"`, `"h265"`, `"vp8"` and `"vp9"` are supported.  
 The default is defined by [`getDefaultVideoCodec()`](/docs/webcodecs/get-default-video-codec).  
@@ -126,7 +126,7 @@ If a [`onVideoTrack`](#onvideotrack) handler is provided, it will override this 
 
 ### `audioCodec?`
 
-_string_ <TsType type="ConvertMediaAudioCodec" source="@remotion/webcodecs"/>
+_string_ <TsType type="ConvertMediaAudioCodec" source="@picus/webcodecs"/>
 
 The audio codec to convert to. Currently, only `"opus"` is supported.  
 The default is defined by [`getDefaultAudioCodec()`](/docs/webcodecs/get-default-audio-codec).  
@@ -150,25 +150,25 @@ The number of degrees to rotate the video. See [Rotate a video](/docs/webcodecs/
 
 ### `resize?`
 
-_object_ <TsType type="ResizeOperation" source="@remotion/webcodecs"/>
+_object_ <TsType type="ResizeOperation" source="@picus/webcodecs"/>
 
 Resize the video. See [Resize a video](/docs/webcodecs/resize-a-video) for more information.
 
 ### `logLevel?`
 
-_string_ <TsType type="LogLevel" source="@remotion/media-parser"/>
+_string_ <TsType type="LogLevel" source="@picus/media-parser"/>
 
 One of `"error"`, `"warn"`, `"info"`, `"debug"`, `"trace"`.  
 Default value: `"info"`, which logs only important information.
 
 ### `onProgress?`
 
-_Function_ <TsType type="ConvertMediaOnProgress" source="@remotion/media-parser"/>
+_Function_ <TsType type="ConvertMediaOnProgress" source="@picus/media-parser"/>
 
 Allows receiving progress updates. The following fields are available:
 
 ```tsx twoslash
-import type {ConvertMediaOnProgress, ConvertMediaProgress} from '@remotion/webcodecs';
+import type {ConvertMediaOnProgress, ConvertMediaProgress} from '@picus/webcodecs';
 
 export const onProgress: ConvertMediaOnProgress = ({decodedVideoFrames, decodedAudioFrames, encodedVideoFrames, encodedAudioFrames, bytesWritten, millisecondsWritten, expectedOutputDurationInMs, overallProgress}: ConvertMediaProgress) => {
   console.log(decodedVideoFrames);
@@ -192,12 +192,12 @@ export const onProgress: ConvertMediaOnProgress = ({decodedVideoFrames, decodedA
 
 ### `onVideoFrame?`
 
-_Function_ <TsType type="ConvertMediaOnVideoFrame" source="@remotion/media-parser"/>
+_Function_ <TsType type="ConvertMediaOnVideoFrame" source="@picus/media-parser"/>
 
 Allows you to hook into the video frames. The frames are [`VideoFrame`](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame) objects.
 
 ```tsx twoslash
-import type {ConvertMediaOnVideoFrame} from '@remotion/webcodecs';
+import type {ConvertMediaOnVideoFrame} from '@picus/webcodecs';
 
 export const onVideoFrame: ConvertMediaOnVideoFrame = ({frame}) => {
   console.log(frame);
@@ -225,12 +225,12 @@ If you return a different frame than the one you received, it must have the same
 
 ### `onAudioData?`
 
-_Function_ <TsType type="ConvertMediaOnAudioData" source="@remotion/media-parser"/>
+_Function_ <TsType type="ConvertMediaOnAudioData" source="@picus/media-parser"/>
 
 Allows you to hook into the audio data. The items are native [`AudioData`](https://developer.mozilla.org/en-US/docs/Web/API/AudioData) objects.
 
 ```tsx twoslash
-import type {ConvertMediaOnAudioData} from '@remotion/webcodecs';
+import type {ConvertMediaOnAudioData} from '@picus/webcodecs';
 
 export const onAudioData: ConvertMediaOnAudioData = ({audioData}) => {
   console.log(audioData);
@@ -258,19 +258,19 @@ If you return a different audio data than the one you received, it should have t
 
 ### `writer?`
 
-_object_ <TsType type="WriterInterface" source="@remotion/webcodecs" />
+_object_ <TsType type="WriterInterface" source="@picus/webcodecs" />
 
 A writer interface. The following interfaces are available:
 
 ```tsx twoslash title="Buffer writer"
-import {bufferWriter} from '@remotion/webcodecs/buffer';
+import {bufferWriter} from '@picus/webcodecs/buffer';
 //               ^?
 ```
 
 Write to a resizable Array Buffer.
 
 ```tsx twoslash title="Web File System writer"
-import {canUseWebFsWriter, webFsWriter} from '@remotion/webcodecs/web-fs';
+import {canUseWebFsWriter, webFsWriter} from '@picus/webcodecs/web-fs';
 //                          ^?
 
 await canUseWebFsWriter(); // boolean
@@ -282,21 +282,21 @@ By default the writer is `webFsWriter`.
 
 ### `onAudioTrack?`
 
-_Function_ <TsType type="ConvertMediaOnAudioTrackHandler" source="@remotion/webcodecs"/>
+_Function_ <TsType type="ConvertMediaOnAudioTrackHandler" source="@picus/webcodecs"/>
 
 Take control of what to do for each audio track in the file: Re-encoding, copying, or dropping.  
 See [Track Transformation](/docs/webcodecs/track-transformation) for a guide on how to use this callback.
 
 ### `onVideoTrack?`
 
-_Function_ <TsType type="ConvertMediaOnVideoTrackHandler" source="@remotion/webcodecs"/>
+_Function_ <TsType type="ConvertMediaOnVideoTrackHandler" source="@picus/webcodecs"/>
 
 Take control of what to do for each video track in the file: Re-encoding, copying, or dropping.  
 See [Track Transformation](/docs/webcodecs/track-transformation) for a guide on how to use this callback.
 
 ### `selectM3uStream?`
 
-_Function_ <TsType type="SelectM3uStreamFn" source="@remotion/media-parser"/>
+_Function_ <TsType type="SelectM3uStreamFn" source="@picus/media-parser"/>
 
 A callback that is called when a `.m3u8` file is detected which has multiple streams.  
 See [Stream selection](/docs/media-parser/stream-selection) for an example.
@@ -321,10 +321,10 @@ You can obtain information about the video file while you are converting it.
 This feature is inherited from [`parseMedia()`](/docs/media-parser/parse-media), but only the callback-style API is available.
 
 ```tsx twoslash title="Converting a video"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 const result = await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
   videoCodec: 'vp8',
   audioCodec: 'opus',
@@ -342,10 +342,10 @@ const blob = await result.save();
 
 ## License
 
-[See notes about `@remotion/webcodecs`](/docs/webcodecs#-license-disclaimer).
+[See notes about `@picus/webcodecs`](/docs/webcodecs#-license-disclaimer).
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/webcodecs/src/convert-media.ts)
-- [`@remotion/webcodecs`](/docs/webcodecs)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/webcodecs/src/convert-media.ts)
+- [`@picus/webcodecs`](/docs/webcodecs)
 - [`parseMedia()`](/docs/media-parser/parse-media)

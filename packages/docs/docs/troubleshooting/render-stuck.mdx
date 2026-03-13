@@ -12,7 +12,7 @@ If your render is stuck, proceed as follows:
 
 If the `delayRender()` timeout is too big and does not resolve, a render may get stuck indefinitely without an error message.
 
-This issue may be more confusing on Remotion Lambda, whose runtime also has a timeout.  
+This issue may be more confusing on Picus Lambda, whose runtime also has a timeout.  
 If the `delayRender()` timeout is bigger than the Lambda function timeout, the Lambda function will first time out without the `delayRender()` call failing first, leading to no error message.
 
 To debug the issue:
@@ -26,18 +26,18 @@ To debug the issue:
 
 ## Ensure Chrome Headless Shell is used
 
-Newer Chrome versions may not work with Remotion anymore and cause a render to get stuck, because they have removed the Headless mode.  
+Newer Chrome versions may not work with Picus anymore and cause a render to get stuck, because they have removed the Headless mode.  
 Instead, you need to migrate to the [Chrome Headless Shell](/docs/miscellaneous/chrome-headless-shell).
 
 :::note
-This issue does not occur on Remotion Lambda.
+This issue does not occur on Picus Lambda.
 :::
 
 Follow these best practices:
 
 - Do not download Chrome from a Linux package manager.
-- Do not set the `--chrome-executable` option and let Remotion download a compatible version of Chrome Headless Shell for you.
-- Use [`npx remotion browser ensure`](/docs/cli/browser/ensure) to make sure a compatible versions of Chrome Headless Shell is ready before the first render.
+- Do not set the `--chrome-executable` option and let Picus download a compatible version of Chrome Headless Shell for you.
+- Use [`npx picus browser ensure`](/docs/cli/browser/ensure) to make sure a compatible versions of Chrome Headless Shell is ready before the first render.
 
 ## Lambda: Are you reading the `errors` field?
 

@@ -1,4 +1,4 @@
-export * from '@remotion/serverless-client';
+export * from '@picus/serverless-client';
 export {
 	forgetBrowserEventLoopImplementation,
 	getBrowserInstanceImplementation,

@@ -8,11 +8,11 @@ const MediaEnabledContext = createContext<{
 export const useVideoEnabled = () => {
 	const context = useContext(MediaEnabledContext);
 	if (!context) {
-		return window.remotion_videoEnabled;
+		return window.picus_videoEnabled;
 	}
 
 	if (context.videoEnabled === null) {
-		return window.remotion_videoEnabled;
+		return window.picus_videoEnabled;
 	}
 
 	return context.videoEnabled;
@@ -21,11 +21,11 @@ export const useVideoEnabled = () => {
 export const useAudioEnabled = () => {
 	const context = useContext(MediaEnabledContext);
 	if (!context) {
-		return window.remotion_audioEnabled;
+		return window.picus_audioEnabled;
 	}
 
 	if (context.audioEnabled === null) {
-		return window.remotion_audioEnabled;
+		return window.picus_audioEnabled;
 	}
 
 	return context.audioEnabled;

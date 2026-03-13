@@ -2,8 +2,8 @@ import { Metadata, Viewport } from "next";
 import "../../styles/global.css";
 
 export const metadata: Metadata = {
-  title: "Remotion rendering on Vercel Sandbox",
-  description: "Remotion rendering on Vercel Sandbox",
+  title: "Picus rendering on Vercel Sandbox",
+  description: "Picus rendering on Vercel Sandbox",
 };
 
 export const viewport: Viewport = {

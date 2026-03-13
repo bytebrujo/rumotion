@@ -5,15 +5,15 @@ title: Comparison of video tags
 crumb: '<Video>, <Html5Video>, <OffthreadVideo>'
 ---
 
-We offer three components for embedding videos into your Remotion composition:
+We offer three components for embedding videos into your Picus composition:
 
 - [`<OffthreadVideo />`](/docs/offthreadvideo) - **our recommendation**, based on a Rust-based frame extractor
-- [`<Html5Video />`](/docs/html5-video) from [`remotion`](/docs/remotion) (previously named `<Video>`) - based on the HTML5 `<video>` element
-- [`<Video />`](/docs/media/video) from [`@remotion/media`](/docs/media) - an experimental WebCodecs-based component, set to become the default
+- [`<Html5Video />`](/docs/html5-video) from [`picus`](/docs/picus) (previously named `<Video>`) - based on the HTML5 `<video>` element
+- [`<Video />`](/docs/media/video) from [`@picus/media`](/docs/media) - an experimental WebCodecs-based component, set to become the default
 
 This page offers a comparison to help you decide which tag to use.
 
-|                                                          | [`<OffthreadVideo />`](/docs/offthreadvideo)                                                     | [`<Html5Video />`](/docs/html5-video) <br/> [`<Html5Audio />`](/docs/html5-audio) <br/> (`remotion`) | [`<Video />`](/docs/media/video) <br/> [`<Audio />`](/docs/media/audio) (`@remotion/media`)                                                   |
+|                                                          | [`<OffthreadVideo />`](/docs/offthreadvideo)                                                     | [`<Html5Video />`](/docs/html5-video) <br/> [`<Html5Audio />`](/docs/html5-audio) <br/> (`picus`) | [`<Video />`](/docs/media/video) <br/> [`<Audio />`](/docs/media/audio) (`@picus/media`)                                                   |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Based on**                                             | Rust + FFmpeg binary                                                                             | HTML5 `<video>` tag                                                                                  | Mediabunny, WebCodecs                                                                                                                         |
 | **Frame-perfect**                                        | ✅                                                                                               | ❌ Not guaranteed                                                                                    | ✅                                                                                                                                            |
@@ -32,17 +32,17 @@ This page offers a comparison to help you decide which tag to use.
 
 ## Using a different tag in preview and rendering
 
-Use the [`useRemotionEnvironment()`](/docs/use-remotion-environment) hook to render a different component in preview and rendering.
+Use the [`usePicusEnvironment()`](/docs/use-picus-environment) hook to render a different component in preview and rendering.
 
-```tsx twoslash title="OffthreadVideo during preview, @remotion/media during rendering"
-import {useRemotionEnvironment, OffthreadVideo, RemotionOffthreadVideoProps} from 'remotion';
-import {Video, VideoProps} from '@remotion/media';
+```tsx twoslash title="OffthreadVideo during preview, @picus/media during rendering"
+import {usePicusEnvironment, OffthreadVideo, PicusOffthreadVideoProps} from 'picus';
+import {Video, VideoProps} from '@picus/media';
 
 const OffthreadWhileRenderingRefForwardingFunction: React.FC<{
-  offthreadVideoProps: RemotionOffthreadVideoProps;
+  offthreadVideoProps: PicusOffthreadVideoProps;
   videoProps: VideoProps;
 }> = ({offthreadVideoProps, videoProps}) => {
-  const env = useRemotionEnvironment();
+  const env = usePicusEnvironment();
 
   if (!env.isRendering) {
     return <OffthreadVideo {...offthreadVideoProps} />;
@@ -54,15 +54,15 @@ const OffthreadWhileRenderingRefForwardingFunction: React.FC<{
 
 The same pattern works for audio:
 
-```tsx twoslash title="Html5Audio during preview, @remotion/media during rendering"
-import {useRemotionEnvironment, Html5Audio, RemotionAudioProps} from 'remotion';
-import {Audio, AudioProps} from '@remotion/media';
+```tsx twoslash title="Html5Audio during preview, @picus/media during rendering"
+import {usePicusEnvironment, Html5Audio, PicusAudioProps} from 'picus';
+import {Audio, AudioProps} from '@picus/media';
 
 const Html5AudioWhilePreviewingComponent: React.FC<{
-  html5AudioProps: RemotionAudioProps;
+  html5AudioProps: PicusAudioProps;
   audioProps: AudioProps;
 }> = ({html5AudioProps, audioProps}) => {
-  const env = useRemotionEnvironment();
+  const env = usePicusEnvironment();
 
   if (!env.isRendering) {
     return <Html5Audio {...html5AudioProps} />;

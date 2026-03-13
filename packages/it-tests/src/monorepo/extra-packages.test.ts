@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import {readFileSync} from 'fs';
 import path from 'path';
 
-test('@remotion/studio should have zod and mediabunny in dependencies', () => {
+test('@picus/studio should have zod and mediabunny in dependencies', () => {
 	const studioPackageJsonPath = path.resolve(
 		__dirname,
 		'..',

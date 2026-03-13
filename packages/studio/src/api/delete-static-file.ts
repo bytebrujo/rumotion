@@ -1,21 +1,21 @@
-import type {DeleteStaticFileResponse} from '@remotion/studio-shared';
-import {getRemotionEnvironment} from 'remotion';
+import type {DeleteStaticFileResponse} from '@picus/studio-shared';
+import {getPicusEnvironment} from 'picus';
 import {callApi} from '../components/call-api';
 
 export const deleteStaticFile = async (
 	relativePath: string,
 ): Promise<DeleteStaticFileResponse> => {
-	if (!getRemotionEnvironment().isStudio) {
+	if (!getPicusEnvironment().isStudio) {
 		throw new Error('deleteStaticFile() is only available in the Studio');
 	}
 
-	if (window.remotion_isReadOnlyStudio) {
+	if (window.picus_isReadOnlyStudio) {
 		throw new Error('deleteStaticFile() is not available in Read-Only Studio');
 	}
 
-	if (relativePath.startsWith(window.remotion_staticBase)) {
+	if (relativePath.startsWith(window.picus_staticBase)) {
 		relativePath = relativePath.substring(
-			window.remotion_staticBase.length + 1,
+			window.picus_staticBase.length + 1,
 		);
 	}
 

@@ -1,4 +1,4 @@
-import {type LogLevel} from 'remotion';
+import {type LogLevel} from 'picus';
 import {audioManager} from '../caches';
 import {combineAudioDataAndClosePrevious} from '../convert-audiodata/combine-audiodata';
 import type {PcmS16AudioData} from '../convert-audiodata/convert-audiodata';

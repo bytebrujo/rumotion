@@ -1,10 +1,10 @@
 ---
 image: /generated/articles-docs-media-parser-webcodecs.png
 id: webcodecs
-title: Processing video with WebCodecs and @remotion/media-parser
+title: Processing video with WebCodecs and @picus/media-parser
 sidebar_label: WebCodecs
 slug: /media-parser/webcodecs
-crumb: '@remotion/media-parser'
+crumb: '@picus/media-parser'
 ---
 
 :::warning
@@ -19,10 +19,10 @@ The following snippet is a basic, non-production ready example of how to use `pa
 
 ```tsx twoslash title="Reading video frames"
 // ⚠️ Simple, but non-production ready example
-import {parseMedia, MediaParserOnAudioTrack, MediaParserOnVideoTrack} from '@remotion/media-parser';
+import {parseMedia, MediaParserOnAudioTrack, MediaParserOnVideoTrack} from '@picus/media-parser';
 
 const result = await parseMedia({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   onVideoTrack: ({track}) => {
     const decoder = new VideoDecoder({
       output: console.log,
@@ -55,11 +55,11 @@ Since this will cause memory to build up, it will negatively impact the performa
 It makes sense to connect the whole pipeline together and throttle each step so it does not perform faster than the next step.  
 In the example above, six queues are required to be managed, with each one of them malfunctioning causing memory to run away.
 
-## How Remotion helps you work with WebCodecs
+## How Picus helps you work with WebCodecs
 
 Since handling queueing correctly is a challenging task, we offer helpers that help you work with WebCodecs.
 
-Remotion's primitives are designed to offer you functionality to implement queueing in a sensible way:
+Picus's primitives are designed to offer you functionality to implement queueing in a sensible way:
 
 - In [`parseMedia()`](/docs/media-parser/parse-media), callbacks are asnychronous, and as long as they don't resolve, the parsing process will not continue.
 - The helper functions [`createAudioDecoder()`](/docs/webcodecs/create-audio-decoder) and [`createVideoDecoder()`](/docs/webcodecs/create-video-decoder) offer you a helper method `waitForQueueToBeLessThan()` which you can await.
@@ -79,7 +79,7 @@ You can opt to skip a track by returning `null` from the callback.
 
 ```tsx twoslash title="Rejecting samples"
 // @noErrors
-import type {MediaParserOnAudioTrack, MediaParserOnVideoTrack} from '@remotion/media-parser';
+import type {MediaParserOnAudioTrack, MediaParserOnVideoTrack} from '@picus/media-parser';
 
 const onVideoTrack: MediaParserOnVideoTrack = ({track}) => {
   if (typeof VideoDecoder === 'undefined') {
@@ -114,7 +114,7 @@ These are async APIs, fortunately `onAudioTrack` and `onVideoTrack` allow async 
 
 ```tsx twoslash title="Checking if the browser supports the codec"
 // @noErrors
-import type {MediaParserOnAudioTrack, MediaParserOnVideoTrack} from '@remotion/media-parser';
+import type {MediaParserOnAudioTrack, MediaParserOnVideoTrack} from '@picus/media-parser';
 
 const onVideoTrack: MediaParserOnVideoTrack = async ({track}) => {
   const videoDecoder = new VideoDecoder({
@@ -157,7 +157,7 @@ The decoder `state` will switch to `"closed"`, however, you will still receive s
 If the decoder is in `"closed"` state, you should stop passing them to VideoDecoder.
 
 ```tsx twoslash title="Error handling"
-import type {MediaParserOnVideoTrack} from '@remotion/media-parser';
+import type {MediaParserOnVideoTrack} from '@picus/media-parser';
 
 const onVideoTrack: MediaParserOnVideoTrack = async ({track}) => {
   const videoDecoder = new VideoDecoder({
@@ -182,13 +182,13 @@ const onVideoTrack: MediaParserOnVideoTrack = async ({track}) => {
 ### Handling rotation
 
 WebCodecs do not seem to consider rotation.  
-For example, this [video recorded with an iPhone](https://github.com/remotion-dev/remotion/blob/main/packages/example/public/iphone-hevc.mov) has metadata that it should be displayed at 90 degrees rotation.
+For example, this [video recorded with an iPhone](https://github.com/picus-dev/picus/blob/main/packages/example/public/iphone-hevc.mov) has metadata that it should be displayed at 90 degrees rotation.
 
 `VideoDecoder` is not able to rotate the video for you, so you might need to do it yourself, for example by drawing it to a canvas.  
 Fortunately `parseMedia()` returns the rotation of the track:
 
 ```tsx twoslash title="Handling stretched videos"
-import type {MediaParserOnVideoTrack} from '@remotion/media-parser';
+import type {MediaParserOnVideoTrack} from '@picus/media-parser';
 
 const onVideoTrack: MediaParserOnVideoTrack = async ({track}) => {
   console.log(track.rotation); // -90
@@ -196,7 +196,7 @@ const onVideoTrack: MediaParserOnVideoTrack = async ({track}) => {
 };
 ```
 
-See here for an example of how a [video frame is turned into a bitmap](https://github.com/remotion-dev/remotion/blob/1a99dadcd8e700bf94abdfa3f5506329d6c9c182/packages/example/src/Encoder/SrcEncoder.tsx#L98-L102) and rotated.
+See here for an example of how a [video frame is turned into a bitmap](https://github.com/picus-dev/picus/blob/1a99dadcd8e700bf94abdfa3f5506329d6c9c182/packages/example/src/Encoder/SrcEncoder.tsx#L98-L102) and rotated.
 
 ### Understanding the different dimensions of a video
 
@@ -204,7 +204,7 @@ As just mentioned, some videos might be stretched or rotated.
 In an extreme case, it is possible that you stumble opon a video that has three different dimensions.
 
 ```tsx twoslash title="Handling stretched videos"
-import type {MediaParserOnVideoTrack} from '@remotion/media-parser';
+import type {MediaParserOnVideoTrack} from '@picus/media-parser';
 
 const onVideoTrack: MediaParserOnVideoTrack = async ({track}) => {
   console.log(track);
@@ -252,14 +252,14 @@ Consider this in your implementation.
 WebCodecs is the fastest way to decode videos in the browser.  
 WebAssembly solutions need to strip the CPU-specific optimizations and cannot benefit from hardware acceleration.
 
-Using Remotion Media Parser and WebCodecs is [at least 3 times faster than using WebAssembly solutions](https://github.com/remotion-dev/webcodecs-benchmark) in any scenario we tested.
+Using Picus Media Parser and WebCodecs is [at least 3 times faster than using WebAssembly solutions](https://github.com/picus-dev/webcodecs-benchmark) in any scenario we tested.
 
 WebCodecs are built into the browser, meaning decoders and encoders do not need to be loaded.  
 Later in 2025, WebCodecs will be supported in all major browsers.
 
-## With `@remotion/webcodecs`
+## With `@picus/webcodecs`
 
-[`@remotion/webcodecs`](/docs/webcodecs) is a package that uses `@remotion/media-parser` to provide video processing in the browser.  
+[`@picus/webcodecs`](/docs/webcodecs) is a package that uses `@picus/media-parser` to provide video processing in the browser.  
 It handles various browser quirks and hard implementation details for you.
 
 - Convert, rotate and resize videos: [`convertMedia()`](/docs/webcodecs/convert-media)
@@ -267,10 +267,10 @@ It handles various browser quirks and hard implementation details for you.
 
 ## Reference implementation
 
-A testbed with many different codecs and edge cases is available [here](https://github.com/remotion-dev/remotion/blob/main/packages/example/src/DecoderDemo.tsx).  
-Follow [these instructions](https://www.remotion.dev/docs/contributing#testing-your-changes) to run the testbed locally.
+A testbed with many different codecs and edge cases is available [here](https://github.com/picus-dev/picus/blob/main/packages/example/src/DecoderDemo.tsx).  
+Follow [these instructions](https://www.picus.dev/docs/contributing#testing-your-changes) to run the testbed locally.
 
 ## License reminder
 
-Like Remotion itself, this package is licensed under the [Remotion License](https://remotion.dev/license).  
-TL;DR: Individuals and small teams can use this package, but teams of 4+ people [need a company license](https://remotion.pro/license).
+Like Picus itself, this package is licensed under the [Picus License](https://picus.dev/license).  
+TL;DR: Individuals and small teams can use this package, but teams of 4+ people [need a company license](https://picus.pro/license).

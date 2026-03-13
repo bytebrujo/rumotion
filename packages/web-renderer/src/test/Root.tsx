@@ -1,6 +1,6 @@
 // bun run studio
 import React from 'react';
-import {Composition, Folder} from 'remotion';
+import {Composition, Folder} from 'picus';
 import {accumulatedTransforms} from './fixtures/accumulated-transforms';
 import {backfaceVisibilityMask} from './fixtures/backface-visibility-mask';
 import {backgroundColor} from './fixtures/background-color';

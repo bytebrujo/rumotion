@@ -1,4 +1,4 @@
-import type {PackageManager} from '@remotion/studio-shared';
+import type {PackageManager} from '@picus/studio-shared';
 import React, {
 	useCallback,
 	useContext,
@@ -6,7 +6,7 @@ import React, {
 	useMemo,
 	useState,
 } from 'react';
-import {VERSION} from 'remotion';
+import {VERSION} from 'picus';
 import {BLUE, LIGHT_TEXT, WARNING_COLOR} from '../helpers/colors';
 import {ModalsContext} from '../state/modals';
 import {useZIndex} from '../state/z-index';
@@ -72,7 +72,7 @@ export const UpdateCheck = () => {
 	const checkForBugs = useCallback(() => {
 		const controller = new AbortController();
 
-		fetch(`https://bugs.remotion.dev/api/${VERSION}`, {
+		fetch(`https://bugs.picus.dev/api/${VERSION}`, {
 			signal: controller.signal,
 		})
 			.then(async (res) => {

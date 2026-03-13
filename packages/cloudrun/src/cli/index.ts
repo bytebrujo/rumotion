@@ -1,6 +1,6 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {parsedCloudrunCli} from './args';
 import {PERMISSIONS_COMMAND, permissionsCommand} from './commands/permissions';
 import {REGIONS_COMMAND, regionsCommand} from './commands/regions';
@@ -14,7 +14,7 @@ import {Log} from './log';
 
 const matchCommand = (
 	args: string[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ) => {
 	if (parsedCloudrunCli.help || args.length === 0 || args[0] === 'help') {
@@ -23,11 +23,11 @@ const matchCommand = (
 	}
 
 	if (args[0] === RENDER_COMMAND) {
-		return renderCommand(args.slice(1), remotionRoot, logLevel);
+		return renderCommand(args.slice(1), picusRoot, logLevel);
 	}
 
 	if (args[0] === STILL_COMMAND) {
-		return stillCommand(args.slice(1), remotionRoot, logLevel);
+		return stillCommand(args.slice(1), picusRoot, logLevel);
 	}
 
 	if (args[0] === SERVICES_COMMAND) {
@@ -35,7 +35,7 @@ const matchCommand = (
 	}
 
 	if (args[0] === SITES_COMMAND) {
-		return sitesCommand(args.slice(1), remotionRoot, logLevel);
+		return sitesCommand(args.slice(1), picusRoot, logLevel);
 	}
 
 	if (args[0] === REGIONS_COMMAND) {
@@ -58,11 +58,11 @@ const matchCommand = (
 
 export const executeCommand = async (
 	args: string[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ) => {
 	try {
-		await matchCommand(args, remotionRoot, logLevel);
+		await matchCommand(args, picusRoot, logLevel);
 	} catch (err) {
 		const error = err as Error;
 		if (error instanceof RenderInternals.SymbolicateableError) {

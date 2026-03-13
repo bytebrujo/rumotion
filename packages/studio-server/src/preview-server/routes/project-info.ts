@@ -1,14 +1,14 @@
 import type {
 	ProjectInfoRequest,
 	ProjectInfoResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import type {ApiHandler} from '../api-types';
 import {getProjectInfo} from '../project-info';
 
 export const projectInfoHandler: ApiHandler<
 	ProjectInfoRequest,
 	ProjectInfoResponse
-> = async ({remotionRoot, entryPoint}) => {
-	const info = await getProjectInfo(remotionRoot, entryPoint);
+> = async ({picusRoot, entryPoint}) => {
+	const info = await getProjectInfo(picusRoot, entryPoint);
 	return {projectInfo: info};
 };

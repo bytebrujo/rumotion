@@ -13,7 +13,7 @@ This page describes the environment that the Lambda function is running in.
 
 ## Node.JS Version
 
-| Remotion Version | Node.js Release Line | Locked Runtime ARN                                                                                  |
+| Picus Version | Node.js Release Line | Locked Runtime ARN                                                                                  |
 | ---------------- | -------------------- | --------------------------------------------------------------------------------------------------- |
 | From v4.0.415    | 24.x                 | `arn:aws:lambda:{region}::runtime:58a37e8413ed69058c4ac3b1df642118591f17d40def93d6101f867c72cd03c2` |
 | From v4.0.379    | 20.x                 | `arn:aws:lambda:{region}::runtime:da57c20c4b965d5b75540f6865a35fc8030358e33ec44ecfed33e90901a27a72` |
@@ -21,9 +21,9 @@ This page describes the environment that the Lambda function is running in.
 | From 4.0.246     | 20.x                 | `arn:aws:lambda:{region}::runtime:da57c20c4b965d5b75540f6865a35fc8030358e33ec44ecfed33e90901a27a72` |
 | Before v4.0.245  | 18.x                 | -                                                                                                   |
 
-Currently Remotion Lambda continues to use the 20.x runtime since instability was experienced with higher versions.
+Currently Picus Lambda continues to use the 20.x runtime since instability was experienced with higher versions.
 
-If your [user policy](/docs/lambda/permissions#user-policies) includes `lambda:PutRuntimeManagementConfig` (included by default if you set up Remotion Lambda after November 2023), the Lambda runtime will be locked to the ARN shown for your Remotion version (recommended).
+If your [user policy](/docs/lambda/permissions#user-policies) includes `lambda:PutRuntimeManagementConfig` (included by default if you set up Picus Lambda after November 2023), the Lambda runtime will be locked to the ARN shown for your Picus version (recommended).
 
 Otherwise, future updates to the runtime by AWS have the potential to break the function.
 If you don't have this permission in your policy, a warning will be printed.
@@ -61,7 +61,7 @@ You can render multiple frames at once inside a Lambda function by using the [`c
 The function already includes a running version of Chrome.
 The browser was compiled including the proprietary codecs, so you can include MP4 videos into your project.
 
-| Remotion version | Chrome version |
+| Picus version | Chrome version |
 | ---------------- | -------------- |
 | From 4.0.415     | 144.0.7559.20  |
 | From 4.0.274     | 133.0.6943.141 |
@@ -73,7 +73,7 @@ The browser was compiled including the proprietary codecs, so you can include MP
 
 ## FFmpeg
 
-The FFmpeg which is built into `@remotion/renderer` is being used on Lambda.
+The FFmpeg which is built into `@picus/renderer` is being used on Lambda.
 
 ## Fonts
 
@@ -91,7 +91,7 @@ The function includes the following fonts:
 - Noto Sans Tamil Regular
 - Noto Sans Thai Regular
 
-Since December 2021 the following fonts are also available **only on the `arm64` version of Remotion Lambda:**
+Since December 2021 the following fonts are also available **only on the `arm64` version of Picus Lambda:**
 
 - Noto Sans Simplified Chinese Regular
 - Noto Sans Simplified Chinese Bold

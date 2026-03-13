@@ -1,4 +1,4 @@
-import { Caption } from "@remotion/captions";
+import { Caption } from "@picus/captions";
 import { msToFrame } from "../helpers/ms-to-frame";
 
 export const getSentenceToDisplay = ({

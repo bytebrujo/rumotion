@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import React from 'react';
 import {PreviewServerConnection} from '../helpers/client-id';
 import {FolderContextProvider} from '../state/folders';

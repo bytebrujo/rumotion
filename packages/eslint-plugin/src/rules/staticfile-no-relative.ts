@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://remotion.dev/docs/staticfile-relative-paths`;
+	return `https://picus.dev/docs/staticfile-relative-paths`;
 });
 
 type Options = [];
@@ -13,17 +13,17 @@ type MessageIds =
 
 const RelativePathStaticFile = [
 	"Don't pass a relative path to staticFile().",
-	'See: https://remotion.dev/docs/staticfile-relative-paths',
+	'See: https://picus.dev/docs/staticfile-relative-paths',
 ].join('\n');
 
 const AbsoluteStaticFile = [
 	'Do not pass an absolute path to staticFile().',
-	'See: https://remotion.dev/docs/staticfile-relative-paths',
+	'See: https://picus.dev/docs/staticfile-relative-paths',
 ].join('');
 
 const PublicStaticFile = [
 	'Do not prefix your assets with public/.',
-	'See: https://remotion.dev/docs/staticfile-relative-paths',
+	'See: https://picus.dev/docs/staticfile-relative-paths',
 ].join('');
 
 export default createRule<Options, MessageIds>({

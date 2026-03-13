@@ -11,7 +11,7 @@
  * Original copyright Tobias Koppers @sokra (MIT license)
  */
 
-import type {HotMiddlewareOptions, ModuleMap} from '@remotion/studio-shared';
+import type {HotMiddlewareOptions, ModuleMap} from '@picus/studio-shared';
 import {showNotification} from '../components/Notifications/NotificationCenter';
 import {reloadUrl} from '../helpers/url-state';
 
@@ -36,7 +36,7 @@ const applyOptions: AcceptOptions = {
 		// Case:
 		// 1. Import a CSS file with a bad filename in Root.tsx
 		// 2. Fix the import and save it
-		if (!window.remotion_isStudio) {
+		if (!window.picus_isStudio) {
 			reloadUrl();
 		}
 	},
@@ -178,7 +178,7 @@ export const processUpdate = function (
 			console.warn(
 				'[Fast refresh] Update check failed: ' + (err.stack || err.message),
 			);
-			if (!window.remotion_unsavedProps) {
+			if (!window.picus_unsavedProps) {
 				reloadUrl();
 			}
 		}
@@ -190,7 +190,7 @@ export const processUpdate = function (
 		}
 
 		if (options.warn) console.warn('[Fast refresh] Reloading page');
-		if (window.remotion_unsavedProps) {
+		if (window.picus_unsavedProps) {
 			showNotification(
 				'Fast refresh needs to reload the page, but you have unsaved props. Save then reload the page to apply changes.',
 				1000,

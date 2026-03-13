@@ -1,6 +1,6 @@
-import type {DownloadProgress} from '@remotion/studio-server';
-import {StudioServerInternals} from '@remotion/studio-server';
-import {formatBytes} from '@remotion/studio-shared';
+import type {DownloadProgress} from '@picus/studio-server';
+import {StudioServerInternals} from '@picus/studio-server';
+import {formatBytes} from '@picus/studio-shared';
 import {chalk} from './chalk';
 import {makeHyperlink} from './hyperlinks/make-link';
 import {makeProgressBar} from './make-progress-bar';

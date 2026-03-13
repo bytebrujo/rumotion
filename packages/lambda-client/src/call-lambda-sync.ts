@@ -5,7 +5,7 @@ import type {
 	OrError,
 	ServerlessReturnValues,
 	ServerlessRoutines,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {getLambdaClient} from './aws-clients';
 import type {AwsRegion} from './regions';
 

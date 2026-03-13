@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentLicenseKey: string | null = null;
 
@@ -10,11 +10,11 @@ export const licenseKeyOption = {
 	description: () => (
 		<>
 			License key for sending a usage event using{' '}
-			<code>@remotion/licensing</code>.
+			<code>@picus/licensing</code>.
 		</>
 	),
 	ssrName: 'licenseKey' as const,
-	docLink: 'https://www.remotion.dev/docs/licensing',
+	docLink: 'https://www.picus.dev/docs/licensing',
 	type: null as string | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -33,4 +33,4 @@ export const licenseKeyOption = {
 		currentLicenseKey = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

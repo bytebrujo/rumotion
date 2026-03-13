@@ -1,5 +1,5 @@
-import type {MediaParserLogLevel} from '@remotion/media-parser';
-import {VERSION} from '@remotion/media-parser';
+import type {MediaParserLogLevel} from '@picus/media-parser';
+import {VERSION} from '@picus/media-parser';
 import {Log} from '../../log';
 import {createIlst} from './create-ilst';
 import {createMoov} from './create-moov';
@@ -73,7 +73,7 @@ export const createPaddedMoovAtom = ({
 					hdlr: createHdlr('mdir'),
 					ilst: createIlst([
 						createToo('WebCodecs'),
-						createCmt(`Made with @remotion/webcodecs ${VERSION}`),
+						createCmt(`Made with @picus/webcodecs ${VERSION}`),
 					]),
 				}),
 			),

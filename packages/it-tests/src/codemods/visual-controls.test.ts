@@ -1,11 +1,11 @@
 import {expect, test} from 'bun:test';
-import {StudioServerInternals} from '@remotion/studio-server';
+import {StudioServerInternals} from '@picus/studio-server';
 
 const contents = `
-import {makeTransform, matrix3d} from '@remotion/animation-utils';
-import {visualControl} from '@remotion/studio';
-import {zMatrix, zTextarea} from '@remotion/zod-types';
-import {AbsoluteFill, staticFile} from 'remotion';
+import {makeTransform, matrix3d} from '@picus/animation-utils';
+import {visualControl} from '@picus/studio';
+import {zMatrix, zTextarea} from '@picus/zod-types';
+import {AbsoluteFill, staticFile} from 'picus';
 
 export const VisualControls = () => {
 	const matrix = visualControl(

@@ -1,4 +1,4 @@
-import {Button} from '@remotion/design';
+import {Button} from '@picus/design';
 import React, {useCallback, useState} from 'react';
 import {ReplayIcon} from './ReplayIcon';
 

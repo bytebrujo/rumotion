@@ -15,7 +15,7 @@ type FreezeProps = {
 
 /*
  * @description Freezes its children at the specified frame when rendering videos.
- * @see [Documentation](https://remotion.dev/docs/freeze)
+ * @see [Documentation](https://picus.dev/docs/freeze)
  */
 export const Freeze: React.FC<FreezeProps> = ({
 	frame: frameToFreeze,

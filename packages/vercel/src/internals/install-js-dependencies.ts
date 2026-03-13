@@ -1,5 +1,5 @@
 import type {Sandbox} from '@vercel/sandbox';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 
 export async function installJsDependencies({
 	sandbox,
@@ -10,8 +10,8 @@ export async function installJsDependencies({
 		cmd: 'pnpm',
 		args: [
 			'i',
-			`@remotion/renderer@${VERSION}`,
-			`@remotion/compositor-linux-x64-gnu@${VERSION}`,
+			`@picus/renderer@${VERSION}`,
+			`@picus/compositor-linux-x64-gnu@${VERSION}`,
 			`@vercel/blob`,
 		],
 		detached: true,

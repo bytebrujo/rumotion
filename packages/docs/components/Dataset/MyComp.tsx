@@ -6,7 +6,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 interface Props {
 	readonly name: string;

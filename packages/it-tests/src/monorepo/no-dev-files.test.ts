@@ -7,7 +7,7 @@ const packages = getAllPackages();
 
 for (const pkg of packages) {
 	test.concurrent(
-		'should not publish any dev files for @remotion/' + pkg.pkg,
+		'should not publish any dev files for @picus/' + pkg.pkg,
 		async () => {
 			const packageJson = await Bun.file(pkg.path).json();
 			const isPrivate = packageJson.private;

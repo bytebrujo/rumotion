@@ -1,6 +1,6 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
-export const progressBarCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+export const progressBarCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate } from "picus";
 
 export const MyAnimation = () => {
   const frame = useCurrentFrame();
@@ -81,7 +81,7 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const progressBarExample: RemotionExample = {
+export const progressBarExample: PicusExample = {
   id: "progress-bar",
   name: "Progress Bar",
   description: "Animated progress bar from 0 to 100%",

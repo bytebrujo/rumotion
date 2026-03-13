@@ -28,7 +28,7 @@ In this example, we are interpolating colors from red to yellow. At frame 0 (the
 Using the following snippet, we can calculate the current color for any frame:
 
 ```tsx twoslash
-import {interpolateColors, useCurrentFrame} from 'remotion';
+import {interpolateColors, useCurrentFrame} from 'picus';
 
 const frame = useCurrentFrame() / 10;
 
@@ -44,7 +44,7 @@ In this example, we are interpolating colors from red to yellow. At frame 0 (the
 Using the following snippet, we can calculate the current color for any frame:
 
 ```tsx twoslash
-import {interpolateColors, useCurrentFrame} from 'remotion';
+import {interpolateColors, useCurrentFrame} from 'picus';
 
 const frame = useCurrentFrame(); // 10
 
@@ -62,7 +62,7 @@ In this example, we are interpolating colors from red to yellow. At frame 0 (the
 Using the following snippet, we can calculate the current color for any frame:
 
 ```ts twoslash
-import {useCurrentFrame, interpolateColors} from 'remotion';
+import {useCurrentFrame, interpolateColors} from 'picus';
 
 const frame = useCurrentFrame(); // 10
 //hsl example
@@ -77,7 +77,7 @@ const color2 = interpolateColors(frame, [0, 20], ['hsla(0, 100%, 50%, 1)', 'hsla
 Interpolating CSS color names is also supported.
 
 ```ts twoslash
-import {useCurrentFrame, interpolateColors} from 'remotion';
+import {useCurrentFrame, interpolateColors} from 'picus';
 
 const frame = useCurrentFrame(); // 10
 
@@ -90,5 +90,5 @@ const color = interpolateColors(frame, [0, 20], ['red', 'yellow']); // rgba(255,
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/interpolate-colors.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/interpolate-colors.ts)
 - [interpolate()](/docs/interpolate)

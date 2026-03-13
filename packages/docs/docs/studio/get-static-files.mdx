@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-studio-get-static-files.png
 title: getStaticFiles()
-crumb: '@remotion/studio'
+crumb: '@picus/studio'
 ---
 
 # getStaticFiles()<AvailableFrom v="4.0.144"/>
@@ -9,21 +9,21 @@ crumb: '@remotion/studio'
 Gets an array containing all files in the `public/` folder. You can reference them by using [`staticFile()`](/docs/staticfile).
 
 :::note
-This API is being moved from the <code>remotion</code> package.  
+This API is being moved from the <code>picus</code> package.  
 Prefer this API over the old one.
 :::
 
 :::note
-In environments outside the Remotion Studio, this API returns an empty array.  
+In environments outside the Picus Studio, this API returns an empty array.  
 :::
 
 :::note
-On Linux, watching for changes in subdirectories is only supported from Node.js v19.1.0. If you use a version earlier than that, you need to refresh the Remotion Studio browser tab manually.
+On Linux, watching for changes in subdirectories is only supported from Node.js v19.1.0. If you use a version earlier than that, you need to refresh the Picus Studio browser tab manually.
 :::
 
 ```tsx twoslash title="example.ts"
-import {getStaticFiles, StaticFile} from '@remotion/studio';
-import {Video} from '@remotion/media';
+import {getStaticFiles, StaticFile} from '@picus/studio';
+import {Video} from '@picus/media';
 
 const files = getStaticFiles();
 /*
@@ -77,6 +77,6 @@ For performance, only the first 10000 items are fetched and displayed.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/studio/src/api/get-static-files.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/studio/src/api/get-static-files.ts)
 - [`staticFile()`](/docs/staticfile)
 - [`watchStaticFile()`](/docs/studio/watch-static-file)

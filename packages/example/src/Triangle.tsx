@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from 'react';
-import {AbsoluteFill, continueRender, delayRender} from 'remotion';
+import {AbsoluteFill, continueRender, delayRender} from 'picus';
 
 export const TriangleComp: React.FC = () => {
 	const [handle] = useState(() => delayRender());

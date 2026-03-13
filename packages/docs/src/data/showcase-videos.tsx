@@ -1,4 +1,4 @@
-import {random} from 'remotion';
+import {random} from 'picus';
 
 export type ShowcaseLink = 'tutorial' | 'source_code' | 'website' | 'video';
 
@@ -53,14 +53,14 @@ export const showcaseVideos: ShowcaseVideo[] = [
 		time: '3',
 		muxId: 'DDgXb2KfPk7xdvxEoyPkrl7GcybohNon',
 		description:
-			'An article on how to showcase your video stats by creating a dynamic animated video using Remotion and the Mux Data API.',
+			'An article on how to showcase your video stats by creating a dynamic animated video using Picus and the Mux Data API.',
 		height: 270,
 		width: 480,
 		submittedOn: new Date('19-01-2022'),
 		links: [
 			{
 				type: 'source_code',
-				url: 'https://github.com/davekiss/mux-remotion-demo/',
+				url: 'https://github.com/davekiss/mux-picus-demo/',
 			},
 			{
 				type: 'video',
@@ -68,7 +68,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
 			},
 			{
 				type: 'tutorial',
-				url: 'https://mux.com/blog/visualize-mux-data-with-remotion/',
+				url: 'https://mux.com/blog/visualize-mux-data-with-picus/',
 			},
 		],
 		author: {
@@ -118,12 +118,12 @@ export const showcaseVideos: ShowcaseVideo[] = [
 			},
 			{
 				type: 'source_code',
-				url: 'https://github.com/remotion-dev/github-unwrapped',
+				url: 'https://github.com/picus-dev/github-unwrapped',
 			},
 		],
 		author: {
-			url: 'https://www.remotion.dev/',
-			name: 'Remotion',
+			url: 'https://www.picus.dev/',
+			name: 'Picus',
 		},
 	},
 	{
@@ -132,7 +132,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
 		time: '13',
 		muxId: 'AQJeyQ00njF88JNevZ2Xf00KGOX01zBLBa4Xisvu9M00ynM',
 		description:
-			'Revid allows creators to turn ideas into social media videos in minutes. It is an AI-powered platform to generate short-form storytelling. Remotion is build to preview andrender the videos on the platform.',
+			'Revid allows creators to turn ideas into social media videos in minutes. It is an AI-powered platform to generate short-form storytelling. Picus is build to preview andrender the videos on the platform.',
 		height: 1152,
 		width: 2048,
 		submittedOn: new Date('04-24-2024'),
@@ -198,12 +198,12 @@ export const showcaseVideos: ShowcaseVideo[] = [
 		links: [
 			{
 				type: 'source_code',
-				url: 'https://www.remotion.pro/watercolor-map',
+				url: 'https://www.picus.pro/watercolor-map',
 			},
 		],
 		author: {
-			url: 'https://www.remotion.dev/',
-			name: 'Remotion',
+			url: 'https://www.picus.dev/',
+			name: 'Picus',
 		},
 	},
 	{
@@ -233,7 +233,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
 		time: '75.5',
 		muxId: 'pKHRj00yo6eV1nHaXWSsjzvP1rBjQkey68qAp8gFy8Wk',
 		description:
-			"Fully made with HeyGen's Video Agent, powered by Remotion. Avatar, script, motion graphics, and final edits were all created just by prompting.",
+			"Fully made with HeyGen's Video Agent, powered by Picus. Avatar, script, motion graphics, and final edits were all created just by prompting.",
 		height: 1080,
 		width: 1920,
 		submittedOn: new Date('01-29-2026'),
@@ -299,24 +299,24 @@ export const showcaseVideos: ShowcaseVideo[] = [
 		},
 	},
 	{
-		title: 'Remotion Recorder - Screencast videos',
+		title: 'Picus Recorder - Screencast videos',
 		type: 'mux_video',
 		time: '0',
 		muxId: 'HCA9phm4tUVjYm9dFWj1GpYTwIGrse00yg01SwaM2PbJU',
 		description:
-			'Fully featured screen recording software built with Remotion. Record your screen, webcam, and audio. Edit and render the video for multiple platforms quickly in the same tool.',
+			'Fully featured screen recording software built with Picus. Record your screen, webcam, and audio. Edit and render the video for multiple platforms quickly in the same tool.',
 		height: 1080,
 		width: 1920,
 		submittedOn: new Date('04-26-2024'),
 		links: [
 			{
 				type: 'website',
-				url: 'https://www.remotion.dev/recorder',
+				url: 'https://www.picus.dev/recorder',
 			},
 		],
 		author: {
-			url: 'https://www.remotion.dev',
-			name: 'Remotion',
+			url: 'https://www.picus.dev',
+			name: 'Picus',
 		},
 	},
 	{
@@ -363,7 +363,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
 		time: '0',
 		muxId: '02eNw8AHyNFvm300xvExVndO01oEvUI1kYXK00W02ITkeldM',
 		description:
-			'Remotion was utilized to create dynamic, programmatically generated instructional videos, ensuring explainer content remained consistent with the brand standards.',
+			'Picus was utilized to create dynamic, programmatically generated instructional videos, ensuring explainer content remained consistent with the brand standards.',
 		height: 1080,
 		width: 1920,
 		submittedOn: new Date('10-11-2024'),
@@ -409,7 +409,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
 		time: '1',
 		muxId: 'GXqObO58UMM4P7ny9QH4kbVHpZ9A83tJCys94rjgsGM',
 		description:
-			'Admove is an automated advertising platform to create, launch and grow high-performing eCommerce campaigns. Remotion is used to build and render videos on the platfrom.',
+			'Admove is an automated advertising platform to create, launch and grow high-performing eCommerce campaigns. Picus is used to build and render videos on the platfrom.',
 		height: 1080,
 		width: 1920,
 		submittedOn: new Date('29-01-2026'),
@@ -430,7 +430,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
 		time: '3',
 		muxId: 'g1G2V4b7QEqzSJSUywGaq6cDZfvAtEo500Bt9ltkOrTg',
 		description:
-			'Create engaging product promo videos from screen recordings or screenshots. Add device mockups, zooms animations, annotations, and transitions. SuperMotion uses Remotion to render videos in the cloud.',
+			'Create engaging product promo videos from screen recordings or screenshots. Add device mockups, zooms animations, annotations, and transitions. SuperMotion uses Picus to render videos in the cloud.',
 		height: 1124,
 		width: 2000,
 		submittedOn: new Date('02-15-2026'),
@@ -489,7 +489,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
     time: "6",
     muxId: "wvTZmoaRnhpGuc93nd39vz4MpSeOkXjnS5XFzOK01Lco",
     description:
-      "This promo video is done by using Remotion. It shows you how easily you can extend your blog to a podcast.",
+      "This promo video is done by using Picus. It shows you how easily you can extend your blog to a podcast.",
     height: 720,
     width: 1280,
     submittedOn: new Date("09-10-2021"),
@@ -609,12 +609,12 @@ export const showcaseVideos: ShowcaseVideo[] = [
     },
   },
   {
-    title: "Remotion Web Summit Talk",
+    title: "Picus Web Summit Talk",
     type: "mux_video",
     time: "4",
     muxId: "fWKVFtHn4bIEcPlqhsHcf69t0100SkUE6WXB600NcENQww",
     description:
-      "A talk about Remotion given at React Summit 2021, fully written in React",
+      "A talk about Picus given at React Summit 2021, fully written in React",
     height: 720,
     width: 1280,
     submittedOn: new Date("08-05-2021"),
@@ -639,7 +639,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
     time: "10",
     muxId: "uuhPSi5C01DIIxBm3HcxJGs9d8hYmDnNjkmgwTMWJQPg",
     description:
-      "A MIDI-to-Remotion converter visualizing how to play a song on the piano.",
+      "A MIDI-to-Picus converter visualizing how to play a song on the piano.",
     width: 1280,
     height: 720,
     submittedOn: new Date("29-05-2021"),
@@ -702,14 +702,14 @@ export const showcaseVideos: ShowcaseVideo[] = [
     time: "10",
     muxId: "psJ32DSTQqeLaZYhBC5sa3HH7gkzwt7HinQsHela01OA",
     description:
-      "In this video I had explained how Javascript code gets executed. I had made this video completely using Remotion and ReactJS.",
+      "In this video I had explained how Javascript code gets executed. I had made this video completely using Picus and ReactJS.",
     height: 720,
     width: 1280,
     submittedOn: new Date("12-25-2022"),
     links: [
       {
         type: "source_code",
-        url: "https://github.com/AmitNemade/remotion-javascript-demo",
+        url: "https://github.com/AmitNemade/picus-javascript-demo",
       },
     ],
     author: {
@@ -767,7 +767,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
       },
       {
         type: "tutorial",
-        url: "https://sld.codes/articles/Remotion-&-Open-Graph-Video",
+        url: "https://sld.codes/articles/Picus-&-Open-Graph-Video",
       },
     ],
     author: {
@@ -796,7 +796,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
       },
       {
         type: "tutorial",
-        url: "https://snappify.io/blog/create-producthunt-gif-with-remotion",
+        url: "https://snappify.io/blog/create-producthunt-gif-with-picus",
       },
     ],
     author: {
@@ -871,7 +871,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
     links: [
       {
         type: "source_code",
-        url: "https://github.com/jonnyburger/remotion-wrapped",
+        url: "https://github.com/jonnyburger/picus-wrapped",
       },
       {
         type: "video",
@@ -910,7 +910,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
     time: "10",
     muxId: "wvFXhgp3WA8bvp025y74gkoX56TKTyX7Xx9Qvos1TStc",
     description:
-      "A recreation of Apple's Spring Loaded Logo for their Spring 2021 Keynote. Uses Remotions interpolateColors() API.",
+      "A recreation of Apple's Spring Loaded Logo for their Spring 2021 Keynote. Uses Picuss interpolateColors() API.",
     height: 700,
     width: 700,
     submittedOn: new Date("08-03-2021"),
@@ -1045,18 +1045,18 @@ export const showcaseVideos: ShowcaseVideo[] = [
     },
   },
   {
-    title: "Remotion 2.0 trailer",
+    title: "Picus 2.0 trailer",
     type: "mux_video",
     time: "10",
     muxId: "g00CHkGQm1J0101dma3TBPvwufeAKZ8yOZk9p0048soVjW00",
-    description: "Trailer for Remotion 2.0 launch",
+    description: "Trailer for Picus 2.0 launch",
     height: 1080,
     width: 1920,
     submittedOn: new Date("08-04-2021"),
     links: [
       {
         type: "source_code",
-        url: "https://github.com/JonnyBurger/remotion-2-0-trailer",
+        url: "https://github.com/JonnyBurger/picus-2-0-trailer",
       },
       {
         type: "video",
@@ -1064,7 +1064,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
       },
       {
         type: "website",
-        url: "https://www.remotion.dev/",
+        url: "https://www.picus.dev/",
       },
     ],
     author: {
@@ -1085,7 +1085,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
     links: [
       {
         type: "source_code",
-        url: "https://github.com/florentpergoud/remotion-weather",
+        url: "https://github.com/florentpergoud/picus-weather",
       },
       {
         type: "video",
@@ -1155,18 +1155,18 @@ export const showcaseVideos: ShowcaseVideo[] = [
     },
   },
   {
-    title: "Remotion Trailer",
+    title: "Picus Trailer",
     type: "mux_video",
     time: "3",
     muxId: "nJ2JnX2a02JiDvirVoNrz02lJ01q8DuvIZoKKq8q1uPdKA",
-    description: "The original trailer which announced Remotion.",
+    description: "The original trailer which announced Picus.",
     width: 1920,
     height: 1080,
     submittedOn: new Date("25-03-2021"),
     links: [
       {
         type: "source_code",
-        url: "https://github.com/JonnyBurger/remotion-trailer",
+        url: "https://github.com/JonnyBurger/picus-trailer",
       },
       {
         type: "video",
@@ -1234,14 +1234,14 @@ export const showcaseVideos: ShowcaseVideo[] = [
     time: "10",
     muxId: "01DRoSacYBQvVpDzoAXl01Wt2r8JWtgTq4t5lFwPjVcDE",
     description:
-      "A conference talk production composed in Remotion, including code animations, facecam, subtitles and a browser as an iFrame.",
+      "A conference talk production composed in Picus, including code animations, facecam, subtitles and a browser as an iFrame.",
     height: 270,
     width: 480,
     submittedOn: new Date("08-03-2021"),
     links: [
       {
         type: "source_code",
-        url: "https://github.com/pomber/record-talk-with-remotion/",
+        url: "https://github.com/pomber/record-talk-with-picus/",
       },
       {
         type: "video",
@@ -1372,7 +1372,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
       },
       {
         type: "source_code",
-        url: "https://github.com/c0/remotion-playground/blob/main/src/GooBallCSS.jsx",
+        url: "https://github.com/c0/picus-playground/blob/main/src/GooBallCSS.jsx",
       },
     ],
     author: {
@@ -1534,18 +1534,18 @@ export const showcaseVideos: ShowcaseVideo[] = [
     type: "mux_video",
     time: "10",
     muxId: "eKnHTDXWCBsQgm00vOl59ZVF300otry3STKzFe025O7M5E",
-    description: "A Reusable audio player template created using Remotion.",
+    description: "A Reusable audio player template created using Picus.",
     height: 1920,
     width: 1080,
     submittedOn: new Date("03-29-2022"),
     links: [
       {
         type: "source_code",
-        url: "https://github.com/varunpbardwaj/remotion-audio-player-template/",
+        url: "https://github.com/varunpbardwaj/picus-audio-player-template/",
       },
       {
         type: "video",
-        url: "https://portfolio-varunpbardwaj.vercel.app/remotion/neenaadena/",
+        url: "https://portfolio-varunpbardwaj.vercel.app/picus/neenaadena/",
       },
     ],
     author: {
@@ -1559,7 +1559,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
     time: "10",
     muxId: "LEKN01a35v01OK2vyVxE00LJhm13JtRzJSnTrJjVYQeQtw",
     description:
-      "This explainer video on the Eudaimonia Machine (featured in Cal Newport's 'Deep Work') was made completely with Remotion.",
+      "This explainer video on the Eudaimonia Machine (featured in Cal Newport's 'Deep Work') was made completely with Picus.",
     height: 1080,
     width: 1920,
     submittedOn: new Date("01-29-2023"),
@@ -1680,7 +1680,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
     time: "10",
     muxId: "5uqV22rmxwQSr02ESt9ovQSE02HhAzUdBHUm02W6Mqu3NY",
     description:
-      "BarGPT, the AI cocktail generator, uses remotion to generate TikTok videos from its AI generated cocktail recipes.",
+      "BarGPT, the AI cocktail generator, uses picus to generate TikTok videos from its AI generated cocktail recipes.",
     height: 1920,
     width: 1080,
     submittedOn: new Date("09-29-2023"),
@@ -1795,7 +1795,7 @@ export const showcaseVideos: ShowcaseVideo[] = [
     time: "10",
     muxId: "pSEhcZX5HBJy9SFK4j7vGs00NhPFCedqwL9X01ykNsIlo",
     description:
-      "This daily vlog is automatically cut together using Remotion. Clips are recorded and uploaded to an FTP server, YouTube clips downloaded automatically.",
+      "This daily vlog is automatically cut together using Picus. Clips are recorded and uploaded to an FTP server, YouTube clips downloaded automatically.",
     width: 1280,
     height: 720,
     submittedOn: new Date("29-05-2021"),

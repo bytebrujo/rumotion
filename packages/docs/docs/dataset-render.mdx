@@ -6,12 +6,12 @@ title: Render videos programmatically from a dataset
 crumb: 'Tutorials'
 ---
 
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import {DatasetDemo} from '../components/Dataset/DatasetDemo';
 
-You can use Remotion to do a batch render to create many videos based on a dataset. In the following example, we are going to turn a JSON dataset into a series of videos.
+You can use Picus to do a batch render to create many videos based on a dataset. In the following example, we are going to turn a JSON dataset into a series of videos.
 
-We'll start by creating a blank Remotion project:
+We'll start by creating a blank Picus project:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -58,7 +58,7 @@ yarn create video --blank
 
 ## Sample dataset
 
-JSON is the most convenient format to import in Remotion. If your dataset is in a different format, you can convert it using one of many available libraries on NPM.
+JSON is the most convenient format to import in Picus. If your dataset is in a different format, you can convert it using one of many available libraries on NPM.
 
 ```ts title="my-data.ts"
 export const data = [
@@ -68,20 +68,20 @@ export const data = [
     logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
   },
   {
-    name: 'Remotion',
-    repo: 'remotion-dev/remotion',
-    logo: 'https://github.com/remotion-dev/logo/raw/main/withouttitle/element-0.png',
+    name: 'Picus',
+    repo: 'picus-dev/picus',
+    logo: 'https://github.com/picus-dev/logo/raw/main/withouttitle/element-0.png',
   },
 ];
 ```
 
 ## Sample component
 
-This component will animate a title, subtitle and image using Remotion. Replace the contents of the `src/Composition.tsx` file with the following:
+This component will animate a title, subtitle and image using Picus. Replace the contents of the `src/Composition.tsx` file with the following:
 
 ```tsx title="Composition.tsx"
 import React from 'react';
-import {AbsoluteFill, Img, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 type Props = {
   name: string;
@@ -170,15 +170,15 @@ export const MyComposition: React.FC<Props> = ({name, repo, logo}) => {
 ## Writing the script
 
 In order to render our videos, we'll first need to bundle our project using Webpack and prepare it for rendering.
-This can be done by using the [`bundle()`](/docs/bundle) function from the [`@remotion/bundler`](/docs/bundler) package. Make sure to include the webpack override in the bundle if you have one.
+This can be done by using the [`bundle()`](/docs/bundle) function from the [`@picus/bundler`](/docs/bundler) package. Make sure to include the webpack override in the bundle if you have one.
 
 ```ts twoslash
 // @filename: webpack-override.ts
-import type {WebpackOverrideFn} from '@remotion/bundler';
+import type {WebpackOverrideFn} from '@picus/bundler';
 export const webpackOverride: WebpackOverrideFn = (f) => f;
 // @filename: script.ts
 // ---cut---
-import {bundle} from '@remotion/bundler';
+import {bundle} from '@picus/bundler';
 import {webpackOverride} from './webpack-override';
 
 const bundleLocation = await bundle({
@@ -205,9 +205,9 @@ export const data = [
     logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
   },
   {
-    name: 'Remotion',
-    repo: 'remotion-dev/remotion',
-    logo: 'https://github.com/remotion-dev/logo/raw/main/withouttitle/element-0.png',
+    name: 'Picus',
+    repo: 'picus-dev/picus',
+    logo: 'https://github.com/picus-dev/logo/raw/main/withouttitle/element-0.png',
   },
 ];
 
@@ -215,7 +215,7 @@ export const data = [
 const compositionId = 'MyComp';
 const bundleLocation = 'xxx';
 // ---cut---
-import {renderMedia, selectComposition} from '@remotion/renderer';
+import {renderMedia, selectComposition} from '@picus/renderer';
 import {data} from './dataset';
 
 for (const entry of data) {
@@ -250,28 +250,28 @@ export const data = [
     logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
   },
   {
-    name: 'Remotion',
-    repo: 'remotion-dev/remotion',
-    logo: 'https://github.com/remotion-dev/logo/raw/main/withouttitle/element-0.png',
+    name: 'Picus',
+    repo: 'picus-dev/picus',
+    logo: 'https://github.com/picus-dev/logo/raw/main/withouttitle/element-0.png',
   },
 ];
 
 // @filename: webpack-override.ts
-import type {WebpackOverrideFn} from '@remotion/bundler';
+import type {WebpackOverrideFn} from '@picus/bundler';
 export const webpackOverride: WebpackOverrideFn = (f) => f;
 
 // @filename: render.ts
 // ---cut---
-import {selectComposition, renderMedia} from '@remotion/renderer';
+import {selectComposition, renderMedia} from '@picus/renderer';
 import {webpackOverride} from './webpack-override';
-import {bundle} from '@remotion/bundler';
+import {bundle} from '@picus/bundler';
 import {data} from './dataset';
 
 const compositionId = 'MyComp';
 
 const bundleLocation = await bundle({
   entryPoint: './src/index.ts',
-  // If you have a webpack override in remotion.config.ts, pass it here as well.
+  // If you have a webpack override in picus.config.ts, pass it here as well.
   webpackOverride: webpackOverride,
 });
 
@@ -327,7 +327,7 @@ Use a package like [`csv2json`](https://www.npmjs.com/package/csv2json) to conve
 
 ## See also
 
-- [Example repository using a dataset](https://github.com/alexfernandez803/remotion-dataset)
+- [Example repository using a dataset](https://github.com/alexfernandez803/picus-dataset)
 
 <Credits
   contributors={[

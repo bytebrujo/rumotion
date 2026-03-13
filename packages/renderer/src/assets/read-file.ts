@@ -34,7 +34,7 @@ const readFileWithoutRedirect = (
 				? {
 						headers: {
 							'user-agent':
-								'Mozilla/5.0 (@remotion/renderer - https://remotion.dev)',
+								'Mozilla/5.0 (@picus/renderer - https://picus.dev)',
 						},
 					}
 				: {},

@@ -1,7 +1,7 @@
 import type {InputVideoTrack, WrappedCanvas} from 'mediabunny';
 import {CanvasSink} from 'mediabunny';
-import type {LogLevel} from 'remotion';
-import {Internals} from 'remotion';
+import type {LogLevel} from 'picus';
+import {Internals} from 'picus';
 import type {DelayPlaybackIfNotPremounting} from './delay-playback-if-not-premounting';
 import type {Nonce} from './nonce-manager';
 import {makePrewarmedVideoIteratorCache} from './prewarm-iterator-for-looping';
@@ -67,7 +67,7 @@ export const videoIteratorManager = ({
 		}
 
 		Internals.Log.trace(
-			{logLevel, tag: '@remotion/media'},
+			{logLevel, tag: '@picus/media'},
 			`[MediaPlayer] Drew frame ${frame.timestamp.toFixed(3)}s`,
 		);
 	};

@@ -14,8 +14,8 @@ export type ExpandedFoldersState = Record<string, boolean>;
 
 const localStorageKey = (type: PersistanceType) =>
 	type === 'compositions'
-		? 'remotion.expandedFolders'
-		: 'remotion.expandedAssetFolders';
+		? 'picus.expandedFolders'
+		: 'picus.expandedAssetFolders';
 
 type PersistanceType = 'assets' | 'compositions';
 

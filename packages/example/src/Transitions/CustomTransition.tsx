@@ -1,11 +1,11 @@
-import {getBoundingBox, translatePath} from '@remotion/paths';
-import {makeStar} from '@remotion/shapes';
+import {getBoundingBox, translatePath} from '@picus/paths';
+import {makeStar} from '@picus/shapes';
 import {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
 	TransitionSeries,
 	TransitionTiming,
-} from '@remotion/transitions';
+} from '@picus/transitions';
 import React, {useMemo, useState} from 'react';
 import {
 	AbsoluteFill,
@@ -14,7 +14,7 @@ import {
 	random,
 	spring,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {Letter} from './BasicTransition';
 
 type CustomPresentationProps = {

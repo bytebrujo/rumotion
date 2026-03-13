@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/babel-loader"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/babel-loader"
 	},
-	"name": "@remotion/babel-loader",
+	"name": "@picus/babel-loader",
 	"version": "4.0.434",
-	"description": "Babel loader for Remotion",
+	"description": "Babel loader for Picus",
 	"main": "dist/index.js",
 	"scripts": {
 		"formatting": "oxfmt src --check",
@@ -15,10 +15,10 @@
 	"files": [
 		"dist"
 	],
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
 		"@babel/core": "7.23.2",
@@ -31,17 +31,17 @@
 		"webpack": "5.105.0"
 	},
 	"devDependencies": {
-		"@remotion/bundler": "workspace:*",
-		"remotion": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"picus": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"peerDependencies": {
-		"@remotion/bundler": "workspace:*"
+		"@picus/bundler": "workspace:*"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"ffmpeg",
 		"video",
 		"react",
@@ -50,5 +50,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/legacy-babel"
+	"homepage": "https://www.picus.dev/docs/legacy-babel"
 }

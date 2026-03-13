@@ -13,7 +13,7 @@ const ruleTester = new ESLintUtils.RuleTester({
 ruleTester.run('even-dimensions', rule, {
 	valid: [
 		`
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 
 export const Re = () => {
   return (
@@ -22,7 +22,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 
 export const Re = () => {
   return (
@@ -31,7 +31,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Still} from 'remotion';
+import {Still} from 'picus';
 
 export const Re = () => {
   return (
@@ -43,7 +43,7 @@ export const Re = () => {
 	invalid: [
 		{
 			code: `
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 
 export const Re = () => {
   return (
@@ -59,7 +59,7 @@ export const Re = () => {
 		},
 		{
 			code: `
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 
 export const Re = () => {
   return (

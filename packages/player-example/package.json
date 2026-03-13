@@ -1,27 +1,27 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/player-example"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/player-example"
 	},
-	"name": "@remotion/player-example",
+	"name": "@picus/player-example",
 	"version": "4.0.434",
 	"private": true,
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"maintainers": [
-		"Jonny Burger <jonny@remotion.dev>",
+		"Jonny Burger <jonny@picus.dev>",
 		"Shankhadeep Dey <shankhadeepdey99@gmail.com>"
 	],
 	"dependencies": {
-		"@remotion/bundler": "workspace:*",
-		"@remotion/eslint-config-flat": "workspace:*",
-		"@remotion/gif": "workspace:*",
-		"@remotion/google-fonts": "workspace:*",
-		"@remotion/player": "workspace:*",
-		"@remotion/preload": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"@picus/eslint-config-flat": "workspace:*",
+		"@picus/gif": "workspace:*",
+		"@picus/google-fonts": "workspace:*",
+		"@picus/player": "workspace:*",
+		"@picus/preload": "workspace:*",
 		"next": "catalog:",
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"remotion": "workspace:*",
-		"@remotion/media": "workspace:*"
+		"picus": "workspace:*",
+		"@picus/media": "workspace:*"
 	},
 	"devDependencies": {
 		"eslint": "catalog:",

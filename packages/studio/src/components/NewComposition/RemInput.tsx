@@ -116,4 +116,4 @@ const RemInputForwardRef: React.ForwardRefRenderFunction<
 	return <input ref={inputRef} tabIndex={tabIndex} {...props} style={style} />;
 };
 
-export const RemotionInput = forwardRef(RemInputForwardRef);
+export const PicusInput = forwardRef(RemInputForwardRef);

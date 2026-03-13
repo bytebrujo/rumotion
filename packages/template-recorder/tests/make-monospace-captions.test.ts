@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 
-import { Caption } from "@remotion/captions";
+import { Caption } from "@picus/captions";
 import { expect, test } from "bun:test";
-import { splitCaptionIntoMonospaceSegments } from "../remotion/captions/processing/split-caption-into-monospace-segments";
+import { splitCaptionIntoMonospaceSegments } from "../picus/captions/processing/split-caption-into-monospace-segments";
 
 test("Should split up into monospace words", () => {
   const caption: Caption = {

@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {WAVE_SAMPLES_PER_SECOND} from '../containers/wav/get-seeking-byte';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
@@ -35,7 +35,7 @@ test('parse full wav', async () => {
 	} = await parseMedia({
 		src: exampleVideos.chirp,
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			tracks: true,
 			audioCodec: true,
@@ -152,7 +152,7 @@ test('should be fast to only get duration', async () => {
 	const {internalStats} = await parseMedia({
 		src: exampleVideos.chirp,
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			durationInSeconds: true,
 			internalStats: true,
@@ -172,7 +172,7 @@ test('should get all samples', async () => {
 	const {internalStats} = await parseMedia({
 		src: exampleVideos.chirp,
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			internalStats: true,
 			container: true,

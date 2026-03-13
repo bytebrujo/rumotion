@@ -1,7 +1,7 @@
-import type {RecastCodemod} from '@remotion/studio-shared';
+import type {RecastCodemod} from '@picus/studio-shared';
 import type {ChangeEventHandler} from 'react';
 import React, {useCallback, useContext, useMemo, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {validateCompositionName} from '../../helpers/validate-new-comp-data';
 import {Spacing} from '../layout';
 import {ModalFooterContainer} from '../ModalFooter';
@@ -13,7 +13,7 @@ import {
 } from '../RenderModal/ResolveCompositionBeforeModal';
 import {CodemodFooter} from './CodemodFooter';
 import {DismissableModal} from './DismissableModal';
-import {RemotionInput} from './RemInput';
+import {PicusInput} from './RemInput';
 import {ValidationMessage} from './ValidationMessage';
 
 const content: React.CSSProperties = {
@@ -72,7 +72,7 @@ const RenameCompositionLoaded: React.FC<{}> = () => {
 						<div style={label}>ID</div>
 						<div style={rightRow}>
 							<div>
-								<RemotionInput
+								<PicusInput
 									value={newId}
 									onChange={onNameChange}
 									type="text"

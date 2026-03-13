@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './remotionvideoappstitle.module.css';
+import styles from './picusvideoappstitle.module.css';
 
 export const VideoAppsTitle: React.FC = () => {
 	return (

@@ -1,12 +1,12 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
 test('should parse fragmented mp4a', async () => {
 	const result = await parseMedia({
 		src: exampleVideos.problematicFragmentedM4a,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			slowDurationInSeconds: true,
 		},

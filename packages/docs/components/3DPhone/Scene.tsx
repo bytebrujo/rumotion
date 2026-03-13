@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unknown-property */
-import type {VideoMetadata} from '@remotion/media-utils';
-import {getVideoMetadata} from '@remotion/media-utils';
-import {ThreeCanvas, useVideoTexture} from '@remotion/three';
+import type {VideoMetadata} from '@picus/media-utils';
+import {getVideoMetadata} from '@picus/media-utils';
+import {ThreeCanvas, useVideoTexture} from '@picus/three';
 import React, {useEffect, useRef, useState} from 'react';
-import {AbsoluteFill, Html5Video, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Html5Video, useVideoConfig} from 'picus';
 import {Phone} from './Phone';
 
 const videoStyle: React.CSSProperties = {

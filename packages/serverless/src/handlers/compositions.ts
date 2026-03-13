@@ -1,14 +1,14 @@
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	CloudProvider,
 	ProviderSpecifics,
 	ServerlessPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	ServerlessRoutines,
 	decompressInputProps,
 	internalGetOrCreateBucket,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import type {LaunchedBrowser} from '../get-browser-instance';
 import type {InsideFunctionSpecifics} from '../provider-implementation';
 import {checkVersionMismatch} from './check-version-mismatch';

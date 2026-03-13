@@ -2,21 +2,21 @@
 image: /generated/articles-docs-config.png
 id: config
 title: Configuration file
-crumb: 'remotion.config.ts'
+crumb: 'picus.config.ts'
 ---
 
-To configure Remotion, create a `remotion.config.ts` file in the root of your Remotion project.
+To configure Picus, create a `picus.config.ts` file in the root of your Picus project.
 
-These options will apply to CLI commands such as `npx remotion studio` and `npx remotion render`.
+These options will apply to CLI commands such as `npx picus studio` and `npx picus render`.
 
 :::warning
 The configuration file has no effect when using [SSR](/docs/renderer) APIs.
 :::
 
-You can control several behaviors of Remotion here.
+You can control several behaviors of Picus here.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 Config.setConcurrency(8);
 Config.setPixelFormat('yuv444p');
@@ -27,8 +27,8 @@ Config.setCodec('h265');
 
 Allows you to insert your custom Webpack config. [See the page about custom Webpack configs](/docs/webpack) for more information.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.overrideWebpackConfig((currentConfiguration) => {
   // Return a new Webpack configuration
@@ -43,8 +43,8 @@ Config.overrideWebpackConfig((currentConfiguration) => {
 
 <Options id="bundle-cache" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setCachingEnabled(false);
 ```
@@ -55,8 +55,8 @@ The [command line flag](/docs/cli/render#--bundle-cache) `--bundle-cache` will t
 
 Set the HTTP port for the Studio.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setStudioPort(3003);
 ```
@@ -67,8 +67,8 @@ The [command line flag](/docs/cli/studio#--port) `--port` will take precedence o
 
 Set the port to be used to host the Webpack bundle.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setRendererPort(3004);
 ```
@@ -79,8 +79,8 @@ The [command line flag](/docs/cli/render#--port) `--port` will take precedence o
 
 <Options id="public-dir" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setPublicDir('./custom-public-dir');
 ```
@@ -91,8 +91,8 @@ The [command line flag](/docs/cli/render#--public-dir) `--public-dir` will take 
 
 <Options id="out-dir" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setBundleOutDir('./custom-build-dir');
 ```
@@ -103,8 +103,8 @@ The [command line flag](/docs/cli/bundle#--out-dir) `--out-dir` will take preced
 
 <Options id="runs" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setBenchmarkRuns(5);
 ```
@@ -115,8 +115,8 @@ The [command line flag](/docs/cli/benchmark#--runs) `--runs` will take precedenc
 
 <Options id="concurrencies" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setBenchmarkConcurrencies('1,4,8');
 ```
@@ -125,10 +125,10 @@ The [command line flag](/docs/cli/benchmark#--concurrencies) `--concurrencies` w
 
 ## `setEntryPoint()`<AvailableFrom v="3.2.40" />
 
-Sets the Remotion [entry point](/docs/terminology/entry-point), you don't have to specify it for CLI commands.
+Sets the Picus [entry point](/docs/terminology/entry-point), you don't have to specify it for CLI commands.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setEntryPoint('./src/index.ts');
 ```
@@ -145,8 +145,8 @@ Acceptable values:
 - `info` (_default_): Default output - besides errors and warnings, prints progress and output location.
 - `verbose`: All of the above, plus browser logs and other debug info.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setLevel('verbose');
 ```
@@ -157,8 +157,8 @@ The [command line flag](/docs/cli/render#--log) `--log` will take precedence ove
 
 Set how many tracks are being displayed in the timeline in the Studio at most. This does not affect your video, just the amount of tracks shown when previewing. Default `15`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setMaxTimelineTracks(20);
 ```
@@ -167,8 +167,8 @@ Config.setMaxTimelineTracks(20);
 
 <Options id="disable-keyboard-shortcuts" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setKeyboardShortcutsEnabled(false);
 ```
@@ -179,8 +179,8 @@ The [command line flag](/docs/cli/studio#--disable-keyboard-shortcuts) `--disabl
 
 <Options id="enable-experimental-client-side-rendering" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setExperimentalClientSideRenderingEnabled(true);
 ```
@@ -191,8 +191,8 @@ The [command line flag](/docs/cli/studio#--enable-experimental-client-side-rende
 
 Use [Rspack](https://rspack.dev) instead of Webpack as the bundler for the Studio. Default `false`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setExperimentalRspackEnabled(true);
 ```
@@ -203,8 +203,8 @@ The [command line flag](/docs/cli/studio#--experimental-rspack) `--experimental-
 
 <Options id="experimental-visual-mode" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setExperimentalVisualMode(true);
 ```
@@ -215,8 +215,8 @@ The [command line flag](/docs/cli/studio#--experimental-visual-mode) `--experime
 
 <Options id="webpack-poll" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setWebpackPollingInMilliseconds(1000);
 ```
@@ -227,8 +227,8 @@ The [command line flag](/docs/cli/studio#--webpack-poll) `--webpack-poll` will t
 
 <Options id="number-of-shared-audio-tags" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 Config.setNumberOfSharedAudioTags(5);
@@ -240,8 +240,8 @@ The [command line flag](/docs/cli/studio#--number-of-shared-audio-tags) `--numbe
 
 <Options id="no-open" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 Config.setShouldOpenBrowser(false);
@@ -253,8 +253,8 @@ The [command line flag](/docs/cli/studio#--no-open) `--no-open` will take preced
 
 <Options id="browser-executable" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setBrowserExecutable('/usr/bin/google-chrome-stable');
 ```
@@ -267,8 +267,8 @@ _previously named "setTimeoutInMilliseconds"_
 
 Define how long a single frame may take to resolve all [`delayRender()`](/docs/delay-render) calls [before it times out](/docs/timeout). Default: `30000`
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setDelayRenderTimeoutInMilliseconds(60000);
 ```
@@ -279,8 +279,8 @@ The [command line flag](/docs/cli/render#--timeout) `--timeout` will take preced
 
 <Options id="disable-web-security" />
 
-```tsx twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```tsx twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -293,8 +293,8 @@ The [command line flag](/docs/cli/render#--disable-web-security) `--disable-web-
 
 <Options id="dark-mode" />
 
-```tsx twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```tsx twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 Config.setChromiumDarkMode(true);
@@ -304,8 +304,8 @@ Config.setChromiumDarkMode(true);
 
 <Options id="ignore-certificate-errors" />
 
-```tsx twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```tsx twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -318,8 +318,8 @@ The [command line flag](/docs/cli/render#--ignore-certificate-errors) `--ignore-
 
 <Options id="disable-headless" />
 
-```tsx twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```tsx twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -330,8 +330,8 @@ Config.setChromiumHeadlessMode(false);
 
 <Options id="enable-multiprocess-on-linux" cli />
 
-```tsx twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```tsx twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -342,8 +342,8 @@ Config.setChromiumMultiProcessOnLinux(true);
 
 <Options id="chrome-mode" cli />
 
-```tsx twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```tsx twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -356,8 +356,8 @@ The [command line flag](/docs/cli/render#--chrome-mode) `--chrome-mode` will tak
 
 <Options id="gl" />
 
-```tsx twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```tsx twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -370,8 +370,8 @@ The [command line flag](/docs/cli/render#--gl) `--gl` will take precedence over 
 
 <Options id="concurrency" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setConcurrency(8);
 ```
@@ -390,8 +390,8 @@ Determines which in which image format to render the frames. Either:
 - `png` - slower, but supports transparency
 - `none` - don't render images, just calculate audio information
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setVideoImageFormat('png');
 ```
@@ -405,8 +405,8 @@ Determines which in which image format to render the frames. Either:
 - `pdf`
 - `webp`
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setStillImageFormat('pdf');
 ```
@@ -415,8 +415,8 @@ Config.setStillImageFormat('pdf');
 
 [Scales the output frames by the factor you pass in.](/docs/scaling) For example, a 1280x720px frame will become a 1920x1080px frame with a scale factor of `1.5`. Vector elements like fonts and HTML markups will be rendered with extra details. Default: `1`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setScale(2);
 ```
@@ -427,8 +427,8 @@ The [command line flag](/docs/cli/render#--scale) `--scale` will take precedence
 
 Disables audio output. Default `false`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setMuted(true);
 ```
@@ -439,8 +439,8 @@ The [command line flag](/docs/cli/render#--muted) `--muted` will take precedence
 
 Disallows the renderer from doing rendering frames and encoding at the same time. This makes the rendering process more memory-efficient, but possibly slower. Default `false`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setDisallowParallelEncoding(true);
 ```
@@ -451,8 +451,8 @@ The [command line flag](/docs/cli/render#--disallow-parallel-encoding) `--disall
 
 Render a silent audio track if there would be none otherwise. Default `false`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setEnforceAudioTrack(true);
 ```
@@ -463,8 +463,8 @@ The [command line flag](/docs/cli/render#--enforce-audio-track) `--enforce-audio
 
 <Options id="for-seamless-aac-concatenation" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setForSeamlessAacConcatenation(true);
 ```
@@ -475,24 +475,24 @@ The [command line flag](/docs/cli/render#--for-seamless-aac-concatenation) `--fo
 
 <Options id="frames" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setFrameRange(90); // To render only the 91st frame
 ```
 
 or
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setFrameRange([0, 20]); // Render a video only containing the first 21 frames
 ```
 
 or
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setFrameRange([100, null]); // Render from frame 100 to the end of the composition
 ```
@@ -505,8 +505,8 @@ The [command line flag](/docs/cli/render#--frames) `--frames` will take preceden
 
 The JPEG quality of each frame. Must be a number between 0 and 100. Will not work if you render PNG frames. [Default: 80](https://github.com/chromium/chromium/blob/99314be8152e688bafbbf9a615536bdbb289ea87/headless/lib/browser/protocol/headless_handler.cc#L32).
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setJpegQuality(90);
 ```
@@ -517,8 +517,8 @@ The [command line flag](/docs/cli/render#--jpeg-quality) `--jpeg-quality` will t
 
 <Options id="env-file" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setDotEnvLocation('.my-env');
 ```
@@ -529,8 +529,8 @@ The [command line flag](/docs/cli/render#--env-file) `--env-file` will take prec
 
 <Options id="every-nth-frame" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setEveryNthFrame(2);
 ```
@@ -541,8 +541,8 @@ The [command line flag](/docs/cli/render#--every-nth-frame) `--every-nth-frame` 
 
 <Options id="number-of-gif-loops" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setNumberOfGifLoops(2);
 ```
@@ -553,34 +553,34 @@ The [command line flag](/docs/cli/render#--number-of-gif-loops) `--number-of-gif
 
 Set the output location of the video or still, relative to the current working directory. The default is `out/{composition}.{container}`. For example, `out/HelloWorld.mp4`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setOutputLocation('out/video.mp4');
 ```
 
-If you pass another argument to the render command, it will take precedence: `npx remotion render src/index.ts HelloWorld out/video.mp4`.
+If you pass another argument to the render command, it will take precedence: `npx picus render src/index.ts HelloWorld out/video.mp4`.
 
 ## `setOverwriteOutput()`
 
-Set this to `false` to prevent overwriting Remotion outputs when they already exists.
+Set this to `false` to prevent overwriting Picus outputs when they already exists.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setOverwriteOutput(false);
 ```
 
 :::info
-In version 1.x, the default behavior was inverse - Remotion would not override by default.
+In version 1.x, the default behavior was inverse - Picus would not override by default.
 :::
 
 ## `setPixelFormat()`
 
 <Options id="pixel-format" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setPixelFormat('yuv420p');
 ```
@@ -600,8 +600,8 @@ Choose one of the supported codecs: `h264` _(default)_, `h265`, `vp8`, `vp9`.
 - `wav` will export audio only as an WAV file _(available from v2.0)_
 - `aac` will export audio only as an AAC file _(available from v2.0)_
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setCodec('h265');
 ```
@@ -612,8 +612,8 @@ The [command line flag](/docs/cli/render#--codec) `--codec` will take precedence
 
 ## `setAudioCodec()`
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setAudioCodec('pcm-16');
 ```
@@ -633,8 +633,8 @@ Refer to the [Encoding guide](/docs/encoding) to see defaults and supported comb
 
 <Options id="prores-profile" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setProResProfile('4444');
 ```
@@ -647,8 +647,8 @@ Set the Preset profile. This option is only valid if the codec has been set to `
 Possible values: `superfast`, `veryfast`, `faster`, `fast`, `medium`, `slow`, `slower`, `veryslow`, `placebo`,
 Default: `medium`
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setX264Preset('fast');
 ```
@@ -661,8 +661,8 @@ The [command line flag](/docs/cli/render#--x264-preset) `--x264-preset` will tak
 
 <Options id="sequence" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setImageSequence(true);
 ```
@@ -673,8 +673,8 @@ The [command line flag](/docs/cli/render#--sequence) `--sequence` will take prec
 
 <Options id="height" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.overrideHeight(600);
 ```
@@ -685,8 +685,8 @@ The [command line flag](/docs/cli/render#--height) `--height` will take preceden
 
 <Options id="width" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.overrideWidth(900);
 ```
@@ -697,8 +697,8 @@ The [command line flag](/docs/cli/render#--width) `--width` will take precedence
 
 <Options id="fps" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.overrideFps(25);
 ```
@@ -709,8 +709,8 @@ The [command line flag](/docs/cli/render#--fps) `--fps` will take precedence ove
 
 <Options id="duration" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.overrideDuration(300);
 ```
@@ -734,8 +734,8 @@ The range is exponential, so increasing the CRF value +6 results in roughly half
 
 Choose the highest CRF value that still provides an acceptable quality. If the output looks good, then try a higher value. If it looks bad, choose a lower value.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setCrf(16);
 ```
@@ -752,8 +752,8 @@ If you enable [hardware acceleration](/docs/hardware-acceleration), you cannot s
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setVideoBitrate('1M');
 ```
@@ -766,8 +766,8 @@ The [command line flag](/docs/cli/render#--video-bitrate) `--video-bitrate` will
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setEncodingBufferSize('10000k');
 ```
@@ -780,8 +780,8 @@ The [command line flag](/docs/cli/render#--buffer-size) `--buffer-size` will tak
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setEncodingMaxRate('5000k');
 ```
@@ -794,8 +794,8 @@ The [command line flag](/docs/cli/render#--max-rate) `--max-rate` will take prec
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setAudioBitrate('128K');
 ```
@@ -808,8 +808,8 @@ The [command line flag](/docs/cli/render#--audio-bitrate) `--audio-bitrate` will
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setAudioLatencyHint('interactive');
 ```
@@ -821,8 +821,8 @@ The `--audio-latency-hint` command line flag will take precedence over this opti
 <Options id="enable-folder-expiry" />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setEnableFolderExpiry(true);
 ```
@@ -833,8 +833,8 @@ Config.setEnableFolderExpiry(true);
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setLambdaInsights(true);
 ```
@@ -845,8 +845,8 @@ Config.setLambdaInsights(true);
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setDeleteAfter('3-days');
 ```
@@ -857,8 +857,8 @@ Config.setDeleteAfter('3-days');
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setBeepOnFinish(true);
 ```
@@ -871,8 +871,8 @@ The [command line flag](/docs/cli/studio#--beep-on-finish) `--beep-on-finish` wi
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setEnableCrossSiteIsolation(true);
 ```
@@ -885,8 +885,8 @@ The [command line flag](/docs/cli/studio#--cross-site-isolation) `--cross-site-i
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setAskAIEnabled(false);
 ```
@@ -899,8 +899,8 @@ The [command line flag](/docs/cli/studio#--disable-ask-ai) `--disable-ask-ai` wi
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setForceNewStudioEnabled(true);
 ```
@@ -913,8 +913,8 @@ The [command line flag](/docs/cli/studio#--force-new) `--force-new` will take pr
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setIPv4(true);
 ```
@@ -925,8 +925,8 @@ The [command line flag](/docs/cli/studio#--ipv4) `--ipv4` will take precedence o
 
 Set the amount of milliseconds after which the Player in the Studio will display a buffering UI after the Player has entered a buffer state. Default `300`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setBufferStateDelayInMilliseconds(0);
 ```
@@ -937,8 +937,8 @@ Config.setBufferStateDelayInMilliseconds(0);
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setBinariesDirectory('/path/to/custom/directory');
 ```
@@ -949,8 +949,8 @@ Config.setBinariesDirectory('/path/to/custom/directory');
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setPreferLosslessAudio(true);
 ```
@@ -961,18 +961,18 @@ Config.setPreferLosslessAudio(true);
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setHardwareAcceleration('if-possible');
 ```
 
 ## `overrideFfmpegCommand()`<AvailableFrom v="3.2.22" />
 
-Modifies the FFmpeg command that Remotion uses under the hood. It works reducer-style, meaning that you pass a function that takes a command as an argument and returns a new command.
+Modifies the FFmpeg command that Picus uses under the hood. It works reducer-style, meaning that you pass a function that takes a command as an argument and returns a new command.
 
-```tsx twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```tsx twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.overrideFfmpegCommand(({args}) => {
   // Define the custom FFmpeg options as an array of strings
@@ -986,7 +986,7 @@ Config.overrideFfmpegCommand(({args}) => {
 
 The function you pass must accept an object as it's only parameter which contains the following properties:
 
-- `type`: Either `"stitcher"` or `"pre-stitcher"`. If enough memory and CPU is available, Remotion may use a two-pass process for the video generation. `pre-stitcher` is the encoding phase and `stitcher` is the muxing phase. If the override function is only called once with `stitcher`, then encoding and muxing is done in the same step. You can tell whether parallel encoding is enabled by adding `--log=verbose` to your render command.
+- `type`: Either `"stitcher"` or `"pre-stitcher"`. If enough memory and CPU is available, Picus may use a two-pass process for the video generation. `pre-stitcher` is the encoding phase and `stitcher` is the muxing phase. If the override function is only called once with `stitcher`, then encoding and muxing is done in the same step. You can tell whether parallel encoding is enabled by adding `--log=verbose` to your render command.
 - `args`: An array of strings that is passed as arguments to the FFmpeg command.
 
 Your function must return a modified array of strings.
@@ -994,12 +994,12 @@ Your function must return a modified array of strings.
 :::warning
 Using this feature is discouraged. Before using it, we want to make you aware of some caveats:
 
-- The render command can change with any new Remotion version, even when it is a patch upgrade. This might break your usage of this feature.
-- Depending on the selected codec, available CPU and RAM, Remotion may or may not use "parallel encoding" which will result in multiple FFmpeg commands being executed. Your function must be able to handle being called multiple times.
-- The FFmpeg binary provided by Remotion supports only a small subset of FFmpeg commands, therefore not every passed option will be applied.
-- This feature is not available when using Remotion Lambda.
+- The render command can change with any new Picus version, even when it is a patch upgrade. This might break your usage of this feature.
+- Depending on the selected codec, available CPU and RAM, Picus may or may not use "parallel encoding" which will result in multiple FFmpeg commands being executed. Your function must be able to handle being called multiple times.
+- The FFmpeg binary provided by Picus supports only a small subset of FFmpeg commands, therefore not every passed option will be applied.
+- This feature is not available when using Picus Lambda.
 
-Before you use this hack, reach out to the Remotion team on [Discord](https://remotion.dev/discord) and ask us if we are open to implement the feature you need in a clean way - we often do implement new features quickly based on users feedback.
+Before you use this hack, reach out to the Picus team on [Discord](https://picus.dev/discord) and ask us if we are open to implement the feature you need in a clean way - we often do implement new features quickly based on users feedback.
 :::
 
 ## `setPublicLicenseKey()`<AvailableFrom v="4.0.398" />
@@ -1008,8 +1008,8 @@ Before you use this hack, reach out to the Remotion team on [Discord](https://re
 <br />
 <br />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setPublicLicenseKey('your-license-key');
 ```
@@ -1020,8 +1020,8 @@ The [command line flag](/docs/cli/studio#--public-license-key) `--public-license
 
 <Options id="image-sequence-pattern" />
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setImageSequencePattern('frame_[frame]_custom.[ext]');
 ```
@@ -1038,8 +1038,8 @@ _removed in v4.0_
 
 Allows you to use a custom FFmpeg binary. Must be an absolute path. By default, this is null and the FFmpeg in `PATH` will be used.
 
-```ts title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setFfmpegExecutable('/path/to/custom/ffmpeg');
 ```
@@ -1052,8 +1052,8 @@ _removed in v4.0_
 
 Allows you to use a custom `ffprobe` binary. Must be an absolute path. By default, this is null and the `ffprobe` in `PATH` will be used.
 
-```ts title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setFfprobeExecutable('/path/to/custom/ffprobe');
 ```
@@ -1065,26 +1065,26 @@ The [command line flag](/docs/cli/render#--ffprobe-executable-) `--ffprobe-execu
 _deprecated in v4.0.61 - use [`setStudioPort()`](/docs/config#setstudioport)_
 and [`setRendererPort()`](/docs/config#setrendererport) instead.
 
-Define on which port Remotion should start it's HTTP servers.  
-By default, Remotion will try to find a free port.  
-If you specify a port, but it's not available, Remotion will throw an error.
+Define on which port Picus should start it's HTTP servers.  
+By default, Picus will try to find a free port.  
+If you specify a port, but it's not available, Picus will throw an error.
 
 :::warning
-Setting this option will break rendering in the Remotion Studio, because this option controls two settings at the same time:
+Setting this option will break rendering in the Picus Studio, because this option controls two settings at the same time:
 
-- When starting the [Remotion Studio](/docs/terminology/studio), a server will be started to host it ([`setStudioPort()`](/docs/config#setstudioport)).
+- When starting the [Picus Studio](/docs/terminology/studio), a server will be started to host it ([`setStudioPort()`](/docs/config#setstudioport)).
 - During rendering, a HTTP server is also started in the background to serve the Webpack [bundle](/docs/terminology/bundle) ([`setRendererPort()`](/docs/config#setrendererport)).
 
 Use the options individually.
 :::
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setPort(3003);
 ```
 
-The [command line flag](/docs/cli/render#--port) `--port` will take precedence over this option. If set on `npx remotion studio`, it will set the Studio port, otherwise the renderer port.
+The [command line flag](/docs/cli/render#--port) `--port` will take precedence over this option. If set on `npx picus studio`, it will set the Studio port, otherwise the renderer port.
 
 ## ~~`setOutputFormat()`~~
 
@@ -1093,8 +1093,8 @@ _Deprecated_. Use `setCodec()` and `setImageSequence()` instead.
 
 Either `'mp4'` or `'png-sequence'`.
 
-```ts title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setOutputFormat('mp4');
 ```
@@ -1115,8 +1115,8 @@ Determines which in which image format to render the frames. Either:
 - `png` - slower, but supports transparency
 - `none` - don't render images, just calculate audio information (available from v2.0)
 
-```ts title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setImageFormat('png');
 ```
@@ -1127,14 +1127,14 @@ The [command line flag](/docs/cli/render#--image-format) `--image-format` will t
 
 The [config file](/docs/config) gets executed in a CommonJS environment. If you want to import ES modules to override the Webpack config, you can pass an async function to `Config.overrideWebpackConfig()`:
 
-```ts twoslash title="remotion.config.ts"
+```ts twoslash title="picus.config.ts"
 // @filename: src/enable-sass.ts
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 export const enableSass: WebpackOverrideFn = (c) => c;
 
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // ---cut---
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 Config.overrideWebpackConfig(async (currentConfiguration) => {
   const {enableSass} = await import('./src/enable-sass');
@@ -1148,14 +1148,14 @@ In v3.3.39, a new config file format was introduced which flattens the options s
 
 Previously, each config option was two levels deep:
 
-```ts title="remotion.config.ts"
+```ts title="picus.config.ts"
 Config.Bundling.setCachingEnabled(false);
 ```
 
 From v3.3.39 on, all options can be accessed directly from the `Config` object.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setCachingEnabled(false);
 ```

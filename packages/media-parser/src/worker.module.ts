@@ -28,7 +28,7 @@ export const parseMediaOnWebWorker: ParseMediaOnWorker = <
 			'Detected Vite pre-bundling, which will break the worker.',
 			'Please add the following to your vite.config.js:',
 			'  optimizeDeps: {',
-			'    exclude: ["@remotion/media-parser/worker"]',
+			'    exclude: ["@picus/media-parser/worker"]',
 			'  }',
 		].join('\n');
 		throw new Error(err);

@@ -1,4 +1,4 @@
-import {useCurrentFrame} from 'remotion';
+import {useCurrentFrame} from 'picus';
 import {test} from 'vitest';
 import {renderStillOnWeb} from '../render-still-on-web';
 import '../symbol-dispose';

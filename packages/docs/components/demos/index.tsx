@@ -1,7 +1,7 @@
 import {useColorMode} from '@docusaurus/theme-common';
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React, {useCallback, useMemo, useState} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Control} from './control';
 import type {DemoType} from './types';
 import {
@@ -133,7 +133,7 @@ export const Demo: React.FC<{
 		<div style={container}>
 			<Player
 				key={key}
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={demo.comp}
 				compositionWidth={demo.compWidth}
 				compositionHeight={demo.compHeight}

@@ -1,6 +1,6 @@
 import type React from 'react';
 import {useEffect} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {loadPlaybackRate, persistPlaybackRate} from '../state/playbackrate';
 
 export const PlaybackRatePersistor: React.FC = () => {

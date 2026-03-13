@@ -2,13 +2,13 @@ import path from 'path';
 import {
 	LambdaClientInternals,
 	type RenderMediaOnLambdaInput,
-} from '@remotion/lambda-client';
-import {RenderInternals} from '@remotion/renderer';
-import {ServerlessRoutines} from '@remotion/serverless';
+} from '@picus/lambda-client';
+import {RenderInternals} from '@picus/renderer';
+import {ServerlessRoutines} from '@picus/serverless';
 import {mockImplementation} from '../mocks/mock-implementation';
 import {waitUntilDone} from './wait-until-done';
 
-const functionName = 'remotion-dev-render';
+const functionName = 'picus-dev-render';
 
 export const simulateLambdaRender = async (
 	input: Omit<RenderMediaOnLambdaInput, 'serveUrl' | 'functionName'>,
@@ -25,7 +25,7 @@ export const simulateLambdaRender = async (
 		logLevel: input.logLevel ?? 'info',
 		offthreadVideoCacheSizeInBytes: null,
 		port: null,
-		remotionRoot: path.dirname(exampleBuild),
+		picusRoot: path.dirname(exampleBuild),
 		forceIPv4: false,
 	});
 
@@ -41,7 +41,7 @@ export const simulateLambdaRender = async (
 		await mockImplementation.callFunctionSync<ServerlessRoutines.start>({
 			type: ServerlessRoutines.start,
 			payload,
-			functionName: 'remotion-dev-lambda',
+			functionName: 'picus-dev-lambda',
 			region: 'eu-central-1',
 			timeoutInTest: 120000,
 			requestHandler: null,

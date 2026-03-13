@@ -1,4 +1,4 @@
-import type {AudioOrVideoAsset, TRenderAsset} from 'remotion/no-react';
+import type {AudioOrVideoAsset, TRenderAsset} from 'picus/no-react';
 import {onlyAudioAndVideoAssets} from '../filter-asset-types';
 import {resolveAssetSrc} from '../resolve-asset-src';
 import {convertAssetToFlattenedVolume} from './flatten-volume-array';

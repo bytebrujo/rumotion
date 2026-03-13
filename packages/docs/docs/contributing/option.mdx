@@ -4,14 +4,14 @@ title: Implementing a new option
 crumb: Contributing
 ---
 
-Adding a new option to a feature is a great way to contribute to Remotion and enable more use cases.
+Adding a new option to a feature is a great way to contribute to Picus and enable more use cases.
 
 ## Ways of specifying an option
 
 There are multiple ways to specify an option:
 
 - APIs that can be called via Node.JS can directly accept a parameter.
-- Options influencing a render can be added to the render dialog in the [Remotion Studio](/docs/terminology/studio).
+- Options influencing a render can be added to the render dialog in the [Picus Studio](/docs/terminology/studio).
 - If the action is available as a [CLI](/docs/cli) command, the option should also be added as a CLI flag.
 - The [config](/docs/config) file can be also be used to specify multiple options. <br/>
   :::note
@@ -24,7 +24,7 @@ The option should be resolved in the following order:
 
 <Step>1</Step> Directly passed to the Node.JS API
 <br />
-<Step>2</Step> Specified via the render UI in the <a href="/docs/terminology/studio">Remotion Studio</a>
+<Step>2</Step> Specified via the render UI in the <a href="/docs/terminology/studio">Picus Studio</a>
 <br />
 <Step>3</Step> Specified via <a href="/docs/cli">CLI flag</a>
 <br />

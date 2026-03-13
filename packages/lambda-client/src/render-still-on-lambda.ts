@@ -5,16 +5,16 @@ import type {
 	DownloadBehavior,
 	StillImageFormat,
 	ToOptions,
-} from '@remotion/serverless-client';
-import {ServerlessRoutines} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {ServerlessRoutines} from '@picus/serverless-client';
 import type {
 	CostsInfo,
 	OutNameInput,
 	Privacy,
 	ReceivedArtifact,
 	RenderStillFunctionResponsePayload,
-} from '@remotion/serverless-client';
-import {wrapWithErrorHandling} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {wrapWithErrorHandling} from '@picus/serverless-client';
 import {awsImplementation, type AwsProvider} from './aws-provider';
 import {DEFAULT_MAX_RETRIES} from './constants';
 import {getCloudwatchMethodUrl, getLambdaInsightsUrl} from './get-aws-urls';
@@ -147,7 +147,7 @@ const innerRenderStillOnLambda = async (
 	} catch (err) {
 		if ((err as Error).stack?.includes('UnrecognizedClientException')) {
 			throw new Error(
-				'UnrecognizedClientException: The AWS credentials provided were probably mixed up. Learn how to fix this issue here: https://remotion.dev/docs/lambda/troubleshooting/unrecognizedclientexception',
+				'UnrecognizedClientException: The AWS credentials provided were probably mixed up. Learn how to fix this issue here: https://picus.dev/docs/lambda/troubleshooting/unrecognizedclientexception',
 			);
 		}
 
@@ -161,7 +161,7 @@ export const internalRenderStillOnLambda = wrapWithErrorHandling(
 
 /*
  * @description Renders a still image inside a lambda function and writes it to the specified output location.
- * @see [Documentation](https://remotion.dev/docs/lambda/renderstillonlambda)
+ * @see [Documentation](https://picus.dev/docs/lambda/renderstillonlambda)
  */
 export function renderStillOnLambda(
 	input: RenderStillOnLambdaInput & {

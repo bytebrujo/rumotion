@@ -17,34 +17,34 @@ export function getCredentials():
 		return undefined;
 	}
 
-	if (getEnvVariable('REMOTION_AWS_PROFILE')) {
+	if (getEnvVariable('PICUS_AWS_PROFILE')) {
 		return fromIni({
-			profile: getEnvVariable('REMOTION_AWS_PROFILE'),
+			profile: getEnvVariable('PICUS_AWS_PROFILE'),
 		});
 	}
 
 	if (
-		getEnvVariable('REMOTION_AWS_ACCESS_KEY_ID') &&
-		getEnvVariable('REMOTION_AWS_SECRET_ACCESS_KEY') &&
-		getEnvVariable('REMOTION_AWS_SESSION_TOKEN')
+		getEnvVariable('PICUS_AWS_ACCESS_KEY_ID') &&
+		getEnvVariable('PICUS_AWS_SECRET_ACCESS_KEY') &&
+		getEnvVariable('PICUS_AWS_SESSION_TOKEN')
 	) {
 		return {
-			accessKeyId: getEnvVariable('REMOTION_AWS_ACCESS_KEY_ID') as string,
+			accessKeyId: getEnvVariable('PICUS_AWS_ACCESS_KEY_ID') as string,
 			secretAccessKey: getEnvVariable(
-				'REMOTION_AWS_SECRET_ACCESS_KEY',
+				'PICUS_AWS_SECRET_ACCESS_KEY',
 			) as string,
-			sessionToken: getEnvVariable('REMOTION_AWS_SESSION_TOKEN') as string,
+			sessionToken: getEnvVariable('PICUS_AWS_SESSION_TOKEN') as string,
 		};
 	}
 
 	if (
-		getEnvVariable('REMOTION_AWS_ACCESS_KEY_ID') &&
-		getEnvVariable('REMOTION_AWS_SECRET_ACCESS_KEY')
+		getEnvVariable('PICUS_AWS_ACCESS_KEY_ID') &&
+		getEnvVariable('PICUS_AWS_SECRET_ACCESS_KEY')
 	) {
 		return {
-			accessKeyId: getEnvVariable('REMOTION_AWS_ACCESS_KEY_ID') as string,
+			accessKeyId: getEnvVariable('PICUS_AWS_ACCESS_KEY_ID') as string,
 			secretAccessKey: getEnvVariable(
-				'REMOTION_AWS_SECRET_ACCESS_KEY',
+				'PICUS_AWS_SECRET_ACCESS_KEY',
 			) as string,
 		};
 	}

@@ -23,7 +23,7 @@ export const printUsefulErrorMessage = (
 		Log.info({indent, logLevel});
 		Log.info(
 			{indent, logLevel},
-			'💡 Get help for this issue at https://remotion.dev/docs/media-playback-error',
+			'💡 Get help for this issue at https://picus.dev/docs/media-playback-error',
 		);
 	}
 
@@ -35,13 +35,13 @@ export const printUsefulErrorMessage = (
 		if (err.message.includes('/proxy')) {
 			Log.info(
 				{indent, logLevel},
-				'💡 Get help for this issue at https://remotion.dev/docs/troubleshooting/delay-render-proxy',
+				'💡 Get help for this issue at https://picus.dev/docs/troubleshooting/delay-render-proxy',
 			);
 		}
 
 		Log.info(
 			{indent, logLevel},
-			'💡 Get help for this issue at https://remotion.dev/docs/timeout',
+			'💡 Get help for this issue at https://picus.dev/docs/timeout',
 		);
 	}
 
@@ -49,7 +49,7 @@ export const printUsefulErrorMessage = (
 		Log.info({indent, logLevel});
 		Log.info(
 			{indent, logLevel},
-			'💡 Get help for this issue at https://remotion.dev/docs/target-closed',
+			'💡 Get help for this issue at https://picus.dev/docs/target-closed',
 		);
 	}
 
@@ -57,7 +57,7 @@ export const printUsefulErrorMessage = (
 		Log.info({indent, logLevel});
 		Log.info(
 			{indent, logLevel},
-			'💡 Get help for this issue at https://remotion.dev/docs/troubleshooting/timed-out-page-function',
+			'💡 Get help for this issue at https://picus.dev/docs/troubleshooting/timed-out-page-function',
 		);
 	}
 
@@ -65,7 +65,7 @@ export const printUsefulErrorMessage = (
 		Log.info({indent, logLevel});
 		Log.info(
 			{indent, logLevel},
-			'💡 Get help for this issue at https://remotion.dev/docs/enametoolong',
+			'💡 Get help for this issue at https://picus.dev/docs/enametoolong',
 		);
 	}
 
@@ -86,7 +86,7 @@ export const printUsefulErrorMessage = (
 				indent,
 				logLevel,
 			},
-			'Alternatively, you can decrease the memory size of your Lambda function to a value below 3008 MB. See: https://www.remotion.dev/docs/lambda/runtime#core-count--vcpus',
+			'Alternatively, you can decrease the memory size of your Lambda function to a value below 3008 MB. See: https://www.picus.dev/docs/lambda/runtime#core-count--vcpus',
 		);
 		Log.warn(
 			{indent, logLevel},
@@ -101,7 +101,7 @@ export const printUsefulErrorMessage = (
 		Log.info({indent, logLevel});
 		Log.info(
 			{indent, logLevel},
-			'💡 This error indicates that your Lambda concurrency limit is too low. See: https://www.remotion.dev/docs/lambda/troubleshooting/rate-limit',
+			'💡 This error indicates that your Lambda concurrency limit is too low. See: https://www.picus.dev/docs/lambda/troubleshooting/rate-limit',
 		);
 	}
 
@@ -112,14 +112,14 @@ export const printUsefulErrorMessage = (
 				indent,
 				logLevel,
 			},
-			'💡 You might need to set the OpenGL renderer to "angle". Learn why at https://www.remotion.dev/docs/three',
+			'💡 You might need to set the OpenGL renderer to "angle". Learn why at https://www.picus.dev/docs/three',
 		);
 		Log.warn(
 			{
 				indent,
 				logLevel,
 			},
-			"💡 Check how it's done at https://www.remotion.dev/docs/chromium-flags#--gl",
+			"💡 Check how it's done at https://www.picus.dev/docs/chromium-flags#--gl",
 		);
 	}
 
@@ -127,7 +127,7 @@ export const printUsefulErrorMessage = (
 		Log.info({indent, logLevel});
 		Log.info(
 			{indent, logLevel},
-			'💡 Fix for this issue: https://remotion.dev/docs/lambda/troubleshooting/bucket-disallows-acl',
+			'💡 Fix for this issue: https://picus.dev/docs/lambda/troubleshooting/bucket-disallows-acl',
 		);
 	}
 
@@ -160,10 +160,10 @@ export const printUsefulErrorMessage = (
 	}
 
 	if (err.message.includes('GLIBC_')) {
-		Log.info({indent, logLevel}, '💡 Remotion requires at least Libc 2.35.');
+		Log.info({indent, logLevel}, '💡 Picus requires at least Libc 2.35.');
 		Log.info(
 			{indent, logLevel},
-			'💡 Get help for this issue: https://github.com/remotion-dev/remotion/issues/2439',
+			'💡 Get help for this issue: https://github.com/picus-dev/picus/issues/2439',
 		);
 	}
 
@@ -174,7 +174,7 @@ export const printUsefulErrorMessage = (
 		);
 		Log.info(
 			{indent, logLevel},
-			'   https://github.com/remotion-dev/remotion/issues/2452',
+			'   https://github.com/picus-dev/picus/issues/2452',
 		);
 	}
 
@@ -185,7 +185,7 @@ export const printUsefulErrorMessage = (
 		);
 		Log.info(
 			{indent, logLevel},
-			'   https://github.com/remotion-dev/remotion/issues/3864',
+			'   https://github.com/picus-dev/picus/issues/3864',
 		);
 	}
 

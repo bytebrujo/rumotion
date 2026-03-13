@@ -1,5 +1,5 @@
 const getKey = () => {
-	return `remotion_inputPropsOverride` + window.location.origin;
+	return `picus_inputPropsOverride` + window.location.origin;
 };
 
 export const getInputPropsOverride = (): Record<string, unknown> | null => {

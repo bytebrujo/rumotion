@@ -36,7 +36,7 @@ const errorContainer: React.CSSProperties = {
 };
 
 const openDocs = () => {
-	window.open('https://www.remotion.dev/docs/schemas');
+	window.open('https://www.picus.dev/docs/schemas');
 };
 
 export const ZodNotInstalled = () => {

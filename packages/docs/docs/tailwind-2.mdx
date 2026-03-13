@@ -46,10 +46,10 @@ yarn add postcss-loader postcss postcss-preset-env tailwindcss@2 autoprefixer
   </TabItem>
 </Tabs>
 
-2. Add the following to your [`remotion.config.ts`](/docs/config) file:
+2. Add the following to your [`picus.config.ts`](/docs/config) file:
 
 ```ts twoslash
-import { Config } from "@remotion/cli/config";
+import { Config } from "@picus/cli/config";
 // ---cut---
 Config.overrideWebpackConfig((currentConfiguration) => {
   return {
@@ -116,5 +116,5 @@ import "./style.css";
 6.  _Optional_: Add a `tailwind.config.js` file to the root of your project. Add `/* eslint-env node */` to the top of the file to get rid of an ESLint rule complaining that `module` is not defined.
 
 :::warning
-Due to a caching bug, the config file might not be picked up until you remove the `node_modules/.cache` folder - watch this issue: https://github.com/remotion-dev/remotion/issues/315
+Due to a caching bug, the config file might not be picked up until you remove the `node_modules/.cache` folder - watch this issue: https://github.com/picus-dev/picus/issues/315
 :::

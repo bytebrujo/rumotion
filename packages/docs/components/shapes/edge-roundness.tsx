@@ -1,4 +1,4 @@
-import {Rect, Triangle} from '@remotion/shapes';
+import {Rect, Triangle} from '@picus/shapes';
 import React from 'react';
 
 const Header: React.FC = () => {

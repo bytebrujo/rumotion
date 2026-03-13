@@ -3,16 +3,16 @@ image: /generated/articles-docs-licensing-get-usage.png
 id: get-usage
 title: getUsage()
 slug: /licensing/get-usage
-crumb: '@remotion/licensing'
+crumb: '@picus/licensing'
 ---
 
-Allows you to get the current usage of your Remotion license.  
-This requires your secret key that you can obtain from the remotion.pro dashboard.
+Allows you to get the current usage of your Picus license.  
+This requires your secret key that you can obtain from the picus.pro dashboard.
 
 You should only call this API from the backend to avoid exposing your secret key to the client.
 
 ```tsx twoslash title="Get the current usage of your license"
-import {getUsage} from '@remotion/licensing';
+import {getUsage} from '@picus/licensing';
 
 const usage = await getUsage({
   licenseKey: 'rm_sec_xxxxx',
@@ -44,7 +44,7 @@ An object with the following properties:
 
 Type: `string`
 
-Your Remotion license key. You can get it from your Remotion.pro dashboard.
+Your Picus license key. You can get it from your Picus.pro dashboard.
 
 ### `since`
 
@@ -60,7 +60,7 @@ _deprecated in v4.0.409_
 
 Type: `string`
 
-Your Remotion secret API key. You can get it from your Remotion.pro dashboard.
+Your Picus secret API key. You can get it from your Picus.pro dashboard.
 
 ## Return value
 
@@ -90,5 +90,5 @@ An object with the following properties:
 
 ## See also
 
-- [`@remotion/licensing`](/docs/licensing)
+- [`@picus/licensing`](/docs/licensing)
 - [`registerUsageEvent()`](/docs/licensing/register-usage-event)

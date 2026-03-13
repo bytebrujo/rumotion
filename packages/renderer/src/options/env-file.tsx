@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'env-file' as const;
 
@@ -13,7 +13,7 @@ export const envFileOption = {
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/cli/render#--env-file',
+	docLink: 'https://www.picus.dev/docs/cli/render#--env-file',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -39,4 +39,4 @@ export const envFileOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-cloudrun-cli-sites-rmall.png
 sidebar_label: rmall
-title: 'npx remotion cloudrun sites rmall'
+title: 'npx picus cloudrun sites rmall'
 slug: /cloudrun/cli/sites/rmall
 crumb: 'Cloud Run CLI Reference'
 ---
@@ -13,7 +13,7 @@ crumb: 'Cloud Run CLI Reference'
 </ExperimentalBadge>
 
 ```bash
-npx remotion cloudrun sites rmall
+npx picus cloudrun sites rmall
 ```
 
 Remove all sites in the selected GCP project.
@@ -26,11 +26,11 @@ Remove all sites in the selected GCP project.
     <br />
     Site: another-site
     <br />
-    Bucket: remotioncloudrun-12345
+    Bucket: picuscloudrun-12345
     <br />
     Region: us-east1
     <br />
-    Serve Url: https://storage.googleapis.com/remotioncloudrun-12345/sites/another-site/index.html
+    Serve Url: https://storage.googleapis.com/picuscloudrun-12345/sites/another-site/index.html
     <br />
     <br />
     Delete? (Y/n) n<br />
@@ -40,11 +40,11 @@ Remove all sites in the selected GCP project.
     <br />
     Site: test-site
     <br />
-    Bucket: remotioncloudrun-12345
+    Bucket: picuscloudrun-12345
     <br />
     Region: us-east1
     <br />
-    Serve Url: https://storage.googleapis.com/remotioncloudrun-12345/sites/test-site/index.html
+    Serve Url: https://storage.googleapis.com/picuscloudrun-12345/sites/test-site/index.html
     <br />
     <br />
     Delete? (Y/n) n<br />
@@ -61,7 +61,7 @@ The [GCP region](/docs/cloudrun/region-selection) to remove all sites from.
 Ignores region, removing sites across all regions for the project.
 
 ```
-npx remotion cloudrun sites rmall --all-regions
+npx picus cloudrun sites rmall --all-regions
 ```
 
 <details>
@@ -72,11 +72,11 @@ npx remotion cloudrun sites rmall --all-regions
     <br />
     Site: another-site
     <br />
-    Bucket: remotioncloudrun-12345
+    Bucket: picuscloudrun-12345
     <br />
     Region: us-east1
     <br />
-    Serve Url: https://storage.googleapis.com/remotioncloudrun-12345/sites/another-site/index.html
+    Serve Url: https://storage.googleapis.com/picuscloudrun-12345/sites/another-site/index.html
     <br />
     <br />
     Delete? (Y/n) n<br />
@@ -86,11 +86,11 @@ npx remotion cloudrun sites rmall --all-regions
     <br />
     Site: test-site
     <br />
-    Bucket: remotioncloudrun-12345
+    Bucket: picuscloudrun-12345
     <br />
     Region: us-east1
     <br />
-    Serve Url: https://storage.googleapis.com/remotioncloudrun-12345/sites/test-site/index.html
+    Serve Url: https://storage.googleapis.com/picuscloudrun-12345/sites/test-site/index.html
     <br />
     <br />
     Delete? (Y/n) n<br />
@@ -100,11 +100,11 @@ npx remotion cloudrun sites rmall --all-regions
     <br />
     Site: central-site
     <br />
-    Bucket: remotioncloudrun-abcdefgh
+    Bucket: picuscloudrun-abcdefgh
     <br />
     Region: us-central1
     <br />
-    Serve Url: https://storage.googleapis.com/remotioncloudrun-abcdefgh/sites/central-site/index.html
+    Serve Url: https://storage.googleapis.com/picuscloudrun-abcdefgh/sites/central-site/index.html
     <br />
     <br />
     Delete? (Y/n) n<br />
@@ -117,7 +117,7 @@ npx remotion cloudrun sites rmall --all-regions
 Removes all sites without asking for confirmation.
 
 ```
-npx remotion cloudrun sites rmall -y
+npx picus cloudrun sites rmall -y
 ```
 
 ## See also

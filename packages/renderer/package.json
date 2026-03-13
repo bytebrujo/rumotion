@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/renderer"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/renderer"
 	},
-	"name": "@remotion/renderer",
+	"name": "@picus/renderer",
 	"version": "4.0.434",
-	"description": "Render Remotion videos using Node.js or Bun",
+	"description": "Render Picus videos using Node.js or Bun",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"sideEffects": false,
@@ -16,19 +16,19 @@
 		"watch": "tsgo -w",
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
 		"execa": "5.1.1",
 		"extract-zip": "2.0.1",
-		"remotion": "workspace:*",
-		"@remotion/streaming": "workspace:*",
+		"picus": "workspace:*",
+		"@picus/streaming": "workspace:*",
 		"source-map": "^0.8.0-beta.0",
 		"ws": "8.17.1",
-		"@remotion/licensing": "workspace:*"
+		"@picus/licensing": "workspace:*"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.0",
@@ -42,22 +42,22 @@
 		"react-dom": "catalog:",
 		"@typescript/native-preview": "catalog:",
 		"@types/ws": "8.5.10",
-		"@remotion/example-videos": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/example-videos": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@types/node": "catalog:"
 	},
 	"optionalDependencies": {
-		"@remotion/compositor-darwin-arm64": "workspace:*",
-		"@remotion/compositor-darwin-x64": "workspace:*",
-		"@remotion/compositor-linux-arm64-gnu": "workspace:*",
-		"@remotion/compositor-linux-arm64-musl": "workspace:*",
-		"@remotion/compositor-linux-x64-gnu": "workspace:*",
-		"@remotion/compositor-linux-x64-musl": "workspace:*",
-		"@remotion/compositor-win32-x64-msvc": "workspace:*"
+		"@picus/compositor-darwin-arm64": "workspace:*",
+		"@picus/compositor-darwin-x64": "workspace:*",
+		"@picus/compositor-linux-arm64-gnu": "workspace:*",
+		"@picus/compositor-linux-arm64-musl": "workspace:*",
+		"@picus/compositor-linux-x64-gnu": "workspace:*",
+		"@picus/compositor-linux-x64-musl": "workspace:*",
+		"@picus/compositor-win32-x64-msvc": "workspace:*"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"ffmpeg",
 		"video",
 		"react",
@@ -66,7 +66,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/renderer",
+	"homepage": "https://www.picus.dev/docs/renderer",
 	"exports": {
 		"./package.json": "./package.json",
 		".": {

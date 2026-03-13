@@ -13,7 +13,7 @@ There are multiple ways to retrieve information about a media such as:
 
 ## Recommendation: `parseMedia()`
 
-[`parseMedia()`](/docs/media-parser/parse-media) is a library developed by Remotion that parses video files using JavaScript.
+[`parseMedia()`](/docs/media-parser/parse-media) is a library developed by Picus that parses video files using JavaScript.
 
 ### Advantages
 
@@ -26,7 +26,7 @@ There are multiple ways to retrieve information about a media such as:
 
 ❌ When using in the browser: Assets need to come from the same origin or be CORS-enabled.
 
-## `getVideoMetadata()` from `@remotion/media-utils`
+## `getVideoMetadata()` from `@picus/media-utils`
 
 [`getVideoMetadata()`](/docs/get-video-metadata) will mount a `<video>` tag in the browser and returns the metadata after it is available.
 
@@ -39,7 +39,7 @@ There are multiple ways to retrieve information about a media such as:
 ❌ It only works in the browser.  
 ❌ It does not support some codecs, such as the ones used by iPhone videos.
 
-## `getVideoMetadata()` from `@remotion/renderer`
+## `getVideoMetadata()` from `@picus/renderer`
 
 [`getVideoMetadata()`](/docs/renderer/get-video-metadata) will read metadata using FFmpeg through a Rust interface.
 
@@ -55,5 +55,5 @@ There are multiple ways to retrieve information about a media such as:
 ## See also
 
 - [`parseMedia()`](/docs/media-parser/parse-media)
-- [`@remotion/media-utils`: `getVideoMetadata()`](/docs/get-video-metadata)
-- [`@remotion/renderer`: `getVideoMetadata()`](/docs/renderer/get-video-metadata)
+- [`@picus/media-utils`: `getVideoMetadata()`](/docs/get-video-metadata)
+- [`@picus/renderer`: `getVideoMetadata()`](/docs/renderer/get-video-metadata)

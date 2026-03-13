@@ -4,20 +4,20 @@ id: download-and-parse
 title: Download and Parse Videos or Audio simultaneously
 sidebar_label: Download and Parse in Parallel
 slug: /media-parser/download-and-parse
-crumb: '@remotion/media-parser'
+crumb: '@picus/media-parser'
 ---
 
 :::warning
 [We are phasing out Media Parser and are moving to Mediabunny](/blog/mediabunny)!
 :::
 
-[`@remotion/media-parser`](/docs/media-parser) allows you to download a remote video to disk, and while the media is downloading, retrieve metadata from it as soon as it is available.
+[`@picus/media-parser`](/docs/media-parser) allows you to download a remote video to disk, and while the media is downloading, retrieve metadata from it as soon as it is available.
 
 Here is an example using the [`downloadAndParseMedia()`](/docs/media-parser/download-and-parse-media) API:
 
 ```tsx twoslash title="Download a file and get metadata"
-import {downloadAndParseMedia} from '@remotion/media-parser';
-import {nodeWriter} from '@remotion/media-parser/node-writer';
+import {downloadAndParseMedia} from '@picus/media-parser';
+import {nodeWriter} from '@picus/media-parser/node-writer';
 
 const {durationInSeconds, tracks} = await downloadAndParseMedia({
   src: 'https://s3.amazonaws.com/bucket/uploaded-asset.mp4',
@@ -36,8 +36,8 @@ You can use callback functions to retrieve information as soon as it is availabl
 Throw an error to stop the download.
 
 ```tsx twoslash title="Stop the download if the video is too long"
-import {downloadAndParseMedia} from '@remotion/media-parser';
-import {nodeWriter} from '@remotion/media-parser/node-writer';
+import {downloadAndParseMedia} from '@picus/media-parser';
+import {nodeWriter} from '@picus/media-parser/node-writer';
 
 await downloadAndParseMedia({
   src: 'https://s3.amazonaws.com/bucket/uploaded-asset.mp4',
@@ -53,8 +53,8 @@ await downloadAndParseMedia({
 If an error occurs (including one you've thrown yourself), you can decide what to do using [`onError`](/docs/media-parser/download-and-parse-media#onerror).
 
 ```tsx twoslash title="Continue download despite error"
-import {downloadAndParseMedia} from '@remotion/media-parser';
-import {nodeWriter} from '@remotion/media-parser/node-writer';
+import {downloadAndParseMedia} from '@picus/media-parser';
+import {nodeWriter} from '@picus/media-parser/node-writer';
 
 await downloadAndParseMedia({
   src: 'https://s3.amazonaws.com/bucket/uploaded-asset.mp4',

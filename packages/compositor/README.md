@@ -1,6 +1,6 @@
-# @remotion/compositor
+# @picus/compositor
 
-Rust binary for Remotion
+Rust binary for Picus
 
 ## Usage
 

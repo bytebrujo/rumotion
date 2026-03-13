@@ -1,6 +1,6 @@
 'use strict';
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[263],
 	{
 		/***/ 5263:
@@ -18,11 +18,11 @@
 					__webpack_require__(6416);
 				/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(2386);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_2__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_2__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_2___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_2___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_2__,
+						picus__WEBPACK_IMPORTED_MODULE_2__,
 					);
 				/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ =
 					__webpack_require__(2922);
@@ -70,9 +70,9 @@
 				const StaggerType = () => {
 					const types = 4;
 					const frame = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_2__.useCurrentFrame)();
+					picus__WEBPACK_IMPORTED_MODULE_2__.useCurrentFrame)();
 					const videoConfig = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_2__.useVideoConfig)();
+					picus__WEBPACK_IMPORTED_MODULE_2__.useVideoConfig)();
 					return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
 						Container,
 						{

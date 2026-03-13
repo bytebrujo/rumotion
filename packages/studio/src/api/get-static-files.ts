@@ -21,13 +21,13 @@ const warnPlayerOnce = () => {
 	warnedPlayer = true;
 	// eslint-disable-next-line no-console
 	console.warn(
-		'Called getStaticFiles() while using the Remotion Player. The API is only available while using the Remotion Studio. An empty array was returned.',
+		'Called getStaticFiles() while using the Picus Player. The API is only available while using the Picus Studio. An empty array was returned.',
 	);
 };
 
 /*
  * @description Gets an array containing all files in the `public/` folder. You can reference them by using `staticFile()`.
- * @see [Documentation](https://www.remotion.dev/docs/studio/get-static-files)
+ * @see [Documentation](https://www.picus.dev/docs/studio/get-static-files)
  */
 export const getStaticFiles = (): StaticFile[] => {
 	if (typeof document === 'undefined') {
@@ -35,12 +35,12 @@ export const getStaticFiles = (): StaticFile[] => {
 		return [];
 	}
 
-	if (window.remotion_isPlayer) {
+	if (window.picus_isPlayer) {
 		warnPlayerOnce();
 		return [];
 	}
 
-	return window.remotion_staticFiles;
+	return window.picus_staticFiles;
 };
 
 export type StaticFile = {

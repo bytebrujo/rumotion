@@ -44,7 +44,7 @@ const otherProps = {
 
 // ---cut---
 import React from 'react';
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 
 export const MyApp: React.FC = () => {
   return <Player {...otherProps} logLevel="trace" />;
@@ -60,7 +60,7 @@ To observe prefetching events, add [`logLevel: "trace"`](/docs/prefetch#options)
 ```tsx twoslash title='Adding logLevel: "trace" to prefetch()'
 const src = 'https://example.com';
 // ---cut---
-import {prefetch} from 'remotion';
+import {prefetch} from 'picus';
 
 prefetch(src, {
   logLevel: 'trace',
@@ -69,11 +69,11 @@ prefetch(src, {
 
 ## Reporting issues
 
-We have implemented exact logging of relevant events so in order to improve how Remotion handles media playback.  
+We have implemented exact logging of relevant events so in order to improve how Picus handles media playback.  
 We are encouraging you to file feedback. If you would like to report feedback, please:
 
 <div>
-  <Step>1</Step> <span>Ensure you are at least on v4.0.302 of Remotion. Previous versions had known bugs.</span>
+  <Step>1</Step> <span>Ensure you are at least on v4.0.302 of Picus. Previous versions had known bugs.</span>
 </div>
 <div>
   <Step>2</Step>{' '}

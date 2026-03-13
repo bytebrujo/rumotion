@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let experimentalVisualModeEnabled = false;
 
@@ -11,7 +11,7 @@ export const experimentalVisualModeOption = {
 		<>Nothing here yet, but this is our playground for experiments.</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setexperimentalvisualmode',
+	docLink: 'https://www.picus.dev/docs/config#setexperimentalvisualmode',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== null) {
@@ -30,4 +30,4 @@ export const experimentalVisualModeOption = {
 		experimentalVisualModeEnabled = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

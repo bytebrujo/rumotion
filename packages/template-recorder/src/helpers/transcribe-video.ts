@@ -1,4 +1,4 @@
-import { makeStreamer } from "@remotion/streaming";
+import { makeStreamer } from "@picus/streaming";
 import { TRANSCRIBE_VIDEO } from "../../scripts/server/constants";
 import {
   MessageTypeId,

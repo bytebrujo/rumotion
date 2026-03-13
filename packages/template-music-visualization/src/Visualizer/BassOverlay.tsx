@@ -1,5 +1,5 @@
-import { useWindowedAudioData, visualizeAudio } from "@remotion/media-utils";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { useWindowedAudioData, visualizeAudio } from "@picus/media-utils";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "picus";
 
 interface BassOverlayProps {
   audioSrc: string;

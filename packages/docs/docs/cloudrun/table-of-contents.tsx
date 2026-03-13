@@ -20,7 +20,7 @@ export const TableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/cloudrun/getservices">
 					<strong>getServices()</strong>
-					<div>Lists available Remotion Cloud Run services</div>
+					<div>Lists available Picus Cloud Run services</div>
 				</TOCItem>
 				<TOCItem link="/docs/cloudrun/speculateservicename">
 					<strong>speculateServiceName()</strong>
@@ -44,7 +44,7 @@ export const TableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/cloudrun/getorcreatebucket">
 					<strong>getOrCreateBucket()</strong>
-					<div>Ensure a Remotion Cloud Storage bucket exists</div>
+					<div>Ensure a Picus Cloud Storage bucket exists</div>
 				</TOCItem>
 				<TOCItem link="/docs/cloudrun/rendermediaoncloudrun">
 					<strong>renderMediaOnCloudrun()</strong>

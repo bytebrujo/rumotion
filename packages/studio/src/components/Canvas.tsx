@@ -1,4 +1,4 @@
-import type {Size} from '@remotion/player';
+import type {Size} from '@picus/player';
 import React, {
 	useCallback,
 	useContext,
@@ -6,8 +6,8 @@ import React, {
 	useMemo,
 	useState,
 } from 'react';
-import type {CanvasContent} from 'remotion';
-import {Internals, watchStaticFile} from 'remotion';
+import type {CanvasContent} from 'picus';
+import {Internals, watchStaticFile} from 'picus';
 import {BACKGROUND} from '../helpers/colors';
 import type {AssetMetadata} from '../helpers/get-asset-metadata';
 import {getAssetMetadata} from '../helpers/get-asset-metadata';

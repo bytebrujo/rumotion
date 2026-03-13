@@ -1,4 +1,4 @@
-import type { AwsRegion, EnhancedErrorInfo } from "@remotion/lambda";
+import type { AwsRegion, EnhancedErrorInfo } from "@picus/lambda";
 
 export type StatusResponse = {
   renderId: string;

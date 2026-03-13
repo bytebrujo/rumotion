@@ -6,7 +6,7 @@ id: features-not-included
 crumb: Editor Starter
 ---
 
-The Remotion Editor Starter aims to include only the obvious features that every video editor needs.
+The Picus Editor Starter aims to include only the obvious features that every video editor needs.
 
 Certain features may:
 
@@ -40,17 +40,17 @@ If items are adjacent, you can replace their normal rendering and render them in
 You are responsible for building an interface for the user to manage their projects.  
 Each instance of `<Editor />` is an isolated editor experience.
 
-State is loaded through the [`loadState()`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter+loadState&type=code) function if the [Save button](/docs/editor-starter/features#save-button) is enabled, or through [`getInitialState()`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter%20getInitialState&type=code) otherwise.  
-State is saved through the [`saveState()`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter+saveState&type=code) function if the [Save button](/docs/editor-starter/features#save-button) feature is enabled, or not at all otherwise.
+State is loaded through the [`loadState()`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter+loadState&type=code) function if the [Save button](/docs/editor-starter/features#save-button) is enabled, or through [`getInitialState()`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter%20getInitialState&type=code) otherwise.  
+State is saved through the [`saveState()`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter+saveState&type=code) function if the [Save button](/docs/editor-starter/features#save-button) feature is enabled, or not at all otherwise.
 
 If you want an user to allow to work on multiple projects, we foresee that you change these functions to properly load and save the corresponding projects and identify the current project for example through a URL parameter.
 
 ## Auto-save
 
 We only [provide a feature](/docs/editor-starter/features#save-and-load) to manually save the state of the editor to local storage.  
-Should you want to include an auto-save functionality, we recommend that you use the [`useFullState()`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter+useFullState&type=code) hook to get the full state of the editor and use an `useEffect` to run code when the state changes.
+Should you want to include an auto-save functionality, we recommend that you use the [`useFullState()`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter+useFullState&type=code) hook to get the full state of the editor and use an `useEffect` to run code when the state changes.
 
-See [the logic of `<SaveButton />`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter+SaveButton&type=code) to see an example of [`useFullState()`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter+useFullState&type=code).
+See [the logic of `<SaveButton />`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter+SaveButton&type=code) to see an example of [`useFullState()`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter+useFullState&type=code).
 
 ## Mobile support
 
@@ -59,7 +59,7 @@ We foresee that you offer your video editing interface only for desktop users.
 
 ## Multiple frame rates
 
-The frame rate of the editor starter is fixed to 30 fps by default, set by the [`DEFAULT_FPS`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter+DEFAULT_FPS&type=code) constant.
+The frame rate of the editor starter is fixed to 30 fps by default, set by the [`DEFAULT_FPS`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter+DEFAULT_FPS&type=code) constant.
 
 If you would like to have a different default frame rate, you can change the constant.
 
@@ -78,7 +78,7 @@ Make sure to add adequate protection to the asset uploading, captioning and rend
 Our Font Picker is fully based on Google Fonts and by default only includes the most popular fonts.
 
 If you would like to allow users to upload their own fonts or provide other fonts for your users, you need to refactor the Editor Starter to load the correct fonts during preview and rendering.  
-[`@remotion/fonts`](/docs/fonts-api) is a good way to achieve this.
+[`@picus/fonts`](/docs/fonts-api) is a good way to achieve this.
 
 You also need to refactor the Font Picker to show the additional fonts from additional sources and may need to adjust the logic for [loading the dropdown preview font](/docs/editor-starter/features#font-family-preview) and for [loading the preview font when hovering over a font](/docs/editor-starter/features#hover-to-preview-font-family).
 

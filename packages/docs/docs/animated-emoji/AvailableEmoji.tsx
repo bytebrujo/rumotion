@@ -1,4 +1,4 @@
-import {getAvailableEmojis} from '@remotion/animated-emoji';
+import {getAvailableEmojis} from '@picus/animated-emoji';
 import React from 'react';
 
 export const AvailableEmoji: React.FC = () => {

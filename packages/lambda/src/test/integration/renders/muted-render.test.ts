@@ -2,9 +2,9 @@ import {expect, test} from 'bun:test';
 import {createWriteStream, unlinkSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'path';
-import {LambdaClientInternals} from '@remotion/lambda-client';
-import {RenderInternals, getVideoMetadata} from '@remotion/renderer';
-import {rendersPrefix} from '@remotion/serverless';
+import {LambdaClientInternals} from '@picus/lambda-client';
+import {RenderInternals, getVideoMetadata} from '@picus/renderer';
+import {rendersPrefix} from '@picus/serverless';
 import {mockImplementation} from '../../mocks/mock-implementation';
 import {simulateLambdaRender} from '../simulate-lambda-render';
 

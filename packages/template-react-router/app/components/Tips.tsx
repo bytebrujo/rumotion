@@ -34,17 +34,17 @@ export const Tips: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row font-geist">
       <Tip
-        href="https://www.remotion.dev/docs/the-fundamentals"
-        title="Learn Remotion"
+        href="https://www.picus.dev/docs/the-fundamentals"
+        title="Learn Picus"
         description="Learn how to customize this video written in React."
       ></Tip>
       <Tip
-        href="https://github.com/remotion-dev/template-react-router"
+        href="https://github.com/picus-dev/template-react-router"
         title="See source"
         description="Visit the GitHub repository for this app."
       ></Tip>
       <Tip
-        href="https://remotion.dev/discord"
+        href="https://picus.dev/discord"
         title="Join the community"
         description="Chat with others builders on Discord."
       ></Tip>

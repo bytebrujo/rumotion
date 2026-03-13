@@ -1,4 +1,4 @@
-import { Caption } from "@remotion/captions";
+import { Caption } from "@picus/captions";
 
 const autocorrectWord = (caption: Caption): Caption => {
   // Replace a single word with another one
@@ -10,10 +10,10 @@ const autocorrectWord = (caption: Caption): Caption => {
   }
 
   // Replace a pattern with a specific word
-  if (caption.text.match(/ remotion\.$/)) {
+  if (caption.text.match(/ picus\.$/)) {
     return {
       ...caption,
-      text: caption.text.replace(/ remotion.$/, " Remotion."),
+      text: caption.text.replace(/ picus.$/, " Picus."),
     };
   }
   // Add your own function to remap specific words.

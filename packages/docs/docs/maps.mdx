@@ -1,14 +1,14 @@
 ---
 image: /generated/articles-docs-maps.png
-title: Map animations in Remotion
+title: Map animations in Picus
 sidebar_label: Maps
 id: maps
 crumb: 'Techniques'
 ---
 
-Create map animations in Remotion using [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/).
+Create map animations in Picus using [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/).
 
-<SuggestedPrompts prompts={['use remotion best practices. make a new composition and add a map and zoom out of LA while keeping focused on it. once done, animate a line  from LA to NY and make the camera follow it.']} />
+<SuggestedPrompts prompts={['use picus best practices. make a new composition and add a map and zoom out of LA while keeping focused on it. once done, animate a line  from LA to NY and make the camera follow it.']} />
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ Create a free Mapbox account and get an access token from the [Mapbox Console](h
 Add the token to your `.env` file:
 
 ```txt title=".env"
-REMOTION_MAPBOX_TOKEN=pk.your-mapbox-access-token
+PICUS_MAPBOX_TOKEN=pk.your-mapbox-access-token
 ```
 
 ## Adding a map
@@ -30,10 +30,10 @@ Use [`useDelayRender()`](/docs/use-delay-render) to wait for the map to load. Th
 
 ```tsx twoslash
 import {useEffect, useMemo, useRef, useState} from 'react';
-import {AbsoluteFill, useDelayRender, useVideoConfig} from 'remotion';
+import {AbsoluteFill, useDelayRender, useVideoConfig} from 'picus';
 import mapboxgl, {Map} from 'mapbox-gl';
 
-mapboxgl.accessToken = process.env.REMOTION_MAPBOX_TOKEN as string;
+mapboxgl.accessToken = process.env.PICUS_MAPBOX_TOKEN as string;
 
 export const MapComposition = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -132,8 +132,8 @@ _map.addLayer({
 Use linear interpolation for lines that appear straight on the map:
 
 ```tsx twoslash
-import {useCurrentFrame, useVideoConfig, useDelayRender} from 'remotion';
-import {interpolate, Easing} from 'remotion';
+import {useCurrentFrame, useVideoConfig, useDelayRender} from 'picus';
+import {interpolate, Easing} from 'picus';
 import mapboxgl from 'mapbox-gl';
 
 const map = {} as mapboxgl.Map | null;
@@ -196,8 +196,8 @@ Move the camera along a path using Turf.js and `setFreeCameraOptions()`:
 ```tsx twoslash
 import {useEffect} from 'react';
 import * as turf from '@turf/turf';
-import {useCurrentFrame, useVideoConfig, useDelayRender} from 'remotion';
-import {interpolate, Easing} from 'remotion';
+import {useCurrentFrame, useVideoConfig, useDelayRender} from 'picus';
+import {interpolate, Easing} from 'picus';
 import mapboxgl from 'mapbox-gl';
 
 const map = {} as mapboxgl.Map | null;
@@ -299,7 +299,7 @@ _map.on('style.load', () => {
 Render map animations with [`--gl=angle`](/docs/gl-options) to enable the GPU:
 
 ```sh
-npx remotion render --gl=angle
+npx picus render --gl=angle
 ```
 
 ## See also

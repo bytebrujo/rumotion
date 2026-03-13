@@ -13,10 +13,10 @@ slug: /cloudrun/upgrading
 
 import {Prerelease} from '../../components/PrereleaseVersion';
 
-- Determine the newest version from the [Releases page](https://github.com/remotion-dev/remotion/releases).
-- Upgrade all packages to the newest version (`@remotion/cloudrun`, but also `remotion`, `@remotion/cli` etc.)
+- Determine the newest version from the [Releases page](https://github.com/picus-dev/picus/releases).
+- Upgrade all packages to the newest version (`@picus/cloudrun`, but also `picus`, `@picus/cli` etc.)
 
-<Prerelease packageName="@remotion/cloudrun" />
+<Prerelease packageName="@picus/cloudrun" />
 
 - (Optional): Remove the old versions of the service:
 
@@ -25,19 +25,19 @@ You only should do this if the service is not being used anymore. If you are sti
 :::
 
 ```sh
-npx remotion cloudrun services rmall -y
+npx picus cloudrun services rmall -y
 ```
 
-- Deploy the newest version of the Remotion Cloud Run service:
+- Deploy the newest version of the Picus Cloud Run service:
 
 ```sh
-npx remotion cloudrun services deploy
+npx picus cloudrun services deploy
 ```
 
 - Update the site:
 
 ```sh
-npx remotion cloudrun sites create src/index.ts --site-name=my-name
+npx picus cloudrun sites create src/index.ts --site-name=my-name
 ```
 
 :::info
@@ -49,11 +49,11 @@ If you don't pass `--site-name` a new site URL will be generated. You'll need to
 
 ## Separating production and testing environments
 
-If you already shipped Remotion Cloud Run to production, you can upgrade without incurring any downtime:
+If you already shipped Picus Cloud Run to production, you can upgrade without incurring any downtime:
 
-- Each deployed service has a version (see them using `npx remotion cloudrun services ls`).  
-  Use the same version of the `@remotion/cloudrun` package to invoke the function.
+- Each deployed service has a version (see them using `npx picus cloudrun services ls`).  
+  Use the same version of the `@picus/cloudrun` package to invoke the function.
 
-- You can have multiple services with different versions deployed. Use the [`compatibleOnly`](/docs/cloudrun/getservices#compatibleonly) parameter to find services that match the version of the `@remotion/cloudrun` package.
+- You can have multiple services with different versions deployed. Use the [`compatibleOnly`](/docs/cloudrun/getservices#compatibleonly) parameter to find services that match the version of the `@picus/cloudrun` package.
 
-- Sites/`serveUrl`'s also are version-dependant. Create them with the same version of Remotion that you render them with. Remotion will tolerate mismatches if there are no incompatibilities, but will issue a warning that you might not have all the newest features and bugfixes in the bundled site.
+- Sites/`serveUrl`'s also are version-dependant. Create them with the same version of Picus that you render them with. Picus will tolerate mismatches if there are no incompatibilities, but will issue a warning that you might not have all the newest features and bugfixes in the bundled site.

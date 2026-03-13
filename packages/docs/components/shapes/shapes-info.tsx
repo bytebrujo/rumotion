@@ -8,7 +8,7 @@ import {
 	makeRect,
 	makeStar,
 	makeTriangle,
-} from '@remotion/shapes';
+} from '@picus/shapes';
 import React from 'react';
 import {
 	DebugOption,
@@ -433,7 +433,7 @@ export const MakeShapeReturnType: React.FC<{
 			</h3>
 			<p>
 				An array with SVG instructions. The type for a instruction can be seen
-				by importing <code>Instruction</code> from <code>@remotion/shapes</code>
+				by importing <code>Instruction</code> from <code>@picus/shapes</code>
 				.
 			</p>
 			<h3>
@@ -476,12 +476,12 @@ export const MakeShapeSeeAlso: React.FC<{
 			</li>
 			<li>
 				<a href={`/docs/shapes`}>
-					<code>@remotion/shapes</code>
+					<code>@picus/shapes</code>
 				</a>
 			</li>
 			<li>
 				<a
-					href={`https://github.com/remotion-dev/remotion/blob/main/packages/shapes/src/utils/make-${shape.toLowerCase()}.ts`}
+					href={`https://github.com/picus-dev/picus/blob/main/packages/shapes/src/utils/make-${shape.toLowerCase()}.ts`}
 				>
 					Source code for this function
 				</a>
@@ -510,12 +510,12 @@ export const ShapeSeeAlso: React.FC<{
 			</li>
 			<li>
 				<a href={`/docs/shapes`}>
-					<code>@remotion/shapes</code>
+					<code>@picus/shapes</code>
 				</a>
 			</li>
 			<li>
 				<a
-					href={`https://github.com/remotion-dev/remotion/blob/main/packages/shapes/src/components/${shape.toLowerCase()}.tsx`}
+					href={`https://github.com/picus-dev/picus/blob/main/packages/shapes/src/components/${shape.toLowerCase()}.tsx`}
 				>
 					Source code for this function
 				</a>

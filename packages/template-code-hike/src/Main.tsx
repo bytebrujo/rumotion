@@ -1,6 +1,6 @@
 import { HighlightedCode } from "codehike/code";
 import { useMemo } from "react";
-import { AbsoluteFill, Series, useVideoConfig } from "remotion";
+import { AbsoluteFill, Series, useVideoConfig } from "picus";
 import { CodeTransition } from "./CodeTransition";
 import { ProgressBar } from "./ProgressBar";
 import { RefreshOnCodeChange } from "./ReloadOnCodeChange";

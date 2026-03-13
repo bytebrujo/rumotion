@@ -1,8 +1,8 @@
 import assert from 'node:assert';
 import {test} from 'node:test';
-import {exampleVideos} from '@remotion/example-videos';
-import {parseMedia} from '@remotion/media-parser';
-import {nodeReader} from '@remotion/media-parser/node';
+import {exampleVideos} from '@picus/example-videos';
+import {parseMedia} from '@picus/media-parser';
+import {nodeReader} from '@picus/media-parser/node';
 
 const major = parseInt(process.version.split('.')[0].slice(1));
 if (major > 16) {
@@ -12,7 +12,7 @@ if (major > 16) {
 			fields: {
 				durationInSeconds: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			reader: nodeReader,
 		});
 

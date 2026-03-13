@@ -1,4 +1,4 @@
-import type {ApiRoutes} from '@remotion/studio-shared';
+import type {ApiRoutes} from '@picus/studio-shared';
 
 export const callApi = <Endpoint extends keyof ApiRoutes>(
 	endpoint: Endpoint,

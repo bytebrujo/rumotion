@@ -12,7 +12,7 @@ export type ZodType = Awaited<typeof import('zod')>['z'];
 export type ZodV3Type = Awaited<typeof import('zod/v3')>;
 export type ZodTypesType = Awaited<
 	// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-	typeof import('@remotion/zod-types')
+	typeof import('@picus/zod-types')
 >;
 
 export async function getZodIfPossible(): Promise<ZodType | null> {
@@ -35,7 +35,7 @@ export const getZodV3IfPossible = async (): Promise<ZodV3Type | null> => {
 
 export const getZTypesIfPossible = async (): Promise<ZodTypesType | null> => {
 	try {
-		const mod = await import('@remotion/zod-types');
+		const mod = await import('@picus/zod-types');
 		return mod;
 	} catch {
 		return null;

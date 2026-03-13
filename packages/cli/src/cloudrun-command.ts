@@ -1,23 +1,23 @@
-import type {LogLevel} from '@remotion/renderer';
-import {StudioServerInternals} from '@remotion/studio-server';
+import type {LogLevel} from '@picus/renderer';
+import {StudioServerInternals} from '@picus/studio-server';
 import {Log} from './log';
 
 export const cloudrunCommand = async (
-	remotionRoot: string,
+	picusRoot: string,
 	args: string[],
 	logLevel: LogLevel,
 ) => {
 	try {
-		const path = require.resolve('@remotion/cloudrun', {
-			paths: [remotionRoot],
+		const path = require.resolve('@picus/cloudrun', {
+			paths: [picusRoot],
 		});
 		const {CloudrunInternals} = require(path);
 
-		await CloudrunInternals.executeCommand(args, remotionRoot, logLevel);
+		await CloudrunInternals.executeCommand(args, picusRoot, logLevel);
 		process.exit(0);
 	} catch (err) {
 		const manager = StudioServerInternals.getPackageManager({
-			remotionRoot,
+			picusRoot,
 			packageManager: undefined,
 			dirUp: 0,
 			logLevel,
@@ -27,13 +27,13 @@ export const cloudrunCommand = async (
 		Log.error({indent: false, logLevel}, err);
 		Log.error(
 			{indent: false, logLevel},
-			'Remotion Cloud Run is not installed.',
+			'Picus Cloud Run is not installed.',
 		);
 		Log.info({indent: false, logLevel}, '');
 		Log.info({indent: false, logLevel}, 'You can install it using:');
 		Log.info(
 			{indent: false, logLevel},
-			`${installCommand} @remotion/cloudrun@${StudioServerInternals.getRemotionVersion()}`,
+			`${installCommand} @picus/cloudrun@${StudioServerInternals.getPicusVersion()}`,
 		);
 		process.exit(1);
 	}

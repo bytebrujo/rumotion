@@ -1,5 +1,5 @@
 import {beforeAll, expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
@@ -10,7 +10,7 @@ beforeAll(async () => {
 test('if metadata is available, it should not use duration from metadata even in case of using the "slow" fields', async () => {
 	const {slowFps, slowDurationInSeconds, internalStats} = await parseMedia({
 		src: await getRemoteExampleVideo('largeStsd'),
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			slowDurationInSeconds: true,
 			slowFps: true,
@@ -30,7 +30,7 @@ test('if metadata is available, it should not use duration from metadata even in
 		fps,
 	} = await parseMedia({
 		src: await getRemoteExampleVideo('largeStsd'),
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			durationInSeconds: true,
 			internalStats: true,

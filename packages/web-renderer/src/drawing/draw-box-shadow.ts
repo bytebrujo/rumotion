@@ -1,5 +1,5 @@
-import type {LogLevel} from 'remotion';
-import {Internals} from 'remotion';
+import type {LogLevel} from 'picus';
+import {Internals} from 'picus';
 import type {BorderRadiusCorners} from './border-radius';
 import {drawRoundedRectPath} from './draw-rounded';
 import type {ShadowBase} from './parse-shadow';
@@ -78,9 +78,9 @@ export const drawBorderRadius = ({
 			Internals.Log.warn(
 				{
 					logLevel,
-					tag: '@remotion/web-renderer',
+					tag: '@picus/web-renderer',
 				},
-				'Detected "box-shadow" with "inset". This is not yet supported in @remotion/web-renderer',
+				'Detected "box-shadow" with "inset". This is not yet supported in @picus/web-renderer',
 			);
 			continue;
 		}

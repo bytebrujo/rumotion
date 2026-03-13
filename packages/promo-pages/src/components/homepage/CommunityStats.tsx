@@ -29,22 +29,22 @@ const CommunityStats: React.FC = () => (
 			Join a thriving community of developers.
 		</div>
 		<div className={'flex flex-wrap justify-between gap-4 w-full items-center'}>
-			<SectionLink href="https://www.npmjs.com/package/remotion">
+			<SectionLink href="https://www.npmjs.com/package/picus">
 				<InstallsPerMonth />
 			</SectionLink>
-			<SectionLink href="https://www.remotion.dev/docs/">
+			<SectionLink href="https://www.picus.dev/docs/">
 				<PagesOfDocs />
 			</SectionLink>
-			<SectionLink href="https://www.remotion.dev/templates">
+			<SectionLink href="https://www.picus.dev/templates">
 				<TemplatesAndExamples />
 			</SectionLink>
-			<SectionLink href="https://github.com/remotion-dev/remotion">
+			<SectionLink href="https://github.com/picus-dev/picus">
 				<GitHubStars />
 			</SectionLink>
-			<SectionLink href="https://remotion.dev/discord">
+			<SectionLink href="https://picus.dev/discord">
 				<DiscordMembers />
 			</SectionLink>
-			<SectionLink href="https://github.com/remotion-dev/remotion/graphs/contributors">
+			<SectionLink href="https://github.com/picus-dev/picus/graphs/contributors">
 				<Contributors />
 			</SectionLink>
 		</div>

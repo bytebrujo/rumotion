@@ -23,7 +23,7 @@ test(
 
 		const stream = await streamToUint8Array(file);
 
-		const probe = await $`bunx remotion ffprobe - < ${stream}`
+		const probe = await $`bunx picus ffprobe - < ${stream}`
 			.cwd(path.join(__dirname, '..', '..', '..', '..', '..', 'example'))
 			.nothrow()
 			.quiet();

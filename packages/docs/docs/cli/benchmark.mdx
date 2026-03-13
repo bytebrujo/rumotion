@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-cli-benchmark.png
-title: npx remotion benchmark
+title: npx picus benchmark
 sidebar_label: benchmark
 crumb: CLI Reference
 ---
@@ -10,12 +10,12 @@ crumb: CLI Reference
 Measures render time by running a render multiple times, if desired with multiple compositions and concurrency values to compare against each other.
 
 ```bash
-npx remotion benchmark src/index.ts [composition-ids]
+npx picus benchmark src/index.ts [composition-ids]
 ```
 
-You can provide multiple composition IDs separated by comma, ex: `npx remotion benchmark src/index.ts --codec=h264 Main,Canvas,CSS`
+You can provide multiple composition IDs separated by comma, ex: `npx picus benchmark src/index.ts --codec=h264 Main,Canvas,CSS`
 
-If `composition-ids` is not passed, Remotion will let you select compositions from a list.
+If `composition-ids` is not passed, Picus will let you select compositions from a list.
 
 ## Flags
 
@@ -29,7 +29,7 @@ If `composition-ids` is not passed, Remotion will let you select compositions fr
 
 ### `--codec`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--codec)
+Inherited from [`npx picus render`](/docs/cli/render#--codec)
 
 ### `--audio-codec`<AvailableFrom v="3.3.42" />
 
@@ -37,31 +37,31 @@ Inherited from [`npx remotion render`](/docs/cli/render#--codec)
 
 ### `--crf`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--crf)
+Inherited from [`npx picus render`](/docs/cli/render#--crf)
 
 ### `--frames`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--frames)
+Inherited from [`npx picus render`](/docs/cli/render#--frames)
 
 ### `--image-format`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--image-format)
+Inherited from [`npx picus render`](/docs/cli/render#--image-format)
 
 ### `--pixel-format`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--pixel-format)
+Inherited from [`npx picus render`](/docs/cli/render#--pixel-format)
 
 ### `--props`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--props)
+Inherited from [`npx picus render`](/docs/cli/render#--props)
 
 ### `--prores-profile`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--prores-profile)
+Inherited from [`npx picus render`](/docs/cli/render#--prores-profile)
 
 ### `--jpeg-quality`<AvailableFrom v="4.0.0" />
 
-Inherited from [`npx remotion render`](/docs/cli/render#--jpeg-quality)
+Inherited from [`npx picus render`](/docs/cli/render#--jpeg-quality)
 
 ### ~~`--quality`~~
 
@@ -69,15 +69,15 @@ Removed in v4.0.0. Renamed to `--jpeg-quality`.
 
 ### `--log`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--log)
+Inherited from [`npx picus render`](/docs/cli/render#--log)
 
 ### `--ignore-certificate-errors`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--ignore-certificate-errors)
+Inherited from [`npx picus render`](/docs/cli/render#--ignore-certificate-errors)
 
 ### `--disable-web-security`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--disable-web-security)
+Inherited from [`npx picus render`](/docs/cli/render#--disable-web-security)
 
 ### `--dark-mode`<AvailableFrom v="4.0.381"/>
 
@@ -101,15 +101,15 @@ Inherited from [`npx remotion render`](/docs/cli/render#--disable-web-security)
 
 ### `--timeout`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--timeout)
+Inherited from [`npx picus render`](/docs/cli/render#--timeout)
 
 ### `--scale`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--scale)
+Inherited from [`npx picus render`](/docs/cli/render#--scale)
 
 ### `--port`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--port)
+Inherited from [`npx picus render`](/docs/cli/render#--port)
 
 ### `--number-of-gif-loops`
 
@@ -117,47 +117,47 @@ Inherited from [`npx remotion render`](/docs/cli/render#--port)
 
 ### `--every-nth-frame`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--every-nth-frame)
+Inherited from [`npx picus render`](/docs/cli/render#--every-nth-frame)
 
 ### `--log`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--log)
+Inherited from [`npx picus render`](/docs/cli/render#--log)
 
 ### `--muted`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--muted)
+Inherited from [`npx picus render`](/docs/cli/render#--muted)
 
 ### `--enforce-audio-track`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--enforce-audio-track)
+Inherited from [`npx picus render`](/docs/cli/render#--enforce-audio-track)
 
 ### `--disallow-parallel-encoding`<AvailableFrom v="4.0.315" />
 
-Inherited from [`npx remotion render`](/docs/cli/render#--disallow-parallel-encoding)
+Inherited from [`npx picus render`](/docs/cli/render#--disallow-parallel-encoding)
 
 ### `--browser-executable`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--browser-executable)
+Inherited from [`npx picus render`](/docs/cli/render#--browser-executable)
 
 ### `--public-dir`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--public-dir)
+Inherited from [`npx picus render`](/docs/cli/render#--public-dir)
 
 ### `--config`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--config)
+Inherited from [`npx picus render`](/docs/cli/render#--config)
 
 ### `--bundle-cache`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--bundle-cache)
+Inherited from [`npx picus render`](/docs/cli/render#--bundle-cache)
 
 ### `--video-bitrate`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--video-bitrate)
+Inherited from [`npx picus render`](/docs/cli/render#--video-bitrate)
 
 ### `--audio-bitrate`
 
-Inherited from [`npx remotion render`](/docs/cli/render#--audio-bitrate)
+Inherited from [`npx picus render`](/docs/cli/render#--audio-bitrate)
 
 ### `--color-space`<AvailableFrom v="4.0.28"/>
 
@@ -185,8 +185,8 @@ Inherited from [`npx remotion render`](/docs/cli/render#--audio-bitrate)
 
 ### ~~`--ffmpeg-executable`~~
 
-Removed in v4.0. Inherited from [`npx remotion render`](/docs/cli/render#--ffmpeg-executable)
+Removed in v4.0. Inherited from [`npx picus render`](/docs/cli/render#--ffmpeg-executable)
 
 ### ~~`--ffprobe-executable`~~
 
-Removed in v4.0. Inherited from [`npx remotion render`](/docs/cli/render#--ffprobe-executable-)
+Removed in v4.0. Inherited from [`npx picus render`](/docs/cli/render#--ffprobe-executable-)

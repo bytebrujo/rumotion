@@ -7,7 +7,7 @@ import {
 	useImage,
 } from '@shopify/react-native-skia';
 import React, {useState} from 'react';
-import {staticFile, useCurrentFrame, useDelayRender} from 'remotion';
+import {staticFile, useCurrentFrame, useDelayRender} from 'picus';
 
 type Value = string | number;
 type Values = Value[];

@@ -1,4 +1,4 @@
-import {getRemotionEnvironment} from './get-remotion-environment';
+import {getPicusEnvironment} from './get-picus-environment';
 
 /* eslint-disable no-console */
 export const logLevels = ['trace', 'verbose', 'info', 'warn', 'error'] as const;
@@ -27,18 +27,18 @@ const transformArgs = ({
 }) => {
 	const arr = [...args];
 	if (
-		getRemotionEnvironment().isRendering &&
-		!getRemotionEnvironment().isClientSideRendering
+		getPicusEnvironment().isRendering &&
+		!getPicusEnvironment().isClientSideRendering
 	) {
-		arr.unshift(Symbol.for(`__remotion_level_${logLevel}`));
+		arr.unshift(Symbol.for(`__picus_level_${logLevel}`));
 	}
 
 	if (
 		tag &&
-		getRemotionEnvironment().isRendering &&
-		!getRemotionEnvironment().isClientSideRendering
+		getPicusEnvironment().isRendering &&
+		!getPicusEnvironment().isClientSideRendering
 	) {
-		arr.unshift(Symbol.for(`__remotion_tag_${tag}`));
+		arr.unshift(Symbol.for(`__picus_tag_${tag}`));
 	}
 
 	return arr;

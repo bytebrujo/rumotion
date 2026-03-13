@@ -1,5 +1,5 @@
 import React from 'react';
-import {Series, useCurrentFrame} from 'remotion';
+import {Series, useCurrentFrame} from 'picus';
 
 const Premounted: React.FC = () => {
 	const frame = useCurrentFrame();

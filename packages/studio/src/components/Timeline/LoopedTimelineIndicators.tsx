@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Flex} from '../layout';
 import {LoopedIndicator} from './LoopedIndicator';
 

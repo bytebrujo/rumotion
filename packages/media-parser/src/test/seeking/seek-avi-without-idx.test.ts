@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../../controller/media-parser-controller';
 import {hasBeenAborted} from '../../errors';
 import {nodeReader} from '../../node';
@@ -44,7 +44,7 @@ test('seek avi', async () => {
 		await parseMedia({
 			src: exampleVideos.aviWithoutIdx,
 			controller,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			reader: nodeReader,
 			onVideoTrack: () => {
 				return (sample) => {
@@ -126,7 +126,7 @@ test('should be able to use seeking hints', async () => {
 
 	await parseMedia({
 		src: exampleVideos.aviWithoutIdx,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		controller,
 		reader: nodeReader,
 		seekingHints: expectedSeekingHints,

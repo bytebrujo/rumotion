@@ -1,3 +1,3 @@
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 
 export const {chalk} = RenderInternals;

@@ -228,7 +228,7 @@ export const parseMdatSection = async (
 	if (track.type === 'video') {
 		// https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/sei_checkpoint.mp4
 		// Position in file 0x0001aba615
-		// https://github.com/remotion-dev/remotion/issues/4680
+		// https://github.com/picus-dev/picus/issues/4680
 		// In Chrome, we may not treat recovery points as keyframes
 		// otherwise "a keyframe is required after flushing"
 

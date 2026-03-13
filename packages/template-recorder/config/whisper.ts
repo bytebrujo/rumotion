@@ -1,4 +1,4 @@
-import type { Language, WhisperModel } from "@remotion/install-whisper-cpp";
+import type { Language, WhisperModel } from "@picus/install-whisper-cpp";
 import path from "path";
 
 export const WHISPER_PATH = path.join(process.cwd(), "whisper.cpp");

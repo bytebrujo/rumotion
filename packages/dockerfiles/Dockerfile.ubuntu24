@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get install git curl make -y
 RUN curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n | bash -s 20
 WORKDIR /usr/app
-RUN npm i -g @remotion/cli
+RUN npm i -g @picus/cli
 RUN apt install -y \
   libnss3 \
   libdbus-1-3 \
@@ -28,5 +28,5 @@ RUN node ensure.mjs
 # Copy the pre-built bundle
 COPY bundle/ /usr/app/bundle/
 
-RUN npx remotion compositions /usr/app/bundle
-RUN npx remotion render /usr/app/bundle browser-test /usr/app/out.mp4 --log=verbose
+RUN npx picus compositions /usr/app/bundle
+RUN npx picus render /usr/app/bundle browser-test /usr/app/out.mp4 --log=verbose

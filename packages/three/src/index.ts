@@ -6,22 +6,22 @@ import {useVideoTexture as useVideoTextureType} from './use-video-texture';
 
 /**
  * @deprecated useOffthreadVideoTexture has been deprecated.
- * Use the approach documented at https://remotion.dev/docs/videos/as-threejs-texture instead.
+ * Use the approach documented at https://picus.dev/docs/videos/as-threejs-texture instead.
  */
 const useOffthreadVideoTexture = useOffthreadVideoTextureType;
 /**
  * @deprecated useOffthreadVideoTexture has been deprecated.
- * Use the approach documented at https://remotion.dev/docs/videos/as-threejs-texture instead.
+ * Use the approach documented at https://picus.dev/docs/videos/as-threejs-texture instead.
  */
 type UseOffthreadVideoTextureOptions = UseOffthreadVideoTextureOptionsType;
 /**
  * @deprecated useVideoTexture has been deprecated.
- * Use the approach documented at https://remotion.dev/docs/videos/as-threejs-texture instead.
+ * Use the approach documented at https://picus.dev/docs/videos/as-threejs-texture instead.
  */
 const useVideoTexture = useVideoTextureType;
 /**
  * @deprecated useVideoTexture has been deprecated.
- * Use the approach documented at https://remotion.dev/docs/videos/as-threejs-texture instead.
+ * Use the approach documented at https://picus.dev/docs/videos/as-threejs-texture instead.
  */
 type UseVideoTextureOptions = UseVideoTextureOptionsType;
 

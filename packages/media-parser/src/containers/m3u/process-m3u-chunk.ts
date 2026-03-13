@@ -212,7 +212,7 @@ export const processM3uChunk = ({
 			try {
 				const data = await parseMedia({
 					src,
-					acknowledgeRemotionLicense: true,
+					acknowledgePicusLicense: true,
 					logLevel: state.logLevel,
 					controller: childController,
 					progressIntervalInMs: 0,

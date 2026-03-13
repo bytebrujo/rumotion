@@ -1,4 +1,4 @@
-import type {WebpackConfiguration} from '@remotion/bundler';
+import type {WebpackConfiguration} from '@picus/bundler';
 import type {
 	BrowserExecutable,
 	ChromeMode,
@@ -10,10 +10,10 @@ import type {
 	NumberOfGifLoops,
 	StillImageFormat,
 	VideoImageFormat,
-} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {StudioServerInternals} from '@remotion/studio-server';
+} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {StudioServerInternals} from '@picus/studio-server';
 import {getBrowser} from './browser';
 import {
 	getBufferStateDelayInMilliseconds,
@@ -123,7 +123,7 @@ const {
 } = BrowserSafeApis.options;
 
 declare global {
-	interface RemotionBundlingOptions {
+	interface PicusBundlingOptions {
 		/**
 		 * Specify the entry point so you don't have to specify it in the
 		 * CLI command
@@ -143,15 +143,15 @@ declare global {
 
 		/**
 		 * Set the HTTP port used by the Studio.
-		 * By default, Remotion will try to find a free port.
-		 * If you specify a port, but it's not available, Remotion will throw an error.
+		 * By default, Picus will try to find a free port.
+		 * If you specify a port, but it's not available, Picus will throw an error.
 		 */
 		readonly setStudioPort: (port: number | undefined) => void;
 
 		/**
 		 * Set the HTTP port used to host the Webpack bundle.
-		 * By default, Remotion will try to find a free port.
-		 * If you specify a port, but it's not available, Remotion will throw an error.
+		 * By default, Picus will try to find a free port.
+		 * If you specify a port, but it's not available, Picus will throw an error.
 		 */
 		readonly setRendererPort: (port: number | undefined) => void;
 		/**
@@ -163,7 +163,7 @@ declare global {
 		readonly overrideWebpackConfig: (f: WebpackOverrideFn) => void;
 	}
 	// Legacy config format: New options to not need to be added here.
-	interface RemotionConfigObject {
+	interface PicusConfigObject {
 		/**
 		 * Change the maximum amount of tracks that are shown in the timeline.
 		 * @param maxTracks The maximum amount of timeline tracks that you would like to show.
@@ -171,14 +171,14 @@ declare global {
 		 */
 		readonly setMaxTimelineTracks: (maxTracks: number) => void;
 		/**
-		 * Enable Keyboard shortcuts in the Remotion Studio.
+		 * Enable Keyboard shortcuts in the Picus Studio.
 		 * @param enabled Boolean whether to enable the keyboard shortcuts
 		 * @default true
 		 */
 		readonly setKeyboardShortcutsEnabled: (enableShortcuts: boolean) => void;
 		/**
-		 * Enable WIP client-side rendering in the Remotion Studio.
-		 * See https://www.remotion.dev/docs/client-side-rendering/ for notes.
+		 * Enable WIP client-side rendering in the Picus Studio.
+		 * See https://www.picus.dev/docs/client-side-rendering/ for notes.
 		 * @param enabled Boolean whether to enable client-side rendering
 		 * @default false
 		 */
@@ -198,7 +198,7 @@ declare global {
 		 */
 		readonly setExperimentalVisualMode: (enabled: boolean) => void;
 		/**
-		 * Set number of shared audio tags. https://www.remotion.dev/docs/player/autoplay#using-the-numberofsharedaudiotags-prop
+		 * Set number of shared audio tags. https://www.picus.dev/docs/player/autoplay#using-the-numberofsharedaudiotags-prop
 		 * @param numberOfAudioTags
 		 * @default 0
 		 */
@@ -211,7 +211,7 @@ declare global {
 		 */
 		readonly setWebpackPollingInMilliseconds: (interval: number | null) => void;
 		/**
-		 * Whether Remotion should open a browser when starting the Studio.
+		 * Whether Picus should open a browser when starting the Studio.
 		 * @param should
 		 * @default true
 		 */
@@ -228,7 +228,7 @@ declare global {
 		) => void;
 		/**
 		 * Specify executable path for the browser to use.
-		 * Default: null, which will make Remotion find or download a version of said browser.
+		 * Default: null, which will make Picus find or download a version of said browser.
 		 */
 		readonly setBrowserExecutable: (
 			newBrowserExecutablePath: BrowserExecutable,
@@ -330,7 +330,7 @@ declare global {
 		/**
 		 * Specify which frames should be picked for rendering a GIF
 		 * Default: 1, which means every frame
-		 * https://remotion.dev/docs/render-as-gif
+		 * https://picus.dev/docs/render-as-gif
 		 */
 		readonly setEveryNthFrame: (frame: number) => void;
 		/**
@@ -362,7 +362,7 @@ declare global {
 		 */
 		readonly setOutputLocation: (newOutputLocation: string) => void;
 		/**
-		 * If the video file already exists, should Remotion overwrite
+		 * If the video file already exists, should Picus overwrite
 		 * the output? Default: true
 		 */
 		readonly setOverwriteOutput: (newOverwrite: boolean) => void;
@@ -445,8 +445,8 @@ declare global {
 				| null,
 		) => void;
 		/**
-		 * Override the arguments that Remotion passes to FFmpeg.
-		 * Consult https://remotion.dev/docs/renderer/render-media#ffmpegoverride before using this feature.
+		 * Override the arguments that Picus passes to FFmpeg.
+		 * Consult https://picus.dev/docs/renderer/render-media#ffmpegoverride before using this feature.
 		 */
 		readonly overrideFfmpegCommand: (
 			command: (info: {
@@ -515,7 +515,7 @@ declare global {
 		) => void;
 
 		/**
-		 * Whether the Remotion Studio should play a beep sound when a render has finished.
+		 * Whether the Picus Studio should play a beep sound when a render has finished.
 		 */
 		readonly setBeepOnFinish: (beepOnFinish: boolean) => void;
 
@@ -527,12 +527,12 @@ declare global {
 		) => void;
 
 		/**
-		 * Collect information that you can submit to Remotion if asked for a reproduction.
+		 * Collect information that you can submit to Picus if asked for a reproduction.
 		 */
 		readonly setRepro: (enableRepro: boolean) => void;
 		/**
 		 * The directory where the platform-specific binaries and libraries needed
-			for Remotion are located.
+			for Picus are located.
 		 */
 		readonly setBinariesDirectory: (directory: string | null) => void;
 		/**
@@ -550,15 +550,15 @@ declare global {
 		readonly setImageSequencePattern: (pattern: string | null) => void;
 		/**
 		 * Set the public license key for your company license.
-		 * Obtain it from the "Usage" tab on https://remotion.pro
+		 * Obtain it from the "Usage" tab on https://picus.pro
 		 * Pass "free-license" if you are eligible for the free license.
 		 */
 		readonly setPublicLicenseKey: (key: string | null) => void;
 	}
 }
 
-type FlatConfig = RemotionConfigObject &
-	RemotionBundlingOptions & {
+type FlatConfig = PicusConfigObject &
+	PicusBundlingOptions & {
 		/**
 		 * Set the audio codec to use for the output video.
 		 * See the Encoding guide in the docs for defaults and available options.
@@ -596,13 +596,13 @@ type FlatConfig = RemotionConfigObject &
 			hardwareAccelerationOption: HardwareAccelerationOption,
 		) => void;
 		/**
-		 * Forces Remotion to bind to an IPv4 interface for the Studio server.
+		 * Forces Picus to bind to an IPv4 interface for the Studio server.
 		 * Default: false
 		 */
 		setIPv4: (ipv4: boolean) => void;
 		/**
-		 * Define the output directory for `npx remotion bundle`.
-		 * Default: `build` in the Remotion root.
+		 * Define the output directory for `npx picus bundle`.
+		 * Default: `build` in the Picus root.
 		 */
 		setBundleOutDir: (outDir: string | null) => void;
 		/**

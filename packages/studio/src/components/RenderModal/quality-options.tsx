@@ -1,4 +1,4 @@
-import type {WebRendererQuality} from '@remotion/web-renderer';
+import type {WebRendererQuality} from '@picus/web-renderer';
 import {Checkmark} from '../../icons/Checkmark';
 import type {ComboboxValue} from '../NewComposition/ComboBox';
 

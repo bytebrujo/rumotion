@@ -3,7 +3,7 @@ import type {
 	LoopVolumeCurveBehavior,
 	OnVideoFrame,
 	VolumeProp,
-} from 'remotion';
+} from 'picus';
 import type {MediaOnError} from '../on-error';
 
 export type MediaErrorEvent = {

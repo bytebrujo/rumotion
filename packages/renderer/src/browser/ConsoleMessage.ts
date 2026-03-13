@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {LogLevel} from 'remotion';
+import {LogLevel} from 'picus';
 import type {JSHandle} from './JSHandle';
 
 export interface ConsoleMessageLocation {

@@ -1,5 +1,5 @@
 import type {AudioSample, AudioSampleSink} from 'mediabunny';
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 import type {RememberActualMatroskaTimestamps} from '../video-extraction/remember-actual-matroska-timestamps';
 import {makeAudioCache} from './audio-cache';
 
@@ -22,8 +22,8 @@ const warnAboutMatroskaOnce = (src: string, logLevel: LogLevel) => {
 	warned[src] = true;
 
 	Internals.Log.warn(
-		{logLevel, tag: '@remotion/media'},
-		`Audio from ${src} will need to be read from the beginning. https://www.remotion.dev/docs/media/support#matroska-limitation`,
+		{logLevel, tag: '@picus/media'},
+		`Audio from ${src} will need to be read from the beginning. https://www.picus.dev/docs/media/support#matroska-limitation`,
 	);
 };
 
@@ -148,7 +148,7 @@ export const makeAudioIterator = ({
 			const last = openTimestamps[openTimestamps.length - 1];
 
 			Internals.Log.verbose(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				'Open audio samples for src',
 				src,
 				`${first.toFixed(3)}...${last.toFixed(3)}`,

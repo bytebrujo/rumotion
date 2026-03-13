@@ -1,5 +1,5 @@
 import path from 'path';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {getQualityControlModesForEncoder} from './get-quality-control-modes';
 import {getBenchmarks, hasBenchmark, saveBenchmark} from './persistance';
 import {runBenchmark} from './run-benchmark';

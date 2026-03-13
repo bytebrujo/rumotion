@@ -1,5 +1,5 @@
-import { Caption } from "@remotion/captions";
-import { fillTextBox } from "@remotion/layout-utils";
+import { Caption } from "@picus/captions";
+import { fillTextBox } from "@picus/layout-utils";
 import { msToFrame } from "../helpers/ms-to-frame";
 import { LINES_PER_PAGE } from "./constants";
 

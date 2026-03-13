@@ -1,8 +1,8 @@
-import type { StaticFile } from "remotion";
-import { staticFile } from "remotion";
+import type { StaticFile } from "picus";
+import { staticFile } from "picus";
 import { z } from "zod";
-import { UnserializedSrt } from "../remotion/captions/srt/helpers/serialize-srt";
-import type { VideoSceneLayout } from "../remotion/layout/get-layout";
+import { UnserializedSrt } from "../picus/captions/srt/helpers/serialize-srt";
+import type { VideoSceneLayout } from "../picus/layout/get-layout";
 import { brand, linkType, platform } from "./endcard";
 import type { Dimensions } from "./layout";
 import { canvasLayout } from "./layout";

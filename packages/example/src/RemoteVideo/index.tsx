@@ -1,4 +1,4 @@
-import {Html5Video, interpolate} from 'remotion';
+import {Html5Video, interpolate} from 'picus';
 
 const RemoteVideo: React.FC = () => {
 	return (
@@ -6,7 +6,7 @@ const RemoteVideo: React.FC = () => {
 			volume={(f) =>
 				interpolate(f, [0, 500], [1, 0], {extrapolateRight: 'clamp'})
 			}
-			src="https://remotion.media/BigBuckBunny.mp4"
+			src="https://picus.media/BigBuckBunny.mp4"
 		/>
 	);
 };

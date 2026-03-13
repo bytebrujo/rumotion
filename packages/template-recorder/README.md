@@ -1,21 +1,21 @@
 <p align="center">
-  <a href="https://github.com/remotion-dev/logo">
+  <a href="https://github.com/picus-dev/logo">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/remotion-dev/brand/main/recorder/dark.gif">
-      <img alt="Animated Remotion Logo" src="https://raw.githubusercontent.com/remotion-dev/brand/main/recorder/light.gif">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/picus-dev/brand/main/recorder/dark.gif">
+      <img alt="Animated Picus Logo" src="https://raw.githubusercontent.com/picus-dev/brand/main/recorder/light.gif">
     </picture>
   </a>
 </p>
 
 <p align="center"><strong>Video production for developers</strong></p>
 
-Remotion Recorder is a customizable template for recording, editing and rendering videos in JavaScript.
+Picus Recorder is a customizable template for recording, editing and rendering videos in JavaScript.
 
-View documentation at: [remotion.dev/recorder](https://remotion.dev/recorder)
+View documentation at: [picus.dev/recorder](https://picus.dev/recorder)
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Note that for some entities a company license is needed. [Read the terms here](https://github.com/picus-dev/picus/blob/main/LICENSE.md).
 
 ## Commands
 
@@ -34,11 +34,11 @@ npm run dev
 **Render video**
 
 ```console
-npx remotion render
+npx picus render
 ```
 
-**Upgrade Remotion**
+**Upgrade Picus**
 
 ```console
-npx remotion upgrade
+npx picus upgrade
 ```

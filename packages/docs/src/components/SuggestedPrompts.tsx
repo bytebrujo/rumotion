@@ -48,7 +48,7 @@ export const SuggestedPrompts: React.FC<Props> = ({prompts}) => {
 					/>
 				</svg>
 				<div style={{fontFamily: 'GTPlanar'}}>
-					Try these prompts with Remotion Skills
+					Try these prompts with Picus Skills
 				</div>
 				<div style={{flex: 1}} />
 				<span

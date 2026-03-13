@@ -13,7 +13,7 @@ export const serveStatic = async (
 	options: {
 		port: number | null;
 		downloadMap: DownloadMap;
-		remotionRoot: string;
+		picusRoot: string;
 		offthreadVideoThreads: number;
 		logLevel: LogLevel;
 		indent: boolean;

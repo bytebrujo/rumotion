@@ -1,5 +1,5 @@
 import React from 'react';
-import {spring, SpringConfig, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, SpringConfig, useCurrentFrame, useVideoConfig} from 'picus';
 
 const size = 200;
 

@@ -18,7 +18,7 @@ type MeasureSpringProps = {
 
 /*
  * @description Based on a spring() configuration and the frame rate, return how long it takes for a spring animation to settle.
- * @see [Documentation](https://remotion.dev/docs/measure-spring)
+ * @see [Documentation](https://picus.dev/docs/measure-spring)
  */
 export function measureSpring({
 	fps,

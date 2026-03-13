@@ -41,7 +41,7 @@ A function that is called with a [`WebhookTimeoutPayload`](/docs/lambda/webhooks
 Setting up a webhook endpoint in a Next.js app which uses App Router. This will listen on the endpoint: `mydomain.com/api`
 
 ```tsx twoslash title="app/api/route.ts"
-import {appRouterWebhook} from '@remotion/lambda/client';
+import {appRouterWebhook} from '@picus/lambda/client';
 
 export const POST = appRouterWebhook({
   secret: 'mysecret',
@@ -62,4 +62,4 @@ See [Webhooks](/docs/lambda/webhooks) for an Express example.
 ## See also
 
 - [Webhooks](/docs/lambda/webhooks)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/app-router-webhook.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/app-router-webhook.ts)

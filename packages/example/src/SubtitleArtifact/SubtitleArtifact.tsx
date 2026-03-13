@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Artifact, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Artifact, useCurrentFrame} from 'picus';
 
 export const SubtitleArtifact: React.FC = () => {
 	const frame = useCurrentFrame();

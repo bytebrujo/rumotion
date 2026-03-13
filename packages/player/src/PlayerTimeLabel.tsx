@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {formatTime} from './format-time';
 
 export const PlayerTimeLabel: React.FC<{

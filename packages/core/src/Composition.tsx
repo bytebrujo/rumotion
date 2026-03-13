@@ -4,9 +4,9 @@ import {createPortal} from 'react-dom';
 import type {z} from 'zod';
 import type {AnyZodObject} from './any-zod-type.js';
 import {
-	CanUseRemotionHooks,
-	CanUseRemotionHooksProvider,
-} from './CanUseRemotionHooks.js';
+	CanUsePicusHooks,
+	CanUsePicusHooksProvider,
+} from './CanUsePicusHooks.js';
 import type {Codec} from './codec.js';
 import type {TComposition} from './CompositionManager.js';
 import {CompositionSetters} from './CompositionManagerContext.js';
@@ -25,7 +25,7 @@ import {
 } from './ResolveCompositionConfig.js';
 import {useDelayRender} from './use-delay-render.js';
 import {useLazyComponent} from './use-lazy-component.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 import {useVideo} from './use-video.js';
 import {validateCompositionId} from './validation/validate-composition-id.js';
 import {validateDefaultAndInputProps} from './validation/validate-default-props.js';
@@ -155,26 +155,26 @@ const InnerComposition = <
 	const nonce = useNonce();
 
 	const isPlayer = useIsPlayer();
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 
-	const canUseComposition = useContext(CanUseRemotionHooks);
+	const canUseComposition = useContext(CanUsePicusHooks);
 
 	// Record seen composition IDs as early as possible so that overlays can access them
 	if (typeof window !== 'undefined') {
-		window.remotion_seenCompositionIds = Array.from(
-			new Set([...(window.remotion_seenCompositionIds ?? []), id]),
+		window.picus_seenCompositionIds = Array.from(
+			new Set([...(window.picus_seenCompositionIds ?? []), id]),
 		);
 	}
 
 	if (canUseComposition) {
 		if (isPlayer) {
 			throw new Error(
-				'<Composition> was mounted inside the `component` that was passed to the <Player>. See https://remotion.dev/docs/wrong-composition-mount for help.',
+				'<Composition> was mounted inside the `component` that was passed to the <Player>. See https://picus.dev/docs/wrong-composition-mount for help.',
 			);
 		}
 
 		throw new Error(
-			'<Composition> mounted inside another composition. See https://remotion.dev/docs/wrong-composition-mount for help.',
+			'<Composition> mounted inside another composition. See https://picus.dev/docs/wrong-composition-mount for help.',
 		);
 	}
 
@@ -253,7 +253,7 @@ const InnerComposition = <
 		}
 
 		return createPortal(
-			<CanUseRemotionHooksProvider>
+			<CanUsePicusHooksProvider>
 				<Suspense fallback={<Loading />}>
 					<Comp
 						{
@@ -262,7 +262,7 @@ const InnerComposition = <
 						}
 					/>
 				</Suspense>
-			</CanUseRemotionHooksProvider>,
+			</CanUsePicusHooksProvider>,
 			portalNode(),
 		);
 	}
@@ -283,7 +283,7 @@ const InnerComposition = <
 		}
 
 		return createPortal(
-			<CanUseRemotionHooksProvider>
+			<CanUsePicusHooksProvider>
 				<Suspense fallback={<Fallback />}>
 					<Comp
 						{
@@ -292,7 +292,7 @@ const InnerComposition = <
 						}
 					/>
 				</Suspense>
-			</CanUseRemotionHooksProvider>,
+			</CanUsePicusHooksProvider>,
 			portalNode(),
 		);
 	}
@@ -302,7 +302,7 @@ const InnerComposition = <
 
 /*
  * @description This component is used to register a video to make it renderable and make it show in the sidebar, in dev mode.
- * @see [Documentation](https://remotion.dev/docs/composition)
+ * @see [Documentation](https://picus.dev/docs/composition)
  */
 export const Composition = <
 	Schema extends AnyZodObject,

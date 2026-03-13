@@ -4,7 +4,7 @@ import {cancelRenderInternal} from './cancel-render.js';
 import type {DelayRenderOptions, DelayRenderScope} from './delay-render.js';
 import {continueRenderInternal, delayRenderInternal} from './delay-render.js';
 import {useLogLevel} from './log-level-context.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 
 type DelayRenderFn = (label?: string, options?: DelayRenderOptions) => number;
 type ContinueRenderFn = (handle: number) => void;
@@ -19,7 +19,7 @@ export const useDelayRender = (): {
 	continueRender: ContinueRenderFn;
 	cancelRender: CancelRenderFn;
 } => {
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 	const scope =
 		useContext(DelayRenderContextType) ??
 		(typeof window !== 'undefined' ? window : undefined);

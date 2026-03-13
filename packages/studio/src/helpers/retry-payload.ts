@@ -4,10 +4,10 @@ import type {
 	ColorSpace,
 	PixelFormat,
 	X264Preset,
-} from '@remotion/renderer';
-import type {RenderJob} from '@remotion/studio-shared';
-import type {WebRendererHardwareAcceleration} from '@remotion/web-renderer';
-import {NoReactInternals} from 'remotion/no-react';
+} from '@picus/renderer';
+import type {RenderJob} from '@picus/studio-shared';
+import type {WebRendererHardwareAcceleration} from '@picus/web-renderer';
+import {NoReactInternals} from 'picus/no-react';
 import type {
 	ClientStillRenderJob,
 	ClientVideoRenderJob,
@@ -15,7 +15,7 @@ import type {
 import type {RenderModalState, WebRenderModalState} from '../state/modals';
 
 export const makeRetryPayload = (job: RenderJob): RenderModalState => {
-	const defaults = window.remotion_renderDefaults;
+	const defaults = window.picus_renderDefaults;
 	if (!defaults) {
 		throw new Error('defaults not set');
 	}

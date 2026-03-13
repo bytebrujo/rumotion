@@ -1,4 +1,4 @@
-import type {FfmpegOverrideFn} from '@remotion/renderer';
+import type {FfmpegOverrideFn} from '@picus/renderer';
 
 let ffmpegOverrideFn: FfmpegOverrideFn = ({args}) => args;
 

@@ -1,9 +1,9 @@
 import {afterEach, beforeAll, beforeEach, expect, test} from 'bun:test';
 import fs from 'fs';
 import path from 'path';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import execa from 'execa';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 
 const outputPath = path.join(process.cwd(), 'packages/example/out.mp4');
 
@@ -14,7 +14,7 @@ beforeAll(async () => {
 	if (process.env.CI) {
 		return;
 	}
-	await execa('bun', ['x', 'remotion', 'bundle'], {
+	await execa('bun', ['x', 'picus', 'bundle'], {
 		cwd: path.join(process.cwd(), '..', 'example'),
 	});
 });
@@ -38,7 +38,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 				'ten-frame-tester',
@@ -85,7 +85,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 
@@ -119,7 +119,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 				'ten-frame-tester',
@@ -147,7 +147,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 
@@ -174,7 +174,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 				'ten-frame-tester',
@@ -219,7 +219,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 				'ten-frame-tester',
@@ -257,7 +257,7 @@ test(
 		const out = outputPath.replace('mp4', 'wav');
 		const task = execa(
 			'bun',
-			['x', 'remotion', 'render', 'build', 'audio-testing', out],
+			['x', 'picus', 'render', 'build', 'audio-testing', out],
 			{
 				cwd: path.join(process.cwd(), '..', 'example'),
 			},
@@ -295,7 +295,7 @@ test(
 		const out = outputPath.replace('mp4', 'mp3');
 		const task = execa(
 			'bun',
-			['x', 'remotion', 'render', 'build', 'audio-testing', out],
+			['x', 'picus', 'render', 'build', 'audio-testing', out],
 			{
 				cwd: path.join(process.cwd(), '..', 'example'),
 			},
@@ -331,7 +331,7 @@ test(
 		const out = outputPath.replace('mp4', 'aac');
 		const task = execa(
 			'bun',
-			['x', 'remotion', 'render', 'build', 'audio-testing', out],
+			['x', 'picus', 'render', 'build', 'audio-testing', out],
 			{
 				cwd: path.join(process.cwd(), '..', 'example'),
 			},
@@ -370,7 +370,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 				'gif',
@@ -420,7 +420,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 				'--concurrency=1',
@@ -461,7 +461,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 				'--concurrency=1',
@@ -495,7 +495,7 @@ test(
 		const out = outputPath.replace('.mp4', '.png');
 		await Bun.write('props.json', JSON.stringify({flag: true}));
 		const task = await execa(
-			'node_modules/.bin/remotion',
+			'node_modules/.bin/picus',
 			[
 				'still',
 				'build',
@@ -510,7 +510,7 @@ test(
 				cwd: path.join(process.cwd(), '..', 'example'),
 				// @ts-expect-error staticfile
 				env: {
-					REMOTION_FLAG: 'hi',
+					PICUS_FLAG: 'hi',
 				},
 			},
 		);
@@ -527,7 +527,7 @@ test(
 
 		const randomDuration = Math.round(Math.random() * 18 + 2);
 		const task = await execa(
-			'node_modules/.bin/remotion',
+			'node_modules/.bin/picus',
 			[
 				'render',
 				'build',
@@ -595,7 +595,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'still',
 				'build',
 				'huge-payload',
@@ -619,7 +619,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'--concurrency=1',
 				'build',
@@ -646,7 +646,7 @@ test(
 	async () => {
 		const task = await execa(
 			'bun',
-			['x', 'remotion', 'compositions', 'build'],
+			['x', 'picus', 'compositions', 'build'],
 			{
 				cwd: path.join(process.cwd(), '..', 'example'),
 				reject: false,
@@ -665,7 +665,7 @@ test(
 	async () => {
 		await execa(
 			'bun',
-			['x', 'remotion', 'still', 'build', 'wrapped-in-context', outputPath],
+			['x', 'picus', 'still', 'build', 'wrapped-in-context', outputPath],
 			{
 				cwd: path.join(process.cwd(), '..', 'example'),
 			},

@@ -3,7 +3,7 @@
  * Verifies that the studio schema editor works with zod v4.
  */
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {z} from 'zod/v4';
 
 export const zodV4Schema = z.object({

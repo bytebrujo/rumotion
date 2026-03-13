@@ -1,4 +1,4 @@
-import {Button, Card, Tabs, TabsList, TabsTrigger} from '@remotion/design';
+import {Button, Card, Tabs, TabsList, TabsTrigger} from '@picus/design';
 import React from 'react';
 import {ConstantEditor} from './ConstantEditor';
 import {InterpolateEditor} from './InterpolateEditor';

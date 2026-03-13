@@ -1,5 +1,5 @@
 import type {WrappedAudioBuffer} from 'mediabunny';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {roundTo4Digits} from '../helpers/round-to-4-digits';
 import type {PrewarmedAudioIteratorCache} from '../prewarm-iterator-for-looping';
 import {ALLOWED_GLOBAL_TIME_ANCHOR_SHIFT} from '../set-global-time-anchor';

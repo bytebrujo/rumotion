@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/animation-utils"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/animation-utils"
 	},
-	"name": "@remotion/animation-utils",
+	"name": "@picus/animation-utils",
 	"author": {
 		"name": "Chetan Karwa",
 		"email": "cbkarwa@gmail.com"
@@ -20,7 +20,7 @@
 		"test": "bun test src"
 	},
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"files": [
 		"dist",
@@ -31,7 +31,7 @@
 		"react-dom": ">=16.8.0"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
@@ -48,8 +48,8 @@
 		"access": "public"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"animation-utils"
 	],
-	"homepage": "https://www.remotion.dev/docs/animation-utils/"
+	"homepage": "https://www.picus.dev/docs/animation-utils/"
 }

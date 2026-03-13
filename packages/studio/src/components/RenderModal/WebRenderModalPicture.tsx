@@ -1,4 +1,4 @@
-import type {WebRendererQuality} from '@remotion/web-renderer';
+import type {WebRendererQuality} from '@picus/web-renderer';
 import type React from 'react';
 import {useCallback, useMemo} from 'react';
 import {Checkbox} from '../Checkbox';

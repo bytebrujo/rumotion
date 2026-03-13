@@ -11,14 +11,14 @@ import type {
 	LoopVolumeCurveBehavior,
 	SequenceControls,
 	VolumeProp,
-} from 'remotion';
+} from 'picus';
 import {
 	Html5Video,
 	Internals,
 	useBufferState,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {getTimeInSeconds} from '../get-time-in-seconds';
 import {MediaPlayer} from '../media-player';
 import {type MediaOnError, callOnErrorAndResolve} from '../on-error';
@@ -253,7 +253,7 @@ const VideoForPreviewAssertedShowing: React.FC<
 
 						// action === 'fallback'
 						Internals.Log.warn(
-							{logLevel, tag: '@remotion/media'},
+							{logLevel, tag: '@picus/media'},
 							fallbackMessage,
 						);
 						setShouldFallbackToNativeVideo(true);
@@ -262,7 +262,7 @@ const VideoForPreviewAssertedShowing: React.FC<
 					if (result.type === 'unknown-container-format') {
 						handleError(
 							new Error(`Unknown container format ${preloadedSrc}.`),
-							`Unknown container format for ${preloadedSrc} (Supported formats: https://www.remotion.dev/docs/mediabunny/formats), falling back to <OffthreadVideo>`,
+							`Unknown container format for ${preloadedSrc} (Supported formats: https://www.picus.dev/docs/mediabunny/formats), falling back to <OffthreadVideo>`,
 						);
 						return;
 					}
@@ -309,7 +309,7 @@ const VideoForPreviewAssertedShowing: React.FC<
 					}
 
 					Internals.Log.error(
-						{logLevel, tag: '@remotion/media'},
+						{logLevel, tag: '@picus/media'},
 						'[VideoForPreview] Failed to initialize MediaPlayer',
 						errorToUse,
 					);
@@ -328,7 +328,7 @@ const VideoForPreviewAssertedShowing: React.FC<
 			}
 
 			Internals.Log.error(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				'[VideoForPreview] MediaPlayer initialization failed',
 				errorToUse,
 			);
@@ -338,7 +338,7 @@ const VideoForPreviewAssertedShowing: React.FC<
 		return () => {
 			if (mediaPlayerRef.current) {
 				Internals.Log.trace(
-					{logLevel, tag: '@remotion/media'},
+					{logLevel, tag: '@picus/media'},
 					`[VideoForPreview] Disposing MediaPlayer`,
 				);
 				mediaPlayerRef.current.dispose();

@@ -1,4 +1,4 @@
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export type StillHelloWorldType = {
 	message: string;

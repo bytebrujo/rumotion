@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
 import {deleteService} from '../../../api/delete-service';
 import {getServices} from '../../../api/get-services';
 import {getGcpRegion} from '../../get-gcp-region';

@@ -1,15 +1,15 @@
 import type {IncomingMessage} from 'node:http';
 import http from 'node:http';
-import type {WebpackOverrideFn} from '@remotion/bundler';
-import {BundlerInternals, webpack} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {WebpackOverrideFn} from '@picus/bundler';
+import {BundlerInternals, webpack} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	GitSource,
 	RenderDefaults,
 	RenderJob,
-} from '@remotion/studio-shared';
-import {detectRemotionServer} from '../detect-remotion-server';
+} from '@picus/studio-shared';
+import {detectPicusServer} from '../detect-picus-server';
 import {handleRoutes} from '../routes';
 import type {QueueMethods} from './api-types';
 import {wdm} from './dev-middleware';
@@ -38,7 +38,7 @@ export const startServer = async (options: {
 	port: number | null;
 	maxTimelineTracks: number | null;
 	bufferStateDelayInMilliseconds: number | null;
-	remotionRoot: string;
+	picusRoot: string;
 	keyboardShortcutsEnabled: boolean;
 	experimentalClientSideRenderingEnabled: boolean;
 	experimentalVisualModeEnabled: boolean;
@@ -72,9 +72,9 @@ export const startServer = async (options: {
 	const onPortUnavailable = options.forceNew
 		? undefined
 		: async (port: number): Promise<'continue' | 'stop'> => {
-				const detection = await detectRemotionServer({
+				const detection = await detectPicusServer({
 					port,
-					cwd: options.remotionRoot,
+					cwd: options.picusRoot,
 					hostname: portConfig.hostsToTry[0],
 				});
 				return detection.type === 'match' ? 'stop' : 'continue';
@@ -87,7 +87,7 @@ export const startServer = async (options: {
 		environment: 'development' as const,
 		webpackOverride: options?.webpackOverride,
 		maxTimelineTracks: options?.maxTimelineTracks ?? null,
-		remotionRoot: options.remotionRoot,
+		picusRoot: options.picusRoot,
 		keyboardShortcutsEnabled: options.keyboardShortcutsEnabled,
 		experimentalClientSideRenderingEnabled:
 			options.experimentalClientSideRenderingEnabled,
@@ -142,7 +142,7 @@ export const startServer = async (options: {
 					liveEventsServer,
 					getCurrentInputProps: options.getCurrentInputProps,
 					getEnvVariables: options.getEnvVariables,
-					remotionRoot: options.remotionRoot,
+					picusRoot: options.picusRoot,
 					entryPoint: options.userDefinedComponent,
 					publicDir: options.publicDir,
 					logLevel: options.logLevel,

@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-cloudrun-cli-services-deploy.png
 sidebar_label: deploy
-title: 'npx remotion cloudrun services deploy'
+title: 'npx picus cloudrun services deploy'
 slug: /cloudrun/cli/services/deploy
 crumb: 'Cloud Run CLI Reference'
 ---
@@ -13,10 +13,10 @@ crumb: 'Cloud Run CLI Reference'
 </ExperimentalBadge>
 
 ```
-npx remotion cloudrun services deploy
+npx picus cloudrun services deploy
 ```
 
-Creates a new service in your GCP project. If a service exists in the same region, with the same Remotion version, with the same amount of memory, disk space and timeout duration, the name of the already deployed service will be returned instead.
+Creates a new service in your GCP project. If a service exists in the same region, with the same Picus version, with the same amount of memory, disk space and timeout duration, the name of the already deployed service will be returned instead.
 
 <details>
   <summary>Example output</summary>
@@ -24,7 +24,7 @@ Creates a new service in your GCP project. If a service exists in the same regio
     Validating Deployment of Cloud Run Service:
     <br />
     <br />
-    Remotion Version: 3.3.95
+    Picus Version: 3.3.95
     <br />
     Memory Limit: 2Gi
     <br />
@@ -32,7 +32,7 @@ Creates a new service in your GCP project. If a service exists in the same regio
     <br />
     Timeout: 300
     <br />
-    Project Name: remotion-example
+    Project Name: picus-example
     <br />
     Region: us-east1
     <br />
@@ -44,7 +44,7 @@ Creates a new service in your GCP project. If a service exists in the same regio
     Cloud Run Deployed!
     <br />
     <br />
-    Service name: remotion--3-3-95--mem512mi--cpu2--t-1200
+    Service name: picus--3-3-95--mem512mi--cpu2--t-1200
     <br />
     Version: 3.3.95
     <br />
@@ -55,9 +55,9 @@ Creates a new service in your GCP project. If a service exists in the same regio
     <br />
     Region: us-east1
     <br />
-    Service URL: https://remotion--3-3-95--mem512mi--cpu2--t-1200-1a2b3c4d5e-ue.a.run.app
+    Service URL: https://picus--3-3-95--mem512mi--cpu2--t-1200-1a2b3c4d5e-ue.a.run.app
     <br />
-    GCP Console URL: https://console.cloud.google.com/run/detail/us-east1/remotion--3-3-95--mem512mi--cpu2--t-1200/logs
+    GCP Console URL: https://console.cloud.google.com/run/detail/us-east1/picus--3-3-95--mem512mi--cpu2--t-1200/logs
     <br />
     <br />
   </pre>

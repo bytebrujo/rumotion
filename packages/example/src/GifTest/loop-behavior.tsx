@@ -1,5 +1,5 @@
-import {Gif} from '@remotion/gif';
-import {Series} from 'remotion';
+import {Gif} from '@picus/gif';
+import {Series} from 'picus';
 
 const GifLoopBehavior: React.FC = () => {
 	return (

@@ -1,11 +1,11 @@
 const assert = require('assert');
-const {interpolate} = require('remotion');
-const {Player} = require('@remotion/player');
-const {VERSION} = require('remotion/version');
-const {enableSkia} = require('@remotion/skia/enable');
-const {Gif} = require('@remotion/gif');
-const {CameraMotionBlur} = require('@remotion/motion-blur');
-const {ThreeCanvas} = require('@remotion/three');
+const {interpolate} = require('picus');
+const {Player} = require('@picus/player');
+const {VERSION} = require('picus/version');
+const {enableSkia} = require('@picus/skia/enable');
+const {Gif} = require('@picus/gif');
+const {CameraMotionBlur} = require('@picus/motion-blur');
+const {ThreeCanvas} = require('@picus/three');
 
 const val = interpolate(1, [0, 1], [0, 100]);
 

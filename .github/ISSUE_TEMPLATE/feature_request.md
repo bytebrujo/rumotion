@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Ask for a feature to be added to Remotion.
+about: Ask for a feature to be added to Picus.
 title: ""
 labels: ""
 assignees: ""

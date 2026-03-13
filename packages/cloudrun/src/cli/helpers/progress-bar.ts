@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import {Internals} from 'remotion';
+import {CliInternals} from '@picus/cli';
+import {Internals} from 'picus';
 
 export type BundleProgress = {
 	progress: number;

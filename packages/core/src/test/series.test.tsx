@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {AbsoluteFill} from '../AbsoluteFill.js';
-import {CanUseRemotionHooksProvider} from '../CanUseRemotionHooks.js';
+import {CanUsePicusHooksProvider} from '../CanUsePicusHooks.js';
 import {Internals} from '../internals.js';
 import {Series} from '../series/index.js';
 import type {TimelineContextValue} from '../TimelineContext.js';
@@ -52,13 +52,13 @@ const renderForFrame = (frame: number, markup: React.ReactNode) => {
 	};
 
 	return renderToString(
-		<CanUseRemotionHooksProvider>
+		<CanUsePicusHooksProvider>
 			<AbsoluteTimeContext.Provider value={timelineContextValue}>
 				<TimelineContext.Provider value={timelineContextValue}>
 					{markup}
 				</TimelineContext.Provider>
 			</AbsoluteTimeContext.Provider>
-		</CanUseRemotionHooksProvider>,
+		</CanUsePicusHooksProvider>,
 	);
 };
 
@@ -467,7 +467,7 @@ test('should be the same with or without premountFor', () => {
 	const outerHTML = renderForFrame(
 		68,
 		<WrapSequenceContext>
-			<Internals.RemotionEnvironmentContext
+			<Internals.PicusEnvironmentContext
 				value={{
 					isRendering: false,
 					isClientSideRendering: false,
@@ -490,7 +490,7 @@ test('should be the same with or without premountFor', () => {
 						</Series>
 					</Series.Sequence>
 				</Series>
-			</Internals.RemotionEnvironmentContext>
+			</Internals.PicusEnvironmentContext>
 		</WrapSequenceContext>,
 	);
 	expect(outerHTML).toContain('this must be printed');

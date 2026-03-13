@@ -5,9 +5,9 @@ import {lineColumnToNodePath} from './test-utils';
 
 const makeComponent = (
 	translateValue: string,
-) => `import {Video} from '@remotion/media';
+) => `import {Video} from '@picus/media';
 
-const src = 'https://remotion.media/video.mp4';
+const src = 'https://picus.media/video.mp4';
 
 export const Component = () => {
 	return (

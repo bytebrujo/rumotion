@@ -9,7 +9,7 @@ export type HeartProps = MakeHeartProps & AllShapesProps;
 /**
  * @description Renders an SVG element containing a heart.
  * @param {Number} size The size of the heart.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/heart)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/heart)
  */
 export const Heart: React.FC<HeartProps> = ({
 	aspectRatio,

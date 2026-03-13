@@ -14,7 +14,7 @@ export type ArrowProps = MakeArrowProps & AllShapesProps;
  * @param {Number} shaftWidth The width of the arrow shaft. Default 80.
  * @param {string} direction The direction the arrow points. Default 'right'.
  * @param {Number} cornerRadius Rounds the corner using an arc. Similar to CSS's border-radius.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/arrow)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/arrow)
  */
 export const Arrow: React.FC<ArrowProps> = ({
 	length,

@@ -3,17 +3,17 @@ import {Canvas} from '@shopify/react-native-skia';
 import type {ReactNode} from 'react';
 import React, {useMemo} from 'react';
 import type {ViewProps} from 'react-native';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 
-type RemotionCanvasProps = CanvasProps & {
+type PicusCanvasProps = CanvasProps & {
 	readonly children: ReactNode;
 	readonly width: number;
 	readonly height: number;
 };
 
 /**
- * @description A React Native Skia <Canvas /> component that wraps Remotion contexts.
- * @see [Documentation](https://www.remotion.dev/docs/skia/skia-canvas)
+ * @description A React Native Skia <Canvas /> component that wraps Picus contexts.
+ * @see [Documentation](https://www.picus.dev/docs/skia/skia-canvas)
  */
 export const SkiaCanvas = ({
 	children,
@@ -21,8 +21,8 @@ export const SkiaCanvas = ({
 	width,
 	style,
 	...otherProps
-}: RemotionCanvasProps) => {
-	const contexts = Internals.useRemotionContexts();
+}: PicusCanvasProps) => {
+	const contexts = Internals.usePicusContexts();
 
 	const mergedStyles: React.CSSProperties = useMemo(() => {
 		return {
@@ -41,9 +41,9 @@ export const SkiaCanvas = ({
 
 	return (
 		<Canvas {...props}>
-			<Internals.RemotionContextProvider contexts={contexts}>
+			<Internals.PicusContextProvider contexts={contexts}>
 				{children}
-			</Internals.RemotionContextProvider>
+			</Internals.PicusContextProvider>
 		</Canvas>
 	);
 };

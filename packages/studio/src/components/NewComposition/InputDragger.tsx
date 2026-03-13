@@ -4,13 +4,13 @@ import type {
 	PointerEventHandler,
 } from 'react';
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 import {BLUE} from '../../helpers/colors';
 import {noop} from '../../helpers/noop';
 import {getClickLock, setClickLock} from '../../state/input-dragger-click-lock';
 import {HigherZIndex} from '../../state/z-index';
 import type {RemInputStatus} from './RemInput';
-import {RemotionInput, inputBaseStyle} from './RemInput';
+import {PicusInput, inputBaseStyle} from './RemInput';
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
 	readonly onValueChange: (newVal: number) => void;
@@ -62,7 +62,7 @@ const InputDraggerForwardRefFn: React.ForwardRefRenderFunction<
 
 	const span: React.CSSProperties = useMemo(
 		() => ({
-			color: dragging ? 'var(--remotion-cli-internals-blue-hovered)' : BLUE,
+			color: dragging ? 'var(--picus-cli-internals-blue-hovered)' : BLUE,
 			cursor: 'ew-resize',
 			userSelect: 'none',
 			WebkitUserSelect: 'none',
@@ -220,7 +220,7 @@ const InputDraggerForwardRefFn: React.ForwardRefRenderFunction<
 	if (inputFallback) {
 		return (
 			<HigherZIndex onEscape={onEscape} onOutsideClick={noop}>
-				<RemotionInput
+				<PicusInput
 					ref={fallbackRef}
 					autoFocus
 					onKeyPress={onKeyPress}
@@ -244,7 +244,7 @@ const InputDraggerForwardRefFn: React.ForwardRefRenderFunction<
 		<button
 			ref={ref}
 			type="button"
-			className={'__remotion_input_dragger'}
+			className={'__picus_input_dragger'}
 			style={style}
 			onClick={onClick}
 			onFocus={onFocus}

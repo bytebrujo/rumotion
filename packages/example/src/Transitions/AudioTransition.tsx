@@ -1,9 +1,9 @@
 import {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
-} from '@remotion/transitions';
+} from '@picus/transitions';
 import React from 'react';
-import {Html5Audio, staticFile} from 'remotion';
+import {Html5Audio, staticFile} from 'picus';
 
 export function addSound<T extends Record<string, unknown>>(
 	transition: TransitionPresentation<T>,
@@ -32,10 +32,10 @@ export function addSound<T extends Record<string, unknown>>(
 	};
 }
 
-import {springTiming, TransitionSeries} from '@remotion/transitions';
-import {slide} from '@remotion/transitions/slide';
-import {wipe} from '@remotion/transitions/wipe';
-import {AbsoluteFill} from 'remotion';
+import {springTiming, TransitionSeries} from '@picus/transitions';
+import {slide} from '@picus/transitions/slide';
+import {wipe} from '@picus/transitions/wipe';
+import {AbsoluteFill} from 'picus';
 
 export const Letter: React.FC<{
 	readonly children: React.ReactNode;

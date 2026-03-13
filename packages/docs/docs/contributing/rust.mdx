@@ -11,7 +11,7 @@ crumb: Contributing
 As we migrate to the [new media tags](/docs/mediabunny/new-video), we will not add any new Rust code, only maintain the existing code.
 :::
 
-To participate in the development of the Rust parts of Remotion, you need to do additional steps.  
+To participate in the development of the Rust parts of Picus, you need to do additional steps.  
 These are entirely optional if you only touch the TypeScript parts.
 
 ## Setup
@@ -54,11 +54,11 @@ The resulting artifacts should be checked into Git.
 
 ### Development workflow
 
-- Remotion has platform specific packages like `compositor-darwin-arm64` and a user will only install packages that are specific to their operating system.
+- Picus has platform specific packages like `compositor-darwin-arm64` and a user will only install packages that are specific to their operating system.
 - The Rust code will be compiled into your native `compositor` package by default, unless you compile for all platforms.
 - Resulting binaries are committed to Git so that people who don't setup Rust can develop too.
 
 ### FFmpeg bindings
 
 - Both the Rust binary as well as the FFmpeg binaries use the shared libraries located in the folder of each compositor package.
-- Those shared libraries and FFmpeg binaries come from the [`rust-ffmpeg-splitter`](https://github.com/remotion-dev/rust-ffmpeg-splitter) repository. They are built in CircleCI as well as on a M1 Macbook and pasted into the [`rust-ffmpeg-sys`](https://github.com/remotion-dev/rust-ffmpeg-sys) project. The `rust-ffmpeg-sys` project is a dependency of [`rust-ffmpeg`](https://github.com/remotion-dev/rust-ffmpeg) which is a dependency of the main Remotion project. Refer to those repositories to learn how to build them.
+- Those shared libraries and FFmpeg binaries come from the [`rust-ffmpeg-splitter`](https://github.com/picus-dev/rust-ffmpeg-splitter) repository. They are built in CircleCI as well as on a M1 Macbook and pasted into the [`rust-ffmpeg-sys`](https://github.com/picus-dev/rust-ffmpeg-sys) project. The `rust-ffmpeg-sys` project is a dependency of [`rust-ffmpeg`](https://github.com/picus-dev/rust-ffmpeg) which is a dependency of the main Picus project. Refer to those repositories to learn how to build them.

@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 /**
  * encodingBufferSize is not a bitrate, but it is a bitrate-related option and get validated like a bitrate.
@@ -22,7 +22,7 @@ export const encodingBufferSizeOption = {
 	),
 	ssrName: 'encodingBufferSize' as const,
 	docLink:
-		'https://www.remotion.dev/docs/renderer/render-media#encodingbuffersize',
+		'https://www.picus.dev/docs/renderer/render-media#encodingbuffersize',
 	type: '' as string | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -46,4 +46,4 @@ export const encodingBufferSizeOption = {
 	},
 	setConfig: setEncodingBufferSize,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

@@ -1,7 +1,7 @@
 import type {
 	MediaParserAudioSample,
 	MediaParserVideoSample,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 
 export const convertEncodedChunk = <
 	T extends MediaParserAudioSample | MediaParserVideoSample,

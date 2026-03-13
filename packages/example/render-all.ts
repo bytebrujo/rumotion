@@ -1,5 +1,5 @@
-import {bundle} from '@remotion/bundler';
-import {getCompositions, renderMedia} from '@remotion/renderer';
+import {bundle} from '@picus/bundler';
+import {getCompositions, renderMedia} from '@picus/renderer';
 import {webpackOverride} from './src/webpack-override.mjs';
 
 const start = async () => {

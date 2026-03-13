@@ -1,4 +1,4 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {Page} from '../browser/BrowserPage';
 import type {CallFrame, ExceptionThrownEvent} from '../browser/devtools-types';
 import type {UnsymbolicatedStackFrame} from '../parse-browser-error-stack';

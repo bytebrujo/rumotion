@@ -1,7 +1,7 @@
 import {
 	MediaParserAbortError,
 	type MediaParserLogLevel,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import type {ConvertMediaAudioCodec} from './get-available-audio-codecs';
 import type {IoSynchronizer} from './io-manager/io-synchronizer';
 import {makeIoSynchronizer} from './io-manager/io-synchronizer';

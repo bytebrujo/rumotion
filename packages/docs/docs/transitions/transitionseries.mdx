@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-transitionseries.png
-crumb: '@remotion/transitions'
+crumb: '@picus/transitions'
 sidebar_label: '<TransitionSeries>'
 title: '<TransitionSeries>'
 ---
@@ -21,13 +21,13 @@ Between any two sequences, you can place either a transition or an overlay:
 ### Transition example
 
 ```tsx twoslash title="TransitionExample.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 const Fill = ({color}: {color: string}) => <AbsoluteFill style={{backgroundColor: color}} />;
 
 // ---cut---
-import {linearTiming, springTiming, TransitionSeries} from '@remotion/transitions';
-import {fade} from '@remotion/transitions/fade';
-import {wipe} from '@remotion/transitions/wipe';
+import {linearTiming, springTiming, TransitionSeries} from '@picus/transitions';
+import {fade} from '@picus/transitions/fade';
+import {wipe} from '@picus/transitions/wipe';
 
 export const TransitionExample: React.FC = () => {
   return (
@@ -53,12 +53,12 @@ export const TransitionExample: React.FC = () => {
 ### Overlay example<AvailableFrom v="4.0.415" />
 
 ```tsx twoslash title="OverlayExample.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 const Fill = ({color}: {color: string}) => <AbsoluteFill style={{backgroundColor: color}} />;
 
 // ---cut---
-import {LightLeak} from '@remotion/light-leaks';
-import {TransitionSeries} from '@remotion/transitions';
+import {LightLeak} from '@picus/light-leaks';
+import {TransitionSeries} from '@picus/transitions';
 
 export const OverlayExample: React.FC = () => {
   return (
@@ -126,7 +126,7 @@ The overlay must not extend before frame 0 or beyond the duration of the adjacen
 You don't necessarily have to use `<TransitionSeries>` for transitions between scenes. You can also use it to animate the entrace or exit of a scene by putting a transition first or last in the `<TransitionSeries>`.
 
 ```tsx twoslash title="SlideTransition.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -148,8 +148,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import {linearTiming, TransitionSeries} from '@remotion/transitions';
-import {slide} from '@remotion/transitions/slide';
+import {linearTiming, TransitionSeries} from '@picus/transitions';
+import {slide} from '@picus/transitions/slide';
 
 const BasicTransition = () => {
   return (
@@ -173,7 +173,7 @@ const BasicTransition = () => {
 Consider this example:
 
 ```tsx twoslash title="SlideTransition.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -195,8 +195,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import {linearTiming, TransitionSeries} from '@remotion/transitions';
-import {slide} from '@remotion/transitions/slide';
+import {linearTiming, TransitionSeries} from '@picus/transitions';
+import {slide} from '@picus/transitions/slide';
 
 const BasicTransition = () => {
   return (
@@ -222,7 +222,7 @@ During this time, both slides are rendered. This means the total duration of the
 <summary>Example with 3 slides</summary>
 
 ```tsx twoslash title="SlideTransition.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -244,8 +244,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import {linearTiming, TransitionSeries} from '@remotion/transitions';
-import {slide} from '@remotion/transitions/slide';
+import {linearTiming, TransitionSeries} from '@picus/transitions';
+import {slide} from '@picus/transitions/slide';
 
 const BasicTransition = () => {
   return (
@@ -281,7 +281,7 @@ const BasicTransition = () => {
 You can get the duration of a transition by calling `getDurationInFrames()` on the timing:
 
 ```tsx twoslash title="Assuming a framerate of 30fps"
-import {springTiming} from '@remotion/transitions';
+import {springTiming} from '@picus/transitions';
 
 springTiming({config: {damping: 200}}).getDurationInFrames({fps: 30}); // 23
 ```
@@ -300,7 +300,7 @@ springTiming({config: {damping: 200}}).getDurationInFrames({fps: 30}); // 23
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/TransitionSeries.tsx)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/TransitionSeries.tsx)
 - [Transitions](/docs/transitioning)
 - [Timings](/docs/transitions/timings)
 - [Presentations](/docs/transitions/presentations)

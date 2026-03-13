@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/studio-shared"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/studio-shared"
 	},
-	"name": "@remotion/studio-shared",
+	"name": "@picus/studio-shared",
 	"version": "4.0.434",
 	"description": "Internal package for shared objects between the Studio backend and frontend",
 	"main": "dist",
@@ -13,18 +13,18 @@
 		"format": "oxfmt src",
 		"make": "tsgo -d"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"devDependencies": {
-		"@remotion/renderer": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/renderer": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},

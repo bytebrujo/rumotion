@@ -6,7 +6,7 @@ export const validateBucketName = ({
 	bucketName: unknown;
 	bucketNamePrefix: string;
 	options: {
-		mustStartWithRemotion: boolean;
+		mustStartWithPicus: boolean;
 	};
 }) => {
 	if (typeof bucketName !== 'string') {
@@ -16,7 +16,7 @@ export const validateBucketName = ({
 	}
 
 	if (
-		options.mustStartWithRemotion &&
+		options.mustStartWithPicus &&
 		!bucketName.startsWith(bucketNamePrefix)
 	) {
 		throw new Error(

@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT_VALUE = false;
 
@@ -17,7 +17,7 @@ export const darkModeOption = {
 		</>
 	),
 	ssrName: 'darkMode',
-	docLink: 'https://www.remotion.dev/docs/chromium-flags#--dark-mode',
+	docLink: 'https://www.picus.dev/docs/chromium-flags#--dark-mode',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -43,4 +43,4 @@ export const darkModeOption = {
 		darkMode = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

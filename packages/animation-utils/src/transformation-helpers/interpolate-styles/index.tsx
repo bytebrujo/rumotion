@@ -1,5 +1,5 @@
-import type {ExtrapolateType, InterpolateOptions} from 'remotion';
-import {interpolate, interpolateColors} from 'remotion';
+import type {ExtrapolateType, InterpolateOptions} from 'picus';
+import {interpolate, interpolateColors} from 'picus';
 import type {
 	CSSPropertiesKey,
 	CSSPropertiesValue,
@@ -257,7 +257,7 @@ function checkStylesRange(arr: readonly Style[]) {
 
 /*
  * @description A function that interpolates between two styles based on an input range.
- * @see [Documentation](https://remotion.dev/docs/animation-utils/interpolate-styles)
+ * @see [Documentation](https://picus.dev/docs/animation-utils/interpolate-styles)
  */
 export const interpolateStyles = (
 	input: number,

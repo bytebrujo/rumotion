@@ -11,9 +11,9 @@ import type {
 	ToOptions,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
-import type {BrowserSafeApis} from '@remotion/renderer/client';
-import type {_InternalTypes, DownloadBehavior} from 'remotion';
+} from '@picus/renderer';
+import type {BrowserSafeApis} from '@picus/renderer/client';
+import type {_InternalTypes, DownloadBehavior} from 'picus';
 import type {ExpensiveChunk} from './most-expensive-chunks';
 import type {ChunkRetry, CloudProvider, ReceivedArtifact} from './types';
 import type {EnhancedErrorInfo} from './write-error-to-storage';
@@ -408,10 +408,10 @@ export type AfterRenderCost = {
 	disclaimer: string;
 };
 
-export const CONCAT_FOLDER_TOKEN = 'remotion-concat';
+export const CONCAT_FOLDER_TOKEN = 'picus-concat';
 export const MAX_FUNCTIONS_PER_RENDER = 200;
 export const MINIMUM_FRAMES_PER_FUNCTION = 5;
 
-export const REMOTION_CONCATENATED_TOKEN = 'remotion-concatenated-token';
+export const PICUS_CONCATENATED_TOKEN = 'picus-concatenated-token';
 
-export const RENDERER_PATH_TOKEN = 'remotion-bucket';
+export const RENDERER_PATH_TOKEN = 'picus-bucket';

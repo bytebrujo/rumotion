@@ -1,12 +1,12 @@
 ---
 image: /generated/articles-docs-media-video.png
 title: '<Video>'
-crumb: 'API - @remotion/media'
+crumb: 'API - @picus/media'
 ---
 
 :::note
 This is documentation for the new `<Video>` tag.  
-Not to be confused with the older [`<Html5Video>` / `<Video>`](/docs/html5-video) tag from `remotion`.
+Not to be confused with the older [`<Html5Video>` / `<Video>`](/docs/html5-video) tag from `picus`.
 :::
 
 This component imports and displays a video, similar to [`<OffthreadVideo/>`](/docs/offthreadvideo) but during rendering, extracts the exact frame from the video using [Mediabunny](/docs/mediabunny) and displays it in a `<canvas>` tag.
@@ -16,8 +16,8 @@ This component has [native buffering support](/docs/player/buffer-state) enabled
 ## Example
 
 ```tsx twoslash
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Video} from '@picus/media';
 
 export const MyVideo = () => {
   return (
@@ -31,13 +31,13 @@ export const MyVideo = () => {
 You can load a video from an URL as well:
 
 ```tsx twoslash
-import {AbsoluteFill} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill} from 'picus';
+import {Video} from '@picus/media';
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Video src="https://remotion.media/BigBuckBunny.mp4" />
+      <Video src="https://picus.media/BigBuckBunny.mp4" />
     </AbsoluteFill>
   );
 };
@@ -63,8 +63,8 @@ The video will play the range from `00:02:00` to `00:04:00`, meaning the video w
 For exact behavior, see: [Order of operations](/docs/audio/order-of-operations).
 
 ```tsx twoslash
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Video} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
@@ -86,8 +86,8 @@ Allows you to control the volume of the audio in it's entirety or frame by frame
 Read the page on [using audio](/docs/using-audio) to learn more.
 
 ```tsx twoslash title="Setting a static volume"
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Video} from '@picus/media';
 
 export const MyVideo = () => {
   return (
@@ -99,13 +99,13 @@ export const MyVideo = () => {
 ```
 
 ```tsx twoslash title="Changing the volume over time"
-import {AbsoluteFill, interpolate, staticFile} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill, interpolate, staticFile} from 'picus';
+import {Video} from '@picus/media';
 
 export const MyVideo = () => {
   return (
     <AbsoluteFill>
-      <Video volume={(f) => interpolate(f, [0, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} src={'https://remotion.media/video.mp4'} />
+      <Video volume={(f) => interpolate(f, [0, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} src={'https://picus.media/video.mp4'} />
     </AbsoluteFill>
   );
 };
@@ -113,7 +113,7 @@ export const MyVideo = () => {
 
 ### `name?`
 
-A name and that will be shown as the label of the sequence in the timeline of the Remotion Studio. This property is purely for helping you keep track of items in the timeline.
+A name and that will be shown as the label of the sequence in the timeline of the Picus Studio. This property is purely for helping you keep track of items in the timeline.
 
 ### `onError?`<AvailableFrom v="4.0.404" />
 
@@ -123,13 +123,13 @@ Handle errors that occur during video processing. The callback receives an `Erro
 - Return `'fail'` to fail the render immediately
 
 ```tsx twoslash
-import {staticFile} from 'remotion';
-import {Video} from '@remotion/media';
+import {staticFile} from 'picus';
+import {Video} from '@picus/media';
 
 export const MyVideo = () => {
   return (
     <Video
-      src={'https://remotion.media/video.mp4'}
+      src={'https://picus.media/video.mp4'}
       onError={(error) => {
         console.log('Video error:', error.message);
 
@@ -152,14 +152,14 @@ export const MyVideo = () => {
 Controls the speed of the video. `1` is the default and means regular speed, `0.5` slows down the video so it's twice as long and `2` speeds up the video so it's twice as fast.
 
 ```tsx twoslash title="Example of a video playing twice as fast"
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Video} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Video playbackRate={2} src={'https://remotion.media/video.mp4'} />
+      <Video playbackRate={2} src={'https://picus.media/video.mp4'} />
     </AbsoluteFill>
   );
 };
@@ -174,13 +174,13 @@ Playing a video in reverse is not supported.
 You can drop the audio of the video by adding a `muted` prop:
 
 ```tsx twoslash title="Example of a muted video"
-import {AbsoluteFill, OffthreadVideo} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill, OffthreadVideo} from 'picus';
+import {Video} from '@picus/media';
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Video muted src="https://remotion.media/BigBuckBunny.mp4" />
+      <Video muted src="https://picus.media/BigBuckBunny.mp4" />
     </AbsoluteFill>
   );
 };
@@ -191,8 +191,8 @@ export const MyComposition = () => {
 You can pass any style you can pass to a native HTML `<canvas>` element.
 
 ```tsx twoslash
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Video} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
@@ -209,14 +209,14 @@ export const MyComposition = () => {
 Makes the video loop indefinitely.
 
 ```tsx twoslash title="Example of a looped video"
-import {AbsoluteFill} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill} from 'picus';
+import {Video} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Video loop src="https://remotion.media/BigBuckBunny.mp4" />
+      <Video loop src="https://picus.media/BigBuckBunny.mp4" />
     </AbsoluteFill>
   );
 };
@@ -235,7 +235,7 @@ Can be either `"repeat"` (default, start from 0 on each iteration) or `"extend"`
 
 ### `showInTimeline?`
 
-If set to `false`, no layer will be shown in the timeline of the Remotion Studio. The default is `true`.
+If set to `false`, no layer will be shown in the timeline of the Picus Studio. The default is `true`.
 
 ### `delayRenderTimeoutInMilliseconds?`
 
@@ -256,14 +256,14 @@ The callback is called with a [`CanvasImageSource`](https://developer.mozilla.or
 Select the audio stream to use. The default is `0`.
 
 ```tsx twoslash
-import {AbsoluteFill} from 'remotion';
-import {Video} from '@remotion/media';
+import {AbsoluteFill} from 'picus';
+import {Video} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Video audioStreamIndex={1} src={'https://remotion.media/multiple-audio-streams.mov'} />
+      <Video audioStreamIndex={1} src={'https://picus.media/multiple-audio-streams.mov'} />
     </AbsoluteFill>
   );
 };
@@ -290,10 +290,10 @@ This is useful for [embedding a video as a texture in Three.js](/docs/videos/as-
 ### `fallbackOffthreadVideoProps?`
 
 When a [fallback to `<OffthreadVideo>`](/docs/media/fallback) happens, this prop allows you to pass props to the fallback `<OffthreadVideo>` component.  
-Only props that are not supported by `<Video>` from `@remotion/media` need to be specified here - props that apply for both tags will automatically be forwarded and do not need to be specified here.
+Only props that are not supported by `<Video>` from `@picus/media` need to be specified here - props that apply for both tags will automatically be forwarded and do not need to be specified here.
 
 :::note
-This prop has no effect when using [`@remotion/web-renderer`](/docs/web-renderer) for client-side rendering, as fallback is not possible. See [Fallback is not possible in client-side rendering](/docs/media/fallback#fallback-is-not-possible-in-client-side-rendering).
+This prop has no effect when using [`@picus/web-renderer`](/docs/web-renderer) for client-side rendering, as fallback is not possible. See [Fallback is not possible in client-side rendering](/docs/media/fallback#fallback-is-not-possible-in-client-side-rendering).
 :::
 
 #### `acceptableTimeShiftInSeconds?`
@@ -335,7 +335,7 @@ By default, if the video cannot be embedded using this tag, [a fallback to `<Off
 Pass this prop to disable the fallback and fail the render instead.
 
 :::note
-When using [`@remotion/web-renderer`](/docs/web-renderer) for client-side rendering, fallback is not possible and the render will always fail if the video cannot be embedded. See [Fallback is not possible in client-side rendering](/docs/media/fallback#fallback-is-not-possible-in-client-side-rendering).
+When using [`@picus/web-renderer`](/docs/web-renderer) for client-side rendering, fallback is not possible and the render will always fail if the video cannot be embedded. See [Fallback is not possible in client-side rendering](/docs/media/fallback#fallback-is-not-possible-in-client-side-rendering).
 :::
 
 ### `debugOverlay?`
@@ -348,8 +348,8 @@ Logs audio scheduling information to the console. This is useful for debugging a
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/media/src/video/video.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/media/src/video/video.tsx)
 - [Comparison of video tags](/docs/video-tags)
-- [`<Audio>` (from `@remotion/media`)](/docs/media/audio)
-- [`<Html5Video>` (from `remotion`)](/docs/html5-video)
+- [`<Audio>` (from `@picus/media`)](/docs/media/audio)
+- [`<Html5Video>` (from `picus`)](/docs/html5-video)
 - [`<OffthreadVideo>`](/docs/offthreadvideo)

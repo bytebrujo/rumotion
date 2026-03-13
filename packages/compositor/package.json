@@ -1,18 +1,18 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/compositor"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/compositor"
 	},
-	"name": "@remotion/compositor",
+	"name": "@picus/compositor",
 	"version": "4.0.434",
-	"description": "Rust binary for Remotion",
+	"description": "Rust binary for Picus",
 	"sideEffects": false,
 	"scripts": {
 		"build-all": "bun build.ts --all"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {},
 	"peerDependencies": {},

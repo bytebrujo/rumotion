@@ -7,7 +7,7 @@ const getPrefix = () => {
 		sessionId = crypto.randomUUID();
 	}
 
-	return `__remotion_render:${sessionId}:`;
+	return `__picus_render:${sessionId}:`;
 };
 
 export const cleanupStaleOpfsFiles = async (): Promise<void> => {
@@ -15,7 +15,7 @@ export const cleanupStaleOpfsFiles = async (): Promise<void> => {
 		const root = await navigator.storage.getDirectory();
 		for await (const [name] of root.entries()) {
 			if (
-				name.startsWith('__remotion_render:') &&
+				name.startsWith('__picus_render:') &&
 				!name.startsWith(getPrefix())
 			) {
 				await root.removeEntry(name);

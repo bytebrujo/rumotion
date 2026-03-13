@@ -10,7 +10,7 @@ type LottieMetadata = {
 
 /**
  * @description Get the basic metadata such as dimensions, duration and framerate of a Lottie animation.
- * @see [Documentation](https://www.remotion.dev/docs/lottie/getlottiemetadata)
+ * @see [Documentation](https://www.picus.dev/docs/lottie/getlottiemetadata)
  */
 export const getLottieMetadata = (
 	animationData: LottieAnimationData,

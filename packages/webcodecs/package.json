@@ -1,15 +1,15 @@
 {
-	"name": "@remotion/webcodecs",
+	"name": "@picus/webcodecs",
 	"version": "4.0.434",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/esm/index.mjs",
 	"sideEffects": false,
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/webcodecs"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/webcodecs"
 	},
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"scripts": {
 		"formatting": "oxfmt src --check",
@@ -25,16 +25,16 @@
 		"!dist/test",
 		"!dist/it-tests"
 	],
-	"author": "Jonny Burger <jonny@remotion.dev>",
-	"license": "Remotion License (See https://remotion.dev/docs/webcodecs#license)",
+	"author": "Jonny Burger <jonny@picus.dev>",
+	"license": "Picus License (See https://picus.dev/docs/webcodecs#license)",
 	"dependencies": {
-		"@remotion/media-parser": "workspace:*"
+		"@picus/media-parser": "workspace:*"
 	},
 	"peerDependencies": {},
 	"devDependencies": {
 		"@types/dom-webcodecs": "catalog:",
-		"@remotion/example-videos": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/example-videos": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"playwright": "catalog:",
 		"vite": "5.4.21",
 		"@playwright/test": "1.55.1",
@@ -86,5 +86,5 @@
 		}
 	},
 	"description": "Media conversion in the browser",
-	"homepage": "https://remotion.dev/webcodecs"
+	"homepage": "https://picus.dev/webcodecs"
 }

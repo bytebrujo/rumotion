@@ -46,7 +46,7 @@ export const useMediaBuffering = ({
 			// Therefore only calling it after checking if the video
 			// has no future data.
 
-			// Breaks on Firefox though: https://github.com/remotion-dev/remotion/issues/3915
+			// Breaks on Firefox though: https://github.com/picus-dev/picus/issues/3915
 			if (
 				(isPremounting || isPostmounting) &&
 				current.readyState < current.HAVE_FUTURE_DATA
@@ -151,7 +151,7 @@ export const useMediaBuffering = ({
 				// Therefore only calling it after checking if the video
 				// has no future data.
 
-				// Breaks on Firefox though: https://github.com/remotion-dev/remotion/issues/3915
+				// Breaks on Firefox though: https://github.com/picus-dev/picus/issues/3915
 				if (!navigator.userAgent.includes('Firefox/')) {
 					playbackLogging({
 						logLevel,
@@ -186,7 +186,7 @@ export const useMediaBuffering = ({
 		// `src` should be in it, because if changing the source and pausing at the same time,
 		// it gives the chance to load the new source.
 
-		// https://github.com/remotion-dev/remotion/issues/5218
+		// https://github.com/picus-dev/picus/issues/5218
 	}, [
 		buffer,
 		src,

@@ -2,7 +2,7 @@ import {
   makeCancelSignal,
   renderMedia,
   selectComposition,
-} from "@remotion/renderer";
+} from "@picus/renderer";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 

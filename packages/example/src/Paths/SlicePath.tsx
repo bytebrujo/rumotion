@@ -1,7 +1,7 @@
-import {PathInternals, getLength} from '@remotion/paths';
-import {makeStar} from '@remotion/shapes';
+import {PathInternals, getLength} from '@picus/paths';
+import {makeStar} from '@picus/shapes';
 import React from 'react';
-import {interpolate, useCurrentFrame} from 'remotion';
+import {interpolate, useCurrentFrame} from 'picus';
 
 export const SlicePath: React.FC = () => {
 	const frame = useCurrentFrame();

@@ -3,7 +3,7 @@ import React, {useEffect, useMemo, useRef} from 'react';
 const viewBox = 100;
 const lines = 8;
 
-// Generated from https://github.com/remotion-dev/template-next/commit/9282c93f7c51ada31a42e18a94680fa09a14eee3
+// Generated from https://github.com/picus-dev/template-next/commit/9282c93f7c51ada31a42e18a94680fa09a14eee3
 const translated =
 	'M 44 0 L 50 0 a 6 6 0 0 1 6 6 L 56 26 a 6 6 0 0 1 -6 6 L 50 32 a 6 6 0 0 1 -6 -6 L 44 6 a 6 6 0 0 1 6 -6 Z';
 

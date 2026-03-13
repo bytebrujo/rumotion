@@ -1,9 +1,9 @@
 import {existsSync, readdirSync, readFileSync, rmSync, writeFileSync} from 'fs';
 import path from 'path';
-import {BundlerInternals} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {StudioServerInternals} from '@remotion/studio-server';
+import {BundlerInternals} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {StudioServerInternals} from '@picus/studio-server';
 import {chalk} from './chalk';
 import {findEntryPoint} from './entry-point';
 import {getGitSource} from './get-github-repository';
@@ -28,13 +28,13 @@ const {
 } = BrowserSafeApis.options;
 
 export const bundleCommand = async (
-	remotionRoot: string,
+	picusRoot: string,
 	args: string[],
 	logLevel: LogLevel,
 ) => {
 	const {file, reason} = findEntryPoint({
 		args,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		allowDirectory: false,
 	});
@@ -64,7 +64,7 @@ export const bundleCommand = async (
 		);
 		Log.error(
 			{indent: false, logLevel},
-			'See: https://www.remotion.dev/docs/terminology/entry-point',
+			'See: https://www.picus.dev/docs/terminology/entry-point',
 		);
 		process.exit(1);
 	}
@@ -88,7 +88,7 @@ export const bundleCommand = async (
 	if (experimentalClientSideRenderingEnabled) {
 		Log.warn(
 			{indent: false, logLevel},
-			'Enabling WIP client-side rendering. Please see caveats on https://www.remotion.dev/docs/client-side-rendering/.',
+			'Enabling WIP client-side rendering. Please see caveats on https://www.picus.dev/docs/client-side-rendering/.',
 		);
 	}
 
@@ -104,7 +104,7 @@ export const bundleCommand = async (
 	const outDir = outDirOption.getValue({commandLine: parsedCli}).value;
 	const outputPath = outDir
 		? path.resolve(process.cwd(), outDir)
-		: path.join(remotionRoot, 'build');
+		: path.join(picusRoot, 'build');
 
 	const gitignoreFolder = BundlerInternals.findClosestFolderWithItem(
 		outputPath,
@@ -121,7 +121,7 @@ export const bundleCommand = async (
 			);
 			Log.error(
 				{indent: false, logLevel},
-				'However, it does not look like the folder was created by `npx remotion bundle` (no index.html).',
+				'However, it does not look like the folder was created by `npx picus bundle` (no index.html).',
 			);
 			Log.error(
 				{indent: false, logLevel},
@@ -133,7 +133,7 @@ export const bundleCommand = async (
 		rmSync(outputPath, {recursive: true});
 	}
 
-	const gitSource = getGitSource({remotionRoot, disableGitSource, logLevel});
+	const gitSource = getGitSource({picusRoot, disableGitSource, logLevel});
 
 	const output = await bundleOnCli({
 		fullPath: file,
@@ -142,7 +142,7 @@ export const bundleCommand = async (
 		indent: false,
 		quietProgress: updatesDontOverwrite,
 		publicDir,
-		remotionRoot,
+		picusRoot,
 		onProgressCallback: ({bundling, copying}) => {
 			// Handle floating point inaccuracies
 			if (bundling.progress < 0.99999) {

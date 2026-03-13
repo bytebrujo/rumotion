@@ -1,4 +1,4 @@
-import {serializeInstructions, type ReducedInstruction} from '@remotion/paths';
+import {serializeInstructions, type ReducedInstruction} from '@picus/paths';
 import type {CropRectangle} from 'mediabunny';
 import type {Dimensions} from '~/lib/calculate-new-dimensions-from-dimensions';
 

@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* This file doesn't get compiled, but it provides autocompletion for @remotion/design */
+/* This file doesn't get compiled, but it provides autocompletion for @picus/design */
 
 [data-theme='light'] {
 	--text-color: #000;

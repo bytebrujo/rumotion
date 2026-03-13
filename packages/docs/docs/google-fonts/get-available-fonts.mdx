@@ -1,20 +1,20 @@
 ---
 image: /generated/articles-docs-google-fonts-get-available-fonts.png
 title: getAvailableFonts()
-crumb: "@remotion/google-fonts"
+crumb: "@picus/google-fonts"
 ---
 
 import {AvailableFonts} from '../../components/AvailableFonts'
 
-_Part of the [`@remotion/google-fonts`](/docs/google-fonts) package_
+_Part of the [`@picus/google-fonts`](/docs/google-fonts) package_
 
-Array of all available fonts available in `@remotion/google-fonts`.  
+Array of all available fonts available in `@picus/google-fonts`.  
 From v3.3.64 on, the font can be loaded individually by calling `.load()` if you are loading the function using ES Modules.
 
 ## Usage
 
 ```ts twoslash
-import { getAvailableFonts } from "@remotion/google-fonts";
+import { getAvailableFonts } from "@picus/google-fonts";
 
 console.log(getAvailableFonts());
 ```
@@ -40,7 +40,7 @@ console.log(getAvailableFonts());
 ```
 
 - `fontFamily` is how the name should be referenced in CSS.
-- `importName` is the identifier of how the font can be imported: `@remotion/google-fonts/[import-name]`.
+- `importName` is the identifier of how the font can be imported: `@picus/google-fonts/[import-name]`.
 
 ## Note about CommonJS
 
@@ -53,4 +53,4 @@ If you `require()` this module, it is not possible to dynamically load a font. T
 ## See also
 
 - [Fonts](/docs/fonts)
-- [`@remotion/google-fonts`](/docs/google-fonts)
+- [`@picus/google-fonts`](/docs/google-fonts)

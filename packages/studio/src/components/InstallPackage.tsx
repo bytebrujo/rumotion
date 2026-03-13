@@ -1,15 +1,15 @@
-import type {ExtraPackage, PackageManager, Pkgs} from '@remotion/studio-shared';
+import type {ExtraPackage, PackageManager, Pkgs} from '@picus/studio-shared';
 import {
 	apiDocs,
 	descriptions,
 	extraPackages,
 	installableMap,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import React, {useCallback, useContext, useEffect} from 'react';
-import {VERSION} from 'remotion';
+import {VERSION} from 'picus';
 import {installPackages} from '../api/install-package';
 import {restartStudio} from '../api/restart-studio';
-import {ShortcutHint} from '../error-overlay/remotion-overlay/ShortcutHint';
+import {ShortcutHint} from '../error-overlay/picus-overlay/ShortcutHint';
 import {StudioServerConnectionCtx} from '../helpers/client-id';
 import {LIGHT_TEXT} from '../helpers/colors';
 import {useKeybinding} from '../helpers/use-keybinding';
@@ -127,9 +127,9 @@ export const InstallPackageModal: React.FC<{
 							.filter(([, install]) => install)
 							.map(([pkgShort]) => {
 								const pkg =
-									pkgShort === 'core' ? 'remotion' : `@remotion/${pkgShort}`;
+									pkgShort === 'core' ? 'picus' : `@picus/${pkgShort}`;
 								const isInstalled =
-									window.remotion_installedPackages?.includes(pkg) ?? false;
+									window.picus_installedPackages?.includes(pkg) ?? false;
 								const link = apiDocs[pkgShort as Pkgs];
 								const description = descriptions[pkgShort as Pkgs];
 								if (!link) {
@@ -162,7 +162,7 @@ export const InstallPackageModal: React.FC<{
 							})}
 						{extraPackages.map((extraPkg: ExtraPackage) => {
 							const isInstalled =
-								window.remotion_installedPackages?.includes(extraPkg.name) ??
+								window.picus_installedPackages?.includes(extraPkg.name) ??
 								false;
 
 							return (
@@ -198,7 +198,7 @@ export const InstallPackageModal: React.FC<{
 							This will install {selectedPackages.length} package
 							{selectedPackages.length === 1 ? '' : 's'}
 							<br />
-							using {packageManager}, Remotion v{VERSION}
+							using {packageManager}, Picus v{VERSION}
 						</span>
 					) : null}
 					<Flex />

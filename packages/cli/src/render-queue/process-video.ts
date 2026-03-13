@@ -1,6 +1,6 @@
-import type {LogLevel} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import type {JobProgressCallback, RenderJob} from '@remotion/studio-server';
+import type {LogLevel} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import type {JobProgressCallback, RenderJob} from '@picus/studio-server';
 import {getRendererPortFromConfigFile} from '../config/preview-server';
 import {convertEntryPointToServeUrl} from '../convert-entry-point-to-serve-url';
 import {getCliOptions} from '../get-cli-options';
@@ -20,14 +20,14 @@ const {
 
 export const processVideoJob = async ({
 	job,
-	remotionRoot,
+	picusRoot,
 	entryPoint,
 	onProgress,
 	addCleanupCallback,
 	logLevel,
 }: {
 	job: RenderJob;
-	remotionRoot: string;
+	picusRoot: string;
 	entryPoint: string;
 	onProgress: JobProgressCallback;
 	addCleanupCallback: (label: string, cb: () => void) => void;
@@ -60,7 +60,7 @@ export const processVideoJob = async ({
 	const fullEntryPoint = convertEntryPointToServeUrl(entryPoint);
 
 	await renderVideoFlow({
-		remotionRoot,
+		picusRoot,
 		browser: 'chrome',
 		browserExecutable,
 		chromiumOptions: job.chromiumOptions,

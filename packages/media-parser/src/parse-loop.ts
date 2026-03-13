@@ -70,7 +70,7 @@ export const parseLoop = async ({
 				state.structure.getStructure().type !== 'm3u'
 			) {
 				throw new Error(
-					'Infinite loop detected. The parser is not progressing. This is likely a bug in the parser. You can report this at https://remotion.dev/report and we will fix it as soon as possible.',
+					'Infinite loop detected. The parser is not progressing. This is likely a bug in the parser. You can report this at https://picus.dev/report and we will fix it as soon as possible.',
 				);
 			}
 
@@ -189,7 +189,7 @@ export const parseLoop = async ({
 		await workOnSeekRequest(getWorkOnSeekRequestOptions(state));
 		if (state.controller._internals.seekSignal.getSeek() !== null) {
 			throw new Error(
-				'Reached the end of the file even though a seek was requested. This is likely a bug in the parser. You can report this at https://remotion.dev/report and we will fix it as soon as possible.',
+				'Reached the end of the file even though a seek was requested. This is likely a bug in the parser. You can report this at https://picus.dev/report and we will fix it as soon as possible.',
 			);
 		}
 

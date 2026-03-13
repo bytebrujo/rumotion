@@ -1,6 +1,6 @@
-import {Circle} from '@remotion/shapes';
+import {Circle} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const CircleDemo: React.FC<{
 	readonly radius: number;

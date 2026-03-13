@@ -1,4 +1,4 @@
-import {formatBytes} from '@remotion/studio-shared';
+import {formatBytes} from '@picus/studio-shared';
 import React from 'react';
 import type {AssetMetadata} from '../helpers/get-asset-metadata';
 import {JSONViewer} from './JSONViewer';

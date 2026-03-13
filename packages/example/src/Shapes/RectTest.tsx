@@ -1,6 +1,6 @@
-import {Circle, Rect} from '@remotion/shapes';
+import {Circle, Rect} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, interpolate, useCurrentFrame} from 'picus';
 
 const RectTest: React.FC = () => {
 	const frame = useCurrentFrame();

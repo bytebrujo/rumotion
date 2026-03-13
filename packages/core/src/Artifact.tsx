@@ -3,7 +3,7 @@ import {useContext, useLayoutEffect, useState} from 'react';
 import type {DownloadBehavior} from './download-behavior';
 import {RenderAssetManager} from './RenderAssetManager';
 import {useCurrentFrame} from './use-current-frame';
-import {useRemotionEnvironment} from './use-remotion-environment';
+import {usePicusEnvironment} from './use-picus-environment';
 
 const ArtifactThumbnail = Symbol('Thumbnail');
 
@@ -17,7 +17,7 @@ export const Artifact: React.FC<{
 	const {registerRenderAsset, unregisterRenderAsset} =
 		useContext(RenderAssetManager);
 
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	const frame = useCurrentFrame();
 

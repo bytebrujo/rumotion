@@ -1,8 +1,8 @@
-import type {Size} from '@remotion/player';
-import {PlayerInternals} from '@remotion/player';
+import type {Size} from '@picus/player';
+import {PlayerInternals} from '@picus/player';
 import React, {useContext, useEffect, useMemo, useRef} from 'react';
-import type {CanvasContent} from 'remotion';
-import {Internals} from 'remotion';
+import type {CanvasContent} from 'picus';
+import {Internals} from 'picus';
 import {
 	checkerboardBackgroundColor,
 	checkerboardBackgroundImage,

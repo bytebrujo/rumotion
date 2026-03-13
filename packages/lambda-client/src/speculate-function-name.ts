@@ -23,7 +23,7 @@ export const innerSpeculateFunctionName = ({
 
 /*
  * @description Speculate the name of the Lambda function that will be created by `deployFunction()` or its CLI equivalent, based on the function configuration.
- * @see [Documentation](https://remotion.dev/docs/lambda/speculatefunctionname)
+ * @see [Documentation](https://picus.dev/docs/lambda/speculatefunctionname)
  */
 export const speculateFunctionName = ({
 	memorySizeInMb,

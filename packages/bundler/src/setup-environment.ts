@@ -1,4 +1,4 @@
-// https://github.com/remotion-dev/remotion/issues/3412#issuecomment-1910120552
+// https://github.com/picus-dev/picus/issues/3412#issuecomment-1910120552
 
 function getEnvVar() {
 	const parts = ['proc', 'ess', '.', 'en', 'v', '.', 'NOD', 'E_EN', 'V'];
@@ -6,7 +6,7 @@ function getEnvVar() {
 }
 
 const getEnvVariables = (): Record<string, string> => {
-	if (window.remotion_isStudio) {
+	if (window.picus_isStudio) {
 		// For the Studio, we already set the environment variables in index-html.ts.
 		// We just add NODE_ENV here.
 		if (!process.env.NODE_ENV) {
@@ -18,7 +18,7 @@ const getEnvVariables = (): Record<string, string> => {
 		};
 	}
 
-	const param = window.remotion_envVariables;
+	const param = window.picus_envVariables;
 	if (!param) {
 		return {};
 	}
@@ -79,63 +79,63 @@ injectCSS(`
     line-height: 1.25;
   }
 
-  .__remotion-info-button-container code {
+  .__picus-info-button-container code {
     font-family: monospace;
     font-size: 14px;
     color: #0584f2
   }
 
-  .__remotion-vertical-scrollbar::-webkit-scrollbar {
+  .__picus-vertical-scrollbar::-webkit-scrollbar {
       width: 6px;
   }
-  .__remotion-vertical-scrollbar::-webkit-scrollbar-thumb {
+  .__picus-vertical-scrollbar::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.0);
   }
-  .__remotion-vertical-scrollbar:hover::-webkit-scrollbar-thumb {
+  .__picus-vertical-scrollbar:hover::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.6);
   }
-  .__remotion-vertical-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  .__picus-vertical-scrollbar:hover::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 1);
   }
 
 
-  .__remotion-horizontal-scrollbar::-webkit-scrollbar {
+  .__picus-horizontal-scrollbar::-webkit-scrollbar {
     height: 6px;
   }
-  .__remotion-horizontal-scrollbar::-webkit-scrollbar-thumb {
+  .__picus-horizontal-scrollbar::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.0);
   }
-  .__remotion-horizontal-scrollbar:hover::-webkit-scrollbar-thumb {
+  .__picus-horizontal-scrollbar:hover::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.6);
   }
-  .__remotion-horizontal-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  .__picus-horizontal-scrollbar:hover::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 1);
   }
 
 
   @-moz-document url-prefix() {
-    .__remotion-vertical-scrollbar {
+    .__picus-vertical-scrollbar {
       scrollbar-width: thin;
       scrollbar-color: rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0);
     }
 
-    .__remotion-vertical-scrollbar:hover {
+    .__picus-vertical-scrollbar:hover {
       scrollbar-color: rgba(0, 0, 0, 1) rgba(0, 0, 0, 0);
     }
 
-    .__remotion-horizontal-scrollbar {
+    .__picus-horizontal-scrollbar {
       scrollbar-width: thin;
       scrollbar-color: rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0);
     }
 
-    .__remotion-horizontal-scrollbar:hover {
+    .__picus-horizontal-scrollbar:hover {
       scrollbar-width: thin;
       scrollbar-color: rgba(0, 0, 0, 1) rgba(0, 0, 0, 0);
     }
   }
 
 
-  .__remotion-timeline-slider {
+  .__picus-timeline-slider {
     appearance: none;
     width: 100px;
     border-radius: 3px;
@@ -144,7 +144,7 @@ injectCSS(`
     accent-color: #ffffff;
   }
   
-  .__remotion-timeline-slider::-moz-range-thumb {
+  .__picus-timeline-slider::-moz-range-thumb {
     width: 14px;
     height: 14px;
     border-radius: 50%;

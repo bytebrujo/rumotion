@@ -10,7 +10,7 @@ import type {
 	StitchingState,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 
 type BaseRenderProgress = {
 	message: string;
@@ -164,9 +164,9 @@ type RenderJobDynamicFields =
 			hardwareAcceleration: HardwareAccelerationOption;
 	  } & RenderJobDynamicStatus);
 
-import type {ChromiumOptions, OpenGlRenderer} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
-import type {_InternalTypes} from 'remotion';
+import type {ChromiumOptions, OpenGlRenderer} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
+import type {_InternalTypes} from 'picus';
 
 export type RequiredChromiumOptions = Required<ChromiumOptions>;
 export type UiOpenGlOptions = OpenGlRenderer | 'default';

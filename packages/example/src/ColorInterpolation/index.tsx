@@ -1,5 +1,5 @@
 import React from 'react';
-import {interpolateColors, useCurrentFrame} from 'remotion';
+import {interpolateColors, useCurrentFrame} from 'picus';
 
 export const ColorInterpolation: React.FC = () => {
 	const frame = useCurrentFrame();

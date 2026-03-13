@@ -4,7 +4,7 @@ import {
 	cancelRender,
 	useCurrentFrame,
 	useDelayRender,
-} from 'remotion';
+} from 'picus';
 
 export const CancelRender: React.FC = () => {
 	const frame = useCurrentFrame();

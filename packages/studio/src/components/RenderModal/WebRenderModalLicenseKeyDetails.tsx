@@ -42,7 +42,7 @@ type WebRenderModalLicenseKeyDetailsProps = {
 	readonly details: LicenseKeyDetails;
 };
 
-const PRO_HOST = 'https://remotion.pro';
+const PRO_HOST = 'https://picus.pro';
 
 export const fetchLicenseKeyDetails = async (
 	licenseKey: string,

@@ -1,4 +1,4 @@
-import { Img } from "remotion";
+import { Img } from "picus";
 
 const imageContainerStyle: React.CSSProperties = {
   display: "flex",

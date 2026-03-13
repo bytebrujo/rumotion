@@ -2,7 +2,7 @@ import type {
 	MediaParserAdvancedColor,
 	MediaParserAudioCodec,
 	MediaParserVideoCodec,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 
 export type MakeTrackAudio = {
 	trackNumber: number;

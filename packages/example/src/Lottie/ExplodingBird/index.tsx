@@ -1,4 +1,4 @@
-import {Lottie} from '@remotion/lottie';
+import {Lottie} from '@picus/lottie';
 import {useEffect, useState} from 'react';
 import {
 	AbsoluteFill,
@@ -7,7 +7,7 @@ import {
 	continueRender,
 	delayRender,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const paths = {
 	// Credits: Christina Bublyk, Viktor Anisimov, Daniel Teasdale

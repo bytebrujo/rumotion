@@ -1,11 +1,11 @@
 ---
 image: /generated/articles-docs-layout-utils-best-practices.png
-title: Best practices for @remotion/layout-utils
+title: Best practices for @picus/layout-utils
 sidebar_label: Best practices
-crumb: '@remotion/layout-utils'
+crumb: '@picus/layout-utils'
 ---
 
-Take note of the following points to ensure correct measurements when using the [`@remotion/layout-utils`](/docs/layout-utils) package.
+Take note of the following points to ensure correct measurements when using the [`@picus/layout-utils`](/docs/layout-utils) package.
 
 These tips apply to all of [`measureText()`](/docs/layout-utils/measure-text), [`fitText()`](/docs/layout-utils/fit-text), and [`fillTextBox()`](/docs/layout-utils/fill-text-box).
 
@@ -19,8 +19,8 @@ If you only need this in one component, using `waitUntilDone()` in a `useEffect(
 
 ```tsx twoslash title="MyComp.tsx"
 import {useState, useEffect} from 'react';
-import {Dimensions, measureText} from '@remotion/layout-utils';
-import {loadFont, fontFamily} from '@remotion/google-fonts/Inter';
+import {Dimensions, measureText} from '@picus/layout-utils';
+import {loadFont, fontFamily} from '@picus/google-fonts/Inter';
 
 const {waitUntilDone} = loadFont('normal', {
   weights: ['400'],
@@ -41,7 +41,7 @@ const MyComp: React.FC = () => {
       });
 
       // We don't need to use delayRender() here, because
-      // font loading from @remotion/google-fonts is already wrapped in it
+      // font loading from @picus/google-fonts is already wrapped in it
       setDimensions(measurement);
     });
   }, []);
@@ -54,16 +54,16 @@ const MyComp: React.FC = () => {
 
 For larger projects, this pattern keeps the code clean by exposing a higher-order component that only mounts children once fonts are loaded.
 
-The following logic is borrowed from the [Remotion Recorder](/docs/recorder).
+The following logic is borrowed from the [Picus Recorder](/docs/recorder).
 
 A file is defined which loads some fonts:
 
 ```tsx twoslash title="fonts.ts"
-import {fontFamily as regularFont, loadFont as loadRegular} from '@remotion/google-fonts/Inter';
+import {fontFamily as regularFont, loadFont as loadRegular} from '@picus/google-fonts/Inter';
 
-import {fontFamily as monospaceFont, loadFont as loadMonospace} from '@remotion/google-fonts/RobotoMono';
+import {fontFamily as monospaceFont, loadFont as loadMonospace} from '@picus/google-fonts/RobotoMono';
 
-import {cancelRender, continueRender, delayRender} from 'remotion';
+import {cancelRender, continueRender, delayRender} from 'picus';
 
 const regular = loadRegular('normal', {
   weights: ['400', '700'],
@@ -90,11 +90,11 @@ Then a higher-order component is defined which only renders its children when th
 
 ```tsx twoslash title="WaitForFonts.tsx"
 // @filename: fonts.ts
-import {fontFamily as regularFont, loadFont as loadRegular} from '@remotion/google-fonts/Inter';
+import {fontFamily as regularFont, loadFont as loadRegular} from '@picus/google-fonts/Inter';
 
-import {fontFamily as monospaceFont, loadFont as loadMonospace} from '@remotion/google-fonts/RobotoMono';
+import {fontFamily as monospaceFont, loadFont as loadMonospace} from '@picus/google-fonts/RobotoMono';
 
-import {cancelRender, continueRender, delayRender} from 'remotion';
+import {cancelRender, continueRender, delayRender} from 'picus';
 
 export const regular = loadRegular('normal', {
   weights: ['400', '700'],
@@ -119,7 +119,7 @@ waitForFonts()
 // @filename: WaitForFonts.tsx
 // ---cut---
 import React, {useEffect, useState} from 'react';
-import {cancelRender, continueRender, useDelayRender} from 'remotion';
+import {cancelRender, continueRender, useDelayRender} from 'picus';
 import {waitForFonts} from './fonts';
 
 export const WaitForFonts: React.FC<{
@@ -176,7 +176,7 @@ export const WaitForFonts: React.FC<{
 import React from 'react';
 import {regular} from './fonts';
 import {WaitForFonts} from './WaitForFonts';
-import {measureText} from '@remotion/layout-utils';
+import {measureText} from '@picus/layout-utils';
 
 const MyCompInner: React.FC = () => {
   // Safe to call measureText() here
@@ -206,7 +206,7 @@ Pass `validateFontIsLoaded: true` to any of [`measureText()`](/docs/layout-utils
 This will take a second measurement with the fallback font and if it produces the same measurements, it assumes the fallback font was used and will throw an error.
 
 :::note
-In Remotion v5, this will become the default.
+In Picus v5, this will become the default.
 :::
 
 ## Match all font properties
@@ -217,7 +217,7 @@ This includes `fontFamily`, `fontSize`, and `fontWeight`, `letterSpacing` and `f
 You could make reusable variables that you reference in both the measuring function and the actual component.
 
 ```tsx twoslash title="Using variables for font properties"
-import {measureText} from '@remotion/layout-utils';
+import {measureText} from '@picus/layout-utils';
 
 const text = 'Hello world';
 const fontFamily = 'Inter';

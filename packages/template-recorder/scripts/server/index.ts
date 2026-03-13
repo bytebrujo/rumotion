@@ -4,7 +4,7 @@ import { startServer } from "./express-server";
 export const startStudioAndServer = async () => {
   await startServer();
 
-  const bunxProcess = spawn("bun", ["x", "remotion", "studio"], {
+  const bunxProcess = spawn("bun", ["x", "picus", "studio"], {
     stdio: "inherit",
     shell: process.platform === "win32" ? "cmd.exe" : undefined,
     detached: false,

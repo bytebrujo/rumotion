@@ -1,6 +1,6 @@
-import type {AwsProvider} from '@remotion/lambda-client';
-import type {CreateFunction} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+import type {AwsProvider} from '@picus/lambda-client';
+import type {CreateFunction} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 import {addFunction} from './mock-functions';
 
 export const mockCreateFunction: CreateFunction<AwsProvider> = (input) => {

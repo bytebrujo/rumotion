@@ -55,7 +55,7 @@ export const parseMpegHeader = async ({
 		const asText = new TextDecoder().decode(data);
 		if (asText.includes('VBRI')) {
 			throw new Error(
-				'MP3 files with VBRI are currently unsupported because we have no sample file. Submit this file at remotion.dev/report if you would like us to support this file.',
+				'MP3 files with VBRI are currently unsupported because we have no sample file. Submit this file at picus.dev/report if you would like us to support this file.',
 			);
 		}
 

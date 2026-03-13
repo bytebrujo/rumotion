@@ -1,6 +1,6 @@
-import {whip, whoosh} from '@remotion/sfx';
+import {whip, whoosh} from '@picus/sfx';
 import React from 'react';
-import {Audio, Sequence} from 'remotion';
+import {Audio, Sequence} from 'picus';
 
 export const SfxExample: React.FC = () => {
 	return (

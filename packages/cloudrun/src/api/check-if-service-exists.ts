@@ -1,6 +1,6 @@
 import type {protos} from '@google-cloud/run';
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
 import {Log} from '../cli/log';
 import {generateServiceName} from '../shared/generate-service-name';
 import {validateGcpRegion} from '../shared/validate-gcp-region';

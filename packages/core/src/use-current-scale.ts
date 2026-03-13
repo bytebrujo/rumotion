@@ -1,5 +1,5 @@
 import React, {createContext} from 'react';
-import {useRemotionEnvironment} from './use-remotion-environment';
+import {usePicusEnvironment} from './use-picus-environment';
 import {useUnsafeVideoConfig} from './use-unsafe-video-config';
 
 type Size = {
@@ -28,7 +28,7 @@ export const CurrentScaleContext =
 	React.createContext<CurrentScaleContextType | null>(null);
 
 type Options = {
-	dontThrowIfOutsideOfRemotion: boolean;
+	dontThrowIfOutsideOfPicus: boolean;
 };
 
 export type Translation = {
@@ -80,17 +80,17 @@ export const calculateScale = ({
 };
 
 /*
- * @description Retrieves the current scale of the canvas within Remotion's Studio or Player context. In the Studio, it corresponds to the zoom level (1 equals no scaling, i.e., 100% zoom). In the Player, it indicates the scaling necessary to fit the video into the player. If called outside of a Remotion context, by default, it throws an error unless configured not to.
- * @see [Documentation](https://www.remotion.dev/docs/use-current-scale)
+ * @description Retrieves the current scale of the canvas within Picus's Studio or Player context. In the Studio, it corresponds to the zoom level (1 equals no scaling, i.e., 100% zoom). In the Player, it indicates the scaling necessary to fit the video into the player. If called outside of a Picus context, by default, it throws an error unless configured not to.
+ * @see [Documentation](https://www.picus.dev/docs/use-current-scale)
  */
 export const useCurrentScale = (options?: Options) => {
 	const hasContext = React.useContext(CurrentScaleContext);
 	const zoomContext = React.useContext(PreviewSizeContext);
 	const config = useUnsafeVideoConfig();
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	if (hasContext === null || config === null || zoomContext === null) {
-		if (options?.dontThrowIfOutsideOfRemotion) {
+		if (options?.dontThrowIfOutsideOfPicus) {
 			return 1;
 		}
 
@@ -100,10 +100,10 @@ export const useCurrentScale = (options?: Options) => {
 
 		throw new Error(
 			[
-				'useCurrentScale() was called outside of a Remotion context.',
-				'This hook can only be called in a component that is being rendered by Remotion.',
-				'If you want to this hook to return 1 outside of Remotion, pass {dontThrowIfOutsideOfRemotion: true} as an option.',
-				'If you think you called this hook in a Remotion component, make sure all versions of Remotion are aligned.',
+				'useCurrentScale() was called outside of a Picus context.',
+				'This hook can only be called in a component that is being rendered by Picus.',
+				'If you want to this hook to return 1 outside of Picus, pass {dontThrowIfOutsideOfPicus: true} as an option.',
+				'If you think you called this hook in a Picus component, make sure all versions of Picus are aligned.',
 			].join('\n'),
 		);
 	}

@@ -1,11 +1,11 @@
 import {useThree} from '@react-three/fiber';
-import {Video} from '@remotion/media';
-import {ThreeCanvas} from '@remotion/three';
+import {Video} from '@picus/media';
+import {ThreeCanvas} from '@picus/three';
 import React, {useCallback, useState} from 'react';
-import {useRemotionEnvironment, useVideoConfig} from 'remotion';
+import {usePicusEnvironment, useVideoConfig} from 'picus';
 import {CanvasTexture} from 'three';
 
-const videoSrc = 'https://remotion.media/video.mp4';
+const videoSrc = 'https://picus.media/video.mp4';
 
 const videoWidth = 1920;
 const videoHeight = 1080;
@@ -23,7 +23,7 @@ const Inner: React.FC = () => {
 	});
 
 	const {invalidate, advance} = useThree();
-	const {isRendering} = useRemotionEnvironment();
+	const {isRendering} = usePicusEnvironment();
 
 	const onVideoFrame = useCallback(
 		(frame: CanvasImageSource) => {
@@ -68,7 +68,7 @@ const Inner: React.FC = () => {
 	);
 };
 
-export const RemotionMediaVideoTexture: React.FC = () => {
+export const PicusMediaVideoTexture: React.FC = () => {
 	const {width, height} = useVideoConfig();
 
 	return (

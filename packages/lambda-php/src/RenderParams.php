@@ -1,6 +1,6 @@
 <?php
 
-namespace Remotion\LambdaPhp;
+namespace Picus\LambdaPhp;
 
 use stdClass;
 

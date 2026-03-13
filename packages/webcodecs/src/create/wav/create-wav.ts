@@ -1,7 +1,7 @@
 import type {
 	MediaParserAudioSample,
 	MediaParserVideoSample,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {Log} from '../../log';
 import type {MediaFn, MediaFnGeneratorInput} from '../media-fn';
 

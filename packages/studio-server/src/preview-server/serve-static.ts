@@ -8,7 +8,7 @@
 
 import {createReadStream, existsSync, promises} from 'node:fs';
 import type {IncomingMessage, ServerResponse} from 'node:http';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {getValueContentRangeHeader} from './dev-middleware/middleware';
 import {parseRange} from './dev-middleware/range-parser';
 

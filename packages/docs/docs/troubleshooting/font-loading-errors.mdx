@@ -8,7 +8,7 @@ crumb: 'Troubleshooting'
 
 ## Render timeout when loading Google Fonts
 
-When using `@remotion/google-fonts`, you may encounter timeout errors like:
+When using `@picus/google-fonts`, you may encounter timeout errors like:
 
 ```diff
 - A delayRender() "Fetching Inter font {"style":"normal","weight":"100","subset":"cyrillic-ext"}" was called but not cleared after 58000ms.
@@ -23,7 +23,7 @@ By default, `loadFont()` attempts to load all available font weights and charact
 Only load the specific font weights and character subsets that your project needs:
 
 ```tsx
-import {loadFont} from '@remotion/google-fonts/Inter';
+import {loadFont} from '@picus/google-fonts/Inter';
 
 // ❌ Avoid: Loading all weights and subsets
 loadFont();

@@ -6,5 +6,5 @@ labels: ""
 assignees: ""
 ---
 
-<!-- Chat with us: https://remotion.dev/discord -->
-<!-- Provide relevant information: https://remotion.dev/get-help -->
+<!-- Chat with us: https://picus.dev/discord -->
+<!-- Provide relevant information: https://picus.dev/get-help -->

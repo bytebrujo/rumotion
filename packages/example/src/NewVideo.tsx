@@ -1,9 +1,9 @@
-import {Video} from '@remotion/media';
-import {CalculateMetadataFunction, Composition} from 'remotion';
-// https://www.remotion.dev/docs/mediabunny/metadata
+import {Video} from '@picus/media';
+import {CalculateMetadataFunction, Composition} from 'picus';
+// https://www.picus.dev/docs/mediabunny/metadata
 import {getMediaMetadata} from './get-media-metadata';
 
-const src = 'https://remotion.media/video.mp4';
+const src = 'https://picus.media/video.mp4';
 
 export const calculateMetadataFn: CalculateMetadataFunction<
 	Record<string, unknown>

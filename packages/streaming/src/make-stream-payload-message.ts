@@ -1,4 +1,4 @@
-export const magicWordStr = 'remotion_buffer:';
+export const magicWordStr = 'picus_buffer:';
 
 export const makeStreamPayloadMessage = ({
 	status,

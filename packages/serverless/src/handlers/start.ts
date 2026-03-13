@@ -2,12 +2,12 @@ import type {
 	CloudProvider,
 	ProviderSpecifics,
 	ServerlessPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	ServerlessRoutines,
 	internalGetOrCreateBucket,
 	overallProgressKey,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {makeInitialOverallRenderProgress} from '../overall-render-progress';
 import type {InsideFunctionSpecifics} from '../provider-implementation';
 import {checkVersionMismatch} from './check-version-mismatch';

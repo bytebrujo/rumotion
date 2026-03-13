@@ -11,7 +11,7 @@ import type {
 } from './options';
 import {parseLoop} from './parse-loop';
 import {printTimings} from './print-timings';
-import {warnIfRemotionLicenseNotAcknowledged} from './remotion-license-acknowledge';
+import {warnIfPicusLicenseNotAcknowledged} from './picus-license-acknowledge';
 import {setSeekingHints} from './set-seeking-hints';
 import {makeParserState} from './state/parser-state';
 import {throttledStateUpdate} from './throttled-progress';
@@ -35,7 +35,7 @@ export const internalParseMedia: InternalParseMedia = async function <
 	mode,
 	onDiscardedData,
 	onError,
-	acknowledgeRemotionLicense,
+	acknowledgePicusLicense,
 	apiName,
 	selectM3uStream: selectM3uStreamFn,
 	selectM3uAssociatedPlaylists: selectM3uAssociatedPlaylistsFn,
@@ -49,8 +49,8 @@ export const internalParseMedia: InternalParseMedia = async function <
 	}
 
 	controller._internals.markAsReadyToEmitEvents();
-	warnIfRemotionLicenseNotAcknowledged({
-		acknowledgeRemotionLicense,
+	warnIfPicusLicenseNotAcknowledged({
+		acknowledgePicusLicense,
 		logLevel,
 		apiName,
 	});

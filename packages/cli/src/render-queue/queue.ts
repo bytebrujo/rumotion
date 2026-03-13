@@ -1,12 +1,12 @@
 import path from 'node:path';
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import type {
 	AggregateRenderProgress,
 	JobProgressCallback,
 	RenderJob,
 	RenderJobWithCleanup,
-} from '@remotion/studio-server';
-import {StudioServerInternals} from '@remotion/studio-server';
+} from '@picus/studio-server';
+import {StudioServerInternals} from '@picus/studio-server';
 import {chalk} from '../chalk';
 import {Log} from '../log';
 import {printError} from '../print-error';
@@ -48,14 +48,14 @@ const notifyClientsOfJobUpdate = () => {
 
 const processJob = async ({
 	job,
-	remotionRoot,
+	picusRoot,
 	entryPoint,
 	onProgress,
 	addCleanupCallback,
 	logLevel,
 }: {
 	job: RenderJob;
-	remotionRoot: string;
+	picusRoot: string;
 	entryPoint: string;
 	onProgress: JobProgressCallback;
 	addCleanupCallback: (label: string, cb: () => void) => void;
@@ -64,7 +64,7 @@ const processJob = async ({
 	if (job.type === 'still') {
 		await processStill({
 			job,
-			remotionRoot,
+			picusRoot,
 			entryPoint,
 			onProgress,
 			addCleanupCallback,
@@ -75,7 +75,7 @@ const processJob = async ({
 	if (job.type === 'video' || job.type === 'sequence') {
 		await processVideoJob({
 			job,
-			remotionRoot,
+			picusRoot,
 			entryPoint,
 			onProgress,
 			addCleanupCallback,
@@ -90,16 +90,16 @@ const processJob = async ({
 export const addJob = ({
 	job,
 	entryPoint,
-	remotionRoot,
+	picusRoot,
 	logLevel,
 }: {
 	job: RenderJobWithCleanup;
 	entryPoint: string;
-	remotionRoot: string;
+	picusRoot: string;
 	logLevel: LogLevel;
 }) => {
 	jobQueue.push(job);
-	processJobIfPossible({entryPoint, remotionRoot, logLevel});
+	processJobIfPossible({entryPoint, picusRoot, logLevel});
 
 	notifyClientsOfJobUpdate();
 };
@@ -132,11 +132,11 @@ export const cancelJob = (jobId: string) => {
 };
 
 const processJobIfPossible = async ({
-	remotionRoot,
+	picusRoot,
 	entryPoint,
 	logLevel,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	entryPoint: string;
 	logLevel: LogLevel;
 }) => {
@@ -175,7 +175,7 @@ const processJobIfPossible = async ({
 		await processJob({
 			job: nextJob,
 			entryPoint,
-			remotionRoot,
+			picusRoot,
 			onProgress: (progress) => {
 				updateJob(nextJob.id, (job) => {
 					lastProgress = progress;
@@ -222,7 +222,7 @@ const processJobIfPossible = async ({
 		);
 
 		const {unwatch} = StudioServerInternals.installFileWatcher({
-			file: path.resolve(remotionRoot, nextJob.outName),
+			file: path.resolve(picusRoot, nextJob.outName),
 			onChange: (type) => {
 				if (type === 'created') {
 					updateJob(nextJob.id, (job) => ({
@@ -287,5 +287,5 @@ const processJobIfPossible = async ({
 		);
 	}
 
-	processJobIfPossible({remotionRoot, entryPoint, logLevel});
+	processJobIfPossible({picusRoot, entryPoint, logLevel});
 };

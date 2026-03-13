@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import styles from './styles.module.css';
 
 export const DarkModeTest: React.FC = () => {

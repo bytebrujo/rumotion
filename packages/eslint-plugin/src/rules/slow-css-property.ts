@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return 'https://remotion.dev/docs/gpu';
+	return 'https://picus.dev/docs/gpu';
 });
 
 type Options = [];
@@ -9,7 +9,7 @@ type MessageIds = 'SlowCssProperty';
 
 const SlowCssProperty = [
 	"This GPU effect may slow down the render on machines which don't have a GPU.",
-	'See: https://remotion.dev/docs/gpu',
+	'See: https://picus.dev/docs/gpu',
 ].join('\n');
 
 const slowCssProperties = new Set(['boxShadow', 'textShadow', 'filter']);

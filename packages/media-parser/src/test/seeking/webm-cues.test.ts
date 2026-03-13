@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {fetchWebmCues} from '../../containers/webm/seek/fetch-web-cues';
 import {mediaParserController} from '../../controller/media-parser-controller';
 import {hasBeenAborted} from '../../errors';
@@ -50,7 +50,7 @@ test('should use them for seeking', async () => {
 	try {
 		await parseMedia({
 			src: exampleVideos.stretchedVp8,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			reader: nodeReader,
 			controller: controller1,
 			onVideoTrack: () => {
@@ -120,7 +120,7 @@ test('should be able to use precomputed seeking hints', async () => {
 	try {
 		await parseMedia({
 			src: exampleVideos.stretchedVp8,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			reader: nodeReader,
 			controller: controller2,
 			seekingHints: await controller1.getSeekingHints(),
@@ -191,7 +191,7 @@ test('should work if there are no cues', async () => {
 	try {
 		await parseMedia({
 			src: exampleVideos.unevendim,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			reader: nodeReader,
 			controller,
 			onVideoTrack: () => {

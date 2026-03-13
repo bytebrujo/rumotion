@@ -1,4 +1,4 @@
-import type {WebhookPayload} from '@remotion/serverless-client';
+import type {WebhookPayload} from '@picus/serverless-client';
 import type {Response} from 'express';
 import type {NextApiRequest, NextApiResponse} from 'next';
 import type {NextWebhookArgs} from './app-router-webhook';
@@ -24,9 +24,9 @@ export const pagesRouterWebhook = (options: NextWebhookArgs) => {
 
 		if (testing) {
 			const testingheaders = {
-				'Access-Control-Allow-Origin': 'https://www.remotion.dev',
+				'Access-Control-Allow-Origin': 'https://www.picus.dev',
 				'Access-Control-Allow-Headers':
-					'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Remotion-Status, X-Remotion-Signature, X-Remotion-Mode',
+					'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Picus-Status, X-Picus-Signature, X-Picus-Mode',
 				'Access-Control-Allow-Methods': 'OPTIONS,POST',
 			};
 
@@ -42,7 +42,7 @@ export const pagesRouterWebhook = (options: NextWebhookArgs) => {
 			validateWebhookSignature({
 				secret,
 				body: req.body,
-				signatureHeader: req.headers['x-remotion-signature'] as string,
+				signatureHeader: req.headers['x-picus-signature'] as string,
 			});
 
 			// If code reaches this path, the webhook is authentic.

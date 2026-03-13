@@ -23,7 +23,7 @@ const getDefaultInterpolationThreshold = (
 
 /*
  * @description Allows you to remap the coordinates of an SVG using a function in order to create a warp effect.
- * @see [Documentation](https://www.remotion.dev/docs/paths/warp-path)
+ * @see [Documentation](https://www.picus.dev/docs/paths/warp-path)
  */
 export const warpPath = (
 	path: string,

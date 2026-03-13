@@ -2,7 +2,7 @@ import type {
 	MediaParserContainer,
 	MediaParserLogLevel,
 	MediaParserVideoTrack,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import type {ConvertMediaContainer} from './get-available-containers';
 import type {ConvertMediaVideoCodec} from './get-available-video-codecs';
 import type {ResizeOperation} from './resizing/mode';

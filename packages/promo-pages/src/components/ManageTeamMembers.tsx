@@ -1,4 +1,4 @@
-import {Button, Input} from '@remotion/design';
+import {Button, Input} from '@picus/design';
 import React, {useCallback, useState} from 'react';
 
 type Member = {

@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {getStsdBox} from '../containers/iso-base-media/traversal';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
@@ -11,7 +11,7 @@ test('parse colr', async () => {
 			slowStructure: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	const trak = slowStructure.boxes

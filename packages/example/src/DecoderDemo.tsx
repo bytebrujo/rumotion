@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 import {SrcEncoder} from './Encoder/SrcEncoder';
 
 export const DecoderDemo: React.FC = () => {
@@ -31,8 +31,8 @@ export const DecoderDemo: React.FC = () => {
 					src={staticFile('matroska-pcm16.mkv')}
 				/>
 				<SrcEncoder
-					label="https://remotion.media/BigBuckBunny.mp4"
-					src="https://remotion.media/BigBuckBunny.mp4"
+					label="https://picus.media/BigBuckBunny.mp4"
+					src="https://picus.media/BigBuckBunny.mp4"
 				/>
 				<SrcEncoder
 					label="h265-with-aac.mkv"

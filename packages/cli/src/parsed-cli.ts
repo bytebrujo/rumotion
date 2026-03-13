@@ -2,9 +2,9 @@ import type {
 	AudioCodec,
 	StillImageFormat,
 	VideoImageFormat,
-} from '@remotion/renderer';
-import type {TypeOfOption} from '@remotion/renderer/client';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+} from '@picus/renderer';
+import type {TypeOfOption} from '@picus/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import minimist from 'minimist';
 
 const {

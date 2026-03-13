@@ -3,21 +3,21 @@ image: /generated/articles-docs-webcodecs-default-on-video-track-handler.png
 id: default-on-video-track-handler
 title: defaultOnVideoTrackHandler()
 slug: /webcodecs/default-on-video-track-handler
-crumb: '@remotion/webcodecs'
+crumb: '@picus/webcodecs'
 ---
 
 :::warning
-[We are phasing out Remotion WebCodecs and are moving to Mediabunny](/blog/mediabunny)!
+[We are phasing out Picus WebCodecs and are moving to Mediabunny](/blog/mediabunny)!
 :::
 
 This is the default function if no [`onVideoTrack`](/docs/webcodecs/convert-media#onvideotrack) handler is provided to [`convertMedia()`](/docs/webcodecs/convert-media).  
 You may use this function if you want to customize part of the track transformation logic, but fall back to the default behavior for the rest.
 
 ```tsx twoslash title="Falling back to the default behavior"
-import {convertMedia, defaultOnAudioTrackHandler} from '@remotion/webcodecs';
+import {convertMedia, defaultOnAudioTrackHandler} from '@picus/webcodecs';
 
 await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
   onAudioTrack: (params) => {
     // Custom logic for handling video tracks
@@ -40,7 +40,7 @@ The default behavior is as follows:
   You may alternatively return `{type: 'drop'}` to remove the video track, but still succeed the other tracks.
 
 ```tsx twoslash title="Source code for defaultOnVideoTrackHandler"
-import {canReencodeVideoTrack, getDefaultVideoCodec, ConvertMediaOnVideoTrackHandler, VideoOperation} from '@remotion/webcodecs';
+import {canReencodeVideoTrack, getDefaultVideoCodec, ConvertMediaOnVideoTrackHandler, VideoOperation} from '@picus/webcodecs';
 
 export const defaultOnVideoTrackHandler: ConvertMediaOnVideoTrackHandler = async ({track, defaultVideoCodec, logLevel, outputContainer, rotate, inputContainer, canCopyTrack, resizeOperation}): Promise<VideoOperation> => {
   if (canCopyTrack) {
@@ -73,5 +73,5 @@ export const defaultOnVideoTrackHandler: ConvertMediaOnVideoTrackHandler = async
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/webcodecs/src/default-on-video-track-handler.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/webcodecs/src/default-on-video-track-handler.ts)
 - [`convertMedia()`](/docs/webcodecs/convert-media)

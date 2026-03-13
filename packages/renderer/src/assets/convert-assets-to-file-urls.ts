@@ -1,4 +1,4 @@
-import type {AudioOrVideoAsset} from 'remotion/no-react';
+import type {AudioOrVideoAsset} from 'picus/no-react';
 import type {LogLevel} from '../log-level';
 import type {FrameAndAssets} from '../render-frames';
 import type {RenderMediaOnDownload} from './download-and-map-assets-to-file';

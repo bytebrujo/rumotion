@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/noise"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/noise"
 	},
-	"name": "@remotion/noise",
+	"name": "@picus/noise",
 	"version": "4.0.434",
 	"description": "Noise generation functions",
 	"main": "dist/cjs/index.js",
@@ -27,29 +27,29 @@
 	},
 	"author": "Yehor Misiats (https://github.com/satelllte)",
 	"maintainers": [
-		"Jonny Burger <jonny@remotion.dev>",
+		"Jonny Burger <jonny@picus.dev>",
 		"Yehor Misiats (https://github.com/satelllte)"
 	],
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"simplex-noise": "4.0.1"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"noise"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/noise"
+	"homepage": "https://www.picus.dev/docs/noise"
 }

@@ -1,4 +1,4 @@
-# @remotion/svg-3d-engine
+# @picus/svg-3d-engine
 
 3D SVG extrusion effects
 

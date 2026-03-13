@@ -1,7 +1,7 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import React, {useCallback, useEffect, useMemo} from 'react';
-import type {CurrentScaleContextType} from 'remotion';
-import {Internals} from 'remotion';
+import type {CurrentScaleContextType} from 'picus';
+import {Internals} from 'picus';
 import {BACKGROUND} from '../helpers/colors';
 import {noop} from '../helpers/noop';
 import {drawRef} from '../state/canvas-ref';
@@ -44,7 +44,7 @@ export const Editor: React.FC<{
 		}
 
 		const listenToChanges = (e: BeforeUnloadEvent) => {
-			if (window.remotion_unsavedProps) {
+			if (window.picus_unsavedProps) {
 				e.returnValue = 'Are you sure you want to leave?';
 			}
 		};
@@ -83,7 +83,7 @@ export const Editor: React.FC<{
 				<Internals.CurrentScaleContext.Provider value={value}>
 					<div style={background}>
 						{canvasMounted ? <MemoRoot /> : null}
-						<Internals.CanUseRemotionHooksProvider>
+						<Internals.CanUsePicusHooksProvider>
 							<EditorContent readOnlyStudio={readOnlyStudio}>
 								<TopPanel
 									drawRef={drawRef}
@@ -95,7 +95,7 @@ export const Editor: React.FC<{
 								/>
 							</EditorContent>
 							<GlobalKeybindings />
-						</Internals.CanUseRemotionHooksProvider>
+						</Internals.CanUsePicusHooksProvider>
 					</div>
 				</Internals.CurrentScaleContext.Provider>
 				<Modals readOnlyStudio={readOnlyStudio} />

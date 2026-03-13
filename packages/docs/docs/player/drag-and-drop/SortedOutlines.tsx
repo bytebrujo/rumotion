@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 import type {Item} from './item';
 import {SelectionOutline} from './SelectionOutline';
 

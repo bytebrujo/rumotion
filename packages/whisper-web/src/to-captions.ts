@@ -1,4 +1,4 @@
-import type {Caption} from '@remotion/captions';
+import type {Caption} from '@picus/captions';
 import type {TranscriptionItemWithTimestamp, TranscriptionJson} from './result';
 
 type ToCaptionsInput = {

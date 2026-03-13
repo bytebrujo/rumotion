@@ -1,15 +1,15 @@
-import type {UnsubscribeFromSequencePropsRequest} from '@remotion/studio-shared';
+import type {UnsubscribeFromSequencePropsRequest} from '@picus/studio-shared';
 import type {ApiHandler} from '../api-types';
 import {unsubscribeFromSequencePropsWatchers} from '../sequence-props-watchers';
 
 export const unsubscribeFromSequenceProps: ApiHandler<
 	UnsubscribeFromSequencePropsRequest,
 	undefined
-> = ({input: {fileName, nodePath, clientId}, remotionRoot}) => {
+> = ({input: {fileName, nodePath, clientId}, picusRoot}) => {
 	unsubscribeFromSequencePropsWatchers({
 		fileName,
 		nodePath,
-		remotionRoot,
+		picusRoot,
 		clientId,
 	});
 	return Promise.resolve(undefined);

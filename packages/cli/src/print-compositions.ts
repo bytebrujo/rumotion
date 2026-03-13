@@ -1,5 +1,5 @@
-import type {LogLevel} from '@remotion/renderer';
-import type {VideoConfig} from 'remotion';
+import type {LogLevel} from '@picus/renderer';
+import type {VideoConfig} from 'picus';
 import {Log} from './log';
 import {quietFlagProvided} from './parsed-cli';
 

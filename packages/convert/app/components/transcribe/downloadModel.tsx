@@ -5,14 +5,14 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from '@remotion/design';
+} from '@picus/design';
 import {
 	deleteModel,
 	type DownloadWhisperModelParams,
 	getAvailableModels,
 	getLoadedModels,
 	type WhisperWebModel,
-} from '@remotion/whisper-web';
+} from '@picus/whisper-web';
 import {useCallback, useEffect, useState} from 'react';
 import {formatBytes} from '../../lib/format-bytes';
 import {Label} from '../ui/label';

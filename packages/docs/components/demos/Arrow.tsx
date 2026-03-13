@@ -1,7 +1,7 @@
-import type {ArrowProps} from '@remotion/shapes';
-import {Arrow} from '@remotion/shapes';
+import type {ArrowProps} from '@picus/shapes';
+import {Arrow} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const ArrowDemo: React.FC<{
 	readonly length: number;

@@ -17,7 +17,7 @@ Start off by creating a component that renders a list of videos using the [`<Ser
 
 ```tsx twoslash title="VideosInSequence.tsx"
 import React from 'react';
-import {OffthreadVideo, Series} from 'remotion';
+import {OffthreadVideo, Series} from 'picus';
 
 type VideoToEmbed = {
   src: string;
@@ -57,8 +57,8 @@ In the same file, create a function that calculates the metadata for the composi
 
 ```tsx twoslash title="VideosInSequence.tsx"
 import React from 'react';
-import {OffthreadVideo, staticFile, Series, CalculateMetadataFunction} from 'remotion';
-import {parseMedia} from '@remotion/media-parser';
+import {OffthreadVideo, staticFile, Series, CalculateMetadataFunction} from 'picus';
+import {parseMedia} from '@picus/media-parser';
 
 type VideoToEmbed = {
   src: string;
@@ -106,8 +106,8 @@ In your [root file](/docs/terminology/root-file), create a [`<Composition>`](/do
 ```tsx twoslash title="Root.tsx"
 // @filename: VideosInSequence.tsx
 import React from 'react';
-import {OffthreadVideo, staticFile, Series, CalculateMetadataFunction} from 'remotion';
-import {parseMedia} from '@remotion/media-parser';
+import {OffthreadVideo, staticFile, Series, CalculateMetadataFunction} from 'picus';
+import {parseMedia} from '@picus/media-parser';
 
 type VideoToEmbed = {
   src: string;
@@ -170,7 +170,7 @@ export const VideosInSequence: React.FC<Props> = ({videos}) => {
 // ---cut---
 
 import React from 'react';
-import {Composition, staticFile} from 'remotion';
+import {Composition, staticFile} from 'picus';
 import {VideosInSequence, calculateMetadata} from './VideosInSequence';
 
 export const Root: React.FC = () => {
@@ -184,7 +184,7 @@ export const Root: React.FC = () => {
         videos: [
           {
             durationInFrames: null,
-            src: 'https://remotion.media/BigBuckBunny.mp4',
+            src: 'https://picus.media/BigBuckBunny.mp4',
           },
           {
             durationInFrames: null,
@@ -213,7 +213,7 @@ invisibly mount the video tag before it is played, giving it some time to load.{
 
 ```tsx twoslash title="VideosInSequence.tsx" {12, 13}
 import React from 'react';
-import {OffthreadVideo, Series, useVideoConfig} from 'remotion';
+import {OffthreadVideo, Series, useVideoConfig} from 'picus';
 
 type VideoToEmbed = {
   src: string;

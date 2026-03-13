@@ -1,6 +1,6 @@
 import React from 'react';
-import type {SequenceControls, SequenceSchema} from 'remotion';
-import {Internals, useRemotionEnvironment} from 'remotion';
+import type {SequenceControls, SequenceSchema} from 'picus';
+import {Internals, usePicusEnvironment} from 'picus';
 import type {InnerVideoProps, VideoProps} from './props';
 import {VideoForPreview} from './video-for-preview';
 import {VideoForRendering} from './video-for-rendering';
@@ -87,7 +87,7 @@ const InnerVideo: React.FC<
 	onError,
 	controls,
 }) => {
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 
 	if (typeof src !== 'string') {
 		throw new TypeError(

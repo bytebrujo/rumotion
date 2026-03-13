@@ -1,5 +1,5 @@
-import type {Instruction} from '@remotion/paths';
-import {serializeInstructions} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
+import {serializeInstructions} from '@picus/paths';
 import type {ShapeInfo} from './shape-info';
 
 export type MakeHeartProps = {
@@ -12,7 +12,7 @@ export type MakeHeartProps = {
 /**
  * @description Generates a heart SVG path.
  * @param {Number} size The size of the heart.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/make-heart)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/make-heart)
  */
 export const makeHeart = ({
 	height,

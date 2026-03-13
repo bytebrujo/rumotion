@@ -1,4 +1,4 @@
-import {bundle} from '@remotion/bundler';
+import {bundle} from '@picus/bundler';
 
 export const bundleSite = bundle;
-export type {GitSource} from '@remotion/bundler';
+export type {GitSource} from '@picus/bundler';

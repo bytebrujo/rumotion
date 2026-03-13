@@ -5,8 +5,8 @@ import type {
 	FloatWithSize,
 	PossibleEbml,
 	UintWithSize,
-} from '@remotion/media-parser';
-import {MediaParserInternals} from '@remotion/media-parser';
+} from '@picus/media-parser';
+import {MediaParserInternals} from '@picus/media-parser';
 
 type Prettify<T> = {
 	[K in keyof T]: T[K];

@@ -65,15 +65,15 @@ export function cancelRenderInternal(
 	}
 
 	if (scope) {
-		scope.remotion_cancelledError = getErrorStackWithMessage(error);
+		scope.picus_cancelledError = getErrorStackWithMessage(error);
 	}
 
 	throw error;
 }
 
 /*
- * @description When you invoke this function, Remotion will stop rendering all the frames without any retries.
- * @see [Documentation](https://remotion.dev/docs/cancel-render)
+ * @description When you invoke this function, Picus will stop rendering all the frames without any retries.
+ * @see [Documentation](https://picus.dev/docs/cancel-render)
  */
 export function cancelRender(err: unknown): never {
 	return cancelRenderInternal(

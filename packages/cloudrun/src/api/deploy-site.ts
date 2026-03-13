@@ -2,10 +2,10 @@ import {
 	BundlerInternals,
 	type GitSource,
 	type WebpackOverrideFn,
-} from '@remotion/bundler';
-import type {ToOptions} from '@remotion/renderer';
-import type {BrowserSafeApis} from '@remotion/renderer/client';
-import {wrapWithErrorHandling} from '@remotion/renderer/error-handling';
+} from '@picus/bundler';
+import type {ToOptions} from '@picus/renderer';
+import type {BrowserSafeApis} from '@picus/renderer/client';
+import {wrapWithErrorHandling} from '@picus/renderer/error-handling';
 import {cloudrunDeleteFile, cloudrunLs} from '../functions/helpers/io';
 import type {Privacy} from '../shared/constants';
 import {getSitesKey} from '../shared/constants';
@@ -73,7 +73,7 @@ export const internalDeploySiteRaw = async ({
 	options,
 	privacy,
 }: RawDeploySiteInput): DeploySiteOutput => {
-	validateBucketName(bucketName, {mustStartWithRemotion: true});
+	validateBucketName(bucketName, {mustStartWithPicus: true});
 
 	validateSiteName(siteName);
 
@@ -156,8 +156,8 @@ export const internalDeploySiteRaw = async ({
 
 const errorHandled = wrapWithErrorHandling(internalDeploySiteRaw);
 /*
- * @description Deploys a Remotion project to a GCP storage bucket to prepare it for rendering on Cloud Run.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/deploysite)
+ * @description Deploys a Picus project to a GCP storage bucket to prepare it for rendering on Cloud Run.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/deploysite)
  */
 export const deploySite = (input: DeploySiteInput): DeploySiteOutput => {
 	return errorHandled({

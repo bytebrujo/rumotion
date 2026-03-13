@@ -1,4 +1,4 @@
-import {MediaParserInternals} from '@remotion/media-parser';
+import {MediaParserInternals} from '@picus/media-parser';
 import {canReencodeAudioTrack} from './can-reencode-audio-track';
 import type {
 	AudioOperation,

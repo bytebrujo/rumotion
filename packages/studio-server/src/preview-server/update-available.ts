@@ -1,22 +1,22 @@
-import type {LogLevel} from '@remotion/renderer';
-import type {UpdateAvailableResponse} from '@remotion/studio-shared';
+import type {LogLevel} from '@picus/renderer';
+import type {UpdateAvailableResponse} from '@picus/studio-shared';
 import semver from 'semver';
-import {getLatestRemotionVersion} from '../get-latest-remotion-version';
+import {getLatestPicusVersion} from '../get-latest-picus-version';
 import {getPackageManager} from './get-package-manager';
 
 const isUpdateAvailable = async ({
-	remotionRoot,
+	picusRoot,
 	currentVersion,
 	logLevel,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	currentVersion: string;
 	logLevel: LogLevel;
 }): Promise<UpdateAvailableResponse> => {
-	const latest = await getLatestRemotionVersion();
+	const latest = await getLatestPicusVersion();
 
 	const pkgManager = getPackageManager({
-		remotionRoot,
+		picusRoot,
 		packageManager: undefined,
 		dirUp: 0,
 		logLevel,
@@ -31,7 +31,7 @@ const isUpdateAvailable = async ({
 	};
 };
 
-export const getRemotionVersion = () => {
+export const getPicusVersion = () => {
 	// careful when refactoring this file, path must be adjusted
 	const packageJson = require('../../package.json');
 
@@ -41,13 +41,13 @@ export const getRemotionVersion = () => {
 };
 
 export const isUpdateAvailableWithTimeout = (
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ) => {
-	const version = getRemotionVersion();
+	const version = getPicusVersion();
 	const threeSecTimeout = new Promise<UpdateAvailableResponse>((resolve) => {
 		const pkgManager = getPackageManager({
-			remotionRoot,
+			picusRoot,
 			packageManager: undefined,
 			dirUp: 0,
 			logLevel,
@@ -65,6 +65,6 @@ export const isUpdateAvailableWithTimeout = (
 	});
 	return Promise.race([
 		threeSecTimeout,
-		isUpdateAvailable({remotionRoot, currentVersion: version, logLevel}),
+		isUpdateAvailable({picusRoot, currentVersion: version, logLevel}),
 	]);
 };

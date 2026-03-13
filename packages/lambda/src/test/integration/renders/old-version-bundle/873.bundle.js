@@ -1,5 +1,5 @@
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[873],
 	{
 		/***/ 3873:
@@ -14,11 +14,11 @@
 					/* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
 					/* harmony export */
 				});
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_0__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_0___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_0___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_0__,
+						picus__WEBPACK_IMPORTED_MODULE_0__,
 					);
 
 				const Features = () => {
@@ -37,21 +37,21 @@
 							},
 						},
 						/* @__PURE__ */ React.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_0__.Video,
+							picus__WEBPACK_IMPORTED_MODULE_0__.Video,
 							{
 								src: tray,
 								style: {height: 400, width: 400},
 							},
 						),
 						/* @__PURE__ */ React.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_0__.Video,
+							picus__WEBPACK_IMPORTED_MODULE_0__.Video,
 							{
 								src: textstickers,
 								style: {height: 700, width: 700},
 							},
 						),
 						/* @__PURE__ */ React.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_0__.Video,
+							picus__WEBPACK_IMPORTED_MODULE_0__.Video,
 							{
 								src: watermelon,
 								style: {height: 700, width: 700},

@@ -5,12 +5,12 @@ import type {
 	PostRenderData,
 	ProviderSpecifics,
 	RenderMetadata,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	calculateChunkTimes,
 	getMostExpensiveChunks,
 	OVERHEAD_TIME_PER_LAMBDA,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import type {OutputFileMetadata} from './find-output-file-in-bucket';
 
 export const createPostRenderData = <Provider extends CloudProvider>({

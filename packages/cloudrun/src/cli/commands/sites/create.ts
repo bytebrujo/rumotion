@@ -1,9 +1,9 @@
 import {existsSync, lstatSync} from 'fs';
-import {CliInternals} from '@remotion/cli';
-import {ConfigInternals} from '@remotion/cli/config';
-import type {LogLevel} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {Internals} from 'remotion';
+import {CliInternals} from '@picus/cli';
+import {ConfigInternals} from '@picus/cli/config';
+import type {LogLevel} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {Internals} from 'picus';
 import {displaySiteInfo} from '.';
 import {internalDeploySiteRaw} from '../../../api/deploy-site';
 import {getOrCreateBucket} from '../../../api/get-or-create-bucket';
@@ -36,12 +36,12 @@ export const SITES_CREATE_SUBCOMMAND = 'create';
 
 export const sitesCreateSubcommand = async (
 	args: string[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ) => {
 	const {file, reason} = CliInternals.findEntryPoint({
 		args,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		allowDirectory: false,
 	});
@@ -49,7 +49,7 @@ export const sitesCreateSubcommand = async (
 		Log.error({indent: false, logLevel}, 'No entry file passed.');
 		Log.info(
 			{indent: false, logLevel},
-			'Pass an additional argument specifying the entry file of your Remotion project:',
+			'Pass an additional argument specifying the entry file of your Picus project:',
 		);
 		Log.info({indent: false, logLevel});
 		Log.info(
@@ -151,7 +151,7 @@ export const sitesCreateSubcommand = async (
 	}).value;
 
 	const gitSource = CliInternals.getGitSource({
-		remotionRoot,
+		picusRoot,
 		disableGitSource,
 		logLevel,
 	});
@@ -201,7 +201,7 @@ export const sitesCreateSubcommand = async (
 			bypassBucketNameValidation: true,
 			ignoreRegisterRootWarning: true,
 			publicDir: null,
-			rootDir: remotionRoot,
+			rootDir: picusRoot,
 			askAIEnabled,
 			experimentalClientSideRenderingEnabled,
 			experimentalVisualModeEnabled,
@@ -248,7 +248,7 @@ export const sitesCreateSubcommand = async (
 	Log.info(
 		{indent: false, logLevel},
 		CliInternals.chalk.blueBright(
-			['npx remotion cloudrun sites create', args[0], `--site-name=${siteName}`]
+			['npx picus cloudrun sites create', args[0], `--site-name=${siteName}`]
 				.filter(Internals.truthy)
 				.join(' '),
 		),

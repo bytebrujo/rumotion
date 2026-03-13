@@ -1,7 +1,7 @@
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 
 /**
- * Selects a composition in the Remotion Studio.
+ * Selects a composition in the Picus Studio.
  * @param compositionId - The ID of the composition to select.
  * @see [Documentation](/docs/studio/go-to-composition)
  */

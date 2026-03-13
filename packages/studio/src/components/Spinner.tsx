@@ -3,10 +3,10 @@ import {LIGHT_TEXT} from '../helpers/colors';
 
 const viewBox = 100;
 const lines = 8;
-const className = '__remotion_spinner_line';
-const remotionSpinnerAnimation = '__remotion_spinner_animation';
+const className = '__picus_spinner_line';
+const picusSpinnerAnimation = '__picus_spinner_animation';
 
-// Generated from https://github.com/remotion-dev/template-next/commit/9282c93f7c51ada31a42e18a94680fa09a14eee3
+// Generated from https://github.com/picus-dev/template-next/commit/9282c93f7c51ada31a42e18a94680fa09a14eee3
 const translated =
 	'M 44 0 L 50 0 a 6 6 0 0 1 6 6 L 56 26 a 6 6 0 0 1 -6 6 L 50 32 a 6 6 0 0 1 -6 -6 L 44 6 a 6 6 0 0 1 6 -6 Z';
 
@@ -24,7 +24,7 @@ export const Spinner: React.FC<{
 	return (
 		<>
 			<style type="text/css">{`
-				@keyframes ${remotionSpinnerAnimation} {
+				@keyframes ${picusSpinnerAnimation} {
           0% {
             opacity: 1;
           }
@@ -34,7 +34,7 @@ export const Spinner: React.FC<{
         }
         
         .${className} {
-            animation: ${remotionSpinnerAnimation} ${duration}s linear infinite;
+            animation: ${picusSpinnerAnimation} ${duration}s linear infinite;
         }        
 			`}</style>
 			<svg style={style} viewBox={`0 0 ${viewBox} ${viewBox}`}>

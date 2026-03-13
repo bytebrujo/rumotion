@@ -8,7 +8,7 @@ export const ContactUsHeader: React.FC = () => {
 				<h1 className={styles.writeincsstitle}>Contact us</h1>
 				<p>
 					We are here to help you with any questions you may have about
-					licensing and to help you determine if Remotion is the right fit for
+					licensing and to help you determine if Picus is the right fit for
 					your project.
 				</p>
 				<p>

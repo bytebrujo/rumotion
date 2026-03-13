@@ -12,6 +12,6 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true
   },
-  "exclude": ["remotion.config.ts"],
+  "exclude": ["picus.config.ts"],
   "include": ["src"]
 }

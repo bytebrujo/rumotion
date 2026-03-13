@@ -1,4 +1,4 @@
-import type {SimpleDiff} from '@remotion/studio-shared';
+import type {SimpleDiff} from '@picus/studio-shared';
 
 const findDeletions = ({
 	oldLines,

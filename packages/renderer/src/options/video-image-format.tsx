@@ -1,6 +1,6 @@
 import type {VideoImageFormat} from '../image-format';
 import {validVideoImageFormats} from '../image-format';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentVideoImageFormat: VideoImageFormat | null = null;
 
@@ -18,7 +18,7 @@ export const videoImageFormatOption = {
 		</>
 	),
 	ssrName: 'imageFormat' as const,
-	docLink: 'https://www.remotion.dev/docs/renderer/render-media#imageformat',
+	docLink: 'https://www.picus.dev/docs/renderer/render-media#imageformat',
 	type: null as VideoImageFormat | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -72,4 +72,4 @@ export const videoImageFormatOption = {
 		currentVideoImageFormat = value;
 	},
 	id: 'video-image-format',
-} satisfies AnyRemotionOption<VideoImageFormat | null>;
+} satisfies AnyPicusOption<VideoImageFormat | null>;

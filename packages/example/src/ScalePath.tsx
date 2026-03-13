@@ -1,4 +1,4 @@
-import {getBoundingBox, resetPath, scalePath} from '@remotion/paths';
+import {getBoundingBox, resetPath, scalePath} from '@picus/paths';
 import opentype from 'opentype.js';
 import {useEffect, useRef, useState} from 'react';
 import {
@@ -7,7 +7,7 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 type FontInfo = {
 	path: string;
@@ -25,7 +25,7 @@ const getPath = () => {
 				return;
 			}
 
-			const path = font.getPath('REMOTION', 0, 150, 72);
+			const path = font.getPath('PICUS', 0, 150, 72);
 			const p = path.toPathData(2);
 			resolve({path: p});
 		});

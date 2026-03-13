@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/lambda-go"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/lambda-go"
 	},
-	"name": "@remotion/lambda-go",
+	"name": "@picus/lambda-go",
 	"private": true,
 	"version": "4.0.434",
 	"scripts": {
@@ -10,6 +10,6 @@
 		"publishprivate": "node publish.mjs"
 	},
 	"devDependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	}
 }

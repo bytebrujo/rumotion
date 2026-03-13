@@ -1,6 +1,6 @@
-import {goToComposition, pause, play, seek, toggle} from '@remotion/studio';
+import {goToComposition, pause, play, seek, toggle} from '@picus/studio';
 import React, {useCallback} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const Seek: React.FC = () => {
 	const onClick = useCallback(() => {

@@ -1,6 +1,6 @@
-import type {ProjectInfo, RecastCodemod} from '@remotion/studio-shared';
+import type {ProjectInfo, RecastCodemod} from '@picus/studio-shared';
 import React, {useCallback, useContext, useEffect, useState} from 'react';
-import {ShortcutHint} from '../../error-overlay/remotion-overlay/ShortcutHint';
+import {ShortcutHint} from '../../error-overlay/picus-overlay/ShortcutHint';
 import {useKeybinding} from '../../helpers/use-keybinding';
 import {ModalsContext} from '../../state/modals';
 import {Flex, Row, Spacing} from '../layout';

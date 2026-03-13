@@ -1,6 +1,6 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React from 'react';
-import {AbsoluteFill, Series, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Series, useCurrentFrame} from 'picus';
 
 const Square: React.FC<{
 	readonly color: string;
@@ -56,7 +56,7 @@ export const SeriesExample: React.FC<{
 	return (
 		<div>
 			<Player
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={component}
 				compositionWidth={1280}
 				compositionHeight={720}

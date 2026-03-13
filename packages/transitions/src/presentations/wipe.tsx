@@ -1,5 +1,5 @@
 import React, {useMemo, useState} from 'react';
-import {AbsoluteFill, random} from 'remotion';
+import {AbsoluteFill, random} from 'picus';
 import type {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
@@ -228,7 +228,7 @@ const WipePresentation: React.FC<
 
 /*
  * @description A presentation where the entering slide slides over the exiting slide.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/presentations/wipe)
+ * @see [Documentation](https://www.picus.dev/docs/transitions/presentations/wipe)
  */
 export const wipe = (props?: WipeProps): TransitionPresentation<WipeProps> => {
 	return {

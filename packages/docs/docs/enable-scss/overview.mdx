@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-enable-scss-overview.png
 sidebar_label: Overview
-title: '@remotion/enable-scss'
+title: '@picus/enable-scss'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,13 +9,13 @@ import TabItem from '@theme/TabItem';
 import {ExperimentalBadge} from '../../components/Experimental';
 import {TableOfContents} from './TableOfContents';
 
-This package provides a Webpack override for enabling [SCSS/SASS](https://sass-lang.com/) with Remotion..
+This package provides a Webpack override for enabling [SCSS/SASS](https://sass-lang.com/) with Picus..
 
 ## Installation
 
-Install `@remotion/enable-scss` as well as TailwindCSS dependencies.
+Install `@picus/enable-scss` as well as TailwindCSS dependencies.
 
-<Installation pkg="@remotion/enable-scss sass@1.77.2 sass-loader@14.2.1 css-loader@5.2.7" />
+<Installation pkg="@picus/enable-scss sass@1.77.2 sass-loader@14.2.1 css-loader@5.2.7" />
 
 <br />
 
@@ -28,9 +28,9 @@ Newer versions may not work.
 
 [Override the Webpack config](/docs/webpack) by using [`enableScss()`](/docs/enable-scss/enable-scss).
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
-import {enableScss} from '@remotion/enable-scss';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
+import {enableScss} from '@picus/enable-scss';
 
 Config.overrideWebpackConfig((currentConfiguration) => {
   return enableScss(currentConfiguration);

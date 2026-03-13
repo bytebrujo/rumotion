@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let enableCrossSiteIsolation = false;
 
@@ -11,11 +11,11 @@ export const enableCrossSiteIsolationOption = {
 		<>
 			Enable Cross-Site Isolation in the Studio (sets Cross-Origin-Opener-Policy
 			and Cross-Origin-Embedder-Policy HTTP headers, required for{' '}
-			<code>@remotion/whisper-web</code>).
+			<code>@picus/whisper-web</code>).
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setenablecrosssiteisolation',
+	docLink: 'https://www.picus.dev/docs/config#setenablecrosssiteisolation',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -34,4 +34,4 @@ export const enableCrossSiteIsolationOption = {
 		enableCrossSiteIsolation = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

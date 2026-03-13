@@ -1,12 +1,12 @@
 // Copied from https://stackblitz.com/edit/svg-star-generator?file=index.js
 
-import type {Instruction} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
 import {
 	PathInternals,
 	reduceInstructions,
 	resetPath,
 	serializeInstructions,
-} from '@remotion/paths';
+} from '@picus/paths';
 import {joinPoints} from './join-points';
 import type {ShapeInfo} from './shape-info';
 
@@ -35,7 +35,7 @@ export type StarProps = {
  * @param {Number} points The amount of points of the star.
  * @param {Number} cornerRadius Rounds the corner using an arc. Similar to CSS's border-radius. Cannot be used together with edgeRoundness.
  * @param {null|Number} edgeRoundness Allows to modify the shape by rounding the edges using bezier curves. Default null.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/make-star)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/make-star)
  */
 const star = ({
 	centerX,

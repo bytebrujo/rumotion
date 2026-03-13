@@ -1,4 +1,4 @@
-# @remotion/discord-poster
+# @picus/discord-poster
 
 ## Usage
 

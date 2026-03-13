@@ -36,23 +36,23 @@ export const config: VercelConfig = {
 	redirects: [
 		routes.redirect(
 			'/changelog',
-			'https://github.com/remotion-dev/remotion/releases',
+			'https://github.com/picus-dev/picus/releases',
 			{permanent: false},
 		),
 		routes.redirect('/discord', 'https://discord.gg/6VzzNDwUwV', {
 			permanent: false,
 		}),
-		routes.redirect('/booking', 'https://cal.com/remotion', {
+		routes.redirect('/booking', 'https://cal.com/picus', {
 			permanent: false,
 		}),
 		routes.redirect(
 			'/coc',
-			'https://github.com/remotion-dev/remotion/blob/main/CODE-OF-CONDUCT.md',
+			'https://github.com/picus-dev/picus/blob/main/CODE-OF-CONDUCT.md',
 			{permanent: false},
 		),
 		routes.redirect(
 			'/license',
-			'https://github.com/remotion-dev/remotion/blob/main/LICENSE.md',
+			'https://github.com/picus-dev/picus/blob/main/LICENSE.md',
 			{permanent: false},
 		),
 		routes.redirect('/timeout', '/docs/timeout', {permanent: false}),
@@ -61,7 +61,7 @@ export const config: VercelConfig = {
 		}),
 		routes.redirect(
 			'/issue',
-			'https://github.com/remotion-dev/remotion/issues/new/choose',
+			'https://github.com/picus-dev/picus/issues/new/choose',
 			{permanent: false},
 		),
 		routes.redirect('/skia', '/docs/skia', {permanent: false}),
@@ -73,7 +73,7 @@ export const config: VercelConfig = {
 		routes.redirect('/terminology', '/docs/terminology', {permanent: false}),
 		routes.redirect(
 			'/hacktoberfest',
-			'https://github.com/remotion-dev/remotion/issues/1365',
+			'https://github.com/picus-dev/picus/issues/1365',
 			{permanent: false},
 		),
 		routes.redirect('/motion-blur', '/docs/motion-blur', {permanent: false}),
@@ -111,7 +111,7 @@ export const config: VercelConfig = {
 		routes.redirect('/docs/player/api', '/docs/player/player', {
 			permanent: true,
 		}),
-		routes.redirect('/github', 'https://github.com/remotion-dev/remotion', {
+		routes.redirect('/github', 'https://github.com/picus-dev/picus', {
 			permanent: false,
 		}),
 		routes.redirect('/docs/lottie/after-effects', '/docs/after-effects', {
@@ -124,58 +124,58 @@ export const config: VercelConfig = {
 		routes.redirect('/docs/cli/preview', '/docs/cli/studio', {
 			permanent: false,
 		}),
-		routes.redirect('/links', 'https://linktr.ee/remotion', {
+		routes.redirect('/links', 'https://linktr.ee/picus', {
 			permanent: false,
 		}),
 		routes.redirect(
 			'/contributing',
-			'https://www.remotion.dev/docs/contributing',
+			'https://www.picus.dev/docs/contributing',
 			{permanent: false},
 		),
-		routes.redirect('/resources', 'https://www.remotion.dev/docs/resources', {
+		routes.redirect('/resources', 'https://www.picus.dev/docs/resources', {
 			permanent: false,
 		}),
-		routes.redirect('/rive', 'https://www.remotion.dev/docs/rive', {
+		routes.redirect('/rive', 'https://www.picus.dev/docs/rive', {
 			permanent: false,
 		}),
-		routes.redirect('/zod-types', 'https://www.remotion.dev/docs/zod-types', {
+		routes.redirect('/zod-types', 'https://www.picus.dev/docs/zod-types', {
 			permanent: false,
 		}),
-		routes.redirect('/cloudrun', 'https://www.remotion.dev/docs/cloudrun', {
+		routes.redirect('/cloudrun', 'https://www.picus.dev/docs/cloudrun', {
 			permanent: false,
 		}),
 		routes.redirect(
 			'/layout-utils',
-			'https://www.remotion.dev/docs/layout-utils',
+			'https://www.picus.dev/docs/layout-utils',
 			{permanent: false},
 		),
 		routes.redirect(
 			'/animation-utils',
-			'https://www.remotion.dev/docs/animation-utils',
+			'https://www.picus.dev/docs/animation-utils',
 			{permanent: false},
 		),
-		routes.redirect('/get-help', 'https://www.remotion.dev/docs/get-help', {
+		routes.redirect('/get-help', 'https://www.picus.dev/docs/get-help', {
 			permanent: false,
 		}),
-		routes.redirect('/help', 'https://www.remotion.dev/docs/get-help', {
+		routes.redirect('/help', 'https://www.picus.dev/docs/get-help', {
 			permanent: false,
 		}),
 		routes.redirect(
 			'/ask-in-public',
-			'https://www.remotion.dev/docs/ask-in-public',
+			'https://www.picus.dev/docs/ask-in-public',
 			{permanent: false},
 		),
-		routes.redirect('/native', 'https://remotion.dev/docs/react-native', {
+		routes.redirect('/native', 'https://picus.dev/docs/react-native', {
 			permanent: false,
 		}),
 		routes.redirect(
 			'/docs/parametrized-rendering',
-			'https://www.remotion.dev/docs/parameterized-rendering',
+			'https://www.picus.dev/docs/parameterized-rendering',
 			{permanent: false},
 		),
 		routes.redirect(
 			'/business',
-			'https://github.com/orgs/remotion-dev/projects/10',
+			'https://github.com/orgs/picus-dev/projects/10',
 			{permanent: false},
 		),
 		routes.redirect(
@@ -183,7 +183,7 @@ export const config: VercelConfig = {
 			'/docs/miscellaneous/thorium-browser',
 			{permanent: false},
 		),
-		routes.redirect('/youtube', 'https://youtube.com/@remotion_dev', {
+		routes.redirect('/youtube', 'https://youtube.com/@picus_dev', {
 			permanent: false,
 		}),
 		routes.redirect('/bun', '/docs/bun', {permanent: false}),
@@ -192,7 +192,7 @@ export const config: VercelConfig = {
 		}),
 		routes.redirect(
 			'/repro',
-			'https://stackblitz.com/fork/github/remotion-dev/template-helloworld',
+			'https://stackblitz.com/fork/github/picus-dev/template-helloworld',
 			{permanent: false},
 		),
 		routes.redirect('/templates/remix', '/templates/react-router', {
@@ -269,22 +269,22 @@ export const config: VercelConfig = {
 			'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.vp9.webm',
 			{permanent: false},
 		),
-		routes.redirect('/bbb.mp4', 'https://remotion.media/BigBuckBunny.mp4', {
+		routes.redirect('/bbb.mp4', 'https://picus.media/BigBuckBunny.mp4', {
 			permanent: false,
 		}),
 		routes.redirect(
 			'/leads',
-			'https://github.com/orgs/remotion-dev/projects/15/views/1',
+			'https://github.com/orgs/picus-dev/projects/15/views/1',
 			{permanent: false},
 		),
 		routes.redirect(
 			'/discord-blue-badges',
-			'https://github.com/remotion-dev/business/issues/347',
+			'https://github.com/picus-dev/business/issues/347',
 			{permanent: false},
 		),
 		routes.redirect(
 			'/content',
-			'https://github.com/orgs/remotion-dev/projects/16/views/1?layout=board',
+			'https://github.com/orgs/picus-dev/projects/16/views/1?layout=board',
 			{permanent: false},
 		),
 		routes.redirect('/docs/snippets/fps-converter', '/docs/multiple-fps', {

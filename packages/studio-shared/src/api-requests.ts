@@ -8,10 +8,10 @@ import type {
 	StillImageFormat,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
-import type {_InternalTypes} from 'remotion';
-import type {CanUpdateSequencePropStatus} from 'remotion';
+} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
+import type {_InternalTypes} from 'picus';
+import type {CanUpdateSequencePropStatus} from 'picus';
 import type {RecastCodemod, VisualControlChange} from './codemods';
 import type {PackageManager} from './package-manager';
 import type {ProjectInfo} from './project-info';

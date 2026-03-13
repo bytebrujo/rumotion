@@ -1,7 +1,7 @@
 import type {
 	ErrorLocation,
 	SymbolicatedStackFrame,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 
 export const resolveFileSource = async (
 	location: ErrorLocation,

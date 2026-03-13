@@ -1,8 +1,8 @@
 import Head from '@docusaurus/Head';
 import {useLocation} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import '@remotion/promo-pages/dist/prompts/PromptsShow.css';
-import {PromptsShowPage} from '@remotion/promo-pages/dist/prompts/PromptsShow.js';
+import '@picus/promo-pages/dist/prompts/PromptsShow.css';
+import {PromptsShowPage} from '@picus/promo-pages/dist/prompts/PromptsShow.js';
 import Layout from '@theme/Layout';
 import React from 'react';
 import promptSubmissions from '../../static/_raw/prompt-submissions.json';
@@ -19,7 +19,7 @@ export default () => {
 
 	const getDescription = () => {
 		if (!promptSubmission) {
-			return 'View an AI-generated video prompt for Remotion.';
+			return 'View an AI-generated video prompt for Picus.';
 		}
 
 		const parts: string[] = [];
@@ -32,10 +32,10 @@ export default () => {
 		}
 
 		if (parts.length > 0) {
-			return `${parts.join(' ')}. An AI-generated Remotion video.`;
+			return `${parts.join(' ')}. An AI-generated Picus video.`;
 		}
 
-		return `An AI-generated Remotion video prompt.`;
+		return `An AI-generated Picus video prompt.`;
 	};
 
 	const description = getDescription();
@@ -46,7 +46,7 @@ export default () => {
 	return (
 		<Layout>
 			<Head>
-				{Seo.renderTitle(`${title} | Remotion Prompts`)}
+				{Seo.renderTitle(`${title} | Picus Prompts`)}
 				{Seo.renderDescription(description)}
 				{Seo.renderImage(ogImage, context.siteConfig.url)}
 			</Head>

@@ -1,4 +1,4 @@
-import type {TSequence} from 'remotion';
+import type {TSequence} from 'picus';
 
 export const getCascadedStart = (
 	sequence: TSequence,

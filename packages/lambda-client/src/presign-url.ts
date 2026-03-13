@@ -1,7 +1,7 @@
 import {GetObjectCommand, HeadObjectCommand} from '@aws-sdk/client-s3';
 import {getSignedUrl} from '@aws-sdk/s3-request-presigner';
-import {validateBucketName} from '@remotion/serverless-client';
-import {REMOTION_BUCKET_PREFIX} from './constants';
+import {validateBucketName} from '@picus/serverless-client';
+import {PICUS_BUCKET_PREFIX} from './constants';
 import {getS3Client} from './get-s3-client';
 import type {AwsRegion} from './regions';
 import type {RequestHandler} from './types';
@@ -43,8 +43,8 @@ const internalPresignUrl = async <CheckIfObjectExists extends boolean = false>({
 > => {
 	validateBucketName({
 		bucketName,
-		bucketNamePrefix: REMOTION_BUCKET_PREFIX,
-		options: {mustStartWithRemotion: false},
+		bucketNamePrefix: PICUS_BUCKET_PREFIX,
+		options: {mustStartWithPicus: false},
 	});
 	validatePresignExpiration(expiresInSeconds);
 
@@ -96,7 +96,7 @@ const internalPresignUrl = async <CheckIfObjectExists extends boolean = false>({
 
 /*
  * @description Takes a private S3 object and turns it into a public URL by signing it with your AWS credentials.
- * @see [Documentation](https://remotion.dev/docs/lambda/presignurl)
+ * @see [Documentation](https://picus.dev/docs/lambda/presignurl)
  */
 export const presignUrl = <CheckIfObjectExists extends boolean = false>({
 	region,

@@ -1,4 +1,4 @@
-import {LambdaClientInternals, type AwsProvider} from '@remotion/lambda-client';
+import {LambdaClientInternals, type AwsProvider} from '@picus/lambda-client';
 import type {
 	CallFunctionAsync,
 	CallFunctionOptions,
@@ -10,15 +10,15 @@ import type {
 	ServerlessReturnValues,
 	ServerlessRoutines,
 	StreamingMessage,
-} from '@remotion/serverless';
+} from '@picus/serverless';
 import {
 	formatMap,
 	innerHandler,
 	messageTypeIdToMessageType,
 	ResponseStream,
 	streamWriter,
-} from '@remotion/serverless';
-import {makeStreamer} from '@remotion/streaming';
+} from '@picus/serverless';
+import {makeStreamer} from '@picus/streaming';
 import {Log} from '../../cli/log';
 import {mockServerImplementation} from '../mock-implementation';
 import {mockImplementation} from './mock-implementation';

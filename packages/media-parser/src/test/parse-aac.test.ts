@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 import {WEBCODECS_TIMESCALE} from '../webcodecs-timescale';
@@ -85,7 +85,7 @@ test('should be able to parse aac', async () => {
 				audioSamples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(audioSamples).toBe(4557);
@@ -174,7 +174,7 @@ test('should be able to get basics without parsing all', async () => {
 			});
 			return null;
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(audioSamples).toBe(0);

@@ -1,6 +1,6 @@
-import type {Codec} from '@remotion/renderer';
-import type {AvailableOptions} from '@remotion/renderer/client';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {Codec} from '@picus/renderer';
+import type {AvailableOptions} from '@picus/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import {useState} from 'react';
 import {NumberSetting} from './NumberSetting';
 

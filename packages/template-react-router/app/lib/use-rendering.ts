@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { useCallback, useMemo, useState } from "react";
 import { getProgress, renderVideo } from "./api";
-import { CompositionProps } from "~/remotion/schemata";
+import { CompositionProps } from "~/picus/schemata";
 
 export type State =
   | {

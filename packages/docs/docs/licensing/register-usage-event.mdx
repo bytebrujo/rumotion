@@ -3,14 +3,14 @@ image: /generated/articles-docs-licensing-register-usage-event.png
 id: register-usage-event
 title: registerUsageEvent()
 slug: /licensing/register-usage-event
-crumb: '@remotion/licensing'
+crumb: '@picus/licensing'
 ---
 
-Registers a usage point for your Remotion license.  
-Allows for accurate and up to date reporting and to track your usage on the Remotion dashboard.
+Registers a usage point for your Picus license.  
+Allows for accurate and up to date reporting and to track your usage on the Picus dashboard.
 
 ```tsx twoslash title="Register a usage point"
-import {registerUsageEvent} from '@remotion/licensing';
+import {registerUsageEvent} from '@picus/licensing';
 
 await registerUsageEvent({
   licenseKey: 'rm_pub_xxxxx',
@@ -28,7 +28,7 @@ An object with the following properties:
 
 Type: `string`
 
-Your Remotion public API key. You can get it from your Remotion.pro dashboard.
+Your Picus public API key. You can get it from your Picus.pro dashboard.
 
 ### `event`
 
@@ -68,5 +68,5 @@ You do not have to pay for failed renders or renders doing development.
 
 ## See also
 
-- [`@remotion/licensing`](/docs/licensing)
+- [`@picus/licensing`](/docs/licensing)
 - [`getUsage()`](/docs/licensing/get-usage)

@@ -1,8 +1,8 @@
 // This is a separate component file for testing if refreshing a subtree keeps the nonce order.
 // Edit this file while the studio is running to trigger a fast refresh of just this subtree.
-import {LightLeak} from '@remotion/light-leaks';
+import {LightLeak} from '@picus/light-leaks';
 import React from 'react';
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 
 export const FastUpdatesSubtree: React.FC = () => {
 	return (

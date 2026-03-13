@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {random} from 'remotion';
+import {random} from 'picus';
 
 export const SvgBlob: React.FC<{
 	readonly style?: React.SVGProps<HTMLOrSVGElement>['style'];

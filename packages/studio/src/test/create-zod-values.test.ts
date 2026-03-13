@@ -17,7 +17,7 @@ const getZ = async () => {
 const getZodTypes = async () => {
 	const z = await getZTypesIfPossible();
 	if (!z) {
-		throw new Error('@remotion/zod-types not found');
+		throw new Error('@picus/zod-types not found');
 	}
 
 	return z;

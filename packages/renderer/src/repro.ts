@@ -2,21 +2,21 @@ import {execSync} from 'node:child_process';
 import fs, {rmSync} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 import {chalk} from './chalk';
-import {findRemotionRoot} from './find-closest-package-json';
+import {findPicusRoot} from './find-closest-package-json';
 import {isServeUrl} from './is-serve-url';
 import type {LogLevel} from './log-level';
 import {Log} from './logger';
 
-const REPRO_DIR = '.remotionrepro';
+const REPRO_DIR = '.picusrepro';
 const LOG_FILE_NAME = 'logs.txt';
 const INPUT_DIR = 'bundle';
 const OUTPUT_DIR = 'output';
 const LINE_SPLIT = '\n';
 
 const getZipFileName = (name: string) =>
-	`remotion-repro-${name}-${Date.now()}.zip`;
+	`picus-repro-${name}-${Date.now()}.zip`;
 
 const readyDirSync = (dir: string) => {
 	let items;
@@ -81,7 +81,7 @@ type ReproWriter = {
 };
 
 const reproWriter = (name: string): ReproWriter => {
-	const root = findRemotionRoot();
+	const root = findPicusRoot();
 	const reproFolder = path.join(root, REPRO_DIR);
 	const logPath = path.join(reproFolder, LOG_FILE_NAME);
 	const zipFile = path.join(root, getZipFileName(name));
@@ -138,7 +138,7 @@ const reproWriter = (name: string): ReproWriter => {
 		writeLine('info', [`Node/Bun version: ${process.version}`]);
 		writeLine('info', [`OS: ${process.platform}-${process.arch}`]);
 		writeLine('info', [`Serve URL: ${serveUrl}`]);
-		writeLine('info', [`Remotion version: ${VERSION}`]);
+		writeLine('info', [`Picus version: ${VERSION}`]);
 	};
 
 	const onRenderSucceed = ({

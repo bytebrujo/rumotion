@@ -1,4 +1,4 @@
-import {Lottie, LottieAnimationData} from '@remotion/lottie';
+import {Lottie, LottieAnimationData} from '@picus/lottie';
 import React, {useEffect, useState} from 'react';
 import {
 	Sequence,
@@ -7,7 +7,7 @@ import {
 	useCurrentFrame,
 	useDelayRender,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import HeaderAndCredits from './HeaderAndCredits';
 import './common.css';
 

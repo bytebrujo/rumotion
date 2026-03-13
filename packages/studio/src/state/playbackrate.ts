@@ -1,4 +1,4 @@
-const key = 'remotion.playbackrate';
+const key = 'picus.playbackrate';
 
 export const persistPlaybackRate = (option: number) => {
 	localStorage.setItem(key, String(option));

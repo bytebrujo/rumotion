@@ -11,7 +11,7 @@ export type {SilentPart};
 
 /*
  * @description Gets the silent parts of a video or audio in Node.js. Useful for cutting out silence from a video.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/get-silent-parts)
+ * @see [Documentation](https://www.picus.dev/docs/renderer/get-silent-parts)
  */
 export const getSilentParts = async ({
 	src,

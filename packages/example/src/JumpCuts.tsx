@@ -3,7 +3,7 @@ import {
 	CalculateMetadataFunction,
 	OffthreadVideo,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 
 const fps = 30;
 
@@ -70,11 +70,11 @@ export const JumpCuts: React.FC<Props> = ({sections}) => {
 		<OffthreadVideo
 			pauseWhenBuffering
 			trimBefore={cut.trimBefore}
-			// Remotion will automatically add a time fragment to the end of the video URL
+			// Picus will automatically add a time fragment to the end of the video URL
 			// based on `trimBefore` and `trimAfter`. Opt out of this by adding one yourself.
-			// https://www.remotion.dev/docs/media-fragments
-			src={`https://remotion.media/BigBuckBunny.mp4#t=0,`}
-			// Force Remotion to seek when it jumps even just a tiny bit
+			// https://www.picus.dev/docs/media-fragments
+			src={`https://picus.media/BigBuckBunny.mp4#t=0,`}
+			// Force Picus to seek when it jumps even just a tiny bit
 			acceptableTimeShiftInSeconds={
 				cut.firstFrameOfSection ? 0.000001 : undefined
 			}

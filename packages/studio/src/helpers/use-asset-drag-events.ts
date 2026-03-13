@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useRef} from 'react';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 
 function useAssetDragEvents({
 	name,

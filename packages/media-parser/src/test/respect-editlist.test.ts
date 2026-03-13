@@ -1,5 +1,5 @@
 import {beforeAll, expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {mediaParserController} from '../controller/media-parser-controller';
 import {hasBeenAborted} from '../errors';
 import {nodeReader} from '../node';
@@ -17,7 +17,7 @@ test('respect-editlist', async () => {
 		await parseMedia({
 			src: await getRemoteExampleVideo('videoWithEditList'),
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			fields: {
 				slowStructure: true,
 			},

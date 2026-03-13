@@ -1,4 +1,4 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {OptimizeFor} from './fft/get-visualization';
 import {getVisualization} from './fft/get-visualization';
 import {getMaxPossibleMagnitude} from './fft/max-value-cached';
@@ -24,8 +24,8 @@ export type VisualizeAudioOptions = MandatoryVisualizeAudioOptions &
 
 /**
  * @description Takes in AudioData (preferably fetched by the useAudioData() hook) and processes it in a way that makes visualizing the audio that is playing at the current frame easy.
- * @description part of @remotion/media-utils
- * @see [Documentation](https://www.remotion.dev/docs/visualize-audio)
+ * @description part of @picus/media-utils
+ * @see [Documentation](https://www.picus.dev/docs/visualize-audio)
  */
 const visualizeAudioFrame = ({
 	audioData,

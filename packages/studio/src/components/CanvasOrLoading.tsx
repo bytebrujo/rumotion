@@ -1,7 +1,7 @@
-import type {Size} from '@remotion/player';
+import type {Size} from '@picus/player';
 import React, {useContext, useEffect} from 'react';
-import {Internals} from 'remotion';
-import {ErrorLoader} from '../error-overlay/remotion-overlay/ErrorLoader';
+import {Internals} from 'picus';
+import {ErrorLoader} from '../error-overlay/picus-overlay/ErrorLoader';
 import {BACKGROUND} from '../helpers/colors';
 import {TimelineZoomCtx} from '../state/timeline-zoom';
 import {Canvas} from './Canvas';

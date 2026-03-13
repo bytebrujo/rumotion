@@ -8,8 +8,8 @@ import React, {
 	useMemo,
 	useState,
 } from 'react';
-import type {CompositionManagerContext, TRenderAsset} from 'remotion';
-import {Internals} from 'remotion';
+import type {CompositionManagerContext, TRenderAsset} from 'picus';
+import {Internals} from 'picus';
 
 // @ts-expect-error
 global.IS_REACT_ACT_ENVIRONMENT = true;
@@ -20,7 +20,7 @@ const waitForWindowToBeReady = () => {
 	return new Promise<void>((resolve) => {
 		let interval: Timer | null = null;
 		const check = () => {
-			if (window.remotion_renderReady) {
+			if (window.picus_renderReady) {
 				clearInterval(interval as Timer);
 				resolve();
 			}
@@ -43,9 +43,9 @@ export const getAssetsForMarkup = async (
 ) => {
 	const collectedAssets: TRenderAsset[][] = [];
 	const Wrapped = () => {
-		window.remotion_audioEnabled = true;
-		window.remotion_videoEnabled = true;
-		window.remotion_logLevel = 'info';
+		window.picus_audioEnabled = true;
+		window.picus_videoEnabled = true;
+		window.picus_logLevel = 'info';
 		const [renderAssets, setAssets] = useState<TRenderAsset[]>([]);
 
 		const registerRenderAsset = useCallback((renderAsset: TRenderAsset) => {
@@ -107,14 +107,14 @@ export const getAssetsForMarkup = async (
 		}, [renderAssets, registerRenderAsset, unregisterRenderAsset]);
 
 		return (
-			<Internals.CanUseRemotionHooksProvider>
+			<Internals.CanUsePicusHooksProvider>
 				<Internals.CompositionManagerProvider
 					onlyRenderComposition={null}
 					currentCompositionMetadata={null}
 					initialCompositions={[]}
 					initialCanvasContent={null}
 				>
-					<Internals.RemotionRootContexts
+					<Internals.PicusRootContexts
 						visualModeEnabled={false}
 						frameState={null}
 						audioEnabled
@@ -130,9 +130,9 @@ export const getAssetsForMarkup = async (
 								</Internals.RenderAssetManager.Provider>
 							</Internals.CompositionManager.Provider>
 						</Internals.RenderAssetManagerProvider>
-					</Internals.RemotionRootContexts>
+					</Internals.PicusRootContexts>
 				</Internals.CompositionManagerProvider>
-			</Internals.CanUseRemotionHooksProvider>
+			</Internals.CanUsePicusHooksProvider>
 		);
 	};
 
@@ -143,7 +143,7 @@ export const getAssetsForMarkup = async (
 		currentFrame++
 	) {
 		act(() => {
-			window.remotion_setFrame(currentFrame, ID, 1);
+			window.picus_setFrame(currentFrame, ID, 1);
 		});
 		await waitForWindowToBeReady();
 		collectedAssets.push(collectAssets());

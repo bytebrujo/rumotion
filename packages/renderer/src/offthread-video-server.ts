@@ -100,7 +100,7 @@ export const startOffthreadVideoServer = ({
 			response.setHeader('access-control-allow-origin', '*');
 
 			// Prevent caching of the response and excessive disk writes
-			// https://github.com/remotion-dev/remotion/issues/2760
+			// https://github.com/picus-dev/picus/issues/2760
 			response.setHeader(
 				'cache-control',
 				'no-cache, no-store, must-revalidate',

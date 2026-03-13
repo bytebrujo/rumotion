@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/streaming"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/streaming"
 	},
-	"name": "@remotion/streaming",
+	"name": "@picus/streaming",
 	"version": "4.0.434",
 	"description": "Utilities for streaming data between programs",
 	"main": "dist",
@@ -13,17 +13,17 @@
 		"format": "oxfmt src",
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},

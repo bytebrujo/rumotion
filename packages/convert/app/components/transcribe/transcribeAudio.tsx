@@ -1,10 +1,10 @@
-import type {WhisperWebModel} from '@remotion/whisper-web';
+import type {WhisperWebModel} from '@picus/whisper-web';
 import {
 	downloadWhisperModel,
 	resampleTo16Khz,
 	toCaptions,
 	transcribe,
-} from '@remotion/whisper-web';
+} from '@picus/whisper-web';
 import {useCallback} from 'react';
 import type {Source} from '~/lib/convert-state';
 import {formatBytes} from '~/lib/format-bytes';

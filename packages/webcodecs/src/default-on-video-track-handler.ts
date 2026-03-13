@@ -1,4 +1,4 @@
-import {MediaParserInternals} from '@remotion/media-parser';
+import {MediaParserInternals} from '@picus/media-parser';
 import {canReencodeVideoTrack} from './can-reencode-video-track';
 import type {
 	ConvertMediaOnVideoTrackHandler,

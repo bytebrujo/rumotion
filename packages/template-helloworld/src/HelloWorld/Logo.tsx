@@ -1,11 +1,11 @@
-import { zColor } from "@remotion/zod-types";
+import { zColor } from "@picus/zod-types";
 import {
   AbsoluteFill,
   interpolate,
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 import { z } from "zod";
 import { Arc } from "./Arc";
 import { Atom } from "./Atom";

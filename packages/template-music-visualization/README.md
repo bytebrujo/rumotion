@@ -1,4 +1,4 @@
-# Remotion Music Visualization Template
+# Picus Music Visualization Template
 
 <div class='grid' markdown>
   <img alt='Spectrum Visualizer' width='300px' src='https://github.com/user-attachments/assets/74095cfd-5507-4875-9e55-2b7f66c72287' />
@@ -18,19 +18,19 @@ npm install
 **Start Preview**
 
 ```console
-npx remotion studio
+npx picus studio
 ```
 
 **Render video**
 
 ```console
-npx remotion render
+npx picus render
 ```
 
-**Upgrade Remotion**
+**Upgrade Picus**
 
 ```console
-npx remotion upgrade
+npx picus upgrade
 ```
 
 ## Customization
@@ -51,13 +51,13 @@ All parameters can be modified in `src/Root.tsx` or directly in the Studio sideb
 3. Adjust the song and artist information
 4. Customize the visualizer settings to match your music style
 
-Then render your video by running clicking "Render" button in Remotion Studio.
+Then render your video by running clicking "Render" button in Picus Studio.
 
-Check out the [Remotion docs](/docs/render/) for more rendering options.
+Check out the [Picus docs](/docs/render/) for more rendering options.
 
 ## Docs
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+Get started with Picus by reading the [fundamentals page](https://www.picus.dev/docs/the-fundamentals).
 
 ## Help
 
@@ -65,19 +65,19 @@ We provide help [on our Discord server](https://discord.gg/6VzzNDwUwV).
 
 ## Issues
 
-Found an issue with Remotion? Upgrade Remotion to receive fixes:
+Found an issue with Picus? Upgrade Picus to receive fixes:
 
 ```
-npx remotion upgrade
+npx picus upgrade
 ```
 
-Didn't help? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
+Didn't help? [File an issue here](https://github.com/picus-dev/picus/issues/new).
 
 ## Contributing
 
-The source of this template is in the [Remotion Monorepo](https://github.com/remotion-dev/remotion/tree/main/packages/template-music-visualization).  
+The source of this template is in the [Picus Monorepo](https://github.com/picus-dev/picus/tree/main/packages/template-music-visualization).  
 Don't send pull requests here, this is only a mirror.
 
 ## License
 
-Note that for some entities a company license is needed. Read [the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Note that for some entities a company license is needed. Read [the terms here](https://github.com/picus-dev/picus/blob/main/LICENSE.md).

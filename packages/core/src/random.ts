@@ -23,7 +23,7 @@ export type RandomSeed = number | string | null;
 
 /*
  * @description A deterministic pseudo-random number generator. Pass in the same seed and get the same pseudorandom number.
- * @see [Documentation](https://www.remotion.dev/docs/random)
+ * @see [Documentation](https://www.picus.dev/docs/random)
  */
 export const random = (seed: RandomSeed, dummy?: unknown) => {
 	if (dummy !== undefined) {

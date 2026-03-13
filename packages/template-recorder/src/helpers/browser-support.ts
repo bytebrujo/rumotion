@@ -9,7 +9,7 @@ export const canUseWebFsWriter = async () => {
 
   const directoryHandle = await navigator.storage.getDirectory();
   const fileHandle = await directoryHandle.getFileHandle(
-    "remotion-probe-web-fs-support",
+    "picus-probe-web-fs-support",
     {
       create: true,
     },

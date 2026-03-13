@@ -1,4 +1,4 @@
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 import type {InternalState} from '../internal-state';
 import {createLayer} from '../take-screenshot';
 import {calculateTransforms} from './calculate-transforms';
@@ -170,7 +170,7 @@ export const processNode = async ({
 		Internals.Log.trace(
 			{
 				logLevel,
-				tag: '@remotion/web-renderer',
+				tag: '@picus/web-renderer',
 			},
 			`Transforming element in 3D - canvas size: ${precomposeRect.width}x${precomposeRect.height} - compose: ${Date.now() - start}ms - helper canvas: ${drawable.width}x${drawable.height}`,
 		);

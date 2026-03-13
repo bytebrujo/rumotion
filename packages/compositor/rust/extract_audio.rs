@@ -1,10 +1,10 @@
 use std::io::ErrorKind;
 
 use crate::{errors::ErrorWithBacktrace, global_printer::_print_verbose};
-use ffmpeg_next::{self as remotionffmpeg, codec::Id, encoder, format, media, Rational};
+use ffmpeg_next::{self as picusffmpeg, codec::Id, encoder, format, media, Rational};
 
 pub fn extract_audio(input_path: &str, output_path: &str) -> Result<(), ErrorWithBacktrace> {
-    remotionffmpeg::init().map_err(|e| format!("Initialization error: {}", e))?;
+    picusffmpeg::init().map_err(|e| format!("Initialization error: {}", e))?;
 
     _print_verbose(&format!(
         "Extracting audio from {} {}",
@@ -17,7 +17,7 @@ pub fn extract_audio(input_path: &str, output_path: &str) -> Result<(), ErrorWit
         .map_err(|e| format!("Error setting up output to '{}': {}", output_path, e))?;
 
     // Determine the audio codec of the input file
-    let audio_stream = match ictx.streams().best(remotionffmpeg::media::Type::Audio) {
+    let audio_stream = match ictx.streams().best(picusffmpeg::media::Type::Audio) {
         Some(audio_stream) => audio_stream,
         None => Err(std::io::Error::new(
             ErrorKind::Other,
@@ -51,7 +51,7 @@ pub fn extract_audio(input_path: &str, output_path: &str) -> Result<(), ErrorWit
 
     octx.write_header().map_err(|e| {
         if e.to_string().contains("ADTS muxer")
-            && audio_codec_id != remotionffmpeg::ffi::AVCodecID::AV_CODEC_ID_AAC
+            && audio_codec_id != picusffmpeg::ffi::AVCodecID::AV_CODEC_ID_AAC
         {
             format!(
                 "Error: The audio format in '{}' is not AAC, and cannot be saved as an .aac file.",
@@ -81,7 +81,7 @@ pub fn extract_audio(input_path: &str, output_path: &str) -> Result<(), ErrorWit
                     .write_interleaved(&mut octx)
                     .map_err(|e| format!("Error writing packet: {}", e))?;
             }
-            Err(remotionffmpeg::Error::Eof) => break, // Break on end of file.
+            Err(picusffmpeg::Error::Eof) => break, // Break on end of file.
             Err(err) => {
                 return Err(ErrorWithBacktrace::from(format!(
                     "Error processing packet: {}",

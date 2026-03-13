@@ -4,7 +4,7 @@ import {
 	OffthreadVideo,
 	staticFile,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 export const OffthreadVideoToCanvas: React.FC = () => {
 	const canvas = useRef<HTMLCanvasElement>(null);

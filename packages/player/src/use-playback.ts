@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import {useContext, useEffect, useRef} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import type {BrowserMediaControlsBehavior} from './browser-mediasession.js';
 import {useBrowserMediaSession} from './browser-mediasession.js';
 import {calculateNextFrame} from './calculate-next-frame.js';
@@ -40,7 +40,7 @@ export const usePlayback = ({
 	const context = useContext(Internals.BufferingContextReact);
 	if (!context) {
 		throw new Error(
-			'Missing the buffering context. Most likely you have a Remotion version mismatch.',
+			'Missing the buffering context. Most likely you have a Picus version mismatch.',
 		);
 	}
 

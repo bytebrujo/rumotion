@@ -10,8 +10,8 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import type {CurrentScaleContextType} from 'remotion';
-import {Internals} from 'remotion';
+import type {CurrentScaleContextType} from 'picus';
+import {Internals} from 'picus';
 import type {BrowserMediaControlsBehavior} from './browser-mediasession.js';
 import {
 	calculateCanvasTransformation,
@@ -51,7 +51,7 @@ export type PosterFillMode = 'player-size' | 'composition-size';
 const reactVersion = React.version.split('.')[0];
 if (reactVersion === '0') {
 	throw new Error(
-		`Version ${reactVersion} of "react" is not supported by Remotion`,
+		`Version ${reactVersion} of "react" is not supported by Picus`,
 	);
 }
 

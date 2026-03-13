@@ -1,6 +1,6 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const MyComp: React.FC = () => {
 	return <AbsoluteFill style={{backgroundColor: 'black'}} />;

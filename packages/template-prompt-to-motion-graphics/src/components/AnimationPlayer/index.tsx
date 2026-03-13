@@ -1,6 +1,6 @@
 "use client";
 
-import { Player, type ErrorFallback, type PlayerRef } from "@remotion/player";
+import { Player, type ErrorFallback, type PlayerRef } from "@picus/player";
 import React, { useEffect, useRef } from "react";
 import { ErrorDisplay, type ErrorType } from "../ErrorDisplay";
 import { RenderControls } from "./RenderControls";

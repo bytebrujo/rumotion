@@ -5,8 +5,8 @@ use Aws\Credentials\CredentialProvider;
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use Remotion\LambdaPhp\PHPClient;
-use Remotion\LambdaPhp\RenderParams;
+use Picus\LambdaPhp\PHPClient;
+use Picus\LambdaPhp\RenderParams;
 
 // Load environment variables
 // Use "unsafe" because AWS reads environment variables from getenv(), not $_ENV
@@ -14,11 +14,11 @@ $dotenv = Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->load();
 
 // Specify the region you deployed to, for example "us-east-1"
-$region = getenv('REMOTION_APP_REGION');
+$region = getenv('PICUS_APP_REGION');
 // Specify the function you would like to call
-$functionName = getenv('REMOTION_APP_FUNCTION_NAME');
+$functionName = getenv('PICUS_APP_FUNCTION_NAME');
 // Specify the URL to your Webpack bundle
-$serveUrl = getenv('REMOTION_APP_SERVE_URL');
+$serveUrl = getenv('PICUS_APP_SERVE_URL');
 
 $provider = CredentialProvider::defaultProvider();
 // Instantiate the client

@@ -1,7 +1,7 @@
 import type {
 	MediaParserContainer,
 	MediaParserVideoTrack,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import type {ConvertMediaContainer} from './get-available-containers';
 import type {ConvertMediaVideoCodec} from './get-available-video-codecs';
 import {isSameVideoCodec} from './is-different-video-codec';

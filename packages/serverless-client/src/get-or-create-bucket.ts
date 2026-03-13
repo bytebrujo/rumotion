@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import {checkBucketListing} from './check-bucket-listing';
 import type {CustomCredentials} from './constants';
 import {makeBucketName} from './make-bucket-name';
@@ -33,25 +33,25 @@ export type GetOrCreateBucketOutput = {
 export const internalGetOrCreateBucket = async <Provider extends CloudProvider>(
 	params: GetOrCreateBucketInputInner<Provider>,
 ): Promise<GetOrCreateBucketOutput> => {
-	const remotionBuckets = await params.providerSpecifics.getBuckets({
+	const picusBuckets = await params.providerSpecifics.getBuckets({
 		region: params.region,
 		forceBucketName: null,
 		forcePathStyle: params.forcePathStyle,
 		requestHandler: params.requestHandler,
 	});
-	if (remotionBuckets.length > 1) {
+	if (picusBuckets.length > 1) {
 		throw new Error(
-			`You have multiple buckets (${remotionBuckets.map(
+			`You have multiple buckets (${picusBuckets.map(
 				(b) => b.name,
 			)}) in your S3 region (${
 				params.region
-			}) starting with "${params.providerSpecifics.getBucketPrefix()}". Please see https://remotion.dev/docs/lambda/multiple-buckets.`,
+			}) starting with "${params.providerSpecifics.getBucketPrefix()}". Please see https://picus.dev/docs/lambda/multiple-buckets.`,
 		);
 	}
 
 	const {enableFolderExpiry, region} = params;
-	if (remotionBuckets.length === 1) {
-		const existingBucketName = remotionBuckets[0].name;
+	if (picusBuckets.length === 1) {
+		const existingBucketName = picusBuckets[0].name;
 		// apply to existing bucket
 		await params.providerSpecifics.applyLifeCycle({
 			enableFolderExpiry: enableFolderExpiry ?? null,
@@ -64,7 +64,7 @@ export const internalGetOrCreateBucket = async <Provider extends CloudProvider>(
 
 		await checkBucketListing({bucketName: existingBucketName, region});
 
-		return {bucketName: remotionBuckets[0].name, alreadyExisted: true};
+		return {bucketName: picusBuckets[0].name, alreadyExisted: true};
 	}
 
 	const bucketName = makeBucketName(params.region, params.providerSpecifics);

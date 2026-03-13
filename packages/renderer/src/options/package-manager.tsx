@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'package-manager' as const;
 
@@ -10,7 +10,7 @@ export const packageManagerOption = {
 	description: () => {
 		return (
 			<>
-				Forces a specific package manager to be used. By default, Remotion will
+				Forces a specific package manager to be used. By default, Picus will
 				auto-detect the package manager based on your lockfile.
 				<br />
 				Acceptable values are <code>npm</code>, <code>yarn</code>,{' '}
@@ -19,7 +19,7 @@ export const packageManagerOption = {
 		);
 	},
 	ssrName: 'packageManager' as const,
-	docLink: 'https://www.remotion.dev/docs/cli/upgrade#--package-manager',
+	docLink: 'https://www.picus.dev/docs/cli/upgrade#--package-manager',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -45,4 +45,4 @@ export const packageManagerOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

@@ -1,4 +1,4 @@
-import { toCaptions, transcribe } from "@remotion/install-whisper-cpp";
+import { toCaptions, transcribe } from "@picus/install-whisper-cpp";
 import { spawn } from "child_process";
 import { existsSync, mkdirSync, rmSync, writeFileSync } from "fs";
 import { EOL, tmpdir } from "os";
@@ -26,7 +26,7 @@ export const captionFile = async ({
   }) => void;
   signal: AbortSignal;
 }): Promise<void> => {
-  const tmpDir = path.join(tmpdir(), "remotion-recorder");
+  const tmpDir = path.join(tmpdir(), "picus-recorder");
 
   if (!existsSync(tmpDir)) {
     mkdirSync(tmpDir);
@@ -38,7 +38,7 @@ export const captionFile = async ({
 
   // extracting audio from mp4 and save it as 16khz wav file
   await new Promise<void>((resolve, reject) => {
-    const command = `bunx remotion ffmpeg -hide_banner -i ${fileToTranscribe} -ar 16000 -y ${wavFile}`;
+    const command = `bunx picus ffmpeg -hide_banner -i ${fileToTranscribe} -ar 16000 -y ${wavFile}`;
     const [bin, ...args] = command.split(" ");
     const child = spawn(bin as string, args, {
       stdio: "ignore",

@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
 import {displaySiteInfo} from '.';
 import {getSites} from '../../../api/get-sites';
 import {parsedCloudrunCli} from '../../args';
@@ -21,7 +21,7 @@ export const sitesLsSubcommand = async (logLevel: LogLevel) => {
 	if (buckets.length > 1 && !CliInternals.quietFlagProvided() && !allRegions) {
 		Log.warn(
 			{indent: false, logLevel},
-			`Warning: You have more than one Remotion Cloud Storage bucket in ${region}, but only one is needed. This can lead to conflicts. Remove all but one of them.`,
+			`Warning: You have more than one Picus Cloud Storage bucket in ${region}, but only one is needed. This can lead to conflicts. Remove all but one of them.`,
 		);
 	}
 
@@ -29,7 +29,7 @@ export const sitesLsSubcommand = async (logLevel: LogLevel) => {
 	if (!CliInternals.quietFlagProvided()) {
 		Log.info(
 			{indent: false, logLevel},
-			`${sites.length} ${sitesPluralized} in ${region}, in the ${process.env.REMOTION_GCP_PROJECT_ID} project.`,
+			`${sites.length} ${sitesPluralized} in ${region}, in the ${process.env.PICUS_GCP_PROJECT_ID} project.`,
 		);
 	}
 

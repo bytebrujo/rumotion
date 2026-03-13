@@ -1,4 +1,4 @@
-import {ThreeCanvas} from '@remotion/three';
+import {ThreeCanvas} from '@picus/three';
 import React from 'react';
 import {Orb} from './Orb';
 

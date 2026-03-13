@@ -1,4 +1,4 @@
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {getOrCreateBucket} from '../../../../api/get-or-create-bucket';
 import {getServiceInfo} from '../../../../api/get-service-info';
 import {getServices} from '../../../../api/get-services';
@@ -21,14 +21,14 @@ export const renderArgsCheck = async (
 	logLevel: LogLevel,
 ) => {
 	let region = getGcpRegion();
-	let remotionBucket;
+	let picusBucket;
 
 	let serveUrl = args[0];
 	if (!serveUrl) {
 		Log.error({indent: false, logLevel}, 'No serve URL passed.');
 		Log.info(
 			{indent: false, logLevel},
-			'Pass an additional argument specifying a URL where your Remotion project is hosted.',
+			'Pass an additional argument specifying a URL where your Picus project is hosted.',
 		);
 		Log.info({indent: false, logLevel});
 		Log.info(
@@ -42,13 +42,13 @@ export const renderArgsCheck = async (
 		const siteName = serveUrl;
 		Log.verbose(
 			{indent: false, logLevel},
-			'Remotion site-name passed, constructing serve url...',
+			'Picus site-name passed, constructing serve url...',
 		);
 		region = region ?? getGcpRegion();
-		remotionBucket = (await getOrCreateBucket({region})).bucketName;
+		picusBucket = (await getOrCreateBucket({region})).bucketName;
 		serveUrl = convertToServeUrl({
 			urlOrId: siteName,
-			bucketName: remotionBucket,
+			bucketName: picusBucket,
 		});
 	}
 
@@ -60,7 +60,7 @@ export const renderArgsCheck = async (
 
 	const forceBucketName =
 		parsedCloudrunCli['force-bucket-name'] ??
-		remotionBucket ??
+		picusBucket ??
 		(await getOrCreateBucket({region})).bucketName;
 
 	let cloudRunUrl = parsedCloudrunCli['cloud-run-url'];

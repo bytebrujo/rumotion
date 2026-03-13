@@ -1,4 +1,4 @@
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {chalk} from '../chalk';
 import {Log} from '../log';
 import {ENSURE_COMMAND, ensureCommand} from './ensure';
@@ -10,7 +10,7 @@ const printHelp = (logLevel: LogLevel) => {
 
 	Log.info(
 		{indent: false, logLevel},
-		chalk.blue(`remotion ${BROWSER_COMMAND}`),
+		chalk.blue(`picus ${BROWSER_COMMAND}`),
 	);
 
 	Log.info({indent: false, logLevel});
@@ -19,11 +19,11 @@ const printHelp = (logLevel: LogLevel) => {
 
 	Log.info(
 		{indent: false, logLevel},
-		`remotion ${BROWSER_COMMAND} ${ENSURE_COMMAND}`,
+		`picus ${BROWSER_COMMAND} ${ENSURE_COMMAND}`,
 	);
 	Log.info(
 		{indent: false, logLevel},
-		chalk.gray('Ensure Remotion has a browser to render.'),
+		chalk.gray('Ensure Picus has a browser to render.'),
 	);
 };
 

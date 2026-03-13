@@ -1,5 +1,5 @@
 import type {VideoSampleSink} from 'mediabunny';
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 import {getSafeWindowOfMonotonicity, getTotalCacheStats} from '../caches';
 import {renderTimestampRange} from '../render-timestamp-range';
 import {type KeyframeBank, makeKeyframeBank} from './keyframe-bank';
@@ -26,14 +26,14 @@ export const makeKeyframeManager = () => {
 				}
 
 				Internals.Log.verbose(
-					{logLevel, tag: '@remotion/media'},
+					{logLevel, tag: '@picus/media'},
 					`Open frames for src ${src}: ${renderTimestampRange(timestamps)}`,
 				);
 			}
 		}
 
 		Internals.Log.verbose(
-			{logLevel, tag: '@remotion/media'},
+			{logLevel, tag: '@picus/media'},
 			`Video cache stats: ${count} open frames, ${totalSize} bytes`,
 		);
 	};
@@ -106,7 +106,7 @@ export const makeKeyframeManager = () => {
 			sources[mostInThePastSrc].splice(mostInThePastIndex, 1);
 			if (range) {
 				Internals.Log.verbose(
-					{logLevel, tag: '@remotion/media'},
+					{logLevel, tag: '@picus/media'},
 					`Deleted ${framesDeleted} frames for src ${mostInThePastSrc} from ${range?.firstTimestamp}sec to ${range?.lastTimestamp}sec to free up memory.`,
 				);
 			}
@@ -130,7 +130,7 @@ export const makeKeyframeManager = () => {
 			}
 
 			Internals.Log.verbose(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				'Deleted oldest keyframe bank to stay under max cache size',
 				(cacheStats.totalSize / 1024 / 1024).toFixed(1),
 				'out of',
@@ -143,7 +143,7 @@ export const makeKeyframeManager = () => {
 
 		if (cacheStats.totalSize > maxCacheSize && attempts >= maxAttempts) {
 			Internals.Log.warn(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				`Exceeded max cache size after ${maxAttempts} attempts. Remaining cache size: ${(cacheStats.totalSize / 1024 / 1024).toFixed(1)} MB, target was ${(maxCacheSize / 1024 / 1024).toFixed(1)} MB.`,
 			);
 		}
@@ -180,7 +180,7 @@ export const makeKeyframeManager = () => {
 					'cleared before threshold ' + threshold,
 				);
 				Internals.Log.verbose(
-					{logLevel, tag: '@remotion/media'},
+					{logLevel, tag: '@picus/media'},
 					`[Video] Cleared frames for src ${src} from ${range.firstTimestamp}sec to ${range.lastTimestamp}sec`,
 				);
 				const bankIndex = banks.indexOf(bank);
@@ -220,7 +220,7 @@ export const makeKeyframeManager = () => {
 		// Bank does not yet exist, we need to fetch
 		if (!existingBank) {
 			Internals.Log.trace(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				`Creating new keyframe bank for src ${src} at timestamp ${timestamp}`,
 			);
 			const newKeyframeBank = await makeKeyframeBank({
@@ -238,14 +238,14 @@ export const makeKeyframeManager = () => {
 		// Bank exists and still has the frame we want
 		if (existingBank.canSatisfyTimestamp(timestamp)) {
 			Internals.Log.trace(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				`Keyframe bank exists and satisfies timestamp ${timestamp}`,
 			);
 			return existingBank;
 		}
 
 		Internals.Log.verbose(
-			{logLevel, tag: '@remotion/media'},
+			{logLevel, tag: '@picus/media'},
 			`Keyframe bank exists but frame at time ${timestamp} does not exist anymore.`,
 		);
 

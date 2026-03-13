@@ -1,14 +1,14 @@
-import {Audio} from '@remotion/media';
-// https://www.remotion.dev/docs/mediabunny/metadata
+import {Audio} from '@picus/media';
+// https://www.picus.dev/docs/mediabunny/metadata
 import {useMemo} from 'react';
 import {
 	CalculateMetadataFunction,
 	Composition,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 import {getMediaMetadata} from '../get-media-metadata';
 
-const src = 'https://remotion.media/dialogue.wav';
+const src = 'https://picus.media/dialogue.wav';
 
 export const calculateMetadataFn: CalculateMetadataFunction<
 	Record<string, unknown>

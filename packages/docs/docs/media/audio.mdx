@@ -1,21 +1,21 @@
 ---
 image: /generated/articles-docs-media-audio.png
 title: '<Audio>'
-crumb: 'API - @remotion/media'
+crumb: 'API - @picus/media'
 ---
 
 :::note
 This is documentation for the new `<Audio>` tag.  
-Not to be confused with the older [`<Html5Audio>` / `<Audio>`](/docs/html5-audio) tag from `remotion`.
+Not to be confused with the older [`<Html5Audio>` / `<Audio>`](/docs/html5-audio) tag from `picus`.
 :::
 
-This component imports and plays audio, similar to [`<Html5Audio />`](/docs/html5-audio) from `remotion` but during rendering, extracts the exact audio using [Mediabunny](/docs/mediabunny) instead of FFmpeg.
+This component imports and plays audio, similar to [`<Html5Audio />`](/docs/html5-audio) from `picus` but during rendering, extracts the exact audio using [Mediabunny](/docs/mediabunny) instead of FFmpeg.
 
 ## Example
 
 ```tsx twoslash
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Audio} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Audio} from '@picus/media';
 
 export const MyVideo = () => {
   return (
@@ -29,13 +29,13 @@ export const MyVideo = () => {
 You can load a video from an URL as well:
 
 ```tsx twoslash
-import {AbsoluteFill} from 'remotion';
-import {Audio} from '@remotion/media';
+import {AbsoluteFill} from 'picus';
+import {Audio} from '@picus/media';
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Audio src="https://remotion.media/audio.wav" />
+      <Audio src="https://picus.media/audio.wav" />
     </AbsoluteFill>
   );
 };
@@ -61,8 +61,8 @@ The audio will play the range from `00:02:00` to `00:04:00`, meaning the audio w
 For exact behavior, see: [Order of operations](/docs/audio/order-of-operations).
 
 ```tsx twoslash
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Audio} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Audio} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
@@ -84,8 +84,8 @@ Allows you to control the volume of the audio in it's entirety or frame by frame
 Read the page on [using audio](/docs/using-audio) to learn more.
 
 ```tsx twoslash title="Setting a static volume"
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Audio} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Audio} from '@picus/media';
 
 export const MyVideo = () => {
   return (
@@ -97,8 +97,8 @@ export const MyVideo = () => {
 ```
 
 ```tsx twoslash title="Changing the volume over time"
-import {AbsoluteFill, interpolate, staticFile} from 'remotion';
-import {Audio} from '@remotion/media';
+import {AbsoluteFill, interpolate, staticFile} from 'picus';
+import {Audio} from '@picus/media';
 
 export const MyVideo = () => {
   return (
@@ -111,7 +111,7 @@ export const MyVideo = () => {
 
 ### `name?`
 
-A name and that will be shown as the label of the sequence in the timeline of the Remotion Studio. This property is purely for helping you keep track of items in the timeline.
+A name and that will be shown as the label of the sequence in the timeline of the Picus Studio. This property is purely for helping you keep track of items in the timeline.
 
 ### `onError?`<AvailableFrom v="4.0.404" />
 
@@ -121,12 +121,12 @@ Handle errors that occur during audio processing. The callback receives an `Erro
 - Return `'fail'` to fail the render immediately
 
 ```tsx twoslash
-import {Audio} from '@remotion/media';
+import {Audio} from '@picus/media';
 
 export const MyVideo = () => {
   return (
     <Audio
-      src={'https://remotion.media/audio.mp3'}
+      src={'https://picus.media/audio.mp3'}
       onError={(error) => {
         console.log('Audio error:', error.message);
 
@@ -149,14 +149,14 @@ export const MyVideo = () => {
 Controls the speed of the audio. `1` is the default and means regular speed, `0.5` slows down the audio so it's twice as long and `2` speeds up the audio so it's twice as fast.
 
 ```tsx twoslash title="Example of a audio playing twice as fast"
-import {AbsoluteFill, staticFile} from 'remotion';
-import {Audio} from '@remotion/media';
+import {AbsoluteFill, staticFile} from 'picus';
+import {Audio} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Audio playbackRate={2} src={'https://remotion.media/audio.mp3'} />
+      <Audio playbackRate={2} src={'https://picus.media/audio.mp3'} />
     </AbsoluteFill>
   );
 };
@@ -171,11 +171,11 @@ Playing a audio in reverse is not supported.
 Makes the audio loop indefinitely.
 
 ```tsx twoslash title="Example of a looped audio"
-import {Audio} from '@remotion/media';
+import {Audio} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
-  return <Audio loop src="https://remotion.media/audio.wav" />;
+  return <Audio loop src="https://picus.media/audio.wav" />;
 };
 ```
 
@@ -190,16 +190,16 @@ Can be either `"repeat"` (default, start from 0 on each iteration) or `"extend"`
 The `muted` prop will be respected. It will lead to no audio being played while still keeping the audio tag mounted. It's value may change over time, for example to only mute a certain section of the audio.
 
 ```tsx twoslash title="Example of a muted video"
-import {Audio} from '@remotion/media';
+import {Audio} from '@picus/media';
 // ---cut---
 export const MyComposition = () => {
-  return <Audio muted src="https://remotion.media/audio.wav" />;
+  return <Audio muted src="https://picus.media/audio.wav" />;
 };
 ```
 
 ### `showInTimeline?`
 
-If set to `false`, no layer will be shown in the timeline of the Remotion Studio. The default is `true`.
+If set to `false`, no layer will be shown in the timeline of the Picus Studio. The default is `true`.
 
 ### `delayRenderTimeoutInMilliseconds?`
 
@@ -214,14 +214,14 @@ Customize the [number of retries](/docs/delay-render#retrying) of the [`delayRen
 Select the audio stream to use. The default is `0`.
 
 ```tsx twoslash
-import {AbsoluteFill} from 'remotion';
-import {Audio} from '@remotion/media';
+import {AbsoluteFill} from 'picus';
+import {Audio} from '@picus/media';
 
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Audio audioStreamIndex={1} src={'https://remotion.media/multiple-audio-streams.mov'} />
+      <Audio audioStreamIndex={1} src={'https://picus.media/multiple-audio-streams.mov'} />
     </AbsoluteFill>
   );
 };
@@ -242,11 +242,11 @@ Does not currently work in preview or in [client-side rendering](/docs/client-si
 
 ### `fallbackHtml5AudioProps?`
 
-When a [fallback to `<Html5Audio>` from `remotion`](/docs/media/fallback) happens, this prop allows you to pass props to the fallback `<Html5Audio>` component.  
-Only props that are not supported by `<Audio>` from `@remotion/media` need to be specified here - props that apply for both tags will automatically be forwarded and do not need to be specified here.
+When a [fallback to `<Html5Audio>` from `picus`](/docs/media/fallback) happens, this prop allows you to pass props to the fallback `<Html5Audio>` component.  
+Only props that are not supported by `<Audio>` from `@picus/media` need to be specified here - props that apply for both tags will automatically be forwarded and do not need to be specified here.
 
 :::note
-This prop has no effect when using [`@remotion/web-renderer`](/docs/web-renderer) for client-side rendering, as fallback is not possible. See [Fallback is not possible in client-side rendering](/docs/media/fallback#fallback-is-not-possible-in-client-side-rendering).
+This prop has no effect when using [`@picus/web-renderer`](/docs/web-renderer) for client-side rendering, as fallback is not possible. See [Fallback is not possible in client-side rendering](/docs/media/fallback#fallback-is-not-possible-in-client-side-rendering).
 :::
 
 #### `onError?`
@@ -271,12 +271,12 @@ Maps to [`<Html5Audio />` -> `crossOrigin`](/docs/html5-audio#crossorigin)
 
 ### `disallowFallbackToHtml5Audio?`
 
-By default, if the audio cannot be embedded using this tag, [a fallback to `<Html5Audio>` from `remotion`](/docs/media/fallback) will be attempted.
+By default, if the audio cannot be embedded using this tag, [a fallback to `<Html5Audio>` from `picus`](/docs/media/fallback) will be attempted.
 
 Pass this prop to disable the fallback and fail the render instead.
 
 :::note
-When using [`@remotion/web-renderer`](/docs/web-renderer) for client-side rendering, fallback is not possible and the render will always fail if the audio cannot be embedded. See [Fallback is not possible in client-side rendering](/docs/media/fallback#fallback-is-not-possible-in-client-side-rendering).
+When using [`@picus/web-renderer`](/docs/web-renderer) for client-side rendering, fallback is not possible and the render will always fail if the audio cannot be embedded. See [Fallback is not possible in client-side rendering](/docs/media/fallback#fallback-is-not-possible-in-client-side-rendering).
 :::
 
 ### `debugAudioScheduling?`
@@ -285,7 +285,7 @@ Logs audio scheduling information to the console. This is useful for debugging a
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/media/src/audio/audio.tsx)
-- [`<Html5Audio />` (from `remotion`)](/docs/html5-audio)
-- [`<Video />` (from `@remotion/media`)](/docs/media/video)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/media/src/audio/audio.tsx)
+- [`<Html5Audio />` (from `picus`)](/docs/html5-audio)
+- [`<Video />` (from `@picus/media`)](/docs/media/video)
 - [`<OffthreadVideo>`](/docs/offthreadvideo)

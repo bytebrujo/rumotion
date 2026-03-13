@@ -1,5 +1,5 @@
 import type {Codec} from '../codec';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 import {separateAudioOption} from './separate-audio';
 
 export const validAudioCodecs = ['pcm-16', 'aac', 'mp3', 'opus'] as const;
@@ -166,7 +166,7 @@ export const resolveAudioCodec = ({
 		}
 	}
 
-	// Explanation: https://github.com/remotion-dev/remotion/issues/1647
+	// Explanation: https://github.com/picus-dev/picus/issues/1647
 	if (preferLossless) {
 		const selected = getDefaultAudioCodec({codec, preferLossless});
 		if (
@@ -262,9 +262,9 @@ export const audioCodecOption = {
 	},
 	description: () =>
 		`Set the format of the audio that is embedded in the video. Not all codec and audio codec combinations are supported and certain combinations require a certain file extension and container format. See the table in the docs to see possible combinations.`,
-	docLink: 'https://www.remotion.dev/docs/encoding/#audio-codec',
+	docLink: 'https://www.picus.dev/docs/encoding/#audio-codec',
 	name: 'Audio Codec',
 	ssrName,
 	type: 'aac' as AudioCodec,
 	id: cliFlag,
-} satisfies AnyRemotionOption<AudioCodec | null>;
+} satisfies AnyPicusOption<AudioCodec | null>;

@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import React, {useContext, useEffect, useRef, useState} from 'react';
 import {SplitterContext} from './SplitterContext';
 
@@ -75,7 +75,7 @@ export const SplitterHandle: React.FC<{
 				x: e.clientX,
 				y: e.clientY,
 			};
-			ref.current?.classList.add('remotion-splitter-active');
+			ref.current?.classList.add('picus-splitter-active');
 			window.addEventListener(
 				'pointerup',
 				(ev: PointerEvent) => {
@@ -118,7 +118,7 @@ export const SplitterHandle: React.FC<{
 
 		const cleanup = () => {
 			context.isDragging.current = false;
-			ref.current?.classList.remove('remotion-splitter-active');
+			ref.current?.classList.remove('picus-splitter-active');
 
 			current.removeEventListener('pointerdown', onPointerDown);
 			window.removeEventListener('pointermove', onPointerMove);
@@ -159,7 +159,7 @@ export const SplitterHandle: React.FC<{
 				return;
 			}
 
-			current.classList.add('remotion-splitter-hover');
+			current.classList.add('picus-splitter-hover');
 		};
 
 		const onMouseLeave = (e: MouseEvent) => {
@@ -167,7 +167,7 @@ export const SplitterHandle: React.FC<{
 				return;
 			}
 
-			current.classList.remove('remotion-splitter-hover');
+			current.classList.remove('picus-splitter-hover');
 		};
 
 		current.addEventListener('mouseenter', onMouseEnter);
@@ -187,10 +187,10 @@ export const SplitterHandle: React.FC<{
 		<div
 			ref={ref}
 			className={[
-				'remotion-splitter',
+				'picus-splitter',
 				context.orientation === 'horizontal'
-					? 'remotion-splitter-horizontal'
-					: 'remotion-splitter-vertical',
+					? 'picus-splitter-horizontal'
+					: 'picus-splitter-vertical',
 			].join(' ')}
 			style={
 				context.orientation === 'horizontal' ? containerRow : containerColumn

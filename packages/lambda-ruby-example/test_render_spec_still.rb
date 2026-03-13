@@ -1,11 +1,11 @@
-require 'remotion_lambda/sdk'
-require 'remotion_lambda/render_still_on_lambda_payload'
+require 'picus_lambda/sdk'
+require 'picus_lambda/render_still_on_lambda_payload'
 
-client = RemotionLambda::Client.new(
-  region: ENV.fetch('REMOTION_APP_REGION'),
+client = PicusLambda::Client.new(
+  region: ENV.fetch('PICUS_APP_REGION'),
 )  
 
-function_name = ENV.fetch('REMOTION_APP_FUNCTION_NAME')
+function_name = ENV.fetch('PICUS_APP_FUNCTION_NAME')
 
 payload = get_render_still_on_lambda_payload(
   composition: "still-helloworld",

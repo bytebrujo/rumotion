@@ -1,7 +1,7 @@
 import {createHash} from 'node:crypto';
 import path from 'node:path';
 import ReactDOM from 'react-dom';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {jsonStringifyWithCircularReferences} from './stringify-with-circular-references';
 import {getWebpackCacheName} from './webpack-cache';
 
@@ -12,7 +12,7 @@ if (!ReactDOM?.version) {
 const reactDomVersion = ReactDOM.version.split('.')[0];
 if (reactDomVersion === '0') {
 	throw new Error(
-		`Version ${reactDomVersion} of "react-dom" is not supported by Remotion`,
+		`Version ${reactDomVersion} of "react-dom" is not supported by Picus`,
 	);
 }
 
@@ -28,37 +28,37 @@ export const getResolveConfig = () => ({
 		'react/jsx-runtime': require.resolve('react/jsx-runtime'),
 		'react/jsx-dev-runtime': require.resolve('react/jsx-dev-runtime'),
 		react: require.resolve('react'),
-		// Needed to not fail on this: https://github.com/remotion-dev/remotion/issues/5045
-		'remotion/no-react': path.resolve(
-			require.resolve('remotion'),
+		// Needed to not fail on this: https://github.com/picus-dev/picus/issues/5045
+		'picus/no-react': path.resolve(
+			require.resolve('picus'),
 			'..',
 			'..',
 			'esm',
 			'no-react.mjs',
 		),
-		'remotion/version': path.resolve(
-			require.resolve('remotion'),
+		'picus/version': path.resolve(
+			require.resolve('picus'),
 			'..',
 			'..',
 			'esm',
 			'version.mjs',
 		),
-		remotion: path.resolve(
-			require.resolve('remotion'),
+		picus: path.resolve(
+			require.resolve('picus'),
 			'..',
 			'..',
 			'esm',
 			'index.mjs',
 		),
 
-		'@remotion/media-parser/worker': path.resolve(
-			require.resolve('@remotion/media-parser'),
+		'@picus/media-parser/worker': path.resolve(
+			require.resolve('@picus/media-parser'),
 			'..',
 			'esm',
 			'worker.mjs',
 		),
 		// test visual controls before removing this
-		'@remotion/studio': require.resolve('@remotion/studio'),
+		'@picus/studio': require.resolve('@picus/studio'),
 		'react-dom/client': shouldUseReactDomClient
 			? require.resolve('react-dom/client')
 			: require.resolve('react-dom'),
@@ -128,7 +128,7 @@ export const computeHashAndFinalConfig = <T extends {output?: any}>(
 		enableCaching: boolean;
 		environment: 'development' | 'production';
 		outDir: string | null;
-		remotionRoot: string;
+		picusRoot: string;
 	},
 ): [string, T] => {
 	const hash = createHash('md5')
@@ -149,7 +149,7 @@ export const computeHashAndFinalConfig = <T extends {output?: any}>(
 				...conf.output,
 				...(options.outDir ? {path: options.outDir} : {}),
 			},
-			context: options.remotionRoot,
+			context: options.picusRoot,
 		},
 	];
 };

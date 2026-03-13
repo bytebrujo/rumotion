@@ -1,17 +1,17 @@
 import type {
 	SubscribeToFileExistenceRequest,
 	SubscribeToFileExistenceResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import type {ApiHandler} from '../api-types';
 import {subscribeToFileExistenceWatchers} from '../file-existence-watchers';
 
 export const subscribeToFileExistence: ApiHandler<
 	SubscribeToFileExistenceRequest,
 	SubscribeToFileExistenceResponse
-> = ({input: {file, clientId}, remotionRoot}) => {
+> = ({input: {file, clientId}, picusRoot}) => {
 	const {exists} = subscribeToFileExistenceWatchers({
 		file,
-		remotionRoot,
+		picusRoot,
 		clientId,
 	});
 

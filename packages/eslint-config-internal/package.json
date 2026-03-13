@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/eslint-config-internal"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/eslint-config-internal"
 	},
-	"name": "@remotion/eslint-config-internal",
+	"name": "@picus/eslint-config-internal",
 	"version": "4.0.434",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"main": "dist/index.js",
@@ -34,5 +34,5 @@
 		"@eslint/js": "9.19.0"
 	},
 	"type": "module",
-	"description": "ESLint condig for Remotion's internal packages"
+	"description": "ESLint condig for Picus's internal packages"
 }

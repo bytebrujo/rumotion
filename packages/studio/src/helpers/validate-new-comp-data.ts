@@ -1,5 +1,5 @@
-import type {_InternalTypes} from 'remotion';
-import {Internals} from 'remotion';
+import type {_InternalTypes} from 'picus';
+import {Internals} from 'picus';
 
 export const validateCompositionName = (
 	compName: string,

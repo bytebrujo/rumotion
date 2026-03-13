@@ -1,4 +1,4 @@
-import {AbsoluteFill, Img} from 'remotion';
+import {AbsoluteFill, Img} from 'picus';
 import {expect, test} from 'vitest';
 import {renderStillOnWeb} from '../render-still-on-web';
 import '../symbol-dispose';

@@ -1,4 +1,4 @@
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {displaySiteInfo} from '.';
 import {deleteSite} from '../../../api/delete-site';
 import {getSites} from '../../../api/get-sites';

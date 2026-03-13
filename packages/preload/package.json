@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/preload"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/preload"
 	},
-	"name": "@remotion/preload",
+	"name": "@picus/preload",
 	"version": "4.0.434",
-	"description": "Preloads assets for use in Remotion",
+	"description": "Preloads assets for use in Picus",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"sideEffects": false,
@@ -18,10 +18,10 @@
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"preload",
 		"html5",
 		"video"
@@ -30,9 +30,9 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
-	"homepage": "https://www.remotion.dev/docs/preload"
+	"homepage": "https://www.picus.dev/docs/preload"
 }

@@ -1,15 +1,15 @@
-# Remotion Prompt to Motion Graphics
+# Picus Prompt to Motion Graphics
 
 <p align="center">
-  <a href="https://github.com/remotion-dev/logo">
+  <a href="https://github.com/picus-dev/logo">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/picus-dev/logo/raw/main/animated-logo-banner-dark.apng">
+      <img alt="Animated Picus Logo" src="https://github.com/picus-dev/logo/raw/main/animated-logo-banner-light.gif">
     </picture>
   </a>
 </p>
 
-AI-powered motion graphics generator that transforms natural language prompts into Remotion code.
+AI-powered motion graphics generator that transforms natural language prompts into Picus code.
 
 ## Architecture
 
@@ -40,16 +40,16 @@ This approach keeps the base prompt lightweight while dynamically injecting only
 
 ### 3. Code Generation
 
-Uses a one-shot prompt with the base Remotion knowledge plus any detected skills. The generated code follows these principles:
+Uses a one-shot prompt with the base Picus knowledge plus any detected skills. The generated code follows these principles:
 
 - **Constants-first design** - All text, colors, and timing values are declared as editable constants at the top
 - **Aesthetic defaults** - Guidance on visual polish, spacing, and animation feel
 - **Crossfade patterns** - Smooth state transitions without layout jumps
-- **Spring physics** - Natural, organic motion using Remotion's spring() function
+- **Spring physics** - Natural, organic motion using Picus's spring() function
 
 ### 4. Sanitization & Compilation
 
-The response is cleaned (removing markdown wrappers and trailing commentary), then compiled in-browser using Babel. The compiled component renders directly in the Remotion Preview with all necessary APIs injected.
+The response is cleaned (removing markdown wrappers and trailing commentary), then compiled in-browser using Babel. The compiled component renders directly in the Picus Preview with all necessary APIs injected.
 
 ## Skills System
 
@@ -83,7 +83,7 @@ Example skills provide complete working references (histogram, chat messages, ty
 **Images:**
 
 - Direct image uploads are not supported
-- Reference images via URL - the generated code will use Remotion's `<Img>` component
+- Reference images via URL - the generated code will use Picus's `<Img>` component
 - Example: _"Create a DVD screensaver animation of this image https://example.com/logo.png"_
 
 **What works well:**
@@ -112,18 +112,18 @@ npm run dev
 **Render video**
 
 ```console
-npx remotion render
+npx picus render
 ```
 
-**Upgrade Remotion**
+**Upgrade Picus**
 
 ```console
-npx remotion upgrade
+npx picus upgrade
 ```
 
 ## Docs
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+Get started with Picus by reading the [fundamentals page](https://www.picus.dev/docs/the-fundamentals).
 
 ## Help
 
@@ -131,8 +131,8 @@ We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
 
 ## Issues
 
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
+Found an issue with Picus? [File an issue here](https://github.com/picus-dev/picus/issues/new).
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Note that for some entities a company license is needed. [Read the terms here](https://github.com/picus-dev/picus/blob/main/LICENSE.md).

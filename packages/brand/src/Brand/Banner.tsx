@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Sequence, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Sequence, useVideoConfig} from 'picus';
 import type {Theme} from './colors';
 import {Comp} from './Composition';
 

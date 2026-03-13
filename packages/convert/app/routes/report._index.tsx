@@ -9,11 +9,11 @@ import {RadioGroup, RadioGroupItem} from '~/components/ui/radio';
 import {Textarea} from '~/components/ui/textarea';
 
 type Product =
-	| 'remotion'
+	| 'picus'
 	| 'media-parser'
 	| 'webcodecs'
-	| 'remotion-audio'
-	| 'remotion-video'
+	| 'picus-audio'
+	| 'picus-video'
 	| 'other';
 type Usage = 'public-testset' | 'internally' | 'confidential';
 
@@ -37,7 +37,7 @@ const Report: React.FC = () => {
 	const [url, setUrl] = useState<string | null>(null);
 	const [filename, setFilename] = useState<string | null>(null);
 	const [product, setProduct] = useState<Product | null>(null);
-	const [remotionVersion, setRemotionVersion] = useState('');
+	const [picusVersion, setPicusVersion] = useState('');
 	const [usage, setUsage] = useState<Usage | null>(null);
 	const [contact, setContact] = useState('');
 	const [fileSizeError, setFileSizeError] = useState<string | null>(null);
@@ -46,10 +46,10 @@ const Report: React.FC = () => {
 		type: 'idle',
 	});
 
-	const requiresRemotionVersion =
-		product === 'remotion' ||
-		product === 'remotion-audio' ||
-		product === 'remotion-video';
+	const requiresPicusVersion =
+		product === 'picus' ||
+		product === 'picus-audio' ||
+		product === 'picus-video';
 
 	const submitPossible =
 		url &&
@@ -57,7 +57,7 @@ const Report: React.FC = () => {
 		product &&
 		usage &&
 		contact &&
-		(!requiresRemotionVersion || remotionVersion) &&
+		(!requiresPicusVersion || picusVersion) &&
 		(submitStatus.type === 'idle' || submitStatus.type === 'error');
 
 	const submit = useCallback(async () => {
@@ -68,7 +68,7 @@ const Report: React.FC = () => {
 		setSubmitStatus({type: 'submitting'});
 
 		try {
-			await fetch('https://www.remotion.pro/api/report', {
+			await fetch('https://www.picus.pro/api/report', {
 				method: 'POST',
 				body: JSON.stringify({
 					url,
@@ -77,7 +77,7 @@ const Report: React.FC = () => {
 					usage,
 					contact,
 					filename,
-					remotionVersion: requiresRemotionVersion ? remotionVersion : null,
+					picusVersion: requiresPicusVersion ? picusVersion : null,
 				}),
 				headers: {
 					'content-type': 'application/json',
@@ -92,8 +92,8 @@ const Report: React.FC = () => {
 		description,
 		filename,
 		product,
-		remotionVersion,
-		requiresRemotionVersion,
+		picusVersion,
+		requiresPicusVersion,
 		submitPossible,
 		url,
 		usage,
@@ -137,32 +137,32 @@ const Report: React.FC = () => {
 					>
 						<div className="flex items-center space-x-2">
 							<RadioGroupItem
-								checked={product === 'remotion'}
-								value="remotion"
-								id="remotion"
+								checked={product === 'picus'}
+								value="picus"
+								id="picus"
 							/>
-							<Label htmlFor="remotion">
-								Remotion - &lt;OffthreadVideo&gt;
+							<Label htmlFor="picus">
+								Picus - &lt;OffthreadVideo&gt;
 							</Label>
 						</div>
 						<div className="flex items-center space-x-2">
 							<RadioGroupItem
-								checked={product === 'remotion-audio'}
-								value="remotion-audio"
-								id="remotion-audio"
+								checked={product === 'picus-audio'}
+								value="picus-audio"
+								id="picus-audio"
 							/>
-							<Label htmlFor="remotion-audio">
-								Remotion - &lt;Audio&gt; from @remotion/media
+							<Label htmlFor="picus-audio">
+								Picus - &lt;Audio&gt; from @picus/media
 							</Label>
 						</div>
 						<div className="flex items-center space-x-2">
 							<RadioGroupItem
-								checked={product === 'remotion-video'}
-								value="remotion-video"
-								id="remotion-video"
+								checked={product === 'picus-video'}
+								value="picus-video"
+								id="picus-video"
 							/>
-							<Label htmlFor="remotion-video">
-								Remotion - &lt;Video&gt; from @remotion/media
+							<Label htmlFor="picus-video">
+								Picus - &lt;Video&gt; from @picus/media
 							</Label>
 						</div>
 						<div className="flex items-center space-x-2">
@@ -171,7 +171,7 @@ const Report: React.FC = () => {
 								value="webcodecs"
 								id="webcodecs"
 							/>
-							<Label htmlFor="webcodecs">remotion.dev/convert</Label>
+							<Label htmlFor="webcodecs">picus.dev/convert</Label>
 						</div>
 						<div className="flex items-center space-x-2">
 							<RadioGroupItem
@@ -183,28 +183,28 @@ const Report: React.FC = () => {
 						</div>
 					</RadioGroup>
 
-					{requiresRemotionVersion && (
+					{requiresPicusVersion && (
 						<>
 							<h2 className="font-brand mt-5 font-bold">
-								Which version of Remotion are you using?
+								Which version of Picus are you using?
 							</h2>
 							<p className="text-muted-foreground text-sm">
-								Run `npx remotion version` to see. See{' '}
+								Run `npx picus version` to see. See{' '}
 								<a
-									href="https://remotion.dev/changelog"
+									href="https://picus.dev/changelog"
 									rel="noopener noreferrer"
 									target="_blank"
 								>
-									remotion.dev/changelog
+									picus.dev/changelog
 								</a>{' '}
 								for latest version.
 							</p>
 							<Input
-								name="remotionVersion"
+								name="picusVersion"
 								className="mt-3"
 								placeholder="e.g. 4.0.100"
-								value={remotionVersion}
-								onChange={(e) => setRemotionVersion(e.target.value)}
+								value={picusVersion}
+								onChange={(e) => setPicusVersion(e.target.value)}
 							/>
 						</>
 					)}

@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/tailwind-v4"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/tailwind-v4"
 	},
-	"name": "@remotion/tailwind-v4",
+	"name": "@picus/tailwind-v4",
 	"version": "4.0.434",
-	"description": "Enable TailwindCSS support in Remotion (TailwindCSS v4)",
+	"description": "Enable TailwindCSS support in Picus (TailwindCSS v4)",
 	"main": "dist/cjs/index.js",
 	"types": "dist/cjs/index.d.ts",
 	"module": "dist/esm/index.mjs",
@@ -13,11 +13,11 @@
 		"lint": "eslint src",
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
 		"css-loader": "5.2.7",
@@ -26,16 +26,16 @@
 		"@tailwindcss/webpack": "4.2.0"
 	},
 	"peerDependencies": {
-		"@remotion/bundler": "workspace:*"
+		"@picus/bundler": "workspace:*"
 	},
 	"devDependencies": {
-		"@remotion/bundler": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"tailwind"
 	],
 	"publishConfig": {
@@ -50,5 +50,5 @@
 			"require": "./dist/cjs/index.js"
 		}
 	},
-	"homepage": "https://www.remotion.dev/docs/tailwind/tailwind"
+	"homepage": "https://www.picus.dev/docs/tailwind/tailwind"
 }

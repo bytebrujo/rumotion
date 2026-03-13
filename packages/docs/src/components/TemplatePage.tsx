@@ -38,7 +38,7 @@ export default () => {
 		<div style={{width: '100%', backgroundColor: 'var(--background)'}}>
 			<Layout>
 				<Head>
-					{Seo.renderTitle(`${template.shortName} | Remotion Template`)}
+					{Seo.renderTitle(`${template.shortName} | Picus Template`)}
 					{Seo.renderDescription(template.description)}
 					{Seo.renderImage(imgSrc, context.siteConfig.url)}
 				</Head>

@@ -1,5 +1,5 @@
-import type {PlayerRef} from '@remotion/player';
-import {renderMediaOnWeb} from '@remotion/web-renderer';
+import type {PlayerRef} from '@picus/player';
+import {renderMediaOnWeb} from '@picus/web-renderer';
 import React, {useCallback} from 'react';
 import {z} from 'zod';
 import {PALETTE} from '../layout/colors';
@@ -122,7 +122,7 @@ export const RenderButton: React.FC<{
 			const url = URL.createObjectURL(blob);
 			const a = document.createElement('a');
 			a.href = url;
-			a.download = 'remotion.dev.mp4';
+			a.download = 'picus.dev.mp4';
 			a.click();
 			URL.revokeObjectURL(url);
 			setState({type: 'done'});

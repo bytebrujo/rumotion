@@ -7,7 +7,7 @@ crumb: 'Snippets'
 If you have a video and want to show different sections of the video at different speeds, use the following snippet.
 
 ```tsx twoslash title="SegmentSpeeds.tsx"
-import {OffthreadVideo, Sequence, staticFile, useCurrentFrame} from 'remotion';
+import {OffthreadVideo, Sequence, staticFile, useCurrentFrame} from 'picus';
 
 const segments = [
   {
@@ -71,9 +71,9 @@ export const SpeedSegments = () => {
       <OffthreadVideo
         pauseWhenBuffering
         trimBefore={currentSegment.passedVideoTime}
-        // Remotion will automatically add a time fragment to the end of the video URL
+        // Picus will automatically add a time fragment to the end of the video URL
         // based on `trimBefore`. Opt out of this by adding one yourself.
-        // https://www.remotion.dev/docs/media-fragments
+        // https://www.picus.dev/docs/media-fragments
         src={`${staticFile('bigbuckbunny.mp4')}#t=0,`}
         playbackRate={currentSegment.speed}
       />

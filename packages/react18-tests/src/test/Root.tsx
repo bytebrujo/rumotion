@@ -1,6 +1,6 @@
 // bun run studio
 import React from 'react';
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 import {ZodV3SchemaTest, zodV3Schema} from './ZodV3SchemaTest';
 
 const TestComponent: React.FC = () => {

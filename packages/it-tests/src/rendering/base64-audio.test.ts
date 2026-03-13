@@ -1,7 +1,7 @@
 import {afterEach, beforeEach, expect, test} from 'bun:test';
 import fs from 'fs';
 import path from 'path';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import execa from 'execa';
 
 const outputPath = path.join(process.cwd(), 'packages/example/out.mp3');
@@ -22,7 +22,7 @@ test(
 	async () => {
 		const task = execa(
 			'bun',
-			['x', 'remotion', 'render', 'audio-testing-base64', outputPath],
+			['x', 'picus', 'render', 'audio-testing-base64', outputPath],
 			{
 				cwd: path.join(process.cwd(), '..', 'example'),
 			},

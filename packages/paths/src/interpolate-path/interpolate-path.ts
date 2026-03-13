@@ -38,7 +38,7 @@ import {interpolateInstructions} from './interpolate-instructions';
 
 /*
  * @description Interpolates between two SVG paths based on the provided value, transitioning from the first path to the second.
- * @see [Documentation](https://www.remotion.dev/docs/paths/interpolate-path)
+ * @see [Documentation](https://www.picus.dev/docs/paths/interpolate-path)
  */
 export const interpolatePath = (
 	value: number,

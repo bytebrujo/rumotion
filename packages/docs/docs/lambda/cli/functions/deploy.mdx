@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-lambda-cli-functions-deploy.png
 sidebar_label: deploy
-title: 'npx remotion lambda functions deploy'
+title: 'npx picus lambda functions deploy'
 slug: /lambda/cli/functions/deploy
 crumb: 'Lambda CLI Reference'
 ---
@@ -11,10 +11,10 @@ import {DefaultTimeout} from '../../../../components/lambda/default-timeout';
 import {DefaultLogRetention} from '../../../../components/lambda/default-log-retention';
 
 ```
-npx remotion lambda functions deploy
+npx picus lambda functions deploy
 ```
 
-Creates a new function in your AWS account. If a function in the same region, with the same Remotion version, with the same amount of memory, disk space and timeout already exists, the name of the already deployed function will be returned instead.
+Creates a new function in your AWS account. If a function in the same region, with the same Picus version, with the same amount of memory, disk space and timeout already exists, the name of the already deployed function will be returned instead.
 
 By default, a CloudWatch Log Group will be created that will log debug information to CloudWatch that you can consult in the case something is going wrong. The default retention period for these logs is 14 days, which can be changed.
 
@@ -33,7 +33,7 @@ CloudWatch Retention Period = 14 days
 VPC Subnet IDs = subnet-0f6a0f6a0f6a0f6a0, subnet-0f6a0f6a0f6a0f6a1
 VPC Security Group IDs = sg-0f6a0f6a0f6a0f6a0, sg-0f6a0f6a0f6a0f6a1
 <br/>
-Deployed as remotion-render-2021-12-17-2048mb-120sec
+Deployed as picus-render-2021-12-17-2048mb-120sec
 <br/>
 
 </pre>
@@ -51,7 +51,7 @@ Memory size in megabytes. Default: <DefaultMemorySize /> MB.
 
 Disk size in megabytes. See also: [Disk size](/docs/lambda/disk-size).
 
-| Remotion Version | Default |
+| Picus Version | Default |
 | ---------------- | ------- |
 | &lt;5.0.0        | 2048MB  |
 | &gt;=5.0.0       | 10240MB |
@@ -61,7 +61,7 @@ Disk size in megabytes. See also: [Disk size](/docs/lambda/disk-size).
 Timeout of the Lambda function in seconds. Default: <DefaultTimeout /> seconds.
 
 :::note
-Not to be confused with the [`--timeout` flag for `npx remotion lambda render` which defines the timeout for `delayRender()`](/docs/cli/render#--timeout).
+Not to be confused with the [`--timeout` flag for `npx picus lambda render` which defines the timeout for `delayRender()`](/docs/cli/render#--timeout).
 :::
 
 ## `--disable-cloudwatch`
@@ -78,7 +78,7 @@ Retention period for the CloudWatch Logs in days. Default: <DefaultLogRetention 
 
 ## `--custom-role-arn`
 
-Use a custom role for the function instead of the default (`arn:aws:iam::[aws-account-id]:role/remotion-lambda-role`)
+Use a custom role for the function instead of the default (`arn:aws:iam::[aws-account-id]:role/picus-lambda-role`)
 
 ## `--quiet`, `-q`
 

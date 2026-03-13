@@ -6,7 +6,7 @@ import {
 } from '../../get-zod-if-possible';
 import {Row, Spacing} from '../../layout';
 import {InputDragger} from '../../NewComposition/InputDragger';
-import {RemotionInput} from '../../NewComposition/RemInput';
+import {PicusInput} from '../../NewComposition/RemInput';
 import {RemInputTypeColor} from '../../NewComposition/RemInputTypeColor';
 import {Fieldset} from './Fieldset';
 import {useLocalState} from './local-state';
@@ -157,13 +157,13 @@ export const ZodColorEditor: React.FC<{
 							}}
 							value={rgb}
 							onChange={onChange}
-							className="__remotion_color_picker"
+							className="__picus_color_picker"
 							status={status}
 							name={jsonPath.join('.')}
 						/>
 					</div>
 					<Spacing x={1} block />
-					<RemotionInput
+					<PicusInput
 						value={localValue.value}
 						status={status}
 						placeholder={jsonPath.join('.')}

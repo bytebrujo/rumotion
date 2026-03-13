@@ -100,38 +100,38 @@ const mode = debug ? 'debug' : 'release';
 
 const copyDestinations = {
 	'aarch64-unknown-linux-gnu': {
-		from: `target/aarch64-unknown-linux-gnu/${mode}/remotion`,
-		to: '../compositor-linux-arm64-gnu/remotion',
+		from: `target/aarch64-unknown-linux-gnu/${mode}/picus`,
+		to: '../compositor-linux-arm64-gnu/picus',
 		dir: '../compositor-linux-arm64-gnu',
 	},
 	'aarch64-unknown-linux-musl': {
-		from: `target/aarch64-unknown-linux-musl/${mode}/remotion`,
-		to: '../compositor-linux-arm64-musl/remotion',
+		from: `target/aarch64-unknown-linux-musl/${mode}/picus`,
+		to: '../compositor-linux-arm64-musl/picus',
 		dir: '../compositor-linux-arm64-musl',
 	},
 	'x86_64-unknown-linux-gnu': {
-		from: `target/x86_64-unknown-linux-gnu/${mode}/remotion`,
-		to: '../compositor-linux-x64-gnu/remotion',
+		from: `target/x86_64-unknown-linux-gnu/${mode}/picus`,
+		to: '../compositor-linux-x64-gnu/picus',
 		dir: '../compositor-linux-x64-gnu',
 	},
 	'x86_64-unknown-linux-musl': {
-		from: `target/x86_64-unknown-linux-musl/${mode}/remotion`,
-		to: '../compositor-linux-x64-musl/remotion',
+		from: `target/x86_64-unknown-linux-musl/${mode}/picus`,
+		to: '../compositor-linux-x64-musl/picus',
 		dir: '../compositor-linux-x64-musl',
 	},
 	'x86_64-apple-darwin': {
-		from: `target/x86_64-apple-darwin/${mode}/remotion`,
-		to: '../compositor-darwin-x64/remotion',
+		from: `target/x86_64-apple-darwin/${mode}/picus`,
+		to: '../compositor-darwin-x64/picus',
 		dir: '../compositor-darwin-x64',
 	},
 	'aarch64-apple-darwin': {
-		from: `target/aarch64-apple-darwin/${mode}/remotion`,
-		to: '../compositor-darwin-arm64/remotion',
+		from: `target/aarch64-apple-darwin/${mode}/picus`,
+		to: '../compositor-darwin-arm64/picus',
 		dir: '../compositor-darwin-arm64',
 	},
 	'x86_64-pc-windows-gnu': {
-		from: `target/x86_64-pc-windows-gnu/${mode}/remotion.exe`,
-		to: '../compositor-win32-x64-msvc/remotion.exe',
+		from: `target/x86_64-pc-windows-gnu/${mode}/picus.exe`,
+		to: '../compositor-win32-x64-msvc/picus.exe',
 		dir: '../compositor-win32-x64-msvc',
 	},
 };
@@ -293,8 +293,8 @@ for (const arch of archs) {
 	});
 
 	const filename = JSON.parse(output.toString('utf-8'))[0].filename.replace(
-		/^@remotion\//,
-		'remotion-',
+		/^@picus\//,
+		'picus-',
 	);
 	const tgzPath = path.join(
 		process.cwd(),
@@ -304,7 +304,7 @@ for (const arch of archs) {
 
 	if (arch.includes('linux')) {
 		execSync(
-			`patchelf --force-rpath --set-rpath '$ORIGIN' ${copyDestinations[arch].dir}/remotion`,
+			`patchelf --force-rpath --set-rpath '$ORIGIN' ${copyDestinations[arch].dir}/picus`,
 		);
 	}
 

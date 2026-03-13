@@ -1,5 +1,5 @@
 use crate::{errors::ErrorWithBacktrace, frame_cache_manager::FrameCacheManager};
-extern crate ffmpeg_next as remotionffmpeg;
+extern crate ffmpeg_next as picusffmpeg;
 
 pub fn is_frame_cache_empty(
     src: &str,

@@ -2,25 +2,25 @@
 image: /generated/articles-docs-lambda-cost-example.png
 id: cost-example
 sidebar_label: Cost example
-title: How much does Remotion Lambda cost?
+title: How much does Picus Lambda cost?
 crumb: 'Lambda'
 ---
 
-This page shows estimations to help you better expect how much Remotion Lambda will cost.  
+This page shows estimations to help you better expect how much Picus Lambda will cost.  
 All renders are done with the following Lambda configuration:
 
 - 2048 MB RAM (default)
-- 10GB Disk size (default from Remotion 5.0)
+- 10GB Disk size (default from Picus 5.0)
 - Default [concurrency](/docs/lambda/concurrency)
 - `us-east-1` region
-- Remotion version 4.0.381
+- Picus version 4.0.381
 
 Prices may also vary based on the region, heaviness of your bundle, fluctuations in latency.  
 We always recommend to measure the cost of your composition yourself.
 
 ## Rendering the Hello World project
 
-Rendering the [`HelloWorld`](https://github.com/remotion-dev/template-helloworld) composition of our default template.
+Rendering the [`HelloWorld`](https://github.com/picus-dev/template-helloworld) composition of our default template.
 
 **Warm Lambda**: $0.001, 7.56sec  
 **Cold Lambda**: $0.001, 11.02sec
@@ -60,9 +60,9 @@ export const getMediaMetadata = async (src: string) => {
 // @filename: index.tsx
 // ---cut---
 import React from 'react';
-import {Video} from '@remotion/media';
-import {CalculateMetadataFunction, Composition, staticFile} from 'remotion';
-// https://www.remotion.dev/docs/mediabunny/metadata
+import {Video} from '@picus/media';
+import {CalculateMetadataFunction, Composition, staticFile} from 'picus';
+// https://www.picus.dev/docs/mediabunny/metadata
 import {getMediaMetadata} from './get-media-metadata';
 
 const src = staticFile('bigbuckbunny.mp4');
@@ -90,7 +90,7 @@ export const VideoFromFileComp = () => {
 // <VideoFromFileComp />
 ```
 
-[This](https://github.com/remotion-dev/remotion/blob/main/packages/example/public/bigbuckbunny.mp4) is the video file used.
+[This](https://github.com/picus-dev/picus/blob/main/packages/example/public/bigbuckbunny.mp4) is the video file used.
 
 **Warm Lambda**: $0.017, 18.91sec  
 **Cold Lambda**: $0.021, 15.52sec
@@ -132,12 +132,12 @@ export const getMediaMetadata = async (src: string) => {
 // @filename: index.tsx
 // ---cut---
 import React from 'react';
-import {Video} from '@remotion/media';
-import {CalculateMetadataFunction, Composition} from 'remotion';
-// https://www.remotion.dev/docs/mediabunny/metadata
+import {Video} from '@picus/media';
+import {CalculateMetadataFunction, Composition} from 'picus';
+// https://www.picus.dev/docs/mediabunny/metadata
 import {getMediaMetadata} from './get-media-metadata';
 
-const src = 'https://remotion.media/BigBuckBunny.mp4';
+const src = 'https://picus.media/BigBuckBunny.mp4';
 
 export const calculateMetadataFn: CalculateMetadataFunction<Record<string, unknown>> = async () => {
   const {durationInSeconds, dimensions, fps} = await getMediaMetadata(src);
@@ -200,9 +200,9 @@ export const getMediaMetadata = async (src: string) => {
 // @filename: index.tsx
 // ---cut---
 import React from 'react';
-import {Video} from '@remotion/media';
-import {CalculateMetadataFunction, Composition} from 'remotion';
-// https://www.remotion.dev/docs/mediabunny/metadata
+import {Video} from '@picus/media';
+import {CalculateMetadataFunction, Composition} from 'picus';
+// https://www.picus.dev/docs/mediabunny/metadata
 import {getMediaMetadata} from './get-media-metadata';
 
 const src = 'https://videos.pexels.com/video-files/5530402/5530402-uhd_3840_2160_25fps.mp4';
@@ -244,7 +244,7 @@ However, you also incur additional cost for:
 - [Bandwidth](/docs/lambda/data-transfer-cost): Pulling in assets happens always over HTTP and incurs S3 egress cost.
 - Storage: Storing the sites and renders in S3 incurs S3 storage.
 - CloudWatch Logs: Renders are logged to CloudWatch by default.
-- [Remotion Licensing](https://remotion.pro/license): Teams of 4+ people also need to acquire a Remotion Company License in addition to the AWS cost.
+- [Picus Licensing](https://picus.pro/license): Teams of 4+ people also need to acquire a Picus Company License in addition to the AWS cost.
 
 ## See also
 

@@ -1,10 +1,10 @@
-import type {AwsProvider, AwsRegion} from '@remotion/lambda-client';
+import type {AwsProvider, AwsRegion} from '@picus/lambda-client';
 import type {
 	DeleteFunction,
 	FunctionInfo,
 	GetFunctions,
-} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 
 export let mockFunctionsStore: (FunctionInfo & {
 	region: AwsRegion;

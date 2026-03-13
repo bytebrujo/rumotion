@@ -1,4 +1,4 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React from 'react';
 import {
 	AbsoluteFill,
@@ -6,7 +6,7 @@ import {
 	Sequence,
 	spring,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 
 const BlueSquare: React.FC = () => {
 	const frame = useCurrentFrame();
@@ -110,7 +110,7 @@ export const SequenceForwardExample: React.FC<{
 	return (
 		<div>
 			<Player
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={component}
 				compositionWidth={1280}
 				compositionHeight={720}

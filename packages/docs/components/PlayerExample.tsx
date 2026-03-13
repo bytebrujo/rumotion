@@ -1,5 +1,5 @@
-import type {PlayerRef} from '@remotion/player';
-import {Player} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
+import {Player} from '@picus/player';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {ColorDemo} from './ColorDemo';
 import './input-fields.css';
@@ -44,7 +44,7 @@ export const PlayerExample: React.FC<{
 		<div ref={containerRef}>
 			<Player
 				ref={playerRef}
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={ColorDemo}
 				compositionWidth={1280}
 				compositionHeight={720}

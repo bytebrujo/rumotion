@@ -7,11 +7,11 @@ import type {
 	LoggingContextValue,
 	LogLevel,
 	MediaVolumeContextValue,
-	RemotionEnvironment,
+	PicusEnvironment,
 	SetMediaVolumeContextValue,
 	TimelineContextValue,
-} from 'remotion';
-import {Internals} from 'remotion';
+} from 'picus';
+import {Internals} from 'picus';
 import {getPreferredVolume, persistVolume} from './volume-persistance.js';
 
 export const PLAYER_COMP_ID = 'player-comp';
@@ -125,7 +125,7 @@ export const SharedPlayerContexts: React.FC<{
 		};
 	}, [logLevel]);
 
-	const env: RemotionEnvironment = useMemo(() => {
+	const env: PicusEnvironment = useMemo(() => {
 		return {
 			isPlayer: true,
 			isRendering: false,
@@ -136,9 +136,9 @@ export const SharedPlayerContexts: React.FC<{
 	}, []);
 
 	return (
-		<Internals.RemotionEnvironmentContext.Provider value={env}>
+		<Internals.PicusEnvironmentContext.Provider value={env}>
 			<Internals.LogLevelContext.Provider value={logLevelContext}>
-				<Internals.CanUseRemotionHooksProvider>
+				<Internals.CanUsePicusHooksProvider>
 					<Internals.AbsoluteTimeContext.Provider value={timelineContext}>
 						<Internals.TimelineContext.Provider value={timelineContext}>
 							<Internals.CompositionManager.Provider
@@ -168,8 +168,8 @@ export const SharedPlayerContexts: React.FC<{
 							</Internals.CompositionManager.Provider>
 						</Internals.TimelineContext.Provider>
 					</Internals.AbsoluteTimeContext.Provider>
-				</Internals.CanUseRemotionHooksProvider>
+				</Internals.CanUsePicusHooksProvider>
 			</Internals.LogLevelContext.Provider>
-		</Internals.RemotionEnvironmentContext.Provider>
+		</Internals.PicusEnvironmentContext.Provider>
 	);
 };

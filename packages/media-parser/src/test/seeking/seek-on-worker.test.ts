@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../../controller/media-parser-controller';
 import {hasBeenAborted} from '../../errors';
 import {parseMediaOnServerWorker} from '../../server-worker.module';
@@ -23,7 +23,7 @@ test('seek should also work on worker', async () => {
 					controller.abort();
 				};
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 		throw new Error('should not complete');
 	} catch (err) {
@@ -80,7 +80,7 @@ test('should be able to seek forward and then backwards', async () => {
 					}
 				};
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 		throw new Error('should not complete');
 	} catch (err) {

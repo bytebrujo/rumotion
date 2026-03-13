@@ -25,8 +25,8 @@ export const fetchPageViaRest = async ({
   const res = await fetch(url, {
     headers: {
       Accept: "application/vnd.github.v3.star+json",
-      ...(process.env.REMOTION_GITHUB_TOKEN && {
-        Authorization: `Bearer ${process.env.REMOTION_GITHUB_TOKEN}`,
+      ...(process.env.PICUS_GITHUB_TOKEN && {
+        Authorization: `Bearer ${process.env.PICUS_GITHUB_TOKEN}`,
       }),
     },
     signal: abortSignal,

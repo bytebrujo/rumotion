@@ -5,9 +5,9 @@ import type {
 	HeadlessBrowser,
 	LogLevel,
 	OnBrowserDownload,
-	RemotionServer,
-} from '@remotion/renderer';
-import type {VideoConfig} from 'remotion';
+	PicusServer,
+} from '@picus/renderer';
+import type {VideoConfig} from 'picus';
 import {getCompositionId} from './get-composition-id';
 
 export const getCompositionWithDimensionOverride = async ({
@@ -51,7 +51,7 @@ export const getCompositionWithDimensionOverride = async ({
 	indent: boolean;
 	logLevel: LogLevel;
 	serializedInputPropsWithCustomSchema: string;
-	server: RemotionServer;
+	server: PicusServer;
 	offthreadVideoCacheSizeInBytes: number | null;
 	offthreadVideoThreads: number | null;
 	binariesDirectory: string | null;

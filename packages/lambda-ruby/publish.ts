@@ -2,7 +2,7 @@ import {execSync} from 'node:child_process';
 import {cpSync, existsSync, mkdirSync, rmSync, writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 
 const tmpDir = tmpdir();
 
@@ -15,7 +15,7 @@ mkdirSync(workingDir);
 execSync('gem signin', {stdio: 'inherit'});
 
 execSync(
-	`git clone git@github.com:remotion-dev/lambda-ruby-sdk.git ${workingDir}`,
+	`git clone git@github.com:picus-dev/lambda-ruby-sdk.git ${workingDir}`,
 	{
 		cwd: tmpDir,
 	},
@@ -23,8 +23,8 @@ execSync(
 
 cpSync('lib', path.join(workingDir, 'lib'), {recursive: true});
 cpSync(
-	'remotion_lambda.gemspec',
-	path.join(workingDir, 'remotion_lambda.gemspec'),
+	'picus_lambda.gemspec',
+	path.join(workingDir, 'picus_lambda.gemspec'),
 	{recursive: true},
 );
 cpSync('Gemfile', path.join(workingDir, 'Gemfile'), {
@@ -34,13 +34,13 @@ cpSync('Gemfile', path.join(workingDir, 'Gemfile'), {
 writeFileSync(
 	path.join(workingDir, 'README.md'),
 	[
-		'# Remotion Lambda Ruby SDK',
+		'# Picus Lambda Ruby SDK',
 		'Do not open issues or pull requests here.  ',
-		'The actual source code is located in the [Remotion repository](https://remotion.dev/github).  ',
-		'This repository is automatically updated when a new version of Remotion is released.',
+		'The actual source code is located in the [Picus repository](https://picus.dev/github).  ',
+		'This repository is automatically updated when a new version of Picus is released.',
 		'',
 		'## Installation',
-		'Visit https://www.remotion.dev/docs/lambda/ruby to learn how to install the Remotion Lambda Ruby SDK.',
+		'Visit https://www.picus.dev/docs/lambda/ruby to learn how to install the Picus Lambda Ruby SDK.',
 	].join('\n'),
 );
 execSync('git add .', {cwd: workingDir, stdio: 'inherit'});
@@ -63,11 +63,11 @@ try {
 execSync('git push', {cwd: workingDir, stdio: 'inherit'});
 execSync(`git push origin ${VERSION}`, {cwd: workingDir, stdio: 'inherit'});
 execSync('git push --tags', {cwd: workingDir, stdio: 'inherit'});
-execSync('gem build remotion_lambda.gemspec', {
+execSync('gem build picus_lambda.gemspec', {
 	cwd: workingDir,
 	stdio: 'inherit',
 });
-execSync('gem push remotion_lambda-*.gem 2>/dev/null || true', {
+execSync('gem push picus_lambda-*.gem 2>/dev/null || true', {
 	cwd: workingDir,
 	stdio: 'inherit',
 });

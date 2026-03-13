@@ -1,18 +1,18 @@
-import type {RequestHandler, RuntimePreference} from '@remotion/lambda-client';
+import type {RequestHandler, RuntimePreference} from '@picus/lambda-client';
 import {
 	LambdaClientInternals,
 	speculateFunctionName,
 	type AwsRegion,
-} from '@remotion/lambda-client';
-import {DEFAULT_EPHEMERAL_STORAGE_IN_MB} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
-import {wrapWithErrorHandling} from '@remotion/renderer/error-handling';
+} from '@picus/lambda-client';
+import {DEFAULT_EPHEMERAL_STORAGE_IN_MB} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
+import {wrapWithErrorHandling} from '@picus/renderer/error-handling';
 import type {
 	CloudProvider,
 	FullClientSpecifics,
 	ProviderSpecifics,
-} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 import {awsFullClientSpecifics} from '../functions/full-client-implementation';
 import {FUNCTION_ZIP_ARM64} from '../shared/function-zip-path';
 import {validateRuntimePreference} from '../shared/get-layers';
@@ -121,7 +121,7 @@ const errorHandled = wrapWithErrorHandling(internalDeployFunction);
 
 /*
  * @description Creates an AWS Lambda function in your account that will be able to render a video in the cloud.
- * @see [Documentation](https://remotion.dev/docs/lambda/deployfunction)
+ * @see [Documentation](https://picus.dev/docs/lambda/deployfunction)
  */
 export const deployFunction = ({
 	createCloudWatchLogGroup,

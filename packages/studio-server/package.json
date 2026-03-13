@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/studio-server"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/studio-server"
 	},
-	"name": "@remotion/studio-server",
+	"name": "@picus/studio-server",
 	"version": "4.0.434",
-	"description": "Run a Remotion Studio with a server backend",
+	"description": "Run a Picus Studio with a server backend",
 	"main": "dist",
 	"sideEffects": false,
 	"scripts": {
@@ -14,11 +14,11 @@
 		"format": "oxfmt src",
 		"make": "tsgo -d"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"publishConfig": {
 		"access": "public"
@@ -27,11 +27,11 @@
 		"@babel/parser": "7.24.1",
 		"semver": "7.5.3",
 		"prettier": "catalog:",
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"recast": "0.23.11",
-		"@remotion/bundler": "workspace:*",
-		"@remotion/renderer": "workspace:*",
-		"@remotion/studio-shared": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"@picus/renderer": "workspace:*",
+		"@picus/studio-shared": "workspace:*",
 		"memfs": "3.4.3",
 		"source-map": "0.7.3",
 		"open": "^8.4.2"
@@ -41,7 +41,7 @@
 		"react": "catalog:",
 		"@babel/types": "7.24.0",
 		"@types/semver": "^7.3.4",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@types/node": "catalog:",
 		"@typescript/native-preview": "catalog:"

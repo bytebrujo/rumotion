@@ -1,5 +1,5 @@
 import type {VideoSample, VideoSampleSink} from 'mediabunny';
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 import {getSafeWindowOfMonotonicity} from '../caches';
 import {roundTo4Digits} from '../helpers/round-to-4-digits';
 import {renderTimestampRange} from '../render-timestamp-range';
@@ -120,7 +120,7 @@ export const makeKeyframeBank = async ({
 
 		if (deletedTimestamps.length > 0) {
 			Internals.Log.verbose(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				`Deleted ${deletedTimestamps.length} frame${deletedTimestamps.length === 1 ? '' : 's'} ${renderTimestampRange(deletedTimestamps)} for src ${src} because it is lower than ${timestampInSeconds}. Remaining: ${renderTimestampRange(frameTimestamps)}`,
 			);
 		}
@@ -159,7 +159,7 @@ export const makeKeyframeBank = async ({
 
 		lastUsed = Date.now();
 		Internals.Log.trace(
-			{logLevel, tag: '@remotion/media'},
+			{logLevel, tag: '@picus/media'},
 			`Added frame at ${frame.timestamp}sec to bank`,
 		);
 	};
@@ -202,7 +202,7 @@ export const makeKeyframeBank = async ({
 		// This matches Chrome's behavior: render the first available frame rather than showing black.
 		// Videos don't always start at timestamp 0 due to encoding artifacts, container format quirks,
 		// and keyframe positioning. Users have no control over this, so we clamp to the first frame.
-		// Test case: https://github.com/remotion-dev/remotion/issues/5915
+		// Test case: https://github.com/picus-dev/picus/issues/5915
 		let adjustedTimestamp = timestampInSeconds;
 
 		// If we request a timestamp after the end of the video, return the last frame
@@ -266,7 +266,7 @@ export const makeKeyframeBank = async ({
 	const startTimestampInSeconds = firstFrame.value.timestamp;
 
 	Internals.Log.verbose(
-		{logLevel: parentLogLevel, tag: '@remotion/media'},
+		{logLevel: parentLogLevel, tag: '@picus/media'},
 		`Creating keyframe bank from ${startTimestampInSeconds}sec`,
 	);
 	addFrame(firstFrame.value, parentLogLevel);
@@ -297,7 +297,7 @@ export const makeKeyframeBank = async ({
 		const range = getRangeOfTimestamps();
 		if (range) {
 			Internals.Log.verbose(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				`Preparing for deletion (${reason}) of keyframe bank from ${range?.firstTimestamp}sec to ${range?.lastTimestamp}sec`,
 			);
 		}

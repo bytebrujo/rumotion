@@ -2,24 +2,24 @@
 image: /generated/articles-docs-three-canvas.png
 id: three-canvas
 title: <ThreeCanvas>
-crumb: '@remotion/three'
+crumb: '@picus/three'
 ---
 
-A wrapper for [React Three Fiber](https://github.com/pmndrs/react-three-fiber)'s `<Canvas />` which synchronizes with Remotions [`useCurrentFrame()`](/docs/use-current-frame).
+A wrapper for [React Three Fiber](https://github.com/pmndrs/react-three-fiber)'s `<Canvas />` which synchronizes with Picuss [`useCurrentFrame()`](/docs/use-current-frame).
 
-Since React Three Fiber is a custom renderer, normally the React contexts that surround it don't work inside. This would normally break the usage of it in Remotion, but this component wraps the contexts so you can write your markup as expected.
+Since React Three Fiber is a custom renderer, normally the React contexts that surround it don't work inside. This would normally break the usage of it in Picus, but this component wraps the contexts so you can write your markup as expected.
 
-Instead of using React Three Fibers `useFrame` API, you can (and must) write your animations fully declaratively using Remotions `useCurrentFrame` API. This will ensure that you can scrub back and forth in the timeline and pause the animation.
+Instead of using React Three Fibers `useFrame` API, you can (and must) write your animations fully declaratively using Picuss `useCurrentFrame` API. This will ensure that you can scrub back and forth in the timeline and pause the animation.
 
 A browser bug [would normally cause the layout to be broken](https://github.com/pmndrs/react-three-fiber/issues/1394) because we apply a `scale` transform to the canvas in the Studio. To work around this problem, the `<ThreeCanvas />` requires the `width` and `height` props to be set.
 
 ## Example
 
-A spinning, color changing, scaling cube. This example can also be found in the `examples` folder of the Remotion repo.
+A spinning, color changing, scaling cube. This example can also be found in the `examples` folder of the Picus repo.
 
 ```tsx twoslash
-import {ThreeCanvas} from '@remotion/three';
-import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {ThreeCanvas} from '@picus/three';
+import {interpolate, useCurrentFrame, useVideoConfig} from 'picus';
 
 const ThreeBasic: React.FC = () => {
   const frame = useCurrentFrame();
@@ -64,4 +64,4 @@ You can create a Three.js texture backed by a [`<Video>`](/docs/media/video) by 
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/three/src/ThreeCanvas.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/three/src/ThreeCanvas.tsx)

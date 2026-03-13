@@ -3,12 +3,12 @@ import {
   createSandbox,
   renderMediaOnVercel,
   uploadToVercelBlob,
-} from "@remotion/vercel";
+} from "@picus/vercel";
 import { waitUntil } from "@vercel/functions";
 import { COMP_NAME } from "../../../../types/constants";
 import { RenderRequest } from "../../../../types/schema";
 import {
-  bundleRemotionProject,
+  bundlePicusProject,
   formatSSE,
   type RenderProgress,
 } from "./helpers";
@@ -50,8 +50,8 @@ export async function POST(req: Request) {
 
     try {
       if (!process.env.VERCEL) {
-        bundleRemotionProject(".remotion");
-        await addBundleToSandbox({ sandbox, bundleDir: ".remotion" });
+        bundlePicusProject(".picus");
+        await addBundleToSandbox({ sandbox, bundleDir: ".picus" });
       }
 
       const { sandboxFilePath, contentType } = await renderMediaOnVercel({

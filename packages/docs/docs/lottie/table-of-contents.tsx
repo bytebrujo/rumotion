@@ -10,7 +10,7 @@ export const TableOfContents: React.FC<{
 			<Grid>
 				<TOCItem link="/docs/lottie/lottie">
 					<strong>{'<Lottie>'}</strong>
-					<div>Embed a Lottie animation in Remotion</div>
+					<div>Embed a Lottie animation in Picus</div>
 				</TOCItem>
 				<TOCItem link="/docs/lottie/getlottiemetadata">
 					<strong>getLottieMetadata()</strong>

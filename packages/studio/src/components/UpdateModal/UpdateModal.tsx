@@ -40,11 +40,11 @@ const link: React.CSSProperties = {
 };
 
 const commands: {[key in UpdateInfo['packageManager']]: string} = {
-	npm: 'npx remotion upgrade',
-	yarn: 'yarn remotion upgrade',
-	pnpm: 'pnpm exec remotion upgrade',
-	bun: 'bun remotion upgrade',
-	unknown: 'npx remotion upgrade',
+	npm: 'npx picus upgrade',
+	yarn: 'yarn picus upgrade',
+	pnpm: 'pnpm exec picus upgrade',
+	bun: 'bun picus upgrade',
+	unknown: 'npx picus upgrade',
 };
 
 export const UpdateModal: React.FC<{
@@ -79,7 +79,7 @@ export const UpdateModal: React.FC<{
 					</>
 				) : (
 					<div style={title}>
-						A new update for Remotion is available! Run the following command:
+						A new update for Picus is available! Run the following command:
 					</div>
 				)}
 				<Row align="center">
@@ -96,7 +96,7 @@ export const UpdateModal: React.FC<{
 					/>
 				</Row>
 				<div style={text}>
-					This will upgrade Remotion from {info.currentVersion} to{' '}
+					This will upgrade Picus from {info.currentVersion} to{' '}
 					{info.latestVersion}.
 				</div>
 				<div style={text}>
@@ -104,11 +104,11 @@ export const UpdateModal: React.FC<{
 					<a
 						style={link}
 						target="_blank"
-						href="https://github.com/remotion-dev/remotion/releases"
+						href="https://github.com/picus-dev/picus/releases"
 					>
 						Release notes
 					</a>{' '}
-					to know what{"'s"} new in Remotion.
+					to know what{"'s"} new in Picus.
 				</div>
 			</div>
 		</DismissableModal>

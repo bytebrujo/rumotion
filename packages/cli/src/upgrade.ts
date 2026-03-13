@@ -1,6 +1,6 @@
 import {execSync, spawn} from 'node:child_process';
-import {RenderInternals, type LogLevel} from '@remotion/renderer';
-import {StudioServerInternals} from '@remotion/studio-server';
+import {RenderInternals, type LogLevel} from '@picus/renderer';
+import {StudioServerInternals} from '@picus/studio-server';
 import {
 	findVersionSpecifier,
 	findWorkspaceRoot,
@@ -9,15 +9,15 @@ import {
 } from './catalog-utils';
 import {chalk} from './chalk';
 import {EXTRA_PACKAGES} from './extra-packages';
-import {listOfRemotionPackages} from './list-of-remotion-packages';
+import {listOfPicusPackages} from './list-of-picus-packages';
 import {Log} from './log';
 
-const getExtraPackageVersionsForRemotionVersion = (
-	remotionVersion: string,
+const getExtraPackageVersionsForPicusVersion = (
+	picusVersion: string,
 ): Record<string, string> => {
 	try {
 		const output = execSync(
-			`npm view @remotion/studio@${remotionVersion} dependencies --json`,
+			`npm view @picus/studio@${picusVersion} dependencies --json`,
 			{encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe']},
 		);
 		const dependencies = JSON.parse(output) as Record<string, string>;
@@ -37,20 +37,20 @@ const getExtraPackageVersionsForRemotionVersion = (
 };
 
 export const upgradeCommand = async ({
-	remotionRoot,
+	picusRoot,
 	packageManager,
 	version,
 	logLevel,
 	args,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	packageManager: string | undefined;
 	version: string | undefined;
 	logLevel: LogLevel;
 	args: string[];
 }) => {
 	const depsWithVersions =
-		StudioServerInternals.getInstalledDependenciesWithVersions(remotionRoot);
+		StudioServerInternals.getInstalledDependenciesWithVersions(picusRoot);
 
 	let targetVersion: string;
 	if (version) {
@@ -60,16 +60,16 @@ export const upgradeCommand = async ({
 			'Upgrading to specified version: ' + version,
 		);
 	} else {
-		targetVersion = await StudioServerInternals.getLatestRemotionVersion();
+		targetVersion = await StudioServerInternals.getLatestPicusVersion();
 		Log.info(
 			{indent: false, logLevel},
-			'Newest Remotion version is',
+			'Newest Picus version is',
 			targetVersion,
 		);
 	}
 
 	const manager = StudioServerInternals.getPackageManager({
-		remotionRoot,
+		picusRoot,
 		packageManager,
 		dirUp: 0,
 		logLevel,
@@ -90,7 +90,7 @@ export const upgradeCommand = async ({
 		...Object.keys(depsWithVersions.peerDependencies),
 	];
 
-	const remotionToUpgrade = listOfRemotionPackages.filter((u) =>
+	const picusToUpgrade = listOfPicusPackages.filter((u) =>
 		allDeps.includes(u),
 	);
 
@@ -99,7 +99,7 @@ export const upgradeCommand = async ({
 	);
 
 	const extraPackageVersions =
-		getExtraPackageVersionsForRemotionVersion(targetVersion);
+		getExtraPackageVersionsForPicusVersion(targetVersion);
 
 	if (installedExtraPackages.length > 0) {
 		Log.info(
@@ -109,7 +109,7 @@ export const upgradeCommand = async ({
 	}
 
 	const allPackagesToUpgrade = [
-		...remotionToUpgrade,
+		...picusToUpgrade,
 		...installedExtraPackages,
 	];
 
@@ -128,7 +128,7 @@ export const upgradeCommand = async ({
 	}
 
 	if (catalogPackages.length > 0) {
-		const workspaceRoot = findWorkspaceRoot(remotionRoot);
+		const workspaceRoot = findWorkspaceRoot(picusRoot);
 		if (workspaceRoot) {
 			const updatedCatalogEntries: string[] = [];
 
@@ -197,8 +197,8 @@ export const upgradeCommand = async ({
 		});
 	}
 
-	Log.info({indent: false, logLevel}, '⏫ Remotion has been upgraded!');
-	Log.info({indent: false, logLevel}, 'https://remotion.dev/changelog');
+	Log.info({indent: false, logLevel}, '⏫ Picus has been upgraded!');
+	Log.info({indent: false, logLevel}, 'https://picus.dev/changelog');
 };
 
 const runPackageManagerCommand = async ({
@@ -226,10 +226,10 @@ const runPackageManagerCommand = async ({
 			if (code === 0) {
 				resolve();
 			} else if (RenderInternals.isEqualOrBelowLogLevel(logLevel, 'info')) {
-				throw new Error('Failed to upgrade Remotion, see logs above');
+				throw new Error('Failed to upgrade Picus, see logs above');
 			} else {
 				throw new Error(
-					'Failed to upgrade Remotion, run with --log=info info to see logs',
+					'Failed to upgrade Picus, run with --log=info info to see logs',
 				);
 			}
 		});

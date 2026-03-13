@@ -6,7 +6,7 @@ import {useZIndex} from '../state/z-index';
 if (!process.env.KEYBOARD_SHORTCUTS_ENABLED) {
 	// eslint-disable-next-line no-console
 	console.warn(
-		'Keyboard shortcuts disabled either due to: a) --disable-keyboard-shortcuts being passed b) Config.setKeyboardShortcutsEnabled(false) being set or c) a Remotion version mismatch.',
+		'Keyboard shortcuts disabled either due to: a) --disable-keyboard-shortcuts being passed b) Config.setKeyboardShortcutsEnabled(false) being set or c) a Picus version mismatch.',
 	);
 }
 
@@ -47,7 +47,7 @@ export const useKeybinding = () => {
 					: e.ctrlKey;
 
 				// Apparently, e.key can be undefined in Edge:
-				// https://github.com/remotion-dev/remotion/issues/5637
+				// https://github.com/picus-dev/picus/issues/5637
 				if (!e.key) {
 					return;
 				}

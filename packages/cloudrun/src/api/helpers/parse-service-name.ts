@@ -15,7 +15,7 @@ export const parseServiceName = (
 	const shortServiceName = fullServiceName.replace(parent + '/services/', '');
 	const deployedRegion = fullServiceName.split('/')[3] as string;
 
-	const matched = shortServiceName.match(/remotion-(.*)-mem([0-9])/);
+	const matched = shortServiceName.match(/picus-(.*)-mem([0-9])/);
 
 	if (!matched) {
 		throw new Error(`Could not parse service name ${shortServiceName}`);
@@ -23,7 +23,7 @@ export const parseServiceName = (
 
 	return {
 		serviceName: shortServiceName,
-		remotionVersion: matched[1],
+		picusVersion: matched[1],
 		region: deployedRegion as GcpRegion,
 		consoleUrl: makeConsoleUrl(deployedRegion as GcpRegion, shortServiceName),
 	};

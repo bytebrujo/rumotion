@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import type {InternalState} from '../internal-state';
 import {createLayer} from '../take-screenshot';
 import {getBackgroundFill} from './get-background-fill';

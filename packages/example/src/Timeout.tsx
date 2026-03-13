@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {AbsoluteFill, useDelayRender} from 'remotion';
+import {AbsoluteFill, useDelayRender} from 'picus';
 
 export const Timeout: React.FC = () => {
 	const {delayRender} = useDelayRender();

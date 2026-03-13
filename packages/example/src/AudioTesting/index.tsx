@@ -1,5 +1,5 @@
-import {getStaticFiles} from '@remotion/studio';
-import {Html5Audio, interpolate, Sequence} from 'remotion';
+import {getStaticFiles} from '@picus/studio';
+import {Html5Audio, interpolate, Sequence} from 'picus';
 
 const AudioTesting: React.FC = () => {
 	const files = getStaticFiles();

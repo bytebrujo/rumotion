@@ -53,7 +53,7 @@ export const ParameterizeAndEdit: React.FC = () => {
 						className="no-underline text-brand font-brand font-bold inline-flex flex-row items-center"
 						href="/docs/studio"
 					>
-						Remotion Studio{' '}
+						Picus Studio{' '}
 						<svg
 							style={icon}
 							xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ export const ParameterizeAndEdit: React.FC = () => {
 						className="no-underline text-brand font-brand font-bold inline-flex flex-row items-center"
 						href="/player"
 					>
-						Remotion Player{' '}
+						Picus Player{' '}
 						<svg
 							style={icon}
 							xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export const ParameterizeAndEdit: React.FC = () => {
 						className="no-underline text-brand font-brand font-bold inline-flex flex-row items-center"
 						href="/docs/editor-starter"
 					>
-						Remotion Editor Starter{' '}
+						Picus Editor Starter{' '}
 						<svg
 							style={icon}
 							xmlns="http://www.w3.org/2000/svg"

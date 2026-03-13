@@ -14,7 +14,7 @@ crumb: 'Cloud Run'
 
 import {GcpRegionList} from '../../components/cloudrun/regions.tsx';
 
-Before going live with Remotion Cloud Run, you need to think about into which GCP region you are deploying your service and bucket (which will hold your sites and renders).
+Before going live with Picus Cloud Run, you need to think about into which GCP region you are deploying your service and bucket (which will hold your sites and renders).
 
 This document explains how to select a region and which considerations you need to make.
 
@@ -24,7 +24,7 @@ The following GCP regions are available:
 
 <GcpRegionList />
 
-You can call [`getRegions()`](/docs/cloudrun/getregions) or type [`npx remotion cloudrun regions`](/docs/cloudrun/cli/regions) to get this list programmatically.
+You can call [`getRegions()`](/docs/cloudrun/getregions) or type [`npx picus cloudrun regions`](/docs/cloudrun/cli/regions) to get this list programmatically.
 
 ## Default region
 
@@ -36,15 +36,15 @@ There are 3 ways to select a region:
 
 - When using the Node.JS APIs, you have to pass the region explicitly to each function. Make sure your projects satisfy the Typescript types or follow the documentation.
 
-- When using the CLI, you can set the region using the `REMOTION_GCP_REGION` environment variable. It's best to put it in a `.env` file.
+- When using the CLI, you can set the region using the `PICUS_GCP_REGION` environment variable. It's best to put it in a `.env` file.
 
 - You can also pass the `--region` flag to all CLI commands to override the region. The flag takes precedence over the environment variable.
 
 :::info
-The REMOTION_GCP_REGION environment variable and `--region` flag do not have an effect when using the Node.JS APIs. You need to pass a region explicitly.
+The PICUS_GCP_REGION environment variable and `--region` flag do not have an effect when using the Node.JS APIs. You need to pass a region explicitly.
 :::
 
-If you don't set a region, Remotion will use the default region.
+If you don't set a region, Picus will use the default region.
 
 ## Which region should I choose?
 

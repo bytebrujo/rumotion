@@ -1,5 +1,5 @@
 import React from 'react';
-import {Html5Audio, staticFile} from 'remotion';
+import {Html5Audio, staticFile} from 'picus';
 
 const LoopedTrimmedAudio: React.FC = () => {
 	return (

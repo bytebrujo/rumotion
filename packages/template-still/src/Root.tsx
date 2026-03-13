@@ -1,7 +1,7 @@
-import { Still } from "remotion";
+import { Still } from "picus";
 import { myCompSchema, PreviewCard } from "./PreviewCard";
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Still
@@ -11,7 +11,7 @@ export const RemotionRoot: React.FC = () => {
         height={627}
         schema={myCompSchema}
         defaultProps={{
-          title: "Welcome to Remotion" as const,
+          title: "Welcome to Picus" as const,
           description: "Edit Video.tsx to change template" as const,
           color: "#0B84F3" as const,
         }}

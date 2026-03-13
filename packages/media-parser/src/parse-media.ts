@@ -10,7 +10,7 @@ export const parseMedia: ParseMedia = (options) => {
 	if (!options) {
 		return Promise.reject(
 			new Error(
-				'No options provided. See https://www.remotion.dev/media-parser for how to get started.',
+				'No options provided. See https://www.picus.dev/media-parser for how to get started.',
 			),
 		);
 	}
@@ -61,7 +61,7 @@ export const parseMedia: ParseMedia = (options) => {
 		mode: 'query',
 		onDiscardedData: null,
 		onError: () => ({action: 'fail'}),
-		acknowledgeRemotionLicense: Boolean(options.acknowledgeRemotionLicense),
+		acknowledgePicusLicense: Boolean(options.acknowledgePicusLicense),
 		apiName: 'parseMedia()',
 		makeSamplesStartAtZero: options.makeSamplesStartAtZero ?? true,
 		seekingHints: options.seekingHints ?? null,

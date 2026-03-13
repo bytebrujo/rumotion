@@ -1,5 +1,5 @@
-export const HOST = 'https://www.remotion.pro';
-import type {NoReactInternals} from 'remotion/no-react';
+export const HOST = 'https://www.picus.pro';
+import type {NoReactInternals} from 'picus/no-react';
 import {isNetworkError} from './is-network-error';
 
 const DEFAULT_MAX_RETRIES = 3;

@@ -1,4 +1,4 @@
-import type {CreateContent, Writer} from '@remotion/media-parser';
+import type {CreateContent, Writer} from '@picus/media-parser';
 
 export const createContent: CreateContent = ({filename, mimeType}) => {
 	const buf = new ArrayBuffer(0, {

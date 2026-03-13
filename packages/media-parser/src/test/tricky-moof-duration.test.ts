@@ -1,5 +1,5 @@
 import {beforeAll, expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -17,7 +17,7 @@ test('non-zero duration', async () => {
 				internalStats: true,
 			},
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 
 	expect(slowDurationInSeconds).toBe(57.0019954648526);
@@ -37,7 +37,7 @@ test('no fast duration', async () => {
 			internalStats: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(internalStats).toEqual({

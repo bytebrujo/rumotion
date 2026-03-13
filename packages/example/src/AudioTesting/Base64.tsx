@@ -1,4 +1,4 @@
-import {Html5Audio} from 'remotion';
+import {Html5Audio} from 'picus';
 
 const Base64Audio: React.FC = () => {
 	return (

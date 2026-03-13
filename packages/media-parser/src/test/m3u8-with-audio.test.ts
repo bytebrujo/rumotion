@@ -17,7 +17,7 @@ test(
 		try {
 			await parseMedia({
 				src: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
-				acknowledgeRemotionLicense: true,
+				acknowledgePicusLicense: true,
 				fields: {
 					audioCodec: true,
 					durationInSeconds: true,

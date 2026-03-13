@@ -11,6 +11,6 @@ const uniqueVersions = [...new Set(buggyRelease)];
 console.log(uniqueVersions);
 
 for (const version of uniqueVersions) {
-	await $`npm deprecate remotion@${version} "This version contains bugs: https://bugs.remotion.dev/${version}"`;
+	await $`npm deprecate picus@${version} "This version contains bugs: https://bugs.picus.dev/${version}"`;
 	console.log(`Deprecated version ${version}`);
 }

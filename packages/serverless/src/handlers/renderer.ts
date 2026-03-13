@@ -5,16 +5,16 @@ import type {
 	BrowserLog,
 	Codec,
 	OnArtifact,
-} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {NoReactAPIs} from '@remotion/renderer/pure';
+} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {NoReactAPIs} from '@picus/renderer/pure';
 import type {
 	CloudProvider,
 	ObjectChunkTimingData,
 	OnStream,
 	ProviderSpecifics,
 	ServerlessPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	decompressInputProps,
 	RENDERER_PATH_TOKEN,
@@ -22,7 +22,7 @@ import {
 	ServerlessRoutines,
 	truthy,
 	VERSION,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import type {LaunchedBrowser} from '../get-browser-instance';
 import {getTmpDirStateIfENoSp} from '../get-tmp-dir';
 import {startLeakDetection} from '../leak-detection';
@@ -113,7 +113,7 @@ const renderHandler = async <Provider extends CloudProvider>({
 
 	onBrowserInstance(browserInstance);
 
-	const outputPath = RenderInternals.tmpDir('remotion-render-');
+	const outputPath = RenderInternals.tmpDir('picus-render-');
 
 	if (typeof params.chunk !== 'number') {
 		throw new Error('must pass chunk');

@@ -1,4 +1,4 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {cleanFnStore} from '../mocks/mock-functions';
 
 let stdoutOutput: string[] = [];

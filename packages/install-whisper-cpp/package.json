@@ -1,14 +1,14 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/install-whisper-cpp"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/install-whisper-cpp"
 	},
-	"name": "@remotion/install-whisper-cpp",
+	"name": "@picus/install-whisper-cpp",
 	"version": "4.0.434",
 	"description": "Helpers for installing and using Whisper.cpp",
 	"main": "dist/index.js",
 	"sideEffects": false,
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"scripts": {
 		"formatting": "oxfmt src --check",
@@ -17,24 +17,24 @@
 		"test": "bun test src",
 		"make": "tsgo -d"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"dependencies": {
-		"@remotion/captions": "workspace:*"
+		"@picus/captions": "workspace:*"
 	},
 	"peerDependencies": {},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"openai",
 		"whisper"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/install-whisper-cpp"
+	"homepage": "https://www.picus.dev/docs/install-whisper-cpp"
 }

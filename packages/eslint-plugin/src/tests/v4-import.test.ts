@@ -7,12 +7,12 @@ const ruleTester = new ESLintUtils.RuleTester({
 
 ruleTester.run('v4-import', rule, {
 	valid: [
-		'import {interpolate} from "remotion"',
-		'import {Config} from "@remotion/cli/config"',
+		'import {interpolate} from "picus"',
+		'import {Config} from "@picus/cli/config"',
 	],
 	invalid: [
 		{
-			code: 'import {Config} from "remotion"',
+			code: 'import {Config} from "picus"',
 			errors: [
 				{
 					messageId: 'ImportConfig',
@@ -20,7 +20,7 @@ ruleTester.run('v4-import', rule, {
 			],
 		},
 		{
-			code: 'import {Config, interpolate} from "remotion"',
+			code: 'import {Config, interpolate} from "picus"',
 			errors: [
 				{
 					messageId: 'ImportConfig',

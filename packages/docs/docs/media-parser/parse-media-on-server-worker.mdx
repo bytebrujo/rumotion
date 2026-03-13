@@ -3,7 +3,7 @@ image: /generated/articles-docs-media-parser-parse-media-on-server-worker.png
 id: parse-media-on-server-worker
 title: parseMediaOnServerWorker()
 slug: /media-parser/parse-media-on-server-worker
-crumb: '@remotion/media-parser'
+crumb: '@picus/media-parser'
 ---
 
 :::warning
@@ -21,7 +21,7 @@ We do not test against Deno's `Worker` implementation.
 :::
 
 ```tsx twoslash title="Parsing a video on a Bun Worker"
-import {parseMediaOnServerWorker} from '@remotion/media-parser/server-worker';
+import {parseMediaOnServerWorker} from '@picus/media-parser/server-worker';
 
 const result = await parseMediaOnServerWorker({
   src: '/tmp/video.mp4',
@@ -43,6 +43,6 @@ The [`reader`](/docs/media-parser/parse-media#reader) option in the worker is ha
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/media-parser/src/server-worker.module.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/media-parser/src/server-worker.module.ts)
 - [`parseMedia()`](/docs/media-parser/parse-media)
 - [`parseMediaOnWebWorker()`](/docs/media-parser/parse-media-on-web-worker)

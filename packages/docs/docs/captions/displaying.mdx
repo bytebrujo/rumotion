@@ -7,7 +7,7 @@ crumb: Captions
 
 # Displaying captions
 
-This guide explains how to display captions in Remotion, assuming you already have captions in the [`Caption`](/docs/captions/caption) format - see [Transcribing audio](/docs/captions/transcribing) for how to generate them.
+This guide explains how to display captions in Picus, assuming you already have captions in the [`Caption`](/docs/captions/caption) format - see [Transcribing audio](/docs/captions/transcribing) for how to generate them.
 
 ## Fetching captions
 
@@ -15,8 +15,8 @@ First, fetch your captions JSON file. Use [`useDelayRender()`](/docs/use-delay-r
 
 ```tsx twoslash title="Fetching captions"
 import {useState, useEffect, useCallback} from 'react';
-import {AbsoluteFill, staticFile, useDelayRender} from 'remotion';
-import type {Caption} from '@remotion/captions';
+import {AbsoluteFill, staticFile, useDelayRender} from 'picus';
+import type {Caption} from '@picus/captions';
 
 export const MyComponent: React.FC = () => {
   const [captions, setCaptions] = useState<Caption[] | null>(null);
@@ -52,8 +52,8 @@ Use [`createTikTokStyleCaptions()`](/docs/captions/create-tiktok-style-captions)
 
 ```tsx twoslash title="Creating caption pages"
 import {useMemo} from 'react';
-import {createTikTokStyleCaptions} from '@remotion/captions';
-import type {Caption} from '@remotion/captions';
+import {createTikTokStyleCaptions} from '@picus/captions';
+import type {Caption} from '@picus/captions';
 
 // How often captions should switch (in milliseconds)
 // Higher values = more words per page
@@ -77,8 +77,8 @@ const {pages} = useMemo(() => {
 Map over the pages and render each one in a [`<Sequence>`](/docs/sequence). Calculate the start frame and duration from the page timing:
 
 ```tsx twoslash title="Rendering caption pages"
-import {Sequence, useVideoConfig, AbsoluteFill} from 'remotion';
-import type {TikTokPage} from '@remotion/captions';
+import {Sequence, useVideoConfig, AbsoluteFill} from 'picus';
+import type {TikTokPage} from '@picus/captions';
 
 const SWITCH_CAPTIONS_EVERY_MS = 1200;
 
@@ -119,8 +119,8 @@ const CaptionedContent: React.FC = () => {
 A caption page contains `tokens` which you can use to highlight the currently spoken word. Here's an example that highlights words as they are spoken:
 
 ```tsx twoslash title="Rendering a caption page with word highlighting"
-import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
-import type {TikTokPage} from '@remotion/captions';
+import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'picus';
+import type {TikTokPage} from '@picus/captions';
 
 const HIGHLIGHT_COLOR = '#39E508';
 
@@ -176,9 +176,9 @@ const CaptionPage: React.FC<{page: TikTokPage}> = ({page}) => {
 
 ```tsx twoslash title="Full captioned video example"
 import {useState, useEffect, useCallback, useMemo} from 'react';
-import {AbsoluteFill, Sequence, staticFile, useCurrentFrame, useDelayRender, useVideoConfig} from 'remotion';
-import {createTikTokStyleCaptions} from '@remotion/captions';
-import type {Caption, TikTokPage} from '@remotion/captions';
+import {AbsoluteFill, Sequence, staticFile, useCurrentFrame, useDelayRender, useVideoConfig} from 'picus';
+import {createTikTokStyleCaptions} from '@picus/captions';
+import type {Caption, TikTokPage} from '@picus/captions';
 
 const SWITCH_CAPTIONS_EVERY_MS = 1200;
 const HIGHLIGHT_COLOR = '#39E508';
@@ -280,7 +280,7 @@ export const CaptionedVideo: React.FC = () => {
 
 You can customize the appearance of your captions:
 
-- Use [`fitText()`](/docs/layout-utils/fit-text) from `@remotion/layout-utils` to automatically scale text to fit the video width
+- Use [`fitText()`](/docs/layout-utils/fit-text) from `@picus/layout-utils` to automatically scale text to fit the video width
 - [Add animations](/docs/animating-properties) for enter/exit effects
 - Apply CSS text stroke for better visibility:
 

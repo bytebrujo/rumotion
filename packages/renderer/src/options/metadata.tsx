@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export type Metadata = Record<string, string>;
 
@@ -31,7 +31,7 @@ export const metadataOption = {
 			</>
 		);
 	},
-	docLink: 'https://www.remotion.dev/docs/metadata',
+	docLink: 'https://www.picus.dev/docs/metadata',
 	type: {} as Metadata,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -71,4 +71,4 @@ export const metadataOption = {
 	},
 	ssrName: 'metadata',
 	id: cliFlag,
-} satisfies AnyRemotionOption<Metadata>;
+} satisfies AnyPicusOption<Metadata>;

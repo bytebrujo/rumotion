@@ -3,11 +3,11 @@
  * and the links that you can show.
  */
 
-import { staticFile } from "remotion";
+import { staticFile } from "picus";
 import { z } from "zod";
 
 // TODO: 1. Replace with your own channels (e.g personal and company)
-export const brand = z.enum(["jonny", "remotion"]);
+export const brand = z.enum(["jonny", "picus"]);
 export type Brand = z.infer<typeof brand>;
 
 export const platform = z.enum([
@@ -37,11 +37,11 @@ export const channels: {
     discord: null,
     isLinkedInBusinessPage: false,
   },
-  remotion: {
-    instagram: "@remotion",
-    linkedin: "Remotion",
-    x: "@remotion",
-    youtube: "@remotion_dev",
+  picus: {
+    instagram: "@picus",
+    linkedin: "Picus",
+    x: "@picus",
+    youtube: "@picus_dev",
     discord: null,
     isLinkedInBusinessPage: true,
   },
@@ -50,7 +50,7 @@ export const channels: {
 // TODO: 3. Add your own avatars
 export const avatars: { [key in Brand]: string } = {
   jonny: "https://www.jonny.io/avatar.png",
-  remotion: staticFile("remotion.png"),
+  picus: staticFile("picus.png"),
 };
 
 export const linkType = z.object({

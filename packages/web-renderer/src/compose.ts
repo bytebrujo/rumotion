@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import type {InternalState} from './internal-state';
 import {createTreeWalkerCleanupAfterChildren} from './tree-walker-cleanup-after-children';
 import {walkOverNode} from './walk-over-node';

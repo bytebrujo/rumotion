@@ -1,4 +1,4 @@
-import type {MediaParserDimensions} from '@remotion/media-parser';
+import type {MediaParserDimensions} from '@picus/media-parser';
 import {calculateNewSizeAfterResizing} from './resizing/calculate-new-size';
 import type {ResizeOperation} from './resizing/mode';
 import {normalizeVideoRotation} from './rotate-and-resize-video-frame';

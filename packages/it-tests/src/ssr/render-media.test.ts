@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import {existsSync} from 'fs';
 import os from 'os';
 import path from 'path';
-import {getCompositions, openBrowser, renderMedia} from '@remotion/renderer';
+import {getCompositions, openBrowser, renderMedia} from '@picus/renderer';
 
 const exampleBuild = path.join(__dirname, '..', '..', '..', 'example', 'build');
 
@@ -134,7 +134,7 @@ test('Should fail invalid serve URL', async () => {
 			codec: 'h264',
 			logLevel: 'error',
 			serveUrl:
-				'https://remotionlambda-gc1w0xbfzl.s3.eu-central-1.amazonaws.com/sites/Ignition-SessionResultStoryVideo/index.html',
+				'https://picuslambda-gc1w0xbfzl.s3.eu-central-1.amazonaws.com/sites/Ignition-SessionResultStoryVideo/index.html',
 			composition: {
 				defaultProps: {},
 				durationInFrames: 10,

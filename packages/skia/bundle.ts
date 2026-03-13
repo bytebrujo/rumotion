@@ -9,8 +9,8 @@ const mainModule = await build({
 	naming: '[name].mjs',
 	external: [
 		'react',
-		'remotion',
-		'remotion/no-react',
+		'picus',
+		'picus/no-react',
 		'react/jsx-runtime',
 		'@shopify/react-native-skia',
 	],
@@ -25,7 +25,7 @@ const skiaModule = await build({
 	entrypoints: ['src/enable.ts'],
 	naming: '[name].mjs',
 	target: 'node',
-	external: ['@remotion/bundler', 'canvaskit-wasm/bin/full/canvaskit.wasm'],
+	external: ['@picus/bundler', 'canvaskit-wasm/bin/full/canvaskit.wasm'],
 });
 
 const [enableFile] = skiaModule.outputs;

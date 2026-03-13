@@ -1,4 +1,4 @@
-# @remotion/astro-example
+# @picus/astro-example
 
 ## Usage
 

@@ -8,7 +8,7 @@ test('parse mux.com m3u8', async () => {
 			audioCodec: true,
 			durationInSeconds: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(fields).toEqual({
 		audioCodec: 'aac',
@@ -22,12 +22,12 @@ test('should take a direct stream', async () => {
 		fields: {
 			m3uStreams: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	const {dimensions} = await parseMedia({
 		src: m3uStreams?.[0]?.src as string,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			dimensions: true,
 			tracks: true,

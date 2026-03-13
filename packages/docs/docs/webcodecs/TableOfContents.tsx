@@ -46,7 +46,7 @@ export const TableOfContents: React.FC = () => {
 				<TOCItem link="/docs/webcodecs/get-available-containers">
 					<strong>{'getAvailableContainers()'}</strong>
 					<div>
-						Get a list of containers <code>@remotion/webcodecs</code> supports.
+						Get a list of containers <code>@picus/webcodecs</code> supports.
 					</div>
 				</TOCItem>
 				<TOCItem link="/docs/webcodecs/webcodecs-controller">

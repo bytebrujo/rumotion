@@ -1,7 +1,7 @@
-import { ThreeCanvas } from "@remotion/three";
-import { zColor } from "@remotion/zod-types";
+import { ThreeCanvas } from "@picus/three";
+import { zColor } from "@picus/zod-types";
 import React, { useMemo } from "react";
-import { AbsoluteFill, useVideoConfig } from "remotion";
+import { AbsoluteFill, useVideoConfig } from "picus";
 import { z } from "zod";
 import { MediabunnyMetadata } from "./helpers/get-media-metadata";
 import { getPhoneLayout } from "./helpers/layout";

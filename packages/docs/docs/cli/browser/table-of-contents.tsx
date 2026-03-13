@@ -8,7 +8,7 @@ export const TableOfContents: React.FC = () => {
 			<Grid>
 				<TOCItem link="/docs/cli/browser/ensure">
 					<strong>browser ensure</strong>
-					<div>Ensure Remotion has a browser to render</div>
+					<div>Ensure Picus has a browser to render</div>
 				</TOCItem>
 			</Grid>
 		</div>

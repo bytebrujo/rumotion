@@ -1,16 +1,16 @@
-<img src="https://github.com/remotion-dev/template-next/assets/1629785/9092db5f-7c0c-4d38-97c4-5f5a61f5cc098" />
+<img src="https://github.com/picus-dev/template-next/assets/1629785/9092db5f-7c0c-4d38-97c4-5f5a61f5cc098" />
 <br/>
 <br/>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-description=Render%20your%20Remotion%20videos%20on%20Vercel.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4pq2kfE4t05fMkDCKGsfqz%2F1444f1b559d50391052fdf5102502ac9%2FFlagsmith_Dark.png&demo-title=Remotion%20on%20Vercel&demo-url=https%3A%2F%2Ftemplate-vercel.remotion.dev%2F&from=templates&stores=%5B%7B%22type%22%3A%22blob%22%2C%22access%22%3A%22public%22%7D%5D&project-name=Remotion%20on%20Vercel&project-names=Comma%20separated%20list%20of%20project%20names%2Cto%20match%20the%20root-directories&repository-name=remotion-on-vercel&repository-url=https%3A%2F%2Fgithub.com%2Fremotion-dev%2Ftemplate-vercel&root-directories=List%20of%20directory%20paths%20for%20the%20directories%20to%20clone%20into%20projects)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-description=Render%20your%20Picus%20videos%20on%20Vercel.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4pq2kfE4t05fMkDCKGsfqz%2F1444f1b559d50391052fdf5102502ac9%2FFlagsmith_Dark.png&demo-title=Picus%20on%20Vercel&demo-url=https%3A%2F%2Ftemplate-vercel.picus.dev%2F&from=templates&stores=%5B%7B%22type%22%3A%22blob%22%2C%22access%22%3A%22public%22%7D%5D&project-name=Picus%20on%20Vercel&project-names=Comma%20separated%20list%20of%20project%20names%2Cto%20match%20the%20root-directories&repository-name=picus-on-vercel&repository-url=https%3A%2F%2Fgithub.com%2Fpicus-dev%2Ftemplate-vercel&root-directories=List%20of%20directory%20paths%20for%20the%20directories%20to%20clone%20into%20projects)
 
-This is a Next.js template for building programmatic video apps with [`@remotion/player`](https://remotion.dev/player) and rendering via [Vercel Sandbox](https://vercel.com/docs/functions/sandbox).
+This is a Next.js template for building programmatic video apps with [`@picus/player`](https://picus.dev/player) and rendering via [Vercel Sandbox](https://vercel.com/docs/functions/sandbox).
 
 This template uses the Next.js App directory with TailwindCSS. Videos are rendered in a Vercel Sandbox environment and stored in [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) storage.
 
 ## Getting Started
 
-[Use this template](https://github.com/new?template_name=template-vercel&template_owner=remotion-dev) to clone it into your GitHub account. Run
+[Use this template](https://github.com/new?template_name=template-vercel&template_owner=picus-dev) to clone it into your GitHub account. Run
 
 ```
 npm i
@@ -30,22 +30,22 @@ Start the Next.js dev server:
 npm run dev
 ```
 
-Open the Remotion Studio:
+Open the Picus Studio:
 
 ```
-npx remotion studio
+npx picus studio
 ```
 
 Render a video locally:
 
 ```
-npx remotion render
+npx picus render
 ```
 
-Upgrade Remotion:
+Upgrade Picus:
 
 ```
-npx remotion upgrade
+npx picus upgrade
 ```
 
 ## Important considerations
@@ -88,16 +88,16 @@ npm run dev
 
 ## Docs
 
-Read more about this template [here](https://remotion.dev/docs/vercel-sandbox).
+Read more about this template [here](https://picus.dev/docs/vercel-sandbox).
 
 ## Help
 
-We provide help on our [Discord server](https://remotion.dev/discord).
+We provide help on our [Discord server](https://picus.dev/discord).
 
 ## Issues
 
-Found an issue with Remotion? [File an issue here](https://remotion.dev/issue).
+Found an issue with Picus? [File an issue here](https://picus.dev/issue).
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Note that for some entities a company license is needed. [Read the terms here](https://github.com/picus-dev/picus/blob/main/LICENSE.md).

@@ -1,4 +1,4 @@
-import {PlayerRef} from '@remotion/player';
+import {PlayerRef} from '@picus/player';
 import React from 'react';
 import {useCurrentPlayerFrame} from './use-current-player-frame';
 

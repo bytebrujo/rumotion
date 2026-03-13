@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useMemo} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {StudioServerConnectionCtx} from '../../helpers/client-id';
 import {BACKGROUND, BORDER_COLOR, LIGHT_TEXT} from '../../helpers/colors';
 import {SHOW_BROWSER_RENDERING} from '../../helpers/show-browser-rendering';

@@ -1,6 +1,6 @@
 import type {SyntheticEvent} from 'react';
 import {useCallback, useContext, useMemo, useRef, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {PlayerEventEmitterContext} from './emitter-context.js';
 import type {PlayerEmitter} from './event-emitter.js';
 
@@ -51,7 +51,7 @@ export const usePlayer = (): UsePlayerMethods => {
 	const bufferingContext = useContext(Internals.BufferingContextReact);
 	if (!bufferingContext) {
 		throw new Error(
-			'Missing the buffering context. Most likely you have a Remotion version mismatch.',
+			'Missing the buffering context. Most likely you have a Picus version mismatch.',
 		);
 	}
 
@@ -153,7 +153,7 @@ export const usePlayer = (): UsePlayerMethods => {
 			}
 
 			setFrame((c) => {
-				const prevFrame = c[videoId] ?? window.remotion_initialFrame ?? 0;
+				const prevFrame = c[videoId] ?? window.picus_initialFrame ?? 0;
 				const newFrame = Math.max(0, prevFrame - frames);
 				if (prevFrame === newFrame) {
 					return c;
@@ -179,7 +179,7 @@ export const usePlayer = (): UsePlayerMethods => {
 			}
 
 			setFrame((c) => {
-				const prevFrame = c[videoId] ?? window.remotion_initialFrame ?? 0;
+				const prevFrame = c[videoId] ?? window.picus_initialFrame ?? 0;
 				const newFrame = Math.min(lastFrame, prevFrame + frames);
 				if (prevFrame === newFrame) {
 					return c;

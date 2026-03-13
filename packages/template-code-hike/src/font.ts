@@ -1,4 +1,4 @@
-import { loadFont } from "@remotion/google-fonts/RobotoMono";
+import { loadFont } from "@picus/google-fonts/RobotoMono";
 
 export const { fontFamily, waitUntilDone } = loadFont("normal", {
   subsets: ["latin"],

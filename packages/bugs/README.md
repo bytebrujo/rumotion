@@ -1,4 +1,4 @@
-# @remotion/bugs
+# @picus/bugs
 
 ## Usage
 

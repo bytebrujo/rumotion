@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Html5Video, Sequence, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Video, Sequence, staticFile} from 'picus';
 
 const ShouldNotUnmount: React.FC = () => {
 	return <Html5Video pauseWhenBuffering src={staticFile('framer.webm')} />;

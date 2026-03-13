@@ -4,7 +4,7 @@ const FALLBACK_VERSION = '4.0.1';
 
 export const Prerelease: React.FC<{
 	readonly packageName: string;
-}> = ({packageName = '@remotion/lambda'}) => {
+}> = ({packageName = '@picus/lambda'}) => {
 	const version =
 		typeof URLSearchParams === 'undefined'
 			? FALLBACK_VERSION
@@ -16,10 +16,10 @@ export const Prerelease: React.FC<{
 		<div>
 			<pre className="code-container">
 				{[
-					'@remotion/bundler',
-					'@remotion/renderer',
+					'@picus/bundler',
+					'@picus/renderer',
 					packageName,
-					'remotion',
+					'picus',
 				].map((r) => {
 					return (
 						<div key={r}>

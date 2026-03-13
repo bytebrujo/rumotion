@@ -1,12 +1,12 @@
 import {Html} from '@react-three/drei';
-import {ThreeCanvas} from '@remotion/three';
+import {ThreeCanvas} from '@picus/three';
 import React, {useRef} from 'react';
 import {
 	Internals,
 	interpolate,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const Content = () => {
 	return <h1>{useCurrentFrame()}</h1>;
@@ -21,7 +21,7 @@ const Box: React.FC<{
 		extrapolateLeft: 'clamp',
 	});
 
-	const contexts = Internals.useRemotionContexts();
+	const contexts = Internals.usePicusContexts();
 
 	return (
 		<group position={[0, 0.05, -0.75]} rotation={[0, rotation, 0]}>
@@ -30,9 +30,9 @@ const Box: React.FC<{
 				<meshStandardMaterial color="#f00" />
 
 				<Html transform portal={portalTarget}>
-					<Internals.RemotionContextProvider contexts={contexts}>
+					<Internals.PicusContextProvider contexts={contexts}>
 						<Content />
-					</Internals.RemotionContextProvider>
+					</Internals.PicusContextProvider>
 				</Html>
 			</mesh>
 		</group>

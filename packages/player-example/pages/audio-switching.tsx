@@ -1,6 +1,6 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React, {useState} from 'react';
-import {Html5Audio, prefetch, staticFile} from 'remotion';
+import {Html5Audio, prefetch, staticFile} from 'picus';
 
 const Comp1: React.FC<{
 	audioSrc: string;

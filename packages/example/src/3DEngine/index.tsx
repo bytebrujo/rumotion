@@ -1,4 +1,4 @@
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Outer} from './Outer';
 
 export const Comp = () => {

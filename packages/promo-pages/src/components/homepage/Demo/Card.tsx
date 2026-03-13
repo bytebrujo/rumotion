@@ -1,5 +1,5 @@
 import React, {useCallback, useRef} from 'react';
-import {AbsoluteFill, spring} from 'remotion';
+import {AbsoluteFill, spring} from 'picus';
 import {
 	cardHeight,
 	cardWidth,

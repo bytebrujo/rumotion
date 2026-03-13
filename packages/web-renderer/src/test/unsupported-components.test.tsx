@@ -1,4 +1,4 @@
-import {AbsoluteFill, Html5Audio, Html5Video, OffthreadVideo} from 'remotion';
+import {AbsoluteFill, Html5Audio, Html5Video, OffthreadVideo} from 'picus';
 import {expect, test} from 'vitest';
 import {renderStillOnWeb} from '../render-still-on-web';
 import '../symbol-dispose';
@@ -30,7 +30,7 @@ test('<Html5Video> throws in web-renderer', async () => {
 			delayRenderTimeoutInMilliseconds: 5000,
 		}),
 	).rejects.toThrow(
-		'<Html5Video> is not supported in @remotion/web-renderer. Use <Video> from @remotion/media instead. See https://remotion.dev/docs/client-side-rendering/limitations',
+		'<Html5Video> is not supported in @picus/web-renderer. Use <Video> from @picus/media instead. See https://picus.dev/docs/client-side-rendering/limitations',
 	);
 });
 
@@ -61,7 +61,7 @@ test('<Html5Audio> throws in web-renderer', async () => {
 			delayRenderTimeoutInMilliseconds: 5000,
 		}),
 	).rejects.toThrow(
-		'<Html5Audio> is not supported in @remotion/web-renderer. Use <Audio> from @remotion/media instead. See https://remotion.dev/docs/client-side-rendering/limitations',
+		'<Html5Audio> is not supported in @picus/web-renderer. Use <Audio> from @picus/media instead. See https://picus.dev/docs/client-side-rendering/limitations',
 	);
 });
 
@@ -92,6 +92,6 @@ test('<OffthreadVideo> throws in web-renderer', async () => {
 			delayRenderTimeoutInMilliseconds: 5000,
 		}),
 	).rejects.toThrow(
-		'<OffthreadVideo> is not supported in @remotion/web-renderer. Use <Video> from @remotion/media instead. See https://remotion.dev/docs/client-side-rendering/limitations',
+		'<OffthreadVideo> is not supported in @picus/web-renderer. Use <Video> from @picus/media instead. See https://picus.dev/docs/client-side-rendering/limitations',
 	);
 });

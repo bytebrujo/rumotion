@@ -9,8 +9,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type {SomeStackFrame, StackFrame} from '@remotion/studio-shared';
-import {getLocationFromBuildError} from '@remotion/studio-shared';
+import type {SomeStackFrame, StackFrame} from '@picus/studio-shared';
+import {getLocationFromBuildError} from '@picus/studio-shared';
 import {resolveFileSource} from '../effects/resolve-file-source';
 import {makeStackFrame} from './make-stack-frame';
 

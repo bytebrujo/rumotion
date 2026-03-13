@@ -22,7 +22,7 @@ export const rspackConfig = async ({
 	onProgress,
 	enableCaching = true,
 	maxTimelineTracks,
-	remotionRoot,
+	picusRoot,
 	keyboardShortcutsEnabled,
 	bufferStateDelayInMilliseconds,
 	poll,
@@ -40,7 +40,7 @@ export const rspackConfig = async ({
 	maxTimelineTracks: number | null;
 	keyboardShortcutsEnabled: boolean;
 	bufferStateDelayInMilliseconds: number | null;
-	remotionRoot: string;
+	picusRoot: string;
 	poll: number | null;
 	askAIEnabled: boolean;
 	experimentalClientSideRenderingEnabled: boolean;
@@ -138,7 +138,7 @@ export const rspackConfig = async ({
 				{
 					// Emscripten's main.js spawns Workers of itself via
 					// new Worker(new URL('./main.js', import.meta.url)).
-					// This creates a circular chunk dependency that breaks HMR when `@remotion/whisper-web` is used.
+					// This creates a circular chunk dependency that breaks HMR when `@picus/whisper-web` is used.
 					// TODO: whisper-web does not work in Studio with Rspack, also not with Webpack.
 					// Disable Worker detection so rspack doesn't create a
 					// worker chunk; the new URL() is still handled as an asset.
@@ -165,7 +165,7 @@ export const rspackConfig = async ({
 		enableCaching,
 		environment,
 		outDir,
-		remotionRoot,
+		picusRoot,
 	});
 	return [hash, finalConf as unknown as RspackConfiguration];
 };

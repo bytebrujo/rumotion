@@ -1,4 +1,4 @@
-import type {GitSource} from '@remotion/studio-shared';
+import type {GitSource} from '@picus/studio-shared';
 import {useCallback, useMemo, useState} from 'react';
 import {LIGHT_TEXT} from '../helpers/colors';
 import {
@@ -34,7 +34,7 @@ export const OpenEditorButton: React.FC<{
 	const handleClick = useCallback(async () => {
 		if (type === 'editor') {
 			await openInEditor({
-				originalFileName: `${window.remotion_cwd}`,
+				originalFileName: `${window.picus_cwd}`,
 				originalLineNumber: 1,
 				originalColumnNumber: 1,
 				originalFunctionName: null,
@@ -44,7 +44,7 @@ export const OpenEditorButton: React.FC<{
 				.then(({success}) => {
 					if (!success) {
 						showNotification(
-							`Could not open ${window.remotion_editorName}`,
+							`Could not open ${window.picus_editorName}`,
 							2000,
 						);
 					}
@@ -53,25 +53,25 @@ export const OpenEditorButton: React.FC<{
 					// eslint-disable-next-line no-console
 					console.error(err);
 					showNotification(
-						`Could not open ${window.remotion_editorName}`,
+						`Could not open ${window.picus_editorName}`,
 						2000,
 					);
 				});
 		}
 
 		if (type === 'git') {
-			if (!window.remotion_gitSource) {
+			if (!window.picus_gitSource) {
 				throw new Error('No git source');
 			}
 
-			window.open(getGitSourceBranchUrl(window.remotion_gitSource), '_blank');
+			window.open(getGitSourceBranchUrl(window.picus_gitSource), '_blank');
 		}
 	}, [type]);
 
 	const buttonTooltip =
 		type === 'git'
-			? `Open ${getGitSourceName(window.remotion_gitSource as GitSource)} Repo`
-			: `Open in ${window.remotion_editorName}`;
+			? `Open ${getGitSourceName(window.picus_gitSource as GitSource)} Repo`
+			: `Open in ${window.picus_editorName}`;
 	const openInEditorSvg = (
 		<svg viewBox="0 0 512 512" style={svgStyle}>
 			<path

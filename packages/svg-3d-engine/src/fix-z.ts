@@ -1,5 +1,5 @@
-import type {Instruction} from '@remotion/paths';
-import {reduceInstructions} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
+import {reduceInstructions} from '@picus/paths';
 import type {ThreeDReducedInstruction} from './3d-svg';
 import type {Vector4D} from './matrix';
 

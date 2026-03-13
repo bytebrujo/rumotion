@@ -33,7 +33,7 @@ export const extractEnumJsonPaths = ({
 	const description = getZodSchemaDescription(schema);
 	if (
 		zodTypes &&
-		description === zodTypes.ZodZypesInternals.REMOTION_MATRIX_BRAND
+		description === zodTypes.ZodZypesInternals.PICUS_MATRIX_BRAND
 	) {
 		return [currentPath];
 	}

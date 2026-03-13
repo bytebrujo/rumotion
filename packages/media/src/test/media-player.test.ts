@@ -34,7 +34,7 @@ test('dispose should immediately unblock playback delays', async () => {
 
 	const player = new MediaPlayer({
 		canvas: null,
-		src: 'https://remotion.media/video.mp4',
+		src: 'https://picus.media/video.mp4',
 		logLevel: 'error',
 		sharedAudioContext,
 		loop: false,

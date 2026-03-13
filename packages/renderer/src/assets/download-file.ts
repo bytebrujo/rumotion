@@ -116,7 +116,7 @@ const downloadFileWithoutRetries = ({
 				let downloaded = 0;
 				// Listen to 'close' event instead of more
 				// concise method to avoid this problem
-				// https://github.com/remotion-dev/remotion/issues/384#issuecomment-844398183
+				// https://github.com/picus-dev/picus/issues/384#issuecomment-844398183
 				writeStream.on('close', () => {
 					if (rejected) {
 						return;

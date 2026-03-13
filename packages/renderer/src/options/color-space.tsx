@@ -1,5 +1,5 @@
-import {NoReactInternals} from 'remotion/no-react';
-import type {AnyRemotionOption} from './option';
+import {NoReactInternals} from 'picus/no-react';
+import type {AnyPicusOption} from './option';
 
 const validV4ColorSpaces = ['default', 'bt601', 'bt709', 'bt2020-ncl'] as const;
 const validV5ColorSpaces = ['bt601', 'bt709', 'bt2020-ncl'] as const;
@@ -75,7 +75,7 @@ export const colorSpaceOption = {
 			previously it would only tag the metadata of the video.
 		</>
 	),
-	docLink: 'https://www.remotion.dev/docs/renderer/render-media#colorspace',
+	docLink: 'https://www.picus.dev/docs/renderer/render-media#colorspace',
 	ssrName: 'colorSpace',
 	type: DEFAULT_COLOR_SPACE as ColorSpace | null,
 	getValue: ({commandLine}) => {
@@ -102,7 +102,7 @@ export const colorSpaceOption = {
 		colorSpace = value ?? DEFAULT_COLOR_SPACE;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<ColorSpace | null>;
+} satisfies AnyPicusOption<ColorSpace | null>;
 
 export const validateColorSpace = (option: unknown) => {
 	if (validColorSpaces.includes(option as ColorSpace)) {

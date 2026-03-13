@@ -7,7 +7,7 @@ import {
 	Still,
 	getInputProps,
 	staticFile,
-} from 'remotion';
+} from 'picus';
 import {z} from 'zod';
 import {TwentyTwoKHzAudio} from './22KhzAudio';
 import {UseanimatedEmojis} from './AnimatedEmojis';
@@ -112,8 +112,8 @@ if (alias !== 'alias') {
 
 const INCLUDE_COMP_BREAKING_GET_COMPOSITIONS = false;
 
-import {parseMedia} from '@remotion/media-parser';
-import {zMatrix} from '@remotion/zod-types';
+import {parseMedia} from '@picus/media-parser';
+import {zMatrix} from '@picus/zod-types';
 import {ThreeDCheck} from './3DCheck';
 import {ThreeDContext} from './3DContext';
 import {ThreeDSvgContent} from './3DSvgContent';
@@ -153,7 +153,7 @@ import {
 import {TriangleComp} from './Triangle';
 import {VideoTestingPlayback} from './VideoTesting/playback';
 import {VideoTestingTrim} from './VideoTesting/trim';
-import {RemotionMediaVideoTexture} from './VideoTexture';
+import {PicusMediaVideoTexture} from './VideoTexture';
 import {VisualControls} from './VisualControls';
 import {FastUpdates} from './VisualModeTests/FastUpdates';
 import {FastUpdatesNested} from './VisualModeTests/FastUpdatesNested';
@@ -1796,7 +1796,7 @@ export const Index: React.FC = () => {
 			/>
 			<Composition
 				id="media-video-texture"
-				component={RemotionMediaVideoTexture}
+				component={PicusMediaVideoTexture}
 				width={1280}
 				height={720}
 				fps={30}

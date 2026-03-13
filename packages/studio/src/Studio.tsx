@@ -1,6 +1,6 @@
 import React, {useLayoutEffect} from 'react';
 import {createPortal} from 'react-dom';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {Editor} from './components/Editor';
 import {EditorContexts} from './components/EditorContexts';
 import {ServerDisconnected} from './components/Notifications/ServerDisconnected';
@@ -25,14 +25,14 @@ const StudioInner: React.FC<{
 			initialCompositions={[]}
 			initialCanvasContent={null}
 		>
-			<Internals.RemotionRootContexts
+			<Internals.PicusRootContexts
 				visualModeEnabled={visualModeEnabled}
 				frameState={null}
-				audioEnabled={window.remotion_audioEnabled}
-				videoEnabled={window.remotion_videoEnabled}
-				logLevel={window.remotion_logLevel}
-				numberOfAudioTags={window.remotion_numberOfAudioTags}
-				audioLatencyHint={window.remotion_audioLatencyHint ?? 'interactive'}
+				audioEnabled={window.picus_audioEnabled}
+				videoEnabled={window.picus_videoEnabled}
+				logLevel={window.picus_logLevel}
+				numberOfAudioTags={window.picus_numberOfAudioTags}
+				audioLatencyHint={window.picus_audioLatencyHint ?? 'interactive'}
 			>
 				<StaticFilesProvider>
 					<ResolveCompositionConfigInStudio>
@@ -47,7 +47,7 @@ const StudioInner: React.FC<{
 						</EditorContexts>
 					</ResolveCompositionConfigInStudio>
 				</StaticFilesProvider>
-			</Internals.RemotionRootContexts>
+			</Internals.PicusRootContexts>
 		</Internals.CompositionManagerProvider>
 	);
 };

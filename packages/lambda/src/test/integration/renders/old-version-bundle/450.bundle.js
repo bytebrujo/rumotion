@@ -1,5 +1,5 @@
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[450],
 	{
 		/***/ 9450:
@@ -14,35 +14,35 @@
 					/* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
 					/* harmony export */
 				});
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_0__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_0___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_0___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_0__,
+						picus__WEBPACK_IMPORTED_MODULE_0__,
 					);
-				/* harmony import */ var _remotion_gif__WEBPACK_IMPORTED_MODULE_1__ =
+				/* harmony import */ var _picus_gif__WEBPACK_IMPORTED_MODULE_1__ =
 					__webpack_require__(5129);
-				/* harmony import */ var _remotion_gif__WEBPACK_IMPORTED_MODULE_1___default =
+				/* harmony import */ var _picus_gif__WEBPACK_IMPORTED_MODULE_1___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						_remotion_gif__WEBPACK_IMPORTED_MODULE_1__,
+						_picus_gif__WEBPACK_IMPORTED_MODULE_1__,
 					);
 
 				const GifTest = () => {
 					const {width, height} = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_0__.useVideoConfig)();
+					picus__WEBPACK_IMPORTED_MODULE_0__.useVideoConfig)();
 					return /* @__PURE__ */ React.createElement(
 						'div',
 						{
 							style: {flex: 1, backgroundColor: 'black'},
 						},
 						/* @__PURE__ */ React.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_0__.Sequence,
+							picus__WEBPACK_IMPORTED_MODULE_0__.Sequence,
 							{
 								from: 0,
 								durationInFrames: 50,
 							},
 							/* @__PURE__ */ React.createElement(
-								_remotion_gif__WEBPACK_IMPORTED_MODULE_1__.Gif,
+								_picus_gif__WEBPACK_IMPORTED_MODULE_1__.Gif,
 								{
 									src: 'https://media.giphy.com/media/S9RJG5q2YnWd2nYLZ3/giphy.gif',
 									width,
@@ -52,13 +52,13 @@
 							),
 						),
 						/* @__PURE__ */ React.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_0__.Sequence,
+							picus__WEBPACK_IMPORTED_MODULE_0__.Sequence,
 							{
 								from: 50,
 								durationInFrames: 50,
 							},
 							/* @__PURE__ */ React.createElement(
-								_remotion_gif__WEBPACK_IMPORTED_MODULE_1__.Gif,
+								_picus_gif__WEBPACK_IMPORTED_MODULE_1__.Gif,
 								{
 									src: 'https://media.giphy.com/media/xT0GqH01ZyKwd3aT3G/giphy.gif',
 									width,
@@ -68,13 +68,13 @@
 							),
 						),
 						/* @__PURE__ */ React.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_0__.Sequence,
+							picus__WEBPACK_IMPORTED_MODULE_0__.Sequence,
 							{
 								from: 100,
 								durationInFrames: 50,
 							},
 							/* @__PURE__ */ React.createElement(
-								_remotion_gif__WEBPACK_IMPORTED_MODULE_1__.Gif,
+								_picus_gif__WEBPACK_IMPORTED_MODULE_1__.Gif,
 								{
 									src: 'https://media.giphy.com/media/3o72F7YT6s0EMFI0Za/giphy.gif',
 									width,
@@ -97,11 +97,11 @@
 				Object.defineProperty(exports, '__esModule', {value: true});
 				exports.Gif = void 0;
 				const jsx_runtime_1 = __webpack_require__(6922);
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				const GifForDevelopment_1 = __webpack_require__(634);
 				const GifForRendering_1 = __webpack_require__(7995);
 				const Gif = (props) => {
-					if (remotion_1.Internals.getRemotionEnvironment() === 'rendering') {
+					if (picus_1.Internals.getPicusEnvironment() === 'rendering') {
 						return (0, jsx_runtime_1.jsx)(
 							GifForRendering_1.GifForRendering,
 							Object.assign({}, props),
@@ -237,7 +237,7 @@
 				const jsx_runtime_1 = __webpack_require__(6922);
 				const tools_1 = __webpack_require__(7743);
 				const react_1 = __webpack_require__(2386);
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				const useCurrentGifIndex_1 = __webpack_require__(394);
 				exports.GifForRendering = (0, react_1.forwardRef)((_a, ref) => {
 					var _b = _a,
@@ -257,7 +257,7 @@
 						height: 0,
 					});
 					const [id] = (0, react_1.useState)(() =>
-						(0, remotion_1.delayRender)(),
+						(0, picus_1.delayRender)(),
 					);
 					const index = (0, useCurrentGifIndex_1.useCurrentGifIndex)(
 						state.delays,
@@ -277,7 +277,7 @@
 							onLoad === null || onLoad === void 0 ? void 0 : onLoad(info);
 							update(info);
 						}
-						(0, remotion_1.continueRender)(id);
+						(0, picus_1.continueRender)(id);
 					});
 					return (0, jsx_runtime_1.jsx)(
 						tools_1.Canvas,
@@ -353,10 +353,10 @@
 				Object.defineProperty(exports, '__esModule', {value: true});
 				exports.useCurrentGifIndex = void 0;
 				const react_1 = __webpack_require__(2386);
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				function useCurrentGifIndex(delays) {
-					const currentFrame = (0, remotion_1.useCurrentFrame)();
-					const videoConfig = remotion_1.Internals.useUnsafeVideoConfig();
+					const currentFrame = (0, picus_1.useCurrentFrame)();
+					const videoConfig = picus_1.Internals.useUnsafeVideoConfig();
 					const duration = (0, react_1.useMemo)(() => {
 						if (delays.length !== 0) {
 							return delays.reduce((sum, delay) => sum + delay, 0);

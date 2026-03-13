@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from '@remotion/renderer';
+import type {AnyPicusOption} from '@picus/renderer';
 import React from 'react';
 import {INPUT_BACKGROUND} from '../../helpers/colors';
 import {Spacing} from '../layout';
@@ -59,10 +59,10 @@ const copyWrapper: React.CSSProperties = {
 };
 
 export const OptionExplainer: React.FC<{
-	readonly option: AnyRemotionOption<unknown>;
+	readonly option: AnyPicusOption<unknown>;
 }> = ({option}) => {
 	return (
-		<div style={container} className="__remotion-info-button-container">
+		<div style={container} className="__picus-info-button-container">
 			<div style={padding}>
 				<div>
 					<strong style={title}>{option.name}</strong>

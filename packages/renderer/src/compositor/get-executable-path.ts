@@ -58,10 +58,10 @@ export const getExecutablePath = ({
 	switch (type) {
 		case 'compositor':
 			if (process.platform === 'win32') {
-				return path.resolve(base, 'remotion.exe');
+				return path.resolve(base, 'picus.exe');
 			}
 
-			return path.resolve(base, 'remotion');
+			return path.resolve(base, 'picus');
 
 		case 'ffmpeg':
 			if (process.platform === 'win32') {
@@ -89,7 +89,7 @@ export const getExecutableDir = (
 		case 'win32':
 			switch (process.arch) {
 				case 'x64':
-					return require('@remotion/compositor-win32-x64-msvc').dir;
+					return require('@picus/compositor-win32-x64-msvc').dir;
 				default:
 					throw new Error(
 						`Unsupported architecture on Windows: ${process.arch}`,
@@ -99,9 +99,9 @@ export const getExecutableDir = (
 		case 'darwin':
 			switch (process.arch) {
 				case 'x64':
-					return require('@remotion/compositor-darwin-x64').dir;
+					return require('@picus/compositor-darwin-x64').dir;
 				case 'arm64':
-					return require('@remotion/compositor-darwin-arm64').dir;
+					return require('@picus/compositor-darwin-arm64').dir;
 				default:
 					throw new Error(`Unsupported architecture on macOS: ${process.arch}`);
 			}
@@ -111,16 +111,16 @@ export const getExecutableDir = (
 			switch (process.arch) {
 				case 'x64':
 					if (musl) {
-						return require('@remotion/compositor-linux-x64-musl').dir;
+						return require('@picus/compositor-linux-x64-musl').dir;
 					}
 
-					return require('@remotion/compositor-linux-x64-gnu').dir;
+					return require('@picus/compositor-linux-x64-gnu').dir;
 				case 'arm64':
 					if (musl) {
-						return require('@remotion/compositor-linux-arm64-musl').dir;
+						return require('@picus/compositor-linux-arm64-musl').dir;
 					}
 
-					return require('@remotion/compositor-linux-arm64-gnu').dir;
+					return require('@picus/compositor-linux-arm64-gnu').dir;
 
 				default:
 					throw new Error(`Unsupported architecture on Linux: ${process.arch}`);

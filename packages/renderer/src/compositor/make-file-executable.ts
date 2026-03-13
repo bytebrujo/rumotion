@@ -13,7 +13,7 @@ const hasPermissions = (p: string) => {
 	}
 
 	// On Linux, checking file permissions, because Node.js
-	// seems buggy: https://github.com/remotion-dev/remotion/issues/3587
+	// seems buggy: https://github.com/picus-dev/picus/issues/3587
 	const stats = statSync(p);
 	const {mode} = stats;
 	const othersHaveExecutePermission = Boolean(mode & 0o001);

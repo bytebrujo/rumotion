@@ -1,10 +1,10 @@
-import {StudioInternals} from '@remotion/studio';
+import {StudioInternals} from '@picus/studio';
 import {
 	AbsoluteFill,
 	OffthreadVideo,
 	staticFile,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 import {calculateMetadataFn} from './OffthreadRemoteVideo';
 
 const fps = 30;

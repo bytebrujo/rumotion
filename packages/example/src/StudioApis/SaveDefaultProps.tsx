@@ -1,6 +1,6 @@
-import {saveDefaultProps, updateDefaultProps} from '@remotion/studio';
+import {saveDefaultProps, updateDefaultProps} from '@picus/studio';
 import React, {useCallback} from 'react';
-import {AbsoluteFill, useVideoConfig} from 'remotion';
+import {AbsoluteFill, useVideoConfig} from 'picus';
 import {z} from 'zod';
 
 export const saveStudioSchema = z.object({

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 import type { Dimensions } from "../config/layout";
-import { fitElementSizeInContainer } from "../remotion/layout/fit-element";
+import { fitElementSizeInContainer } from "../picus/layout/fit-element";
 import { useElementSize } from "./helpers/use-element-size";
 
 export const CropIndicator: React.FC<{

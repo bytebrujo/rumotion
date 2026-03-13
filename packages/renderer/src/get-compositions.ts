@@ -1,5 +1,5 @@
-import type {VideoConfig} from 'remotion/no-react';
-import {NoReactInternals} from 'remotion/no-react';
+import type {VideoConfig} from 'picus/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {BrowserExecutable} from './browser-executable';
 import type {BrowserLog} from './browser-log';
 import type {HeadlessBrowser} from './browser/Browser';
@@ -8,14 +8,14 @@ import type {OnLog, Page} from './browser/BrowserPage';
 import {DEFAULT_TIMEOUT} from './browser/TimeoutSettings';
 import {defaultOnLog} from './default-on-log';
 import {handleJavascriptException} from './error-handling/handle-javascript-exception';
-import {findRemotionRoot} from './find-closest-package-json';
+import {findPicusRoot} from './find-closest-package-json';
 import {getPageAndCleanupFn} from './get-browser-instance';
 import {getAvailableMemory} from './memory/get-available-memory';
 import type {ChromiumOptions} from './open-browser';
 import {DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS} from './options/offthreadvideo-threads';
 import type {ToOptions} from './options/option';
 import type {optionsMap} from './options/options-map';
-import type {RemotionServer} from './prepare-server';
+import type {PicusServer} from './prepare-server';
 import {makeOrReuseServer} from './prepare-server';
 import {puppeteerEvaluateWithCatch} from './puppeteer-evaluate';
 import {waitForReady} from './seek-to-frame';
@@ -32,7 +32,7 @@ type InternalGetCompositionsOptions = {
 	browserExecutable: BrowserExecutable | null;
 	chromiumOptions: ChromiumOptions;
 	port: number | null;
-	server: RemotionServer | undefined;
+	server: PicusServer | undefined;
 	indent: boolean;
 	serveUrlOrWebpackUrl: string;
 	onLog: OnLog;
@@ -94,7 +94,7 @@ const innerGetCompositions = async ({
 	await puppeteerEvaluateWithCatch({
 		page,
 		pageFunction: () => {
-			window.remotion_setBundleMode({
+			window.picus_setBundleMode({
 				type: 'evaluation',
 			});
 		},
@@ -214,7 +214,7 @@ const internalGetCompositionsRaw = async ({
 			{
 				webpackConfigOrServeUrl: serveUrlOrWebpackUrl,
 				port,
-				remotionRoot: findRemotionRoot(),
+				picusRoot: findPicusRoot(),
 				offthreadVideoThreads:
 					offthreadVideoThreads ??
 					DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS,
@@ -273,8 +273,8 @@ export const internalGetCompositions = wrapWithErrorHandling(
 );
 
 /*
- * @description Gets a list of compositions defined in a Remotion project based on a Remotion Bundle by evaluating the Remotion Root.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/get-compositions)
+ * @description Gets a list of compositions defined in a Picus project based on a Picus Bundle by evaluating the Picus Root.
+ * @see [Documentation](https://www.picus.dev/docs/renderer/get-compositions)
  */
 export const getCompositions = (
 	serveUrlOrWebpackUrl: string,

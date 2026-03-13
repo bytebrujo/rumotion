@@ -1,10 +1,10 @@
-import type {CompletedClientRender} from '@remotion/studio-shared';
+import type {CompletedClientRender} from '@picus/studio-shared';
 import type {
 	WebRendererAudioCodec,
 	WebRendererContainer,
 	WebRendererQuality,
-} from '@remotion/web-renderer';
-import {renderMediaOnWeb, renderStillOnWeb} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
+import {renderMediaOnWeb, renderStillOnWeb} from '@picus/web-renderer';
 import {useCallback, useContext, useEffect} from 'react';
 import {
 	registerClientRender,
@@ -193,7 +193,7 @@ export const ClientRenderQueueProcessor: React.FC = () => {
 					markClientJobDone(job.id, metadata, getBlob);
 				};
 
-				if (window.remotion_isReadOnlyStudio) {
+				if (window.picus_isReadOnlyStudio) {
 					downloadAndFinish();
 				} else {
 					try {

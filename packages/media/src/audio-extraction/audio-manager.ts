@@ -1,5 +1,5 @@
 import type {AudioSampleSink} from 'mediabunny';
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 import {getTotalCacheStats} from '../caches';
 import type {RememberActualMatroskaTimestamps} from '../video-extraction/remember-actual-matroska-timestamps';
 import type {AudioSampleIterator} from './audio-iterator';
@@ -69,7 +69,7 @@ export const makeAudioManager = () => {
 				iterator.prepareForDeletion();
 				iterators.splice(iterators.indexOf(iterator), 1);
 				Internals.Log.verbose(
-					{logLevel, tag: '@remotion/media'},
+					{logLevel, tag: '@picus/media'},
 					`Deleted duplicate iterator for ${iterator.src}`,
 				);
 			}
@@ -110,7 +110,7 @@ export const makeAudioManager = () => {
 			attempts >= maxAttempts
 		) {
 			Internals.Log.warn(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				`Audio cache: Exceeded max cache size after ${maxAttempts} attempts. Still ${(await getTotalCacheStats()).totalSize} bytes used, target was ${maxCacheSize} bytes.`,
 			);
 		}

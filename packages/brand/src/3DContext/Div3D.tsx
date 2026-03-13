@@ -1,4 +1,4 @@
-import {makeMatrix3dTransform} from '@remotion/svg-3d-engine';
+import {makeMatrix3dTransform} from '@picus/svg-3d-engine';
 import React from 'react';
 import {DivExtrusion} from './DivExtrusion';
 import {Face} from './FrontFace';

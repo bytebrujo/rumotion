@@ -1,7 +1,7 @@
-import type {EventSourceEvent, SequenceNodePath} from '@remotion/studio-shared';
+import type {EventSourceEvent, SequenceNodePath} from '@picus/studio-shared';
 import {useCallback, useContext, useEffect, useMemo, useRef} from 'react';
-import {Internals, type CanUpdateSequencePropStatus} from 'remotion';
-import type {TSequence} from 'remotion';
+import {Internals, type CanUpdateSequencePropStatus} from 'picus';
+import type {TSequence} from 'picus';
 import type {OriginalPosition} from '../../error-overlay/react-overlay/utils/get-source-map';
 import {StudioServerConnectionCtx} from '../../helpers/client-id';
 import {getSchemaFields} from '../../helpers/timeline-layout';

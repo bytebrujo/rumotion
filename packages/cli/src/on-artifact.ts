@@ -1,7 +1,7 @@
 import {existsSync, mkdirSync, writeFileSync} from 'fs';
 import path from 'path';
-import type {OnArtifact} from '@remotion/renderer';
-import type {ArtifactProgress} from '@remotion/studio-shared';
+import type {OnArtifact} from '@picus/renderer';
+import type {ArtifactProgress} from '@picus/studio-shared';
 
 export const handleOnArtifact = ({
 	artifactState,

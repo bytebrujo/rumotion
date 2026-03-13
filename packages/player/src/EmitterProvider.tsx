@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {PlayerEventEmitterContext} from './emitter-context.js';
 import {PlayerEmitter} from './event-emitter.js';
 import {useBufferStateEmitter} from './use-buffer-state-emitter.js';

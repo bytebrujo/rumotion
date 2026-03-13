@@ -1,10 +1,10 @@
 import {createReadStream, writeFileSync} from 'fs';
 import path from 'path';
-import type {AwsProvider} from '@remotion/lambda-client';
-import {estimatePrice, LambdaClientInternals} from '@remotion/lambda-client';
-import {REMOTION_BUCKET_PREFIX} from '@remotion/lambda-client/constants';
-import {RenderInternals} from '@remotion/renderer';
-import type {ProviderSpecifics} from '@remotion/serverless';
+import type {AwsProvider} from '@picus/lambda-client';
+import {estimatePrice, LambdaClientInternals} from '@picus/lambda-client';
+import {PICUS_BUCKET_PREFIX} from '@picus/lambda-client/constants';
+import {RenderInternals} from '@picus/renderer';
+import type {ProviderSpecifics} from '@picus/serverless';
 import {
 	getMockCallFunctionAsync,
 	getMockCallFunctionStreaming,
@@ -141,5 +141,5 @@ export const mockImplementation: ProviderSpecifics<AwsProvider> = {
 	getFunctions: getAllMockFunctions,
 	parseFunctionName: LambdaClientInternals.parseFunctionName,
 	checkCredentials: () => Promise.resolve(),
-	getBucketPrefix: () => REMOTION_BUCKET_PREFIX,
+	getBucketPrefix: () => PICUS_BUCKET_PREFIX,
 };

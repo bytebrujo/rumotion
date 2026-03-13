@@ -3,7 +3,7 @@ module main.go
 require (
 	github.com/go-playground/validator/v10 v10.13.0
 	github.com/joho/godotenv v1.5.1
-	github.com/remotion-dev/lambda_go_sdk v0.0.0-20230630201601-b44c1a8d5a75
+	github.com/picus-dev/lambda_go_sdk v0.0.0-20230630201601-b44c1a8d5a75
 )
 
 require (

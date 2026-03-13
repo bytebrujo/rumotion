@@ -9,7 +9,7 @@ crumb: 'Rendering'
 Encoding is the process of converting a sequence of images into a video file.  
 Besides rendering frames, encoding is one of the two steps required to create a video.
 
-From Remotion v4.0.228, Remotion supports hardware-accelerated encoding in some cases.  
+From Picus v4.0.228, Picus supports hardware-accelerated encoding in some cases.  
 Since encoding is platform- and codec-specific, only a few scenarios are supported at the moment.
 
 - Currently, only macOS is supported (Acceleration using VideoToolbox)
@@ -29,7 +29,7 @@ Use the [`hardwareAcceleration`](/docs/renderer/render-media#hardwareacceleratio
 const serveUrl = '/path/to/bundle';
 const outputLocation = '/path/to/frames';
 
-import {renderMedia, selectComposition} from '@remotion/renderer';
+import {renderMedia, selectComposition} from '@picus/renderer';
 
 const inputProps = {
   titleText: 'Hello World',
@@ -55,29 +55,29 @@ await renderMedia({
 
 ### In the CLI
 
-Use the [`--hardware-acceleration`](/docs/cli/render#--hardware-acceleration) option in the `npx remotion studio` command.
+Use the [`--hardware-acceleration`](/docs/cli/render#--hardware-acceleration) option in the `npx picus studio` command.
 
 ```bash
-npx remotion render MyComp --codec prores --hardware-acceleration if-possible
+npx picus render MyComp --codec prores --hardware-acceleration if-possible
 ```
 
 ### In the Studio
 
-In the [Remotion Studio](/docs/studio), you can set the hardware acceleration option in the "Advanced" tab when rendering a video.
+In the [Picus Studio](/docs/studio), you can set the hardware acceleration option in the "Advanced" tab when rendering a video.
 
 ### With the config file
 
 You can set the [`setHardwareAcceleration()`](/docs/config#sethardwareacceleration) option in the [config file](/docs/config).
 
 ```ts twoslash
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 Config.setHardwareAcceleration('if-possible');
 ```
 
-### In Remotion Lambda and Cloud Run
+### In Picus Lambda and Cloud Run
 
-These options are not supported in Remotion Lambda and Cloud Run, because those cloud services do not support hardware acceleration.
+These options are not supported in Picus Lambda and Cloud Run, because those cloud services do not support hardware acceleration.
 
 ## Controlling quality using `--video-bitrate`
 

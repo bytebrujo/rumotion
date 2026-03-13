@@ -1,11 +1,11 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import React, {
 	useCallback,
 	useEffect,
 	useImperativeHandle,
 	useRef,
 } from 'react';
-import {Internals, useCurrentFrame} from 'remotion';
+import {Internals, useCurrentFrame} from 'picus';
 import {LIGHT_TEXT} from '../helpers/colors';
 import {useIsStill} from '../helpers/is-current-selected-still';
 import {useKeybinding} from '../helpers/use-keybinding';

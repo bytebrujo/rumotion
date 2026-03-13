@@ -6,7 +6,7 @@ import {
 	Sequence,
 	Series,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 import {TransitionSeries} from '../TransitionSeries';
 import {renderForFrame} from './render-for-frame';
 

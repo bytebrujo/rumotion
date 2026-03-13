@@ -2,8 +2,8 @@ import {
 	createSmoothSvgPath,
 	useAudioData,
 	visualizeAudioWaveform,
-} from '@remotion/media-utils';
-import {Player} from '@remotion/player';
+} from '@picus/media-utils';
+import {Player} from '@picus/player';
 import React from 'react';
 import {
 	AbsoluteFill,
@@ -11,7 +11,7 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const src = staticFile('podcast.wav');
 
@@ -174,7 +174,7 @@ export const AudioWaveFormExample: React.FC<{
 	return (
 		<div>
 			<Player
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={component}
 				compositionWidth={1080}
 				compositionHeight={300}

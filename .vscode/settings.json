@@ -10,7 +10,7 @@
 	},
 	"python.analysis.extraPaths": [
 		"./packages/lambda-python/src",
-		"./packages/lambda-python/remotion_lambda_sdk"
+		"./packages/lambda-python/picus_lambda_sdk"
 	],
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.autopep8"

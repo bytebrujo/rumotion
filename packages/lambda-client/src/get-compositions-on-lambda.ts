@@ -3,14 +3,14 @@ import type {
 	ChromiumOptions,
 	ToOptions,
 	VideoConfig,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	ServerlessRoutines,
 	VERSION,
 	compressInputProps,
 	getNeedsToUpload,
 	serializeOrThrow,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {awsImplementation} from './aws-provider';
 import type {AwsRegion} from './regions';
 import type {RequestHandler} from './types';
@@ -37,7 +37,7 @@ export type GetCompositionsOnLambdaOutput = VideoConfig[];
 
 /*
  * @description Gets the compositions inside a Lambda function.
- * @see [Documentation](https://remotion.dev/docs/lambda/getcompositionsonlambda)
+ * @see [Documentation](https://picus.dev/docs/lambda/getcompositionsonlambda)
  */
 export const getCompositionsOnLambda = async ({
 	chromiumOptions,
@@ -103,7 +103,7 @@ export const getCompositionsOnLambda = async ({
 	} catch (err) {
 		if ((err as Error).stack?.includes('UnrecognizedClientException')) {
 			throw new Error(
-				'UnrecognizedClientException: The AWS credentials provided were probably mixed up. Learn how to fix this issue here: https://remotion.dev/docs/lambda/troubleshooting/unrecognizedclientexception',
+				'UnrecognizedClientException: The AWS credentials provided were probably mixed up. Learn how to fix this issue here: https://picus.dev/docs/lambda/troubleshooting/unrecognizedclientexception',
 			);
 		}
 

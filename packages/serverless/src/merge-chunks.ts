@@ -4,8 +4,8 @@ import type {
 	CombineChunksOnProgress,
 	FrameRange,
 	LogLevel,
-} from '@remotion/renderer';
-import type {DownloadBehavior} from '@remotion/serverless-client';
+} from '@picus/renderer';
+import type {DownloadBehavior} from '@picus/serverless-client';
 import {
 	inspectErrors,
 	type CloudProvider,
@@ -16,7 +16,7 @@ import {
 	type RenderMetadata,
 	type SerializedInputProps,
 	type ServerlessCodec,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {cleanupProps} from './cleanup-props';
 import {concatVideos} from './concat-videos';
 import {createPostRenderData} from './create-post-render-data';

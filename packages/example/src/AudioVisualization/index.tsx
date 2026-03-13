@@ -2,7 +2,7 @@ import {
 	useAudioData,
 	visualizeAudio,
 	visualizeAudioWaveform,
-} from '@remotion/media-utils';
+} from '@picus/media-utils';
 import {transparentize} from 'polished';
 import React from 'react';
 import {
@@ -13,7 +13,7 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import styled from 'styled-components';
 import DropDots from '../DropDots/DropDots';
 import music from '../resources/sound1.mp3';
@@ -74,7 +74,7 @@ const Text: React.FC<{
 					transform: `translateY(${cool(0) * 8}px)`,
 				}}
 			>
-				Remotion
+				Picus
 			</div>
 			<div
 				style={{

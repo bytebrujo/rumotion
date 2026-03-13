@@ -1,11 +1,11 @@
 import {expect, test} from 'bun:test';
 import {existsSync, readFileSync} from 'fs';
 import path from 'path';
-import {RenderInternals, openBrowser} from '@remotion/renderer';
+import {RenderInternals, openBrowser} from '@picus/renderer';
 import {
-	getRemotionVersionFromIndexHtml,
+	getPicusVersionFromIndexHtml,
 	VERSION,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 
 test(
 	'Bundle studio',
@@ -41,7 +41,7 @@ test(
 			path.join(folder, 'index.html'),
 			'utf-8',
 		);
-		const version = getRemotionVersionFromIndexHtml(indexHtmlContent);
+		const version = getPicusVersionFromIndexHtml(indexHtmlContent);
 		expect(version).toBe(VERSION);
 
 		const {port, close} = await RenderInternals.serveStatic(
@@ -53,7 +53,7 @@ test(
 				indent: false,
 				logLevel: 'info',
 				offthreadVideoCacheSizeInBytes: null,
-				remotionRoot: path.join(process.cwd(), '..', 'example'),
+				picusRoot: path.join(process.cwd(), '..', 'example'),
 				binariesDirectory: null,
 				forceIPv4: false,
 			},

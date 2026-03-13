@@ -1,4 +1,4 @@
-import {Html5Video, interpolate, Loop} from 'remotion';
+import {Html5Video, interpolate, Loop} from 'picus';
 
 const InfinityVideo: React.FC = () => {
 	return (
@@ -7,7 +7,7 @@ const InfinityVideo: React.FC = () => {
 				volume={(f) =>
 					interpolate(f, [0, 500], [1, 0], {extrapolateRight: 'clamp'})
 				}
-				src="https://remotion.media/BigBuckBunny.mp4"
+				src="https://picus.media/BigBuckBunny.mp4"
 			/>
 		</Loop>
 	);

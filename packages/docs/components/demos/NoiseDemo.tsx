@@ -1,6 +1,6 @@
-import {noise3D} from '@remotion/noise';
+import {noise3D} from '@picus/noise';
 import React from 'react';
-import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, useCurrentFrame, useVideoConfig} from 'picus';
 
 interface Props {
 	readonly speed: number;

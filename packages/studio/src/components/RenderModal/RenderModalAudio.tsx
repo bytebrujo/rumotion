@@ -1,5 +1,5 @@
-import type {AudioCodec, Codec} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {AudioCodec, Codec} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import type {ChangeEvent} from 'react';
 import React, {useCallback} from 'react';
 import {Checkmark} from '../../icons/Checkmark';
@@ -8,7 +8,7 @@ import {Spacing} from '../layout';
 import {VERTICAL_SCROLLBAR_CLASSNAME} from '../Menu/is-menu-item';
 import type {ComboboxValue} from '../NewComposition/ComboBox';
 import {Combobox} from '../NewComposition/ComboBox';
-import {RemotionInput} from '../NewComposition/RemInput';
+import {PicusInput} from '../NewComposition/RemInput';
 import {EnforceAudioTrackSetting} from './EnforceAudioTrackSetting';
 import {humanReadableAudioCodec} from './human-readable-audio-codecs';
 import {input, label, optionRow, rightRow} from './layout';
@@ -204,7 +204,7 @@ export const RenderModalAudio: React.FC<{
 
 					<div style={rightRow}>
 						<div>
-							<RemotionInput
+							<PicusInput
 								style={input}
 								value={customTargetAudioBitrate}
 								onChange={onTargetAudioBitrateChanged}

@@ -27,27 +27,27 @@ data "local_file" "permissions" {
 locals {
   raw-permissions       = jsondecode(data.local_file.permissions.content)
   cloudrun-permissions  = [for i in local.raw-permissions.list : i.name]
-  service-account-email = "remotion-sa@${var.project_id}.iam.gserviceaccount.com"
+  service-account-email = "picus-sa@${var.project_id}.iam.gserviceaccount.com"
 }
 
 # Create an IAM role
-resource "google_project_iam_custom_role" "remotion_sa" {
-  role_id     = "RemotionSA"
-  title       = "Remotion API Service Account"
-  description = "Allow the service account to manage necessary resources for Remotion Cloud Run rendering."
+resource "google_project_iam_custom_role" "picus_sa" {
+  role_id     = "PicusSA"
+  title       = "Picus API Service Account"
+  description = "Allow the service account to manage necessary resources for Picus Cloud Run rendering."
   permissions = local.cloudrun-permissions
 }
 
 # Create a service account
-resource "google_service_account" "remotion_sa" {
-  account_id   = "remotion-sa"
-  display_name = "Remotion Service Account"
+resource "google_service_account" "picus_sa" {
+  account_id   = "picus-sa"
+  display_name = "Picus Service Account"
 }
 
 # Bind the IAM role to the service account
-resource "google_project_iam_member" "remotion_sa" {
+resource "google_project_iam_member" "picus_sa" {
   project = var.project_id
-  role    = google_project_iam_custom_role.remotion_sa.id
+  role    = google_project_iam_custom_role.picus_sa.id
   member  = "serviceAccount:${local.service-account-email}"
 }
 
@@ -64,6 +64,6 @@ resource "google_project_service" "cloud_resource_manager" {
 }
 
 # For tf state diagnosis, output the project ID
-output "remotion_project_id" {
+output "picus_project_id" {
   value = var.project_id
 }

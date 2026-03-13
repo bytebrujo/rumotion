@@ -11,20 +11,20 @@ If you want to render the state of your timeline into a video, you need to set u
 
 ## Recommendation: Use a backend framework
 
-We recommend that you use one of our Saas templates to setup a Remotion project that has both a frontend and backend.
+We recommend that you use one of our Saas templates to setup a Picus project that has both a frontend and backend.
 
 It is easier if you use [Next.js](/templates/next) or [React Router](/templates/react-router) templates and copy the timeline component into your project frontend.
 
 These templates include useful boilerplate code for rendering on AWS Lambda.
 
-## Create Remotion project files
+## Create Picus project files
 
-Follow [these instructions](/docs/player-into-remotion-project) for how to turn your `<Player>`-based frontend into a Remotion project.  
+Follow [these instructions](/docs/player-into-picus-project) for how to turn your `<Player>`-based frontend into a Picus project.  
 If you are using a SaaS template, you might already have these files, in which case you can replace them.
 
 ## Using the Timeline state
 
-In [`src/timeline/video-preview.tsx`](https://github.com/remotion-dev/timeline/blob/main/src/timeline/video-preview.tsx), you can see that the timeline state is being passed to the [`<Player>`](/docs/player) component.
+In [`src/timeline/video-preview.tsx`](https://github.com/picus-dev/timeline/blob/main/src/timeline/video-preview.tsx), you can see that the timeline state is being passed to the [`<Player>`](/docs/player) component.
 
 Whenever you are rendering a video using the [server-side rendering](/docs/ssr) APIs like[ `renderMediaOnLambda`](/docs/lambda/rendermediaonlambda) or [`renderMedia()`](/docs/renderer/render-media), make sure you specify the `inputProps` option and pass in the same payload that you passed to the `<Player>` component.
 

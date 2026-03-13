@@ -9,7 +9,7 @@ import {createPublicFolder} from './create-public-folder';
 import {degit} from './degit';
 import {makeHyperlink} from './hyperlinks/make-link';
 import {installSkills} from './install-skills';
-import {getLatestRemotionVersion} from './latest-remotion-version';
+import {getLatestPicusVersion} from './latest-picus-version';
 import {Log} from './log';
 import {openInEditorFlow} from './open-in-editor-flow';
 import {patchPackageJson} from './patch-package-json';
@@ -64,7 +64,7 @@ const getGitStatus = async (root: string): Promise<void> => {
 	try {
 		await execa('git', ['init'], {cwd: root});
 		await execa('git', ['add', '--all'], {cwd: root, stdio: 'ignore'});
-		await execa('git', ['commit', '-m', 'Create new Remotion video'], {
+		await execa('git', ['commit', '-m', 'Create new Picus video'], {
 			cwd: root,
 			stdio: 'ignore',
 		});
@@ -80,7 +80,7 @@ const getGitStatus = async (root: string): Promise<void> => {
 };
 
 export const init = async () => {
-	Log.info(`Welcome to ${chalk.blue('Remotion')}!`);
+	Log.info(`Welcome to ${chalk.blue('Picus')}!`);
 
 	// Get directory argument if provided
 	const directoryArgument = getDirectoryArgument();
@@ -133,7 +133,7 @@ export const init = async () => {
 		}
 	}
 
-	const latestRemotionVersionPromise = getLatestRemotionVersion();
+	const latestPicusVersionPromise = getLatestPicusVersion();
 
 	const shouldOverrideTailwind = selectedTemplate.allowEnableTailwind
 		? await askTailwind()
@@ -158,11 +158,11 @@ export const init = async () => {
 
 		createPublicFolder(projectRoot);
 
-		const latestVersion = await latestRemotionVersionPromise;
+		const latestVersion = await latestPicusVersionPromise;
 		patchPackageJson({
 			projectRoot,
 			projectName: folderName,
-			latestRemotionVersion: latestVersion,
+			latestPicusVersion: latestVersion,
 			packageManager: pkgManager,
 			addTailwind: shouldOverrideTailwind,
 		});
@@ -211,9 +211,9 @@ export const init = async () => {
 		' ' +
 			chalk.blue(
 				makeHyperlink({
-					text: 'remotion.dev/docs',
-					url: 'https://www.remotion.dev/docs',
-					fallback: 'https://www.remotion.dev/docs',
+					text: 'picus.dev/docs',
+					url: 'https://www.picus.dev/docs',
+					fallback: 'https://www.picus.dev/docs',
 				}),
 			),
 	);
@@ -221,21 +221,21 @@ export const init = async () => {
 		' ' +
 			chalk.blue(
 				makeHyperlink({
-					text: 'remotion.dev/prompts',
-					url: 'https://www.remotion.dev/prompts',
-					fallback: 'https://www.remotion.dev/prompts',
+					text: 'picus.dev/prompts',
+					url: 'https://www.picus.dev/prompts',
+					fallback: 'https://www.picus.dev/prompts',
 				}),
 			),
 	);
 	Log.info();
-	Log.info('Remotion is free for teams of up to 3.');
+	Log.info('Picus is free for teams of up to 3.');
 	Log.info(
-		'Adopting Remotion in your company? Visit ' +
+		'Adopting Picus in your company? Visit ' +
 			chalk.blue(
 				makeHyperlink({
-					text: 'remotion.pro/license',
-					url: 'https://remotion.pro/license',
-					fallback: 'https://www.remotion.pro/license',
+					text: 'picus.pro/license',
+					url: 'https://picus.pro/license',
+					fallback: 'https://www.picus.pro/license',
 				}),
 			),
 	);

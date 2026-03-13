@@ -13,8 +13,8 @@ test('Get GitHub repo', () => {
 	const origin = getGitRemoteOrigin(gitConfig as string);
 	expect(origin?.remote).toEqual('origin');
 	expect(
-		origin?.url === 'https://github.com/remotion-dev/remotion.git' ||
-			origin?.url === 'https://github.com/remotion-dev/remotion',
+		origin?.url === 'https://github.com/picus-dev/picus.git' ||
+			origin?.url === 'https://github.com/picus-dev/picus',
 	).toEqual(true);
 });
 
@@ -30,21 +30,21 @@ test('Should normalize SSH URLs', () => {
 
 test('Should normalize HTTPS URLs', () => {
 	expect(
-		normalizeGitRemoteUrl('https://github.com/remotion-dev/remotion.git'),
+		normalizeGitRemoteUrl('https://github.com/picus-dev/picus.git'),
 	).toEqual({
 		type: 'github',
-		org: 'remotion-dev',
-		name: 'remotion',
+		org: 'picus-dev',
+		name: 'picus',
 	});
 });
 
 test('Should normalize HTTPS URLs without .git', () => {
 	expect(
-		normalizeGitRemoteUrl('https://github.com/remotion-dev/remotion'),
+		normalizeGitRemoteUrl('https://github.com/picus-dev/picus'),
 	).toEqual({
 		type: 'github',
-		org: 'remotion-dev',
-		name: 'remotion',
+		org: 'picus-dev',
+		name: 'picus',
 	});
 });
 
@@ -54,7 +54,7 @@ test('Should get Gif Ref', () => {
 
 test('Should get Git Source', () => {
 	const git = getGitSource({
-		remotionRoot: process.cwd(),
+		picusRoot: process.cwd(),
 		disableGitSource: false,
 		logLevel: 'info',
 	});
@@ -65,17 +65,17 @@ test('Should get Git Source', () => {
 test('Should recognize VERCEL', () => {
 	process.env.VERCEL_GIT_COMMIT_SHA = '123';
 	process.env.VERCEL_GIT_PROVIDER = 'github';
-	process.env.VERCEL_GIT_REPO_SLUG = 'remotion';
-	process.env.VERCEL_GIT_REPO_OWNER = 'remotion-dev';
+	process.env.VERCEL_GIT_REPO_SLUG = 'picus';
+	process.env.VERCEL_GIT_REPO_OWNER = 'picus-dev';
 
 	const source = getGitSource({
-		remotionRoot: process.cwd(),
+		picusRoot: process.cwd(),
 		disableGitSource: false,
 		logLevel: 'info',
 	});
 	expect(source).not.toBeNull();
-	expect(source?.name).toBe('remotion');
-	expect(source?.org).toBe('remotion-dev');
+	expect(source?.name).toBe('picus');
+	expect(source?.org).toBe('picus-dev');
 	expect(source?.ref).toBe('123');
 	expect(source?.type).toBe('github');
 	expect(source?.relativeFromGitRoot).toBe(`packages${path.sep}cli`);

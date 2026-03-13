@@ -2,7 +2,7 @@
 image: /generated/articles-docs-html5-audio.png
 title: <Html5Audio>
 id: html5-audio
-crumb: 'API - remotion'
+crumb: 'API - picus'
 ---
 
 [_previously called `<Audio>`_](/docs/mediabunny/new-video)
@@ -10,7 +10,7 @@ crumb: 'API - remotion'
 Using this component, you can add audio to your video. All audio formats which are supported by Chrome are supported by the component.
 
 :::warning Not supported in client-side rendering
-`<Html5Audio>` is not supported in [`@remotion/web-renderer`](/docs/client-side-rendering). Use [`<Audio>`](/docs/media/audio) from `@remotion/media` instead.
+`<Html5Audio>` is not supported in [`@picus/web-renderer`](/docs/client-side-rendering). Use [`<Audio>`](/docs/media/audio) from `@picus/media` instead.
 :::
 
 ## API
@@ -20,7 +20,7 @@ Using this component, you can add audio to your video. All audio formats which a
 [Put an audio file into the `public/` folder](/docs/assets) and use [`staticFile()`](/docs/staticfile) to reference it.
 
 ```tsx twoslash
-import {AbsoluteFill, Html5Audio, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, staticFile} from 'picus';
 
 export const MyVideo = () => {
   return (
@@ -36,7 +36,7 @@ export const MyVideo = () => {
 Allows you to control the volume of the audio in it's entirety or frame by frame. Read the page on [using audio](/docs/using-audio) to learn more.
 
 ```tsx twoslash title="Setting a static volume"
-import {AbsoluteFill, Html5Audio, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, staticFile} from 'picus';
 
 export const MyVideo = () => {
   return (
@@ -48,7 +48,7 @@ export const MyVideo = () => {
 ```
 
 ```tsx twoslash title="Changing the volume over time"
-import {AbsoluteFill, Html5Audio, interpolate, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, interpolate, staticFile} from 'picus';
 
 export const MyVideo = () => {
   return (
@@ -83,7 +83,7 @@ By passing `trimAfter={120}`, any audio after the 4 second mark in the file will
 The audio will play the range from `00:02:00` to `00:04:00`, meaning the audio will play for 2 seconds.
 
 ```tsx twoslash
-import {AbsoluteFill, Html5Audio, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, staticFile} from 'picus';
 
 export const MyVideo = () => {
   return (
@@ -104,10 +104,10 @@ These props have been renamed to [`trimBefore`](#trimbefore--trimafter) and [`tr
 
 You can use the `playbackRate` prop to control the speed of the audio. `1` is the default and means regular speed, `0.5` slows down the audio so it's twice as long and `2` speeds up the audio so it's twice as fast.
 
-While Remotion doesn't limit the range of possible playback speeds, in development mode the [`HTMLMediaElement.playbackRate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/playbackRate) API is used which throws errors on extreme values. At the time of writing, Google Chrome throws an exception if the playback rate is below `0.0625` or above `16`.
+While Picus doesn't limit the range of possible playback speeds, in development mode the [`HTMLMediaElement.playbackRate`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/playbackRate) API is used which throws errors on extreme values. At the time of writing, Google Chrome throws an exception if the playback rate is below `0.0625` or above `16`.
 
 ```tsx twoslash
-import {AbsoluteFill, Html5Audio, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, staticFile} from 'picus';
 
 export const MyVideo = () => {
   return (
@@ -127,7 +127,7 @@ Playing a video in reverse is not supported.
 The `muted` prop will be respected. It will lead to no audio being played while still keeping the audio tag mounted. It's value may change over time, for example to only mute a certain section of the audio.
 
 ```tsx twoslash
-import {AbsoluteFill, Html5Audio, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Html5Audio, staticFile, useCurrentFrame} from 'picus';
 
 export const MyVideo = () => {
   const frame = useCurrentFrame();
@@ -141,14 +141,14 @@ export const MyVideo = () => {
 
 ### `name?`<AvailableFrom v="4.0.71"/>
 
-A name and that will be shown as the label of the sequence in the timeline of the Remotion Studio. This property is purely for helping you keep track of items in the timeline.
+A name and that will be shown as the label of the sequence in the timeline of the Picus Studio. This property is purely for helping you keep track of items in the timeline.
 
 ### `loop?`<AvailableFrom v="3.2.29"/>
 
 You can use the `loop` prop to loop audio.
 
 ```tsx twoslash
-import {AbsoluteFill, Html5Audio, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Html5Audio, staticFile, useCurrentFrame} from 'picus';
 
 export const MyVideo = () => {
   const frame = useCurrentFrame();
@@ -173,13 +173,13 @@ A `toneFrequency` of 0.5 would lower the pitch by half, and a `toneFrequency` of
 Select the audio stream to use. The default is `0`.
 
 ```tsx twoslash
-import {AbsoluteFill, Html5Audio} from 'remotion';
+import {AbsoluteFill, Html5Audio} from 'picus';
 
 // ---cut---
 export const MyComposition = () => {
   return (
     <AbsoluteFill>
-      <Html5Audio audioStreamIndex={1} src={'https://remotion.media/multiple-audio-streams.mov'} />
+      <Html5Audio audioStreamIndex={1} src={'https://picus.media/multiple-audio-streams.mov'} />
     </AbsoluteFill>
   );
 };
@@ -197,15 +197,15 @@ Audio streams are zero-indexed.
 
 ### `acceptableTimeShiftInSeconds?`<AvailableFrom v="3.2.42"/>
 
-In the [Remotion Studio](/docs/terminology/studio) or in the [Remotion Player](/docs/player), Remotion will seek the audio if it gets too much out of sync with Remotion's internal time - be it due to the audio loading or the page being too slow to keep up in real-time. By default, a seek is triggered if `0.45` seconds of time shift is encountered. Using this prop, you can customize the threshold.
+In the [Picus Studio](/docs/terminology/studio) or in the [Picus Player](/docs/player), Picus will seek the audio if it gets too much out of sync with Picus's internal time - be it due to the audio loading or the page being too slow to keep up in real-time. By default, a seek is triggered if `0.45` seconds of time shift is encountered. Using this prop, you can customize the threshold.
 
 ### `pauseWhenBuffering?`<AvailableFrom v="4.0.111"/>
 
-If set to `true` and the audio is buffering, the Player will enter into the [native buffering state](/docs/player/buffer-state). The default is `false`, but will become `true` in Remotion 5.0.
+If set to `true` and the audio is buffering, the Player will enter into the [native buffering state](/docs/player/buffer-state). The default is `false`, but will become `true` in Picus 5.0.
 
 ### `showInTimeline?`<AvailableFrom v="4.0.122"/>
 
-If set to `false`, no layer will be shown in the timeline of the Remotion Studio. The default is `true`.
+If set to `false`, no layer will be shown in the timeline of the Picus Studio. The default is `true`.
 
 ### `delayRenderTimeoutInMilliseconds?`<AvailableFrom v="4.0.140" />
 
@@ -241,11 +241,11 @@ To prevent synthetic amplification, set a volume not higher than 1.
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/audio/Audio.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/core/src/audio/Audio.tsx)
 - [Using audio](/docs/using-audio)
 - [Audio visualization](/docs/audio/visualization)
 - [`<Html5Video />`](/docs/html5-video)
-- [`<Audio />` (from `@remotion/media`)](/docs/media/audio)
+- [`<Audio />` (from `@picus/media`)](/docs/media/audio)
 
 <Credits
   contributors={[

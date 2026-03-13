@@ -1,4 +1,4 @@
-import type {RemoveRenderRequest} from '@remotion/studio-shared';
+import type {RemoveRenderRequest} from '@picus/studio-shared';
 import type {ApiHandler} from '../api-types';
 
 export const handleRemoveRender: ApiHandler<RemoveRenderRequest, undefined> = ({

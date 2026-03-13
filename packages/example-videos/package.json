@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/example-videos"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/example-videos"
 	},
-	"name": "@remotion/example-videos",
+	"name": "@picus/example-videos",
 	"version": "4.0.434",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -15,11 +15,11 @@
 	"author": "Jonny Burger",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"dotenv": "17.3.1",
 		"eslint": "catalog:",
 		"prettier": "catalog:",

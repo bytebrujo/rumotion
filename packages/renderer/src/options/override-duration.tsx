@@ -1,5 +1,5 @@
 import {validateDurationInFrames} from '../validate';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentDuration: number | null = null;
 
@@ -10,7 +10,7 @@ export const overrideDurationOption = {
 	cliFlag,
 	description: () => <>Overrides the duration in frames of the composition.</>,
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#overrideduration',
+	docLink: 'https://www.picus.dev/docs/config#overrideduration',
 	type: null as number | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -46,4 +46,4 @@ export const overrideDurationOption = {
 		currentDuration = duration;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;

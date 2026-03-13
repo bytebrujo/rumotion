@@ -3,21 +3,21 @@ image: /generated/articles-docs-preload-preload-font.png
 id: preload-font
 slug: preload-font
 title: "preloadFont()"
-crumb: "@remotion/preload"
+crumb: "@picus/preload"
 ---
 
-_This function is part of the [`@remotion/preload`](/docs/preload) package._
+_This function is part of the [`@picus/preload`](/docs/preload) package._
 
 This function preloads a font so that when an [`<Img>`](/docs/img) tag is mounted, it can display immediately.
 
 While preload is not necessary for rendering, it can help with seamless playback in the [`<Player />`](/docs/player) and in the Studio.
 
-An alternative to `preloadFont()` is the [`prefetch()`](/docs/prefetch) API. See [`@remotion/preload` vs `prefetch()`](/docs/player/preloading#remotionpreload-vs-prefetch) to decide which one is better for your usecase.
+An alternative to `preloadFont()` is the [`prefetch()`](/docs/prefetch) API. See [`@picus/preload` vs `prefetch()`](/docs/player/preloading#picuspreload-vs-prefetch) to decide which one is better for your usecase.
 
 ## Usage
 
 ```tsx twoslash
-import { preloadFont } from "@remotion/preload";
+import { preloadFont } from "@picus/preload";
 
 const unpreload = preloadFont(
   "https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfBxc4AMP6lbBP.woff2"
@@ -42,7 +42,7 @@ If the resource does not support CORS, `resolveRedirect()` will fail. If the res
 This snippet tries to preload a font on a best-effort basis. If the redirect cannot be resolved, it tries to preload the original URL.
 
 ```tsx twoslash
-import { preloadFont, resolveRedirect } from "@remotion/preload";
+import { preloadFont, resolveRedirect } from "@picus/preload";
 
 // This code gets executed immediately once the page loads
 let urlToLoad =
@@ -74,4 +74,4 @@ const MyComp: React.FC = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/preload/src/preload-font.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/preload/src/preload-font.ts)

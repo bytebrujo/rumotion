@@ -17,7 +17,7 @@ Sometimes you wish to generate additional files when rendering your video. For e
 You can use the [`<Artifact>`](/docs/artifact) component to emit arbitrary files from your video.
 
 :::note
-Emitting artifacts is not currently supported by `@remotion/cloudrun`.
+Emitting artifacts is not currently supported by `@picus/cloudrun`.
 :::
 
 ## Example
@@ -31,7 +31,7 @@ export const generateSubtitles = () => {
 // @filename: MyComp.tsx
 // ---cut---
 import React from 'react';
-import {Artifact, useCurrentFrame} from 'remotion';
+import {Artifact, useCurrentFrame} from 'picus';
 import {generateSubtitles} from './subtitles';
 
 export const MyComp: React.FC = () => {
@@ -53,7 +53,7 @@ export const MyComp: React.FC = () => {
 You can emit the image data of the current frame as an artifact.
 
 ```tsx twoslash title="Emitting the first frame as a thumbnail"
-import {Artifact, useCurrentFrame} from 'remotion';
+import {Artifact, useCurrentFrame} from 'picus';
 
 export const MyComp: React.FC = () => {
   const frame = useCurrentFrame();
@@ -78,7 +78,7 @@ Artifacts get saved to `out/[composition-id]/[filename]` when rendering a video.
 Use the [`onArtifact`](/docs/renderer/render-media#onartifact) callback to receive the artifacts.
 
 ```tsx twoslash title="render.mjs"
-import type {VideoConfig} from 'remotion';
+import type {VideoConfig} from 'picus';
 
 const composition: VideoConfig = {
   width: 100,
@@ -98,7 +98,7 @@ const serveUrl = 'http://localhost:8080';
 const inputProps = {};
 import fs from 'fs';
 // ---cut---
-import {renderMedia, OnArtifact} from '@remotion/renderer';
+import {renderMedia, OnArtifact} from '@picus/renderer';
 
 const onArtifact: OnArtifact = (artifact) => {
   console.log(artifact.filename); // string
@@ -124,8 +124,8 @@ Use the [`onArtifact`](/docs/web-renderer/render-media-on-web#onartifact) callba
 
 ```tsx twoslash title="Receiving artifacts with renderMediaOnWeb()"
 import React from 'react';
-import {Artifact, useCurrentFrame} from 'remotion';
-import {renderMediaOnWeb, EmittedArtifact} from '@remotion/web-renderer';
+import {Artifact, useCurrentFrame} from 'picus';
+import {renderMediaOnWeb, EmittedArtifact} from '@picus/web-renderer';
 
 const composition = {
   id: 'my-comp',
@@ -161,8 +161,8 @@ The same callback is available for [`renderStillOnWeb()`](/docs/web-renderer/ren
 
 ```tsx twoslash title="Receiving artifacts with renderStillOnWeb()"
 import React from 'react';
-import {Artifact} from 'remotion';
-import {renderStillOnWeb, EmittedArtifact} from '@remotion/web-renderer';
+import {Artifact} from 'picus';
+import {renderStillOnWeb, EmittedArtifact} from '@picus/web-renderer';
 
 const composition = {
   id: 'my-comp',
@@ -193,9 +193,9 @@ await renderStillOnWeb({
 });
 ```
 
-### Using the Remotion Lambda CLI
+### Using the Picus Lambda CLI
 
-When using [`npx remotion lambda render`](/docs/lambda/cli/render) or [`npx remotion lambda still`](/docs/lambda/cli/still), artifacts get saved to the S3 bucket under the key `renders/[render-id]/artifacts/[filename]`.
+When using [`npx picus lambda render`](/docs/lambda/cli/render) or [`npx picus lambda still`](/docs/lambda/cli/still), artifacts get saved to the S3 bucket under the key `renders/[render-id]/artifacts/[filename]`.
 
 They will get logged to the console and you can click them to download them.  
 The `--privacy` option also applies to artifacts.
@@ -207,7 +207,7 @@ When using [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda), artifact
 You can obtain a list of currently received assets from [`getRenderProgress()`](/docs/lambda/getrenderprogress#artifacts).
 
 ```tsx twoslash title="progress.ts"
-import {getRenderProgress} from '@remotion/lambda/client';
+import {getRenderProgress} from '@picus/lambda/client';
 
 const renderProgress = await getRenderProgress({
   renderId: 'hi',
@@ -219,7 +219,7 @@ const renderProgress = await getRenderProgress({
 for (const artifact of renderProgress.artifacts) {
   console.log(artifact.filename); // "hello-world.txt"
   console.log(artifact.sizeInBytes); // 12
-  console.log(artifact.s3Url); // "https://s3.eu-central-1.amazonaws.com/remotion-lambda-abcdef/renders/abcdef/artifacts/hello-world.txt"
+  console.log(artifact.s3Url); // "https://s3.eu-central-1.amazonaws.com/picus-lambda-abcdef/renders/abcdef/artifacts/hello-world.txt"
   console.log(artifact.s3Key); // "renders/abcdef/artifacts/hello-world.txt"
 }
 ```
@@ -240,7 +240,7 @@ const imageFormat = 'png' as const;
 const region = 'eu-central-1' as const;
 
 // ---cut---
-import {renderStillOnLambda} from '@remotion/lambda/client';
+import {renderStillOnLambda} from '@picus/lambda/client';
 
 const stillResponse = await renderStillOnLambda({
   functionName,
@@ -255,7 +255,7 @@ const stillResponse = await renderStillOnLambda({
 for (const artifact of stillResponse.artifacts) {
   console.log(artifact.filename); // "hello-world.txt"
   console.log(artifact.sizeInBytes); // 12
-  console.log(artifact.s3Url); // "https://s3.eu-central-1.amazonaws.com/remotion-lambda-abcdef/renders/abcdef/artifacts/hello-world.txt"
+  console.log(artifact.s3Url); // "https://s3.eu-central-1.amazonaws.com/picus-lambda-abcdef/renders/abcdef/artifacts/hello-world.txt"
   console.log(artifact.s3Key); // "renders/abcdef/artifacts/hello-world.txt"
 }
 ```

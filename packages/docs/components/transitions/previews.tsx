@@ -1,29 +1,29 @@
-import type {CubeDirection} from '@remotion-dev/cube-presentation';
-import {cube} from '@remotion-dev/cube-presentation';
-import type {PlayerRef} from '@remotion/player';
-import {Player} from '@remotion/player';
+import type {CubeDirection} from '@picus-dev/cube-presentation';
+import {cube} from '@picus-dev/cube-presentation';
+import type {PlayerRef} from '@picus/player';
+import {Player} from '@picus/player';
 import type {
 	TransitionPresentation,
 	TransitionTiming,
-} from '@remotion/transitions';
+} from '@picus/transitions';
 import {
 	TransitionSeries,
 	linearTiming,
 	springTiming,
-} from '@remotion/transitions';
-import {clockWipe} from '@remotion/transitions/clock-wipe';
-import {fade} from '@remotion/transitions/fade';
-import type {FlipDirection} from '@remotion/transitions/flip';
-import {flip} from '@remotion/transitions/flip';
-import {iris} from '@remotion/transitions/iris';
-import {none} from '@remotion/transitions/none';
-import type {SlideDirection} from '@remotion/transitions/slide';
-import {slide} from '@remotion/transitions/slide';
-import type {WipeDirection} from '@remotion/transitions/wipe';
-import {wipe} from '@remotion/transitions/wipe';
+} from '@picus/transitions';
+import {clockWipe} from '@picus/transitions/clock-wipe';
+import {fade} from '@picus/transitions/fade';
+import type {FlipDirection} from '@picus/transitions/flip';
+import {flip} from '@picus/transitions/flip';
+import {iris} from '@picus/transitions/iris';
+import {none} from '@picus/transitions/none';
+import type {SlideDirection} from '@picus/transitions/slide';
+import {slide} from '@picus/transitions/slide';
+import type {WipeDirection} from '@picus/transitions/wipe';
+import {wipe} from '@picus/transitions/wipe';
 import React, {useEffect, useRef} from 'react';
-import type {SpringConfig} from 'remotion';
-import {AbsoluteFill, measureSpring, spring, useVideoConfig} from 'remotion';
+import type {SpringConfig} from 'picus';
+import {AbsoluteFill, measureSpring, spring, useVideoConfig} from 'picus';
 import {
 	presentationCompositionHeight,
 	presentationCompositionWidth,
@@ -264,7 +264,7 @@ export const PresentationPreview: React.FC<{
 	return (
 		<Player
 			ref={ref}
-			acknowledgeRemotionLicense
+			acknowledgePicusLicense
 			component={SampleTransition}
 			compositionHeight={presentationCompositionHeight}
 			compositionWidth={presentationCompositionWidth}

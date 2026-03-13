@@ -1,14 +1,14 @@
 ---
 image: /generated/articles-docs-lambda-proxy.png
 id: proxy
-title: Using a proxy with Remotion Lambda
+title: Using a proxy with Picus Lambda
 sidebar_label: Using a proxy
 crumb: 'Lambda'
 ---
 
-#Using a proxy with Remotion Lambda<AvailableFrom v="4.0.315" />
+#Using a proxy with Picus Lambda<AvailableFrom v="4.0.315" />
 
-Remotion Lambda supports using HTTP/HTTPS proxies for all AWS API calls by accepting a `requestHandler` option that allows you to pass a custom AWS SDK request handler.
+Picus Lambda supports using HTTP/HTTPS proxies for all AWS API calls by accepting a `requestHandler` option that allows you to pass a custom AWS SDK request handler.
 
 This is useful when your environment requires all external HTTP requests to go through a proxy server.
 
@@ -41,9 +41,9 @@ export const proxyRequestHandler = {
 };
 ```
 
-### 3. Use the request handler with Remotion Lambda functions
+### 3. Use the request handler with Picus Lambda functions
 
-Pass the `requestHandler` option to any Remotion Lambda function:
+Pass the `requestHandler` option to any Picus Lambda function:
 
 ```tsx twoslash
 // @filename: proxy-setup.ts
@@ -58,7 +58,7 @@ export const proxyRequestHandler = {
 
 // @filename: example.ts
 // ---cut---
-import {getFunctions} from '@remotion/lambda/client';
+import {getFunctions} from '@picus/lambda/client';
 import {proxyRequestHandler} from './proxy-setup';
 
 const functions = await getFunctions({
@@ -92,10 +92,10 @@ export const authenticatedProxyRequestHandler = {
 
 ## TypeScript support
 
-Remotion Lambda exports a `RequestHandler` type that you can use for type safety:
+Picus Lambda exports a `RequestHandler` type that you can use for type safety:
 
 ```tsx twoslash
-import type {RequestHandler} from '@remotion/lambda/client';
+import type {RequestHandler} from '@picus/lambda/client';
 import {HttpsProxyAgent} from 'https-proxy-agent';
 
 const proxyAgent = new HttpsProxyAgent('http://proxy:8080');
@@ -111,7 +111,7 @@ You can conditionally use a proxy based on your environment:
 
 ```tsx twoslash
 import {HttpsProxyAgent} from 'https-proxy-agent';
-import type {RequestHandler} from '@remotion/lambda/client';
+import type {RequestHandler} from '@picus/lambda/client';
 
 const createRequestHandler = (): RequestHandler | undefined => {
   const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY;
@@ -134,7 +134,7 @@ Then use it in your Lambda calls:
 ```tsx twoslash
 // @filename: conditional-proxy.ts
 import {HttpsProxyAgent} from 'https-proxy-agent';
-import type {RequestHandler} from '@remotion/lambda/client';
+import type {RequestHandler} from '@picus/lambda/client';
 
 const createRequestHandler = (): RequestHandler | undefined => {
   const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY;
@@ -152,7 +152,7 @@ export const requestHandler = createRequestHandler();
 
 // @filename: usage.ts
 // ---cut---
-import {getFunctions} from '@remotion/lambda/client';
+import {getFunctions} from '@picus/lambda/client';
 import {requestHandler} from './conditional-proxy';
 
 const functions = await getFunctions({

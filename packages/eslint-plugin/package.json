@@ -1,19 +1,19 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/eslint-plugin"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/eslint-plugin"
 	},
-	"name": "@remotion/eslint-plugin",
+	"name": "@picus/eslint-plugin",
 	"version": "4.0.434",
-	"description": "Rules for writing Remotion code",
+	"description": "Rules for writing Picus code",
 	"scripts": {
 		"test": "node src/tests/execute.mjs",
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
 	"main": "dist/index.js",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "ISC",
 	"dependencies": {
 		"@typescript-eslint/utils": "5.19.0"
@@ -40,5 +40,5 @@
 		}
 	},
 	"private": false,
-	"homepage": "https://www.remotion.dev/docs/brownfield#install-the-eslint-plugin"
+	"homepage": "https://www.picus.dev/docs/brownfield#install-the-eslint-plugin"
 }

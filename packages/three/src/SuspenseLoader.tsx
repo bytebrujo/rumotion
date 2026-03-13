@@ -1,5 +1,5 @@
 import React, {Suspense, useLayoutEffect} from 'react';
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 
 const Unblocker: React.FC = () => {
 	const {delayRender, continueRender} = useDelayRender();

@@ -1,4 +1,4 @@
-import type {EventSourceEvent} from '@remotion/studio-shared';
+import type {EventSourceEvent} from '@picus/studio-shared';
 import {useContext, useEffect, useRef, useState} from 'react';
 import {
 	subscribeToFileExistenceWatcher,

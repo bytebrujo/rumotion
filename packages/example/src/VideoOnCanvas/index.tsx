@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useRef} from 'react';
-import {AbsoluteFill, Html5Video, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Html5Video, useVideoConfig} from 'picus';
 
 export const VideoOnCanvas: React.FC = () => {
 	const video = useRef<HTMLVideoElement>(null);
@@ -41,7 +41,7 @@ export const VideoOnCanvas: React.FC = () => {
 					ref={video}
 					style={{opacity: 0}}
 					trimBefore={300}
-					src="https://remotion.media/BigBuckBunny.mp4"
+					src="https://picus.media/BigBuckBunny.mp4"
 				/>
 			</AbsoluteFill>
 			<AbsoluteFill>

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import type {AudioOrVideoAsset} from 'remotion/no-react';
+import type {AudioOrVideoAsset} from 'picus/no-react';
 
 // An unsafe asset is an asset with looser types, which occurs
 // during construction of the asset list. Prefer the MediaAsset
@@ -45,7 +45,7 @@ export const uncompressMediaAsset = (
 		console.log('List of assets:');
 		console.log(allRenderAssets);
 		throw new TypeError(
-			`Cannot uncompress asset, asset list seems corrupt. Please file a bug in the Remotion repo with the debug information above.`,
+			`Cannot uncompress asset, asset list seems corrupt. Please file a bug in the Picus repo with the debug information above.`,
 		);
 	}
 

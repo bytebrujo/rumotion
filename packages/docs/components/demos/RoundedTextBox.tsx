@@ -1,9 +1,9 @@
-import {loadFont} from '@remotion/google-fonts/Figtree';
-import {fitTextOnNLines, measureText} from '@remotion/layout-utils';
-import type {TextAlign} from '@remotion/rounded-text-box';
-import {createRoundedTextBox} from '@remotion/rounded-text-box';
+import {loadFont} from '@picus/google-fonts/Figtree';
+import {fitTextOnNLines, measureText} from '@picus/layout-utils';
+import type {TextAlign} from '@picus/rounded-text-box';
+import {createRoundedTextBox} from '@picus/rounded-text-box';
 import React, {useEffect, useState} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 type Props = {
 	readonly textAlign: TextAlign;

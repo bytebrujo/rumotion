@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 import type {Theme} from './colors';
 import {Logo} from './Logo';
 import {Recorder} from './Recorder';

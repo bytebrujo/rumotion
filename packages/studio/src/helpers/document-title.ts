@@ -1,4 +1,4 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {AnyRenderJob} from '../components/RenderQueue/context';
 import {isClientRenderJob} from '../components/RenderQueue/context';
 
@@ -20,7 +20,7 @@ export const setCurrentCanvasContentId = (id: string | null) => {
 };
 
 export const setUnsavedProps = (unsaved: boolean) => {
-	window.remotion_unsavedProps = unsaved;
+	window.picus_unsavedProps = unsaved;
 
 	unsavedProps = unsaved;
 };
@@ -35,7 +35,7 @@ document.addEventListener('visibilitychange', () => {
 	updateTitle();
 });
 
-const productName = 'Remotion Studio';
+const productName = 'Picus Studio';
 const suffix = `- ${productName}`;
 
 const updateTitle = () => {
@@ -44,7 +44,7 @@ const updateTitle = () => {
 		return;
 	}
 
-	const currentCompTitle = `${currentItemName} / ${window.remotion_projectName}`;
+	const currentCompTitle = `${currentItemName} / ${window.picus_projectName}`;
 
 	document.title = [
 		getProgressInBrackets(currentItemName, renderJobs),

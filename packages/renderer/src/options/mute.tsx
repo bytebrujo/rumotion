@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT_MUTED_STATE = false;
 
@@ -11,7 +11,7 @@ export const mutedOption = {
 	cliFlag,
 	description: () => <>The Audio of the video will be omitted.</>,
 	ssrName: 'muted',
-	docLink: 'https://www.remotion.dev/docs/audio/muting',
+	docLink: 'https://www.picus.dev/docs/audio/muting',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		// we set in minimist `muted` default as null
@@ -38,4 +38,4 @@ export const mutedOption = {
 		mutedState = true;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

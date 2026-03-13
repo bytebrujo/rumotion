@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 type Scale = number;
 
@@ -19,12 +19,12 @@ export const scaleOption = {
 		<>
 			Scales the output dimensions by a factor. For example, a 1280x720px frame
 			will become a 1920x1080px frame with a scale factor of <code>1.5</code>.
-			See <a href="https://www.remotion.dev/docs/scaling">Scaling</a> for more
+			See <a href="https://www.picus.dev/docs/scaling">Scaling</a> for more
 			details.
 		</>
 	),
 	ssrName: 'scale',
-	docLink: 'https://www.remotion.dev/docs/scaling',
+	docLink: 'https://www.picus.dev/docs/scaling',
 	type: 0 as number,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -51,4 +51,4 @@ export const scaleOption = {
 		currentScale = scale;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number>;
+} satisfies AnyPicusOption<number>;

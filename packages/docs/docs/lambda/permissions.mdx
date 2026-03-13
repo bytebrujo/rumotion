@@ -8,40 +8,40 @@ crumb: 'Lambda'
 import {UserPolicy} from '../../components/lambda/user-permissions.tsx';
 import {RolePolicy} from '../../components/lambda/role-permissions.tsx';
 
-This document describes the necessary permissions for Remotion Lambda and explains to those interested why the permissions are necessary.
+This document describes the necessary permissions for Picus Lambda and explains to those interested why the permissions are necessary.
 
 For a step by step guide on how to set up permissions, [follow the setup guide](/docs/lambda/setup).
 
 ## User permissions
 
-This policy should be assigned to the **AWS user**. To do so, go to the [AWS console](https://console.aws.amazon.com/console/home) ➞ [IAM](https://console.aws.amazon.com/iam/home) ➞ [Users](https://console.aws.amazon.com/iamv2/home#/users) ➞ Your created Remotion user ➞ Permissions tab ➞ Add inline policy ➞ JSON.
+This policy should be assigned to the **AWS user**. To do so, go to the [AWS console](https://console.aws.amazon.com/console/home) ➞ [IAM](https://console.aws.amazon.com/iam/home) ➞ [Users](https://console.aws.amazon.com/iamv2/home#/users) ➞ Your created Picus user ➞ Permissions tab ➞ Add inline policy ➞ JSON.
 
 <details>
   <summary>
-    Show full user permissions JSON file for latest Remotion Lambda version
+    Show full user permissions JSON file for latest Picus Lambda version
   </summary>
   <UserPolicy />
 </details>
 
 :::info
-You can always get the suitable permission file for your Remotion Lambda version by typing `npx remotion lambda policies user`.
+You can always get the suitable permission file for your Picus Lambda version by typing `npx picus lambda policies user`.
 :::
 
 ## Role permissions
 
-This policy should be assigned to the **role `remotion-lambda-role`** in your AWS account. The permissions below are given to the Lambda function itself.
+This policy should be assigned to the **role `picus-lambda-role`** in your AWS account. The permissions below are given to the Lambda function itself.
 
-To assign, go to [AWS console](https://console.aws.amazon.com/console/home) ➞ [IAM](https://console.aws.amazon.com/iam/home) ➞ [Roles](https://console.aws.amazon.com/iamv2/home#/roles) ➞ [`remotion-lambda-role`](https://console.aws.amazon.com/iam/home#/roles/remotion-lambda-role) ➞ Permissions tab ➞ [Add inline policy](https://console.aws.amazon.com/iam/home#/roles/remotion-lambda-role$createPolicy?step=edit).
+To assign, go to [AWS console](https://console.aws.amazon.com/console/home) ➞ [IAM](https://console.aws.amazon.com/iam/home) ➞ [Roles](https://console.aws.amazon.com/iamv2/home#/roles) ➞ [`picus-lambda-role`](https://console.aws.amazon.com/iam/home#/roles/picus-lambda-role) ➞ Permissions tab ➞ [Add inline policy](https://console.aws.amazon.com/iam/home#/roles/picus-lambda-role$createPolicy?step=edit).
 
 <details>
   <summary>
-    Show full role permissions JSON file for latest Remotion Lambda version
+    Show full role permissions JSON file for latest Picus Lambda version
   </summary>
   <RolePolicy />
 </details>
 
 :::info
-You can always get the suitable permission file for your Remotion Lambda version by typing `npx remotion lambda policies role`.
+You can always get the suitable permission file for your Picus Lambda version by typing `npx picus lambda policies role`.
 :::
 
 ## Validation
@@ -49,7 +49,7 @@ You can always get the suitable permission file for your Remotion Lambda version
 There are two ways in which you can test if the permissions for the user have been correctly set up. Either you execute the following command:
 
 ```bash
-npx remotion lambda policies validate
+npx picus lambda policies validate
 ```
 
 or if you want to validate it programmatically, using the [`simulatePermissions()`](/docs/lambda/simulatepermissions) function.
@@ -60,7 +60,7 @@ Policies for the role cannot be validated.
 
 ## Explanation
 
-The following table is a breakdown of why Remotion Lambda requires the permissions it does.
+The following table is a breakdown of why Picus Lambda requires the permissions it does.
 
 ### User policies
 
@@ -82,14 +82,14 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
     </td>
     <td><code>*</code></td>
     <td>
-      Allows for <code>npx remotion lambda permissions validate</code>.
+      Allows for <code>npx picus lambda permissions validate</code>.
     </td>
   </tr>
   <tr>
     <td>
       <code>iam:PassRole</code>
     </td>
-    <td><code>arn:aws:iam::*:role/remotion-lambda-role</code></td>
+    <td><code>arn:aws:iam::*:role/picus-lambda-role</code></td>
     <td>
     Allows the Lambda function to assume a role with sufficient permissions.
     </td>
@@ -110,10 +110,10 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
       <code>s3:PutBucketPolicy</code> <br />
     </td>
     <td>
-      <code>{'arn:aws:s3:::remotionlambda-*'}</code>
+      <code>{'arn:aws:s3:::picuslambda-*'}</code>
     </td>
     <td>
-      Allows to create and delete buckets and objects in your account, make objects public and configure them as websites. Only buckets that start with <code>remotionlambda-</code> can be accessed. <code>s3:PutBucketPolicy</code> is used to apply a bucket policy that restricts public access to <code>s3:GetObject</code> only (see <a href="/docs/lambda/bucket-security">Bucket Security</a>).
+      Allows to create and delete buckets and objects in your account, make objects public and configure them as websites. Only buckets that start with <code>picuslambda-</code> can be accessed. <code>s3:PutBucketPolicy</code> is used to apply a bucket policy that restricts public access to <code>s3:GetObject</code> only (see <a href="/docs/lambda/bucket-security">Bucket Security</a>).
     </td>
   </tr>
   <tr>
@@ -124,7 +124,7 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
       <code>{'arn:aws:s3:::*'}</code>
     </td>
     <td>
-      Allows listing the names of all buckets in your account, in order to detect an already existing Remotion bucket.
+      Allows listing the names of all buckets in your account, in order to detect an already existing Picus bucket.
     </td>
   </tr>
 
@@ -133,10 +133,10 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
       <code>lambda:GetLayerVersion</code>
     </td>
     <td>
-      <code>{"arn:aws:lambda:*:678892195805:layer:remotion-binaries-*"}</code>
+      <code>{"arn:aws:lambda:*:678892195805:layer:picus-binaries-*"}</code>
     </td>
     <td>
-    Allows to read Chromium and FFMPEG binaries. These binaries are hosted in an account hosted by Remotion specifically dedicated to hosting those layers in all supported regions.
+    Allows to read Chromium and FFMPEG binaries. These binaries are hosted in an account hosted by Picus specifically dedicated to hosting those layers in all supported regions.
     </td>
   </tr>
   <tr>
@@ -162,7 +162,7 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
       <code>lambda:TagResource</code> <br/>
     </td>
     <td>
-      <code>{"arn:aws:lambda:*:*:function:remotion-render-*"}</code>
+      <code>{"arn:aws:lambda:*:*:function:picus-render-*"}</code>
     </td>
     <td>
     Allows to create, delete, invoke and configure functions (such as disabling automatic retries). Used by the CLI and the Node.JS APIS to set up, execute and teardown the infrastructure. <code>lambda:TagResource</code> will optionally tag the functions 
@@ -174,7 +174,7 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
       <code>logs:PutRetentionPolicy</code>
     </td>
     <td>
-      <code>{"arn:aws:logs:*:*:log-group:/aws/lambda/remotion-render-*"}</code>
+      <code>{"arn:aws:logs:*:*:log-group:/aws/lambda/picus-render-*"}</code>
     </td>
     <td>
     Allows to create CloudWatch group, so logs can be saved in there later. Simplifies debugging.
@@ -218,7 +218,7 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
       <code>{"*"}</code>
     </td>
     <td>
-    Get a list of Remotion buckets in order to find existing buckets that start with <code>remotionlambda-</code>.
+    Get a list of Picus buckets in order to find existing buckets that start with <code>picuslambda-</code>.
     </td>
   </tr>
   <tr>
@@ -233,10 +233,10 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
       <code>s3:GetBucketLocation</code> 
     </td>
     <td>
-      <code>{"arn:aws:s3:::remotionlambda-*"}</code>
+      <code>{"arn:aws:s3:::picuslambda-*"}</code>
     </td>
     <td>
-  Create and delete buckets and items, make them public or private and fetch their location. Since Remotion stores the videos in an S3 bucket, it needs basic CRUD capabilities over those buckets. The permission only applies to buckets that start with <code>remotionlambda-</code>
+  Create and delete buckets and items, make them public or private and fetch their location. Since Picus stores the videos in an S3 bucket, it needs basic CRUD capabilities over those buckets. The permission only applies to buckets that start with <code>picuslambda-</code>
     </td>
   </tr>
   <tr>
@@ -244,7 +244,7 @@ The following table is a breakdown of why Remotion Lambda requires the permissio
       <code>lambda:InvokeFunction</code> <br/>
     </td>
     <td>
-      <code>{"arn:aws:lambda:*:*:function:remotion-render*"}</code>
+      <code>{"arn:aws:lambda:*:*:function:picus-render*"}</code>
     </td>
     <td>
 Allow the function to recursively invoke itself. A render involves multiple function calls, which is to be orchestrated by the first function call.
@@ -257,7 +257,7 @@ Allow the function to recursively invoke itself. A render involves multiple func
       <code>lambda:PutLogEvents</code> <br/>
     </td>
     <td>
-      <code>{"arn:aws:logs:*:*:log-group:/aws/lambda/remotion-render*"}</code>
+      <code>{"arn:aws:logs:*:*:log-group:/aws/lambda/picus-render*"}</code>
     </td>
     <td>
 Allows to write the function logs to CloudWatch for easier debugging.

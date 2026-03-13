@@ -1,6 +1,6 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React from 'react';
-import {Html5Video, interpolate, Sequence, useCurrentFrame} from 'remotion';
+import {Html5Video, interpolate, Sequence, useCurrentFrame} from 'picus';
 
 const remapSpeed = ({
 	frame,
@@ -34,7 +34,7 @@ const AcceleratedVideo: React.FC = () => {
 			<Html5Video
 				trimBefore={Math.round(remappedFrame)}
 				playbackRate={speedFunction(frame)}
-				src="https://remotion.media/BigBuckBunny.mp4#disable"
+				src="https://picus.media/BigBuckBunny.mp4#disable"
 			/>
 		</Sequence>
 	);
@@ -43,7 +43,7 @@ const AcceleratedVideo: React.FC = () => {
 export const AcceleratedVideoExample: React.FC = () => {
 	return (
 		<Player
-			acknowledgeRemotionLicense
+			acknowledgePicusLicense
 			component={AcceleratedVideo}
 			compositionHeight={720}
 			compositionWidth={1280}

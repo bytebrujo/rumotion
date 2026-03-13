@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
 import type {Site} from '../../../api/get-sites';
 import {BINARY_NAME} from '../../../shared/constants';
 import {quit} from '../../helpers/quit';
@@ -34,7 +34,7 @@ const printSitesHelp = (logLevel: LogLevel) => {
 	);
 	Log.info(
 		{indent: false, logLevel},
-		CliInternals.chalk.gray('Creates a new site based on a Remotion project'),
+		CliInternals.chalk.gray('Creates a new site based on a Picus project'),
 	);
 	CliInternals.Log.info({indent: false, logLevel});
 	CliInternals.Log.info(
@@ -67,7 +67,7 @@ const printSitesHelp = (logLevel: LogLevel) => {
 
 export const sitesCommand = (
 	args: string[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ) => {
 	if (args[0] === SITES_LS_SUBCOMMAND) {
@@ -83,7 +83,7 @@ export const sitesCommand = (
 	}
 
 	if (args[0] === SITES_CREATE_SUBCOMMAND) {
-		return sitesCreateSubcommand(args.slice(1), remotionRoot, logLevel);
+		return sitesCreateSubcommand(args.slice(1), picusRoot, logLevel);
 	}
 
 	if (args[0]) {

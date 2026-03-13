@@ -1,6 +1,6 @@
 import React from 'react';
-import type {SequenceControls, SequenceSchema} from 'remotion';
-import {Internals, useRemotionEnvironment} from 'remotion';
+import type {SequenceControls, SequenceSchema} from 'picus';
+import {Internals, usePicusEnvironment} from 'picus';
 import {AudioForPreview} from './audio-for-preview';
 import {AudioForRendering} from './audio-for-rendering';
 import type {AudioProps} from './props';
@@ -34,7 +34,7 @@ const AudioInner: React.FC<
 	// Should only destruct `trimBefore` and `trimAfter` from props,
 	// rest gets drilled down
 	const {name, stack, showInTimeline, controls, ...otherProps} = props;
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 
 	if (typeof props.src !== 'string') {
 		throw new TypeError(

@@ -1,21 +1,21 @@
 ---
 image: /generated/articles-docs-fonts-api-load-font.png
 title: loadFont()
-crumb: "@remotion/fonts"
+crumb: "@picus/fonts"
 ---
 
 # loadFont()<AvailableFrom v="4.0.165" />
 
-_Part of the [`@remotion/fonts`](/docs/fonts) package_
+_Part of the [`@picus/fonts`](/docs/fonts) package_
 
-Load a local font for use in Remotion.  
+Load a local font for use in Picus.  
 Automatically blocks the render until the font is ready.
 
 ## Usage
 
 ```tsx twoslash title="MyComp.tsx"
-import { loadFont } from "@remotion/fonts";
-import { AbsoluteFill, staticFile } from "remotion";
+import { loadFont } from "@picus/fonts";
+import { AbsoluteFill, staticFile } from "picus";
 
 loadFont({
   family: "Bangers",
@@ -94,5 +94,5 @@ The range of Unicode code points to be used from the font.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/fonts/src/load-font.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/fonts/src/load-font.ts)
 - [Fonts](/docs/fonts)

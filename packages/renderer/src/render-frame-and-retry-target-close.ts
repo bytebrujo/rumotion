@@ -1,5 +1,5 @@
-import type {VideoConfig} from 'remotion/no-react';
-import {NoReactInternals} from 'remotion/no-react';
+import type {VideoConfig} from 'picus/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {RenderMediaOnDownload} from './assets/download-and-map-assets-to-file';
 import type {DownloadMap} from './assets/download-map';
 import type {HeadlessBrowser} from './browser/Browser';
@@ -174,7 +174,7 @@ export const renderFrameAndRetryTargetClose = async ({
 					indent,
 					logLevel,
 				},
-				`The browser crashed ${attempt} times while rendering frame ${frame}. Not retrying anymore. Learn more about this error under https://www.remotion.dev/docs/target-closed`,
+				`The browser crashed ${attempt} times while rendering frame ${frame}. Not retrying anymore. Learn more about this error under https://www.picus.dev/docs/target-closed`,
 			);
 			throw err;
 		}
@@ -232,7 +232,7 @@ export const renderFrameAndRetryTargetClose = async ({
 
 		Log.warn(
 			{indent, logLevel},
-			`The browser crashed while rendering frame ${frame}, retrying ${retriesLeft} more times. Learn more about this error under https://www.remotion.dev/docs/target-closed`,
+			`The browser crashed while rendering frame ${frame}, retrying ${retriesLeft} more times. Learn more about this error under https://www.picus.dev/docs/target-closed`,
 		);
 		// Replace the entire browser
 		await browserReplacer.replaceBrowser(makeBrowser, async () => {

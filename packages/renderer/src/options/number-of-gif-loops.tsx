@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export type NumberOfGifLoops = number | null;
 
@@ -40,7 +40,7 @@ export const numberOfGifLoopsOption = {
 	},
 	ssrName: 'numberOfGifLoops' as const,
 	docLink:
-		'https://www.remotion.dev/docs/render-as-gif#changing-the-number-of-loops',
+		'https://www.picus.dev/docs/render-as-gif#changing-the-number-of-loops',
 	type: 0 as number | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -68,4 +68,4 @@ export const numberOfGifLoopsOption = {
 		currentLoop = newLoop;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;

@@ -1,6 +1,6 @@
-import type {RenderJob} from '@remotion/studio-shared';
+import type {RenderJob} from '@picus/studio-shared';
 import {useCallback} from 'react';
-import {remotion_outputsBase} from '../../helpers/get-asset-metadata';
+import {picus_outputsBase} from '../../helpers/get-asset-metadata';
 import {ClipboardIcon} from '../../icons/clipboard';
 import type {RenderInlineAction} from '../InlineAction';
 import {InlineAction} from '../InlineAction';
@@ -42,7 +42,7 @@ export const RenderQueueCopyToClipboard: React.FC<{
 		async (e) => {
 			e.stopPropagation();
 			try {
-				const src = `${remotion_outputsBase}/${job.outName}`;
+				const src = `${picus_outputsBase}/${job.outName}`;
 
 				const content = await fetch(src);
 				const contentType = content.headers.get('content-type');

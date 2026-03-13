@@ -1,4 +1,4 @@
-import {type Size} from '@remotion/player';
+import {type Size} from '@picus/player';
 import React, {
 	useCallback,
 	useContext,

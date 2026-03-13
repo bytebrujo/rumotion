@@ -1,4 +1,4 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React, {useCallback, useMemo, useState} from 'react';
 import type {Item} from './item';
 import type {MainProps} from './Main';
@@ -57,7 +57,7 @@ export const DragAndDropDemo: React.FC = () => {
 
 	return (
 		<Player
-			acknowledgeRemotionLicense
+			acknowledgePicusLicense
 			style={{
 				width: '100%',
 			}}

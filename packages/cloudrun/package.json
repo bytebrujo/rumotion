@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/cloudrun"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/cloudrun"
 	},
-	"name": "@remotion/cloudrun",
+	"name": "@picus/cloudrun",
 	"version": "4.0.434",
-	"description": "Render Remotion videos on Google Cloud Run",
+	"description": "Render Picus videos on Google Cloud Run",
 	"main": "dist/index.js",
 	"sideEffects": false,
 	"scripts": {
@@ -21,17 +21,17 @@
 		"@google-cloud/storage": "7.15.2",
 		"@google-cloud/resource-manager": "5.3.1",
 		"@google-cloud/logging": "11.2.0",
-		"@remotion/bundler": "workspace:*",
-		"@remotion/cli": "workspace:*",
-		"@remotion/renderer": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"@picus/cli": "workspace:*",
+		"@picus/renderer": "workspace:*",
 		"google-auth-library": "8.7.0",
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"zod": "catalog:"
 	},
 	"devDependencies": {
-		"@remotion/compositor-linux-x64-gnu": "workspace:*",
+		"@picus/compositor-linux-x64-gnu": "workspace:*",
 		"@types/minimist": "1.2.2",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@types/node": "catalog:",
 		"@typescript/native-preview": "catalog:"
@@ -57,5 +57,5 @@
 			]
 		}
 	},
-	"homepage": "https://www.remotion.dev/docs/cloudrun"
+	"homepage": "https://www.picus.dev/docs/cloudrun"
 }

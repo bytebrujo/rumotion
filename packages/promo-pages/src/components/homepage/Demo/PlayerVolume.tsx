@@ -1,4 +1,4 @@
-import type {CallbackListener, PlayerRef} from '@remotion/player';
+import type {CallbackListener, PlayerRef} from '@picus/player';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {PALETTE} from '../layout/colors';
 import {IsMutedIcon, NotMutedIcon} from './icons';

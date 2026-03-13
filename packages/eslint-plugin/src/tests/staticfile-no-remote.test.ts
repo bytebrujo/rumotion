@@ -13,7 +13,7 @@ const ruleTester = new ESLintUtils.RuleTester({
 ruleTester.run('staticfile-no-remote', rule, {
 	valid: [
 		`
-import {Img, staticFile} from 'remotion';
+import {Img, staticFile} from 'picus';
 
 export const Re = () => {
   return (
@@ -25,7 +25,7 @@ export const Re = () => {
 	invalid: [
 		{
 			code: `
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
 staticFile("http://relative.png")
       `,
@@ -37,7 +37,7 @@ staticFile("http://relative.png")
 		},
 		{
 			code: `
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
 staticFile("https://relative.png")
       `,

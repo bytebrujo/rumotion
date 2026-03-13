@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let experimentalClientSideRenderingEnabled = false;
 
@@ -9,12 +9,12 @@ export const experimentalClientSideRenderingOption = {
 	cliFlag,
 	description: () => (
 		<>
-			Enable WIP client-side rendering in the Remotion Studio. See
-			https://www.remotion.dev/docs/client-side-rendering/ for notes.
+			Enable WIP client-side rendering in the Picus Studio. See
+			https://www.picus.dev/docs/client-side-rendering/ for notes.
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/client-side-rendering',
+	docLink: 'https://www.picus.dev/docs/client-side-rendering',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== null) {
@@ -33,4 +33,4 @@ export const experimentalClientSideRenderingOption = {
 		experimentalClientSideRenderingEnabled = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

@@ -79,7 +79,7 @@ const codecSupportsFastStart: {[key in Codec]: boolean} = {
 	wav: false,
 };
 
-const REMOTION_FILELIST_TOKEN = 'remotion-filelist';
+const PICUS_FILELIST_TOKEN = 'picus-filelist';
 
 export const internalCombineChunks = async ({
 	outputLocation: output,
@@ -106,7 +106,7 @@ export const internalCombineChunks = async ({
 }) => {
 	validateNumberOfGifLoops(numberOfGifLoops, codec);
 
-	const filelistDir = tmpDir(REMOTION_FILELIST_TOKEN);
+	const filelistDir = tmpDir(PICUS_FILELIST_TOKEN);
 
 	const shouldCreateVideo = !isAudioCodec(codec);
 
@@ -198,7 +198,7 @@ export const internalCombineChunks = async ({
 						resolvedAudioCodec,
 						seamless: seamlessAudio,
 						chunkDurationInSeconds,
-						addRemotionMetadata: !shouldCreateVideo,
+						addPicusMetadata: !shouldCreateVideo,
 						binariesDirectory,
 						fps,
 						cancelSignal,
@@ -219,7 +219,7 @@ export const internalCombineChunks = async ({
 						numberOfGifLoops,
 						output: videoOutput,
 						files: videoFiles,
-						addRemotionMetadata: !shouldCreateAudio,
+						addPicusMetadata: !shouldCreateAudio,
 						binariesDirectory,
 						cancelSignal,
 						onProgress: (frames) => {

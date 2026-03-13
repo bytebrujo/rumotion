@@ -1,7 +1,7 @@
 // If someone passes --log=verbose to npm run render
 // We don't receive it.
 
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {Log} from './log';
 
 export const checkForNpmRunFlagPass = ({
@@ -32,21 +32,21 @@ export const checkForNpmRunFlagPass = ({
 			indent,
 			logLevel,
 		},
-		`You most likely wanted to pass --log to the Remotion CLI.`,
+		`You most likely wanted to pass --log to the Picus CLI.`,
 	);
 	Log.error(
 		{
 			indent,
 			logLevel,
 		},
-		`However, arguments passed to "npm run" don't get received by the script, in this case Remotion.`,
+		`However, arguments passed to "npm run" don't get received by the script, in this case Picus.`,
 	);
 	Log.error(
 		{
 			indent,
 			logLevel,
 		},
-		`Edit the npm script and pass Remotion flags to "remotion" command instead. Example:`,
+		`Edit the npm script and pass Picus flags to "picus" command instead. Example:`,
 	);
 	Log.error({
 		indent,
@@ -57,7 +57,7 @@ export const checkForNpmRunFlagPass = ({
 			indent,
 			logLevel,
 		},
-		`  "render": "remotion render --log=verbose"`,
+		`  "render": "picus render --log=verbose"`,
 	);
 	Log.error({
 		indent,

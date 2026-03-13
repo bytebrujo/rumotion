@@ -1,6 +1,6 @@
-import {parsePath, PathInternals, reduceInstructions} from '@remotion/paths';
-import {makeRect} from '@remotion/shapes';
-import type {MatrixTransform4D} from '@remotion/svg-3d-engine';
+import {parsePath, PathInternals, reduceInstructions} from '@picus/paths';
+import {makeRect} from '@picus/shapes';
+import type {MatrixTransform4D} from '@picus/svg-3d-engine';
 import {
 	extrudeAndTransformElement,
 	interpolateMatrix4d,
@@ -12,8 +12,8 @@ import {
 	translateX,
 	translateY,
 	translateZ,
-} from '@remotion/svg-3d-engine';
-import {interpolate} from 'remotion';
+} from '@picus/svg-3d-engine';
+import {interpolate} from 'picus';
 import {Faces} from './Faces';
 import {useClickTransforms, useMousePosition} from './hover-transforms';
 

@@ -1,12 +1,12 @@
-import {CliInternals} from '@remotion/cli';
-import {ConfigInternals} from '@remotion/cli/config';
-import {AwsProvider} from '@remotion/lambda-client';
-import {BINARY_NAME} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import type {ProviderSpecifics} from '@remotion/serverless';
-import {internalGetOrCreateBucket, type Privacy} from '@remotion/serverless';
-import {NoReactInternals} from 'remotion/no-react';
+import {CliInternals} from '@picus/cli';
+import {ConfigInternals} from '@picus/cli/config';
+import {AwsProvider} from '@picus/lambda-client';
+import {BINARY_NAME} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import type {ProviderSpecifics} from '@picus/serverless';
+import {internalGetOrCreateBucket, type Privacy} from '@picus/serverless';
+import {NoReactInternals} from 'picus/no-react';
 import {awsFullClientSpecifics} from '../../../functions/full-client-implementation';
 import {LambdaInternals} from '../../../internals';
 import {validateSiteName} from '../../../shared/validate-site-name';
@@ -42,13 +42,13 @@ const {
 
 export const sitesCreateSubcommand = async (
 	args: string[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 	implementation: ProviderSpecifics<AwsProvider>,
 ) => {
 	const {file, reason} = CliInternals.findEntryPoint({
 		args,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		allowDirectory: false,
 	});
@@ -56,7 +56,7 @@ export const sitesCreateSubcommand = async (
 		Log.error({indent: false, logLevel}, 'No entry file passed.');
 		Log.info(
 			{indent: false, logLevel},
-			'Pass an additional argument specifying the entry file of your Remotion project:',
+			'Pass an additional argument specifying the entry file of your Picus project:',
 		);
 		Log.info({indent: false, logLevel});
 		Log.info(
@@ -166,7 +166,7 @@ export const sitesCreateSubcommand = async (
 	}).value;
 
 	const gitSource = CliInternals.getGitSource({
-		remotionRoot,
+		picusRoot,
 		disableGitSource,
 		logLevel,
 	});
@@ -191,7 +191,7 @@ export const sitesCreateSubcommand = async (
 		bucketName,
 		options: {
 			publicDir,
-			rootDir: remotionRoot,
+			rootDir: picusRoot,
 			onBundleProgress: (progress: number) => {
 				multiProgress.bundleProgress = {
 					progress,
@@ -285,7 +285,7 @@ export const sitesCreateSubcommand = async (
 	Log.info(
 		{indent: false, logLevel},
 		CliInternals.chalk.blueBright(
-			['npx remotion lambda sites create', args[0], `--site-name=${siteName}`]
+			['npx picus lambda sites create', args[0], `--site-name=${siteName}`]
 				.filter(NoReactInternals.truthy)
 				.join(' '),
 		),

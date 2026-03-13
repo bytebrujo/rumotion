@@ -6,7 +6,7 @@ import React, {
 	useMemo,
 	useRef,
 } from 'react';
-import {Internals, useVideoConfig} from 'remotion';
+import {Internals, useVideoConfig} from 'picus';
 import {getXPositionOfItemInTimelineImperatively} from '../../helpers/get-left-of-timeline-slider';
 import {getCurrentDuration} from './imperative-state';
 import {sliderAreaRef, timelineVerticalScroll} from './timeline-refs';

@@ -1,5 +1,5 @@
-import type {EmittedArtifact} from '@remotion/renderer';
-import type {DownloadBehavior} from 'remotion/no-react';
+import type {EmittedArtifact} from '@picus/renderer';
+import type {DownloadBehavior} from 'picus/no-react';
 
 export type SerializedArtifact = {
 	filename: string;

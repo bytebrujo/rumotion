@@ -1,5 +1,5 @@
 import React from 'react';
-import {Html5Audio, OffthreadVideo, Sequence, staticFile} from 'remotion';
+import {Html5Audio, OffthreadVideo, Sequence, staticFile} from 'picus';
 
 const Amplify: React.FC = () => {
 	const [volume1, setVolume1] = React.useState(1);

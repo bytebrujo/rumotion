@@ -1,5 +1,5 @@
-import {ServerlessRoutines} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+import {ServerlessRoutines} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 import {mockImplementation} from '../mocks/mock-implementation';
 
 export const waitUntilDone = async (bucketName: string, renderId: string) => {
@@ -15,7 +15,7 @@ export const waitUntilDone = async (bucketName: string, renderId: string) => {
 				forcePathStyle: false,
 				s3OutputProvider: null,
 			},
-			functionName: 'remotion-dev-lambda',
+			functionName: 'picus-dev-lambda',
 			region: 'eu-central-1',
 			timeoutInTest: 120000,
 			requestHandler: null,

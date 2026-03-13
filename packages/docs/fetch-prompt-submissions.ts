@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const REMOTION_PRO_ORIGIN = 'https://www.remotion.pro';
+const PICUS_PRO_ORIGIN = 'https://www.picus.pro';
 
 type PromptResponse = {
 	items: unknown[];
@@ -14,7 +14,7 @@ const fetchAllPromptSubmissions = async () => {
 	let totalPages = 1;
 
 	do {
-		const url = `${REMOTION_PRO_ORIGIN}/api/prompts?page=${page}`;
+		const url = `${PICUS_PRO_ORIGIN}/api/prompts?page=${page}`;
 		const res = await fetch(url);
 		const data: PromptResponse = await res.json();
 

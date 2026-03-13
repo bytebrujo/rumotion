@@ -9,17 +9,17 @@ crumb: 'How to'
 `delayRender()` pauses the render to let an asynchronous task such as data fetching complete.  
 It has no effect when you are in a preview environment (e.g. Studio or Player).
 
-This API returns a handle. Once you have fetched data or finished the asynchronous task, you should call `continueRender(handle)` to let Remotion know that the render can continue.
+This API returns a handle. Once you have fetched data or finished the asynchronous task, you should call `continueRender(handle)` to let Picus know that the render can continue.
 
 If the asynchronous task fails and you cannot recover, call [`cancelRender()`](/docs/cancel-render) to cancel the render.
 
-`delayRender()` can be imported from the [`remotion`](/docs/remotion) package, but preferrably, you should use the [`useDelayRender()`](/docs/use-delay-render) hook instead, because it future-proofs your code for [browser rendering](/docs/miscellaneous/render-in-browser).
+`delayRender()` can be imported from the [`picus`](/docs/picus) package, but preferrably, you should use the [`useDelayRender()`](/docs/use-delay-render) hook instead, because it future-proofs your code for [browser rendering](/docs/miscellaneous/render-in-browser).
 
 ## Example
 
 ```tsx twoslash {2, 6,7,  15, 17}
 import {useCallback, useEffect, useState} from 'react';
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 
 export const MyVideo = () => {
   const [data, setData] = useState(null);
@@ -53,7 +53,7 @@ After calling `delayRender()`, you need to call `continueRender()` within 30 sec
 If `continueRender()` is not called within the timeout frame, the render will fail with an exception similarly to this:
 
 ```
-A delayRender() was called but not cleared after 28000ms. See https://remotion.dev/docs/timeout for help. The delayRender was called
+A delayRender() was called but not cleared after 28000ms. See https://picus.dev/docs/timeout for help. The delayRender was called
 ```
 
 See the [Timeout](/docs/timeout) page to troubleshoot timeouts.
@@ -63,7 +63,7 @@ See the [Timeout](/docs/timeout) page to troubleshoot timeouts.
 If you encounter a timeout and don't know where it came from, you can add a label as a parameter:
 
 ```tsx twoslash
-import {delayRender} from 'remotion';
+import {delayRender} from 'picus';
 
 // ---cut---
 
@@ -73,7 +73,7 @@ delayRender('Fetching data from API...');
 If the call times out, the label will be referenced in the error message:
 
 ```
-Uncaught Error: A delayRender() "Fetching data from API..." was called but not cleared after 28000ms. See https://remotion.dev/docs/timeout for help. The delayRender was called
+Uncaught Error: A delayRender() "Fetching data from API..." was called but not cleared after 28000ms. See https://picus.dev/docs/timeout for help. The delayRender was called
 ```
 
 ## Multiple calls
@@ -82,7 +82,7 @@ You can call `delayRender()` multiple times. The render will be blocked for as l
 
 ```tsx twoslash
 import {useEffect, useState} from 'react';
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 
 const MyComp: React.FC = () => {
   const {delayRender, continueRender} = useDelayRender();
@@ -105,7 +105,7 @@ You should put `delayRender()` calls inside your components rather than placing 
 
 ```tsx twoslash title="❌ Bug - Other compositions are blocked" {4-7}
 import {useEffect} from 'react';
-import {continueRender, delayRender} from 'remotion';
+import {continueRender, delayRender} from 'picus';
 
 // Don't call a delayRender() call outside a component -
 // it will block the render if a different composition is rendered
@@ -125,7 +125,7 @@ Also avoid creating a new handle on every [React render](https://react.dev/learn
 
 ```tsx twoslash title="❌ Bug - New handle is create on every React re-render" {4-7}
 import {useEffect} from 'react';
-import {continueRender, delayRender} from 'remotion';
+import {continueRender, delayRender} from 'picus';
 
 const MyComp: React.FC = () => {
   // New handle is created on every React re-render
@@ -143,7 +143,7 @@ It's best to always use [`useDelayRender()`](/docs/use-delay-render) in the firs
 
 ```tsx twoslash title="✅ Best practice - useDelayRender() + useState() " {4-7}
 import {useEffect, useState} from 'react';
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 
 const MyComp: React.FC = () => {
   const {delayRender, continueRender} = useDelayRender();
@@ -170,7 +170,7 @@ If your code fails to do an asynchronous operation and you want to cancel the re
 
 ```tsx twoslash title="MyComposition.tsx"
 import React, {useEffect, useState} from 'react';
-import {cancelRender, continueRender, delayRender} from 'remotion';
+import {cancelRender, continueRender, delayRender} from 'picus';
 
 export const MyComp: React.FC = () => {
   const [handle] = useState(() => delayRender('Fetching data...'));
@@ -193,7 +193,7 @@ If an operation is flaky (for example, if loading an asset from a CDN does somet
 If a `delayRender()` call is not cleared within the timeout, the whole browser tab will be closed and the frame will be retried from scratch.
 
 ```tsx twoslash title="Retrying a delayRender()"
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 
 const {delayRender} = useDelayRender();
 // ---cut---
@@ -209,7 +209,7 @@ The [`<Img>`](/docs/img#delayrenderretries), [`<Video>`](/docs/media/video#delay
 In addition to the [global timeout](/docs/timeout#increase-timeout) that can be set, the timeout can be modified on a per-`delayRender()` level.
 
 ```tsx twoslash title="Modifying the timeout of a delayRender()"
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 const {delayRender} = useDelayRender();
 
 // ---cut---
@@ -229,7 +229,7 @@ If you are loading data, you might want to both delay the screenshotting of your
 
 ```tsx twoslash title="Using delayRender() and delayPlayback() together"
 import React from 'react';
-import {useBufferState, useDelayRender} from 'remotion';
+import {useBufferState, useDelayRender} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();
@@ -259,7 +259,7 @@ const MyComp: React.FC = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/delay-render.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/delay-render.ts)
 - [`useDelayRender()`](/docs/use-delay-render)
 - [`continueRender()`](/docs/continue-render)
 - [`cancelRender()`](/docs/cancel-render)

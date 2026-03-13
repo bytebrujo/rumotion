@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
-import {ServerlessRoutines} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+import {ServerlessRoutines} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 import {mockImplementation} from '../mocks/mock-implementation';
 
 test('Call function locally', async () => {
@@ -11,7 +11,7 @@ test('Call function locally', async () => {
 				logLevel: 'info',
 			},
 			type: ServerlessRoutines.info,
-			functionName: 'remotion-dev-lambda',
+			functionName: 'picus-dev-lambda',
 			region: 'us-east-1',
 			timeoutInTest: 120000,
 			requestHandler: null,

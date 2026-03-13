@@ -134,7 +134,7 @@ export function MarkdownIcon({size = 18}: {readonly size?: number}) {
 	);
 }
 
-export function RemotionIcon({size = 18}: {readonly size?: number}) {
+export function PicusIcon({size = 18}: {readonly size?: number}) {
 	return (
 		<svg
 			width={size}

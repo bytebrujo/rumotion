@@ -9,7 +9,7 @@ console.time('Generated.');
 const output = await build({
 	entrypoints: ['src/index.ts'],
 	naming: '[name].mjs',
-	external: ['remotion', 'remotion/no-react', '@remotion/zod-types', 'zod'],
+	external: ['picus', 'picus/no-react', '@picus/zod-types', 'zod'],
 });
 
 if (!output.success) {

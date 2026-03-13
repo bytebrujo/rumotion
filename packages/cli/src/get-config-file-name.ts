@@ -1,16 +1,16 @@
 import {existsSync} from 'node:fs';
 import path from 'node:path';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import {loadConfigFile} from './load-config';
 import {Log} from './log';
 import {parsedCli} from './parsed-cli';
 
 const {configOption} = BrowserSafeApis.options;
 
-const defaultConfigFileJavascript = 'remotion.config.js';
-const defaultConfigFileTypescript = 'remotion.config.ts';
+const defaultConfigFileJavascript = 'picus.config.js';
+const defaultConfigFileTypescript = 'picus.config.ts';
 
-export const loadConfig = (remotionRoot: string): Promise<string | null> => {
+export const loadConfig = (picusRoot: string): Promise<string | null> => {
 	const configFile = configOption.getValue({commandLine: parsedCli}).value;
 	if (configFile) {
 		const fullPath = path.resolve(process.cwd(), configFile);
@@ -22,19 +22,19 @@ export const loadConfig = (remotionRoot: string): Promise<string | null> => {
 			process.exit(1);
 		}
 
-		return loadConfigFile(remotionRoot, configFile, fullPath.endsWith('.js'));
+		return loadConfigFile(picusRoot, configFile, fullPath.endsWith('.js'));
 	}
 
-	if (remotionRoot === null) {
+	if (picusRoot === null) {
 		return Promise.resolve(null);
 	}
 
-	if (existsSync(path.resolve(remotionRoot, defaultConfigFileTypescript))) {
-		return loadConfigFile(remotionRoot, defaultConfigFileTypescript, false);
+	if (existsSync(path.resolve(picusRoot, defaultConfigFileTypescript))) {
+		return loadConfigFile(picusRoot, defaultConfigFileTypescript, false);
 	}
 
-	if (existsSync(path.resolve(remotionRoot, defaultConfigFileJavascript))) {
-		return loadConfigFile(remotionRoot, defaultConfigFileJavascript, true);
+	if (existsSync(path.resolve(picusRoot, defaultConfigFileJavascript))) {
+		return loadConfigFile(picusRoot, defaultConfigFileJavascript, true);
 	}
 
 	return Promise.resolve(null);

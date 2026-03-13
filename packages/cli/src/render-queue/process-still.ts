@@ -1,5 +1,5 @@
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import type {JobProgressCallback, RenderJob} from '@remotion/studio-server';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import type {JobProgressCallback, RenderJob} from '@picus/studio-server';
 import {getRendererPortFromConfigFile} from '../config/preview-server';
 import {convertEntryPointToServeUrl} from '../convert-entry-point-to-serve-url';
 import {parsedCli} from '../parsed-cli';
@@ -18,13 +18,13 @@ const {
 
 export const processStill = async ({
 	job,
-	remotionRoot,
+	picusRoot,
 	entryPoint,
 	onProgress,
 	addCleanupCallback,
 }: {
 	job: RenderJob;
-	remotionRoot: string;
+	picusRoot: string;
 	entryPoint: string;
 	onProgress: JobProgressCallback;
 	addCleanupCallback: (label: string, cb: () => void) => void;
@@ -59,7 +59,7 @@ export const processStill = async ({
 	const fullEntryPoint = convertEntryPointToServeUrl(entryPoint);
 
 	await renderStillFlow({
-		remotionRoot,
+		picusRoot,
 		browser: 'chrome',
 		browserExecutable,
 		chromiumOptions: job.chromiumOptions,

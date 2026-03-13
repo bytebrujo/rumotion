@@ -1,5 +1,5 @@
-import type {Instruction} from '@remotion/paths';
-import {serializeInstructions} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
+import {serializeInstructions} from '@picus/paths';
 import type {ShapeInfo} from './shape-info';
 
 export type MakeEllipseOptions = {
@@ -11,7 +11,7 @@ export type MakeEllipseOptions = {
  * @description Generates an ellipse SVG path.
  * @param {Number} rx The radius of the ellipse on the X axis.
  * @param {Number} ry The radius of the ellipse on the Y axis.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/make-ellipse)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/make-ellipse)
  */
 
 export const makeEllipse = ({rx, ry}: MakeEllipseOptions): ShapeInfo => {

@@ -11,7 +11,7 @@ Credit to [@marcusstenbeck](https://twitter.com/marcusstenbeck) for creating thi
 This snippet is useful if you want to isolate the global styles of your homepage from the global styles of the [`<Player>`](/docs/player).
 
 ```diff title="Usage"
-- import { Player } from '@remotion/player';
+- import { Player } from '@picus/player';
 + import { IframePlayer } from 'path/to/IframePlayer';
 
 - <Player {/* ... */} />
@@ -19,7 +19,7 @@ This snippet is useful if you want to isolate the global styles of your homepage
 ```
 
 ```tsx title="IframePlayer.tsx"
-import { Player, PlayerProps, PlayerRef } from "@remotion/player";
+import { Player, PlayerProps, PlayerRef } from "@picus/player";
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { AnyZodObject } from "zod";
@@ -47,7 +47,7 @@ const IframePlayerWithoutRef = <T extends Record<string, unknown>>(
       contentRef.width = String(playerRect.width);
       contentRef.height = String(playerRect.height);
     });
-    // The remotion player element
+    // The picus player element
     const playerElement = contentRef.contentDocument.querySelector(
       "." + className
     );
@@ -69,7 +69,7 @@ const IframePlayerWithoutRef = <T extends Record<string, unknown>>(
   }, [contentRef]);
   const combinedClassName = `${className} ${props.className ?? ""}`.trim();
   return (
-    // eslint-disable-next-line @remotion/warn-native-media-tag
+    // eslint-disable-next-line @picus/warn-native-media-tag
     <iframe ref={setContentRef} style={borderNone}>
       {mountNode &&
         ReactDOM.createPortal(

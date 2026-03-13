@@ -5,7 +5,7 @@ title: Shaders
 crumb: 'Designing visuals'
 ---
 
-You can use WebGL shaders in Remotion by rendering to a `<canvas>` element.  
+You can use WebGL shaders in Picus by rendering to a `<canvas>` element.  
 [All animations must be driven](/docs/animating-properties#always-animate-using-usecurrentframe) by [`useCurrentFrame()`](/docs/use-current-frame) to ensure deterministic rendering during both preview and final output.
 
 ## Retrieving a WebGL context
@@ -20,7 +20,7 @@ The `time` uniform is computed from `frame / fps`, making the animation frame-ac
 <Demo type="shader" />
 
 ```tsx twoslash title="BurlFigure.tsx"
-import {useCurrentFrame, useVideoConfig, AbsoluteFill} from 'remotion';
+import {useCurrentFrame, useVideoConfig, AbsoluteFill} from 'picus';
 import {useCallback, useRef, useEffect} from 'react';
 
 const VERTEX_SHADER = `
@@ -136,7 +136,7 @@ You cannot apply a shader as a post-processing effect to arbitrary DOM elements.
 When rendering a video that uses WebGL, you need to pass [`--gl=angle`](/docs/gl-options) to ensure the headless browser uses the GPU:
 
 ```bash
-npx remotion render MyComp --gl=angle
+npx picus render MyComp --gl=angle
 ```
 
 Without this flag, the headless browser may not have a WebGL context available.

@@ -48,7 +48,7 @@ export const MyComponent: React.FC<{
 
 // ---cut---
 import React from 'react';
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 import {MyComponent} from './MyComponent';
 
 export const Root: React.FC = () => {
@@ -90,11 +90,11 @@ Input props must be an object and serializable to JSON.
 When rendering, you can override default props by passing a [CLI](/docs/cli/render) flag. It must be either valid JSON or a path to a file that contains valid JSON.
 
 ```bash title="Using inline JSON"
-npx remotion render HelloWorld out/helloworld.mp4 --props='{"propOne": "Hi", "propTwo": 10}'
+npx picus render HelloWorld out/helloworld.mp4 --props='{"propOne": "Hi", "propTwo": 10}'
 ```
 
 ```bash title="Using a file path"
-npx remotion render HelloWorld out/helloworld.mp4 --props=./path/to/props.json
+npx picus render HelloWorld out/helloworld.mp4 --props=./path/to/props.json
 ```
 
 ### Passing input props when using server-side rendering
@@ -105,7 +105,7 @@ When server-rendering using [`renderMedia()`](/docs/renderer/render-media) or [`
 const serveUrl = '/path/to/bundle';
 const outputLocation = '/path/to/frames';
 // ---cut---
-import {renderMedia, selectComposition} from '@remotion/renderer';
+import {renderMedia, selectComposition} from '@picus/renderer';
 
 const inputProps = {
   titleText: 'Hello World',
@@ -140,7 +140,7 @@ workflow_dispatch:
     titleText:
       description: 'Which text should it say?'
       required: true
-      default: 'Welcome to Remotion'
+      default: 'Welcome to Picus'
     titleColor:
       description: 'Which color should it be in?'
       required: true
@@ -171,7 +171,7 @@ const AnotherComponent: React.FC = () => {
   return null;
 };
 // ---cut---
-import {Series} from 'remotion';
+import {Series} from 'picus';
 
 const ChainedScenes = () => {
   return (

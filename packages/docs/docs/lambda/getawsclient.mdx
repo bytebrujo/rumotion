@@ -5,22 +5,22 @@ title: getAwsClient()
 crumb: 'Lambda API'
 ---
 
-This API exposes full access to the AWS SDK that Remotion uses under the hood. You can use it to interact with your AWS infrastructure in ways that Remotion doesn't provide a function for.
+This API exposes full access to the AWS SDK that Picus uses under the hood. You can use it to interact with your AWS infrastructure in ways that Picus doesn't provide a function for.
 
 ## Example: Getting a buffer for a render
 
 ```tsx {19-28}
-// Import from "@remotion/lambda" instead before Remotion v4.0.60
-import {getAwsClient, getRenderProgress} from '@remotion/lambda/client';
+// Import from "@picus/lambda" instead before Picus v4.0.60
+import {getAwsClient, getRenderProgress} from '@picus/lambda/client';
 import {Readable} from 'stream';
 
-const bucketName = 'remotionlambda-d9mafgx';
+const bucketName = 'picuslambda-d9mafgx';
 
 const getFileAsBuffer = async () => {
   const progress = await getRenderProgress({
     renderId: 'd7nlc2y',
-    bucketName: 'remotionlambda-d9mafgx',
-    functionName: 'remotion-render-la8ffw',
+    bucketName: 'picuslambda-d9mafgx',
+    functionName: 'picus-render-la8ffw',
     region: 'us-east-1',
   });
 
@@ -45,8 +45,8 @@ const getFileAsBuffer = async () => {
 ## Example: Enable CORS for a bucket
 
 ```tsx
-// Import from "@remotion/lambda" instead before Remotion v4.0.60
-import {getAwsClient} from '@remotion/lambda/client';
+// Import from "@picus/lambda" instead before Picus v4.0.60
+import {getAwsClient} from '@picus/lambda/client';
 
 const {client, sdk} = getAwsClient({region: 'us-east-1', service: 's3'});
 
@@ -72,7 +72,7 @@ An object with two mandatory parameters:
 
 ### `region`
 
-One of the [supported regions](/docs/lambda/region-selection) of Remotion Lambda, for which the client should be instantiated.
+One of the [supported regions](/docs/lambda/region-selection) of Picus Lambda, for which the client should be instantiated.
 
 ### `service`
 
@@ -121,10 +121,10 @@ The full SDK JavaScript module for the service you specified.
 - For `lambda`: The [`@aws-sdk/client-lambda`](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-lambda/index.html#aws-sdkclient-lambda) package
 
 :::note
-You don't need to create a new client from the SDK and should instead reuse the `client` that is also returned and being used by Remotion, in order to save memory.
+You don't need to create a new client from the SDK and should instead reuse the `client` that is also returned and being used by Picus, in order to save memory.
 :::
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/get-aws-client.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/get-aws-client.ts)
 - [Light client](/docs/lambda/light-client)

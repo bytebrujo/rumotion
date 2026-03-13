@@ -51,7 +51,7 @@ export const selectTemplate = async () => {
 							url:
 								template.cliId === 'editor-starter'
 									? `${template.previewURL}`
-									: `https://remotion.dev/templates/${template.cliId}`,
+									: `https://picus.dev/templates/${template.cliId}`,
 							fallback: '',
 						}),
 					)}`,

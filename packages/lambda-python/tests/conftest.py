@@ -1,5 +1,5 @@
 import pytest
-from remotion_lambda.remotionclient import RemotionClient
+from picus_lambda.picusclient import PicusClient
 from tests.constants import (
     TEST_FUNCTION_NAME,
     TEST_REGION,
@@ -11,15 +11,15 @@ from unittest.mock import Mock
 
 
 @pytest.fixture
-def remotion_client():
-    return RemotionClient(
+def picus_client():
+    return PicusClient(
         region=TEST_REGION, serve_url=TEST_SERVE_URL, function_name=TEST_FUNCTION_NAME
     )
 
 
 @pytest.fixture
-def remotion_client_with_creds():
-    return RemotionClient(
+def picus_client_with_creds():
+    return PicusClient(
         region=TEST_REGION,
         serve_url=TEST_SERVE_URL,
         function_name=TEST_FUNCTION_NAME,

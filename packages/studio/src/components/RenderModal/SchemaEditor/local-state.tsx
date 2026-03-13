@@ -7,7 +7,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {deepEqual} from './deep-equal';
 import type {AnyZodSchema, ZodSafeParseResult} from './zod-schema-type';
 import {zodSafeParse} from './zod-schema-type';

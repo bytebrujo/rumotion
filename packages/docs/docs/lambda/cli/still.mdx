@@ -2,17 +2,17 @@
 image: /generated/articles-docs-lambda-cli-still.png
 id: still
 sidebar_label: still
-title: 'npx remotion lambda still'
+title: 'npx picus lambda still'
 slug: /lambda/cli/still
 crumb: 'Lambda CLI Reference'
 ---
 
-Using the `npx remotion lambda still` command, you can render a still frame in the cloud.
+Using the `npx picus lambda still` command, you can render a still frame in the cloud.
 
 The command has the following structure:
 
 ```
-npx remotion lambda still <serve-url>? [<composition-id>] [<output-location>]
+npx picus lambda still <serve-url>? [<composition-id>] [<output-location>]
 ```
 
 - Obtain a [Serve URL](/docs/terminology/serve-url) using the [`sites create`](/docs/lambda/cli/sites/create) command or by calling [`deploySite()`](/docs/lambda/deploysite).
@@ -24,13 +24,13 @@ npx remotion lambda still <serve-url>? [<composition-id>] [<output-location>]
 Rendering a still:
 
 ```
-npx remotion lambda still https://remotionlambda-abcdef.s3.eu-central-1.amazonaws.com/sites/testbed/index.html my-comp
+npx picus lambda still https://picuslambda-abcdef.s3.eu-central-1.amazonaws.com/sites/testbed/index.html my-comp
 ```
 
 Rendering using the serve URL shorthand:
 
 ```
-npx remotion lambda still testbed my-comp
+npx picus lambda still testbed my-comp
 ```
 
 :::info
@@ -40,13 +40,13 @@ If you are using the shorthand serve URL, you have to pass a composition ID. Ava
 Rendering the 10th frame of a composition:
 
 ```
-npx remotion lambda still --frame=10 testbed my-comp
+npx picus lambda still --frame=10 testbed my-comp
 ```
 
 Downloading the result to a `out.png` file:
 
 ```
-npx remotion lambda still testbed my-comp out.png
+npx picus lambda still testbed my-comp out.png
 ```
 
 ## Flags

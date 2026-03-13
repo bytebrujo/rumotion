@@ -1,8 +1,8 @@
 import {beforeAll, expect, test} from 'bun:test';
 import path from 'path';
-import {RenderInternals, ensureBrowser} from '@remotion/renderer';
-import {ServerlessRoutines} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+import {RenderInternals, ensureBrowser} from '@picus/renderer';
+import {ServerlessRoutines} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 import {getWebhookCalls, resetWebhookCalls} from '../mock-implementation';
 import {mockImplementation} from '../mocks/mock-implementation';
 import {waitUntilDone} from './wait-until-done';
@@ -18,7 +18,7 @@ test(
 	'Should call webhook upon completion',
 	async () => {
 		process.env.AWS_LAMBDA_FUNCTION_MEMORY_SIZE = '2048';
-		process.env.AWS_LAMBDA_FUNCTION_NAME = 'remotion-dev-lambda';
+		process.env.AWS_LAMBDA_FUNCTION_NAME = 'picus-dev-lambda';
 
 		resetWebhookCalls();
 
@@ -30,7 +30,7 @@ test(
 			logLevel: 'error',
 			offthreadVideoCacheSizeInBytes: null,
 			port: null,
-			remotionRoot: path.dirname(exampleBuild),
+			picusRoot: path.dirname(exampleBuild),
 			forceIPv4: false,
 		});
 
@@ -101,7 +101,7 @@ test(
 				mediaCacheSizeInBytes: null,
 				isProduction: null,
 			},
-			functionName: 'remotion-dev-lambda',
+			functionName: 'picus-dev-lambda',
 			region: 'us-east-1',
 			timeoutInTest: 120000,
 			requestHandler: null,
@@ -127,7 +127,7 @@ test(
 		} = payload;
 		expect(testablePayload).toEqual({
 			type: 'success',
-			bucketName: 'remotionlambda-eucentral1-abcdef',
+			bucketName: 'picuslambda-eucentral1-abcdef',
 			customData: {
 				customID: 123,
 			},
@@ -152,14 +152,14 @@ test(
 			logLevel: 'error',
 			offthreadVideoCacheSizeInBytes: null,
 			port: null,
-			remotionRoot: path.dirname(exampleBuild),
+			picusRoot: path.dirname(exampleBuild),
 			forceIPv4: false,
 		});
 
 		resetWebhookCalls();
 
 		await mockImplementation.callFunctionSync({
-			functionName: 'remotion-dev-lambda',
+			functionName: 'picus-dev-lambda',
 			region: 'us-east-1',
 			type: ServerlessRoutines.launch,
 			payload: {

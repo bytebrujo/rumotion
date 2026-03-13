@@ -12,7 +12,7 @@ packages/example/out
 .turbo
 .vercel
 packages/compositor/target
-packages/cloudrun/remotion-lambda-gcp.code-workspace
+packages/cloudrun/picus-lambda-gcp.code-workspace
 .terraform*
 packages/example/sa-key.json
 packages/example/public/pts-framermp4withoutfileextension.mp4
@@ -20,10 +20,10 @@ packages/it-tests/packages/example/out/element-2.png
 packages/cloudrun/src/gcpInstaller/terraform*
 packages/cloudrun/src/gcpInstaller/*.tfplan
 packages/lambda-python/*/__pycache__
-packages/lambda-python/remotion-env-lint
+packages/lambda-python/picus-env-lint
 packages/lambda-python/build
-packages/lambda-python/remotion-env
-packages/lambda-python/remotion_lambda.egg-info
+packages/lambda-python/picus-env
+packages/lambda-python/picus_lambda.egg-info
 packages/cloudrun/container/cloudbuild.json
 packages/example/public/offthreadvideoregression
 .git

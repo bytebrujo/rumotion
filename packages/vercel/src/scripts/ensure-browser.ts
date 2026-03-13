@@ -1,4 +1,4 @@
-import {ensureBrowser} from '@remotion/renderer';
+import {ensureBrowser} from '@picus/renderer';
 
 await ensureBrowser({
 	onBrowserDownload: () => {

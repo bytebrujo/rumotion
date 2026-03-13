@@ -1,6 +1,6 @@
 
-from remotion_lambda import RenderMediaParams, Privacy, ValidStillImageFormats, Webhook
-from remotion_lambda import RemotionClient
+from picus_lambda import RenderMediaParams, Privacy, ValidStillImageFormats, Webhook
+from picus_lambda import PicusClient
 import os
 from dotenv import load_dotenv
 import boto3
@@ -9,21 +9,21 @@ from botocore.config import Config
 load_dotenv()
 
 # Load env variables
-REMOTION_APP_REGION = os.getenv('REMOTION_APP_REGION')
-if not REMOTION_APP_REGION:
-    raise Exception("REMOTION_APP_REGION is not set")
+PICUS_APP_REGION = os.getenv('PICUS_APP_REGION')
+if not PICUS_APP_REGION:
+    raise Exception("PICUS_APP_REGION is not set")
 
-REMOTION_APP_FUNCTION_NAME = os.getenv('REMOTION_APP_FUNCTION_NAME')
-if not REMOTION_APP_FUNCTION_NAME:
-    raise Exception("REMOTION_APP_FUNCTION_NAME is not set")
+PICUS_APP_FUNCTION_NAME = os.getenv('PICUS_APP_FUNCTION_NAME')
+if not PICUS_APP_FUNCTION_NAME:
+    raise Exception("PICUS_APP_FUNCTION_NAME is not set")
 
-REMOTION_APP_SERVE_URL = os.getenv('REMOTION_APP_SERVE_URL')
-if not REMOTION_APP_SERVE_URL:
-    raise Exception("REMOTION_APP_SERVE_URL is not set")
+PICUS_APP_SERVE_URL = os.getenv('PICUS_APP_SERVE_URL')
+if not PICUS_APP_SERVE_URL:
+    raise Exception("PICUS_APP_SERVE_URL is not set")
 
 
 # --- NEW: Create a custom botocore Config for timeouts ---
-# This configuration will apply to both S3 and Lambda clients created by RemotionClient
+# This configuration will apply to both S3 and Lambda clients created by PicusClient
 # if passed via the botocore_config parameter.
 custom_botocore_config = Config(
     connect_timeout=30,  # Max 30 seconds to establish a connection
@@ -42,12 +42,12 @@ print(f"Created custom botocore config: {custom_botocore_config.retries}")
 # This session can be configured independently, for example,
 # if you need to specify a different profile or assumed role.
 # If you don't need a custom session, you can omit this and
-# RemotionClient will use boto3's default session.
+# PicusClient will use boto3's default session.
 custom_boto_session = boto3.Session(
-    #region_name=REMOTION_APP_REGION,
+    #region_name=PICUS_APP_REGION,
     # profile_name='your_aws_profile', # Uncomment if you use AWS profiles
     # If you provide aws_access_key_id, aws_secret_access_key here,
-    # it will override the ones passed to RemotionClient directly.
+    # it will override the ones passed to PicusClient directly.
     # aws_access_key_id='YOUR_ACCESS_KEY',
     # aws_secret_access_key='YOUR_SECRET_KEY',
 )
@@ -55,17 +55,17 @@ print(f"Created custom boto3 session with region: {custom_boto_session.region_na
 
 
 # Construct client using custom session
-client = RemotionClient(region=REMOTION_APP_REGION,
-                        serve_url=REMOTION_APP_SERVE_URL,
-                        function_name=REMOTION_APP_FUNCTION_NAME,
+client = PicusClient(region=PICUS_APP_REGION,
+                        serve_url=PICUS_APP_SERVE_URL,
+                        function_name=PICUS_APP_FUNCTION_NAME,
                         config=custom_botocore_config,
                         session=custom_boto_session # if you omit this existing functionality will still work
                         )
 
 # You can still use the previous approach
-# client = RemotionClient(region=REMOTION_APP_REGION,
-#          serve_url=REMOTION_APP_SERVE_URL,
-#          function_name=REMOTION_APP_FUNCTION_NAME)
+# client = PicusClient(region=PICUS_APP_REGION,
+#          serve_url=PICUS_APP_SERVE_URL,
+#          function_name=PICUS_APP_FUNCTION_NAME)
 
 #
 # Set render request

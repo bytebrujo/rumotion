@@ -1,5 +1,5 @@
-import {remotionFlatConfig} from '@remotion/eslint-config-internal';
+import {picusFlatConfig} from '@picus/eslint-config-internal';
 
-const config = remotionFlatConfig({react: true});
+const config = picusFlatConfig({react: true});
 
 export default config;

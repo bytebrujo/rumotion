@@ -1,6 +1,6 @@
-import {getPointAtLength, getTangentAtLength} from '@remotion/paths';
+import {getPointAtLength, getTangentAtLength} from '@picus/paths';
 import React from 'react';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'picus';
 import {COLOR_1, COLOR_2} from './config';
 
 const rx = 170;

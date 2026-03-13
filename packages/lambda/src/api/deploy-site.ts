@@ -1,20 +1,20 @@
 import fs from 'node:fs';
-import {type GitSource, type WebpackOverrideFn} from '@remotion/bundler';
-import type {AwsRegion, RequestHandler} from '@remotion/lambda-client';
-import {LambdaClientInternals, type AwsProvider} from '@remotion/lambda-client';
+import {type GitSource, type WebpackOverrideFn} from '@picus/bundler';
+import type {AwsRegion, RequestHandler} from '@picus/lambda-client';
+import {LambdaClientInternals, type AwsProvider} from '@picus/lambda-client';
 import {
 	getSitesKey,
-	REMOTION_BUCKET_PREFIX,
-} from '@remotion/lambda-client/constants';
-import type {ToOptions} from '@remotion/renderer';
-import type {BrowserSafeApis} from '@remotion/renderer/client';
-import {wrapWithErrorHandling} from '@remotion/renderer/error-handling';
+	PICUS_BUCKET_PREFIX,
+} from '@picus/lambda-client/constants';
+import type {ToOptions} from '@picus/renderer';
+import type {BrowserSafeApis} from '@picus/renderer/client';
+import {wrapWithErrorHandling} from '@picus/renderer/error-handling';
 import type {
 	FullClientSpecifics,
 	ProviderSpecifics,
 	UploadDirProgress,
-} from '@remotion/serverless';
-import {validateBucketName, validatePrivacy} from '@remotion/serverless';
+} from '@picus/serverless';
+import {validateBucketName, validatePrivacy} from '@picus/serverless';
 import {awsFullClientSpecifics} from '../functions/full-client-implementation';
 import {getS3DiffOperations} from '../shared/get-s3-operations';
 import {validateSiteName} from '../shared/validate-site-name';
@@ -83,9 +83,9 @@ const mandatoryDeploySite = async ({
 	LambdaClientInternals.validateAwsRegion(region);
 	validateBucketName({
 		bucketName,
-		bucketNamePrefix: REMOTION_BUCKET_PREFIX,
+		bucketNamePrefix: PICUS_BUCKET_PREFIX,
 		options: {
-			mustStartWithRemotion: !options?.bypassBucketNameValidation,
+			mustStartWithPicus: !options?.bypassBucketNameValidation,
 		},
 	});
 
@@ -230,8 +230,8 @@ export const internalDeploySite: (
 ) => DeploySiteOutput = wrapWithErrorHandling(mandatoryDeploySite);
 
 /*
- * @description Deploys a Remotion project to a GCP storage bucket to prepare it for rendering on Cloud Run.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/deploysite)
+ * @description Deploys a Picus project to a GCP storage bucket to prepare it for rendering on Cloud Run.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/deploysite)
  */
 export const deploySite = (args: DeploySiteInput) => {
 	return internalDeploySite({

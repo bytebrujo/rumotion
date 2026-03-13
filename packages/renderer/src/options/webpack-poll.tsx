@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'webpack-poll' as const;
 
@@ -16,7 +16,7 @@ export const webpackPollOption = {
 	),
 	ssrName: null,
 	docLink:
-		'https://www.remotion.dev/docs/config#setwebpackpollinginmilliseconds',
+		'https://www.picus.dev/docs/config#setwebpackpollinginmilliseconds',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			const val = commandLine[cliFlag];
@@ -55,4 +55,4 @@ export const webpackPollOption = {
 	},
 	type: 0 as number | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;

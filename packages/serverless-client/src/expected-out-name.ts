@@ -1,5 +1,5 @@
-import type {Codec} from '@remotion/renderer';
-import {NoReactAPIs} from '@remotion/renderer/pure';
+import type {Codec} from '@picus/renderer';
+import {NoReactAPIs} from '@picus/renderer/pure';
 import {
 	customOutName,
 	outName,

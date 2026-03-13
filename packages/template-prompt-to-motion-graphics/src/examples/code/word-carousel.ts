@@ -1,6 +1,6 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
-export const wordCarouselCode = `import { useCurrentFrame, AbsoluteFill, interpolate } from "remotion";
+export const wordCarouselCode = `import { useCurrentFrame, AbsoluteFill, interpolate } from "picus";
 
 export const MyAnimation = () => {
   /*
@@ -119,7 +119,7 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const wordCarouselExample: RemotionExample = {
+export const wordCarouselExample: PicusExample = {
   id: "word-carousel",
   name: "Word Carousel",
   description: "Rotating words with crossfade and blur transitions",

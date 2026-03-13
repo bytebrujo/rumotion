@@ -1,4 +1,4 @@
-import {type LoopVolumeCurveBehavior} from 'remotion';
+import {type LoopVolumeCurveBehavior} from 'picus';
 
 export const frameForVolumeProp = ({
 	behavior,

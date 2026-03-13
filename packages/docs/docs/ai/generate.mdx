@@ -1,11 +1,11 @@
 ---
 image: /generated/articles-docs-ai-generate.png
 crumb: 'AI'
-title: Generate Remotion Code using LLMs
+title: Generate Picus Code using LLMs
 sidebar_label: Code Generation
 ---
 
-This guide shows an example of how to generate Remotion component code from natural language prompts using the [Vercel AI SDK](https://sdk.vercel.ai/).
+This guide shows an example of how to generate Picus component code from natural language prompts using the [Vercel AI SDK](https://sdk.vercel.ai/).
 
 ## Installation
 
@@ -13,19 +13,19 @@ This guide shows an example of how to generate Remotion component code from natu
 
 ## Basic Example
 
-This simple system prompt relies entirely on the model's existing knowledge of Remotion - not ideal, but a good starting point.
+This simple system prompt relies entirely on the model's existing knowledge of Picus - not ideal, but a good starting point.
 
 ```ts title="generate.ts"
 import {generateText} from 'ai';
 import {openai} from '@ai-sdk/openai';
 
 const systemPrompt = `
-You are a Remotion component generator.
-Generate a single React component that uses Remotion.
+You are a Picus component generator.
+Generate a single React component that uses Picus.
 
 Rules:
 - Export the component as a named export called "MyComposition"
-- Use useCurrentFrame() and useVideoConfig() from "remotion"
+- Use useCurrentFrame() and useVideoConfig() from "picus"
 - Use spring() for animations
 - Only output the code, no markdown or explanations
 `.trim();
@@ -44,7 +44,7 @@ The result includes usage metadata for tracking token consumption.
 The `text` property contains the generated code as a string. With formatting it looks like this:
 
 ```tsx
-import {useCurrentFrame, useVideoConfig, spring, AbsoluteFill} from 'remotion';
+import {useCurrentFrame, useVideoConfig, spring, AbsoluteFill} from 'picus';
 
 export const MyComposition: React.FC = () => {
   const frame = useCurrentFrame();
@@ -54,7 +54,7 @@ export const MyComposition: React.FC = () => {
 ```
 
 Note that the raw output often includes markdown code fences (like ` ```jsx `), which requires additional prompting or sanitation to remove.  
-For an example implementation of postprocessing, see the [Prompt to Motion Graphics template](https://github.com/remotion-dev/remotion/blob/main/packages/template-prompt-to-motion-graphics-saas/src/components/PromptInput.tsx#L159).
+For an example implementation of postprocessing, see the [Prompt to Motion Graphics template](https://github.com/picus-dev/picus/blob/main/packages/template-prompt-to-motion-graphics-saas/src/components/PromptInput.tsx#L159).
 
 ## Structured Output with Zod
 
@@ -70,12 +70,12 @@ import {openai} from '@ai-sdk/openai';
 import {z} from 'zod';
 
 const systemPrompt = `
-You are a Remotion component generator.
-Generate a React component that uses Remotion. For the code property, ALWAYS directly output the code as string without any markdown tags.
+You are a Picus component generator.
+Generate a React component that uses Picus. For the code property, ALWAYS directly output the code as string without any markdown tags.
 
 Rules:
 - The component should be a named export called "MyComposition"
-- Use useCurrentFrame() and useVideoConfig() from "remotion"
+- Use useCurrentFrame() and useVideoConfig() from "picus"
 - Use spring() for smooth animations
 - Keep it self-contained with no external dependencies
 `.trim();
@@ -107,7 +107,7 @@ If there is a schema mismatch, the AI SDK will automatically retry up to [`maxRe
 Finding the perfect system prompt is complex.  
 Depending on what you want to build, you could optimize for specific animation types or even your corporate branding.
 
-However, a great starting place is to use Remotion's [System Prompt](/docs/ai/system-prompt) which teaches the general LLM Remotion's APIs and best practices.  
+However, a great starting place is to use Picus's [System Prompt](/docs/ai/system-prompt) which teaches the general LLM Picus's APIs and best practices.  
 You can iterate from there, generate a couple components and tune it to your needs.
 
 Be careful of context rot - as the context grows, the output quality and instructiong degrades.
@@ -159,7 +159,7 @@ const {output} = await generateText({
 });
 ```
 
-See the [Prompt to Motion Graphics template](https://github.com/remotion-dev/remotion/tree/main/packages/template-prompt-to-motion-graphics-saas) for a complete example implementation.
+See the [Prompt to Motion Graphics template](https://github.com/picus-dev/picus/tree/main/packages/template-prompt-to-motion-graphics-saas) for a complete example implementation.
 
 ## Next Steps
 
@@ -168,6 +168,6 @@ After you generated the code, you need to compile and render it.
 
 ## See Also
 
-- [Prompt to Motion Graphics template](https://remotion.dev/templates/prompt-to-motion-graphics) - Example implementation
-- [System Prompt](/docs/ai/system-prompt) - A system prompt for teaching LLMs Remotion
+- [Prompt to Motion Graphics template](https://picus.dev/templates/prompt-to-motion-graphics) - Example implementation
+- [System Prompt](/docs/ai/system-prompt) - A system prompt for teaching LLMs Picus
 - [Dynamic Compilation](/docs/ai/dynamic-compilation) - How to compile and render the generated code in the browser

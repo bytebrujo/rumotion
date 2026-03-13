@@ -17,12 +17,12 @@ You should use `getCompositionsOnLambda()` if you cannot use [`getCompositions()
 ## Example
 
 ```tsx twoslash
-import {getCompositionsOnLambda} from '@remotion/lambda/client';
+import {getCompositionsOnLambda} from '@picus/lambda/client';
 
 const compositions = await getCompositionsOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  functionName: 'picus-render-bds9aab',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   inputProps: {},
 });
 
@@ -30,7 +30,7 @@ console.log(compositions); // See below for an example value
 ```
 
 :::note
-Preferrably import this function from `@remotion/lambda/client` to avoid problems [inside serverless functions](/docs/lambda/light-client).
+Preferrably import this function from `@picus/lambda/client` to avoid problems [inside serverless functions](/docs/lambda/light-client).
 :::
 
 ## Arguments
@@ -48,7 +48,7 @@ In which region your Lambda function is deployed.
 
 ### `serveUrl`
 
-A URL pointing to a Remotion project. Use [`deploySite()`](/docs/lambda/deploysite) to deploy a Remotion project.
+A URL pointing to a Picus project. Use [`deploySite()`](/docs/lambda/deploysite) to deploy a Picus project.
 
 ### `inputProps`
 
@@ -95,7 +95,7 @@ Lets you set a custom user agent that the headless Chrome browser assumes.
 
 ### `forceBucketName?`<AvailableFrom v="3.3.42" />
 
-Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Remotion discover the right bucket automatically.
+Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Picus discover the right bucket automatically.
 
 ### `logLevel?`
 
@@ -146,5 +146,5 @@ Returns a promise that resolves to an array of available compositions. Example v
 ];
 ```
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/get-compositions-on-lambda.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/get-compositions-on-lambda.ts)
 - [getCompositions()](/docs/renderer/get-compositions)

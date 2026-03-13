@@ -5,7 +5,7 @@ title: <Composition>
 crumb: 'API'
 ---
 
-This is the component to use to register a video to make it renderable and make it show up in the sidebar of the Remotion development interface.
+This is the component to use to register a video to make it renderable and make it show up in the sidebar of the Picus development interface.
 
 A composition represents the video you want to create, as a collection of clips (for example, several `<Sequence>`) that will play back to back to form your video.
 
@@ -13,9 +13,9 @@ A composition represents the video you want to create, as a collection of clips 
 const Component: React.FC = () => null;
 // ---cut---
 
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition component={Component} durationInFrames={300} width={1080} height={1080} fps={30} id="test-render" defaultProps={{}} />
@@ -56,7 +56,7 @@ Width of the composition in pixels.
 Pass the component in directly **or** pass a function that returns a dynamic import. Passing neither or both of the props is an error.
 
 :::note
-If you use `lazyComponent`, Remotion will use React Suspense to load the component. Components will be compiled by Webpack as they are needed, which will reduce startup time of Remotion. If you use `lazyComponent`, you need to use a default export for your component. This is a restriction of React Suspense.
+If you use `lazyComponent`, Picus will use React Suspense to load the component. Components will be compiled by Webpack as they are needed, which will reduce startup time of Picus. If you use `lazyComponent`, you need to use a default export for your component. This is a restriction of React Suspense.
 :::
 
 ### `defaultProps?`
@@ -67,7 +67,7 @@ Props must be an object that contains only pure JSON-serializable values.
 Functions, classes, and other non-serializable values will be lost while rendering.  
 (This restriction does not apply to the [`<Player>`](/docs/player/player), where you are allowed to pass functions as props.)
 
-You may in addition use `Date`, `Map`, `Set` and [`staticFile()`](/docs/staticfile) in your default props and Remotion will guarantee the proper serialization.
+You may in addition use `Date`, `Map`, `Set` and [`staticFile()`](/docs/staticfile) in your default props and Picus will guarantee the proper serialization.
 
 :::note
 Type your components using the `React.FC<{}>` type and the `defaultProps` prop will be typesafe.
@@ -98,7 +98,7 @@ export const MyComp = () => <></>;
 
 // @filename: index.tsx
 // ---cut---
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 import {MyComp} from './MyComp';
 
 export const MyVideo = () => {
@@ -130,7 +130,7 @@ You can use the [`<Folder />`](/docs/folder) component to organize your composit
 import React from 'react';
 const Component: React.FC = () => null;
 // ---cut---
-import {Composition, Folder} from 'remotion';
+import {Composition, Folder} from 'picus';
 
 export const Video = () => {
   return (
@@ -150,7 +150,7 @@ export const Video = () => {
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/Composition.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/core/src/Composition.tsx)
 - [`registerRoot()`](/docs/register-root)
 - [The fundamentals](/docs/the-fundamentals)
 - [CLI options](/docs/cli)

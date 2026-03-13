@@ -1,4 +1,4 @@
-import type {CompletedClientRender} from '@remotion/studio-shared';
+import type {CompletedClientRender} from '@picus/studio-shared';
 
 const throwIfNotOk = async (response: Response): Promise<void> => {
 	if (!response.ok) {

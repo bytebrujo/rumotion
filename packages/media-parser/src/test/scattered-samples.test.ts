@@ -1,5 +1,5 @@
 import {beforeAll, expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
@@ -14,7 +14,7 @@ test(
 
 		await parseMedia({
 			src: await getRemoteExampleVideo('veryDispersed'),
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			reader: nodeReader,
 			onVideoTrack: () => {
 				return () => {

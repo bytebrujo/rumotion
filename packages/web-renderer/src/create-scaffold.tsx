@@ -1,8 +1,8 @@
 import {createRef, type ComponentType} from 'react';
 import {flushSync} from 'react-dom';
 import ReactDOM from 'react-dom/client';
-import type {Codec, DelayRenderScope, LogLevel, TRenderAsset} from 'remotion';
-import {Internals} from 'remotion';
+import type {Codec, DelayRenderScope, LogLevel, TRenderAsset} from 'picus';
+import {Internals} from 'picus';
 import type {$ZodObject} from 'zod/v4/core';
 import type {TimeUpdaterRef} from './update-time';
 import {UpdateTime} from './update-time';
@@ -161,7 +161,7 @@ export function createScaffold<Props extends Record<string, unknown>>({
 	[Symbol.dispose]: () => void;
 } {
 	if (!ReactDOM.createRoot) {
-		throw new Error('@remotion/web-renderer requires React 18 or higher');
+		throw new Error('@picus/web-renderer requires React 18 or higher');
 	}
 
 	const wrapper = document.createElement('div');
@@ -183,7 +183,7 @@ export function createScaffold<Props extends Record<string, unknown>>({
 	div.style.width = `${width}px`;
 	div.style.height = `${height}px`;
 
-	const scaffoldClassName = `remotion-scaffold-${Math.random().toString(36).substring(2, 15)}`;
+	const scaffoldClassName = `picus-scaffold-${Math.random().toString(36).substring(2, 15)}`;
 	div.className = scaffoldClassName;
 
 	const cleanupCSS = Internals.CSSUtils.injectCSS(
@@ -205,11 +205,11 @@ export function createScaffold<Props extends Record<string, unknown>>({
 	});
 
 	const delayRenderScope: DelayRenderScope = {
-		remotion_renderReady: true,
-		remotion_delayRenderTimeouts: {},
-		remotion_puppeteerTimeout: delayRenderTimeoutInMilliseconds,
-		remotion_attempt: 0,
-		remotion_delayRenderHandles: [],
+		picus_renderReady: true,
+		picus_delayRenderTimeouts: {},
+		picus_puppeteerTimeout: delayRenderTimeoutInMilliseconds,
+		picus_attempt: 0,
+		picus_delayRenderHandles: [],
 	};
 
 	const timeUpdater = createRef<TimeUpdaterRef | null>();
@@ -223,7 +223,7 @@ export function createScaffold<Props extends Record<string, unknown>>({
 			<Internals.MaxMediaCacheSizeContext.Provider
 				value={mediaCacheSizeInBytes}
 			>
-				<Internals.RemotionEnvironmentContext.Provider
+				<Internals.PicusEnvironmentContext.Provider
 					value={{
 						isStudio: false,
 						isRendering: true,
@@ -282,16 +282,16 @@ export function createScaffold<Props extends Record<string, unknown>>({
 									initialFrame={initialFrame}
 									timeUpdater={timeUpdater}
 								>
-									<Internals.CanUseRemotionHooks.Provider value>
+									<Internals.CanUsePicusHooks.Provider value>
 										{/**
 										 * @ts-expect-error	*/}
 										<Component {...resolvedProps} />
-									</Internals.CanUseRemotionHooks.Provider>
+									</Internals.CanUsePicusHooks.Provider>
 								</UpdateTime>
 							</Internals.RenderAssetManagerProvider>
 						</Internals.CompositionManager.Provider>
 					</Internals.DelayRenderContextType.Provider>
-				</Internals.RemotionEnvironmentContext.Provider>
+				</Internals.PicusEnvironmentContext.Provider>
 			</Internals.MaxMediaCacheSizeContext.Provider>,
 		);
 	});

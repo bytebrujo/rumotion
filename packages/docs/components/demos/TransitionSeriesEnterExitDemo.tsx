@@ -1,9 +1,9 @@
-import {linearTiming, TransitionSeries} from '@remotion/transitions';
-import {fade} from '@remotion/transitions/fade';
-import {slide} from '@remotion/transitions/slide';
-import {wipe} from '@remotion/transitions/wipe';
+import {linearTiming, TransitionSeries} from '@picus/transitions';
+import {fade} from '@picus/transitions/fade';
+import {slide} from '@picus/transitions/slide';
+import {wipe} from '@picus/transitions/wipe';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Scene: React.FC = () => {
 	return (

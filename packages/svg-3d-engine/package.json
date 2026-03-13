@@ -1,10 +1,10 @@
 {
-	"name": "@remotion/svg-3d-engine",
+	"name": "@picus/svg-3d-engine",
 	"dependencies": {
-		"@remotion/paths": "workspace:*"
+		"@picus/paths": "workspace:*"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
@@ -26,7 +26,7 @@
 	},
 	"version": "4.0.434",
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/svg-3d-engine"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/svg-3d-engine"
 	},
 	"description": "3D SVG extrusion effects",
 	"publishConfig": {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 export const FrontFace: React.FC<{
 	readonly prog: number;

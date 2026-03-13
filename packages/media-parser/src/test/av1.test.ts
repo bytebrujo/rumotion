@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {getTraks} from '../containers/iso-base-media/traversal';
 import {trakBoxContainsVideo} from '../get-fps';
 import {getAv1CBox} from '../get-sample-aspect-ratio';
@@ -10,7 +10,7 @@ import {nodeReader} from '../readers/from-node';
 if (process.platform !== 'win32') {
 	test('AV1 in MP4', async () => {
 		const parsed = await parseMedia({
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			src: exampleVideos.av1mp4,
 			fields: {
 				durationInSeconds: true,
@@ -67,7 +67,7 @@ if (process.platform !== 'win32') {
 		let samples = 0;
 
 		const parsed = await parseMedia({
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			src: exampleVideos.av1mp4WithColr,
 			fields: {
 				durationInSeconds: true,

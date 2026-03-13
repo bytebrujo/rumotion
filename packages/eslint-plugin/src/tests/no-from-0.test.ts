@@ -13,7 +13,7 @@ const ruleTester = new ESLintUtils.RuleTester({
 ruleTester.run('no-duration-frames-infinity', rule, {
 	valid: [
 		`
-      import {Sequence} from 'remotion';
+      import {Sequence} from 'picus';
 
       export const Re = () => {
         return (
@@ -27,7 +27,7 @@ ruleTester.run('no-duration-frames-infinity', rule, {
 	invalid: [
 		{
 			code: `
-        import {Composition, Sequence} from 'remotion';
+        import {Composition, Sequence} from 'picus';
 
         export const Re = () => {
           return (
@@ -38,7 +38,7 @@ ruleTester.run('no-duration-frames-infinity', rule, {
         }
       `,
 			output: `
-        import {Composition, Sequence} from 'remotion';
+        import {Composition, Sequence} from 'picus';
 
         export const Re = () => {
           return (

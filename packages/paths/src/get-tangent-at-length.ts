@@ -3,7 +3,7 @@ import {construct} from './helpers/construct';
 
 /*
  * @description Gets tangent values x and y of a point which is on an SVG path.
- * @see [Documentation](https://www.remotion.dev/docs/paths/get-tangent-at-length)
+ * @see [Documentation](https://www.picus.dev/docs/paths/get-tangent-at-length)
  */
 
 export const getTangentAtLength = (path: string, length: number) => {

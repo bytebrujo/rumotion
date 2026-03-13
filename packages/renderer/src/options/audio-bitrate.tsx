@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'audio-bitrate' as const;
 
@@ -17,7 +17,7 @@ export const audioBitrateOption = {
 		</>
 	),
 	ssrName: 'audioBitrate',
-	docLink: 'https://www.remotion.dev/docs/renderer/render-media#audiobitrate-',
+	docLink: 'https://www.picus.dev/docs/renderer/render-media#audiobitrate-',
 	type: '0' as string,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag]) {
@@ -43,4 +43,4 @@ export const audioBitrateOption = {
 		audioBitrate = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

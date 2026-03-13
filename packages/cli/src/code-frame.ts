@@ -2,7 +2,7 @@ import type {
 	ErrorWithStackFrame,
 	LogLevel,
 	SymbolicatedStackFrame,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 import {chalk} from './chalk';
 import {Log} from './log';
 import {truthy} from './truthy';

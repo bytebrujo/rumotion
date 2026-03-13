@@ -6,10 +6,10 @@ import type {
 	CombineChunksOnProgress,
 	FrameRange,
 	LogLevel,
-} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {CloudProvider, ServerlessCodec} from '@remotion/serverless-client';
-import {REMOTION_CONCATENATED_TOKEN} from '@remotion/serverless-client';
+} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {CloudProvider, ServerlessCodec} from '@picus/serverless-client';
+import {PICUS_CONCATENATED_TOKEN} from '@picus/serverless-client';
 import type {InsideFunctionSpecifics} from './provider-implementation';
 
 export const concatVideos = async <Provider extends CloudProvider>({
@@ -52,7 +52,7 @@ export const concatVideos = async <Provider extends CloudProvider>({
 	frameRange: FrameRange | null;
 }) => {
 	const outfile = join(
-		RenderInternals.tmpDir(REMOTION_CONCATENATED_TOKEN),
+		RenderInternals.tmpDir(PICUS_CONCATENATED_TOKEN),
 		`concat.${RenderInternals.getFileExtensionFromCodec(codec, audioCodec)}`,
 	);
 	const combine = insideFunctionSpecifics.timer('Combine chunks', logLevel);

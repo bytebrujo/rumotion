@@ -5,7 +5,7 @@ import {findEntryPoint} from '../entry-point';
 test('Should accept URL as entry point', () => {
 	const entryPoint = findEntryPoint({
 		args: ['https://www.example.com'],
-		remotionRoot: path.resolve(process.cwd(), '..', 'example'),
+		picusRoot: path.resolve(process.cwd(), '..', 'example'),
 		logLevel: 'info',
 		allowDirectory: true,
 	});
@@ -18,7 +18,7 @@ test('Should accept URL as entry point', () => {
 test('Should find entry point automatically', () => {
 	const entryPoint = findEntryPoint({
 		args: [],
-		remotionRoot: path.resolve(process.cwd(), '..', 'example'),
+		picusRoot: path.resolve(process.cwd(), '..', 'example'),
 		allowDirectory: true,
 		logLevel: 'info',
 	});
@@ -33,7 +33,7 @@ test('Should find entry point automatically', () => {
 test('Should use explicit entry point', () => {
 	const entryPoint = findEntryPoint({
 		args: ['src/ts-entry.tsx'],
-		remotionRoot: path.resolve(process.cwd(), '..', 'example'),
+		picusRoot: path.resolve(process.cwd(), '..', 'example'),
 		logLevel: 'info',
 		allowDirectory: true,
 	});

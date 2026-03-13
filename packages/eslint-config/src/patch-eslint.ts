@@ -214,7 +214,7 @@ export const allowESLintShareableConfig = () => {
 				throw new Error(
 					'Failed to patch ESLint because the calling module was not recognized.\n' +
 						'If you are using a newer ESLint version that may be unsupported, please create a GitHub issue:\n' +
-						'https://github.com/remotion-dev/remotion/issues',
+						'https://github.com/picus-dev/picus/issues',
 				);
 			}
 
@@ -239,7 +239,7 @@ export const allowESLintShareableConfig = () => {
 			'The patch-eslint.js script has only been tested with ESLint version 6.x, 7.x, and 8.x, and 9.x.' +
 				` (Your version: ${eslintPackageVersion})\n` +
 				'Consider reporting a GitHub issue:\n' +
-				'https://github.com/remotion-dev/remotion/issues',
+				'https://github.com/picus-dev/picus/issues',
 		);
 	}
 

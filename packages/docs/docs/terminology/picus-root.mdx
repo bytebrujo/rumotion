@@ -1,0 +1,13 @@
+---
+image: /generated/articles-docs-terminology-picus-root.png
+title: Picus Root
+crumb: "Terminology"
+---
+
+The Picus Root is the directory in which Picus commands get executed in.  
+It influences the default location of the [public dir](/docs/terminology/public-dir), the `.env` file and the [config file](/docs/config) amongst others.
+
+## Which directory is the Picus Root?
+
+To determine the Picus Root, take the directory from which you execute commands or run scripts, and go upwards until you hit a directory that contains a `package.json` file.  
+Many Picus CLI commands also print the Picus Root directory if you pass `--log=verbose`.

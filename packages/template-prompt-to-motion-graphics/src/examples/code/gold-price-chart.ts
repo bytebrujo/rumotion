@@ -1,6 +1,6 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
-export const goldPriceChartCode = `import { useCurrentFrame, useVideoConfig, AbsoluteFill, spring } from "remotion";
+export const goldPriceChartCode = `import { useCurrentFrame, useVideoConfig, AbsoluteFill, spring } from "picus";
 
 export const MyAnimation = () => {
   /*
@@ -184,7 +184,7 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const goldPriceChartExample: RemotionExample = {
+export const goldPriceChartExample: PicusExample = {
   id: "gold-price-chart",
   name: "Gold Price Chart",
   description:

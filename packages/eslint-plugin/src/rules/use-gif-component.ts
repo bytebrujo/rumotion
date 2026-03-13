@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://github.com/remotion-dev/remotion`;
+	return `https://github.com/picus-dev/picus`;
 });
 
 type Options = [];
@@ -10,7 +10,7 @@ type MessageIds = 'UseGifComponent';
 
 const UseGifComponent = [
 	'Use the <Gif> component animated GIFs.',
-	'See: https://www.remotion.dev/docs/gif.',
+	'See: https://www.picus.dev/docs/gif.',
 	'Ignore this message if this is a non-animated GIF.',
 ].join('\n');
 

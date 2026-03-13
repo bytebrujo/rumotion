@@ -11,10 +11,10 @@ When building an app that accepts user video uploads, you might want to validate
 
 Use the [`canDecode()`](/docs/mediabunny/can-decode) snippet to check if a video can be decoded by the browser.
 
-The `canDecode()` function checks if a video can be played in the browser and loaded into [`<Video>`](/docs/media/video) from `@remotion/media`.
+The `canDecode()` function checks if a video can be played in the browser and loaded into [`<Video>`](/docs/media/video) from `@picus/media`.
 
 :::note
-Different Remotion video components have different format compatibilities:
+Different Picus video components have different format compatibilities:
 
 - **[`<Video>`](/docs/media/video)**: Mediabunny-based custom video tag with support for the most important video formats.
 - **[`<Html5Video>`](/docs/html5-video)**: Uses browser's native decoding using `<video>` element
@@ -24,7 +24,7 @@ Learn more about the supported media formats: [Video formats](/docs/miscellaneou
 :::
 
 :::note
-Caveat: In `@remotion/media`, videos with a H.265 codec are supported in the regular browser, but during rendering, they fall back to [`<OffthreadVideo>`](/docs/offthreadvideo).
+Caveat: In `@picus/media`, videos with a H.265 codec are supported in the regular browser, but during rendering, they fall back to [`<OffthreadVideo>`](/docs/offthreadvideo).
 :::
 
 ## Validation example in React

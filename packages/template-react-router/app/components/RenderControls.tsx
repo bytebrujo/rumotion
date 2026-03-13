@@ -8,8 +8,8 @@ import { Input } from "./Input";
 import { ProgressBar } from "./ProgressBar";
 import { Spacing } from "./Spacing";
 import { useRendering } from "../lib/use-rendering";
-import { COMPOSITION_ID } from "~/remotion/constants.mjs";
-import { CompositionProps } from "~/remotion/schemata";
+import { COMPOSITION_ID } from "~/picus/constants.mjs";
+import { CompositionProps } from "~/picus/schemata";
 
 export const RenderControls: React.FC<{
   text: string;

@@ -1,15 +1,15 @@
 import path from 'node:path';
-import type {AwsRegion, RequestHandler} from '@remotion/lambda-client';
-import {LambdaClientInternals, type AwsProvider} from '@remotion/lambda-client';
-import {REMOTION_BUCKET_PREFIX} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {ProviderSpecifics} from '@remotion/serverless';
+import type {AwsRegion, RequestHandler} from '@picus/lambda-client';
+import {LambdaClientInternals, type AwsProvider} from '@picus/lambda-client';
+import {PICUS_BUCKET_PREFIX} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {ProviderSpecifics} from '@picus/serverless';
 import {
 	getExpectedOutName,
 	getOverallProgressFromStorage,
 	type CustomCredentials,
-} from '@remotion/serverless';
+} from '@picus/serverless';
 import type {LambdaReadFileProgress} from '../functions/helpers/read-with-progress';
 import {lambdaDownloadFileWithProgress} from '../functions/helpers/read-with-progress';
 
@@ -74,7 +74,7 @@ export const internalDownloadMedia = async (
 		renderMetadata: overallProgress.renderMetadata,
 		bucketName: input.bucketName,
 		customCredentials: input.customCredentials ?? null,
-		bucketNamePrefix: REMOTION_BUCKET_PREFIX,
+		bucketNamePrefix: PICUS_BUCKET_PREFIX,
 	});
 
 	const {sizeInBytes} = await lambdaDownloadFileWithProgress({
@@ -99,7 +99,7 @@ export const internalDownloadMedia = async (
 
 /*
  * @description Downloads a rendered video, audio or still to the disk of the machine this API is called from.
- * @see [Documentation](https://remotion.dev/docs/lambda/downloadmedia)
+ * @see [Documentation](https://picus.dev/docs/lambda/downloadmedia)
  */
 
 export const downloadMedia = (

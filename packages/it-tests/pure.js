@@ -326,8 +326,8 @@ var require_separate_audio = __commonJS((exports) => {
 	exports.separateAudioOption = {
 		cliFlag,
 		description: () =>
-			`If set, the audio will not be included in the main output but rendered as a separate file at the location you pass. It is recommended to use an absolute path. If a relative path is passed, it is relative to the Remotion Root.`,
-		docLink: 'https://remotion.dev/docs/renderer/render-media',
+			`If set, the audio will not be included in the main output but rendered as a separate file at the location you pass. It is recommended to use an absolute path. If a relative path is passed, it is relative to the Picus Root.`,
+		docLink: 'https://picus.dev/docs/renderer/render-media',
 		getValue: ({commandLine}) => {
 			if (commandLine[cliFlag]) {
 				return {
@@ -567,7 +567,7 @@ var require_audio_codec = __commonJS((exports) => {
 		},
 		description: () =>
 			`Set the format of the audio that is embedded in the video. Not all codec and audio codec combinations are supported and certain combinations require a certain file extension and container format. See the table in the docs to see possible combinations.`,
-		docLink: 'https://www.remotion.dev/docs/encoding/#audio-codec',
+		docLink: 'https://www.picus.dev/docs/encoding/#audio-codec',
 		name: 'Audio Codec',
 		ssrName,
 		type: 'aac',

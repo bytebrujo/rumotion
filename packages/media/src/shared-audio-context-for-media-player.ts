@@ -1,4 +1,4 @@
-import type {ScheduleAudioNodeOptions, ScheduleAudioNodeResult} from 'remotion';
+import type {ScheduleAudioNodeOptions, ScheduleAudioNodeResult} from 'picus';
 
 export type SharedAudioContextForMediaPlayer = {
 	audioContext: AudioContext;

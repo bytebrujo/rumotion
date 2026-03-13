@@ -1,5 +1,5 @@
 import type {WrapperProps} from '@docusaurus/types';
-import '@remotion/promo-pages/dist/tailwind.css';
+import '@picus/promo-pages/dist/tailwind.css';
 import Layout from '@theme-original/Layout';
 import type LayoutType from '@theme/Layout';
 import React, {type ReactNode} from 'react';

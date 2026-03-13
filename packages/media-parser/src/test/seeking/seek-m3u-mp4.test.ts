@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../../controller/media-parser-controller';
 import {hasBeenAborted} from '../../errors';
 import {nodeReader} from '../../node';
@@ -19,7 +19,7 @@ test('seek m3u, only video', async () => {
 	try {
 		await parseMedia({
 			src: exampleVideos.localplaylist,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			controller,
 			reader: nodeReader,
 			onVideoTrack: () => {
@@ -122,7 +122,7 @@ test('seek m3u, video and audio', async () => {
 	try {
 		await parseMedia({
 			src: exampleVideos.localplaylist,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			controller,
 			reader: nodeReader,
 			onVideoTrack: () => {

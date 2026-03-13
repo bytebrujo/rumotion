@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
-import {interpolate} from 'remotion';
+import {exampleVideos} from '@picus/example-videos';
+import {interpolate} from 'picus';
 import {startLongRunningCompositor} from '../compositor/compositor';
 
 const BMP_HEADER_SIZE = 54;

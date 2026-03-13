@@ -7,13 +7,13 @@ crumb: 'Techniques'
 
 # Light Leaks<AvailableFrom v="4.0.415"/>
 
-The [`<LightLeak>`](/docs/light-leaks/light-leak) component from [`@remotion/light-leaks`](/docs/light-leaks/api) renders a WebGL-based light leak effect. The effect reveals during the first half of its duration and retracts during the second half.
+The [`<LightLeak>`](/docs/light-leaks/light-leak) component from [`@picus/light-leaks`](/docs/light-leaks/api) renders a WebGL-based light leak effect. The effect reveals during the first half of its duration and retracts during the second half.
 
 <Demo type="light-leak" />
 
 ```tsx twoslash title="MyComp.tsx"
-import {LightLeak} from '@remotion/light-leaks';
-import {AbsoluteFill} from 'remotion';
+import {LightLeak} from '@picus/light-leaks';
+import {AbsoluteFill} from 'picus';
 
 const MyComp = () => {
   return (
@@ -29,8 +29,8 @@ const MyComp = () => {
 The [`seed`](/docs/light-leaks/light-leak#seed) prop controls the shape of the light leak pattern. Different values produce different patterns.
 
 ```tsx twoslash title="DifferentSeed.tsx"
-import {LightLeak} from '@remotion/light-leaks';
-import {AbsoluteFill} from 'remotion';
+import {LightLeak} from '@picus/light-leaks';
+import {AbsoluteFill} from 'picus';
 
 // ---cut---
 const MyComp = () => {
@@ -51,8 +51,8 @@ Use [`hueShift`](/docs/light-leaks/light-leak#hueshift) to rotate the color of t
 - `240` — shifts toward blue
 
 ```tsx twoslash title="BlueHue.tsx"
-import {LightLeak} from '@remotion/light-leaks';
-import {AbsoluteFill} from 'remotion';
+import {LightLeak} from '@picus/light-leaks';
+import {AbsoluteFill} from 'picus';
 
 // ---cut---
 const MyComp = () => {
@@ -71,12 +71,12 @@ Combined with [`<TransitionSeries.Overlay>`](/docs/transitions/transitionseries#
 <Demo type="transition-series-overlay" />
 
 ```tsx twoslash title="LightLeakTransition.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 const Fill = ({color}: {color: string}) => <AbsoluteFill style={{backgroundColor: color}} />;
 
 // ---cut---
-import {LightLeak} from '@remotion/light-leaks';
-import {TransitionSeries} from '@remotion/transitions';
+import {LightLeak} from '@picus/light-leaks';
+import {TransitionSeries} from '@picus/transitions';
 
 const LightLeakTransition = () => {
   return (
@@ -100,6 +100,6 @@ At the midpoint, the light leak covers most of the canvas, hiding the cut betwee
 ## See also
 
 - [`<LightLeak>` API reference](/docs/light-leaks/light-leak)
-- [`@remotion/light-leaks`](/docs/light-leaks/api)
+- [`@picus/light-leaks`](/docs/light-leaks/api)
 - [`<TransitionSeries.Overlay>`](/docs/transitions/transitionseries#transitionseriesoverlay)
 - [Transitions](/docs/transitioning)

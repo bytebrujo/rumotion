@@ -1,6 +1,6 @@
 import {execSync} from 'child_process';
 import {existsSync, rmSync, writeFileSync} from 'fs';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 import {build} from './build.mjs';
 
 if (
@@ -28,11 +28,11 @@ if (isCached) {
 // Make an image with tag called `cachebase` - this contains all the layers until the JS gets copied
 // If an earlier layer is changed, need to rebuild `cachebase` again
 
-const cacheTag = 'us-docker.pkg.dev/remotion-dev/development/render:cachebase';
+const cacheTag = 'us-docker.pkg.dev/picus-dev/development/render:cachebase';
 
 const tag = isCached
 	? cacheTag
-	: `us-docker.pkg.dev/remotion-dev/${process.env.ARTIFACT_REGISTRY_ENV}/render:${VERSION}`;
+	: `us-docker.pkg.dev/picus-dev/${process.env.ARTIFACT_REGISTRY_ENV}/render:${VERSION}`;
 
 const cloudbuildJSON = {
 	steps: [
@@ -50,7 +50,7 @@ const cloudbuildJSON = {
 				isCached ? null : '--cache-from',
 				isCached
 					? null
-					: `us-docker.pkg.dev/remotion-dev/${process.env.ARTIFACT_REGISTRY_ENV}/render:cachebase`,
+					: `us-docker.pkg.dev/picus-dev/${process.env.ARTIFACT_REGISTRY_ENV}/render:cachebase`,
 				'.',
 			].filter(Boolean),
 		},

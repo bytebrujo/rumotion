@@ -9,7 +9,7 @@ import {
 } from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 
 const tmpDir = tmpdir();
 
@@ -21,7 +21,7 @@ mkdirSync(workingDir);
 console.log(tmpDir);
 
 execSync(
-	`git clone git@github.com:remotion-dev/lambda_go_sdk.git ${workingDir}`,
+	`git clone git@github.com:picus-dev/lambda_go_sdk.git ${workingDir}`,
 	{
 		cwd: tmpDir,
 	},
@@ -47,14 +47,14 @@ copyFileSync('go.sum', path.join(workingDir, 'go.sum'));
 writeFileSync(
 	path.join(workingDir, 'README.md'),
 	[
-		'# Remotion Lambda Go SDK',
+		'# Picus Lambda Go SDK',
 		'This repository exists because the Go SDK must be in a separate repository.',
-		'The actual source code is located in the [Remotion repository](https://remotion.dev/github).',
-		'This repository is automatically updated when a new version of Remotion is released.',
+		'The actual source code is located in the [Picus repository](https://picus.dev/github).',
+		'This repository is automatically updated when a new version of Picus is released.',
 		'Do not open issues or pull requests here.',
 		'',
 		'## Installation',
-		'Visit https://www.remotion.dev/docs/lambda/go to learn how to install the Remotion Lambda Go SDK.',
+		'Visit https://www.picus.dev/docs/lambda/go to learn how to install the Picus Lambda Go SDK.',
 	].join('\n'),
 );
 execSync('git add .', {cwd: workingDir, stdio: 'inherit'});

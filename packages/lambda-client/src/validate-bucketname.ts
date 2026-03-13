@@ -1,4 +1,4 @@
-import {REMOTION_BUCKET_PREFIX} from './constants';
+import {PICUS_BUCKET_PREFIX} from './constants';
 import type {AwsRegion} from './regions';
 import {AWS_REGIONS} from './regions';
 
@@ -8,7 +8,7 @@ export const parseBucketName = (
 	region: AwsRegion | null;
 } => {
 	const parsed = name.match(
-		new RegExp(`^${REMOTION_BUCKET_PREFIX}(.*)-([a-z0-9A-Z]+)$`),
+		new RegExp(`^${PICUS_BUCKET_PREFIX}(.*)-([a-z0-9A-Z]+)$`),
 	);
 	const region = parsed?.[1] as AwsRegion;
 

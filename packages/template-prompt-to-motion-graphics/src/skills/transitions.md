@@ -23,8 +23,8 @@ Use TransitionSeries to animate between multiple scenes or clips.
 **Correct (smooth transitions):**
 
 ```tsx
-import { TransitionSeries, linearTiming } from "@remotion/transitions";
-import { fade } from "@remotion/transitions/fade";
+import { TransitionSeries, linearTiming } from "@picus/transitions";
+import { fade } from "@picus/transitions/fade";
 
 <TransitionSeries>
   <TransitionSeries.Sequence durationInFrames={60}>
@@ -45,11 +45,11 @@ import { fade } from "@remotion/transitions/fade";
 Import transitions from their respective modules:
 
 ```tsx
-import { fade } from "@remotion/transitions/fade";
-import { slide } from "@remotion/transitions/slide";
-import { wipe } from "@remotion/transitions/wipe";
-import { flip } from "@remotion/transitions/flip";
-import { clockWipe } from "@remotion/transitions/clock-wipe";
+import { fade } from "@picus/transitions/fade";
+import { slide } from "@picus/transitions/slide";
+import { wipe } from "@picus/transitions/wipe";
+import { flip } from "@picus/transitions/flip";
+import { clockWipe } from "@picus/transitions/clock-wipe";
 ```
 
 ## Slide Transition with Direction
@@ -57,7 +57,7 @@ import { clockWipe } from "@remotion/transitions/clock-wipe";
 Specify slide direction for enter/exit animations.
 
 ```tsx
-import { slide } from "@remotion/transitions/slide";
+import { slide } from "@picus/transitions/slide";
 
 <TransitionSeries.Transition
   presentation={slide({ direction: "from-left" })}
@@ -96,7 +96,7 @@ const scene2Opacity = interpolate(
 ## Timing Options
 
 ```tsx
-import { linearTiming, springTiming } from "@remotion/transitions";
+import { linearTiming, springTiming } from "@picus/transitions";
 
 // Linear timing - constant speed
 linearTiming({ durationInFrames: 20 });

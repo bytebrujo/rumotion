@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT_EVERY_NTH_FRAME = 1;
 
@@ -18,7 +18,7 @@ export const everyNthFrameOption = {
 		</>
 	),
 	ssrName: 'everyNthFrame' as const,
-	docLink: 'https://www.remotion.dev/docs/config#seteverynthframe',
+	docLink: 'https://www.picus.dev/docs/config#seteverynthframe',
 	type: DEFAULT_EVERY_NTH_FRAME as number,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -44,4 +44,4 @@ export const everyNthFrameOption = {
 		everyNthFrame = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number>;
+} satisfies AnyPicusOption<number>;

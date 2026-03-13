@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {TemperatureNumber} from './TemperatureNumber';
 
 export const Temperature: React.FC<{

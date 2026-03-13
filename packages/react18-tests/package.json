@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/react18-tests"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/react18-tests"
 	},
-	"name": "@remotion/react18-tests",
+	"name": "@picus/react18-tests",
 	"version": "4.0.434",
 	"main": "dist/index.js",
 	"sideEffects": false,
@@ -12,22 +12,22 @@
 		"lint": "eslint src",
 		"make": "tsgo -d",
 		"testwebrenderer": "vitest src/test --browser --run",
-		"studio": "cd ../example && bunx remotion studio ../react18-tests/src/test/studio.ts"
+		"studio": "cd ../example && bunx picus studio ../react18-tests/src/test/studio.ts"
 	},
-	"author": "Remotion <jonny@remotion.dev>",
+	"author": "Picus <jonny@picus.dev>",
 	"license": "UNLICENSED",
 	"dependencies": {
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"zod": "3.22.3",
-		"@remotion/zod-types": "workspace:*",
-		"@remotion/zod-types-v3": "workspace:*"
+		"@picus/zod-types": "workspace:*",
+		"@picus/zod-types-v3": "workspace:*"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
-		"@remotion/studio": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
+		"@picus/studio": "workspace:*",
 		"@vitejs/plugin-react": "catalog:",
 		"@vitest/browser-playwright": "catalog:",
-		"@remotion/web-renderer": "workspace:*",
+		"@picus/web-renderer": "workspace:*",
 		"playwright": "catalog:",
 		"eslint": "catalog:",
 		"react": "18.3.1",

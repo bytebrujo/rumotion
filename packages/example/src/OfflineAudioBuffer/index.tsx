@@ -1,4 +1,4 @@
-import {audioBufferToDataUrl} from '@remotion/media-utils';
+import {audioBufferToDataUrl} from '@picus/media-utils';
 import {useCallback, useEffect, useState} from 'react';
 import {
 	AbsoluteFill,
@@ -6,7 +6,7 @@ import {
 	interpolate,
 	useDelayRender,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const C4_FREQUENCY = 261.63;
 const sampleRate = 44100;

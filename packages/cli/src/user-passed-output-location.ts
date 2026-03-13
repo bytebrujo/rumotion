@@ -1,4 +1,4 @@
-import {getDefaultOutLocation} from '@remotion/studio-server';
+import {getDefaultOutLocation} from '@picus/studio-server';
 import {ConfigInternals} from './config';
 import {parsedCli} from './parsed-cli';
 

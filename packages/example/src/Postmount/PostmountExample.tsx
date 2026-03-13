@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Html5Video, Series, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Video, Series, staticFile} from 'picus';
 
 export const PostmountExample: React.FC = () => {
 	return (
@@ -18,7 +18,7 @@ export const PostmountExample: React.FC = () => {
 				<Series.Sequence durationInFrames={150} postmountFor={50}>
 					<Html5Video
 						pauseWhenBuffering
-						src="https://remotion.media/BigBuckBunny.mp4"
+						src="https://picus.media/BigBuckBunny.mp4"
 					/>
 				</Series.Sequence>
 

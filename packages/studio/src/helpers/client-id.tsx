@@ -1,7 +1,7 @@
-import type {EventSourceEvent} from '@remotion/studio-shared';
+import type {EventSourceEvent} from '@picus/studio-shared';
 import React, {useCallback, useEffect, useMemo, useRef} from 'react';
-import type {WatchRemotionStaticFilesPayload} from 'remotion';
-import {Internals} from 'remotion';
+import type {WatchPicusStaticFilesPayload} from 'picus';
+import {Internals} from 'picus';
 import {showNotification} from '../components/Notifications/NotificationCenter';
 import playBeepSound from '../components/PlayBeepSound';
 import {renderJobsRef} from '../components/RenderQueue/context';
@@ -100,15 +100,15 @@ export const PreviewServerConnection: React.FC<{
 			}
 
 			if (newEvent.type === 'new-public-folder') {
-				const payload: WatchRemotionStaticFilesPayload = {
+				const payload: WatchPicusStaticFilesPayload = {
 					files: newEvent.files,
 				};
 
-				window.remotion_staticFiles = newEvent.files;
-				window.remotion_publicFolderExists = newEvent.folderExists;
+				window.picus_staticFiles = newEvent.files;
+				window.picus_publicFolderExists = newEvent.folderExists;
 
 				window.dispatchEvent(
-					new CustomEvent(Internals.WATCH_REMOTION_STATIC_FILES, {
+					new CustomEvent(Internals.WATCH_PICUS_STATIC_FILES, {
 						detail: payload,
 					}),
 				);

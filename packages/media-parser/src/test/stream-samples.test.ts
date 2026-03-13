@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 import {WEBCODECS_TIMESCALE} from '../webcodecs-timescale';
@@ -13,7 +13,7 @@ test('Stream samples', async () => {
 			audioCodec: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	const description = new Uint8Array([

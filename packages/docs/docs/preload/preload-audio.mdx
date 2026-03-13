@@ -3,21 +3,21 @@ image: /generated/articles-docs-preload-preload-audio.png
 id: preload-audio
 slug: preload-audio
 title: 'preloadAudio()'
-crumb: '@remotion/preload'
+crumb: '@picus/preload'
 ---
 
-_This function is part of the [`@remotion/preload`](/docs/preload) package._
+_This function is part of the [`@picus/preload`](/docs/preload) package._
 
 This function preloads audio in the DOM so that when a audio tag is mounted, it can play immediately.
 
 While preload is not necessary for rendering, it can help with seamless playback in the [`<Player />`](/docs/player) and in the Studio.
 
-An alternative to `preloadAudio()` is the [`prefetch()`](/docs/prefetch) API. See [`@remotion/preload` vs `prefetch()`](/docs/player/preloading#remotionpreload-vs-prefetch) to decide which one is better for your usecase.
+An alternative to `preloadAudio()` is the [`prefetch()`](/docs/prefetch) API. See [`@picus/preload` vs `prefetch()`](/docs/player/preloading#picuspreload-vs-prefetch) to decide which one is better for your usecase.
 
 ## Usage
 
 ```tsx twoslash
-import {preloadAudio} from '@remotion/preload';
+import {preloadAudio} from '@picus/preload';
 
 const unpreload = preloadAudio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
 
@@ -41,8 +41,8 @@ If the resource does not support CORS, `resolveRedirect()` will fail. If the res
 This snippet tries to preload a audio on a best-effort basis. If the redirect cannot be resolved, it tries to preload the original URL.
 
 ```tsx twoslash
-import {preloadAudio, resolveRedirect} from '@remotion/preload';
-import {Html5Audio} from 'remotion';
+import {preloadAudio, resolveRedirect} from '@picus/preload';
+import {Html5Audio} from 'picus';
 
 // This code gets executed immediately once the page loads
 let urlToLoad = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
@@ -73,4 +73,4 @@ const MyComp: React.FC = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/preload/src/preload-audio.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/preload/src/preload-audio.ts)

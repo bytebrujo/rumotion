@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useState} from 'react';
-import {measureSpring} from 'remotion';
+import {measureSpring} from 'picus';
 import {AnimationPreview, type AnimationType} from './AnimationPreview';
 import {CanvasWrapper} from './CanvasWrapper';
 import {

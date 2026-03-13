@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import {useZodIfPossible} from '../../get-zod-if-possible';
-import {RemotionInput} from '../../NewComposition/RemInput';
+import {PicusInput} from '../../NewComposition/RemInput';
 import {Fieldset} from './Fieldset';
 import {useLocalState} from './local-state';
 import {SchemaLabel} from './SchemaLabel';
@@ -81,7 +81,7 @@ export const ZodStringEditor: React.FC<{
 				suffix={null}
 			/>
 			<div style={fullWidth}>
-				<RemotionInput
+				<PicusInput
 					value={localValue.value}
 					status={localValue.zodValidation ? 'ok' : 'error'}
 					placeholder={jsonPath.join('.')}

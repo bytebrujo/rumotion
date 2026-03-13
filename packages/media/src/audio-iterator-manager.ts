@@ -1,6 +1,6 @@
 import type {InputAudioTrack, WrappedAudioBuffer} from 'mediabunny';
 import {AudioBufferSink, InputDisposedError} from 'mediabunny';
-import {Internals, type ScheduleAudioNodeResult} from 'remotion';
+import {Internals, type ScheduleAudioNodeResult} from 'picus';
 import type {AudioIterator, QueuedPeriod} from './audio/audio-preview-iterator';
 import {
 	isAlreadyQueued,

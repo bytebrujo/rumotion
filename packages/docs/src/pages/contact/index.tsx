@@ -24,8 +24,8 @@ export default () => {
 		<Layout>
 			<br />
 			<Head>
-				<title>Remotion | Contact</title>
-				<meta name="description" content="Contact Remotion" />
+				<title>Picus | Contact</title>
+				<meta name="description" content="Contact Picus" />
 			</Head>
 			<div style={container}>
 				<br />
@@ -37,7 +37,7 @@ export default () => {
 						justifyContent: 'left',
 					}}
 				>
-					<a style={button} target="_blank" href="mailto:hi@remotion.dev">
+					<a style={button} target="_blank" href="mailto:hi@picus.dev">
 						<PlainButton size="sm" loading={false} fullWidth={false}>
 							Contact via email
 						</PlainButton>
@@ -47,7 +47,7 @@ export default () => {
 					<a
 						style={button}
 						target="_blank"
-						href="https://cal.com/remotion/evaluate"
+						href="https://cal.com/picus/evaluate"
 					>
 						<PlainButton size="sm" loading={false} fullWidth={false}>
 							Schedule evaluation call
@@ -57,7 +57,7 @@ export default () => {
 				<br />
 				<h2>Do you need technical support and want to chat?</h2>
 				<p>
-					On Discord, we provide technical support for Remotion. There we can
+					On Discord, we provide technical support for Picus. There we can
 					quickly write messages back and forth in a public channel.
 				</p>
 
@@ -73,7 +73,7 @@ export default () => {
 						justifyContent: 'left',
 					}}
 				>
-					<a style={button} target="_blank" href="https://remotion.dev/discord">
+					<a style={button} target="_blank" href="https://picus.dev/discord">
 						<PlainButton size="sm" loading={false} fullWidth={false}>
 							Join Discord
 						</PlainButton>

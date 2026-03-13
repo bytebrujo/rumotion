@@ -1,13 +1,13 @@
-import {Video} from '@remotion/media';
+import {Video} from '@picus/media';
 import React from 'react';
-import {Sequence, useVideoConfig} from 'remotion';
+import {Sequence, useVideoConfig} from 'picus';
 
 const SLICE_DURATION_FRAMES = 3; // 0.1sec at 30fps
 const NUM_SLICES = 100;
 const PREMOUNT_SEC = 0.5;
 
 export const SlicedVideo: React.FC = () => {
-	const src = 'https://remotion.media/video.mp4';
+	const src = 'https://picus.media/video.mp4';
 	const {fps} = useVideoConfig();
 
 	return (

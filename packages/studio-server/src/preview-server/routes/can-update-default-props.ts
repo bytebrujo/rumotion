@@ -2,7 +2,7 @@ import {readFileSync} from 'node:fs';
 import type {
 	CanUpdateDefaultPropsRequest,
 	CanUpdateDefaultPropsResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import {updateDefaultProps} from '../../codemods/update-default-props';
 import type {ApiHandler} from '../api-types';
 import {getProjectInfo} from '../project-info';
@@ -21,9 +21,9 @@ export const checkIfTypeScriptFile = (file: string) => {
 export const canUpdateDefaultPropsHandler: ApiHandler<
 	CanUpdateDefaultPropsRequest,
 	CanUpdateDefaultPropsResponse
-> = async ({input: {compositionId}, remotionRoot, entryPoint}) => {
+> = async ({input: {compositionId}, picusRoot, entryPoint}) => {
 	try {
-		const projectInfo = await getProjectInfo(remotionRoot, entryPoint);
+		const projectInfo = await getProjectInfo(picusRoot, entryPoint);
 		if (!projectInfo.rootFile) {
 			throw new Error('Cannot find root file in project');
 		}

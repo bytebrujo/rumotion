@@ -5,7 +5,7 @@ test('duplicate staticFile() should throw a warning', () => {
 	if (typeof Bun === 'undefined') {
 		// @ts-expect-error
 		global.window = {
-			remotion_staticBase: '/static-abcdef',
+			picus_staticBase: '/static-abcdef',
 		};
 	}
 
@@ -16,11 +16,11 @@ test('duplicate staticFile() should throw a warning', () => {
 
 test('"https//" in staticFile() should throw an error', () => {
 	expect(() => staticFile(staticFile('https://'))).toThrow(
-		'staticFile() does not support remote URLs - got "https://". Instead, pass the URL without wrapping it in staticFile(). See: https://remotion.dev/docs/staticfile-remote-urls',
+		'staticFile() does not support remote URLs - got "https://". Instead, pass the URL without wrapping it in staticFile(). See: https://picus.dev/docs/staticfile-remote-urls',
 	);
 });
 
 test('Single use of staticFile should not thrown an error', () => {
-	const staticBase = window.remotion_staticBase;
+	const staticBase = window.picus_staticBase;
 	expect(staticFile('file.mp3')).toBe(staticBase + '/file.mp3');
 });

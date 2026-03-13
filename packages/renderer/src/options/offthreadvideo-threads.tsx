@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let value: number | null = null;
 
@@ -14,7 +14,7 @@ export const offthreadVideoThreadsOption = {
 	description: () => (
 		<>
 			The number of threads that
-			<a href="https://remotion.dev/docs/offthreadvideo">
+			<a href="https://picus.dev/docs/offthreadvideo">
 				<code>&lt;OffthreadVideo&gt;</code>
 			</a>{' '}
 			can start to extract frames. The default is{' '}
@@ -23,7 +23,7 @@ export const offthreadVideoThreadsOption = {
 		</>
 	),
 	ssrName: 'offthreadVideoThreads' as const,
-	docLink: 'https://www.remotion.dev/docs/offthreadvideo',
+	docLink: 'https://www.picus.dev/docs/offthreadvideo',
 	type: 0 as number | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -49,6 +49,6 @@ export const offthreadVideoThreadsOption = {
 		value = size ?? null;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;
 
 export const DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS = 2;

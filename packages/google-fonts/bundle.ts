@@ -14,8 +14,8 @@ import {removeWhitespace} from './scripts/utils';
 const output = await build({
 	entrypoints: filteredFonts.map((p) => `src/${removeWhitespace(p.family)}.ts`),
 	external: [
-		'remotion',
-		'remotion/no-react',
+		'picus',
+		'picus/no-react',
 		'react',
 		'react/jsx-runtime',
 		'react/jsx-dev-runtime',

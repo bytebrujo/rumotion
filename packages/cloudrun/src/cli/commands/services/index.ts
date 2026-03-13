@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
 import type {ServiceInfo} from '../../../api/get-service-info';
 import {BINARY_NAME} from '../../../shared/constants';
 import {quit} from '../../helpers/quit';
@@ -16,7 +16,7 @@ export const LEFT_COL = 20;
 export const displayServiceInfo = (service: ServiceInfo) => {
 	return [
 		'Service name: '.padEnd(LEFT_COL, ' ') + ' ' + service.serviceName,
-		'Version: '.padEnd(LEFT_COL, ' ') + ' ' + service.remotionVersion,
+		'Version: '.padEnd(LEFT_COL, ' ') + ' ' + service.picusVersion,
 		'CPU Limit: '.padEnd(LEFT_COL, ' ') + ' ' + service.cpuLimit,
 		'Memory Limit: '.padEnd(LEFT_COL, ' ') + ' ' + service.memoryLimit,
 		'Timeout: '.padEnd(LEFT_COL, ' ') + ' ' + service.timeoutInSeconds + 'sec',

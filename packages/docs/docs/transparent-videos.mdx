@@ -29,16 +29,16 @@ If you are lucky enough to visit the website in one of those supported web brows
 
 ## Creating a WebM video with Alpha channel
 
-In order to create a transparent video, you need at least version 1.4 of Remotion. Make sure to not set any background (use the checkerboard button to ensure your video is transparent). In order to render your videos transparent, you need to change 3 settings:
+In order to create a transparent video, you need at least version 1.4 of Picus. Make sure to not set any background (use the checkerboard button to ensure your video is transparent). In order to render your videos transparent, you need to change 3 settings:
 
 - Render each frame as PNG.
 - Use the VP8 or VP9 codec
 - Use the `yuva420p` pixel format.
 
-If you want to set these options and persist them, add this to your `remotion.config.ts` file (create it if you don't yet have one);
+If you want to set these options and persist them, add this to your `picus.config.ts` file (create it if you don't yet have one);
 
 ```tsx twoslash
-import { Config } from "@remotion/cli/config";
+import { Config } from "@picus/cli/config";
 
 Config.setVideoImageFormat("png");
 Config.setPixelFormat("yuva420p");
@@ -54,7 +54,7 @@ You can also set the settings on the command line:
 or set them as the default export settings for a composition:
 
 ```tsx twoslash
-import { Composition } from "remotion";
+import { Composition } from "picus";
 
 const MyVideo: React.FC = () => {
   return null;
@@ -63,7 +63,7 @@ const MyVideo: React.FC = () => {
 type Props = {};
 // ---cut---
 
-import { CalculateMetadataFunction } from "remotion";
+import { CalculateMetadataFunction } from "picus";
 
 const calculateMetadata: CalculateMetadataFunction<Props> = async ({
   props,
@@ -94,7 +94,7 @@ ProRes is supported by Final Cut Pro, Adobe Premiere and Davinci Resolve.
 Supported since v2.1.7, you can set the codec to `prores` and choose a ProRes profile with alpha support: Either `4444` or `4444-xq`. The pixel format must be `yuva444p10le`.
 
 ```tsx twoslash
-import { Config } from "@remotion/cli/config";
+import { Config } from "@picus/cli/config";
 
 Config.setVideoImageFormat("png");
 Config.setPixelFormat("yuva444p10le");
@@ -111,14 +111,14 @@ You can also set the settings on the command line:
 or set them as the default export settings for a composition:
 
 ```tsx twoslash
-import { Composition } from "remotion";
+import { Composition } from "picus";
 const MyVideo: React.FC<Props> = () => {
   return null;
 };
 
 type Props = {};
 // ---cut---
-import { CalculateMetadataFunction } from "remotion";
+import { CalculateMetadataFunction } from "picus";
 
 const calculateMetadata: CalculateMetadataFunction<Props> = async ({
   props,
@@ -150,7 +150,7 @@ This slightly reduces the performance of the render.
 
 ## Creating a fallback version
 
-Given the poor browser support, consider making two versions of a video, one with alpha channel, and an opaque video as a fallback. You can achieve this in Remotion using standard React props:
+Given the poor browser support, consider making two versions of a video, one with alpha channel, and an opaque video as a fallback. You can achieve this in Picus using standard React props:
 
 ```tsx twoslash
 // @include: example-MyVideo
@@ -159,7 +159,7 @@ Given the poor browser support, consider making two versions of a video, one wit
 It's a good practice to set a default when defining the composition:
 
 ```tsx twoslash {7-9}
-import { Composition } from "remotion";
+import { Composition } from "picus";
 // @include: example-MyVideo
 // ---cut---
 <Composition
@@ -179,8 +179,8 @@ You can then have separate render commands in your package.json:
 
 ```json
 "scripts": {
-  "render": "remotion render my-video video.mp4",
-  "render-transparent": "remotion render --image-format=png --pixel-format=yuva420p --codec=vp8 my-video video-transparent.webm"
+  "render": "picus render my-video video.mp4",
+  "render-transparent": "picus render --image-format=png --pixel-format=yuva420p --codec=vp8 my-video video-transparent.webm"
 }
 ```
 

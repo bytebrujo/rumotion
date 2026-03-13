@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import {useRef} from 'react';
 import {Canvas} from './Canvas';
 import type {TimingComponent, TimingConfig} from './types';

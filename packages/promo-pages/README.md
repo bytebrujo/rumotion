@@ -1,4 +1,4 @@
-# @remotion/promo-pages
+# @picus/promo-pages
 
 ## Usage
 

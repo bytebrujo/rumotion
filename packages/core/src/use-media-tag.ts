@@ -4,7 +4,7 @@ import {useLogLevel, useMountTime} from './log-level-context.js';
 import {playAndHandleNotAllowedError} from './play-and-handle-not-allowed-error.js';
 import type {PlayableMediaTag} from './timeline-position-state.js';
 import {useTimelineContext} from './timeline-position-state.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 
 export const useMediaTag = ({
 	mediaRef,
@@ -24,7 +24,7 @@ export const useMediaTag = ({
 	const {audioAndVideoTags, imperativePlaying} = useTimelineContext();
 	const logLevel = useLogLevel();
 	const mountTime = useMountTime();
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	useEffect(() => {
 		const tag: PlayableMediaTag = {

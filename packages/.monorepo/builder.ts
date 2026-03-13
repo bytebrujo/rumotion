@@ -30,9 +30,9 @@ const getExternal = (deps: string[] | 'dependencies'): string[] => {
 	return deps;
 };
 
-// Turn @remotion/renderer/client into @remotion/renderer
-// and remotion/no-react into remotion
-// but leave @remotion/player alone
+// Turn @picus/renderer/client into @picus/renderer
+// and picus/no-react into picus
+// but leave @picus/player alone
 const stripEntryPoints = (packageName: string) => {
 	const splitted = packageName.split('/');
 	if (splitted[0].startsWith('@')) {

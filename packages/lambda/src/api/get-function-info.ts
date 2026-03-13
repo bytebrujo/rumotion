@@ -1,12 +1,12 @@
 import {GetFunctionCommand} from '@aws-sdk/client-lambda';
-import type {AwsRegion, RequestHandler} from '@remotion/lambda-client';
+import type {AwsRegion, RequestHandler} from '@picus/lambda-client';
 import {
 	getFunctionVersion,
 	LambdaClientInternals,
-} from '@remotion/lambda-client';
-import {DEFAULT_EPHEMERAL_STORAGE_IN_MB} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
-import type {FunctionInfo} from '@remotion/serverless';
+} from '@picus/lambda-client';
+import {DEFAULT_EPHEMERAL_STORAGE_IN_MB} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
+import type {FunctionInfo} from '@picus/serverless';
 
 export type GetFunctionInfoInput = {
 	region: AwsRegion;
@@ -17,7 +17,7 @@ export type GetFunctionInfoInput = {
 
 /*
  * @description Gets information about a function given its name and region.
- * @see [Documentation](https://remotion.dev/docs/lambda/getfunctioninfo)
+ * @see [Documentation](https://picus.dev/docs/lambda/getfunctioninfo)
  */
 export const getFunctionInfo = async ({
 	region,

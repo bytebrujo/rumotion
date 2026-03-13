@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentApiKey: string | null = null;
 
@@ -9,11 +9,11 @@ export const apiKeyOption = {
 	cliFlag,
 	description: () => (
 		<>
-			API key for sending a usage event using <code>@remotion/licensing</code>.
+			API key for sending a usage event using <code>@picus/licensing</code>.
 		</>
 	),
 	ssrName: 'apiKey' as const,
-	docLink: 'https://www.remotion.dev/docs/licensing',
+	docLink: 'https://www.picus.dev/docs/licensing',
 	type: null as string | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -32,4 +32,4 @@ export const apiKeyOption = {
 		currentApiKey = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

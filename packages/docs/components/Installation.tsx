@@ -5,20 +5,20 @@ import TabItem from '@theme/TabItem';
 // @ts-expect-error
 import Tabs from '@theme/Tabs';
 import React from 'react';
-import {VERSION} from 'remotion';
+import {VERSION} from 'picus';
 
 const VersionWarning: React.FC<{
 	readonly packages: string;
 }> = ({packages}) => {
-	if (!packages.includes('remotion')) {
+	if (!packages.includes('picus')) {
 		return null;
 	}
 
 	return (
 		<>
-			This assumes you are currently using v{VERSION} of Remotion.
+			This assumes you are currently using v{VERSION} of Picus.
 			<br />
-			Also update <code>remotion</code> and all <code>`@remotion/*`</code>{' '}
+			Also update <code>picus</code> and all <code>`@picus/*`</code>{' '}
 			packages to the same version.
 			<br />
 			Remove all <code>^</code> character in front of the version numbers of it
@@ -55,17 +55,17 @@ export const Installation: React.FC<{
 
 	const pkgList = pkg.split(' ');
 
-	const allRemotionOnly = pkgList.every(
-		(p) => p.startsWith('@remotion/') || p === 'remotion',
+	const allPicusOnly = pkgList.every(
+		(p) => p.startsWith('@picus/') || p === 'picus',
 	);
-	const showRemotionCli =
-		allRemotionOnly &&
-		!pkgList.includes('remotion') &&
-		!pkgList.includes('@remotion/cli');
+	const showPicusCli =
+		allPicusOnly &&
+		!pkgList.includes('picus') &&
+		!pkgList.includes('@picus/cli');
 
 	const packages = pkgList
 		.map((p) => {
-			if (p.startsWith('@remotion') || p === 'remotion') {
+			if (p.startsWith('@picus') || p === 'picus') {
 				return `${p}@${VERSION}`;
 			}
 
@@ -73,11 +73,11 @@ export const Installation: React.FC<{
 		})
 		.join(' ');
 
-	const remotionCliPackages = pkgList.join(' ');
+	const picusCliPackages = pkgList.join(' ');
 
 	const tabs = [
-		...(showRemotionCli
-			? [{label: 'Remotion CLI', value: 'remotion-cli'}]
+		...(showPicusCli
+			? [{label: 'Picus CLI', value: 'picus-cli'}]
 			: []),
 		{label: 'npm', value: 'npm'},
 		{label: 'bun', value: 'bun'},
@@ -88,12 +88,12 @@ export const Installation: React.FC<{
 	return (
 		<div>
 			<Tabs
-				defaultValue={showRemotionCli ? 'remotion-cli' : 'npm'}
+				defaultValue={showPicusCli ? 'picus-cli' : 'npm'}
 				values={tabs}
 			>
-				{showRemotionCli ? (
-					<TabItem value="remotion-cli">
-						<LightAndDark text={`npx remotion add ${remotionCliPackages}`} />
+				{showPicusCli ? (
+					<TabItem value="picus-cli">
+						<LightAndDark text={`npx picus add ${picusCliPackages}`} />
 					</TabItem>
 				) : null}
 				<TabItem value="npm">

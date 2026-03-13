@@ -16,7 +16,7 @@ const output = await build({
 	entrypoints: ['src/index.ts'],
 	naming: '[name].mjs',
 	target: 'browser',
-	external: ['remotion', 'remotion/no-react', 'react', 'react-dom'],
+	external: ['picus', 'picus/no-react', 'react', 'react-dom'],
 });
 
 const [file] = output.outputs;
@@ -36,13 +36,13 @@ const noReactOutput = await build({
 	entrypoints: ['src/no-react.ts'],
 	naming: '[name].mjs',
 	target: 'browser',
-	external: ['remotion', 'react', 'react-dom'],
+	external: ['picus', 'react', 'react-dom'],
 });
 const [noReactFile] = noReactOutput.outputs;
 const noReactText = await noReactFile.text();
 
 if (noReactText.includes('createContext')) {
-	throw new Error('remotion/no-react.mjs should not import React');
+	throw new Error('picus/no-react.mjs should not import React');
 }
 
 await Bun.write('dist/esm/no-react.mjs', noReactText);

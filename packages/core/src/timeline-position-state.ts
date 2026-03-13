@@ -6,7 +6,7 @@ import {
 	TimelineContext,
 	type TimelineContextValue,
 } from './TimelineContext.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 import {useVideo} from './use-video.js';
 
 export type PlayableMediaTag = {
@@ -17,7 +17,7 @@ export type PlayableMediaTag = {
 type CurrentTimePerComposition = Record<string, number>;
 
 const makeKey = () => {
-	return `remotion.time-all`;
+	return `picus.time-all`;
 };
 
 export const persistCurrentFrame = (time: CurrentTimePerComposition) => {
@@ -42,19 +42,19 @@ export const getFrameForComposition = (composition: string) => {
 		return 0;
 	}
 
-	return window.remotion_initialFrame ?? 0;
+	return window.picus_initialFrame ?? 0;
 };
 
 const useTimelinePositionFromContext = (
 	state: TimelineContextValue,
 ): number => {
 	const videoConfig = useVideo();
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	if (!videoConfig) {
 		return typeof window === 'undefined'
 			? 0
-			: (window.remotion_initialFrame ?? 0);
+			: (window.picus_initialFrame ?? 0);
 	}
 
 	const unclamped =
@@ -68,7 +68,7 @@ export const useTimelineContext = (): TimelineContextValue => {
 	const state = useContext(TimelineContext);
 	if (state === null) {
 		throw new Error(
-			'TimelineContext is not available. This hook must be used inside a <Player> or the Remotion Studio.',
+			'TimelineContext is not available. This hook must be used inside a <Player> or the Picus Studio.',
 		);
 	}
 
@@ -84,7 +84,7 @@ export const useAbsoluteTimelinePosition = (): number => {
 	const state = useContext(AbsoluteTimeContext);
 	if (state === null) {
 		throw new Error(
-			'AbsoluteTimeContext is not available. This hook must be used inside a <Player> or the Remotion Studio.',
+			'AbsoluteTimeContext is not available. This hook must be used inside a <Player> or the Picus Studio.',
 		);
 	}
 

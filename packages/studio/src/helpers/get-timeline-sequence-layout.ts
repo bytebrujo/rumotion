@@ -1,4 +1,4 @@
-import type {VideoConfig} from 'remotion';
+import type {VideoConfig} from 'picus';
 import {TIMELINE_PADDING} from './timeline-layout';
 
 export const SEQUENCE_BORDER_WIDTH = 1;

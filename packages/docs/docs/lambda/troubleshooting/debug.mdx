@@ -6,11 +6,11 @@ title: Debugging failed Lambda renders
 crumb: 'Lambda'
 ---
 
-<YouTube minutes={11} href="https://youtu.be/pwVEzTQ6VYE" thumb="https://i.ytimg.com/vi/pwVEzTQ6VYE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDGudSHhI9u7kkShN_awBk3hbQ9mA" title="How to troubleshoot and debug for Remotion Lambda" />
+<YouTube minutes={11} href="https://youtu.be/pwVEzTQ6VYE" thumb="https://i.ytimg.com/vi/pwVEzTQ6VYE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDGudSHhI9u7kkShN_awBk3hbQ9mA" title="How to troubleshoot and debug for Picus Lambda" />
 
 ## General debugging strategy
 
-<Step>1</Step> Reproduce a render via the [`npx remotion lambda render`](/docs/lambda/cli/render) command.
+<Step>1</Step> Reproduce a render via the [`npx picus lambda render`](/docs/lambda/cli/render) command.
 
 - Use `--props` to pass in a JSON file with the same input props as the render you want to debug.
 - Use `--log=verbose` to get detailed debugging information.
@@ -81,7 +81,7 @@ will for example find the log stream of chunk 12. If your viewport is big enough
 
 Click the blue link in the `Log stream name` column to open the log stream. If you don't see any blue links, click "Display", then select "View in columns with details".
 
-In the logstream, you will see debug logging from Remotion as well as any `console.log` statements from your React code.
+In the logstream, you will see debug logging from Picus as well as any `console.log` statements from your React code.
 
 ### Find the logs of the main function
 
@@ -107,20 +107,20 @@ After you've identified which chunks are missing, [inspect the logs](#inspecting
 
 ### Increasing the timeout
 
-Note that two types of timeouts come into play in Remotion:
+Note that two types of timeouts come into play in Picus:
 
-- The `delayRender()` timeout. This is the timeout that is defined using `--timeout` when calling [`npx remotion lambda render`](/docs/lambda/cli/render) or using `timeoutInMilliseconds` when calling [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda).
-- The Lambda function timeout. This is the timeout that is defined using `--timeout` when calling [`npx remotion lambda functions deploy`](/docs/lambda/cli/functions/deploy) or using `timeoutInSeconds` when calling [`deployFunction()`](/docs/lambda/deployfunction).
+- The `delayRender()` timeout. This is the timeout that is defined using `--timeout` when calling [`npx picus lambda render`](/docs/lambda/cli/render) or using `timeoutInMilliseconds` when calling [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda).
+- The Lambda function timeout. This is the timeout that is defined using `--timeout` when calling [`npx picus lambda functions deploy`](/docs/lambda/cli/functions/deploy) or using `timeoutInSeconds` when calling [`deployFunction()`](/docs/lambda/deployfunction).
 
 ### Reporting an issue
 
-You may report an issue on [GitHub](https://remotion.dev/help) and [Discord](https://remotion.dev/discord).
+You may report an issue on [GitHub](https://picus.dev/help) and [Discord](https://picus.dev/discord).
 
 To share a reproducible render, share the `progress.json` that lies in the S3 folder of the failed render under `renders/[render-id]/progress.json`.
 
 If you use [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda), this function returns a link [`folderInS3Console`](/docs/lambda/rendermediaonlambda#folderins3console) pointing you to the right location in the S3 console.
 
-If you use `npx remotion lambda render`, add `--log=verbose` to print the link to the file in the S3 console.
+If you use `npx picus lambda render`, add `--log=verbose` to print the link to the file in the S3 console.
 
 If you include CloudWatch logs in your report, post the full logs (click "Load more messages" until there are no more to load.)
 

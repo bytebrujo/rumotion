@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {AbsoluteFill, staticFile, watchStaticFile} from 'remotion';
+import {AbsoluteFill, staticFile, watchStaticFile} from 'picus';
 
 export const WatchStaticDemo: React.FC = () => {
 	const [content, setContent] = useState<string | null>(null);

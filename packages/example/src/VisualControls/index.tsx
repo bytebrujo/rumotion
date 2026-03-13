@@ -1,7 +1,7 @@
-import {makeTransform, matrix3d} from '@remotion/animation-utils';
-import {visualControl} from '@remotion/studio';
-import {zMatrix} from '@remotion/zod-types';
-import {AbsoluteFill} from 'remotion';
+import {makeTransform, matrix3d} from '@picus/animation-utils';
+import {visualControl} from '@picus/studio';
+import {zMatrix} from '@picus/zod-types';
+import {AbsoluteFill} from 'picus';
 
 export const VisualControls = () => {
 	const matrix = visualControl(

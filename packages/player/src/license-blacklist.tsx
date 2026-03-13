@@ -82,8 +82,8 @@ export const RenderWarningIfBlacklist: React.FC = () => {
 					cssText: `${style.cssText} !important;`,
 				});
 				div.innerHTML = `
-	        <a href="https://github.com/remotion-dev/remotion/pull/4589" style="color: white;">
-	          Remotion Unlicensed – Contact hi@remotion.dev
+	        <a href="https://github.com/picus-dev/picus/pull/4589" style="color: white;">
+	          Picus Unlicensed – Contact hi@picus.dev
 	        </a>
 	      `;
 				document.body.appendChild(div);
@@ -107,9 +107,9 @@ export const RenderWarningIfBlacklist: React.FC = () => {
 		<div style={style} className="warning-banner">
 			<a
 				style={{color: 'white'}}
-				href="https://github.com/remotion-dev/remotion/pull/4589"
+				href="https://github.com/picus-dev/picus/pull/4589"
 			>
-				Remotion Unlicensed – Contact hi@remotion.dev
+				Picus Unlicensed – Contact hi@picus.dev
 			</a>
 		</div>
 	);

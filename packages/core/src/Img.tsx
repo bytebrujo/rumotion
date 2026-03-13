@@ -12,7 +12,7 @@ import {usePreload} from './prefetch.js';
 import {SequenceContext} from './SequenceContext.js';
 import {useBufferState} from './use-buffer-state.js';
 import {useDelayRender} from './use-delay-render.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 
 function exponentialBackoff(errorCount: number): number {
 	return 1000 * 2 ** (errorCount - 1);
@@ -248,7 +248,7 @@ const ImgRefForwarding: React.ForwardRefRenderFunction<
 		]);
 	}
 
-	const {isClientSideRendering} = useRemotionEnvironment();
+	const {isClientSideRendering} = usePicusEnvironment();
 
 	const crossOriginValue = getCrossOriginValue({
 		crossOrigin,
@@ -269,7 +269,7 @@ const ImgRefForwarding: React.ForwardRefRenderFunction<
 };
 
 /*
- * @description Works just like a regular HTML img tag. When you use the <Img> tag, Remotion will ensure that the image is loaded before rendering the frame.
- * @see [Documentation](https://remotion.dev/docs/img)
+ * @description Works just like a regular HTML img tag. When you use the <Img> tag, Picus will ensure that the image is loaded before rendering the frame.
+ * @see [Documentation](https://picus.dev/docs/img)
  */
 export const Img = forwardRef(ImgRefForwarding);

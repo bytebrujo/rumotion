@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT = false;
 
@@ -23,7 +23,7 @@ export const forSeamlessAacConcatenationOption = {
 			yet for to concatenate the audio chunks.
 		</>
 	),
-	docLink: 'https://remotion.dev/docs/renderer',
+	docLink: 'https://picus.dev/docs/renderer',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag]) {
 			return {
@@ -50,4 +50,4 @@ export const forSeamlessAacConcatenationOption = {
 	ssrName: 'forSeamlessAacConcatenation',
 	type: false as boolean,
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

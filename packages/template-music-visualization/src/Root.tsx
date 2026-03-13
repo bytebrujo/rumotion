@@ -1,11 +1,11 @@
 import { ALL_FORMATS, Input, UrlSource } from "mediabunny";
-import { Composition, staticFile } from "remotion";
+import { Composition, staticFile } from "picus";
 import { Visualizer } from "./Visualizer/Main";
 import { visualizerCompositionSchema } from "./helpers/schema";
 
 const FPS = 30;
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition
@@ -21,7 +21,7 @@ export const RemotionRoot: React.FC = () => {
           // song data
           coverImageUrl: staticFile("demo-song-cover.jpeg"),
           songName: "Sunset Render Deja Vu",
-          artistName: "Remotion",
+          artistName: "Picus",
           textColor: "white",
           // visualizer settings
           visualizer: {

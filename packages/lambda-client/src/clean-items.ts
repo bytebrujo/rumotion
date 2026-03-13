@@ -1,7 +1,7 @@
 import type {
 	CloudProvider,
 	ProviderSpecifics,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {pLimit} from './p-limit';
 
 const limit = pLimit(10);

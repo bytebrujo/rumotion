@@ -17,10 +17,10 @@ type Sidebars = 'left' | 'right';
 
 const storageKey = (sidebar: Sidebars) => {
 	if (sidebar === 'right') {
-		return 'remotion.sidebarRightCollapsing';
+		return 'picus.sidebarRightCollapsing';
 	}
 
-	return 'remotion.sidebarCollapsing';
+	return 'picus.sidebarCollapsing';
 };
 
 const getSavedCollapsedStateLeft = (

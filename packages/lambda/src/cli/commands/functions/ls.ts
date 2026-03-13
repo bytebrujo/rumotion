@@ -1,7 +1,7 @@
-import {CliInternals} from '@remotion/cli';
-import {AwsProvider} from '@remotion/lambda-client';
-import type {LogLevel} from '@remotion/renderer';
-import {ProviderSpecifics} from '@remotion/serverless';
+import {CliInternals} from '@picus/cli';
+import {AwsProvider} from '@picus/lambda-client';
+import type {LogLevel} from '@picus/renderer';
+import {ProviderSpecifics} from '@picus/serverless';
 import {parsedLambdaCli} from '../../args';
 import {getAwsRegion} from '../../get-aws-region';
 

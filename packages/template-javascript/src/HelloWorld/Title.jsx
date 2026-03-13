@@ -1,4 +1,4 @@
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig } from "picus";
 import { FONT_FAMILY } from "./constants";
 
 const title = {

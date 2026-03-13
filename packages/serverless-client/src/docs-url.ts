@@ -1,1 +1,1 @@
-export const DOCS_URL = 'https://remotion.dev';
+export const DOCS_URL = 'https://picus.dev';

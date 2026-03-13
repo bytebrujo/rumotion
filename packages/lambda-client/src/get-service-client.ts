@@ -4,8 +4,8 @@ import {LambdaClient} from '@aws-sdk/client-lambda';
 import {S3Client} from '@aws-sdk/client-s3';
 import {ServiceQuotasClient} from '@aws-sdk/client-service-quotas';
 import {STSClient} from '@aws-sdk/client-sts';
-import type {CustomCredentials} from '@remotion/serverless-client';
-import {MAX_FUNCTIONS_PER_RENDER, random} from '@remotion/serverless-client';
+import type {CustomCredentials} from '@picus/serverless-client';
+import {MAX_FUNCTIONS_PER_RENDER, random} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
 import {checkCredentials} from './check-credentials';
 import {getCredentials} from './get-credentials';
@@ -37,21 +37,21 @@ const getCredentialsHash = ({
 }): string => {
 	const hashComponents: {[key: string]: unknown} = {};
 
-	if (getEnvVariable('REMOTION_SKIP_AWS_CREDENTIALS_CHECK')) {
+	if (getEnvVariable('PICUS_SKIP_AWS_CREDENTIALS_CHECK')) {
 		hashComponents.credentials = {
 			credentialsSkipped: true,
 		};
-	} else if (getEnvVariable('REMOTION_AWS_PROFILE')) {
+	} else if (getEnvVariable('PICUS_AWS_PROFILE')) {
 		hashComponents.credentials = {
-			awsProfile: getEnvVariable('REMOTION_AWS_PROFILE'),
+			awsProfile: getEnvVariable('PICUS_AWS_PROFILE'),
 		};
 	} else if (
-		getEnvVariable('REMOTION_AWS_ACCESS_KEY_ID') &&
-		getEnvVariable('REMOTION_AWS_SECRET_ACCESS_KEY')
+		getEnvVariable('PICUS_AWS_ACCESS_KEY_ID') &&
+		getEnvVariable('PICUS_AWS_SECRET_ACCESS_KEY')
 	) {
 		hashComponents.credentials = {
-			accessKeyId: getEnvVariable('REMOTION_AWS_ACCESS_KEY_ID'),
-			secretAccessKey: getEnvVariable('REMOTION_AWS_SECRET_ACCESS_KEY'),
+			accessKeyId: getEnvVariable('PICUS_AWS_ACCESS_KEY_ID'),
+			secretAccessKey: getEnvVariable('PICUS_AWS_SECRET_ACCESS_KEY'),
 		};
 	} else if (getEnvVariable('AWS_PROFILE')) {
 		hashComponents.credentials = {
@@ -171,7 +171,7 @@ export function getServiceClient<T extends keyof ServiceMapping>({
 					forcePathStyle: customCredentials.forcePathStyle,
 					maxAttempts: service === 'lambda' ? 1 : undefined,
 				})
-			: getEnvVariable('REMOTION_SKIP_AWS_CREDENTIALS_CHECK')
+			: getEnvVariable('PICUS_SKIP_AWS_CREDENTIALS_CHECK')
 				? new Client({
 						region,
 						requestHandler: finalRequestHandler,
@@ -184,7 +184,7 @@ export function getServiceClient<T extends keyof ServiceMapping>({
 						maxAttempts: service === 'lambda' ? 1 : undefined,
 					});
 
-		if (getEnvVariable('REMOTION_DISABLE_AWS_CLIENT_CACHE')) {
+		if (getEnvVariable('PICUS_DISABLE_AWS_CLIENT_CACHE')) {
 			return client as ServiceMapping[T];
 		}
 

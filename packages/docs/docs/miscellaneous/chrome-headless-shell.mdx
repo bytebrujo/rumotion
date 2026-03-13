@@ -7,7 +7,7 @@ crumb: 'FAQ'
 
 # Installing Chrome <AvailableFrom v="4.0.247"/>
 
-Remotion is automatically installing "Chrome Headless Shell" into your `node_modules` in order to render videos.
+Picus is automatically installing "Chrome Headless Shell" into your `node_modules` in order to render videos.
 
 ## Supported platforms
 
@@ -22,7 +22,7 @@ The following platforms are supported:
 
 There are two ways to ensure Chrome Headless Shell is installed:
 
-- [`npx remotion browser ensure`](/docs/cli/browser/ensure) on the command line
+- [`npx picus browser ensure`](/docs/cli/browser/ensure) on the command line
 - [`ensureBrowser()`](/docs/renderer/ensure-browser) as a Node.js / Bun API
 
 It is recommended use call these functions if you do server-side rendering.  
@@ -30,7 +30,7 @@ That way, if a request comes in wanting to render a video, the browser is alread
 
 ## Using Chrome for Testing instead
 
-There are two flavors ("modes") that Remotion can use to render videos:
+There are two flavors ("modes") that Picus can use to render videos:
 
 - **Chrome Headless Shell**: Is faster for CPU-bound video rendering, and requires less dependencies and setup.
 - **Chrome for Testing**: Is faster for GPU-bound video rendering. Emulates a display surface and therefore requires more dependencies and resources.
@@ -39,13 +39,13 @@ You should use Chrome for Testing **only** if you want to set up a [GPU-accelera
 
 In order to use Chrome for testing instead:
 
-**In the CLI**: Pass `--chrome-mode="chrome-for-testing"` to `npx remotion render`, `npx remotion benchmark`, `npx remotion compositions`, `npx remotion still`, `npx remotion gpu` and `npx remotion browser ensure`.
+**In the CLI**: Pass `--chrome-mode="chrome-for-testing"` to `npx picus render`, `npx picus benchmark`, `npx picus compositions`, `npx picus still`, `npx picus gpu` and `npx picus browser ensure`.
 
 **With the API**: Pass `chromeMode: 'chrome-for-testing'` to your `renderFrames()`, `renderMedia()`, `renderStill()`, `selectComposition()`, `getComposition()` and `ensureBrowser()` calls.
 
 **In the Studio**: Select "Chrome for Testing" in the "Chrome Mode" dropdown in the "Advanced" tab.
 
-**In the config file (only applies to the CLI and Studio)**: Set `Config.setChromeMode('chrome-for-testing')` in your `remotion.config.ts` file.
+**In the config file (only applies to the CLI and Studio)**: Set `Config.setChromeMode('chrome-for-testing')` in your `picus.config.ts` file.
 
 **In Lambda and Cloud Run**: Not applicable, as Chrome for Testing is not supported.
 
@@ -54,7 +54,7 @@ In order to use Chrome for testing instead:
 Chrome Headless Shell will download to this folder:
 
 ```
-node_modules/.remotion/chrome-headless-shell/[platform]/chrome-headless-shell-[platform]
+node_modules/.picus/chrome-headless-shell/[platform]/chrome-headless-shell-[platform]
 ```
 
 An executable `./chrome-headless-shell` (`.\chrome-headless-shell.exe` on Windows) will be created.
@@ -64,7 +64,7 @@ An executable `./chrome-headless-shell` (`.\chrome-headless-shell.exe` on Window
 Chrome for Testing will download to this folder:
 
 ```
-node_modules/.remotion/chrome-for-testing/[platform]
+node_modules/.picus/chrome-for-testing/[platform]
 ```
 
 The file structure inside this folder varies by OS.
@@ -75,16 +75,16 @@ The file structure inside this folder varies by OS.
 
 ## Version tracking<AvailableFrom v="4.0.415" />
 
-Remotion writes a `VERSION` file to the download folder to track which Chrome version is installed:
+Picus writes a `VERSION` file to the download folder to track which Chrome version is installed:
 
 ```
-node_modules/.remotion/chrome-headless-shell/VERSION
-node_modules/.remotion/chrome-for-testing/VERSION
+node_modules/.picus/chrome-headless-shell/VERSION
+node_modules/.picus/chrome-for-testing/VERSION
 ```
 
 The file contains the Chrome version string, e.g. `144.0.7559.20`.
 
-If the `VERSION` file is missing (e.g. when upgrading from an older version of Remotion) or does not match the expected version, Remotion will delete the existing browser and download the correct version.
+If the `VERSION` file is missing (e.g. when upgrading from an older version of Picus) or does not match the expected version, Picus will delete the existing browser and download the correct version.
 
 ## Bring your own binary
 
@@ -99,44 +99,44 @@ In [Lambda](/docs/lambda) and [Cloud Run](/docs/cloudrun), a version of Chrome i
 In a future version of Chrome, headless mode in the desktop browser will stop being supported and you will need to use the Chrome Headless Shell.
 :::
 
-## Why does Remotion manage Chrome?
+## Why does Picus manage Chrome?
 
-Remotion previously used the desktop version of Chrome that many users had already installed.  
+Picus previously used the desktop version of Chrome that many users had already installed.  
 This workflow broke at some point, because Chrome removed the headless mode and extracted it to "Chrome Headless Shell".
 
 ## Best practices
 
-To ensure your project does not get disrupted by an upcoming Chrome change, you should use the Remotion mechanisms which uses and pins the version of Chrome Headless Shell.
+To ensure your project does not get disrupted by an upcoming Chrome change, you should use the Picus mechanisms which uses and pins the version of Chrome Headless Shell.
 
-- Use Remotion v4.0.208 or later to not pick up an externally installed browser.
-- Use [`npx remotion browser ensure`](/docs/cli/browser/ensure) to ensure Chrome Headless Shell is available.
+- Use Picus v4.0.208 or later to not pick up an externally installed browser.
+- Use [`npx picus browser ensure`](/docs/cli/browser/ensure) to ensure Chrome Headless Shell is available.
 - Do not download Chrome in your Dockerfile, but do install [Linux dependencies](/docs/miscellaneous/linux-dependencies) if you use Linux.
 - Do not use `--browser-executable`, `browserExecutable` or `setBrowserExecutable()` options to override the Headless Shell with an incompatible Chrome version.
 
 :::warning
 Note: Most Linux distros do not allow you to pin a Chrome package.  
-If you use a Remotion version below v4.0.208, you are at risk of Chrome automatically being upgraded to a version that does not ship with a headless mode.  
+If you use a Picus version below v4.0.208, you are at risk of Chrome automatically being upgraded to a version that does not ship with a headless mode.  
 :::
 
 ## What is Chrome Headless Shell?
 
-Chrome used to ship with a `--headless` flag, which Remotion would use.
+Chrome used to ship with a `--headless` flag, which Picus would use.
 
 As of Chrome 123, the headless mode is split up into:
 
-- `--headless=old`, which is ideal for screenshotting (and therefore Remotion)
+- `--headless=old`, which is ideal for screenshotting (and therefore Picus)
 - `--headless=new`, which is ideal for browser testing
 
 `--headless=old` will stop working in a future version of Chrome.  
 The old headless mode is being extracted into "Chrome Headless Shell".
 
-Hence we encourage you to use Chrome Headless Shell to future-proof your Remotion application.
+Hence we encourage you to use Chrome Headless Shell to future-proof your Picus application.
 
 ## Version
 
-Remotion will download a well-tested Chrome version:
+Picus will download a well-tested Chrome version:
 
-| Remotion version | Chrome version                    |
+| Picus version | Chrome version                    |
 | ---------------- | --------------------------------- |
 | From 4.0.414     | 144.0.7559.97                     |
 | From 4.0.315     | 134.0.6998.35 (skipped on Lambda) |
@@ -153,17 +153,17 @@ If you use the [`server-side rendering APIs`](/docs/ssr), use the callback in [`
 
 ## On Lambda and Cloud Run
 
-If you are using [Remotion Lambda](/docs/lambda) or [Cloud Run](/docs/cloudrun), you don't need to worry about installing a browser - it is included in the runtime already.
+If you are using [Picus Lambda](/docs/lambda) or [Cloud Run](/docs/cloudrun), you don't need to worry about installing a browser - it is included in the runtime already.
 
 ## Previous changes
 
 ### Added option to install Chrome for Testing (v4.0.247)
 
-In order to enable GPU-accelerated workloads on Linux, Remotion now allows you to install Chrome for Testing.
+In order to enable GPU-accelerated workloads on Linux, Picus now allows you to install Chrome for Testing.
 
 ### Migrated to Chrome Headless Shell
 
-Because Chrome removed the headless mode from the desktop browser, Remotion now uses Chrome Headless Shell.
+Because Chrome removed the headless mode from the desktop browser, Picus now uses Chrome Headless Shell.
 
 ### Thorium (v4.0.18 - v4.0.135)
 
@@ -173,7 +173,7 @@ Thorium is a free and open-source browser forked off Chromium, which includes th
 
 ### Chromium (before v4.0.18)
 
-In previous versions, Remotion would download the free version of Chromium, which would not include codecs for the proprietary H.264 and H.265 codecs.
+In previous versions, Picus would download the free version of Chromium, which would not include codecs for the proprietary H.264 and H.265 codecs.
 This would often lead to problems when using the [`<Html5Video>`](/docs/html5-video) tag.
 
 ## See also

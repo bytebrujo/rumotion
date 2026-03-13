@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import type {LogLevel, LogOptions} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {LogLevel, LogOptions} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import {parsedLambdaCli} from '../args';
 import {Log} from '../log';
 

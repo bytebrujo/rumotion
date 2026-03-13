@@ -1,4 +1,4 @@
-const key = 'remotion.loop';
+const key = 'picus.loop';
 
 export const persistLoopOption = (option: boolean) => {
 	localStorage.setItem(key, String(option));

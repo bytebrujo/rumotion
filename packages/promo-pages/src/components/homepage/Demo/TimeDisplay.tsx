@@ -1,4 +1,4 @@
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import React, {useEffect} from 'react';
 
 const formatTime = (timeInSeconds: number) => {

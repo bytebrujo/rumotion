@@ -1,4 +1,4 @@
-import type {CanvasContent} from 'remotion';
+import type {CanvasContent} from 'picus';
 import {getRoute} from '../helpers/url-state';
 
 export const deriveCanvasContentFromUrl = (): CanvasContent | null => {

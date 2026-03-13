@@ -212,7 +212,7 @@ export const renderFrameWithOptionToReject = async ({
 			if (artifact.filename === previousArtifact.filename) {
 				return Promise.reject(
 					new Error(
-						`An artifact with output "${artifact.filename}" was already registered at frame ${previousArtifact.frame}, but now registered again at frame ${artifact.frame}. Artifacts must have unique names. https://remotion.dev/docs/artifacts`,
+						`An artifact with output "${artifact.filename}" was already registered at frame ${previousArtifact.frame}, but now registered again at frame ${artifact.frame}. Artifacts must have unique names. https://picus.dev/docs/artifacts`,
 					),
 				);
 			}

@@ -1,5 +1,5 @@
-import type {VideoConfig} from 'remotion/no-react';
-import {NoReactInternals} from 'remotion/no-react';
+import type {VideoConfig} from 'picus/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {RenderInternals} from '.';
 import type {BrowserExecutable} from './browser-executable';
 import type {BrowserLog} from './browser-log';
@@ -8,14 +8,14 @@ import {defaultBrowserDownloadProgress} from './browser/browser-download-progres
 import type {Page} from './browser/BrowserPage';
 import {DEFAULT_TIMEOUT} from './browser/TimeoutSettings';
 import {handleJavascriptException} from './error-handling/handle-javascript-exception';
-import {findRemotionRoot} from './find-closest-package-json';
+import {findPicusRoot} from './find-closest-package-json';
 import {getPageAndCleanupFn} from './get-browser-instance';
 import {Log} from './logger';
 import {getAvailableMemory} from './memory/get-available-memory';
 import type {ChromiumOptions} from './open-browser';
 import type {ToOptions} from './options/option';
 import type {optionsMap} from './options/options-map';
-import type {RemotionServer} from './prepare-server';
+import type {PicusServer} from './prepare-server';
 import {makeOrReuseServer} from './prepare-server';
 import {puppeteerEvaluateWithCatch} from './puppeteer-evaluate';
 import {waitForReady} from './seek-to-frame';
@@ -33,7 +33,7 @@ type InternalSelectCompositionsConfig = {
 	chromiumOptions: ChromiumOptions;
 	port: number | null;
 	indent: boolean;
-	server: RemotionServer | undefined;
+	server: PicusServer | undefined;
 	serveUrl: string;
 	id: string;
 	onServeUrlVisited: () => void;
@@ -109,7 +109,7 @@ const innerSelectComposition = async ({
 	await puppeteerEvaluateWithCatch({
 		page,
 		pageFunction: () => {
-			window.remotion_setBundleMode({
+			window.picus_setBundleMode({
 				type: 'evaluation',
 			});
 		},
@@ -137,7 +137,7 @@ const innerSelectComposition = async ({
 	const time = Date.now();
 	const {value: result, size} = await puppeteerEvaluateWithCatch({
 		pageFunction: (_id: string) => {
-			return window.remotion_calculateComposition(_id);
+			return window.picus_calculateComposition(_id);
 		},
 		frame: null,
 		page,
@@ -154,7 +154,7 @@ const innerSelectComposition = async ({
 	);
 
 	const res = result as Awaited<
-		ReturnType<typeof window.remotion_calculateComposition>
+		ReturnType<typeof window.picus_calculateComposition>
 	>;
 
 	const {
@@ -241,7 +241,7 @@ export const internalSelectCompositionRaw = async (
 			{
 				webpackConfigOrServeUrl: serveUrlOrWebpackUrl,
 				port,
-				remotionRoot: findRemotionRoot(),
+				picusRoot: findPicusRoot(),
 				offthreadVideoThreads: 0,
 				logLevel,
 				indent,
@@ -315,8 +315,8 @@ export const internalSelectComposition = wrapWithErrorHandling(
 );
 
 /*
- * @description Evaluates the list of compositions from a Remotion Bundle by evaluating the Remotion Root and evaluating `calculateMetadata()` on the specified composition.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/select-composition)
+ * @description Evaluates the list of compositions from a Picus Bundle by evaluating the Picus Root and evaluating `calculateMetadata()` on the specified composition.
+ * @see [Documentation](https://www.picus.dev/docs/renderer/select-composition)
  */
 export const selectComposition = async (
 	options: SelectCompositionOptions,

@@ -1,4 +1,4 @@
-import {getRolePolicy} from '@remotion/lambda/policies';
+import {getRolePolicy} from '@picus/lambda/policies';
 import React from 'react';
 
 export const RolePolicy: React.FC = () => {

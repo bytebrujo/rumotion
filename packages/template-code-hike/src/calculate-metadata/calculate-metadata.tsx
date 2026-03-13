@@ -1,7 +1,7 @@
 import { getThemeColors } from "@code-hike/lighter";
-import { measureText } from "@remotion/layout-utils";
+import { measureText } from "@picus/layout-utils";
 import { HighlightedCode } from "codehike/code";
-import { CalculateMetadataFunction } from "remotion";
+import { CalculateMetadataFunction } from "picus";
 import { z } from "zod";
 import {
   fontFamily,

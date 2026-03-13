@@ -3,7 +3,7 @@ image: /generated/articles-docs-player-media-keys.png
 id: media-keys
 sidebar_label: 'Media Keys'
 title: 'Media Key Behavior (Web MediaSession API)'
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 # Media Keys Behavior<AvailableFrom v="4.0.221" />
@@ -31,7 +31,7 @@ const otherProps = {
 };
 // ---cut---
 
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 
 export const MyComp: React.FC = () => {
   return (
@@ -45,8 +45,8 @@ export const MyComp: React.FC = () => {
 };
 ```
 
-In this mode, Remotion will not act on the user's media keys, but map any keybord action to a no-op.  
-This prevents that the Player is paused but the audio tags get resumed by pressing the Play/Pause button on the keyboard, which was a problem prior to Remotion v4.0.221.
+In this mode, Picus will not act on the user's media keys, but map any keybord action to a no-op.  
+This prevents that the Player is paused but the audio tags get resumed by pressing the Play/Pause button on the keyboard, which was a problem prior to Picus v4.0.221.
 
 ### `register-media-session`
 
@@ -61,7 +61,7 @@ const otherProps = {
 };
 // ---cut---
 
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 
 export const MyComp: React.FC = () => {
   return (
@@ -75,10 +75,10 @@ export const MyComp: React.FC = () => {
 };
 ```
 
-In this mode, Remotion will use the Media Session API to register handlers:
+In this mode, Picus will use the Media Session API to register handlers:
 
 - When the user presses the Play/Pause button on the keyboard
-  - Toggle the Remotion Player's state
+  - Toggle the Picus Player's state
 - When the user presses the Previous track button on the keyboard
   - Seek to the beginning of the video
 - When the user presses the Fast Forward button on the keyboard
@@ -86,7 +86,7 @@ In this mode, Remotion will use the Media Session API to register handlers:
 - When the user presses the Rewind button on the keyboard
   - Seek 10 seconds backward
 
-Also, Remotion will react to seeking events and inform the device about the current playback position and duration.
+Also, Picus will react to seeking events and inform the device about the current playback position and duration.
 
 ### `do-nothing`
 
@@ -101,7 +101,7 @@ const otherProps = {
 };
 // ---cut---
 
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 
 export const MyComp: React.FC = () => {
   return (
@@ -115,19 +115,19 @@ export const MyComp: React.FC = () => {
 };
 ```
 
-Reverts to the behavior prior to Remotion v4.0.221.  
-Remotion will not react to any media keys, leaving the browser to handle the media keys.  
-This leads to the problem that the user can resume any media tag by pressing the Play/Pause button on the keyboard, without the Remotion Player also resuming.
+Reverts to the behavior prior to Picus v4.0.221.  
+Picus will not react to any media keys, leaving the browser to handle the media keys.  
+This leads to the problem that the user can resume any media tag by pressing the Play/Pause button on the keyboard, without the Picus Player also resuming.
 
 ## When using multiple `<Player>`'s
 
-Remotion's `register-media-session` handler is supposed to only work with 1 Player mounted.  
+Picus's `register-media-session` handler is supposed to only work with 1 Player mounted.  
 It is not defined which Player reacts to the media keys.
 
 When working with multiple Players, set one to `do-nothing` mode and the other to `register-media-session` mode to explicitly set the Media Keys for only 1 Player.
 
 If you want all Players to react to the media keys, you need to use `do-nothing` mode and implement this behavior yourself with the Player API.
 
-## In the Remotion Studio
+## In the Picus Studio
 
 The behavior is set to `register-media-session` as of v4.0.221 and previously it behaved like `do-nothing`.

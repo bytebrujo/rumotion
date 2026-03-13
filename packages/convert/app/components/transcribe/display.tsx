@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import type MediaFox from '@mediafox/core';
-import type {Caption} from '@remotion/captions';
-import {Switch} from '@remotion/design';
+import type {Caption} from '@picus/captions';
+import {Switch} from '@picus/design';
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {useAudioPlayback} from '~/lib/use-audio-playback';
 import {Card} from '../ui/card';

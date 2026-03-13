@@ -1,5 +1,5 @@
-import {Lottie} from '@remotion/lottie';
-import {AbsoluteFill, useVideoConfig} from 'remotion';
+import {Lottie} from '@picus/lottie';
+import {AbsoluteFill, useVideoConfig} from 'picus';
 
 const lottie = {
 	v: '5.9.0',

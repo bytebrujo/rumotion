@@ -1,9 +1,9 @@
 import {execSync} from 'child_process';
 import {existsSync, readFileSync} from 'fs';
 import path from 'path';
-import {BundlerInternals} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
-import type {GitSource} from '@remotion/studio-shared';
+import {BundlerInternals} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
+import type {GitSource} from '@picus/studio-shared';
 import {Log} from './log';
 
 export type ParsedGitRemote = {
@@ -39,9 +39,9 @@ const getGitRemotes = (lines: string[]) => {
 	});
 };
 
-export const getGitConfig = (remotionRoot: string) => {
+export const getGitConfig = (picusRoot: string) => {
 	const gitFolder = BundlerInternals.findClosestFolderWithItem(
-		remotionRoot,
+		picusRoot,
 		'.git',
 	);
 	if (!gitFolder) {
@@ -112,7 +112,7 @@ export const getGifRef = (logLevel: LogLevel): string | null => {
 	}
 };
 
-const getFromEnvVariables = (remotionRoot: string): GitSource | null => {
+const getFromEnvVariables = (picusRoot: string): GitSource | null => {
 	const {
 		VERCEL_GIT_PROVIDER,
 		VERCEL_GIT_COMMIT_SHA,
@@ -126,10 +126,10 @@ const getFromEnvVariables = (remotionRoot: string): GitSource | null => {
 		VERCEL_GIT_PROVIDER === 'github'
 	) {
 		let relativeFromGitRoot = '';
-		const gitConfig = getGitConfig(remotionRoot);
+		const gitConfig = getGitConfig(picusRoot);
 		if (gitConfig) {
 			const gitRoot = path.dirname(path.dirname(gitConfig));
-			relativeFromGitRoot = path.relative(gitRoot, remotionRoot);
+			relativeFromGitRoot = path.relative(gitRoot, picusRoot);
 		}
 
 		return {
@@ -145,11 +145,11 @@ const getFromEnvVariables = (remotionRoot: string): GitSource | null => {
 };
 
 export const getGitSource = ({
-	remotionRoot,
+	picusRoot,
 	disableGitSource,
 	logLevel,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	disableGitSource: boolean;
 	logLevel: LogLevel;
 }): GitSource | null => {
@@ -157,7 +157,7 @@ export const getGitSource = ({
 		return null;
 	}
 
-	const fromEnv = getFromEnvVariables(remotionRoot);
+	const fromEnv = getFromEnvVariables(picusRoot);
 	if (fromEnv) {
 		return fromEnv;
 	}
@@ -167,7 +167,7 @@ export const getGitSource = ({
 		return null;
 	}
 
-	const gitConfig = getGitConfig(remotionRoot);
+	const gitConfig = getGitConfig(picusRoot);
 	if (!gitConfig) {
 		return null;
 	}
@@ -183,7 +183,7 @@ export const getGitSource = ({
 	}
 
 	const gitRoot = path.dirname(path.dirname(gitConfig));
-	const relativeFromGitRoot = path.relative(gitRoot, remotionRoot);
+	const relativeFromGitRoot = path.relative(gitRoot, picusRoot);
 
 	return {
 		name: parsed.name,

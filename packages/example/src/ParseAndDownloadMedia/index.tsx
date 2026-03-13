@@ -7,7 +7,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {ExtrudeDiv, ThreeDiv} from '../3DContext/Div3D';
 import {RotateX, RotateY, Scale} from '../3DContext/transformation-context';
 import {Cover} from './Covert';

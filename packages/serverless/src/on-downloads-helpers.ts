@@ -1,5 +1,5 @@
-import type {LogLevel, RenderMediaOnDownload} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {LogLevel, RenderMediaOnDownload} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 
 export const onDownloadsHelper = (
 	logLevel: LogLevel,

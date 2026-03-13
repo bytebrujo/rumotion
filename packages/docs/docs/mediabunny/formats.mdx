@@ -5,10 +5,10 @@ crumb: 'Mediabunny'
 sidebar_label: Supported formats
 ---
 
-The following features from Remotion are using [Mediabunny](https://mediabunny.dev):
+The following features from Picus are using [Mediabunny](https://mediabunny.dev):
 
-- [`<Video>`](/docs/media/video) from [`@remotion/media`](/docs/media)
-- [`<Audio>`](/docs/media/audio) from [`@remotion/media`](/docs/media)
+- [`<Video>`](/docs/media/video) from [`@picus/media`](/docs/media)
+- [`<Audio>`](/docs/media/audio) from [`@picus/media`](/docs/media)
 
 Therefore, format support is bound to the [formats and codecs supported by Mediabunny](https://mediabunny.dev/guide/supported-formats-and-codecs).
 Mediabunny's compatibility data is mirrored on this page.
@@ -33,7 +33,7 @@ Mediabunny's compatibility data is mirrored on this page.
 
 :::note
 Chrome Headless Shell does not support HEVC in headless mode.
-This means that during rendering of Remotion videos server-side, HEVC videos cannot be decoded using [`<Video>`](/docs/media/video) from [`@remotion/media`](/docs/media).
+This means that during rendering of Picus videos server-side, HEVC videos cannot be decoded using [`<Video>`](/docs/media/video) from [`@picus/media`](/docs/media).
 :::
 
 - `'vp8'` - VP8
@@ -64,12 +64,12 @@ This means that during rendering of Remotion videos server-side, HEVC videos can
 
 ### AC-3 and E-AC-3<AvailableFrom v="4.0.427"/>
 
-AC-3 (Dolby Digital) and E-AC-3 (Dolby Digital Plus) are not natively supported by WebCodecs and are not enabled by default in [`@remotion/media`](/docs/media).
+AC-3 (Dolby Digital) and E-AC-3 (Dolby Digital Plus) are not natively supported by WebCodecs and are not enabled by default in [`@picus/media`](/docs/media).
 
 If you need AC-3/E-AC-3 support, [you can enable it yourself](https://mediabunny.dev/guide/extensions/ac3) by installing and registering the decoder:
 
 ```bash
-npx remotion add @mediabunny/ac3
+npx picus add @mediabunny/ac3
 ```
 
 ```tsx twoslash title="src/Root.tsx"
@@ -122,5 +122,5 @@ All media files must be either CORS-enabled or served from the bundle using [`st
 
 ## See also
 
-- [`@remotion/media` - Supported media](/docs/media/support)
+- [`@picus/media` - Supported media](/docs/media/support)
 - [Mediabunny - Supported formats and codecs](https://mediabunny.dev/guide/supported-formats-and-codecs)

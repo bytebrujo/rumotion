@@ -4,7 +4,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 import { Arc } from "./Arc";
 import { Atom } from "./Atom";
 

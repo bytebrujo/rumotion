@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import type React from 'react';
 import {useCallback, useEffect} from 'react';
 import {useKeybinding} from '../helpers/use-keybinding';

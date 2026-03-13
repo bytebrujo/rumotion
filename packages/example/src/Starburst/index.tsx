@@ -1,6 +1,6 @@
-import {Starburst} from '@remotion/starburst';
+import {Starburst} from '@picus/starburst';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const StarburstExample: React.FC = () => {
 	return (

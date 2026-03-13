@@ -1,6 +1,6 @@
 /*
  * @description Widens an SVG viewBox in all directions by a certain scale factor.
- * @see [Documentation](https://www.remotion.dev/docs/paths/extend-viewbox)
+ * @see [Documentation](https://www.picus.dev/docs/paths/extend-viewbox)
  */
 export const extendViewBox = (currentViewBox: string, scale: number) => {
 	const relativeScale = scale - 1;

@@ -8,19 +8,19 @@ crumb: "API"
 # watchStaticFile()<AvailableFrom v="4.0.61"/>
 
 :::note
-This API is being moved to the `@remotion/studio` package. Prefer importing the API from [`@remotion/studio`](/docs/studio/watch-static-file) instead of `remotion`.
+This API is being moved to the `@picus/studio` package. Prefer importing the API from [`@picus/studio`](/docs/studio/watch-static-file) instead of `picus`.
 :::
 
-Watches for changes in a specific [static file](/docs/staticfile) and invokes a callback function when the file changes, enabling dynamic updates in your Remotion projects.
+Watches for changes in a specific [static file](/docs/staticfile) and invokes a callback function when the file changes, enabling dynamic updates in your Picus projects.
 
 :::warning
-This feature is only available within the Remotion Studio environment. In the Player, events will never fire.
+This feature is only available within the Picus Studio environment. In the Player, events will never fire.
 :::
 
 ## Example
 
 ```tsx twoslash title="example.tsx"
-import { StaticFile, watchStaticFile } from "remotion";
+import { StaticFile, watchStaticFile } from "picus";
 
 // Watch for changes in a specific static file
 const { cancel } = watchStaticFile(
@@ -56,6 +56,6 @@ A callback function that will be called when the file is modified. As an argumen
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/watch-static-file.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/watch-static-file.ts)
 - [`staticFile()`](/docs/staticfile)
 - [`getStaticFiles()`](/docs/getstaticfiles)

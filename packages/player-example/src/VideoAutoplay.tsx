@@ -1,4 +1,4 @@
-import {preloadAudio, preloadVideo} from '@remotion/preload';
+import {preloadAudio, preloadVideo} from '@picus/preload';
 import {
 	AbsoluteFill,
 	Html5Audio,
@@ -6,10 +6,10 @@ import {
 	Sequence,
 	Series,
 	staticFile,
-} from 'remotion';
+} from 'picus';
 
 if (typeof window !== 'undefined') {
-	preloadVideo('https://remotion.media/ForBiggerJoyrides.mp4');
+	preloadVideo('https://picus.media/ForBiggerJoyrides.mp4');
 
 	preloadAudio(staticFile('sample.mp3'));
 }
@@ -32,7 +32,7 @@ export const VideoautoplayDemo = () => {
 			<AbsoluteFill>
 				<Html5Video
 					pauseWhenBuffering
-					src="https://remotion.media/BigBuckBunny.mp4"
+					src="https://picus.media/BigBuckBunny.mp4"
 				/>
 			</AbsoluteFill>
 		</AbsoluteFill>

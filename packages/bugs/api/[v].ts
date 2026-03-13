@@ -8,81 +8,81 @@ type Bug = {
 
 export const bugs: Bug[] = [
 	{
-		title: '@remotion/media Audio is broken',
+		title: '@picus/media Audio is broken',
 		description: 'Audio would play heavily offset',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.433'],
 	},
 	{
 		title: 'Version mismatch warnings',
 		description: 'You would get version mismatch warnings when using the CLI.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.431'],
 	},
 	{
 		title: 'Lambda could not render fonts',
 		description: 'Upgrade to 4.0.417.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.416'],
 	},
 	{
 		title: 'Packages have wrong dependency versions',
 		description:
 			'Packages would have dependencies of 4.0.414 instead of 4.0.415. Upgrade to 4.0.417.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.415'],
 	},
 	{
 		title: 'Keyboard shortcuts are broken in the Studio',
 		description: 'Upgrade to 4.0.409.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.408'],
 	},
 	{
 		title: 'Severe issues with video. Upgrade to 4.0.402.',
 		description: 'Videos might not appear.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.401'],
 	},
 	{
 		title: 'Broken Lambda',
 		description:
-			'This version of Remotion does not allow you to use the Remotion Lambda package. Upgrade to 4.0.298.',
-		link: 'https://remotion.dev/changelog',
+			'This version of Picus does not allow you to use the Picus Lambda package. Upgrade to 4.0.298.',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.297'],
 	},
 	{
 		title: 'Broken release',
 		description:
-			'This version of Remotion was not published correctly. Upgrade to 4.0.199.',
-		link: 'https://remotion.dev/changelog',
+			'This version of Picus was not published correctly. Upgrade to 4.0.199.',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.195', '4.0.196', '4.0.197', '4.0.198'],
 	},
 	{
 		title: 'Broken release',
 		description:
-			'This version of Remotion was not published correctly. Upgrade to 4.0.191.',
-		link: 'https://remotion.dev/changelog',
+			'This version of Picus was not published correctly. Upgrade to 4.0.191.',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.190'],
 	},
 	{
-		title: '@remotion/streaming is missing',
+		title: '@picus/streaming is missing',
 		description:
-			'Broken release - @remotion/streaming is missing when installing @remotion/renderer. Upgrade to 4.0.186.',
-		link: 'https://remotion.dev/changelog',
+			'Broken release - @picus/streaming is missing when installing @picus/renderer. Upgrade to 4.0.186.',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.185'],
 	},
 	{
 		title: 'Crash upon start.',
-		description: 'Broken release - @remotion/renderer would throw an error.',
-		link: 'https://remotion.dev/changelog',
+		description: 'Broken release - @picus/renderer would throw an error.',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.184'],
 	},
 	{
 		title: 'Lambda function may leak memory and crash',
 		description:
 			'The main function of the Lambda function leaks memory, which might require more RAM or cause the Lambda function to crash.',
-		link: 'https://github.com/remotion-dev/remotion/pull/3983',
+		link: 'https://github.com/picus-dev/picus/pull/3983',
 		versions: [
 			'4.0.171',
 			'4.0.170',
@@ -97,7 +97,7 @@ export const bugs: Bug[] = [
 		title: 'Occasional infinite loop during rendering on Linux',
 		description:
 			'If using <OffthreadVideo>, the render could get stuck in an infinite loop.',
-		link: 'https://github.com/remotion-dev/remotion/pull/3912',
+		link: 'https://github.com/picus-dev/picus/pull/3912',
 		versions: [
 			'4.0.155',
 			'4.0.154',
@@ -184,105 +184,105 @@ export const bugs: Bug[] = [
 		title: 'Bad color mapping with OffthreadVideo',
 		description:
 			'Videos in the bt.709 color space are not properly mapped to the sRGB color space. Use v4.0.155 instead.',
-		link: 'https://github.com/remotion-dev/remotion/issues/3850#issuecomment-2105628446',
+		link: 'https://github.com/picus-dev/picus/issues/3850#issuecomment-2105628446',
 		versions: ['4.0.154'],
 	},
 	{
-		title: '@remotion/renderer import exception',
+		title: '@picus/renderer import exception',
 		description:
-			'The @remotion/renderer package was compiled in a bad way and does not work.',
-		link: 'https://github.com/remotion-dev/remotion/releases/tag/v4.0.151',
+			'The @picus/renderer package was compiled in a bad way and does not work.',
+		link: 'https://github.com/picus-dev/picus/releases/tag/v4.0.151',
 		versions: ['4.0.152', '4.0.151'],
 	},
 	{
 		title: 'Duplicate key warning',
 		description:
 			'Extraneous duplicate key warning in the console in this version.',
-		link: 'https://github.com/remotion-dev/remotion/releases/tag/v4.0.150',
+		link: 'https://github.com/picus-dev/picus/releases/tag/v4.0.150',
 		versions: ['4.0.149'],
 	},
 	{
 		title: 'Slowdown with <TransitionSeries>',
 		description:
 			'All sequences were rendered all the time, slowing down the render and making it more crash-prone.',
-		link: 'https://github.com/remotion-dev/remotion/pull/3736',
+		link: 'https://github.com/picus-dev/picus/pull/3736',
 		versions: ['4.0.140', '4.0.141', '4.0.142'],
 	},
 	{
 		title: 'Audio issues on Lambda',
 		description:
 			'The new seamless audio concatenation feature does not produce clean audio in all cases.',
-		link: 'https://github.com/remotion-dev/remotion/pull/3518',
+		link: 'https://github.com/picus-dev/picus/pull/3518',
 		versions: ['4.0.124'],
 	},
 	{
 		title: 'Videos have bad colors during rendering',
 		description:
 			'Videos could become too dark when rendering by being tone-mapped when they should not. Upgrade to 4.0.118.',
-		link: 'https://github.com/remotion-dev/remotion/pull/3518',
+		link: 'https://github.com/picus-dev/picus/pull/3518',
 		versions: ['4.0.117'],
 	},
 	{
 		title: 'Every render now by default emits a repro.zip',
 		description:
 			'This was unintentional and has been removed. Upgrade to 4.0.116.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.115'],
 	},
 	{
 		title: 'Video playback in Studio and Player is broken',
 		description:
 			'OffthreadVideo, Video and Audio tags are affected. Upgrade to 4.0.113.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.111', '4.0.112'],
 	},
 	{
-		title: 'Remotion Lambda is broken',
+		title: 'Picus Lambda is broken',
 		description: 'A render would not start on the Lambda. Upgrade to 4.0.99.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.98'],
 	},
 	{
 		title: 'Too tight dependency on zod',
 		description:
-			'Remotion would require zod and @remotion/zod-types even though it should be optional.',
-		link: 'https://remotion.dev/changelog',
+			'Picus would require zod and @picus/zod-types even though it should be optional.',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.92', '4.0.93', '4.0.94', '4.0.95'],
 	},
 	{
 		title: 'Broken release',
 		description: 'Rendering may fail. Upgrade to 4.0.94.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.90', '4.0.91'],
 	},
 	{
 		title: '<Video> seeking breaks during rendering for some videos',
 		description: 'A timeout would occur on some videos.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.86', '4.0.87', '4.0.88'],
 	},
 	{
 		title: 'Lambda throws an undefined variable error',
 		description: 'The publish script of this version was broken.',
-		link: 'https://remotion.dev/changelog',
+		link: 'https://picus.dev/changelog',
 		versions: ['4.0.73'],
 	},
 	{
 		title: 'Subsequent Lambda renders become slow',
 		description: 'A warm Lambda function would get slower over time.',
-		link: 'https://github.com/remotion-dev/remotion/pull/3184',
+		link: 'https://github.com/picus-dev/picus/pull/3184',
 		versions: ['4.0.66', '4.0.67', '4.0.68', '4.0.69', '4.0.70'],
 	},
 	{
 		title: '<Player> does not render',
 		description: 'The <Player> component does not render anything.',
-		link: 'https://github.com/remotion-dev/remotion/issues/3128',
+		link: 'https://github.com/picus-dev/picus/issues/3128',
 		versions: ['4.0.63'],
 	},
 	{
 		title: 'Slow rendering for long videos',
 		description: 'A render could get progressively slower the longer it runs.',
-		link: 'https://github.com/remotion-dev/remotion/pull/3106',
+		link: 'https://github.com/picus-dev/picus/pull/3106',
 		versions: [
 			'4.0.59',
 			'4.0.58',
@@ -316,28 +316,28 @@ export const bugs: Bug[] = [
 	{
 		title: 'Broken Lambda',
 		description: 'Lambda rendering fails with IPv6 error.',
-		link: 'https://github.com/remotion-dev/remotion/pull/3019',
+		link: 'https://github.com/picus-dev/picus/pull/3019',
 		versions: ['4.0.49'],
 	},
 	{
 		title: 'OffthreadVideo could crash',
 		description:
 			'On some videos, OffthreadVideo could crash without proper error handling.',
-		link: 'https://github.com/remotion-dev/remotion/pull/2882',
+		link: 'https://github.com/picus-dev/picus/pull/2882',
 		versions: ['4.0.36', '4.0.37', '4.0.38'],
 	},
 	{
 		title: 'Slow OffthreadVideo performance',
 		description:
 			'Without an explicit cache size, the OffthreadVideo component would run with no cache.',
-		link: 'https://github.com/remotion-dev/remotion/pull/2882',
+		link: 'https://github.com/picus-dev/picus/pull/2882',
 		versions: ['4.0.33', '4.0.34', '4.0.35', '4.0.36'],
 	},
 	{
 		title: '<Thumbnail> component would crash',
 		description:
 			'<Thumbnail> component in a React app would crash if a <Sequence> was used.',
-		link: 'https://github.com/remotion-dev/remotion/pull/2944',
+		link: 'https://github.com/picus-dev/picus/pull/2944',
 		versions: ['4.0.43', '4.0.42'],
 	},
 ];

@@ -1,13 +1,13 @@
-import {LightLeak} from '@remotion/light-leaks';
-import {linearTiming, TransitionSeries} from '@remotion/transitions';
-import {fade} from '@remotion/transitions/fade';
+import {LightLeak} from '@picus/light-leaks';
+import {linearTiming, TransitionSeries} from '@picus/transitions';
+import {fade} from '@picus/transitions/fade';
 import React from 'react';
 import {
 	AbsoluteFill,
 	interpolate,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const Fill: React.FC<{color: string; label: string}> = ({color, label}) => {
 	return (

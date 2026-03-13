@@ -16,7 +16,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {AppleFireworksTutorial} from '../src/components/tutorials';
 
-Learn how to create an animation that Apple has on its website during the holiday season with this beginner-friendly Remotion tutorial!
+Learn how to create an animation that Apple has on its website during the holiday season with this beginner-friendly Picus tutorial!
 
 <img src="https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/Final.gif" />
 
@@ -28,11 +28,11 @@ This tutorial is also available as a video version:
 
 ## Source code
 
-[GitHub](https://github.com/remotion-dev/apple-wow-tutorial)
+[GitHub](https://github.com/picus-dev/apple-wow-tutorial)
 
 ## Getting started
 
-Start a new Remotion project and select the blank template:
+Start a new Picus project and select the blank template:
 
 <Tabs
 defaultValue="npm"
@@ -68,13 +68,13 @@ yarn create video --blank
 
 ## Composition setup
 
-A [`<Composition>`](https://www.remotion.dev/docs/terminology/composition) defines the dimensions and duration of the video. In the `src/Root.tsx` file, adjust the width and height to the following:
+A [`<Composition>`](https://www.picus.dev/docs/terminology/composition) defines the dimensions and duration of the video. In the `src/Root.tsx` file, adjust the width and height to the following:
 
 ```tsx twoslash title="src/Root.tsx"
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 export const MyComposition: React.FC = () => null;
 // ---cut---
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition id="MyComp" component={MyComposition} durationInFrames={150} fps={30} width={1920} height={1080} />
@@ -89,7 +89,7 @@ Create a new file `src/Background.tsx` and return a background with linear gradi
 
 ```tsx twoslash title="src/Background.tsx"
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const Background: React.FC = () => {
   return (
@@ -110,7 +110,7 @@ export const Background: React.FC = () => null;
 
 // @filename: Composition.tsx
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Background} from './Background';
 // ---cut---
 
@@ -133,7 +133,7 @@ Render a white dot by creating a new file `src/Dot.tsx` and return a centered ci
 
 ```tsx twoslash title="src/Dot.tsx"
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const Dot: React.FC = () => {
   return (
@@ -166,7 +166,7 @@ export const Background: React.FC = () => null;
 
 // @filename: Composition.tsx
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Background} from './Background';
 import {Dot} from './Dot';
 // ---cut---
@@ -191,7 +191,7 @@ Let's apply some animation to the white dot we created above. We create another 
 
 ```tsx title="src/Shrinking.tsx"
 import React from 'react';
-import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, interpolate, useCurrentFrame} from 'picus';
 
 export const Shrinking: React.FC<{
   children: React.ReactNode;
@@ -229,7 +229,7 @@ export const Dot: React.FC = () => null;
 
 // @filename: Composition.tsx
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Background} from './Background';
 import {Dot} from './Dot';
 import {Shrinking} from './Shrinking';
@@ -258,7 +258,7 @@ Next, create a component called `<Move>`. This component has a spring animation,
 
 ```tsx twoslash title="src/Move.tsx"
 import React from 'react';
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 export const Move: React.FC<{
   children: React.ReactNode;
@@ -307,7 +307,7 @@ export const Dot: React.FC = () => null;
 
 // @filename: Composition.tsx
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Background} from './Background';
 import {Dot} from './Dot';
 import {Move} from './Move';
@@ -339,7 +339,7 @@ Here it gets a little bit trickier, but the following steps are going to make yo
 
 ```tsx twoslash title="src/Move.tsx"
 import React from 'react';
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 export const Move: React.FC<{
   children: React.ReactNode;
@@ -378,7 +378,7 @@ The order is crucial here. Things are done from inside out:
 
 1. Apply a scale so that the dots become smaller over time.
 2. Apply the move animation.
-3. Apply a delay between the animation start of each dot by using Remotion's `<Sequence>` component.
+3. Apply a delay between the animation start of each dot by using Picus's `<Sequence>` component.
 
 ```tsx twoslash title="src/Trail.tsx"
 // @filename: Move.tsx
@@ -390,7 +390,7 @@ export const Move: React.FC<{
 // @filename: Trail.tsx
 // ---cut---
 import React from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {AbsoluteFill, Sequence} from 'picus';
 import {Move} from './Move';
 
 export const Trail: React.FC<{
@@ -445,7 +445,7 @@ export const Trail: React.FC<{
 
 // @filename: Composition.tsx
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Background} from './Background';
 import {Dot} from './Dot';
 import {Shrinking} from './Shrinking';
@@ -476,7 +476,7 @@ Now let's create a `<Explosion>` component. It takes children and renders them f
 
 ```tsx twoslash title="src/Explosion.tsx"
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const AMOUNT = 10;
 
@@ -530,7 +530,7 @@ export const Trail: React.FC<{
 // @filename: MyComposition.tsx
 // ---cut---
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Background} from './Background';
 import {Dot} from './Dot';
 import {Explosion} from './Explosion';
@@ -589,7 +589,7 @@ export const Trail: React.FC<{
 // @filename: MyComposition.tsx
 // ---cut---
 import React from 'react';
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 import {Dot} from './Dot';
 import {Explosion} from './Explosion';
 import {Shrinking} from './Shrinking';
@@ -620,7 +620,7 @@ export const Dots: React.FC<{}> = () => null;
 
 // @filename: MyComposition.tsx
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Background} from './Background';
 import {Dots} from './Dots';
 // ---cut---
@@ -647,7 +647,7 @@ Let's start with red hearts. First you render a red heart by creating a new file
 
 ```tsx twoslash title="src/RedHeart.tsx"
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const RedHeart: React.FC = () => {
   return (
@@ -699,7 +699,7 @@ export const Trail: React.FC<{
 // @filename: MyComposition.tsx
 // ---cut---
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Explosion} from './Explosion';
 import {Move} from './Move';
 import {RedHeart} from './RedHeart';
@@ -724,7 +724,7 @@ We do the same to get some yellow hearts in our animation:
 
 ```tsx twoslash title="src/YellowHeart.tsx"
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const YellowHeart: React.FC = () => {
   return (
@@ -774,7 +774,7 @@ export const Trail: React.FC<{
 // @filename: MyComposition.tsx
 // ---cut---
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Explosion} from './Explosion';
 import {Move} from './Move';
 import {Shrinking} from './Shrinking';
@@ -818,7 +818,7 @@ Create a new file `src/Star.tsx` and return a centered star emoji.
 
 ```tsx twoslash title="src/Star.tsx"
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const Star: React.FC = () => {
   return (
@@ -851,7 +851,7 @@ export const Move: React.FC<{
 // @filename: Trail.tsx
 // ---cut---
 import React from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {AbsoluteFill, Sequence} from 'picus';
 import {Move} from './Move';
 
 export const Trail: React.FC<{
@@ -919,7 +919,7 @@ export const Trail: React.FC<{
 // @filename: MyComposition.tsx
 // ---cut---
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Explosion} from './Explosion';
 import {Shrinking} from './Shrinking';
 import {Star} from './Star';
@@ -954,7 +954,7 @@ Lastly let's apply a slow motion effect to the firework. For this, create a new 
 
 ```tsx twoslash title="src/SlowedTrail.tsx"
 import React from 'react';
-import {Freeze, interpolate, useCurrentFrame} from 'remotion';
+import {Freeze, interpolate, useCurrentFrame} from 'picus';
 
 // remapSpeed() is a helper function for the component <Slowed> that takes a frame number and a speed
 const remapSpeed = ({frame, speed}: {frame: number; speed: (fr: number) => number}) => {
@@ -1012,7 +1012,7 @@ export const Slowed: React.FC<{
 // @filename: MyComposition.tsx
 // ---cut---
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Background} from './Background';
 import {Dots} from './Dots';
 import {RedHearts} from './RedHearts';
@@ -1051,12 +1051,12 @@ As the final step of this tutorial, we add your animoji on top of the firework. 
 
 A new encoded file of your animoji will be created. Give it a simple name like animoji.mov.
 
-In addition to the `src` folder in your Remotion project, create a new one called `public`. Put your encoded video in this folder. You can then use FFmpeg to turn the encoded video into a series of frames:
+In addition to the `src` folder in your Picus project, create a new one called `public`. Put your encoded video in this folder. You can then use FFmpeg to turn the encoded video into a series of frames:
 
 1. Change the current working directory to `public`: `cd public`
 2. Use this command: `ffmpeg -i animoji.mov -pix_fmt rgba -start_number 0 frame%03d.png`
 
-Only assets that are being used by Remotion need to be in the `public` folder. You don't need the encoded video, so you can delete it after the frames have been extracted.
+Only assets that are being used by Picus need to be in the `public` folder. You don't need the encoded video, so you can delete it after the frames have been extracted.
 
 Here is a screenshot right before creating the series of frames:
 
@@ -1065,11 +1065,11 @@ Here is a screenshot right before creating the series of frames:
 <br />
 <br />
 
-Alright, so far you've prepared the animoji to be used in a new component called Animoji. You can import this series of frames by using the [staticFile()](https://www.remotion.dev/docs/staticfile) API. The file name of each frame will help you to determine the current frame number.
+Alright, so far you've prepared the animoji to be used in a new component called Animoji. You can import this series of frames by using the [staticFile()](https://www.picus.dev/docs/staticfile) API. The file name of each frame will help you to determine the current frame number.
 
 ```tsx twoslash title="src/Animoji.tsx"
 import React from 'react';
-import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'picus';
 
 export const Animoji: React.FC = () => {
   const frame = useCurrentFrame();
@@ -1127,7 +1127,7 @@ export const Slowed: React.FC<{
 // @filename: MyComposition.tsx
 // ---cut---
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Animoji} from './Animoji';
 import {Background} from './Background';
 import {Dots} from './Dots';

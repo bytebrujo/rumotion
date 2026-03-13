@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let enableRepro = false;
 
@@ -13,11 +13,11 @@ export const reproOption = {
 	cliFlag,
 	description: () => (
 		<>
-			Create a ZIP that you can submit to Remotion if asked for a reproduction.
+			Create a ZIP that you can submit to Picus if asked for a reproduction.
 		</>
 	),
 	ssrName: 'repro',
-	docLink: 'https://www.remotion.dev/docs/render-media#repro',
+	docLink: 'https://www.picus.dev/docs/render-media#repro',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -41,4 +41,4 @@ export const reproOption = {
 	},
 	setConfig: setRepro,
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

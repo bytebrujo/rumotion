@@ -5,7 +5,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {E} from './e';
 import {FirstO} from './first-o';
 import {I} from './i';

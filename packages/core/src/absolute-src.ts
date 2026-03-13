@@ -3,7 +3,7 @@ export const getAbsoluteSrc = (relativeSrc: string) => {
 		return relativeSrc;
 	}
 
-	// https://github.com/remotion-dev/remotion/issues/5359
+	// https://github.com/picus-dev/picus/issues/5359
 	if (
 		relativeSrc.startsWith('http://') ||
 		relativeSrc.startsWith('https://') ||

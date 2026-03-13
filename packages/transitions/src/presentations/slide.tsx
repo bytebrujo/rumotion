@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import type {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
@@ -100,7 +100,7 @@ const SlidePresentation: React.FC<
 
 /*
  * @description Implements a sliding transition for presentation components where the entering slide pushes the outgoing slide in a specified direction.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/presentations/slide)
+ * @see [Documentation](https://www.picus.dev/docs/transitions/presentations/slide)
  */
 export const slide = (
 	props?: SlideProps,

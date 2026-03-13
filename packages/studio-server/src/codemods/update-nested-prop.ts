@@ -11,7 +11,7 @@ import type {
 	ObjectProperty,
 	StringLiteral,
 } from '@babel/types';
-import {stringifyDefaultProps} from '@remotion/studio-shared';
+import {stringifyDefaultProps} from '@picus/studio-shared';
 import type {ExpressionKind} from 'ast-types/lib/gen/kinds';
 import * as recast from 'recast';
 import {parseAst} from './parse-ast';

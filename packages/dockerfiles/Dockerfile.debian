@@ -20,7 +20,7 @@ RUN apt install -y \
   libcups2 \
   libcairo2
 
-RUN npm i -g @remotion/cli
+RUN npm i -g @picus/cli
 
 COPY ensure-browser.mjs .
 COPY ensure.mjs .
@@ -29,5 +29,5 @@ RUN node ensure.mjs
 # Copy the pre-built bundle
 COPY bundle/ /usr/app/bundle/
 
-RUN npx remotion compositions /usr/app/bundle
-RUN npx remotion render /usr/app/bundle browser-test /usr/app/out.mp4
+RUN npx picus compositions /usr/app/bundle
+RUN npx picus render /usr/app/bundle browser-test /usr/app/out.mp4

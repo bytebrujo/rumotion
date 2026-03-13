@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {
 	IsAnImageError,
 	IsAnUnsupportedFileTypeError,
@@ -16,7 +16,7 @@ test('Should throw IsAnImageError for a gif', async () => {
 			fields: {
 				durationInSeconds: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (e) {
 		if (e instanceof IsAnImageError) {
@@ -34,7 +34,7 @@ test('Should throw IsAnImageError for a png', async () => {
 			src: exampleVideos.png,
 			reader: nodeReader,
 			fields: {durationInSeconds: true},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (e) {
 		if (e instanceof IsAnImageError) {
@@ -55,7 +55,7 @@ test('Should throw IsAnImageError for a jpeg', async () => {
 			src: exampleVideos.jpeg,
 			reader: nodeReader,
 			fields: {durationInSeconds: true},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (e) {
 		if (e instanceof IsAnImageError) {
@@ -78,7 +78,7 @@ test('Should throw IsAnImageError for a bmp', async () => {
 			fields: {
 				durationInSeconds: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (e) {
 		if (e instanceof IsAnImageError) {
@@ -101,7 +101,7 @@ test('Should throw IsAnImageError for a webp', async () => {
 			fields: {
 				container: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (e) {
 		if (e instanceof IsAnImageError) {
@@ -124,7 +124,7 @@ test('Should throw IsAnPdfError for a pdf', async () => {
 			fields: {
 				container: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (e) {
 		if (e instanceof IsAPdfError) {
@@ -145,7 +145,7 @@ test('Should throw IsAnUnsupportedFileTypeError on unknown type', async () => {
 			fields: {
 				container: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (e) {
 		if (e instanceof IsAnUnsupportedFileTypeError) {

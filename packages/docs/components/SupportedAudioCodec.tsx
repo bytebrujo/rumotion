@@ -1,5 +1,5 @@
-import type {AudioCodec, Codec, FileExtension} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {AudioCodec, Codec, FileExtension} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import React from 'react';
 
 export const SupportedAudioCodecTable = () => {

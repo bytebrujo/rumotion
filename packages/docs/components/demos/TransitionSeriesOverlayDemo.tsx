@@ -1,7 +1,7 @@
-import {LightLeak} from '@remotion/light-leaks';
-import {TransitionSeries} from '@remotion/transitions';
+import {LightLeak} from '@picus/light-leaks';
+import {TransitionSeries} from '@picus/transitions';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const SceneA: React.FC = () => {
 	return (

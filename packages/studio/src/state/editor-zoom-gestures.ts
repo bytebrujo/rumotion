@@ -6,11 +6,11 @@ type State = {
 };
 
 export const persistEditorZoomGesturesOption = (option: boolean) => {
-	localStorage.setItem('remotion.editorZoomGestures', String(option));
+	localStorage.setItem('picus.editorZoomGestures', String(option));
 };
 
 export const loadEditorZoomGesturesOption = (): boolean => {
-	const item = localStorage.getItem('remotion.editorZoomGestures');
+	const item = localStorage.getItem('picus.editorZoomGestures');
 	return item !== 'false';
 };
 

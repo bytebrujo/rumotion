@@ -2,7 +2,7 @@ import {afterEach, beforeEach, describe, expect, mock, test} from 'bun:test';
 import {cleanup, render} from '@testing-library/react';
 import React from 'react';
 import {AudioForRendering} from '../audio/AudioForRendering.js';
-import {CanUseRemotionHooksProvider} from '../CanUseRemotionHooks.js';
+import {CanUsePicusHooksProvider} from '../CanUsePicusHooks.js';
 import {RenderAssetManager} from '../RenderAssetManager.js';
 import {expectToThrow} from './expect-to-throw.js';
 import {WrapSequenceContext} from './wrap-sequence-context.js';
@@ -22,7 +22,7 @@ describe('Register and unregister asset', () => {
 	function createMockContext(): MockCompositionManagerContext {
 		const registerRenderAsset = mock();
 		const unregisterRenderAsset = mock();
-		window.remotion_audioEnabled = true;
+		window.picus_audioEnabled = true;
 		const MockProvider: React.FC<{
 			readonly children: React.ReactNode;
 		}> = ({children}) => {
@@ -63,11 +63,11 @@ describe('Register and unregister asset', () => {
 			audioStreamIndex: 0,
 		};
 		const {unmount} = render(
-			<CanUseRemotionHooksProvider>
+			<CanUsePicusHooksProvider>
 				<mockContext.MockProvider>
 					<AudioForRendering {...props} />
 				</mockContext.MockProvider>
-			</CanUseRemotionHooksProvider>,
+			</CanUsePicusHooksProvider>,
 		);
 
 		expect(mockContext.registerRenderAsset).toHaveBeenCalled();
@@ -86,11 +86,11 @@ describe('Register and unregister asset', () => {
 		};
 		expectToThrow(() => {
 			render(
-				<CanUseRemotionHooksProvider>
+				<CanUsePicusHooksProvider>
 					<mockContext.MockProvider>
 						<AudioForRendering {...props} />
 					</mockContext.MockProvider>
-				</CanUseRemotionHooksProvider>,
+				</CanUsePicusHooksProvider>,
 			);
 		}, /No src passed/);
 		expect(mockContext.registerRenderAsset).not.toHaveBeenCalled();

@@ -6,7 +6,7 @@ test('Passing imageFormat to OffthreadVideo should throw error', () => {
 	expect(() => {
 		renderToString(
 			<OffthreadVideo
-				src="https://remotion.media/BigBuckBunny.mp4"
+				src="https://picus.media/BigBuckBunny.mp4"
 				// @ts-expect-error
 				imageFormat={'JPEG'}
 			/>,

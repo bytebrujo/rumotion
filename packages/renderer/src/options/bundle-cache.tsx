@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'bundle-cache' as const;
 
@@ -14,7 +14,7 @@ export const bundleCacheOption = {
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setcachingenabled',
+	docLink: 'https://www.picus.dev/docs/config#setcachingenabled',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined && commandLine[cliFlag] !== null) {
 			return {
@@ -39,4 +39,4 @@ export const bundleCacheOption = {
 	},
 	type: true as boolean,
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

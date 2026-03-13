@@ -18,7 +18,7 @@ test('ilst', () => {
 	expect(
 		createIlst([
 			createToo('Lavf61.7.100'),
-			createCmt('Made with Remotion 4.0.227'),
+			createCmt('Made with Picus 4.0.227'),
 		]),
 	).toEqual(reference);
 });

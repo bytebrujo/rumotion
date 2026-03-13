@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 import {StudioServerConnectionCtx} from '../helpers/client-id';
 import {LIGHT_TEXT} from '../helpers/colors';
 import type {AssetMetadata} from '../helpers/get-asset-metadata';

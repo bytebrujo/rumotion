@@ -2,7 +2,7 @@ import {readFileSync, writeFileSync} from 'node:fs';
 import type {
 	UpdateDefaultPropsRequest,
 	UpdateDefaultPropsResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import {updateDefaultProps} from '../../codemods/update-default-props';
 import type {ApiHandler} from '../api-types';
 import {getProjectInfo} from '../project-info';
@@ -13,11 +13,11 @@ export const updateDefaultPropsHandler: ApiHandler<
 	UpdateDefaultPropsResponse
 > = async ({
 	input: {compositionId, defaultProps, enumPaths},
-	remotionRoot,
+	picusRoot,
 	entryPoint,
 }) => {
 	try {
-		const projectInfo = await getProjectInfo(remotionRoot, entryPoint);
+		const projectInfo = await getProjectInfo(picusRoot, entryPoint);
 		if (!projectInfo.rootFile) {
 			throw new Error('Cannot find root file in project');
 		}

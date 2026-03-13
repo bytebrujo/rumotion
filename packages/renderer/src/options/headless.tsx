@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT = true;
 let headlessMode = DEFAULT;
@@ -21,7 +21,7 @@ export const headlessOption = {
 		</>
 	),
 	ssrName: 'headless',
-	docLink: 'https://www.remotion.dev/docs/chromium-flags#--disable-headless',
+	docLink: 'https://www.picus.dev/docs/chromium-flags#--disable-headless',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -47,4 +47,4 @@ export const headlessOption = {
 		headlessMode = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

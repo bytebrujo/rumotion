@@ -1,12 +1,12 @@
 import React from 'react';
-import type {SpringConfig} from 'remotion';
+import type {SpringConfig} from 'picus';
 import {
 	AbsoluteFill,
 	interpolate,
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {Minus} from './Minus';
 
 const DURATION = 25;

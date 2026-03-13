@@ -33,8 +33,8 @@ describe('Templates should be valid', () => {
 			const res = readFileSync(packageJson, 'utf8');
 			const body = JSON.parse(res);
 
-			expect(body.dependencies.remotion).toBe('workspace:*');
-			expect(body.dependencies['@remotion/cli']).toMatch('workspace:*');
+			expect(body.dependencies.picus).toBe('workspace:*');
+			expect(body.dependencies['@picus/cli']).toMatch('workspace:*');
 			expect(body.dependencies.react).toMatch(/^\^?19/);
 			expect(body.dependencies['react-dom']).toMatch(/^\^?19/);
 
@@ -106,22 +106,22 @@ describe('Templates should be valid', () => {
 
 				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				const eitherPluginOrConfig =
-					body.devDependencies['@remotion/eslint-config']?.match(
+					body.devDependencies['@picus/eslint-config']?.match(
 						'workspace:*',
 					) ||
-					body.devDependencies['@remotion/eslint-config-flat']?.match(
+					body.devDependencies['@picus/eslint-config-flat']?.match(
 						'workspace:*',
 					) ||
-					body.devDependencies['@remotion/eslint-plugin']?.match('workspace:*');
+					body.devDependencies['@picus/eslint-plugin']?.match('workspace:*');
 				expect(eitherPluginOrConfig).toBeTruthy();
 			}
 
 			const scripts = body.scripts;
 			expect(scripts.dev).toMatch(
-				/(remotion\sstudio)|(next dev)|(react-router dev)|(tsx watch)|(tsx src\/studio)|(bun studio\.ts)/,
+				/(picus\sstudio)|(next dev)|(react-router dev)|(tsx watch)|(tsx src\/studio)|(bun studio\.ts)/,
 			);
 			expect(scripts.build).toMatch(
-				/(remotion\sbundle)|(react-router build)|(next\sbuild)|(tsx src\/render)|(tsc \&\& vite build)|(bun build\.ts)/,
+				/(picus\sbundle)|(react-router build)|(next\sbuild)|(tsx src\/render)|(tsc \&\& vite build)|(bun build\.ts)/,
 			);
 		});
 
@@ -141,31 +141,31 @@ describe('Templates should be valid', () => {
 			const {contents, entryPoint} = await findFile([
 				getFileForTemplate(template, 'src/index.ts'),
 				getFileForTemplate(template, 'src/index.js'),
-				getFileForTemplate(template, 'remotion/index.ts'),
-				getFileForTemplate(template, 'app/remotion/index.ts'),
-				getFileForTemplate(template, 'src/remotion/index.ts'),
+				getFileForTemplate(template, 'picus/index.ts'),
+				getFileForTemplate(template, 'app/picus/index.ts'),
+				getFileForTemplate(template, 'src/picus/index.ts'),
 			]);
 			expect(entryPoint).toBeTruthy();
-			expect(contents).toMatch(/RemotionRoot/);
+			expect(contents).toMatch(/PicusRoot/);
 		});
 
 		it(`${template.shortName} should have a standard Root file`, async () => {
 			const {contents, entryPoint} = await findFile([
 				getFileForTemplate(template, 'src/Root.tsx'),
 				getFileForTemplate(template, 'src/Root.jsx'),
-				getFileForTemplate(template, 'remotion/Root.tsx'),
-				getFileForTemplate(template, 'app/remotion/Root.tsx'),
-				getFileForTemplate(template, 'src/remotion/Root.tsx'),
-				getFileForTemplate(template, 'src/remotion/Root.tsx'),
+				getFileForTemplate(template, 'picus/Root.tsx'),
+				getFileForTemplate(template, 'app/picus/Root.tsx'),
+				getFileForTemplate(template, 'src/picus/Root.tsx'),
+				getFileForTemplate(template, 'src/picus/Root.tsx'),
 			]);
 			expect(entryPoint).toBeTruthy();
-			expect(contents).toMatch(/export const RemotionRoot/);
+			expect(contents).toMatch(/export const PicusRoot/);
 		});
 
 		it(`${template.shortName} should use the new config file format`, async () => {
 			const {contents, entryPoint} = await findFile([
-				getFileForTemplate(template, 'remotion.config.ts'),
-				getFileForTemplate(template, 'remotion.config.js'),
+				getFileForTemplate(template, 'picus.config.ts'),
+				getFileForTemplate(template, 'picus.config.js'),
 			]);
 			expect(entryPoint).toBeTruthy();
 			expect(contents).not.toContain('Config.Rendering');
@@ -178,8 +178,8 @@ describe('Templates should be valid', () => {
 
 		it(`${template.shortName} should not use setExperimentalClientSideRenderingEnabled`, async () => {
 			const {contents, entryPoint} = await findFile([
-				getFileForTemplate(template, 'remotion.config.ts'),
-				getFileForTemplate(template, 'remotion.config.js'),
+				getFileForTemplate(template, 'picus.config.ts'),
+				getFileForTemplate(template, 'picus.config.js'),
 			]);
 			expect(entryPoint).toBeTruthy();
 			expect(contents).not.toContain(
@@ -189,8 +189,8 @@ describe('Templates should be valid', () => {
 
 		it(`${template.shortName} should not use setExperimentalRspackEnabled`, async () => {
 			const {contents, entryPoint} = await findFile([
-				getFileForTemplate(template, 'remotion.config.ts'),
-				getFileForTemplate(template, 'remotion.config.js'),
+				getFileForTemplate(template, 'picus.config.ts'),
+				getFileForTemplate(template, 'picus.config.js'),
 			]);
 			expect(entryPoint).toBeTruthy();
 			expect(contents).not.toContain('setExperimentalRspackEnabled');
@@ -239,12 +239,12 @@ describe('Templates should be valid', () => {
 			const {contents} = await findFile([
 				getFileForTemplate(template, 'README.md'),
 			]);
-			expect(contents).toInclude('npx remotion upgrade');
-			expect(contents).toInclude('npx remotion render');
+			expect(contents).toInclude('npx picus upgrade');
+			expect(contents).toInclude('npx picus render');
 
 			expect(
 				contents?.includes('npm run dev') ||
-					contents?.includes('npx remotion studio'),
+					contents?.includes('npx picus studio'),
 			).toBe(true);
 		});
 		it(`${template.shortName} should be registered in tsconfig.json`, async () => {
@@ -263,7 +263,7 @@ describe('Templates should be valid', () => {
 			}
 		});
 		if (!template.shortName.includes('JavaScript')) {
-			it(`${template.shortName} should exclude remotion.config.ts`, async () => {
+			it(`${template.shortName} should exclude picus.config.ts`, async () => {
 				const tsconfig = path.join(
 					process.cwd(),
 					'..',
@@ -273,7 +273,7 @@ describe('Templates should be valid', () => {
 				const contents = readFileSync(tsconfig, 'utf8');
 				const parsed = JSON.parse(contents);
 
-				expect(parsed.exclude).toContain('remotion.config.ts');
+				expect(parsed.exclude).toContain('picus.config.ts');
 			});
 		}
 	}

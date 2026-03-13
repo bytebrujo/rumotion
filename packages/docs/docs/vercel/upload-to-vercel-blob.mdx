@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-vercel-upload-to-vercel-blob.png
 title: uploadToVercelBlob()
-crumb: '@remotion/vercel'
+crumb: '@picus/vercel'
 ---
 
 # uploadToVercelBlob()<AvailableFrom v="4.0.426" />
@@ -17,7 +17,7 @@ Uploads a file from the sandbox to [Vercel Blob](https://vercel.com/docs/storage
 ```ts twoslash title="route.ts"
 // @module: es2022
 // @target: es2022
-import {uploadToVercelBlob, addBundleToSandbox, createSandbox} from '@remotion/vercel';
+import {uploadToVercelBlob, addBundleToSandbox, createSandbox} from '@picus/vercel';
 const sandbox = await createSandbox();
 await addBundleToSandbox({sandbox, bundleDir: '/path/to/bundle'});
 // ---cut---
@@ -58,7 +58,7 @@ Your Vercel Blob read/write token. Typically `process.env.BLOB_READ_WRITE_TOKEN`
 
 ### `access`
 
-<TsType type="VercelBlobAccess" source="@remotion/vercel" href="/docs/vercel/types#vercelblobaccess" />
+<TsType type="VercelBlobAccess" source="@picus/vercel" href="/docs/vercel/types#vercelblobaccess" />
 
 The access level of the uploaded blob. Either `"public"` or `"private"`. Default: `"private"`.
 
@@ -78,4 +78,4 @@ The size of the uploaded file in bytes.
 
 - [`renderMediaOnVercel()`](/docs/vercel/render-media-on-vercel)
 - [`renderStillOnVercel()`](/docs/vercel/render-still-on-vercel)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/vercel/src/upload-to-vercel-blob.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/vercel/src/upload-to-vercel-blob.ts)

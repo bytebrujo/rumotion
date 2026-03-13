@@ -1,5 +1,5 @@
-import type {LogLevel} from 'remotion';
-import {Internals} from 'remotion';
+import type {LogLevel} from 'picus';
+import {Internals} from 'picus';
 import type {GetSink} from './video-extraction/get-frames-since-keyframe';
 import {getSinks} from './video-extraction/get-frames-since-keyframe';
 
@@ -11,7 +11,7 @@ export const getSink = (src: string, logLevel: LogLevel) => {
 		Internals.Log.verbose(
 			{
 				logLevel,
-				tag: '@remotion/media',
+				tag: '@picus/media',
 			},
 			`Sink for ${src} was not found, creating new sink`,
 		);

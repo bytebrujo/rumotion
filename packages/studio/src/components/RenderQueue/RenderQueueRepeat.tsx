@@ -1,4 +1,4 @@
-import type {RenderJob} from '@remotion/studio-shared';
+import type {RenderJob} from '@picus/studio-shared';
 import React, {useCallback, useContext, useMemo} from 'react';
 import {useMobileLayout} from '../../helpers/mobile-layout';
 import {

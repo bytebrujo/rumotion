@@ -5,9 +5,9 @@ import {
 	getLoadedModels,
 	resampleTo16Khz,
 	transcribe,
-} from '@remotion/whisper-web';
+} from '@picus/whisper-web';
 import {useCallback, useEffect, useState} from 'react';
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
 const audioFileUrl = staticFile('16khz.wav');
 

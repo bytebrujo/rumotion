@@ -4,7 +4,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {RotateX, RotateY, RotateZ} from '../3DContext/transformation-context';
 import {LabelOpacityContext, useLabelOpacity} from './LabelOpacity';
 

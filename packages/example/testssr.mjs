@@ -1,6 +1,6 @@
-import {bundle} from '@remotion/bundler';
+import {bundle} from '@picus/bundler';
 import {webpackOverride} from './src/webpack-override.mjs';
-import {renderMedia, selectComposition} from '@remotion/renderer';
+import {renderMedia, selectComposition} from '@picus/renderer';
 
 const serveUrl = await bundle({
 	entryPoint: 'src/index.ts',

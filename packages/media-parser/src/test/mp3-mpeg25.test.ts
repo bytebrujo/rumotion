@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../controller/media-parser-controller';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
@@ -7,7 +7,7 @@ import {parseMedia} from '../parse-media';
 test('mpeg 2.5 mp3 file is parsing correctly', async () => {
 	const {slowDurationInSeconds} = await parseMedia({
 		src: exampleVideos.mp3Mpeg25,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 		fields: {
 			slowDurationInSeconds: true,
@@ -25,7 +25,7 @@ test('seeking in mpeg 2.5 mp3 should not hang', async () => {
 	controller.seek(90);
 	await parseMedia({
 		src: exampleVideos.mp3Mpeg25,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 		controller,
 		onAudioTrack: () => {

@@ -1,4 +1,4 @@
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import type {PromptObject} from 'prompts';
 import prompts from 'prompts';
 import {Log} from './log';

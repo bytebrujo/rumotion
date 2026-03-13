@@ -1,6 +1,6 @@
-import {AbsoluteFill, interpolateColors, useCurrentFrame} from 'remotion';
-import {interpolate} from 'remotion';
-import {Rect, Triangle} from '@remotion/shapes';
+import {AbsoluteFill, interpolateColors, useCurrentFrame} from 'picus';
+import {interpolate} from 'picus';
+import {Rect, Triangle} from '@picus/shapes';
 import React from 'react';
 import type { Theme} from './colors';
 import {getBackground, getBrand} from './colors';

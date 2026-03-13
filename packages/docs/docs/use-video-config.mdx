@@ -11,7 +11,7 @@ With this hook, you can retrieve some info about the composition you are in.
 
 ```tsx twoslash
 import React from 'react';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'picus';
 
 export const MyComp: React.FC = () => {
   const {width, height, fps, durationInFrames} = useVideoConfig();
@@ -61,7 +61,7 @@ The props that were passed to the composition, after [all transformations](/docs
 
 The default codec that is used for rendering this composition. Use [`calculateMetadata()`](/docs/calculate-metadata) to modify it.
 
-These properties are controlled by passing them as props to [`<Composition>`](/docs/composition). Read the page about [the fundamentals](/docs/the-fundamentals) to read how to setup a Remotion project.
+These properties are controlled by passing them as props to [`<Composition>`](/docs/composition). Read the page about [the fundamentals](/docs/the-fundamentals) to read how to setup a Picus project.
 
 ## Compatibility
 
@@ -69,5 +69,5 @@ These properties are controlled by passing them as props to [`<Composition>`](/d
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/use-video-config.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/use-video-config.ts)
 - [`useCurrentFrame()`](/docs/use-current-frame)

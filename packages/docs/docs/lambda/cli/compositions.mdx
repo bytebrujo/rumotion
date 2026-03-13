@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-lambda-cli-compositions.png
-title: npx remotion lambda compositions
+title: npx picus lambda compositions
 sidebar_label: compositions
 crumb: 'Lambda CLI Reference'
 ---
@@ -12,7 +12,7 @@ Print list of composition IDs from a serve URL, fetched from inside a Lambda fun
 ## API
 
 ```bash
-npx remotion lambda compositions <serve-url>
+npx picus lambda compositions <serve-url>
 ```
 
 - Obtain a [Serve URL](/docs/terminology/serve-url) using the [`sites create`](/docs/lambda/cli/sites/create) command or by calling [`deploySite()`](/docs/lambda/deploysite).
@@ -55,12 +55,12 @@ npx remotion lambda compositions <serve-url>
   </pre>
 </details>
 
-## `remotion lambda compositions` vs. `remotion compositions`
+## `picus lambda compositions` vs. `picus compositions`
 
-You can also get the compositions of a site that is hosted on S3 locally using [`npx remotion compositions`](/docs/cli/compositions).  
-Vice versa, you can also get the compositions from a [Serve URL](/docs/terminology/serve-url) that is not hosted on AWS Lambda using `npx remotion lambda compositions`.
+You can also get the compositions of a site that is hosted on S3 locally using [`npx picus compositions`](/docs/cli/compositions).  
+Vice versa, you can also get the compositions from a [Serve URL](/docs/terminology/serve-url) that is not hosted on AWS Lambda using `npx picus lambda compositions`.
 
-You should use `npx remotion lambda compositions` if you cannot use [`npx remotion compositions`](/docs/cli/compositions) because the machine cannot run Chrome.
+You should use `npx picus lambda compositions` if you cannot use [`npx picus compositions`](/docs/cli/compositions) because the machine cannot run Chrome.
 
 ## Flags
 
@@ -85,7 +85,7 @@ Inline JSON string isn't supported on Windows shells because it removes the `"` 
 [Set the log level](/docs/config#setlevel). Increase or decrease the amount of output. Acceptable values: `error`, `warn`, `info` (_default_), `verbose`
 
 :::info
-If you don't feel like passing command line flags every time, consider creating a `remotion.config.ts` [config file](/docs/config).
+If you don't feel like passing command line flags every time, consider creating a `picus.config.ts` [config file](/docs/config).
 :::
 
 ### `--timeout`
@@ -118,7 +118,7 @@ Only prints the composition IDs, separated by a space.
 
 ### `--force-bucket-name`<AvailableFrom v="3.3.42" />
 
-Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Remotion discover the right bucket automatically.
+Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Picus discover the right bucket automatically.
 
 ### `--user-agent`<AvailableFrom v="3.3.83"/>
 
@@ -143,4 +143,4 @@ Passes `forcePathStyle` to the AWS S3 client. If you don't know what this is, yo
 ## See also
 
 - [`getCompositionsOnLambda()`](/docs/lambda/getcompositionsonlambda)
-- [`npx remotion compositions`](/docs/cli/compositions)
+- [`npx picus compositions`](/docs/cli/compositions)

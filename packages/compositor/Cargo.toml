@@ -2,9 +2,9 @@
 # only searches 1 level for Cargofiles
 
 [package]
-name = "remotion-renderer"
+name = "picus-renderer"
 version = "0.1.0"
-authors = ["Jonny Burger <jonny@remotion.dev>"]
+authors = ["Jonny Burger <jonny@picus.dev>"]
 edition = "2021"
 
 [dependencies]
@@ -15,9 +15,9 @@ lazy_static = "1.4"
 rayon-core = "1.12.1"
 sysinfo = "0.30.7"
 mp4 = { git = "https://github.com/jonnyburger/mp4-rust", rev = "92ba375738cc2f05a4d754e1f968cf2e97d06641" }
-ffmpeg-next = { git = "https://github.com/remotion-dev/rust-ffmpeg", rev = "cd80e32bc6e0d00a59f4373a67966d9173b38d98" }
+ffmpeg-next = { git = "https://github.com/picus-dev/rust-ffmpeg", rev = "cd80e32bc6e0d00a59f4373a67966d9173b38d98" }
 
 [[bin]]
-name = "remotion"
+name = "picus"
 path = "rust/main.rs"
 

@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 import {ffmpegVolumeExpression} from '../assets/ffmpeg-volume-expression';
 
 test('Simple expression', () => {

@@ -9,11 +9,11 @@ The error message "Timed out evaluating page function"
 
 ```
 Error: Timed out evaluating page function (f, c) => {
-  window.remotion_setFrame(f, c);
+  window.picus_setFrame(f, c);
 }
 ```
 
-generally happens if the Remotion renderer is trying to send a JavaScript command to the browser, but the browser does not respond to it within the timeout (before `v4.0.73`: 5 second, from `v4.0.73`: the [`--timeout`](/docs/cli/render#--timeout) flag, by default 30 seconds).
+generally happens if the Picus renderer is trying to send a JavaScript command to the browser, but the browser does not respond to it within the timeout (before `v4.0.73`: 5 second, from `v4.0.73`: the [`--timeout`](/docs/cli/render#--timeout) flag, by default 30 seconds).
 
 This means that the browser is hanging due to CPU and memory overload. It does not imply that a [`delayRender()`](/docs/delay-render) was not cleared.
 

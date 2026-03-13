@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/test-utils"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/test-utils"
 	},
-	"name": "@remotion/test-utils",
+	"name": "@picus/test-utils",
 	"version": "4.0.434",
 	"main": "dist",
 	"sideEffects": false,
@@ -10,17 +10,17 @@
 		"lint": "eslint src",
 		"make": "tsgo -d"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"devDependencies": {
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"remotion": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"picus": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},

@@ -3,7 +3,7 @@ import {build} from 'bun';
 const output = await build({
 	entrypoints: ['src/index.ts'],
 	naming: '[name].mjs',
-	external: ['react', 'remotion', 'remotion/no-react', 'react/jsx-runtime'],
+	external: ['react', 'picus', 'picus/no-react', 'react/jsx-runtime'],
 });
 
 const [file] = output.outputs;

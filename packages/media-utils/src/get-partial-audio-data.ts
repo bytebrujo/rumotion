@@ -30,7 +30,7 @@ export const getPartialAudioData = async ({
 	const audioSamples: Float32Array[] = [];
 
 	// matroska must be decoded from the start due to limitation
-	// https://www.remotion.dev/docs/media/support#matroska-limitation
+	// https://www.picus.dev/docs/media/support#matroska-limitation
 	// Also request extra data beforehand to handle audio frame dependencies
 	const actualFromSeconds = isMatroska
 		? 0

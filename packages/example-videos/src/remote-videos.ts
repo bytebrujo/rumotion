@@ -11,7 +11,7 @@ dotenv.config({
 export const remoteExampleVideos = {
 	mp4av1: 'https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/mp4-av1.mp4',
 	fragmentedMoofTrickyDuration:
-		'https://remotion-video-submissions.s3.ap-northeast-1.amazonaws.com/6048e3e4-ffbb-43a5-b6b5-75643365646a',
+		'https://picus-video-submissions.s3.ap-northeast-1.amazonaws.com/6048e3e4-ffbb-43a5-b6b5-75643365646a',
 	webmNoCodecPrivate:
 		'https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/webm-no-codecprivate.webm',
 	tsKeyframes:
@@ -24,7 +24,7 @@ export const remoteExampleVideos = {
 		'https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/very-dispersed.mp4',
 	vp9InMp4:
 		'https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/vp9-in-mp4.mp4',
-	multichannelAudio: 'https://remotion.media/multiple-audio-streams.mov',
+	multichannelAudio: 'https://picus.media/multiple-audio-streams.mov',
 };
 
 export const privateExampleVideos = {
@@ -72,8 +72,8 @@ export const getPrivateExampleVideo = async (
 	const credentials = {
 		accessKeyId: process.env.AWS_ACCESS_KEY_ID,
 		secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-		endpoint: 'https://remotion-assets.s3-accelerate.amazonaws.com',
-		bucket: 'remotion-assets',
+		endpoint: 'https://picus-assets.s3-accelerate.amazonaws.com',
+		bucket: 'picus-assets',
 		region: 'eu-central-1',
 		useAccelerateEndpoint: true,
 	};

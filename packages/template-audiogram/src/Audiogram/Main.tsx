@@ -1,6 +1,6 @@
-import { Audio } from "@remotion/media";
+import { Audio } from "@picus/media";
 import React from "react";
-import { AbsoluteFill, Img, Sequence, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, Sequence, useVideoConfig } from "picus";
 import { PaginatedCaptions } from "./Captions";
 import { Oscilloscope } from "./Oscilloscope";
 import { Spectrum } from "./Spectrum";

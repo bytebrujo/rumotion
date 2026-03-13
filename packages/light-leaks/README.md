@@ -1,18 +1,18 @@
-# @remotion/light-leaks
+# @picus/light-leaks
 
-Light leak effects for Remotion
+Light leak effects for Picus
 
-[![NPM Downloads](https://img.shields.io/npm/dm/@remotion/light-leaks.svg?style=flat&color=black&label=Downloads)](https://npmcharts.com/compare/@remotion/light-leaks?minimal=true)
+[![NPM Downloads](https://img.shields.io/npm/dm/@picus/light-leaks.svg?style=flat&color=black&label=Downloads)](https://npmcharts.com/compare/@picus/light-leaks?minimal=true)
 
 ## Installation
 
 ```bash
-npm install @remotion/light-leaks --save-exact
+npm install @picus/light-leaks --save-exact
 ```
 
-When installing a Remotion package, make sure to align the version of all `remotion` and `@remotion/*` packages to the same version.
+When installing a Picus package, make sure to align the version of all `picus` and `@picus/*` packages to the same version.
 Remove the `^` character from the version number to use the exact version.
 
 ## Usage
 
-See the [documentation](https://www.remotion.dev/docs/light-leaks) for more information.
+See the [documentation](https://www.picus.dev/docs/light-leaks) for more information.

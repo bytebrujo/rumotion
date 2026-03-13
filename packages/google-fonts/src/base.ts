@@ -1,5 +1,5 @@
-import {continueRender, delayRender} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import {continueRender, delayRender} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 
 const loadedFonts: Record<string, Promise<void> | undefined> = {};
 
@@ -61,12 +61,12 @@ type V5Options = FontLoadOptions & {
 };
 
 /**
- * @description Load a Google Font for use in Remotion.
+ * @description Load a Google Font for use in Picus.
  * @param meta
  * @param {string} style The font style we want to load. While each font has a different set of styles, common options are: normal, italic etc.
  * @param {Array} options
  * @returns An object with the following properties: fontFamily, unicodeRanges, fonts
- * @see [Documentation](https://www.remotion.dev/docs/google-fonts/load-font)
+ * @see [Documentation](https://www.picus.dev/docs/google-fonts/load-font)
  */
 export const loadFonts = (
 	meta: FontInfo,
@@ -91,7 +91,7 @@ export const loadFonts = (
 		!weightsAndSubsetsAreSpecified
 	) {
 		throw new Error(
-			'Loading Google Fonts without specifying weights and subsets is not supported in Remotion v5. Please specify the weights and subsets you need.',
+			'Loading Google Fonts without specifying weights and subsets is not supported in Picus v5. Please specify the weights and subsets you need.',
 		);
 	}
 
@@ -147,7 +147,7 @@ export const loadFonts = (
 
 				const label = weightsAndSubsetsAreSpecified
 					? baseLabel
-					: `${baseLabel}. This might be caused by loading too many font variations. Read more: https://www.remotion.dev/docs/troubleshooting/font-loading-errors#render-timeout-when-loading-google-fonts`;
+					: `${baseLabel}. This might be caused by loading too many font variations. Read more: https://www.picus.dev/docs/troubleshooting/font-loading-errors#render-timeout-when-loading-google-fonts`;
 
 				const handle = delayRender(label, {timeoutInMilliseconds: 60000});
 				fontsLoaded++;

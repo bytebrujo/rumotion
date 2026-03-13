@@ -1,4 +1,4 @@
-import type {_InternalTypes, StaticFile, TFolder} from 'remotion';
+import type {_InternalTypes, StaticFile, TFolder} from 'picus';
 import type {CompositionSelectorItemType} from '../components/CompositionSelectorItem';
 import {openFolderKey} from './persist-open-folders';
 

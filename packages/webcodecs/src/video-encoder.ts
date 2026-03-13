@@ -1,7 +1,7 @@
 import {
 	MediaParserAbortError,
 	type MediaParserLogLevel,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {convertToCorrectVideoFrame} from './convert-to-correct-videoframe';
 import type {ConvertMediaVideoCodec} from './get-available-video-codecs';
 import type {IoSynchronizer} from './io-manager/io-synchronizer';

@@ -19,7 +19,7 @@ const folders = CreateVideoInternals.FEATURED_TEMPLATES.filter(
 const skillsTemplate: MinimalTemplate = {
 	defaultBranch: 'main',
 	templateInMonorepo: 'skills',
-	org: 'remotion-dev',
+	org: 'picus-dev',
 	repoName: 'skills',
 	shortName: 'Skills',
 };

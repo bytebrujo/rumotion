@@ -1,4 +1,4 @@
-import {DEFAULT_TIMELINE_TRACKS} from '@remotion/studio-shared';
+import {DEFAULT_TIMELINE_TRACKS} from '@picus/studio-shared';
 
 let maxTimelineTracks = DEFAULT_TIMELINE_TRACKS;
 

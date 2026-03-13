@@ -2,12 +2,12 @@ import type {
 	AwsProvider,
 	AwsRegion,
 	RuntimePreference,
-} from '@remotion/lambda-client';
-import type {LogLevel} from '@remotion/renderer';
+} from '@picus/lambda-client';
+import type {LogLevel} from '@picus/renderer';
 import type {
 	FullClientSpecifics,
 	ProviderSpecifics,
-} from '@remotion/serverless';
+} from '@picus/serverless';
 import type {
 	DeploySiteOutput,
 	InternalDeploySiteInput,
@@ -20,7 +20,7 @@ import type {AwsLayer} from './shared/hosted-layers';
 export const LambdaInternals: {
 	executeCommand: (
 		args: string[],
-		remotionRoot: string,
+		picusRoot: string,
 		logLevel: LogLevel,
 		providerSpecifics: ProviderSpecifics<AwsProvider> | null,
 		fullClientSpecifics: FullClientSpecifics<AwsProvider> | null,
@@ -36,4 +36,4 @@ export const LambdaInternals: {
 	getLayers,
 };
 
-export type {OverallRenderProgress as _InternalOverallRenderProgress} from '@remotion/serverless';
+export type {OverallRenderProgress as _InternalOverallRenderProgress} from '@picus/serverless';

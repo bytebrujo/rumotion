@@ -2,12 +2,12 @@
 image: /generated/articles-docs-renderer-make-cancel-signal.png
 id: make-cancel-signal
 title: makeCancelSignal()
-crumb: '@remotion/renderer'
+crumb: '@picus/renderer'
 ---
 
 # makeCancelSignal()<AvailableFrom v="3.0.15" />
 
-_Part of the `@remotion/renderer` package._
+_Part of the `@picus/renderer` package._
 
 This function returns a signal and a cancel function that allows to you cancel a render triggered using [`renderMedia()`](/docs/renderer/render-media), [`renderStill()`](/docs/renderer/render-still), [`renderFrames()`](/docs/renderer/render-frames) or [`stitchFramesToVideo()`](/docs/renderer/stitch-frames-to-video)
 .
@@ -15,7 +15,7 @@ This function returns a signal and a cancel function that allows to you cancel a
 ## Example
 
 ```tsx twoslash
-import {VideoConfig} from 'remotion';
+import {VideoConfig} from 'picus';
 const composition: VideoConfig = {
   durationInFrames: 1000000,
   fps: 30,
@@ -31,7 +31,7 @@ const composition: VideoConfig = {
   defaultProResProfile: null,
 };
 // ---cut---
-import {makeCancelSignal, renderMedia} from '@remotion/renderer';
+import {makeCancelSignal, renderMedia} from '@picus/renderer';
 
 const {cancelSignal, cancel} = makeCancelSignal();
 
@@ -69,7 +69,7 @@ Calling `makeCancelSignal` returns an object with two properties:
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/renderer/src/make-cancel-signal.ts)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/renderer/src/make-cancel-signal.ts)
 - [`renderMedia()`](/docs/renderer/render-media)
 - [`renderStill()`](/docs/renderer/render-still)
 - [`renderFrames()`](/docs/renderer/render-frames)

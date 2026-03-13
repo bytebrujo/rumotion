@@ -1,5 +1,5 @@
 /**
- * A symbolicateable error is an error that can be symolicated by fetching the original sources. By throwing a symbolicateable error, Remotion CLI will attempt to symplicate it
+ * A symbolicateable error is an error that can be symolicated by fetching the original sources. By throwing a symbolicateable error, Picus CLI will attempt to symplicate it
  */
 
 import {parseDelayRenderEmbeddedStack} from '../delay-render-embedded-stack';

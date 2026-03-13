@@ -1,6 +1,6 @@
 import type {ComponentType} from 'react';
 import React from 'react';
-import type {CompositionManagerContext} from 'remotion';
+import type {CompositionManagerContext} from 'picus';
 import {ID} from './id.js';
 
 const Mock: React.FC = () => null;

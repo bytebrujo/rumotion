@@ -1,7 +1,7 @@
-import {zColor} from '@remotion/zod-types';
+import {zColor} from '@picus/zod-types';
 import {mix} from 'polished';
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import styled from 'styled-components';
 import {z} from 'zod';
 
@@ -144,7 +144,7 @@ const BetaText = ({
 									key === 7
 										? 'ONE'
 										: key === 5
-											? 'REMOTION'
+											? 'PICUS'
 											: key === 3
 												? (word1 ?? 'COOL')
 												: key === 1

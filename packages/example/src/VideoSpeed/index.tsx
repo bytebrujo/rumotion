@@ -1,5 +1,5 @@
 import React from 'react';
-import {Html5Video} from 'remotion';
+import {Html5Video} from 'picus';
 import framer from '../resources/framer-music.mp4';
 
 export const VideoSpeed: React.FC = () => {

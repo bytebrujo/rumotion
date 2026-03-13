@@ -28,7 +28,7 @@ const useLoop = () => {
 
 /*
  * @description This component allows you to quickly lay out an animation so it repeats itself.
- * @see [Documentation](https://remotion.dev/docs/loop)
+ * @see [Documentation](https://picus.dev/docs/loop)
  */
 export const Loop: React.FC<LoopProps> & {
 	useLoop: typeof useLoop;
@@ -88,7 +88,7 @@ export const Loop: React.FC<LoopProps> & {
 				durationInFrames={durationInFrames}
 				from={from}
 				name={name ?? '<Loop>'}
-				_remotionInternalLoopDisplay={loopDisplay}
+				_picusInternalLoopDisplay={loopDisplay}
 				layout={props.layout}
 				style={style}
 			>

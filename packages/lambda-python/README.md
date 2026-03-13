@@ -1,4 +1,4 @@
-# @remotion/lambda-python
+# @picus/lambda-python
 
 ## Usage
 

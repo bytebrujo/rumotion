@@ -1,13 +1,13 @@
 ---
 image: /generated/articles-docs-transitions-timings-lineartiming.png
-crumb: '@remotion/transitions - Timings'
+crumb: '@picus/transitions - Timings'
 title: 'linearTiming()'
 ---
 
 A timing function for [`<TransitionSeries>`](/docs/transitions/transitionseries) based on [`interpolate()`](/docs/interpolate).
 
 ```tsx twoslash title="SlideTransition.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -29,9 +29,9 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import {linearTiming, TransitionSeries} from '@remotion/transitions';
-import {slide} from '@remotion/transitions/slide';
-import {Easing} from 'remotion';
+import {linearTiming, TransitionSeries} from '@picus/transitions';
+import {slide} from '@picus/transitions/slide';
+import {Easing} from 'picus';
 
 const BasicTransition = () => {
   return (
@@ -68,4 +68,4 @@ An easing function, see [`Easing`](/docs/easing).
 
 ## See also
 
-- [Source code for this presentation](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/timings/linear-timing.ts)
+- [Source code for this presentation](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/timings/linear-timing.ts)

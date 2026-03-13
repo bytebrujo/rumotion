@@ -2,21 +2,21 @@
 image: /generated/articles-docs-media-utils-visualize-audio-waveform.png
 title: visualizeAudioWaveform()
 id: visualize-audio-waveform
-crumb: '@remotion/media-utils'
+crumb: '@picus/media-utils'
 ---
 
 import {AudioWaveFormExample} from '../../components/AudioWaveformExamples.tsx';
 
-_Part of the `@remotion/media-utils`_ package of helper functions.
+_Part of the `@picus/media-utils`_ package of helper functions.
 
 This function takes in `AudioData` (for example fetched by [`useAudioData()`](/docs/use-audio-data)) and processes it for displaying as a waveform.
 
 This function is suitable for visualizing voice. For visualizing music, use [`visualizeAudio()`](/docs/visualize-audio)
 
 ```tsx twoslash title="Usage"
-import {createSmoothSvgPath, useAudioData, visualizeAudioWaveform, AudioData} from '@remotion/media-utils';
+import {createSmoothSvgPath, useAudioData, visualizeAudioWaveform, AudioData} from '@picus/media-utils';
 import React from 'react';
-import {AbsoluteFill, Audio, useCurrentFrame, useVideoConfig, staticFile} from 'remotion';
+import {AbsoluteFill, Audio, useCurrentFrame, useVideoConfig, staticFile} from 'picus';
 
 const frame = useCurrentFrame();
 const audioData = useAudioData(staticFile('podcast.wav')) as AudioData;
@@ -92,9 +92,9 @@ The array is of length defined by the `numberOfSamples` parameter.
 ### Basic example
 
 ```tsx twoslash
-import {createSmoothSvgPath, useAudioData, visualizeAudioWaveform} from '@remotion/media-utils';
+import {createSmoothSvgPath, useAudioData, visualizeAudioWaveform} from '@picus/media-utils';
 import React from 'react';
-import {AbsoluteFill, Html5Audio, useCurrentFrame, useVideoConfig, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, useCurrentFrame, useVideoConfig, staticFile} from 'picus';
 
 const height = 300;
 
@@ -145,9 +145,9 @@ const BaseExample: React.FC = () => {
 By increasing the `windowInSeconds` by tenfold, the audiogram starts moving to the right:
 
 ```tsx twoslash {6}
-import {createSmoothSvgPath, useAudioData, visualizeAudioWaveform, AudioData} from '@remotion/media-utils';
+import {createSmoothSvgPath, useAudioData, visualizeAudioWaveform, AudioData} from '@picus/media-utils';
 import React from 'react';
-import {AbsoluteFill, Html5Audio, useCurrentFrame, useVideoConfig, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, useCurrentFrame, useVideoConfig, staticFile} from 'picus';
 
 const frame = useCurrentFrame();
 const audioDataVoice = useAudioData(staticFile('podcast.wav')) as AudioData;
@@ -171,9 +171,9 @@ const waveform = visualizeAudioWaveform({
 By only calculating the waveform every third frame, we make the waveform calmer and generate a cool effect:
 
 ```tsx twoslash {3}
-import {createSmoothSvgPath, useAudioData, visualizeAudioWaveform, AudioData} from '@remotion/media-utils';
+import {createSmoothSvgPath, useAudioData, visualizeAudioWaveform, AudioData} from '@picus/media-utils';
 import React from 'react';
-import {AbsoluteFill, Html5Audio, useCurrentFrame, useVideoConfig, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, useCurrentFrame, useVideoConfig, staticFile} from 'picus';
 
 const frame = useCurrentFrame();
 const audioDataVoice = useAudioData(staticFile('podcast.wav')) as AudioData;
@@ -193,7 +193,7 @@ const waveform = visualizeAudioWaveform({
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/media-utils/src/visualize-audio-waveform.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/media-utils/src/visualize-audio-waveform.ts)
 - [Audio visualization](/docs/audio/visualization)
 - [`useAudioData()`](/docs/use-audio-data)
 - [`getAudioData()`](/docs/get-audio-data)

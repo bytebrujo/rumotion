@@ -1,6 +1,6 @@
-import {Star} from '@remotion/shapes';
+import {Star} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 const StarTest: React.FC = () => {
 	return (
 		<AbsoluteFill

@@ -1,9 +1,9 @@
-import type {ProviderSpecifics} from '@remotion/serverless-client';
+import type {ProviderSpecifics} from '@picus/serverless-client';
 import {
-	getRemotionVersionFromIndexHtml,
+	getPicusVersionFromIndexHtml,
 	streamToString,
 	VERSION,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
 import {awsImplementation} from './aws-provider';
 import {getSitesKey} from './constants';
@@ -50,7 +50,7 @@ export const internalGetSites = async ({
 }: GetSitesInternalInput & {
 	providerSpecifics: ProviderSpecifics<AwsProvider>;
 }): Promise<GetSitesOutput> => {
-	const remotionBuckets = forceBucketName
+	const picusBuckets = forceBucketName
 		? await providerSpecifics.getBuckets({
 				region,
 				forceBucketName,
@@ -67,7 +67,7 @@ export const internalGetSites = async ({
 
 	const sites: {[key: string]: Site} = {};
 
-	for (const bucket of remotionBuckets) {
+	for (const bucket of picusBuckets) {
 		const ls = await providerSpecifics.listObjects({
 			bucketName: bucket.name,
 			prefix: getSitesKey(''),
@@ -135,7 +135,7 @@ export const internalGetSites = async ({
 					requestHandler,
 				});
 				const indexHtml = await streamToString(body);
-				site.version = getRemotionVersionFromIndexHtml(indexHtml);
+				site.version = getPicusVersionFromIndexHtml(indexHtml);
 			} catch {
 				site.version = null;
 			}
@@ -146,12 +146,12 @@ export const internalGetSites = async ({
 		? sitesArray.filter((s) => s.version === VERSION)
 		: sitesArray;
 
-	return {sites: filtered, buckets: remotionBuckets};
+	return {sites: filtered, buckets: picusBuckets};
 };
 
 /*
- * @description Gets an array of Remotion sites in your S3 bucket.
- * @see [Documentation](https://remotion.dev/docs/lambda/getsites)
+ * @description Gets an array of Picus sites in your S3 bucket.
+ * @see [Documentation](https://picus.dev/docs/lambda/getsites)
  */
 export const getSites = ({
 	region,

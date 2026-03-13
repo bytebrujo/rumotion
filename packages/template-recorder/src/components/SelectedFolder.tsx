@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from "./ui/select";
 
-const NEW_FOLDER_TOKEN = "__remotion_new_folder";
+const NEW_FOLDER_TOKEN = "__picus_new_folder";
 
 export const SelectedFolder: React.FC<{
   readonly folders: string[];

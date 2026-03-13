@@ -1,5 +1,5 @@
 import type {Expression} from '@babel/types';
-import type {SequenceNodePath} from '@remotion/studio-shared';
+import type {SequenceNodePath} from '@picus/studio-shared';
 import {parseAst} from '../codemods/parse-ast';
 import {lineColumnToNodePath as _lineColumnToNodePath} from '../preview-server/routes/can-update-sequence-props';
 

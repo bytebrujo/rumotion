@@ -6,14 +6,14 @@ const fileExistenceWatchers: Record<string, Record<string, () => void>> = {};
 
 export const subscribeToFileExistenceWatchers = ({
 	file: relativeFile,
-	remotionRoot,
+	picusRoot,
 	clientId,
 }: {
 	file: string;
-	remotionRoot: string;
+	picusRoot: string;
 	clientId: string;
 }): {exists: boolean} => {
-	const file = path.resolve(remotionRoot, relativeFile);
+	const file = path.resolve(picusRoot, relativeFile);
 
 	const {unwatch, exists} = installFileWatcher({
 		file,
@@ -50,14 +50,14 @@ export const subscribeToFileExistenceWatchers = ({
 
 export const unsubscribeFromFileExistenceWatchers = ({
 	file,
-	remotionRoot,
+	picusRoot,
 	clientId,
 }: {
 	file: string;
-	remotionRoot: string;
+	picusRoot: string;
 	clientId: string;
 }) => {
-	const actualPath = path.resolve(remotionRoot, file);
+	const actualPath = path.resolve(picusRoot, file);
 	if (!fileExistenceWatchers[clientId]) {
 		return;
 	}

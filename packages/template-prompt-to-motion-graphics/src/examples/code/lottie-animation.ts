@@ -1,7 +1,7 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
-export const lottieAnimationCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
-import { Lottie } from "@remotion/lottie";
+export const lottieAnimationCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "picus";
+import { Lottie } from "@picus/lottie";
 import { useState, useEffect } from "react";
 
 export const MyAnimation = () => {
@@ -78,7 +78,7 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const lottieAnimationExample: RemotionExample = {
+export const lottieAnimationExample: PicusExample = {
   id: "lottie-animation",
   name: "Lottie Fish Loader",
   description: "Glowing fish loader animation from LottieFiles",

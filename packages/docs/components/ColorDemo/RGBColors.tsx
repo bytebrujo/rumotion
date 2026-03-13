@@ -1,6 +1,6 @@
 import {parseToRgb} from 'polished';
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {defaultStyles} from './styles';
 
 const BAR_SCALE_FACTOR = 1.5;

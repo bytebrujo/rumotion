@@ -1,6 +1,6 @@
 import fs, {writeSync} from 'node:fs';
 import path from 'node:path';
-import type {InlineAudioAsset} from 'remotion/no-react';
+import type {InlineAudioAsset} from 'picus/no-react';
 import {deleteDirectory} from '../delete-directory';
 import type {LogLevel} from '../log-level';
 import type {CancelSignal} from '../make-cancel-signal';
@@ -41,7 +41,7 @@ const BYTES_PER_SAMPLE = BIT_DEPTH / 8;
 const NUMBER_OF_CHANNELS = 2;
 
 export const makeInlineAudioMixing = (dir: string) => {
-	const folderToAdd = makeAndReturn(dir, 'remotion-inline-audio-mixing');
+	const folderToAdd = makeAndReturn(dir, 'picus-inline-audio-mixing');
 	// asset id -> file descriptor
 	const openFiles: Record<string, number> = {};
 	const writtenHeaders: Record<string, boolean> = {};
@@ -223,7 +223,7 @@ export const makeInlineAudioMixing = (dir: string) => {
 		const samplesToShaveFromEnd = trimRightOffset * DEFAULT_SAMPLE_RATE;
 
 		// Higher tolerance is needed for floating point videos
-		// Rendering https://github.com/remotion-dev/remotion/pull/5920 in native frame rate
+		// Rendering https://github.com/picus-dev/picus/pull/5920 in native frame rate
 		// could hit this case
 
 		if (isFirst) {
@@ -246,9 +246,9 @@ export const makeInlineAudioMixing = (dir: string) => {
 			(asset.frame - firstFrame) / fps - (isFirst ? 0 : trimLeftOffset);
 
 		// Always rounding down to ensure there are no gaps when the samples don't align
-		// In @remotion/media, we also round down the sample start timestamp and round up the end timestamp
+		// In @picus/media, we also round down the sample start timestamp and round up the end timestamp
 		// This might lead to overlapping, hopefully aligning perfectly!
-		// Test case: https://github.com/remotion-dev/remotion/issues/5758
+		// Test case: https://github.com/picus-dev/picus/issues/5758
 		const position =
 			Math.floor(
 				correctFloatingPointError(positionInSeconds * DEFAULT_SAMPLE_RATE),

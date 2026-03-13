@@ -1,15 +1,15 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/lambda-python"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/lambda-python"
 	},
-	"name": "@remotion/lambda-python",
+	"name": "@picus/lambda-python",
 	"private": true,
 	"version": "4.0.434",
 	"scripts": {
 		"publishprivate": "node publish.mjs"
 	},
 	"devDependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"dependencies": {
 		"dotenv": "17.3.1"

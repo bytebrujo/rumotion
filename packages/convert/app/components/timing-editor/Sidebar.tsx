@@ -1,4 +1,4 @@
-import {Button} from '@remotion/design';
+import {Button} from '@picus/design';
 import React, {useState} from 'react';
 import {TextMarkLogo} from '../TextMarkLogo';
 import {CodeModal} from './CodeModal';

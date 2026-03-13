@@ -1,4 +1,4 @@
-import {Button} from '@remotion/design';
+import {Button} from '@picus/design';
 import React from 'react';
 import {useMobileLayout} from './layout/use-mobile-layout';
 

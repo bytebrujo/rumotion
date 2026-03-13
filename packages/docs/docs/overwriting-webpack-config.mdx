@@ -8,16 +8,16 @@ crumb: 'How To'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Remotion ships with [it's own Webpack configuration](https://github.com/remotion-dev/remotion/blob/main/packages/bundler/src/webpack-config.ts).
+Picus ships with [it's own Webpack configuration](https://github.com/picus-dev/picus/blob/main/packages/bundler/src/webpack-config.ts).
 
 You can override it reducer-style by creating a function that takes the previous Webpack configuration and returns the the new one.
 
 ## When rendering using the command line
 
-In your [`remotion.config.ts`](/docs/config) file, you can call [`Config.overrideWebpackConfig()`](/docs/config#overridewebpackconfig) from `@remotion/cli/config`.
+In your [`picus.config.ts`](/docs/config) file, you can call [`Config.overrideWebpackConfig()`](/docs/config#overridewebpackconfig) from `@picus/cli/config`.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 Config.overrideWebpackConfig((currentConfiguration) => {
   return {
@@ -42,7 +42,7 @@ Using the reducer pattern will help with type safety, give you auto-complete, en
 When using the Node.JS APIs - [`bundle()`](/docs/bundle) for SSR or [`deploySite()`](/docs/lambda/deploysite) for Lambda, you also need to provide the Webpack override, since the Node.JS APIs do not read from the config file. We recommend you put the webpack override in a separate file so you can read it from both the command line and your Node.JS script.
 
 ```ts twoslash title="src/webpack-override.ts"
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 
 export const webpackOverride: WebpackOverrideFn = (currentConfiguration) => {
   return {
@@ -52,13 +52,13 @@ export const webpackOverride: WebpackOverrideFn = (currentConfiguration) => {
 };
 ```
 
-```ts twoslash title="remotion.config.ts"
+```ts twoslash title="picus.config.ts"
 // @filename: ./src/webpack-override.ts
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 export const webpackOverride: WebpackOverrideFn = (c) => c;
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // ---cut---
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 import {webpackOverride} from './src/webpack-override';
 
 Config.overrideWebpackConfig(webpackOverride);
@@ -68,12 +68,12 @@ With `bundle`:
 
 ```ts twoslash title="my-script.js"
 // @filename: ./src/webpack-override.ts
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 export const webpackOverride: WebpackOverrideFn = (c) => c;
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // @target: esnext
 // ---cut---
-import {bundle} from '@remotion/bundler';
+import {bundle} from '@picus/bundler';
 import {webpackOverride} from './src/webpack-override';
 
 await bundle({
@@ -86,18 +86,18 @@ Or while using with `deploySite`:
 
 ```ts twoslash title="my-script.js"
 // @filename: ./src/webpack-override.ts
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 export const webpackOverride: WebpackOverrideFn = (c) => c;
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // @target: esnext
 // ---cut---
-import {deploySite} from '@remotion/lambda';
+import {deploySite} from '@picus/lambda';
 import {webpackOverride} from './src/webpack-override';
 
 await deploySite({
   entryPoint: require.resolve('./src/index.ts'),
   region: 'us-east-1',
-  bucketName: 'remotionlambda-c7fsl3d',
+  bucketName: 'picuslambda-c7fsl3d',
   options: {
     webpackOverride,
   },
@@ -110,19 +110,19 @@ await deploySite({
 If you have multiple overrides, you should curry them:
 
 ```tsx twoslash
-import {Config} from '@remotion/cli/config';
-import {enableScss} from '@remotion/enable-scss';
-import {enableTailwind} from '@remotion/tailwind-v4';
+import {Config} from '@picus/cli/config';
+import {enableScss} from '@picus/enable-scss';
+import {enableTailwind} from '@picus/tailwind-v4';
 
 Config.overrideWebpackConfig((c) => enableScss(enableTailwind(c)));
 ```
 
-From Remotion v4.0.229, you can also use `Config.overrideWebpackConfig` multiple times, but this only works in the config file:
+From Picus v4.0.229, you can also use `Config.overrideWebpackConfig` multiple times, but this only works in the config file:
 
 ```tsx twoslash
-import {Config} from '@remotion/cli/config';
-import {enableScss} from '@remotion/enable-scss';
-import {enableTailwind} from '@remotion/tailwind-v4';
+import {Config} from '@picus/cli/config';
+import {enableScss} from '@picus/enable-scss';
+import {enableTailwind} from '@picus/tailwind-v4';
 
 Config.overrideWebpackConfig(enableScss);
 Config.overrideWebpackConfig(enableTailwind);
@@ -139,7 +139,7 @@ Config.overrideWebpackConfig(enableTailwind);
 2. Create a file with the Webpack override:
 
 ```ts twoslash title="enable-mdx.ts"
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 // ---cut---
 export const enableMdx: WebpackOverrideFn = (currentConfiguration) => {
   return {
@@ -165,13 +165,13 @@ export const enableMdx: WebpackOverrideFn = (currentConfiguration) => {
 
 3. Add it to the config file:
 
-```ts twoslash title="remotion.config.ts"
+```ts twoslash title="picus.config.ts"
 // @filename: ./src/enable-mdx.ts
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 export const enableMdx: WebpackOverrideFn = (c) => c;
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // ---cut---
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 import {enableMdx} from './src/enable-mdx';
 
 Config.overrideWebpackConfig(enableMdx);
@@ -188,7 +188,7 @@ Config.overrideWebpackConfig(enableMdx);
 
 ### Enable SASS/SCSS support
 
-The easiest way is to use the `@remotion/enable-scss`.  
+The easiest way is to use the `@picus/enable-scss`.  
 Follow these [instructions](/docs/enable-scss/overview) to enable it.
 
 ### Enable SVGR support
@@ -202,7 +202,7 @@ This allows you to enable `import` SVG files as React components.
 2. Declare an override function:
 
 ```ts twoslash title="src/enable-svgr.ts"
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 
 export const enableSvgr: WebpackOverrideFn = (currentConfiguration) => {
   return {
@@ -228,7 +228,7 @@ export const enableSvgr: WebpackOverrideFn = (currentConfiguration) => {
           }
           return {
             ...r,
-            // Remove Remotion loading SVGs as a URL
+            // Remove Picus loading SVGs as a URL
             test: new RegExp(r.test.toString().replace(/svg\|/g, '').slice(1, -1)),
           };
         }),
@@ -238,15 +238,15 @@ export const enableSvgr: WebpackOverrideFn = (currentConfiguration) => {
 };
 ```
 
-3. Add the override function to your [`remotion.config.ts`](/docs/config) file:
+3. Add the override function to your [`picus.config.ts`](/docs/config) file:
 
-```ts twoslash title="remotion.config.ts"
+```ts twoslash title="picus.config.ts"
 // @filename: ./src/enable-svgr.ts
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 export const enableSvgr: WebpackOverrideFn = (c) => c;
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // ---cut---
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 import {enableSvgr} from './src/enable-svgr';
 
 Config.overrideWebpackConfig(enableSvgr);
@@ -254,7 +254,7 @@ Config.overrideWebpackConfig(enableSvgr);
 
 4. Add it to your [Node.JS API calls as well if necessary](#when-using-bundle-and-deploysite).
 
-5. Restart the Remotion Studio.
+5. Restart the Picus Studio.
 
 ### Enable support for GLSL imports
 
@@ -265,7 +265,7 @@ Config.overrideWebpackConfig(enableSvgr);
 2. Declare a webpack override:
 
 ```ts twoslash title="src/enable.glsl.ts"
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 
 export const enableGlsl: WebpackOverrideFn = (currentConfiguration) => {
   return {
@@ -285,14 +285,14 @@ export const enableGlsl: WebpackOverrideFn = (currentConfiguration) => {
 };
 ```
 
-```ts twoslash title="remotion.config.ts"
+```ts twoslash title="picus.config.ts"
 // @filename: ./src/enable-glsl.ts
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 export const enableGlsl: WebpackOverrideFn = (c) => c;
 
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // ---cut---
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 import {enableGlsl} from './src/enable-glsl';
 
 Config.overrideWebpackConfig(enableGlsl);
@@ -310,14 +310,14 @@ declare module '*.glsl' {
 4. Add it to your [Node.JS API calls as well if necessary](#when-using-bundle-and-deploysite).
 
 5. Reset the webpack cache by deleting the `node_modules/.cache` folder.
-6. Restart the Remotion Studio.
+6. Restart the Picus Studio.
 
 ### Enable WebAssembly
 
 There are two WebAssembly modes: asynchronous and synchronous. We recommend testing both and seeing which one works for the WASM library you are trying to use.
 
-```ts twoslash title="remotion.config.ts - synchronous"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts - synchronous"
+import {Config} from '@picus/cli/config';
 
 Config.overrideWebpackConfig((conf) => {
   return {
@@ -330,11 +330,11 @@ Config.overrideWebpackConfig((conf) => {
 ```
 
 :::note
-Since Webpack does not allow synchronous WebAssembly code in the main chunk, you most likely need to declare your composition using [`lazyComponent`](/docs/composition#example-using-lazycomponent) instead of `component`. Check out a [demo project](https://github.com/remotion-dev/id3-tags) for an example.
+Since Webpack does not allow synchronous WebAssembly code in the main chunk, you most likely need to declare your composition using [`lazyComponent`](/docs/composition#example-using-lazycomponent) instead of `component`. Check out a [demo project](https://github.com/picus-dev/id3-tags) for an example.
 :::
 
-```ts twoslash title="remotion.config.ts - asynchronous"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts - asynchronous"
+import {Config} from '@picus/cli/config';
 
 Config.overrideWebpackConfig((conf) => {
   return {
@@ -359,7 +359,7 @@ Add the Webpack override to your [Node.JS API calls as well if necessary](#when-
 ### Change the `@jsxImportSource`
 
 ```tsx twoslash
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 Config.overrideWebpackConfig((config) => {
   return {
@@ -407,18 +407,18 @@ See [TypeScript aliases](/docs/typescript-aliases).
 
 You can pass a `--config` option to the command line to specify a custom location for your configuration file.
 
-## Importing ES Modules in remotion.config.ts<AvailableFrom v="4.0.117"/>
+## Importing ES Modules in picus.config.ts<AvailableFrom v="4.0.117"/>
 
 The [config file](/docs/config) gets executed in a CommonJS environment. If you want to import ES modules, you can pass an async function to `Config.overrideWebpackConfig`:
 
-```ts twoslash title="remotion.config.ts"
+```ts twoslash title="picus.config.ts"
 // @filename: src/enable-sass.ts
-import {WebpackOverrideFn} from '@remotion/bundler';
+import {WebpackOverrideFn} from '@picus/bundler';
 export const enableSass: WebpackOverrideFn = (c) => c;
 
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // ---cut---
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 Config.overrideWebpackConfig(async (currentConfiguration) => {
   const {enableSass} = await import('./src/enable-sass');

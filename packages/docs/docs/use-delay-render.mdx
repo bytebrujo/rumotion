@@ -13,7 +13,7 @@ A React hook that provides scoped `delayRender()`, `continueRender()` and `cance
 This is the recommended approach instead of using the global [`delayRender()`](/docs/delay-render), [`continueRender()`](/docs/continue-render) and [`cancelRender()`](/docs/cancel-render) functions directly.
 
 ```tsx twoslash title="✅ Preferred - use useDelayRender()" {4}
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 
 const MyComp: React.FC = () => {
   const {delayRender, continueRender, cancelRender} = useDelayRender();
@@ -23,7 +23,7 @@ const MyComp: React.FC = () => {
 ```
 
 ```tsx twoslash title="⚠️ Discouraged - global APIs"
-import {useDelayRender, continueRender, delayRender} from 'remotion';
+import {useDelayRender, continueRender, delayRender} from 'picus';
 ```
 
 ## Why use `useDelayRender()` over global `delayRender()`?

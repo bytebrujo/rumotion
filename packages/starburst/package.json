@@ -1,12 +1,12 @@
 {
-	"name": "@remotion/starburst",
+	"name": "@picus/starburst",
 	"version": "4.0.434",
-	"description": "Starburst ray effect for Remotion",
+	"description": "Starburst ray effect for Picus",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/esm/index.mjs",
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/starburst"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/starburst"
 	},
 	"sideEffects": false,
 	"type": "module",
@@ -17,14 +17,14 @@
 		"watch": "tsgo -w",
 		"make": "tsgo && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
-	"license": "Remotion License",
+	"license": "Picus License",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"zod": "catalog:"
 	},
 	"peerDependencies": {
@@ -42,16 +42,16 @@
 	"devDependencies": {
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"starburst"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/starburst"
+	"homepage": "https://www.picus.dev/docs/starburst"
 }

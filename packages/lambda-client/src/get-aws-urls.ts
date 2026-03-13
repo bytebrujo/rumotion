@@ -1,7 +1,7 @@
 import type {
 	GetLoggingUrlForRendererFunction,
 	ServerlessRoutines,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
 import {encodeAwsUrlParams} from './encode-aws-url-params';
 import type {AwsRegion} from './regions';

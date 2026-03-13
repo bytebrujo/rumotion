@@ -148,12 +148,12 @@ export const getTextAnimations = () => {
   const endMs = durationMs;
 
   // start scale from 0.5 to 0.7
-  // eslint-disable-next-line @remotion/deterministic-randomness
+  // eslint-disable-next-line @picus/deterministic-randomness
   const startScale = Math.random() * 0.2 + 0.5;
   // dont scale with 40% chance
-  // eslint-disable-next-line @remotion/deterministic-randomness
+  // eslint-disable-next-line @picus/deterministic-randomness
   const dontScale = Math.random() > 0.6;
-  // eslint-disable-next-line @remotion/deterministic-randomness
+  // eslint-disable-next-line @picus/deterministic-randomness
   const bounces = Math.random() > 0.5;
 
   // scale

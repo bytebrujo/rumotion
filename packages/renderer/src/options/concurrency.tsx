@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export type Concurrency = number | string | null;
 
@@ -41,7 +41,7 @@ export const concurrencyOption = {
 		</>
 	),
 	ssrName: 'concurrency' as const,
-	docLink: 'https://www.remotion.dev/docs/config#setconcurrency',
+	docLink: 'https://www.picus.dev/docs/config#setconcurrency',
 	type: null as Concurrency,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -72,4 +72,4 @@ export const concurrencyOption = {
 		currentConcurrency = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<Concurrency>;
+} satisfies AnyPicusOption<Concurrency>;

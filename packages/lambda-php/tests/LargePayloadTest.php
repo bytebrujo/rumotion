@@ -1,11 +1,11 @@
 <?php
 
-namespace Remotion\LambdaPhp\Tests;
+namespace Picus\LambdaPhp\Tests;
 
 use Exception;
 use PHPUnit\Framework\TestCase;
-use Remotion\LambdaPhp\PHPClient;
-use Remotion\LambdaPhp\RenderParams;
+use Picus\LambdaPhp\PHPClient;
+use Picus\LambdaPhp\RenderParams;
 
 class LargePayloadTest extends TestCase
 {
@@ -16,7 +16,7 @@ class LargePayloadTest extends TestCase
         $this->client = new PHPClient(
             'us-east-1',
             'testbed',
-            'remotion-render',
+            'picus-render',
             null,
             false
         );

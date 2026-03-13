@@ -1,11 +1,11 @@
-import {Video as NewVideo} from '@remotion/media';
+import {Video as NewVideo} from '@picus/media';
 import {
 	OffthreadVideo,
 	Sequence,
 	staticFile,
 	useVideoConfig,
 	Video,
-} from 'remotion';
+} from 'picus';
 
 export const VideoTesting: React.FC<{
 	codec: 'mp4' | 'webm';

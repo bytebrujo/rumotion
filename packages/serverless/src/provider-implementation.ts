@@ -1,9 +1,9 @@
-import type {BundlerInternals} from '@remotion/bundler';
+import type {BundlerInternals} from '@picus/bundler';
 import type {
 	ChromiumOptions,
 	EmittedArtifact,
 	LogLevel,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 import type {
 	CloudProvider,
 	DeleteAfter,
@@ -12,7 +12,7 @@ import type {
 	ProviderSpecifics,
 	ReceivedArtifact,
 	WebhookPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import type {LaunchedBrowser} from './get-browser-instance';
 
 export type MakeArtifactWithDetails<Provider extends CloudProvider> = (params: {
@@ -133,7 +133,7 @@ export type InsideFunctionSpecifics<Provider extends CloudProvider> = {
 };
 
 export type FullClientSpecifics<Provider extends CloudProvider> = {
-	id: '__remotion_full_client_specifics';
+	id: '__picus_full_client_specifics';
 	bundleSite: typeof BundlerInternals.internalBundle;
 	readDirectory: ReadDir;
 	uploadDir: UploadDir<Provider>;

@@ -5,14 +5,14 @@ const LIBC6_DEB_URL =
 	'https://launchpadlibrarian.net/612471225/libc6_2.35-0ubuntu3.1_amd64.deb';
 
 /**
- * Remotion does not officially support glibc 2.34, but it can be patched.
+ * Picus does not officially support glibc 2.34, but it can be patched.
  *
  * Vercel Sandbox runs Amazon Linux 2023 which ships glibc 2.34,
  * but the compositor binary requires glibc 2.35.
  * We download Ubuntu 22.04's libc6 package and use patchelf to
  * point the compositor at the bundled glibc.
  *
- * Only the `remotion` binary needs patching - ffmpeg/ffprobe work fine on glibc 2.34.
+ * Only the `picus` binary needs patching - ffmpeg/ffprobe work fine on glibc 2.34.
  */
 export async function patchCompositor({
 	sandbox,
@@ -22,14 +22,14 @@ export async function patchCompositor({
 	const script = `
 set -euo pipefail
 
-echo "[patch-compositor] Listing node_modules/@remotion/:"
-ls -la node_modules/@remotion/ 2>&1 || echo "(directory does not exist)"
+echo "[patch-compositor] Listing node_modules/@picus/:"
+ls -la node_modules/@picus/ 2>&1 || echo "(directory does not exist)"
 
 echo "[patch-compositor] Checking .pnpm store for compositor packages:"
-ls -la node_modules/.pnpm/@remotion+compositor-linux* 2>&1 || echo "(none found in .pnpm)"
+ls -la node_modules/.pnpm/@picus+compositor-linux* 2>&1 || echo "(none found in .pnpm)"
 
 echo "[patch-compositor] Checking for compositor directories..."
-for dir in node_modules/@remotion/compositor-linux-x64-gnu; do
+for dir in node_modules/@picus/compositor-linux-x64-gnu; do
   if [ -e "$dir" ]; then
     echo "[patch-compositor] Found: $dir ($(stat -c '%F' "$dir" 2>/dev/null || file "$dir"))"
     if [ -L "$dir" ]; then
@@ -44,9 +44,9 @@ done
 
 COMPOSITOR_BIN=""
 # Search with -L to follow pnpm symlinks
-for dir in node_modules/@remotion/compositor-linux-x64-gnu; do
+for dir in node_modules/@picus/compositor-linux-x64-gnu; do
   if [ -e "$dir" ]; then
-    COMPOSITOR_BIN="$(find -L "$dir" -name remotion -type f | head -1)"
+    COMPOSITOR_BIN="$(find -L "$dir" -name picus -type f | head -1)"
     [ -n "$COMPOSITOR_BIN" ] && break
   fi
 done
@@ -54,7 +54,7 @@ done
 # Fallback: search the pnpm store directly
 if [ -z "$COMPOSITOR_BIN" ]; then
   echo "[patch-compositor] Trying pnpm store fallback..."
-  COMPOSITOR_BIN="$(find -L node_modules/.pnpm -path '*compositor-linux-x64*' -name remotion -type f 2>/dev/null | head -1)"
+  COMPOSITOR_BIN="$(find -L node_modules/.pnpm -path '*compositor-linux-x64*' -name picus -type f 2>/dev/null | head -1)"
 fi
 
 if [ -z "$COMPOSITOR_BIN" ]; then

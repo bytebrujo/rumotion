@@ -1,9 +1,9 @@
 import fs, {readFileSync} from 'node:fs';
 import path from 'node:path';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {StudioServerInternals} from '@remotion/studio-server';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {StudioServerInternals} from '@picus/studio-server';
 import dotenv from 'dotenv';
 import {chalk} from './chalk';
 import {makeHyperlink} from './hyperlinks/make-link';
@@ -16,7 +16,7 @@ function getProcessEnv(): Record<string, string> {
 	const env: Record<string, string> = {};
 
 	const validKeys = Object.keys(process.env).filter((key) =>
-		key.startsWith('REMOTION_'),
+		key.startsWith('PICUS_'),
 	);
 
 	for (const key of validKeys) {
@@ -122,10 +122,10 @@ const getEnvForEnvFile = ({
 };
 
 const findDotEnvFile = (
-	remotionRoot: string,
+	picusRoot: string,
 ): {found: string | null; defaultEnvFile: string} => {
-	const defaultEnvFile = path.resolve(remotionRoot, '.env');
-	const paths = [defaultEnvFile, path.resolve(remotionRoot, '.env.local')];
+	const defaultEnvFile = path.resolve(picusRoot, '.env');
+	const paths = [defaultEnvFile, path.resolve(picusRoot, '.env.local')];
 
 	for (const p of paths) {
 		if (fs.existsSync(p)) {
@@ -147,10 +147,10 @@ export const getEnvironmentVariables = (
 		commandLine: parsedCli,
 	});
 
-	const remotionRoot = RenderInternals.findRemotionRoot();
+	const picusRoot = RenderInternals.findPicusRoot();
 
 	if (envFileValue && envFileSource !== 'default') {
-		const baseDir = envFileSource === 'cli' ? process.cwd() : remotionRoot;
+		const baseDir = envFileSource === 'cli' ? process.cwd() : picusRoot;
 		const envFile = path.resolve(baseDir, envFileValue);
 		if (!fs.existsSync(envFile)) {
 			Log.error(
@@ -174,7 +174,7 @@ export const getEnvironmentVariables = (
 		return getEnvForEnvFile({processEnv, envFile, onUpdate, logLevel, indent});
 	}
 
-	const {defaultEnvFile, found} = findDotEnvFile(remotionRoot);
+	const {defaultEnvFile, found} = findDotEnvFile(picusRoot);
 
 	if (!found) {
 		if (onUpdate) {

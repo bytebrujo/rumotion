@@ -2,9 +2,9 @@ import {beforeAll, expect, test} from 'bun:test';
 import fs, {createWriteStream} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {LambdaClientInternals} from '@remotion/lambda-client';
-import {ensureBrowser, RenderInternals} from '@remotion/renderer';
-import {rendersPrefix} from '@remotion/serverless';
+import {LambdaClientInternals} from '@picus/lambda-client';
+import {ensureBrowser, RenderInternals} from '@picus/renderer';
+import {rendersPrefix} from '@picus/serverless';
 import {mockImplementation} from '../../mocks/mock-implementation';
 import {simulateLambdaRender} from '../simulate-lambda-render';
 
@@ -30,7 +30,7 @@ test(
 
 		// We create a temporary directory for storing the frames
 		const tmpdir = await fs.promises.mkdtemp(
-			path.join(os.tmpdir(), 'remotion-'),
+			path.join(os.tmpdir(), 'picus-'),
 		);
 		const out = path.join(tmpdir, 'hithere.webm');
 		file.pipe(createWriteStream(out));

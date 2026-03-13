@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {internalGetOrCreateBucket} from '@remotion/serverless';
+import {internalGetOrCreateBucket} from '@picus/serverless';
 import {internalDeleteSite} from '../../api/delete-site';
 import {internalDeploySite} from '../../api/deploy-site';
 import {mockFullClientSpecifics} from '../mock-implementation';

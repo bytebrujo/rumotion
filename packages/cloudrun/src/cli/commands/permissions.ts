@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
 import {
 	logPermissionOutput,
 	testPermissions,
@@ -15,7 +15,7 @@ export const permissionsCommand = async (logLevel: LogLevel) => {
 			{indent: false, logLevel},
 			CliInternals.chalk.blueBright(
 				`Checking permissions for ${
-					process.env.REMOTION_GCP_CLIENT_EMAIL
+					process.env.PICUS_GCP_CLIENT_EMAIL
 				} in project ${getProjectId()}.`,
 			),
 		);

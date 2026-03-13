@@ -19,7 +19,7 @@ To retrieve a list of services, call [`getServices()`](/docs/cloudrun/getservice
 ## Example
 
 ```ts twoslash
-import {deleteService, getServices} from '@remotion/cloudrun';
+import {deleteService, getServices} from '@picus/cloudrun';
 
 const services = await getServices({
   region: 'us-east1',
@@ -51,6 +51,6 @@ Nothing. If the deletion failed, the service rejects with an error.
 
 ## See also
 
-- [Source code for this service](https://github.com/remotion-dev/remotion/blob/main/packages/cloudrun/src/api/delete-service.ts)
+- [Source code for this service](https://github.com/picus-dev/picus/blob/main/packages/cloudrun/src/api/delete-service.ts)
 - [deployService()](/docs/cloudrun/deployservice)
 - [getServices()](/docs/cloudrun/getservices)

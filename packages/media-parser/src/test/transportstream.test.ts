@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {combineUint8Arrays} from '../combine-uint8-arrays';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
@@ -40,7 +40,7 @@ test('Transport stream', async () => {
 			slowNumberOfFrames: true,
 			slowKeyframes: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 		onAudioTrack: ({track}) => {
 			expect(track).toEqual({

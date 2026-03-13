@@ -4,11 +4,11 @@ import type {
 	AwsProvider,
 	AwsRegion,
 	RequestHandler,
-} from '@remotion/lambda-client';
-import {LambdaClientInternals} from '@remotion/lambda-client';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {CustomCredentials} from '@remotion/serverless';
+} from '@picus/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {CustomCredentials} from '@picus/serverless';
 
 export type LambdaReadFileProgress = (progress: {
 	totalSize: number;

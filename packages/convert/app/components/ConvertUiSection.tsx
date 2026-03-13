@@ -1,4 +1,4 @@
-import {Switch} from '@remotion/design';
+import {Switch} from '@picus/design';
 import React, {useCallback} from 'react';
 
 export const ConvertUiSection: React.FC<{

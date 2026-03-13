@@ -2,27 +2,27 @@ import React from 'react';
 import {
 	Internals,
 	Sequence,
-	useRemotionEnvironment,
+	usePicusEnvironment,
 	useVideoConfig,
 	type SequenceControls,
 	type SequenceProps,
 	type SequenceSchema,
-} from 'remotion';
+} from 'picus';
 import {GifForDevelopment} from './GifForDevelopment';
 import {GifForRendering} from './GifForRendering';
-import type {RemotionGifProps} from './props';
+import type {PicusGifProps} from './props';
 
 export type GifProps = Omit<
 	SequenceProps,
 	'children' | 'durationInFrames' | 'layout'
 > &
-	RemotionGifProps & {
+	PicusGifProps & {
 		readonly durationInFrames?: number;
 	};
 
 /*
- * @description Displays a GIF that synchronizes with Remotions useCurrentFrame().
- * @see [Documentation](https://remotion.dev/docs/gif)
+ * @description Displays a GIF that synchronizes with Picuss useCurrentFrame().
+ * @see [Documentation](https://picus.dev/docs/gif)
  */
 const gifSchema = {
 	playbackRate: {
@@ -83,11 +83,11 @@ const GifInner = ({
 	readonly controls?: SequenceControls | undefined;
 	readonly ref?: React.Ref<HTMLCanvasElement>;
 }) => {
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 	const {durationInFrames: videoDuration} = useVideoConfig();
 	const resolvedDuration = durationInFrames ?? videoDuration;
 
-	const gifProps: RemotionGifProps = {
+	const gifProps: PicusGifProps = {
 		src,
 		width,
 		height,

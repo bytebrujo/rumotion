@@ -1,4 +1,4 @@
-import {interpolate, OffthreadVideo, staticFile} from 'remotion';
+import {interpolate, OffthreadVideo, staticFile} from 'picus';
 
 const CorruptVideo: React.FC = () => {
 	return (

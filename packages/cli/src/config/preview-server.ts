@@ -1,4 +1,4 @@
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import {parsedCli} from '../parsed-cli';
 
 const {portOption} = BrowserSafeApis.options;

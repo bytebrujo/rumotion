@@ -1,4 +1,4 @@
-# Remotion Still Image template
+# Picus Still Image template
 
 A template for designing still images with dynamic data with built-in server for deploying to the cloud.
 
@@ -17,13 +17,13 @@ npm run dev
 **Render it**
 
 ```console
-npx remotion render
+npx picus render
 ```
 
-**Keep Remotion up to date**
+**Keep Picus up to date**
 
 ```console
-npx remotion upgrade
+npx picus upgrade
 ```
 
 ## Server
@@ -76,11 +76,11 @@ The easiest way to deploy to DigitalOcean is to use the dockerized image and run
 
 ### Serverless
 
-Use [Remotion Lambda](https://remotion.dev/lambda) if you want to render stills inside a Lambda function.
+Use [Picus Lambda](https://picus.dev/lambda) if you want to render stills inside a Lambda function.
 
 ## Docs
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+Get started with Picus by reading the [fundamentals page](https://www.picus.dev/docs/the-fundamentals).
 
 ## Help
 
@@ -88,8 +88,8 @@ We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
 
 ## Issues
 
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
+Found an issue with Picus? [File an issue here](https://github.com/picus-dev/picus/issues/new).
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Note that for some entities a company license is needed. [Read the terms here](https://github.com/picus-dev/picus/blob/main/LICENSE.md).

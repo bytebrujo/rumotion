@@ -12,7 +12,7 @@ let tmpDir: string;
 
 beforeEach(() => {
 	tmpDir = fs.mkdtempSync(
-		path.join(os.tmpdir(), 'remotion-upgrade-proto-test-'),
+		path.join(os.tmpdir(), 'picus-upgrade-proto-test-'),
 	);
 });
 
@@ -49,13 +49,13 @@ const partitionPackages = (
 test('partitions packages into normal and catalog groups', () => {
 	const depsWithVersions = {
 		dependencies: {
-			'@remotion/core': '^4.0.10',
-			'@remotion/player': '4.0.10',
+			'@picus/core': '^4.0.10',
+			'@picus/player': '4.0.10',
 			zod: 'catalog:',
 			mediabunny: 'catalog:',
 		},
 		devDependencies: {
-			'@remotion/eslint-config': 'catalog:default',
+			'@picus/eslint-config': 'catalog:default',
 			jest: 'catalog:testing',
 		},
 		optionalDependencies: {},
@@ -64,35 +64,35 @@ test('partitions packages into normal and catalog groups', () => {
 
 	const semverResult = partitionPackages(
 		depsWithVersions,
-		['@remotion/core', '@remotion/player'],
+		['@picus/core', '@picus/player'],
 		'4.0.15',
 	);
 	expect(semverResult.normalPackages).toEqual([
-		{pkg: '@remotion/core', version: '4.0.15'},
-		{pkg: '@remotion/player', version: '4.0.15'},
+		{pkg: '@picus/core', version: '4.0.15'},
+		{pkg: '@picus/player', version: '4.0.15'},
 	]);
 	expect(semverResult.catalogPackages).toEqual([]);
 
 	const catalogResult = partitionPackages(
 		depsWithVersions,
-		['zod', 'mediabunny', '@remotion/eslint-config'],
+		['zod', 'mediabunny', '@picus/eslint-config'],
 		'4.0.15',
 	);
 	expect(catalogResult.normalPackages).toEqual([]);
 	expect(catalogResult.catalogPackages).toEqual([
 		{pkg: 'zod', version: '4.0.15'},
 		{pkg: 'mediabunny', version: '4.0.15'},
-		{pkg: '@remotion/eslint-config', version: '4.0.15'},
+		{pkg: '@picus/eslint-config', version: '4.0.15'},
 	]);
 
 	const mixedResult = partitionPackages(
 		depsWithVersions,
-		['@remotion/core', 'zod', '@remotion/player', 'mediabunny'],
+		['@picus/core', 'zod', '@picus/player', 'mediabunny'],
 		'4.0.15',
 	);
 	expect(mixedResult.normalPackages).toEqual([
-		{pkg: '@remotion/core', version: '4.0.15'},
-		{pkg: '@remotion/player', version: '4.0.15'},
+		{pkg: '@picus/core', version: '4.0.15'},
+		{pkg: '@picus/player', version: '4.0.15'},
 	]);
 	expect(mixedResult.catalogPackages).toEqual([
 		{pkg: 'zod', version: '4.0.15'},
@@ -107,11 +107,11 @@ test('partitions packages into normal and catalog groups', () => {
 	};
 	const unknownResult = partitionPackages(
 		emptyDeps,
-		['@remotion/core'],
+		['@picus/core'],
 		'4.0.15',
 	);
 	expect(unknownResult.normalPackages).toEqual([
-		{pkg: '@remotion/core', version: '4.0.15'},
+		{pkg: '@picus/core', version: '4.0.15'},
 	]);
 });
 
@@ -142,7 +142,7 @@ test('end-to-end: updates catalog in bun-style package.json and preserves catalo
 		JSON.stringify({
 			name: 'my-app',
 			dependencies: {
-				'@remotion/core': '^4.0.10',
+				'@picus/core': '^4.0.10',
 				zod: 'catalog:',
 			},
 			devDependencies: {

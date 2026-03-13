@@ -1,6 +1,6 @@
-import {getLength, translatePath} from '@remotion/paths';
+import {getLength, translatePath} from '@picus/paths';
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {motionFixedPath} from './motion-fix';
 import {springD} from './springs';
 

@@ -1,5 +1,5 @@
 import {useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {RULER_WIDTH} from '../state/editor-rulers';
 import {CanvasOrLoading} from './CanvasOrLoading';
 import {useIsRulerVisible} from './EditorRuler/use-is-ruler-visible';

@@ -1,6 +1,6 @@
-import type {ChromeMode, LogLevel, OnBrowserDownload} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {BrowserDownloadState} from '@remotion/studio-shared';
+import type {ChromeMode, LogLevel, OnBrowserDownload} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {BrowserDownloadState} from '@picus/studio-shared';
 import {chalk} from './chalk';
 import {Log} from './log';
 import {makeProgressBar} from './make-progress-bar';
@@ -51,13 +51,13 @@ export const defaultBrowserDownloadProgress = ({
 		if (chromeMode === 'chrome-for-testing') {
 			Log.info(
 				{indent, logLevel},
-				'Downloading Chrome for Testing https://www.remotion.dev/chrome-for-testing',
+				'Downloading Chrome for Testing https://www.picus.dev/chrome-for-testing',
 			);
 		} else {
 			Log.info(
 				{indent, logLevel},
 				chalk.gray(
-					'Downloading Chrome Headless Shell https://www.remotion.dev/chrome-headless-shell',
+					'Downloading Chrome Headless Shell https://www.picus.dev/chrome-headless-shell',
 				),
 			);
 		}

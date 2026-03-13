@@ -1,5 +1,5 @@
 import {validateFps} from '../validate';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentFps: number | null = null;
 
@@ -10,7 +10,7 @@ export const overrideFpsOption = {
 	cliFlag,
 	description: () => <>Overrides the frames per second of the composition.</>,
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#overridefps',
+	docLink: 'https://www.picus.dev/docs/config#overridefps',
 	type: null as number | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -40,4 +40,4 @@ export const overrideFpsOption = {
 		currentFps = fps;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;

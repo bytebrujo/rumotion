@@ -29,7 +29,7 @@ export const Pricing: React.FC = () => {
 					<a
 						target="_blank"
 						className="bluelink"
-						href="https://remotion.pro/faq"
+						href="https://picus.pro/faq"
 					>
 						FAQ
 					</a>{' '}
@@ -37,7 +37,7 @@ export const Pricing: React.FC = () => {
 					<a
 						target="_blank"
 						className="bluelink"
-						href="https://www.remotion.pro/terms"
+						href="https://www.picus.pro/terms"
 					>
 						Terms and Conditions
 					</a>{' '}

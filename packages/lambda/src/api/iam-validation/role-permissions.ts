@@ -1,9 +1,9 @@
 import {
 	LAMBDA_INSIGHTS_PREFIX,
 	LOG_GROUP_PREFIX,
-	REMOTION_BUCKET_PREFIX,
+	PICUS_BUCKET_PREFIX,
 	RENDER_FN_PREFIX,
-} from '@remotion/lambda-client/constants';
+} from '@picus/lambda-client/constants';
 
 export const rolePermissions: {
 	actions: string[];
@@ -24,7 +24,7 @@ export const rolePermissions: {
 			's3:PutObject',
 			's3:GetBucketLocation',
 		],
-		resource: [`arn:aws:s3:::${REMOTION_BUCKET_PREFIX}*`],
+		resource: [`arn:aws:s3:::${PICUS_BUCKET_PREFIX}*`],
 	},
 	{
 		actions: ['lambda:InvokeFunction'],

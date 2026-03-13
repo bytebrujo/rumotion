@@ -1,5 +1,5 @@
 // These tests can only be run locally on a machine
-// of a Remotion team member with an instance of remotion.pro running locally
+// of a Picus team member with an instance of picus.pro running locally
 
 import {expect, test} from 'bun:test';
 import {getUsage} from '../get-usage';
@@ -21,7 +21,7 @@ test('Should be able to track production usage', async () => {
 test('Should be able to track development usage', async () => {
 	const result = await registerUsageEvent({
 		apiKey: 'rm_pub_cbbf1d1e7f07cb0b86daa0247693d6c9af4740463768f2f6',
-		host: 'https://remotion.dev',
+		host: 'https://picus.dev',
 		succeeded: true,
 		event: 'web-render',
 	});

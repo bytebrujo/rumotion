@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from 'picus';
 import type {GifLoopBehavior} from './props';
 
 export function useCurrentGifIndex({

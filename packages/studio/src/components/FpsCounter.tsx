@@ -5,7 +5,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 
 const label: React.CSSProperties = {
 	color: 'white',

@@ -2,10 +2,10 @@ import type {
 	ChromiumOptions,
 	InternalRenderMediaOptions,
 	LogLevel,
-} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {NoReactInternals} from 'remotion/no-react';
+} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {NoReactInternals} from 'picus/no-react';
 import {defaultBrowserDownloadProgress} from './browser-download-bar';
 import {chalk} from './chalk';
 import {registerCleanupJob} from './cleanup-before-quit';
@@ -189,7 +189,7 @@ const makeBenchmarkProgressBar = ({
 };
 
 export const benchmarkCommand = async (
-	remotionRoot: string,
+	picusRoot: string,
 	args: string[],
 	logLevel: LogLevel,
 ) => {
@@ -197,7 +197,7 @@ export const benchmarkCommand = async (
 
 	const {file, reason, remainingArgs} = findEntryPoint({
 		args,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		allowDirectory: true,
 	});
@@ -209,7 +209,7 @@ export const benchmarkCommand = async (
 			'Pass an additional argument specifying the entry file',
 		);
 		Log.info({indent: false, logLevel});
-		Log.info({indent: false, logLevel}, `$ remotion benchmark <entry file>`);
+		Log.info({indent: false, logLevel}, `$ picus benchmark <entry file>`);
 		process.exit(1);
 	}
 
@@ -297,7 +297,7 @@ export const benchmarkCommand = async (
 	if (experimentalClientSideRenderingEnabled) {
 		Log.warn(
 			{indent: false, logLevel},
-			'Enabling WIP client-side rendering. Please see caveats on https://www.remotion.dev/docs/client-side-rendering/.',
+			'Enabling WIP client-side rendering. Please see caveats on https://www.picus.dev/docs/client-side-rendering/.',
 		);
 	}
 
@@ -344,7 +344,7 @@ export const benchmarkCommand = async (
 		await bundleOnCliOrTakeServeUrl({
 			fullPath: fullEntryPoint,
 			publicDir,
-			remotionRoot,
+			picusRoot,
 			onProgress: () => undefined,
 			indentOutput: false,
 			logLevel,

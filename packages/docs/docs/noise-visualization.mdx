@@ -5,7 +5,7 @@ id: noise-visualization
 crumb: "Techniques"
 ---
 
-Using the [`@remotion/noise`](/docs/noise) package, you can add noise for your videos.
+Using the [`@picus/noise`](/docs/noise) package, you can add noise for your videos.
 
 ## Noise Dot Grid Demo
 
@@ -17,9 +17,9 @@ This example shows how to create a floating dot grid "surface" using [`noise3D()
 <Demo type="noise"/>
 
 ```tsx twoslash
-import { noise3D } from "@remotion/noise";
+import { noise3D } from "@picus/noise";
 import React from "react";
-import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, useCurrentFrame, useVideoConfig } from "picus";
 
 const OVERSCAN_MARGIN = 100;
 const ROWS = 10;
@@ -70,4 +70,4 @@ const NoiseComp: React.FC<{
 
 ## See also
 
-- [`@remotion/noise`](/docs/noise)
+- [`@picus/noise`](/docs/noise)

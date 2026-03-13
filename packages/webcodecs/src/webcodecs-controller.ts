@@ -1,5 +1,5 @@
-import type {MediaParserController} from '@remotion/media-parser';
-import {mediaParserController} from '@remotion/media-parser';
+import type {MediaParserController} from '@picus/media-parser';
+import {mediaParserController} from '@picus/media-parser';
 
 export type WebCodecsController = {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any

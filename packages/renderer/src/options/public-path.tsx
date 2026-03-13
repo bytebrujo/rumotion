@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'public-path' as const;
 
@@ -19,7 +19,7 @@ export const publicPathOption = {
 		);
 	},
 	ssrName: 'publicPath' as const,
-	docLink: 'https://www.remotion.dev/docs/renderer',
+	docLink: 'https://www.picus.dev/docs/renderer',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -45,4 +45,4 @@ export const publicPathOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

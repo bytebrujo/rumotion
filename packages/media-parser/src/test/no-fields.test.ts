@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
@@ -7,7 +7,7 @@ test('should return immediately with no fields and not return any fields', async
 	// @ts-expect-error these fields are not available in the container
 	const {audioCodec} = await parseMedia({
 		src: exampleVideos.aac,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 		logLevel: 'error',
 	});
@@ -17,7 +17,7 @@ test('should return immediately with no fields and not return any fields', async
 	// @ts-expect-error these fields are not available in the container
 	const {container} = await parseMedia({
 		src: exampleVideos.aac,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {},
 		reader: nodeReader,
 		logLevel: 'error',
@@ -27,7 +27,7 @@ test('should return immediately with no fields and not return any fields', async
 
 	const {container: cont} = await parseMedia({
 		src: exampleVideos.aac,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			container: false,
 		},

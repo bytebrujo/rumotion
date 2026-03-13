@@ -1,5 +1,5 @@
-import {Lottie} from '@remotion/lottie';
-import {AbsoluteFill, staticFile, useVideoConfig} from 'remotion';
+import {Lottie} from '@picus/lottie';
+import {AbsoluteFill, staticFile, useVideoConfig} from 'picus';
 
 const lottie = {
 	v: '5.5.2',

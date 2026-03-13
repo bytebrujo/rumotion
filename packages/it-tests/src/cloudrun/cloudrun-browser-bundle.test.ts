@@ -2,21 +2,21 @@ import {describe, expect, test} from 'bun:test';
 import fs from 'fs';
 import {tmpdir} from 'os';
 import path from 'path';
-import {BundlerInternals} from '@remotion/bundler';
+import {BundlerInternals} from '@picus/bundler';
 
-test('Should not be able to bundle @remotion/cloudrun directly', async () => {
+test('Should not be able to bundle @picus/cloudrun directly', async () => {
 	expect(() =>
 		BundlerInternals.esbuild.build({
 			platform: 'node',
 			target: 'node16',
 			bundle: true,
-			entryPoints: [require.resolve('@remotion/cloudrun')],
+			entryPoints: [require.resolve('@picus/cloudrun')],
 			logLevel: 'silent',
 		}),
 	).toThrow(/Could not resolve "@swc\/wasm"/);
 });
 
-describe('Should be able to bundle @remotion/cloudrun/client with ESBuild', () => {
+describe('Should be able to bundle @picus/cloudrun/client with ESBuild', () => {
 	const outfile = path.join(tmpdir(), 'esbuild-test.js');
 
 	test('Should build without errors', async () => {
@@ -25,14 +25,14 @@ describe('Should be able to bundle @remotion/cloudrun/client with ESBuild', () =
 			target: 'node16',
 			bundle: true,
 			outfile,
-			entryPoints: [require.resolve('@remotion/cloudrun/client')],
+			entryPoints: [require.resolve('@picus/cloudrun/client')],
 		});
 		expect(errors.length).toBe(0);
 		expect(warnings.length).toBe(0);
 
-		// Should not include remotion, but currently does react
+		// Should not include picus, but currently does react
 		const contents = fs.readFileSync(outfile, 'utf-8');
-		expect(contents.includes('getRemotionEnvironment')).toBe(false);
+		expect(contents.includes('getPicusEnvironment')).toBe(false);
 	});
 
 	test('Bundle should be below 7MB', async () => {
@@ -43,7 +43,7 @@ describe('Should be able to bundle @remotion/cloudrun/client with ESBuild', () =
 
 	test('Bundle should not include Renderer', async () => {
 		const file = await fs.promises.readFile(outfile, 'utf-8');
-		expect(file).not.toContain('@remotion/renderer');
+		expect(file).not.toContain('@picus/renderer');
 	});
 
 	test('Should be able to delete it', () => {

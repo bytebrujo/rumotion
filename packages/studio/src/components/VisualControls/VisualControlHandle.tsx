@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {FastRefreshContext} from '../../fast-refresh-context';
 import {getVisualControlEditedValue} from '../../visual-controls/get-current-edited-value';
 import {
@@ -54,7 +54,7 @@ export const VisualControlHandle: React.FC<{
 	});
 
 	const disableSave =
-		window.remotion_isReadOnlyStudio || originalFileName.type !== 'loaded';
+		window.picus_isReadOnlyStudio || originalFileName.type !== 'loaded';
 
 	const onSave: UpdaterFunction<unknown> = useCallback(
 		(updater) => {
@@ -68,7 +68,7 @@ export const VisualControlHandle: React.FC<{
 
 			const val = updater(value.valueInCode);
 
-			window.remotion_ignoreFastRefreshUpdate = fastRefreshes + 1;
+			window.picus_ignoreFastRefreshUpdate = fastRefreshes + 1;
 			const enumPaths = extractEnumJsonPaths({
 				schema: value.schema,
 				zodRuntime: z,
@@ -89,7 +89,7 @@ export const VisualControlHandle: React.FC<{
 									NoReactInternals.serializeJSONWithSpecialTypes({
 										data: val as Record<string, unknown>,
 										indent: 2,
-										staticBase: window.remotion_staticBase,
+										staticBase: window.picus_staticBase,
 									}).serializedString,
 								enumPaths,
 							},

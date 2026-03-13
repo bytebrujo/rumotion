@@ -124,7 +124,7 @@ export const WebRenderModalAdvanced: React.FC<WebRenderModalAdvancedProps> = ({
 			/>
 			<div style={optionRow}>
 				<div style={label}>
-					Custom @remotion/media cache size <Spacing x={0.5} />
+					Custom @picus/media cache size <Spacing x={0.5} />
 					<OptionExplainerBubble id="mediaCacheSizeInBytesOption" />
 				</div>
 				<div style={rightRow}>
@@ -138,7 +138,7 @@ export const WebRenderModalAdvanced: React.FC<WebRenderModalAdvancedProps> = ({
 
 			{mediaCacheSizeInBytes === null ? null : (
 				<NumberSetting
-					name="@remotion/media cache size"
+					name="@picus/media cache size"
 					formatter={(w) => `${w} bytes`}
 					min={0}
 					max={10000000000}

@@ -1,6 +1,6 @@
 // basically an exact copy of
-// @remotion/renderer/src/validate-scale.ts
-// inlined here to avoid dependency on @remotion/renderer
+// @picus/renderer/src/validate-scale.ts
+// inlined here to avoid dependency on @picus/renderer
 
 export const validateScale = (scale: unknown) => {
 	if (typeof scale === 'undefined') {

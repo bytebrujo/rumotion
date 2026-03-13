@@ -1,6 +1,6 @@
-import {reevaluateComposition} from '@remotion/studio';
+import {reevaluateComposition} from '@picus/studio';
 import React, {useCallback} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const TriggerCalculateMetadata: React.FC = () => {
 	const onClickUpdate = useCallback(() => {

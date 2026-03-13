@@ -1,5 +1,5 @@
 import React from 'react';
-import {interpolate, useCurrentFrame} from 'remotion';
+import {interpolate, useCurrentFrame} from 'picus';
 export const Mesh: React.FC = () => {
 	const frame = useCurrentFrame();
 	return (

@@ -22,16 +22,16 @@ export const getDownloadsCacheDir = () => {
 	}
 
 	if (!dir) {
-		return path.resolve(cwd, '.remotion');
+		return path.resolve(cwd, '.picus');
 	}
 
 	if (process.versions.pnp === '1') {
-		return path.resolve(dir, '.pnp/.remotion');
+		return path.resolve(dir, '.pnp/.picus');
 	}
 
 	if (process.versions.pnp === '3') {
-		return path.resolve(dir, '.yarn/.remotion');
+		return path.resolve(dir, '.yarn/.picus');
 	}
 
-	return path.resolve(dir, 'node_modules/.remotion');
+	return path.resolve(dir, 'node_modules/.picus');
 };

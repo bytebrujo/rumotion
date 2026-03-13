@@ -1,5 +1,5 @@
 import React from 'react';
-import {Still} from 'remotion';
+import {Still} from 'picus';
 // Test file just for making sure the types are sound
 
 type MyComponentProps = {

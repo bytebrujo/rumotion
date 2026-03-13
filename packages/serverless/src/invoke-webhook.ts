@@ -1,5 +1,5 @@
 import * as Crypto from 'node:crypto';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	InvokeWebhook,
 	InvokeWebhookOptions,
@@ -27,9 +27,9 @@ async function invokeWebhookRaw({
 		headers: {
 			'Content-Type': 'application/json',
 			'Content-Length': String(jsonPayload.length),
-			'X-Remotion-Mode': 'production',
-			'X-Remotion-Signature': calculateSignature(jsonPayload, secret),
-			'X-Remotion-Status': payload.type,
+			'X-Picus-Mode': 'production',
+			'X-Picus-Signature': calculateSignature(jsonPayload, secret),
+			'X-Picus-Status': payload.type,
 		},
 		body: jsonPayload,
 		signal: AbortSignal.timeout(10_000),

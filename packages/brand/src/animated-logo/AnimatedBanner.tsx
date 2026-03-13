@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {AnimatedLogo} from './AnimatedLogo';
 
 export const AnimatedBanner: React.FC<{

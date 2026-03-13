@@ -6,5 +6,5 @@ test('Should be able to get length of a path', () => {
 });
 
 test('Should throw error if path is invalid', () => {
-	expect(() => getLength('remotion')).toThrow(/Malformed path data/);
+	expect(() => getLength('picus')).toThrow(/Malformed path data/);
 });

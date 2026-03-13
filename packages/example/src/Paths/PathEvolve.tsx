@@ -1,6 +1,6 @@
-import {evolvePath} from '@remotion/paths';
+import {evolvePath} from '@picus/paths';
 import React from 'react';
-import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 const path1 = 'M70.0708 -74.7021C120.649 196.82 515.72 572.643 1156.38 910.447';
 

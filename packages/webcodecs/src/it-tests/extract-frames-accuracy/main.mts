@@ -13,13 +13,13 @@ window.done = false;
 window.errors = [];
 
 extractFrames({
-	src: 'https://remotion.media/framer.mp4',
+	src: 'https://picus.media/framer.mp4',
 	onFrame(frame) {
 		window.videoFrames.push(frame.timestamp);
 	},
 	logLevel: 'verbose',
 	timestampsInSeconds: [11 / 30],
-	acknowledgeRemotionLicense: true,
+	acknowledgePicusLicense: true,
 })
 	.catch((err) => {
 		window.errors.push(err);

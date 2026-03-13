@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo, useRef, useState} from 'react';
-import {Internals, type StaticFile} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import {Internals, type StaticFile} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {
 	BACKGROUND,
 	CLEAR_HOVER,
@@ -321,7 +321,7 @@ const AssetSelectorItem: React.FC<{
 				e.stopPropagation();
 				openInFileExplorer({
 					directory:
-						window.remotion_publicFolderExists +
+						window.picus_publicFolderExists +
 						'/' +
 						parentFolder +
 						'/' +

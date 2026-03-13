@@ -89,7 +89,7 @@ const parseValues = (
 
 /*
  * @description Parses an SVG string path into an array of Instruction's.
- * @see [Documentation](https://www.remotion.dev/docs/paths/parse-path)
+ * @see [Documentation](https://www.picus.dev/docs/paths/parse-path)
  */
 export const parsePath = (path: string): Instruction[] => {
 	if (!path) {

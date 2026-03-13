@@ -1,5 +1,5 @@
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {RotateX, RotateY, Scale} from '../3DContext/transformation-context';
 
 export const SpinEffect: React.FC<{

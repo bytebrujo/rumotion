@@ -1,4 +1,4 @@
-import { staticFile } from "remotion";
+import { staticFile } from "picus";
 import { z } from "zod";
 
 const SOUNDS_FOLDER = "sounds";

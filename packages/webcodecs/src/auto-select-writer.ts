@@ -1,7 +1,7 @@
 import type {
 	MediaParserLogLevel,
 	WriterInterface,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {withResolvers} from './create/with-resolvers';
 import {Log} from './log';
 import {bufferWriter} from './writers/buffer';

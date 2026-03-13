@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../../controller/media-parser-controller';
 import {hasBeenAborted} from '../../errors';
 import {nodeReader} from '../../node';
@@ -19,7 +19,7 @@ test(
 			await parseMedia({
 				src: exampleVideos.avi,
 				controller,
-				acknowledgeRemotionLicense: true,
+				acknowledgePicusLicense: true,
 				reader: nodeReader,
 				onVideoTrack: () => {
 					return (sample) => {

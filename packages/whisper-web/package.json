@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/whisper-web"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/whisper-web"
 	},
-	"name": "@remotion/whisper-web",
+	"name": "@picus/whisper-web",
 	"version": "4.0.434",
 	"main": "dist/index.js",
 	"sideEffects": false,
@@ -15,10 +15,10 @@
 	"author": "Hunain Ahmed <junaidhunain6@gmail.com>",
 	"license": "UNLICENSED",
 	"dependencies": {
-		"@remotion/captions": "workspace:*"
+		"@picus/captions": "workspace:*"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
@@ -40,11 +40,11 @@
 		}
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"openai",
 		"whisper",
 		"wasm"
 	],
-	"homepage": "https://www.remotion.dev/docs/whisper-web",
+	"homepage": "https://www.picus.dev/docs/whisper-web",
 	"description": "Helpers for using Whisper.cpp in browser using WASM"
 }

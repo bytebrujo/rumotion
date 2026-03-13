@@ -1,10 +1,10 @@
-import {formatBytes} from '@remotion/studio-shared';
+import {formatBytes} from '@picus/studio-shared';
 export {
 	ApiRoutes,
 	CopyStillToClipboardRequest,
 	getDefaultOutLocation,
 	OpenInFileExplorerRequest,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 export type {
 	AggregateRenderProgress,
 	BundlingState,
@@ -21,7 +21,7 @@ export type {
 	RequiredChromiumOptions,
 	StitchingProgressInput,
 	UiOpenGlOptions,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 
 import {AnsiDiff} from './ansi-diff';
 import {
@@ -31,7 +31,7 @@ import {
 } from './client-render-queue';
 import {parseAndApplyCodemod} from './codemods/duplicate-composition';
 import {installFileWatcher} from './file-watcher';
-import {getLatestRemotionVersion} from './get-latest-remotion-version';
+import {getLatestPicusVersion} from './get-latest-picus-version';
 import {
 	getInstalledDependencies,
 	getInstalledDependenciesWithVersions,
@@ -46,18 +46,18 @@ import {
 	lockFilePaths,
 } from './preview-server/get-package-manager';
 import {waitForLiveEventsListener} from './preview-server/live-events';
-import {getRemotionVersion} from './preview-server/update-available';
+import {getPicusVersion} from './preview-server/update-available';
 import {startStudio} from './start-studio';
 
 export const StudioServerInternals = {
 	startStudio,
-	getRemotionVersion,
+	getPicusVersion,
 	waitForLiveEventsListener,
 	lockFilePaths,
 	getPackageManager,
 	getMaxTimelineTracks,
 	setMaxTimelineTracks,
-	getLatestRemotionVersion,
+	getLatestPicusVersion,
 	installFileWatcher,
 	AnsiDiff,
 	formatBytes,

@@ -2,12 +2,12 @@
 image: /generated/articles-docs-renderer-ensure-ffprobe.png
 id: ensure-ffprobe
 title: ensureFfprobe()
-crumb: '@remotion/renderer'
+crumb: '@picus/renderer'
 ---
 
 # ensureFfprobe()<AvailableFrom v="3.3" />
 
-_Part of the `@remotion/renderer` package._
+_Part of the `@picus/renderer` package._
 _Removed from v4.0_
 
 :::warning
@@ -17,22 +17,22 @@ This API has been removed in v4.0 and is not necessary to call anymore. This pag
 Checks if the `ffprobe` binary is installed and if it is not, [downloads it and puts it into your `node_modules` folder](/docs/ffmpeg).
 
 ```ts title="ensure.mjs"
-import {ensureFfprobe} from '@remotion/renderer';
+import {ensureFfprobe} from '@picus/renderer';
 
 await ensureFfprobe();
 ```
 
-You might not need to call this function. Remotion will automatically download `ffprobe` if a render is attempted, and no binary was found.
+You might not need to call this function. Picus will automatically download `ffprobe` if a render is attempted, and no binary was found.
 
 This function is useful if you need `ffprobe` to be ready before the first render is started.
 
-Also call [`ensureFfmpeg()`](/docs/renderer/ensure-ffmpeg) to get both binaries that Remotion requires.
+Also call [`ensureFfmpeg()`](/docs/renderer/ensure-ffmpeg) to get both binaries that Picus requires.
 
 ## Options
 
 Optionally, you can pass an object and pass the following options:
 
-### `remotionRoot`
+### `picusRoot`
 
 _string_
 
@@ -51,6 +51,6 @@ This function throws if no binary was found, the download fails or no binaries a
 
 ## See also
 
-- CLI equivalent: [`npx remotion install ffprobe`](/docs/cli/install)
+- CLI equivalent: [`npx picus install ffprobe`](/docs/cli/install)
 - [`ensureFfmpeg()`](/docs/renderer/ensure-ffmpeg)
 - [Installing FFmpeg](/docs/ffmpeg)

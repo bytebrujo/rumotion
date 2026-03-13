@@ -6,7 +6,7 @@ import type {
 import {
 	stringifyDefaultProps,
 	type ApplyVisualControlCodemod,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import type {ExpressionKind} from 'ast-types/lib/gen/kinds';
 import * as recast from 'recast';
 import {parseAst} from './parse-ast';

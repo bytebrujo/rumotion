@@ -1,5 +1,5 @@
 import React from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {BACKGROUND} from '../helpers/colors';
 import {isCompositionStill} from '../helpers/is-composition-still';
 import {renderFrame} from '../state/render-frame';

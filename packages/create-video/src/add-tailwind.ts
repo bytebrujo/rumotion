@@ -22,13 +22,13 @@ export const addTailwindRootCss = (projectRoot: string) => {
 };
 
 export const addTailwindToConfig = (projectRoot: string) => {
-	const configFileTs = path.join(projectRoot, 'remotion.config.ts');
-	const configFileJs = path.join(projectRoot, 'remotion.config.js');
+	const configFileTs = path.join(projectRoot, 'picus.config.ts');
+	const configFileJs = path.join(projectRoot, 'picus.config.js');
 
 	const configFile = fs.existsSync(configFileTs) ? configFileTs : configFileJs;
 
 	if (!fs.existsSync(configFile)) {
-		throw new Error('No remotion.config.ts file found');
+		throw new Error('No picus.config.ts file found');
 	}
 
 	const config = fs.readFileSync(configFile, 'utf-8');
@@ -48,7 +48,7 @@ export const addTailwindToConfig = (projectRoot: string) => {
 
 	const newLines = [
 		...headerLines,
-		`import { enableTailwind } from '@remotion/tailwind-v4';`,
+		`import { enableTailwind } from '@picus/tailwind-v4';`,
 		...tailLines,
 		'Config.overrideWebpackConfig(enableTailwind);',
 	];

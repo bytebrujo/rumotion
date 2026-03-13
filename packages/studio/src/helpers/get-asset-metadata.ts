@@ -1,10 +1,10 @@
-import {getVideoMetadata} from '@remotion/media-utils';
-import type {CanvasContent} from 'remotion';
-import {staticFile} from 'remotion';
+import {getVideoMetadata} from '@picus/media-utils';
+import type {CanvasContent} from 'picus';
+import {staticFile} from 'picus';
 import {getPreviewFileType} from '../components/Preview';
 import type {Dimensions} from './is-current-selected-still';
 
-export const remotion_outputsBase = window.remotion_staticBase.replace(
+export const picus_outputsBase = window.picus_staticBase.replace(
 	'static',
 	'outputs',
 );
@@ -16,7 +16,7 @@ const getSrcFromCanvasContent = (
 		return staticFile(canvasContent.asset);
 	}
 
-	return remotion_outputsBase + canvasContent.path;
+	return picus_outputsBase + canvasContent.path;
 };
 
 export type AssetMetadata =

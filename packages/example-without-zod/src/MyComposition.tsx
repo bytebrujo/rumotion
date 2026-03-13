@@ -1,4 +1,4 @@
-import {OffthreadVideo} from 'remotion';
+import {OffthreadVideo} from 'picus';
 
 export const MyComposition = () => {
 	return (

@@ -4,7 +4,7 @@ import type {
 	SchemaKeysRecord,
 	SequenceSchema,
 } from './sequence-field-schema.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 import {useSchema} from './use-schema.js';
 
 const getNestedValue = (obj: Record<string, unknown>, key: string): unknown => {
@@ -68,7 +68,7 @@ export const wrapInSchema = <S extends SequenceSchema, Props extends object>(
 	const schemaKeys = Object.keys(schema);
 
 	const Wrapped = forwardRef<unknown, Props>((props, ref) => {
-		const env = useRemotionEnvironment();
+		const env = usePicusEnvironment();
 		if (
 			!env.isStudio ||
 			env.isReadOnlyStudio ||

@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/eslint-config-flat"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/eslint-config-flat"
 	},
-	"name": "@remotion/eslint-config-flat",
+	"name": "@picus/eslint-config-flat",
 	"version": "4.0.434",
-	"description": "Default configuration for Remotion templates (ESLint >= 9)",
+	"description": "Default configuration for Picus templates (ESLint >= 9)",
 	"main": "dist/esm/index.mjs",
 	"type": "module",
 	"files": [
@@ -17,9 +17,9 @@
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "ISC",
 	"dependencies": {
 		"typescript-eslint": "8.21.0"
@@ -28,16 +28,16 @@
 		"eslint": ">=9"
 	},
 	"devDependencies": {
-		"@remotion/eslint-plugin": "workspace:*",
+		"@picus/eslint-plugin": "workspace:*",
 		"@eslint/js": "9.19.0",
 		"eslint-plugin-react": "7.37.4",
 		"eslint-plugin-react-hooks": "5.2.0",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"video",
 		"react",
 		"player"
@@ -54,5 +54,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/brownfield#install-the-eslint-plugin"
+	"homepage": "https://www.picus.dev/docs/brownfield#install-the-eslint-plugin"
 }

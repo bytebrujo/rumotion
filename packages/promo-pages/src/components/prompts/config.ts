@@ -1,1 +1,1 @@
-export const REMOTION_PRO_ORIGIN = 'https://www.remotion.pro';
+export const PICUS_PRO_ORIGIN = 'https://www.picus.pro';

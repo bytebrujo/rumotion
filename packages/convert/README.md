@@ -1,6 +1,6 @@
-# remotion.dev/convert
+# picus.dev/convert
 
-The source code for [remotion.dev/convert](https://remotion.dev/convert), a fast video converter powered by Mediabunny.
+The source code for [picus.dev/convert](https://picus.dev/convert), a fast video converter powered by Mediabunny.
 
 ## License
 

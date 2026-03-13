@@ -1,8 +1,8 @@
 import React from 'react';
 import {ICON_SIZE} from './icons.js';
 
-const className = '__remotion_buffering_indicator';
-const remotionBufferingAnimation = '__remotion_buffering_animation';
+const className = '__picus_buffering_indicator';
+const picusBufferingAnimation = '__picus_buffering_animation';
 export const bufferingIndicatorStrokeWidth = 3;
 
 const playerStyle: React.CSSProperties = {
@@ -29,7 +29,7 @@ export const BufferingIndicator: React.FC<{
 	return (
 		<>
 			<style type="text/css">{`
-				@keyframes ${remotionBufferingAnimation} {
+				@keyframes ${picusBufferingAnimation} {
           0% {
             rotate: 0deg;
           }
@@ -39,7 +39,7 @@ export const BufferingIndicator: React.FC<{
         }
         
         .${className} {
-            animation: ${remotionBufferingAnimation} 1s linear infinite;
+            animation: ${picusBufferingAnimation} 1s linear infinite;
         }        
 			`}</style>
 			<div style={style}>

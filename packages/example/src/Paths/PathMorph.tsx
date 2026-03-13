@@ -1,6 +1,6 @@
-import {interpolatePath} from '@remotion/paths';
+import {interpolatePath} from '@picus/paths';
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 const path1 =
 	'M94.5001 332C47.0001 233.5 -9.09994 56.1999 146.5 135C341 233.5 291 426 475.5 353C623.1 294.6 649.667 154 644.5 91C734.333 47 900.5 9.79997 846.5 213';

@@ -5,15 +5,15 @@ title: Security Best Practices
 crumb: "FAQ"
 ---
 
-Remotion is a software that can generate videos programmatically. It does so by running a headless browser, capturing images, and encoding them into a video. This in itself does not pose a security risk. However, Remotion interacts with the Web, can be used in the cloud and uses the NPM ecosystem.
+Picus is a software that can generate videos programmatically. It does so by running a headless browser, capturing images, and encoding them into a video. This in itself does not pose a security risk. However, Picus interacts with the Web, can be used in the cloud and uses the NPM ecosystem.
 
 ## Environment variables
 
-When starting the Remotion Studio or running a render via the command line, environment variables that are prefixed with `REMOTION_` and `.env` are passed to the headless browser. You are responsible to ensure those environment variables do not exposed to other services as you are interfacing with the Web.
+When starting the Picus Studio or running a render via the command line, environment variables that are prefixed with `PICUS_` and `.env` are passed to the headless browser. You are responsible to ensure those environment variables do not exposed to other services as you are interfacing with the Web.
 
 ## Credentials on the web
 
-You should not try to call `renderMediaOnLambda()` or other APIs from `@remotion/lambda` from your app frontend. Those APIs can only be called with AWS credentials, meaning that you would have to expose your AWS credentials to the web. This is a security risk and should be avoided.
+You should not try to call `renderMediaOnLambda()` or other APIs from `@picus/lambda` from your app frontend. Those APIs can only be called with AWS credentials, meaning that you would have to expose your AWS credentials to the web. This is a security risk and should be avoided.
 
 ## `disableWebSecurity` flag
 
@@ -25,17 +25,17 @@ APIs such as `renderMedia()` and `renderMediaOnLambda()` may be expensive (compu
 
 ## Dependency Security Scanning
 
-Since Remotion is distributed via NPM, reports of scans of our dependencies can be publicly viewed on platforms such as [Socket](https://socket.dev). You can check specific Remotion packages for vulnerabilities:
+Since Picus is distributed via NPM, reports of scans of our dependencies can be publicly viewed on platforms such as [Socket](https://socket.dev). You can check specific Picus packages for vulnerabilities:
 
-- [Core package (`remotion`)](https://socket.dev/npm/package/remotion)
-- [`@remotion/lambda`](https://socket.dev/npm/package/@remotion/lambda)
-- [`@remotion/player`](https://socket.dev/npm/package/@remotion/player)
+- [Core package (`picus`)](https://socket.dev/npm/package/picus)
+- [`@picus/lambda`](https://socket.dev/npm/package/@picus/lambda)
+- [`@picus/player`](https://socket.dev/npm/package/@picus/player)
 
-Make sure to also check other Remotion packages you plan to use by searching for them on Socket or similar security scanning platforms.
+Make sure to also check other Picus packages you plan to use by searching for them on Socket or similar security scanning platforms.
 
 ## Security Certifications
 
-Remotion does not have security certifications such as ISO27001 or SOC2. This is uncommon for JavaScript packages distributed via NPM. You may find comfort in the fact that there is no data processing done by Remotion's servers. After you obtain a license, you simply run Remotion on your own infrastructure, with no connection to our servers.
+Picus does not have security certifications such as ISO27001 or SOC2. This is uncommon for JavaScript packages distributed via NPM. You may find comfort in the fact that there is no data processing done by Picus's servers. After you obtain a license, you simply run Picus on your own infrastructure, with no connection to our servers.
 
 ## Security Review Process
 
@@ -50,10 +50,10 @@ Please note that we handle security situations on an ad-hoc basis and cannot pro
 
 ## General Node.JS security best practices
 
-Often you will use Remotion alongside other Node.js dependencies.  
+Often you will use Picus alongside other Node.js dependencies.  
 You should only install dependencies you trust, since they can run arbitrary code in their `postinstall` scripts.
-Dependencies, including Remotion, may have known vulnerabilities which you can list with the `npm audit` command.
+Dependencies, including Picus, may have known vulnerabilities which you can list with the `npm audit` command.
 
 ## Reporting of security vulnerabilities
 
-If you believe to have found a security vulnerability, you can report it to hi@remotion.dev
+If you believe to have found a security vulnerability, you can report it to hi@picus.dev

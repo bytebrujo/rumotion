@@ -1,5 +1,5 @@
 import {beforeAll, expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 import {WEBCODECS_TIMESCALE} from '../webcodecs-timescale';
@@ -11,7 +11,7 @@ beforeAll(async () => {
 test('webm with h264 and no codecprivate', async () => {
 	const {tracks} = await parseMedia({
 		src: await getRemoteExampleVideo('webmNoCodecPrivate'),
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			tracks: true,
 		},

@@ -6,14 +6,14 @@ crumb: 'Server-side rendering'
 ---
 
 :::note
-This guide has been contributed by the community and has not yet been tested by the Remotion team.
+This guide has been contributed by the community and has not yet been tested by the Picus team.
 :::
 
-This guide provides a walkthrough for deploying Remotion rendering service with basic render queuing on [Azure Container Apps](https://azure.microsoft.com/en-us/products/container-apps).
+This guide provides a walkthrough for deploying Picus rendering service with basic render queuing on [Azure Container Apps](https://azure.microsoft.com/en-us/products/container-apps).
 
 ## Prerequisites
 
-- A working Remotion project (e.g., from `npm create video`) with provision to use [Docker](https://www.docker.com/).
+- A working Picus project (e.g., from `npm create video`) with provision to use [Docker](https://www.docker.com/).
 - An [Azure account](https://azure.microsoft.com/en-au/pricing/purchase-options/azure-account).
 - A basic understanding of [Docker](https://www.docker.com/) and having it installed on your system is required.
 - The [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) installed, authenticated (`azure login`) and a subscription is selected after authentication.
@@ -22,20 +22,20 @@ This guide provides a walkthrough for deploying Remotion rendering service with 
 
 ## Step 1: Pick a project
 
-For simplicity, we'll use [remotion-gpu](https://github.com/alexfernandez803/remotion-azure) which is configured to leverage GPU acceleration. This project is based with [Remotion render server template](https://github.com/remotion-dev/template-render-server) and uses the [scene](https://github.com/remotion-dev/gpu-scene/blob/main/src/Root.tsx#L23) composition from [gpu-scene](https://github.com/remotion-dev/gpu-scene) project.
+For simplicity, we'll use [picus-gpu](https://github.com/alexfernandez803/picus-azure) which is configured to leverage GPU acceleration. This project is based with [Picus render server template](https://github.com/picus-dev/template-render-server) and uses the [scene](https://github.com/picus-dev/gpu-scene/blob/main/src/Root.tsx#L23) composition from [gpu-scene](https://github.com/picus-dev/gpu-scene) project.
 
 ## Step 2: Build and tag the docker image
 
-From the project directory, build the Docker image and push it to Docker Hub with your account, specifying an image name and version tag. The `image-name` is `remotion-docker-gpu` and `version` is `1.0.0`.
+From the project directory, build the Docker image and push it to Docker Hub with your account, specifying an image name and version tag. The `image-name` is `picus-docker-gpu` and `version` is `1.0.0`.
 
 ```bash
-docker build -t your-dockerhub-username/remotion-docker-gpu:1.0.0 .
+docker build -t your-dockerhub-username/picus-docker-gpu:1.0.0 .
 ```
 
 ## Step 3: Push the image to docker hub
 
 ```bash
-docker push your-dockerhub-username/remotion-docker-gpu:1.0.0
+docker push your-dockerhub-username/picus-docker-gpu:1.0.0
 ```
 
 ## Step 4: Set environment variables
@@ -43,7 +43,7 @@ docker push your-dockerhub-username/remotion-docker-gpu:1.0.0
 Set the environment variables for the `azure cli`
 
 ```bash title="Set environment variables"
-CONTAINER_IMAGE="docker.io/your-dockerhub-username/remotion-docker-gpu:1.0.0"
+CONTAINER_IMAGE="docker.io/your-dockerhub-username/picus-docker-gpu:1.0.0"
 RESOURCE_GROUP="<RESOURCE_GROUP>"
 ENVIRONMENT_NAME="<ENVIRONMENT_NAME>"
 LOCATION="swedencentral"
@@ -113,8 +113,8 @@ az containerapp create \
 `Azure CLI` will deploy the image to `Azure Container Apps` and when completed will provide a URL which accepts `HTTP` requests.
 
 ```bash title="Deployment Output (example)"
-Container app created. Access your app at https://remotion-gpu.grayocean-24741fc9.australiaeast.azurecontainerapps.io/
-"remotion-gpu.grayocean-24741fc9.australiaeast.azurecontainerapps.io"
+Container app created. Access your app at https://picus-gpu.grayocean-24741fc9.australiaeast.azurecontainerapps.io/
+"picus-gpu.grayocean-24741fc9.australiaeast.azurecontainerapps.io"
 ```
 
 :::note
@@ -123,7 +123,7 @@ The `target-port` is the `port` that the `Node.js` server listens on for incomin
 
 ## Step 10: Trigger a Render
 
-Send a POST request to the service's /renders endpoint. Replace `YOUR_SERVICE_URL` with the URL from the deployment output, `https://remotion-gpu.grayocean-24741fc9.australiaeast.azurecontainerapps.io/`.
+Send a POST request to the service's /renders endpoint. Replace `YOUR_SERVICE_URL` with the URL from the deployment output, `https://picus-gpu.grayocean-24741fc9.australiaeast.azurecontainerapps.io/`.
 
 ```bash
 curl -X POST {YOUR_SERVICE_URL}/renders \
@@ -159,7 +159,7 @@ curl  {YOUR_SERVICE_URL}/renders/{jobId}
 }
 ```
 
-If `status` is `completed`, combine `YOUR_SERVICE_URL` and the `videoUrl` response to generate the download link (`https://remotion-gpu.grayocean-24741fc9.australiaeast.azurecontainerapps.io/renders/955338f6-2607-48bd-bedb-6d4c98f7b4dc.mp4`).
+If `status` is `completed`, combine `YOUR_SERVICE_URL` and the `videoUrl` response to generate the download link (`https://picus-gpu.grayocean-24741fc9.australiaeast.azurecontainerapps.io/renders/955338f6-2607-48bd-bedb-6d4c98f7b4dc.mp4`).
 
 ## Step 12: (`Optional`) Delete the resource group
 
@@ -171,7 +171,7 @@ This will delete all the resources inside the resource group including the appli
 
 :::warning
 Cost: This implementation does not include cost management. Refer to Azure pricing documentation for usage estimates. Use at your own risk.
-Performance: Generated videos may appear blurry. GPU acceleration is configured in the project [config](https://github.com/alexfernandez803/remotion-azure/blob/main/remotion.config.ts#L6), but actual GPU utilization has not been confirmed.
+Performance: Generated videos may appear blurry. GPU acceleration is configured in the project [config](https://github.com/alexfernandez803/picus-azure/blob/main/picus.config.ts#L6), but actual GPU utilization has not been confirmed.
 :::
 
 ## See also

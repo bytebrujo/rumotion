@@ -1,9 +1,9 @@
 import fs, {statSync} from 'node:fs';
 import path from 'node:path';
-import {LicensingInternals} from '@remotion/licensing';
-import type {_InternalTypes} from 'remotion';
-import type {VideoConfig} from 'remotion/no-react';
-import {NoReactInternals} from 'remotion/no-react';
+import {LicensingInternals} from '@picus/licensing';
+import type {_InternalTypes} from 'picus';
+import type {VideoConfig} from 'picus/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {RenderMediaOnDownload} from './assets/download-and-map-assets-to-file';
 import {DEFAULT_BROWSER} from './browser';
 import type {BrowserExecutable} from './browser-executable';
@@ -20,7 +20,7 @@ import {defaultOnLog} from './default-on-log';
 import {ensureOutputDirectory} from './ensure-output-directory';
 import {handleJavascriptException} from './error-handling/handle-javascript-exception';
 import {onlyArtifact} from './filter-asset-types';
-import {findRemotionRoot} from './find-closest-package-json';
+import {findPicusRoot} from './find-closest-package-json';
 import type {StillImageFormat, VideoImageFormat} from './image-format';
 import {
 	DEFAULT_STILL_IMAGE_FORMAT,
@@ -38,7 +38,7 @@ import type {ToOptions} from './options/option';
 import type {optionsMap} from './options/options-map';
 import {DEFAULT_OVERWRITE} from './overwrite';
 import type {PixelFormat} from './pixel-format';
-import type {RemotionServer} from './prepare-server';
+import type {PicusServer} from './prepare-server';
 import {makeOrReuseServer} from './prepare-server';
 import {puppeteerEvaluateWithCatch} from './puppeteer-evaluate';
 import type {OnArtifact} from './render-frames';
@@ -72,7 +72,7 @@ type InternalRenderStillOptions = {
 	onDownload: RenderMediaOnDownload | null;
 	cancelSignal: CancelSignal | null;
 	indent: boolean;
-	server: RemotionServer | undefined;
+	server: PicusServer | undefined;
 	serveUrl: string;
 	port: number | null;
 	onArtifact: OnArtifact | null;
@@ -302,7 +302,7 @@ const innerRenderStill = async ({
 			defaultPixelFormat: PixelFormat | null,
 			defaultProResProfile: _InternalTypes['ProResProfile'] | null,
 		) => {
-			window.remotion_setBundleMode({
+			window.picus_setBundleMode({
 				type: 'composition',
 				compositionName: id,
 				serializedResolvedPropsWithSchema: props,
@@ -373,7 +373,7 @@ const innerRenderStill = async ({
 		for (const previousArtifact of previousArtifactAssets) {
 			if (artifact.filename === previousArtifact.filename) {
 				throw new Error(
-					`An artifact with output "${artifact.filename}" was already registered at frame ${previousArtifact.frame}, but now registered again at frame ${artifact.frame}. Artifacts must have unique names. https://remotion.dev/docs/artifacts`,
+					`An artifact with output "${artifact.filename}" was already registered at frame ${previousArtifact.frame}, but now registered again at frame ${artifact.frame}. Artifacts must have unique names. https://picus.dev/docs/artifacts`,
 				);
 			}
 		}
@@ -405,7 +405,7 @@ const internalRenderStillRaw = (
 			{
 				webpackConfigOrServeUrl: options.serveUrl,
 				port: options.port,
-				remotionRoot: findRemotionRoot(),
+				picusRoot: findPicusRoot(),
 				offthreadVideoThreads: options.offthreadVideoThreads ?? 2,
 				logLevel: options.logLevel,
 				indent: options.indent,
@@ -481,7 +481,7 @@ export const internalRenderStill = wrapWithErrorHandling(
 
 /*
  * @description Renders a single frame to an image and writes it to the specified output location.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/render-still)
+ * @see [Documentation](https://www.picus.dev/docs/renderer/render-still)
  */
 export const renderStill = (
 	options: RenderStillOptions,

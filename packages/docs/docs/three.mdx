@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-three.png
 id: three
-title: '@remotion/three'
+title: '@picus/three'
 sidebar_label: Overview
 ---
 
@@ -10,11 +10,11 @@ import TabItem from '@theme/TabItem';
 import {ThreeDPlayer} from '../components/3DPhonePlayer.tsx';
 import {TableOfContents} from './three/TableOfContents';
 
-is a package for integrating [React Three Fiber](https://github.com/pmndrs/react-three-fiber) with Remotion.
+is a package for integrating [React Three Fiber](https://github.com/pmndrs/react-three-fiber) with Picus.
 
-- [`<ThreeCanvas />`](/docs/three-canvas) will allow you to use `useCurrentFrame()` and other Remotion hooks within a R3F Canvas. Animations are now not inside a `useFrame()` hook, but directly rendered into the markup.
+- [`<ThreeCanvas />`](/docs/three-canvas) will allow you to use `useCurrentFrame()` and other Picus hooks within a R3F Canvas. Animations are now not inside a `useFrame()` hook, but directly rendered into the markup.
 
-- [`useVideoTexture()`](/docs/use-video-texture) allows you to use a Remotion [`<Html5Video />`](/docs/html5-video) as a texture map.
+- [`useVideoTexture()`](/docs/use-video-texture) allows you to use a Picus [`<Html5Video />`](/docs/html5-video) as a texture map.
 
 - [`useOffthreadVideoTexture()`](/docs/use-offthread-video-texture) is an equivalent to [`useVideoTexture()`](/docs/use-video-texture), but displays the exact frame as an `Three.ImageTexture` during rendering, simillarly to [`<OffthreadVideo />`](/docs/offthreadvideo).
 
@@ -22,7 +22,7 @@ These are the only two APIs provided - for everything else you can use the stand
 
 ## Starter template
 
-Check out [remotion-template-three](https://github.com/remotion-dev/template-three), a minimal boilerplate for Remotion and React Three Fiber. It is a template repository, you can click "Use this template" on the GitHub repo to get started.
+Check out [picus-template-three](https://github.com/picus-dev/template-three), a minimal boilerplate for Picus and React Three Fiber. It is a template repository, you can click "Use this template" on the GitHub repo to get started.
 
 <ThreeDPlayer />
 
@@ -43,7 +43,7 @@ values={[
 <TabItem value="npm">
 
 ```bash
-npm i three @react-three/fiber @remotion/three @types/three
+npm i three @react-three/fiber @picus/three @types/three
 ```
 
   </TabItem>
@@ -51,14 +51,14 @@ npm i three @react-three/fiber @remotion/three @types/three
   <TabItem value="yarn">
 
 ```bash
-yarn add three @react-three/fiber @remotion/three @types/three
+yarn add three @react-three/fiber @picus/three @types/three
 ```
 
   </TabItem>
   <TabItem value="pnpm">
 
 ```bash
-pnpm i three @react-three/fiber @remotion/three @types/three
+pnpm i three @react-three/fiber @picus/three @types/three
 ```
 
   </TabItem>
@@ -75,7 +75,7 @@ A [`<Sequence>`](/docs/sequence) by default will return a `<div>` component, whi
 Three.JS does not render with the default OpenGL renderer - we recommend to set it to `angle`. The config file of new projects includes by default:
 
 ```ts twoslash
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 Config.setChromiumOpenGlRenderer('angle');
 ```
@@ -92,7 +92,7 @@ to server-side rendering APIs like [`renderMedia()`](/docs/renderer/render-media
 
 ## Thanks
 
-A big thanks to [Björn Zeutzheim](https://github.com/olee) for researching and discovering the techniques needed for React Three Fiber integration and for doing the initial implementation of the @remotion/three APIs.
+A big thanks to [Björn Zeutzheim](https://github.com/olee) for researching and discovering the techniques needed for React Three Fiber integration and for doing the initial implementation of the @picus/three APIs.
 
 ## APIs
 

@@ -4,9 +4,9 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {z} from 'zod';
-import {loadFont} from '@remotion/fonts';
+import {loadFont} from '@picus/fonts';
 
 const fontFamily = 'GTPlanar';
 

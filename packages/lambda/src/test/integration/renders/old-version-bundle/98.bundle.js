@@ -1,6 +1,6 @@
 'use strict';
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[98],
 	{
 		/***/ 9098:
@@ -17,32 +17,32 @@
 				});
 				/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(2386);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_1__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_1__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_1___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_1___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_1__,
+						picus__WEBPACK_IMPORTED_MODULE_1__,
 					);
 
 				const Title = ({line1, line2}) => {
 					const {fps} = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_1__.useVideoConfig)();
+					picus__WEBPACK_IMPORTED_MODULE_1__.useVideoConfig)();
 					const frame = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_1__.useCurrentFrame)();
+					picus__WEBPACK_IMPORTED_MODULE_1__.useCurrentFrame)();
 					const springConfig = {
 						damping: 10,
 						mass: 0.1,
 						stiffness: 100,
 						overshootClamping: false,
 					};
-					const firstWord = (0, remotion__WEBPACK_IMPORTED_MODULE_1__.spring)({
+					const firstWord = (0, picus__WEBPACK_IMPORTED_MODULE_1__.spring)({
 						config: springConfig,
 						from: 0,
 						to: 1,
 						fps,
 						frame,
 					});
-					const secondWord = (0, remotion__WEBPACK_IMPORTED_MODULE_1__.spring)({
+					const secondWord = (0, picus__WEBPACK_IMPORTED_MODULE_1__.spring)({
 						config: springConfig,
 						frame: Math.max(0, frame - 5),
 						from: 0,

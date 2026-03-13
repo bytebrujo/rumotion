@@ -56,7 +56,7 @@ test('parse m3u8', async () => {
 			numberOfAudioChannels: true,
 			m3uStreams: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(durationInSeconds).toBe(5.06667);

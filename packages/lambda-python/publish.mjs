@@ -21,8 +21,8 @@ EOF`,
 	);
 
 	const commands = [
-		'python -m venv remotion-env',
-		'. ./remotion-env/bin/activate',
+		'python -m venv picus-env',
+		'. ./picus-env/bin/activate',
 		'pip install boto3 twine wheel setuptools',
 		'python setup.py sdist bdist_wheel',
 		`python -m twine upload --repository ${pypiRepo} dist/*`,
@@ -33,7 +33,7 @@ EOF`,
 		stdio: 'inherit',
 	});
 
-	console.log('Remotion lambda published.');
+	console.log('Picus lambda published.');
 } catch (error) {
 	console.log('Something went wrong whit publishing ', error);
 } finally {
@@ -42,8 +42,8 @@ EOF`,
 	const rmComm = [
 		'rm -rf build',
 		'rm -rf dist',
-		'rm -rf remotion_lambda.*',
-		'rm -rf remotion-env',
+		'rm -rf picus_lambda.*',
+		'rm -rf picus-env',
 	];
 	execSync(rmComm.join(' && '), {
 		stdio: 'inherit',

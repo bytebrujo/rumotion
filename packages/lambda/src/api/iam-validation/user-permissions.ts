@@ -1,9 +1,9 @@
 import {
 	LOG_GROUP_PREFIX,
-	REMOTION_BUCKET_PREFIX,
+	PICUS_BUCKET_PREFIX,
 	RENDER_FN_PREFIX,
-} from '@remotion/lambda-client/constants';
-import {REMOTION_HOSTED_LAYER_ARN} from '../../shared/hosted-layers';
+} from '@picus/lambda-client/constants';
+import {PICUS_HOSTED_LAYER_ARN} from '../../shared/hosted-layers';
 
 export const requiredPermissions: {
 	actions: string[];
@@ -28,7 +28,7 @@ export const requiredPermissions: {
 	{
 		id: 'LambdaInvokation',
 		actions: ['iam:PassRole'],
-		resource: ['arn:aws:iam::*:role/remotion-lambda-role'],
+		resource: ['arn:aws:iam::*:role/picus-lambda-role'],
 	},
 	{
 		id: 'Storage',
@@ -47,7 +47,7 @@ export const requiredPermissions: {
 			's3:PutBucketPolicy',
 			's3:PutLifecycleConfiguration',
 		],
-		resource: [`arn:aws:s3:::${REMOTION_BUCKET_PREFIX}*`],
+		resource: [`arn:aws:s3:::${PICUS_BUCKET_PREFIX}*`],
 	},
 	{
 		id: 'BucketListing',
@@ -83,7 +83,7 @@ export const requiredPermissions: {
 		id: 'FetchBinaries',
 		actions: ['lambda:GetLayerVersion'],
 		resource: [
-			REMOTION_HOSTED_LAYER_ARN,
+			PICUS_HOSTED_LAYER_ARN,
 			'arn:aws:lambda:*:580247275435:layer:LambdaInsightsExtension*',
 		],
 	},

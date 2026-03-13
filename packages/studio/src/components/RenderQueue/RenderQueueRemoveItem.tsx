@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {unregisterClientRender} from '../../api/save-render-output';
 import type {RenderInlineAction} from '../InlineAction';
 import {InlineAction} from '../InlineAction';

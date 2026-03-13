@@ -4,7 +4,7 @@ import prompts from './prompts';
 export const askSkills = async () => {
 	const link = makeHyperlink({
 		text: 'agent skills',
-		url: 'https://remotion.dev/docs/ai/skills',
+		url: 'https://picus.dev/docs/ai/skills',
 		fallback: 'agent skills',
 	});
 

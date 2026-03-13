@@ -16,7 +16,7 @@ You have the following considerations to make:
     <Step>2</Step> A jump far into the future will not be loaded yet. In this case, the video tag should not be re-used, rather a second one should be [premounted](/docs/player/premounting) so it can preload.
   </div>
   <div>
-    <Step>3</Step> If the jump is tiny (&lt;0.45sec), Remotion might not seek due to the [`acceptableTimeshiftInSeconds`](/docs/offthreadvideo#acceptabletimeshiftinseconds) prop. You might have to decrease it temporarily.
+    <Step>3</Step> If the jump is tiny (&lt;0.45sec), Picus might not seek due to the [`acceptableTimeshiftInSeconds`](/docs/offthreadvideo#acceptabletimeshiftinseconds) prop. You might have to decrease it temporarily.
   </div>
 </div>
 
@@ -34,7 +34,7 @@ In case of <InlineStep style={{marginLeft: 5}}>3</InlineStep> we are temporarily
 
 ```tsx twoslash
 import React, {useMemo} from 'react';
-import {CalculateMetadataFunction, OffthreadVideo, staticFile, useCurrentFrame} from 'remotion';
+import {CalculateMetadataFunction, OffthreadVideo, staticFile, useCurrentFrame} from 'picus';
 
 const fps = 30;
 
@@ -99,11 +99,11 @@ export const JumpCuts: React.FC<Props> = ({sections}) => {
     <OffthreadVideo
       pauseWhenBuffering
       trimBefore={cut.trimBefore}
-      // Remotion will automatically add a time fragment to the end of the video URL
+      // Picus will automatically add a time fragment to the end of the video URL
       // based on `trimBefore` and `trimAfter`. Opt out of this by adding one yourself.
-      // https://www.remotion.dev/docs/media-fragments
+      // https://www.picus.dev/docs/media-fragments
       src={`${staticFile('time.mp4')}#t=0,`}
-      // Force Remotion to seek when it jumps even just a tiny bit
+      // Force Picus to seek when it jumps even just a tiny bit
       acceptableTimeShiftInSeconds={cut.firstFrameOfSection ? 0.000001 : undefined}
     />
   );

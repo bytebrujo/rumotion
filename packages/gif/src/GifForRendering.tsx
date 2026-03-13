@@ -1,14 +1,14 @@
 import {forwardRef, useEffect, useRef, useState} from 'react';
-import {Internals, useDelayRender} from 'remotion';
+import {Internals, useDelayRender} from 'picus';
 import {Canvas} from './canvas';
 import {volatileGifCache} from './gif-cache';
 import {isCorsError} from './is-cors-error';
-import type {GifState, RemotionGifProps} from './props';
+import type {GifState, PicusGifProps} from './props';
 import {parseGif} from './react-tools';
 import {resolveGifSource} from './resolve-gif-source';
 import {useCurrentGifIndex} from './useCurrentGifIndex';
 
-export const GifForRendering = forwardRef<HTMLCanvasElement, RemotionGifProps>(
+export const GifForRendering = forwardRef<HTMLCanvasElement, PicusGifProps>(
 	(
 		{
 			src,

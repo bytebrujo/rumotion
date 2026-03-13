@@ -1,4 +1,4 @@
-import type {ApiRoutes} from '@remotion/studio-shared';
+import type {ApiRoutes} from '@picus/studio-shared';
 import type {ApiHandler} from './api-types';
 import {handleAddRender} from './routes/add-render';
 import {applyCodemodHandler} from './routes/apply-codemod';

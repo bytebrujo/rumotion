@@ -1,11 +1,11 @@
-import {getRenderProgress} from '@remotion/lambda/client';
-import {RenderInternals} from '@remotion/renderer';
-import {CliInternals} from '@remotion/cli';
+import {getRenderProgress} from '@picus/lambda/client';
+import {RenderInternals} from '@picus/renderer';
+import {CliInternals} from '@picus/cli';
 
 const progress = await getRenderProgress({
 	renderId: 'hsrxu7hby4',
-	bucketName: 'remotionlambda-gc1w0xbfzl',
-	functionName: 'remotion-render-4-0-11-mem2048mb-disk2048mb-420sec',
+	bucketName: 'picuslambda-gc1w0xbfzl',
+	functionName: 'picus-render-4-0-11-mem2048mb-disk2048mb-420sec',
 	region: 'eu-central-1',
 });
 

@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
 import {extractMemoryFromURL} from '../../api/helpers/extract-mem-from-url';
 import {extractTimeoutFromURL} from '../../api/helpers/extract-time-from-url';
 import {getCloudLoggingClient} from '../../api/helpers/get-cloud-logging-client';

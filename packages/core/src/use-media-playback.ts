@@ -22,7 +22,7 @@ import {
 } from './timeline-position-state.js';
 import {useCurrentFrame} from './use-current-frame.js';
 import {useMediaBuffering} from './use-media-buffering.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 import {useRequestVideoCallbackTime} from './use-request-video-callback-time.js';
 import {useVideoConfig} from './use-video-config.js';
 import {getMediaTime} from './video/get-current-time.js';
@@ -191,7 +191,7 @@ export const useMediaPlayback = ({
 		isPostmounting,
 	]);
 
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	// This must be a useLayoutEffect, because afterwards, useVolume() looks at the playbackRate
 	// and it is also in a useLayoutEffect.
@@ -291,7 +291,7 @@ export const useMediaPlayback = ({
 		// Only perform a seek if the time is not already the same.
 		// Chrome rounds to 6 digits, so 0.033333333 -> 0.033333,
 		// therefore a threshold is allowed.
-		// Refer to the https://github.com/remotion-dev/video-buffering-example
+		// Refer to the https://github.com/picus-dev/video-buffering-example
 		// which is fixed by only seeking conditionally.
 		const makesSenseToSeek =
 			Math.abs(mediaRef.current.currentTime - shouldBeTime) > seekThreshold;

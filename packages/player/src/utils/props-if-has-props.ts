@@ -1,4 +1,4 @@
-import type {AnyZodObject} from 'remotion';
+import type {AnyZodObject} from 'picus';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type InferZodInput<T> = T extends {_zod: {input: any}}

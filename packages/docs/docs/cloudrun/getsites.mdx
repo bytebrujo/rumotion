@@ -12,16 +12,16 @@ crumb: 'Cloud Run API'
   </p>
 </ExperimentalBadge>
 
-Gets an array of Remotion projects in Cloud Storage, in your GCP project.
+Gets an array of Picus projects in Cloud Storage, in your GCP project.
 
-The projects are located in the `sites/` subdirectory of your Cloud Storage bucket. Remember - you should only have one bucket for Remotion Cloud Run per region, therefore you do not need to specify the name of the bucket for this function.
+The projects are located in the `sites/` subdirectory of your Cloud Storage bucket. Remember - you should only have one bucket for Picus Cloud Run per region, therefore you do not need to specify the name of the bucket for this function.
 
 ## Example
 
 Gets all sites and logs information about them.
 
 ```ts twoslash
-import {getSites} from '@remotion/cloudrun';
+import {getSites} from '@picus/cloudrun';
 
 const {sites, buckets} = await getSites('europe-west4');
 
@@ -48,7 +48,7 @@ An object with the following properties:
 The [GCP region](/docs/cloudrun/region-selection) which you want to query. Alternatively, you can pass 'all regions' to return sites across all regions.
 
 ```ts twoslash
-import {getSites} from '@remotion/cloudrun';
+import {getSites} from '@picus/cloudrun';
 
 const {sites, buckets} = await getSites('all regions');
 ```
@@ -59,7 +59,7 @@ A promise resolving to an object with the following properties:
 
 ### `sites`
 
-An array of deployed Remotion projects that you can use for rendering.
+An array of deployed Picus projects that you can use for rendering.
 
 Each item contains the following properties:
 
@@ -81,10 +81,10 @@ URL of the deployed site. You can pass it into [`renderMediaOnCloudRun()`](/docs
 
 ### `buckets`
 
-An array of all buckets in the selected region in your account that start with `remotioncloudrun-`.
+An array of all buckets in the selected region in your account that start with `picuscloudrun-`.
 
 :::info
-You should only have [1 bucket](/docs/cloudrun/multiple-buckets) per region for all your Remotion projects.
+You should only have [1 bucket](/docs/cloudrun/multiple-buckets) per region for all your Picus projects.
 :::
 
 Each item contains the following properties:
@@ -103,5 +103,5 @@ A UNIX timestamp of the point when the bucket was first created.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/cloudrun/src/api/get-sites.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/cloudrun/src/api/get-sites.ts)
 - [deleteSite()](/docs/cloudrun/deletesite)

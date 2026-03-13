@@ -1,5 +1,5 @@
-import {parsePath, PathInternals, reduceInstructions} from '@remotion/paths';
-import {makeRect} from '@remotion/shapes';
+import {parsePath, PathInternals, reduceInstructions} from '@picus/paths';
+import {makeRect} from '@picus/shapes';
 import {
 	extrudeAndTransformElement,
 	interpolateMatrix4d,
@@ -12,9 +12,9 @@ import {
 	translateX,
 	translateY,
 	translateZ,
-} from '@remotion/svg-3d-engine';
+} from '@picus/svg-3d-engine';
 import {useRef} from 'react';
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 import {Faces} from './Faces';
 import {
 	useClickTransforms,

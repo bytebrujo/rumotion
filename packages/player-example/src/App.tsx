@@ -6,7 +6,7 @@ import {
 	PlayerRef,
 	RenderLoading,
 	RenderPoster,
-} from '@remotion/player';
+} from '@picus/player';
 import React, {
 	ComponentType,
 	ReactNode,
@@ -16,7 +16,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {playerExampleComp} from './CarSlideshow';
 import {Loading} from './Loading';
 import {TimeDisplay} from './TimeDisplay';
@@ -649,7 +649,7 @@ const PlayerOnly: React.FC<
 		<Player
 			ref={playerRef}
 			controls
-			acknowledgeRemotionLicense
+			acknowledgePicusLicense
 			showVolumeControls={showVolumeControls}
 			compositionWidth={1920}
 			compositionHeight={1080}

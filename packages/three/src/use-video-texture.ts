@@ -1,10 +1,10 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import type {Video} from 'remotion';
+import type {Video} from 'picus';
 import {
 	useCurrentFrame,
 	useDelayRender,
-	useRemotionEnvironment,
-} from 'remotion';
+	usePicusEnvironment,
+} from 'picus';
 // eslint-disable-next-line no-restricted-imports
 import type {VideoTexture} from 'three';
 
@@ -25,8 +25,8 @@ const warnAboutRequestVideoFrameCallback = () => {
 };
 
 /*
- * @description Allows you to use a video in React Three Fiber that is synchronized with Remotion's useCurrentFrame().
- * @see [Documentation](https://www.remotion.dev/docs/use-video-texture)
+ * @description Allows you to use a video in React Three Fiber that is synchronized with Picus's useCurrentFrame().
+ * @see [Documentation](https://www.picus.dev/docs/use-video-texture)
  */
 export const useVideoTexture = (
 	videoRef: React.RefObject<HTMLVideoElement | null>,
@@ -40,7 +40,7 @@ export const useVideoTexture = (
 		return delayRender(`Waiting for texture in useVideoTexture() to be loaded`);
 	});
 
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 	const {isClientSideRendering} = environment;
 
 	if (isClientSideRendering) {
@@ -106,7 +106,7 @@ export const useVideoTexture = (
 
 		const ready = () => {
 			// Now force a new render so the latest video frame shows up in the canvas
-			// Allow remotion to continue
+			// Allow picus to continue
 		};
 
 		current.requestVideoFrameCallback(ready);

@@ -1,5 +1,5 @@
-import type {LayoutAndStyle, RemotionOffthreadVideoProps} from 'remotion';
-import {Loop, OffthreadVideo, useVideoConfig} from 'remotion';
+import type {LayoutAndStyle, PicusOffthreadVideoProps} from 'picus';
+import {Loop, OffthreadVideo, useVideoConfig} from 'picus';
 import type {CalculateEmojiSrc, Scale} from './calculate-emoji-src';
 import {defaultCalculateEmojiSrc} from './calculate-emoji-src';
 import {emojis} from './emoji-data';
@@ -7,7 +7,7 @@ import type {EmojiName} from './get-available-emoji';
 import {isWebkit} from './is-webkit';
 
 export type AnimatedEmojiProps = Omit<
-	RemotionOffthreadVideoProps,
+	PicusOffthreadVideoProps,
 	'src' | 'muted'
 > & {
 	readonly emoji: EmojiName;

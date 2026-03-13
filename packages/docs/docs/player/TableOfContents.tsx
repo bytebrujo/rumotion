@@ -8,7 +8,7 @@ export const PlayerTableOfContents: React.FC = () => {
 			<Grid>
 				<TOCItem link="/docs/player/player">
 					<strong>{'<Player>'}</strong>
-					<div>Embed a Remotion composition in a web app</div>
+					<div>Embed a Picus composition in a web app</div>
 				</TOCItem>
 				<TOCItem link="/docs/player/thumbnail">
 					<strong>{'<Thumbnail>'}</strong>

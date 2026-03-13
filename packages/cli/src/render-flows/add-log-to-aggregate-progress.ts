@@ -1,6 +1,6 @@
-import {RenderInternals} from '@remotion/renderer';
-import type {AggregateRenderProgress} from '@remotion/studio-shared';
-import type {LogLevel} from 'remotion';
+import {RenderInternals} from '@picus/renderer';
+import type {AggregateRenderProgress} from '@picus/studio-shared';
+import type {LogLevel} from 'picus';
 
 export const addLogToAggregateProgress = ({
 	logs,

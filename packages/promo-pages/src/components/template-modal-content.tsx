@@ -1,4 +1,4 @@
-import {Card, Triangle} from '@remotion/design';
+import {Card, Triangle} from '@picus/design';
 import type {Template} from 'create-video';
 import React, {useCallback, useState} from 'react';
 import {cn} from '../cn';
@@ -432,7 +432,7 @@ export const TemplateModalContent: React.FC<{
 											See Preview{' '}
 											<span className="whitespace-pre text-[var(--light-text-color)]">
 												{' '}
-												via Remotion Studio
+												via Picus Studio
 											</span>
 										</>
 									)}

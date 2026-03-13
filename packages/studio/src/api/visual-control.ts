@@ -1,4 +1,4 @@
-import {getRemotionEnvironment} from 'remotion';
+import {getPicusEnvironment} from 'picus';
 import {
 	visualControlRef,
 	type VisualControlRef,
@@ -9,7 +9,7 @@ export const visualControl: VisualControlRef['globalVisualControl'] = (
 	value,
 	schema,
 ) => {
-	if (getRemotionEnvironment().isRendering) {
+	if (getPicusEnvironment().isRendering) {
 		return value;
 	}
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {LIGHT_COLOR} from '../../helpers/colors';
 
 const width: React.CSSProperties = {

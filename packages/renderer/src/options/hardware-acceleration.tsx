@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export const hardwareAccelerationOptions = [
 	'disable',
@@ -31,7 +31,7 @@ export const hardwareAccelerationOption = {
 			available, then the render will fail.
 		`,
 	ssrName: 'hardwareAcceleration',
-	docLink: 'https://www.remotion.dev/docs/encoding',
+	docLink: 'https://www.picus.dev/docs/encoding',
 	type: 'disable' as HardwareAccelerationOption,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -66,4 +66,4 @@ export const hardwareAccelerationOption = {
 		currentValue = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<HardwareAccelerationOption>;
+} satisfies AnyPicusOption<HardwareAccelerationOption>;

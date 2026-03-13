@@ -6,7 +6,7 @@ import {VideoAppsTitle} from '../../../components/LambdaSplash/VideoAppsTitle';
 import {PlayerFeatures} from '../../../components/Player/features';
 import {PlayerPageFooter} from '../../../components/Player/Footer';
 import {LandingHeader} from '../../../components/Player/LandingHeader';
-import {PoweredByRemotion} from '../../../components/Player/PoweredByRemotion';
+import {PoweredByPicus} from '../../../components/Player/PoweredByPicus';
 import {WrappedBanner} from '../../../components/Player/Wrapped';
 
 const container: React.CSSProperties = {
@@ -20,7 +20,7 @@ export default () => {
 	return (
 		<Layout>
 			<Head>
-				<title>@remotion/player</title>
+				<title>@picus/player</title>
 				<meta
 					name="description"
 					content="Embed videos that are written in React, and change them at runtime. Connect it to server-side rendering to turn them into real MP4 videos."
@@ -33,7 +33,7 @@ export default () => {
 			<div style={container}>
 				<LandingHeader />
 			</div>
-			<PoweredByRemotion />
+			<PoweredByPicus />
 			<div style={container}>
 				<PlayerFeatures />
 			</div>

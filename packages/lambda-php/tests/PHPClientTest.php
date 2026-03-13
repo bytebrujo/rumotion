@@ -1,10 +1,10 @@
 <?php
 
-namespace Remotion\LambdaPhp\Tests;
+namespace Picus\LambdaPhp\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Remotion\LambdaPhp\PHPClient;
-use Remotion\LambdaPhp\RenderParams;
+use Picus\LambdaPhp\PHPClient;
+use Picus\LambdaPhp\RenderParams;
 
 class PHPClientTest extends TestCase
 {
@@ -13,7 +13,7 @@ class PHPClientTest extends TestCase
         $client = new PHPClient(
             "us-east-1",
             "testbed",
-            "remotion-render",
+            "picus-render",
             null
         );
 
@@ -25,7 +25,7 @@ class PHPClientTest extends TestCase
         );
         $params->setComposition("react-svg");
         $params->setMetadata([
-            'Author' => 'Remotion'
+            'Author' => 'Picus'
         ]);
 
         $internalParams = $client->constructInternals($params);

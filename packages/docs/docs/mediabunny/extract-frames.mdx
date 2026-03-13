@@ -81,7 +81,7 @@ export async function extractFrames({src, timestampsInSeconds, onVideoSample, si
 
 ```ts
 await extractFrames({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   timestampsInSeconds: [0, 1, 2, 3, 4],
   onVideoSample: (sample) => {
     // Draw frame to canvas
@@ -171,7 +171,7 @@ const fromSeconds = 0;
 const toSeconds = 10;
 
 await extractFrames({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   timestampsInSeconds: async ({track, durationInSeconds}) => {
     const aspectRatio = track.width / track.height;
     const amountOfFramesFit = Math.ceil(canvasWidth / (canvasHeight * aspectRatio));
@@ -280,7 +280,7 @@ setTimeout(() => controller.abort(), 5000);
 
 try {
   await extractFrames({
-    src: 'https://remotion.media/video.mp4',
+    src: 'https://picus.media/video.mp4',
     timestampsInSeconds: [0, 1, 2, 3, 4],
     onVideoSample: (sample) => {
       using frame = sample;
@@ -384,7 +384,7 @@ const timeoutPromise = new Promise<never>((_, reject) => {
 try {
   await Promise.race([
     extractFrames({
-      src: 'https://remotion.media/video.mp4',
+      src: 'https://picus.media/video.mp4',
       timestampsInSeconds: [0, 1, 2, 3, 4],
       onVideoSample: (sample) => {
         using frame = sample;

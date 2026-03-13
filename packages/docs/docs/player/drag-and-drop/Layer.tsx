@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 import type {Item} from './item';
 
 export const Layer: React.FC<{

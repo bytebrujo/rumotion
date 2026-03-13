@@ -7,14 +7,14 @@ crumb: 'Designing videos'
 
 Unlike normal websites, a video has fixed dimensions. That means, it is okay to use `position: "absolute"`!
 
-In Remotion, you often want to "layer" elements on top of each other.  
+In Picus, you often want to "layer" elements on top of each other.  
 This is a common pattern in video editors, and in Photoshop.
 
 An easy way to do it is using the [`<AbsoluteFill>`](/docs/absolute-fill) component:
 
 ```tsx twoslash title="MyComp.tsx"
 import React from 'react';
-import {AbsoluteFill, Img, staticFile} from 'remotion';
+import {AbsoluteFill, Img, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ If you want to only show an element for a certain duration, you can use a [`<Seq
 
 ```tsx twoslash title="MyComp.tsx"
 import React from 'react';
-import {AbsoluteFill, Img, staticFile, Sequence} from 'remotion';
+import {AbsoluteFill, Img, staticFile, Sequence} from 'picus';
 
 export const MyComp: React.FC = () => {
   return (

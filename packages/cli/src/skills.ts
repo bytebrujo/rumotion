@@ -1,27 +1,27 @@
 import {spawn} from 'node:child_process';
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {chalk} from './chalk';
 import {Log} from './log';
 
 export const printSkillsHelp = (logLevel: LogLevel) => {
-	Log.info({indent: false, logLevel}, chalk.blue('remotion skills'));
+	Log.info({indent: false, logLevel}, chalk.blue('picus skills'));
 	Log.info(
 		{indent: false, logLevel},
-		'Install or update skills from remotion-dev/skills.',
+		'Install or update skills from picus-dev/skills.',
 	);
 	Log.info({indent: false, logLevel});
 	Log.info({indent: false, logLevel}, 'Available subcommands:');
 	Log.info({indent: false, logLevel});
-	Log.info({indent: false, logLevel}, chalk.blue('remotion skills add'));
+	Log.info({indent: false, logLevel}, chalk.blue('picus skills add'));
 	Log.info(
 		{indent: false, logLevel},
-		'Install skills from remotion-dev/skills.',
+		'Install skills from picus-dev/skills.',
 	);
 	Log.info({indent: false, logLevel});
-	Log.info({indent: false, logLevel}, chalk.blue('remotion skills update'));
+	Log.info({indent: false, logLevel}, chalk.blue('picus skills update'));
 	Log.info(
 		{indent: false, logLevel},
-		'Update skills from remotion-dev/skills.',
+		'Update skills from picus-dev/skills.',
 	);
 };
 
@@ -40,7 +40,7 @@ export const skillsCommand = (args: string[], logLevel: LogLevel) => {
 		'--loglevel=error',
 		'skills@1.2.0',
 		subcommand,
-		'remotion-dev/skills',
+		'picus-dev/skills',
 		...restArgs,
 	];
 

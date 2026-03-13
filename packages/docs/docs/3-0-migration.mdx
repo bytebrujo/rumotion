@@ -5,25 +5,25 @@ title: v3.0 Migration
 crumb: "Version Upgrade"
 ---
 
-When upgrading from Remotion 2 to Remotion 3, note the following changes and apply them to your project.
+When upgrading from Picus 2 to Picus 3, note the following changes and apply them to your project.
 
 ## How to upgrade
 
-Upgrade `remotion` and all packages starting with `@remotion` to `^3.0.0`:
+Upgrade `picus` and all packages starting with `@picus` to `^3.0.0`:
 
 ```diff
-- "remotion": "^2.6.15"
-- "@remotion/bundler": "^2.6.15"
-- "@remotion/eslint-config": "^2.6.15"
-- "@remotion/eslint-plugin": "^2.6.15"
-- "@remotion/cli": "^2.6.15"
-- "@remotion/renderer": "^2.6.15"
-+ "remotion": "^3.0.0"
-+ "@remotion/bundler": "^3.0.0"
-+ "@remotion/eslint-config": "^3.0.0"
-+ "@remotion/eslint-plugin": "^3.0.0"
-+ "@remotion/cli": "^3.0.0"
-+ "@remotion/renderer": "^3.0.0"
+- "picus": "^2.6.15"
+- "@picus/bundler": "^2.6.15"
+- "@picus/eslint-config": "^2.6.15"
+- "@picus/eslint-plugin": "^2.6.15"
+- "@picus/cli": "^2.6.15"
+- "@picus/renderer": "^2.6.15"
++ "picus": "^3.0.0"
++ "@picus/bundler": "^3.0.0"
++ "@picus/eslint-config": "^3.0.0"
++ "@picus/eslint-plugin": "^3.0.0"
++ "@picus/cli": "^3.0.0"
++ "@picus/renderer": "^3.0.0"
 ```
 
 Run `npm i `, `yarn` or `pnpm i` respectively afterwards.
@@ -61,9 +61,9 @@ Previously, we supported Node 12 and 13, but we no longer do.
 
 **Upgrade path:** Upgrade to at least Node 14.
 
-### Remotion is built with React 18 types
+### Picus is built with React 18 types
 
-The Remotion components adhere to [version 18 of `@types/react` and `@types/react-dom`](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/56210). Minor type errors may occur that can be resolved by adjusting your components. We recommend that you upgrade the `@types/react` package yourself.
+The Picus components adhere to [version 18 of `@types/react` and `@types/react-dom`](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/56210). Minor type errors may occur that can be resolved by adjusting your components. We recommend that you upgrade the `@types/react` package yourself.
 
 **Upgrade path:** [Update to React 18](/docs/react-18) - optional but recommended.
 
@@ -129,9 +129,9 @@ renderFrames({
 
 ### `renderFrames()`/`renderStill()`/`getCompositions()`: Errors thrown in your app make the render fail
 
-Previously, you could catch errors being thrown in your Remotion code using the `onError` property of `getCompositions()`, `renderFrames()` and `renderStill()`.
+Previously, you could catch errors being thrown in your Picus code using the `onError` property of `getCompositions()`, `renderFrames()` and `renderStill()`.
 
-The new behavior of Remotion 3.0 is that if an error occurs, these functions reject instead.
+The new behavior of Picus 3.0 is that if an error occurs, these functions reject instead.
 
 **Upgrade path**: Remove the `onError` property from your `getCompositions()`, `renderFrames()` and `renderStill()` calls and catch errors in a try / catch instead. Eliminate any error being thrown in your application.
 
@@ -210,14 +210,14 @@ To align the name with `renderStill()`, `renderFrames()` and `renderMedia()`, `b
 
 The import `overrideWebpackConfig` was deprecated and now removed. Use `Config.overrideWebpackConfig()` instead.
 
-**Upgrade path**: Change import in `remotion.config.ts`and use `overrideWebpackConfig()`.
+**Upgrade path**: Change import in `picus.config.ts`and use `overrideWebpackConfig()`.
 
 ```tsx title="Previously"
 
 ```
 
 ```tsx title="Now"
-import { Config } from "remotion";
+import { Config } from "picus";
 
 Config.overrideWebpackConfig();
 ```

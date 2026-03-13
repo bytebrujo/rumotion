@@ -60,7 +60,7 @@ export const TopBar: React.FC<{
   }, []);
 
   useEffect(() => {
-    if (!window.remotionServerEnabled) {
+    if (!window.picusServerEnabled) {
       return;
     }
 
@@ -68,7 +68,7 @@ export const TopBar: React.FC<{
   }, [refreshFoldersList]);
 
   useEffect(() => {
-    if (!window.remotionServerEnabled) {
+    if (!window.picusServerEnabled) {
       return;
     }
 
@@ -118,7 +118,7 @@ export const TopBar: React.FC<{
           />
         </>
       ) : null}
-      {window.remotionServerEnabled ? (
+      {window.picusServerEnabled ? (
         <Button asChild variant="outline">
           <a href={`http://localhost:3000/${selectedFolder}`} target="_blank">
             Go to Studio

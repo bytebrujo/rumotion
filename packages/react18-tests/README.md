@@ -1,4 +1,4 @@
-# @remotion/react18-tests
+# @picus/react18-tests
 
 ## Usage
 

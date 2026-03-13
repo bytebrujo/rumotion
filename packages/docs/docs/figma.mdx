@@ -5,7 +5,7 @@ title: Import from Figma
 crumb: "The best of both"
 ---
 
-You can export a design from Figma as an SVG file and import it as a React component in Remotion and then animate it.
+You can export a design from Figma as an SVG file and import it as a React component in Picus and then animate it.
 
 ## Open the Figma design
 
@@ -31,9 +31,9 @@ Next, you need to convert the SVG into a React component. Often, you can just pa
 
 Alternatively, use the [SVGR playground](https://react-svgr.com/playground/) to reliably convert SVG into React components.
 
-## Importing SVG in Remotion
+## Importing SVG in Picus
 
-Paste the component into a Remotion project and [register a `<Composition>`](/docs/composition).  
+Paste the component into a Picus project and [register a `<Composition>`](/docs/composition).  
 An example can be found in this [repository](https://github.com/kaf-lamed-beyt/remo-sample).
 
 ![](/img/export-figma/editor-pink.png)
@@ -44,7 +44,7 @@ Locate the element that you want to animate and add a style property to it.
 In this case, let's animate the `<g>` element that contains the rocket.
 
 ```tsx twoslash
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "picus";
 
 export const Rocket: React.FC = () => {
   const frame = useCurrentFrame();
@@ -85,7 +85,7 @@ Adding `{transformOrigin: "center center", transformBox: "fill-box"}` will ensur
 Let's create two spring animations, one for scale and one for transformation:
 
 ```tsx twoslash
-import { interpolate, spring } from "remotion";
+import { interpolate, spring } from "picus";
 const fps = 30;
 const frame = 0;
 // ---cut---
@@ -130,6 +130,6 @@ You have animated a rocket! 🚀
 
 ## See also
 
-- [Blog - SVG Animation with Remotion](https://meje.dev/blog/svg-animtion-with-remotion)
-- [Video - Animating Figma Mockups with Remotion](https://twitter.com/jnybgr/status/1496748768821133312)
+- [Blog - SVG Animation with Picus](https://meje.dev/blog/svg-animtion-with-picus)
+- [Video - Animating Figma Mockups with Picus](https://twitter.com/jnybgr/status/1496748768821133312)
 - [Locofy - Export Figma mockups as React components](https://www.locofy.ai)

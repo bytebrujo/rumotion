@@ -5,14 +5,14 @@ title: '#t= Media Fragments'
 slug: media-fragments
 ---
 
-Remotion by default adds [Media fragment](https://www.w3.org/TR/media-frags/) hashes to video URLs.
+Picus by default adds [Media fragment](https://www.w3.org/TR/media-frags/) hashes to video URLs.
 
 ## Behavior
 
-For example, the following Remotion code:
+For example, the following Picus code:
 
 ```tsx twoslash title="MyComp.tsx"
-import {Sequence, OffthreadVideo, useVideoConfig} from 'remotion';
+import {Sequence, OffthreadVideo, useVideoConfig} from 'picus';
 
 export const MyComp: React.FC = () => {
   const {fps} = useVideoConfig();
@@ -41,10 +41,10 @@ On Safari, these hints have higher importance. We find that without these hints,
 
 ## How to disable media fragment hints
 
-You can disable Remotion appending media fragments by appending your own hash:
+You can disable Picus appending media fragments by appending your own hash:
 
 ```tsx twoslash title="MyComp.tsx" {8}
-import {Sequence, OffthreadVideo, useVideoConfig} from 'remotion';
+import {Sequence, OffthreadVideo, useVideoConfig} from 'picus';
 
 export const MyComp: React.FC = () => {
   const {fps} = useVideoConfig();

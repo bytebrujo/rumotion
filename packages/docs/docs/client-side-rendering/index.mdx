@@ -7,18 +7,18 @@ title: Client-side rendering
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.  
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
-Client-side rendering is a new additional capability of Remotion that allows you to render videos, images, and audio directly in the browser, without requiring server-side infrastructure.
+Client-side rendering is a new additional capability of Picus that allows you to render videos, images, and audio directly in the browser, without requiring server-side infrastructure.
 
-It is currently released as an experimental alpha under the [`@remotion/web-renderer`](/docs/web-renderer) package.
+It is currently released as an experimental alpha under the [`@picus/web-renderer`](/docs/web-renderer) package.
 
 ## Key differences from server-side rendering
 
-Unlike server-side rendering with [`@remotion/renderer`](/docs/renderer), client-side rendering:
+Unlike server-side rendering with [`@picus/renderer`](/docs/renderer), client-side rendering:
 
-- Runs in the browser - No need to setup Node servers or Remotion Lambda
+- Runs in the browser - No need to setup Node servers or Picus Lambda
 - Encodes with WebCodecs using [Mediabunny](/docs/mediabunny) instead of FFmpeg
 - Limited to a subset of HTML elements - see [limitations](/docs/client-side-rendering/limitations)
 - No bundling step - takes components and video config directly
@@ -40,7 +40,7 @@ The package provides APIs called [`renderStillOnWeb()`](/docs/web-renderer/rende
 Here is an example of how to use it:
 
 ```tsx twoslash title="Tentative API example"
-import {renderMediaOnWeb} from '@remotion/web-renderer';
+import {renderMediaOnWeb} from '@picus/web-renderer';
 
 const Component: React.FC = () => {
   return (
@@ -66,10 +66,10 @@ const {getBlob} = await renderMediaOnWeb({
 
 ## Enable in the Studio
 
-To enable client-side rendering in the Studio, you need to call `Config.setExperimentalClientSideRenderingEnabled(true)` in your `remotion.config.ts` file.
+To enable client-side rendering in the Studio, you need to call `Config.setExperimentalClientSideRenderingEnabled(true)` in your `picus.config.ts` file.
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 // ---cut---
 Config.setExperimentalClientSideRenderingEnabled(true);
 ```
@@ -78,7 +78,7 @@ Config.setExperimentalClientSideRenderingEnabled(true);
 
 Client-side rendering is currently in heavy iteration.
 
-[View the current status and progress →](https://github.com/remotion-dev/remotion/issues/5913)
+[View the current status and progress →](https://github.com/picus-dev/picus/issues/5913)
 
 ## See also
 

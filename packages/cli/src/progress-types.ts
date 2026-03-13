@@ -1,4 +1,4 @@
-import type {AggregateRenderProgress} from '@remotion/studio-server';
+import type {AggregateRenderProgress} from '@picus/studio-server';
 
 export const initialAggregateRenderProgress = (): AggregateRenderProgress => ({
 	rendering: null,

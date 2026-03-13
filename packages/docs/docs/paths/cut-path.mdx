@@ -1,15 +1,15 @@
 ---
 image: /generated/articles-docs-paths-cut-path.png
 title: cutPath()
-crumb: "@remotion/paths"
+crumb: "@picus/paths"
 ---
 
-_Part of the [`@remotion/paths`](/docs/paths) package._
+_Part of the [`@picus/paths`](/docs/paths) package._
 
 Cuts an SVG path at a specified length, returning the portion from the start to that length.
 
 ```tsx twoslash
-import { cutPath } from "@remotion/paths";
+import { cutPath } from "@picus/paths";
 
 const path = "M 0 0 L 100 0 L 100 100";
 const cutAtLength = cutPath(path, 50);
@@ -43,7 +43,7 @@ A string representing the cut path from the start to the specified length.
 ### Cutting a simple line
 
 ```tsx twoslash
-import { cutPath } from "@remotion/paths";
+import { cutPath } from "@picus/paths";
 
 const simpleLine = "M 0 0 L 100 0";
 const halfLine = cutPath(simpleLine, 50);
@@ -53,7 +53,7 @@ console.log(halfLine); // "M 0 0 L 50 0"
 ### Cutting a path with curves
 
 ```tsx twoslash
-import { cutPath } from "@remotion/paths";
+import { cutPath } from "@picus/paths";
 
 const curvePath = "M 0 0 C 50 0 50 50 100 50";
 const cutCurve = cutPath(curvePath, 30);
@@ -63,7 +63,7 @@ console.log(cutCurve); // "M 0 0 C 30 0 30 15 60 15" (approximate)
 ### Handling edge cases
 
 ```tsx twoslash
-import { cutPath } from "@remotion/paths";
+import { cutPath } from "@picus/paths";
 
 const path = "M 0 0 L 100 0";
 
@@ -80,5 +80,5 @@ console.log(startOnly); // "M 0 0"
 
 - [getLength()](/docs/paths/get-length)
 - [getPointAtLength()](/docs/paths/get-point-at-length)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/paths/src/cut-path.ts)
-- [`@remotion/paths`](/docs/paths)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/paths/src/cut-path.ts)
+- [`@picus/paths`](/docs/paths)

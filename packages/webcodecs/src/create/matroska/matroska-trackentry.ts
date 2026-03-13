@@ -2,7 +2,7 @@ import type {
 	MediaParserAdvancedColor,
 	MediaParserAudioCodec,
 	MediaParserVideoCodec,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import type {MakeTrackAudio, MakeTrackVideo} from '../make-track-info';
 import {makeMatroskaColorBytes} from './color';
 import type {PossibleEbmlOrUint8Array} from './matroska-utils';

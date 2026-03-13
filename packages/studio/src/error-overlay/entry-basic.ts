@@ -1,7 +1,7 @@
 import {reloadUrl} from '../helpers/url-state';
 import {didUnmountReactApp, startReportingRuntimeErrors} from './react-overlay';
-import {mountRemotionOverlay} from './remotion-overlay';
-import {setErrorsRef} from './remotion-overlay/Overlay';
+import {mountPicusOverlay} from './picus-overlay';
+import {setErrorsRef} from './picus-overlay/Overlay';
 
 declare global {
 	const __webpack_hash__: unknown;
@@ -126,5 +126,5 @@ export const startErrorOverlay = () => {
 			});
 		}
 	});
-	mountRemotionOverlay();
+	mountPicusOverlay();
 };

@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
 import path from 'path';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
@@ -14,7 +14,7 @@ test('parse local playlist', async () => {
 				samples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(samples).toBe(253);
 });
@@ -38,7 +38,7 @@ test('parse single playlist with EXT-X-PROGRAM-DATE-TIME', async () => {
 				audioSamples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(audioSamples).toBeGreaterThan(0);
 });

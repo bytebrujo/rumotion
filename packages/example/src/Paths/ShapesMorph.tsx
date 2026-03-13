@@ -1,6 +1,6 @@
-import {PathInternals, interpolatePath} from '@remotion/paths';
-import {makeCircle, makePolygon} from '@remotion/shapes';
-import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
+import {PathInternals, interpolatePath} from '@picus/paths';
+import {makeCircle, makePolygon} from '@picus/shapes';
+import {AbsoluteFill, interpolate, useCurrentFrame} from 'picus';
 
 export const ShapesMorph: React.FC = () => {
 	const frame = useCurrentFrame();

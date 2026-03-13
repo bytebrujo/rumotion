@@ -5,36 +5,36 @@ execSync('bun run make', {
 	stdio: 'inherit',
 });
 
-execSync('bunx remotion lambda functions rmall -f', {
+execSync('bunx picus lambda functions rmall -f', {
 	stdio: 'inherit',
 });
 
 execSync(
-	'bunx remotion lambda sites create --site-name=testbed-v6 --enable-folder-expiry=true --log=verbose',
+	'bunx picus lambda sites create --site-name=testbed-v6 --enable-folder-expiry=true --log=verbose',
 	{
 		stdio: 'inherit',
 	},
 );
 
-execSync('bunx remotion lambda functions deploy --memory=3000', {
+execSync('bunx picus lambda functions deploy --memory=3000', {
 	stdio: 'inherit',
 });
 
 execSync(
-	'bunx remotion lambda render testbed-v6 react-svg --log=verbose --delete-after="1-day"',
+	'bunx picus lambda render testbed-v6 react-svg --log=verbose --delete-after="1-day"',
 	{
 		stdio: 'inherit',
 	},
 );
 
-execSync('bunx remotion lambda still testbed-v6 huge-payload --log=verbose', {
+execSync('bunx picus lambda still testbed-v6 huge-payload --log=verbose', {
 	stdio: 'inherit',
 });
 execSync(
-	`bunx remotion lambda still testbed-v6 140kb-payload --props='${JSON.stringify(
+	`bunx picus lambda still testbed-v6 140kb-payload --props='${JSON.stringify(
 		{
 			str: 'a'.repeat(140 * 1000),
-			date: 'remotion-date:' + new Date('2020-01-01').toISOString(),
+			date: 'picus-date:' + new Date('2020-01-01').toISOString(),
 			file: 'nested/mp4.png',
 		},
 	)}' --log=verbose`,

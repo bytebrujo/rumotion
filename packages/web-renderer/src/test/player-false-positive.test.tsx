@@ -1,13 +1,13 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import {flushSync} from 'react-dom';
 import {createRoot} from 'react-dom/client';
-import {useRemotionEnvironment} from 'remotion';
+import {usePicusEnvironment} from 'picus';
 import {test} from 'vitest';
 import {renderStillOnWeb} from '../render-still-on-web';
 import '../symbol-dispose';
 
 const MustBePlayer: React.FC = () => {
-	const {isPlayer} = useRemotionEnvironment();
+	const {isPlayer} = usePicusEnvironment();
 	if (!isPlayer) {
 		throw new Error('isPlayer is false');
 	}
@@ -16,7 +16,7 @@ const MustBePlayer: React.FC = () => {
 };
 
 const MustNotBePlayer: React.FC<Record<string, unknown>> = () => {
-	const {isPlayer} = useRemotionEnvironment();
+	const {isPlayer} = usePicusEnvironment();
 	if (isPlayer) {
 		throw new Error('isPlayer is false');
 	}
@@ -27,7 +27,7 @@ const MustNotBePlayer: React.FC<Record<string, unknown>> = () => {
 test('should not give a false positive when the player is also mounted', async () => {
 	const player = (
 		<Player
-			acknowledgeRemotionLicense
+			acknowledgePicusLicense
 			component={MustBePlayer}
 			durationInFrames={30}
 			compositionWidth={100}

@@ -1,7 +1,7 @@
-import type {TriangleProps} from '@remotion/shapes';
-import {Triangle} from '@remotion/shapes';
+import type {TriangleProps} from '@picus/shapes';
+import {Triangle} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const TriangleDemo: React.FC<{
 	readonly length: number;

@@ -1,5 +1,5 @@
 import {useCallback, useContext, useMemo, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {BLUE, LIGHT_TEXT} from '../helpers/colors';
 import {ModalsContext} from '../state/modals';
 import {Button} from './Button';

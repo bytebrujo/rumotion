@@ -45,7 +45,7 @@ if (!text.includes(cacheNameReplacer)) {
 }
 
 const gitRef =
-	// eslint-disable-next-line @remotion/deterministic-randomness
+	// eslint-disable-next-line @picus/deterministic-randomness
 	process.env.VERCEL_GIT_COMMIT_SHA || Math.random().toString(36).slice(2);
 
 await Bun.write(

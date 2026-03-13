@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://github.com/remotion-dev/remotion`;
+	return `https://github.com/picus-dev/picus`;
 });
 
 type Options = [];

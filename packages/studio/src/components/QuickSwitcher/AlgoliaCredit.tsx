@@ -8,7 +8,7 @@ export const AlgoliaCredit: React.FC = () => {
 	return (
 		<a
 			style={link}
-			href="https://www.algolia.com/ref/docsearch/?utm_source=www.remotion.dev&amp;utm_medium=referral&amp;utm_content=powered_by&amp;utm_campaign=docsearch"
+			href="https://www.algolia.com/ref/docsearch/?utm_source=www.picus.dev&amp;utm_medium=referral&amp;utm_content=powered_by&amp;utm_campaign=docsearch"
 			target="_blank"
 			rel="noopener noreferrer"
 		>

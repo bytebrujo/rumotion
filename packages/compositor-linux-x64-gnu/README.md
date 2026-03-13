@@ -1,6 +1,6 @@
-# @remotion/compositor-linux-x64-gnu
+# @picus/compositor-linux-x64-gnu
 
-Linux x64 binary for the Remotion Rust code
+Linux x64 binary for the Picus Rust code
 
 ## Usage
 

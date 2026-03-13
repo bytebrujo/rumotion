@@ -4,20 +4,20 @@ id: types
 sidebar_label: Types
 title: TypeScript Types Reference
 slug: /web-renderer/types
-crumb: '@remotion/web-renderer'
+crumb: '@picus/web-renderer'
 ---
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
-The following types are part of the API of `@remotion/web-renderer`:
+The following types are part of the API of `@picus/web-renderer`:
 
 ## `WebRendererContainer`
 
 ```tsx twoslash
-import type {WebRendererContainer} from '@remotion/web-renderer';
+import type {WebRendererContainer} from '@picus/web-renderer';
 //               ^?
 ```
 
@@ -26,7 +26,7 @@ More values may be added in the future, this would not be considered a breaking 
 ## `WebRendererVideoCodec`
 
 ```tsx twoslash
-import type {WebRendererVideoCodec} from '@remotion/web-renderer';
+import type {WebRendererVideoCodec} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -35,7 +35,7 @@ More values may be added in the future, this would not be considered a breaking 
 ## `WebRendererAudioCodec`
 
 ```tsx twoslash
-import type {WebRendererAudioCodec} from '@remotion/web-renderer';
+import type {WebRendererAudioCodec} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -44,14 +44,14 @@ More values may be added in the future, this would not be considered a breaking 
 ## `WebRendererQuality`
 
 ```tsx twoslash
-import type {WebRendererQuality} from '@remotion/web-renderer';
+import type {WebRendererQuality} from '@picus/web-renderer';
 //                ^?
 ```
 
 ## `WebRendererOutputTarget`
 
 ```tsx twoslash
-import type {WebRendererOutputTarget} from '@remotion/web-renderer';
+import type {WebRendererOutputTarget} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -61,7 +61,7 @@ import type {WebRendererOutputTarget} from '@remotion/web-renderer';
 ## `FrameRange`
 
 ```tsx twoslash
-import type {FrameRange} from '@remotion/web-renderer';
+import type {FrameRange} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -72,14 +72,14 @@ import type {FrameRange} from '@remotion/web-renderer';
 ## `RenderStillOnWebImageFormat`
 
 ```tsx twoslash
-import type {RenderStillOnWebImageFormat} from '@remotion/web-renderer';
+import type {RenderStillOnWebImageFormat} from '@picus/web-renderer';
 //                ^?
 ```
 
 ## `RenderMediaOnWebProgress`
 
 ```tsx twoslash
-import type {RenderMediaOnWebProgress} from '@remotion/web-renderer';
+import type {RenderMediaOnWebProgress} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -107,14 +107,14 @@ Overall progress as a number between `0` and `1`.
 ## `RenderMediaOnWebProgressCallback`
 
 ```tsx twoslash
-import type {RenderMediaOnWebProgressCallback} from '@remotion/web-renderer';
+import type {RenderMediaOnWebProgressCallback} from '@picus/web-renderer';
 //                ^?
 ```
 
 ## `RenderMediaOnWebResult`
 
 ```tsx twoslash
-import type {RenderMediaOnWebResult} from '@remotion/web-renderer';
+import type {RenderMediaOnWebResult} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -124,28 +124,28 @@ import type {RenderMediaOnWebResult} from '@remotion/web-renderer';
 ## `RenderMediaOnWebOptions`
 
 ```tsx twoslash
-import type {RenderMediaOnWebOptions} from '@remotion/web-renderer';
+import type {RenderMediaOnWebOptions} from '@picus/web-renderer';
 //                ^?
 ```
 
 ## `RenderStillOnWebOptions`
 
 ```tsx twoslash
-import type {RenderStillOnWebOptions} from '@remotion/web-renderer';
+import type {RenderStillOnWebOptions} from '@picus/web-renderer';
 //                ^?
 ```
 
 ## `CanRenderMediaOnWebOptions`
 
 ```tsx twoslash
-import type {CanRenderMediaOnWebOptions} from '@remotion/web-renderer';
+import type {CanRenderMediaOnWebOptions} from '@picus/web-renderer';
 //                ^?
 ```
 
 ## `CanRenderMediaOnWebResult`
 
 ```tsx twoslash
-import type {CanRenderMediaOnWebResult} from '@remotion/web-renderer';
+import type {CanRenderMediaOnWebResult} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -158,7 +158,7 @@ import type {CanRenderMediaOnWebResult} from '@remotion/web-renderer';
 ## `CanRenderIssue`
 
 ```tsx twoslash
-import type {CanRenderIssue} from '@remotion/web-renderer';
+import type {CanRenderIssue} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -169,7 +169,7 @@ import type {CanRenderIssue} from '@remotion/web-renderer';
 ## `EmittedArtifact`
 
 ```tsx twoslash
-import type {EmittedArtifact} from '@remotion/web-renderer';
+import type {EmittedArtifact} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -181,14 +181,14 @@ import type {EmittedArtifact} from '@remotion/web-renderer';
 ## `WebRendererOnArtifact`
 
 ```tsx twoslash
-import type {WebRendererOnArtifact} from '@remotion/web-renderer';
+import type {WebRendererOnArtifact} from '@picus/web-renderer';
 //                ^?
 ```
 
 ## `OnFrameCallback`
 
 ```tsx twoslash
-import type {OnFrameCallback} from '@remotion/web-renderer';
+import type {OnFrameCallback} from '@picus/web-renderer';
 //                ^?
 ```
 
@@ -197,13 +197,13 @@ A callback that receives each rendered `VideoFrame` and can transform it before 
 ## `GetEncodableVideoCodecsOptions`
 
 ```tsx twoslash
-import type {GetEncodableVideoCodecsOptions} from '@remotion/web-renderer';
+import type {GetEncodableVideoCodecsOptions} from '@picus/web-renderer';
 //                ^?
 ```
 
 ## `GetEncodableAudioCodecsOptions`
 
 ```tsx twoslash
-import type {GetEncodableAudioCodecsOptions} from '@remotion/web-renderer';
+import type {GetEncodableAudioCodecsOptions} from '@picus/web-renderer';
 //                ^?
 ```

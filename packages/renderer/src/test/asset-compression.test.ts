@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import type {TRenderAsset} from 'remotion';
+import type {TRenderAsset} from 'picus';
 import {calculateAssetPositions} from '../assets/calculate-asset-positions';
 import {compressAsset} from '../compress-assets';
 import {onlyAudioAndVideoAssets} from '../filter-asset-types';

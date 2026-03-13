@@ -2,7 +2,7 @@ import type {
 	MediaParserAudioTrack,
 	MediaParserContainer,
 	MediaParserLogLevel,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import type {ConvertMediaAudioCodec} from './get-available-audio-codecs';
 import type {ConvertMediaContainer} from './get-available-containers';
 

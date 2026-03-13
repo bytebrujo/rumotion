@@ -18,7 +18,7 @@ At frame 20, we want the opacity to be 1.
 Using the following snippet, we can calculate the current opacity for any frame:
 
 ```ts twoslash
-import {interpolate, useCurrentFrame} from 'remotion';
+import {interpolate, useCurrentFrame} from 'picus';
 
 const frame = useCurrentFrame(); // 10
 const opacity = interpolate(frame, [0, 20], [0, 1]); // 0.5
@@ -33,7 +33,7 @@ At the end, the opacity should be 0.
 We can interpolate over multiple points in one go and use [`useVideoConfig()`](/docs/use-video-config) to determine the duration of the composition.
 
 ```ts twoslash
-import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, useCurrentFrame, useVideoConfig} from 'picus';
 
 const frame = useCurrentFrame();
 const {durationInFrames} = useVideoConfig();
@@ -53,7 +53,7 @@ Let's assume we want to animate an object on the X axis from 0 to 200 pixels and
 Let's create a spring:
 
 ```twoslash include example
-import {useCurrentFrame, interpolate, spring, useVideoConfig} from 'remotion';
+import {useCurrentFrame, interpolate, spring, useVideoConfig} from 'picus';
 
 const frame = useCurrentFrame();
 const {fps} = useVideoConfig();
@@ -91,7 +91,7 @@ const Component: React.FC = () => <div style={{marginLeft}}></div>;
 Consider the following interpolation which is supposed to animate the scale over 20 frames:
 
 ```tsx twoslash
-import {interpolate, useCurrentFrame} from 'remotion';
+import {interpolate, useCurrentFrame} from 'picus';
 const frame = useCurrentFrame();
 // ---cut---
 const scale = interpolate(frame, [0, 20], [0, 1]);
@@ -101,7 +101,7 @@ This works, but after 20 frames, the value keeps growing. For example, at frame 
 To prevent this, this we can use the `extrapolateLeft` and `extrapolateRight` options and set them to `'clamp'` to prevent the result going outside the output range.
 
 ```tsx twoslash
-import {interpolate, useCurrentFrame} from 'remotion';
+import {interpolate, useCurrentFrame} from 'picus';
 const frame = useCurrentFrame();
 // ---cut---
 const scale = interpolate(frame, [0, 20], [0, 1], {
@@ -138,7 +138,7 @@ Same as [extrapolateLeft](#extrapolateleft), except for values outside right the
 Example:
 
 ```tsx twoslash
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 // ---cut---
 interpolate(1.5, [0, 1], [0, 2], {extrapolateRight: 'extend'}); // 3
 interpolate(1.5, [0, 1], [0, 2], {extrapolateRight: 'clamp'}); // 2
@@ -154,10 +154,10 @@ Function which allows you to customize the input, for example to apply a certain
 By default, the input is left unmodified, resulting in a pure linear interpolation. [Read the documentation for the built-in easing functions](/docs/easing).
 
 ```ts twoslash
-import {useCurrentFrame} from 'remotion';
+import {useCurrentFrame} from 'picus';
 const frame = useCurrentFrame();
 // ---cut---
-import {interpolate, Easing} from 'remotion';
+import {interpolate, Easing} from 'picus';
 
 interpolate(frame, [0, 100], [0, 1], {
   easing: Easing.bezier(0.8, 0.22, 0.96, 0.65),
@@ -165,7 +165,7 @@ interpolate(frame, [0, 100], [0, 1], {
   extrapolateRight: 'clamp',
 });
 
-//this is Remotion2.0 feature
+//this is Picus2.0 feature
 interpolate(frame, [0, 10, 40, 100], [0, 0.2, 0.6, 1], {
   easing: Easing.bezier(0.8, 0.22, 0.96, 0.65),
   extrapolateLeft: 'clamp',
@@ -175,10 +175,10 @@ interpolate(frame, [0, 10, 40, 100], [0, 0.2, 0.6, 1], {
 
 ## Types
 
-Since `v3.3.77`, types for the options are exported from Remotion.
+Since `v3.3.77`, types for the options are exported from Picus.
 
 ```tsx twoslash
-import {ExtrapolateType, InterpolateOptions} from 'remotion';
+import {ExtrapolateType, InterpolateOptions} from 'picus';
 
 const extrapolate: ExtrapolateType = 'clamp';
 const option: InterpolateOptions = {extrapolateLeft: extrapolate};
@@ -190,7 +190,7 @@ const option: InterpolateOptions = {extrapolateLeft: extrapolate};
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/interpolate.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/interpolate.ts)
 - [Easing](/docs/easing)
 - [spring()](/docs/spring)
 - [interpolateColors()](/docs/interpolate-colors)

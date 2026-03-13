@@ -1,5 +1,5 @@
 import React, {useCallback, useContext} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {useIsStill} from '../../helpers/is-current-selected-still';
 import {Minus} from '../../icons/minus';
 import {Plus} from '../../icons/plus';
@@ -98,7 +98,7 @@ export const TimelineZoomControls: React.FC = () => {
 				value={zoom}
 				max={TIMELINE_MAX_ZOOM}
 				onChange={onChange}
-				className="__remotion-timeline-slider"
+				className="__picus-timeline-slider"
 				tabIndex={tabIndex}
 			/>
 			<Spacing x={0.5} />

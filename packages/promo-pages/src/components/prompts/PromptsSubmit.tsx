@@ -6,9 +6,9 @@ import {
 	TabsList,
 	TabsTrigger,
 	Textarea,
-} from '@remotion/design';
+} from '@picus/design';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {REMOTION_PRO_ORIGIN} from './config';
+import {PICUS_PRO_ORIGIN} from './config';
 import {MuxPlayer} from './MuxPlayer';
 import {NewBackButton} from './NewBackButton';
 import {Page} from './Page';
@@ -54,7 +54,7 @@ export const PromptsSubmitPage: React.FC = () => {
 		setUploadState({type: 'uploading', progress: 0});
 
 		try {
-			const res = await fetch(`${REMOTION_PRO_ORIGIN}/api/prompts/upload`, {
+			const res = await fetch(`${PICUS_PRO_ORIGIN}/api/prompts/upload`, {
 				method: 'POST',
 				headers: {'content-type': 'application/json'},
 			});
@@ -73,7 +73,7 @@ export const PromptsSubmitPage: React.FC = () => {
 				pollRef.current = setInterval(async () => {
 					try {
 						const statusRes = await fetch(
-							`${REMOTION_PRO_ORIGIN}/api/prompts/upload/${id}`,
+							`${PICUS_PRO_ORIGIN}/api/prompts/upload/${id}`,
 						);
 						if (!statusRes.ok) {
 							throw new Error(
@@ -169,7 +169,7 @@ export const PromptsSubmitPage: React.FC = () => {
 		setSubmitStatus({type: 'submitting'});
 
 		try {
-			const res = await fetch(`${REMOTION_PRO_ORIGIN}/api/prompts/submit`, {
+			const res = await fetch(`${PICUS_PRO_ORIGIN}/api/prompts/submit`, {
 				method: 'POST',
 				headers: {'content-type': 'application/json'},
 				body: JSON.stringify({

@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 
 test('Validate frame', () => {
 	expect(() =>

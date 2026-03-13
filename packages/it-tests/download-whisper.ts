@@ -3,7 +3,7 @@ import {
 	downloadWhisperModel,
 	installWhisperCpp,
 	transcribe,
-} from '@remotion/install-whisper-cpp';
+} from '@picus/install-whisper-cpp';
 
 const to = path.join(process.cwd(), 'whisper.cpp');
 

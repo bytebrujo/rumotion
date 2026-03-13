@@ -1,18 +1,18 @@
-# @remotion/cli
+# @picus/cli
 
-Control Remotion features using the `npx remotion` command
+Control Picus features using the `npx picus` command
 
-[![NPM Downloads](https://img.shields.io/npm/dm/@remotion/cli.svg?style=flat&color=black&label=Downloads)](https://npmcharts.com/compare/@remotion/cli?minimal=true)
+[![NPM Downloads](https://img.shields.io/npm/dm/@picus/cli.svg?style=flat&color=black&label=Downloads)](https://npmcharts.com/compare/@picus/cli?minimal=true)
 
 ## Installation
 
 ```bash
-npm install @remotion/cli --save-exact
+npm install @picus/cli --save-exact
 ```
 
-When installing a Remotion package, make sure to align the version of all `remotion` and `@remotion/*` packages to the same version.
+When installing a Picus package, make sure to align the version of all `picus` and `@picus/*` packages to the same version.
 Remove the `^` character from the version number to use the exact version.
 
 ## Usage
 
-See the [documentation](https://www.remotion.dev/docs/cli) for more information.
+See the [documentation](https://www.picus.dev/docs/cli) for more information.

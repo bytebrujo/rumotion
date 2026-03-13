@@ -1,7 +1,7 @@
-import {translatePath} from '@remotion/paths';
-import {makePie} from '@remotion/shapes';
+import {translatePath} from '@picus/paths';
+import {makePie} from '@picus/shapes';
 import React, {useMemo, useState} from 'react';
-import {AbsoluteFill, random} from 'remotion';
+import {AbsoluteFill, random} from 'picus';
 import type {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
@@ -81,7 +81,7 @@ const ClockWipePresentation: React.FC<
 
 /*
  * @description Creates a clock wipe transition that uses a circular wipe to reveal the underlying scene as the current scene exits.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/presentations/clock-wipe)
+ * @see [Documentation](https://www.picus.dev/docs/transitions/presentations/clock-wipe)
  */
 export const clockWipe = (
 	props: ClockWipeProps,

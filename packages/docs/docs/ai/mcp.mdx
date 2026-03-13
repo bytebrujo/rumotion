@@ -1,13 +1,13 @@
 ---
 image: /generated/articles-docs-ai-mcp.png
 crumb: 'AI'
-title: Remotion's Model Context Protocol
+title: Picus's Model Context Protocol
 sidebar_label: MCP
 ---
 
-You can use Remotion's Model Context Protocol (MCP) Client to make your editor's AI Chat better at understanding Remotion.
+You can use Picus's Model Context Protocol (MCP) Client to make your editor's AI Chat better at understanding Picus.
 
-Our MCP server uses [CrawlChat](https://crawlchat.app)'s technology to index Remotion's documentation into a vector database.
+Our MCP server uses [CrawlChat](https://crawlchat.app)'s technology to index Picus's documentation into a vector database.
 
 :::warning
 **Test Phase**: Right now, this tool is open without authentication. If running this tool gets too expensive, we might restrict the usage.
@@ -17,7 +17,7 @@ Our MCP server uses [CrawlChat](https://crawlchat.app)'s technology to index Rem
 
 ### One-Click Install
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=remotion-documentation&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJAcmVtb3Rpb24vbWNwQGxhdGVzdCJdfQ%3D%3D)
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=picus-documentation&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJAcmVtb3Rpb24vbWNwQGxhdGVzdCJdfQ%3D%3D)
 
 ### Manual Installation
 
@@ -28,17 +28,17 @@ Our MCP server uses [CrawlChat](https://crawlchat.app)'s technology to index Rem
 ```json
 {
   "mcpServers": {
-    "remotion-documentation": {
+    "picus-documentation": {
       "command": "npx",
-      "args": ["@remotion/mcp@latest"]
+      "args": ["@picus/mcp@latest"]
     }
   }
 }
 ```
 
-If this worked, a green dot should show up and the tool `remotion-documentation` should show up.
+If this worked, a green dot should show up and the tool `picus-documentation` should show up.
 
-If you now ask Cursor in the composer to use the Remotion Documentation, the MCP should get invoked.
+If you now ask Cursor in the composer to use the Picus Documentation, the MCP should get invoked.
 
 <br />
 
@@ -48,7 +48,7 @@ If you now ask Cursor in the composer to use the Remotion Documentation, the MCP
 
 ### One-Click Install
 
-[**Install MCP Server →**](vscode:mcp/install?%7B%22name%22%3A%22remotion-documentation%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40remotion%2Fmcp%40latest%22%5D%7D)
+[**Install MCP Server →**](vscode:mcp/install?%7B%22name%22%3A%22picus-documentation%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40picus%2Fmcp%40latest%22%5D%7D)
 
 ### Manual Installation
 
@@ -60,12 +60,12 @@ If you now ask Cursor in the composer to use the Remotion Documentation, the MCP
 
 ```json
 {
-  "name": "remotion-documentation",
+  "name": "picus-documentation",
   "command": "npx",
-  "args": ["@remotion/mcp@latest"]
+  "args": ["@picus/mcp@latest"]
 }
 ```
 
 <Step>4</Step> The server should now appear in the MCP servers list. You can verify it's running by opening the Extensions view (<kbd>Cmd+Shift+X</kbd> / <kbd>Ctrl+Shift+X</kbd>) and checking the MCP Servers section.
 
-If you now ask GitHub Copilot Chat to use the Remotion Documentation, the MCP should get invoked.
+If you now ask GitHub Copilot Chat to use the Picus Documentation, the MCP should get invoked.

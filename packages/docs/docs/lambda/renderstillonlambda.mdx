@@ -17,12 +17,12 @@ If you want to render a still locally instead, use [`renderStill()`](/docs/rende
 ```tsx twoslash
 // @module: esnext
 // @target: es2017
-import {renderStillOnLambda} from '@remotion/lambda/client';
+import {renderStillOnLambda} from '@picus/lambda/client';
 
 const {estimatedPrice, url, sizeInBytes} = await renderStillOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  functionName: 'picus-render-bds9aab',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   composition: 'MyVideo',
   inputProps: {},
   imageFormat: 'png',
@@ -34,7 +34,7 @@ const {estimatedPrice, url, sizeInBytes} = await renderStillOnLambda({
 ```
 
 :::note
-Preferrably import this function from `@remotion/lambda/client` to avoid problems [inside serverless functions](/docs/lambda/light-client).
+Preferrably import this function from `@picus/lambda/client` to avoid problems [inside serverless functions](/docs/lambda/light-client).
 :::
 
 ## Arguments
@@ -43,7 +43,7 @@ An object with the following properties:
 
 ### `region`
 
-In which region your Lambda function is deployed. It's highly recommended that your Remotion site is also in the same region.
+In which region your Lambda function is deployed. It's highly recommended that your Picus site is also in the same region.
 
 ### `functionName`
 
@@ -52,7 +52,7 @@ Use [`deployFunction()`](/docs/lambda/deployfunction) to create a new function a
 
 ### `serveUrl`
 
-A URL pointing to a Remotion project. Use [`deploySite()`](/docs/lambda/deploysite) to deploy a Remotion project.
+A URL pointing to a Picus project. Use [`deploySite()`](/docs/lambda/deploysite) to deploy a Picus project.
 
 ### `composition`
 
@@ -99,12 +99,12 @@ Example usage:
 // @module: esnext
 // @target: es2022
 
-import {renderStillOnLambda, RenderStillOnLambdaInput} from '@remotion/lambda/client';
+import {renderStillOnLambda, RenderStillOnLambdaInput} from '@picus/lambda/client';
 
 const otherParameters: RenderStillOnLambdaInput = {
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  functionName: 'picus-render-bds9aab',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   composition: 'MyVideo',
   inputProps: {},
   imageFormat: 'png',
@@ -138,7 +138,7 @@ Renamed to `jpegQuality` in `v4.0.0`.
 How often a frame render may be retried until it fails. Default: `1`.
 
 :::note
-A retry only gets executed if a the error is in the [list of flaky errors](https://github.com/remotion-dev/remotion/blob/main/packages/lambda-client/src/is-flaky-error.ts).
+A retry only gets executed if a the error is in the [list of flaky errors](https://github.com/picus-dev/picus/blob/main/packages/lambda-client/src/is-flaky-error.ts).
 :::
 
 ### `envVariables?`
@@ -231,7 +231,7 @@ Lets you set a custom user agent that the headless Chrome browser assumes.
 
 ### `forceBucketName?`
 
-Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Remotion discover the right bucket automatically.
+Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Picus discover the right bucket automatically.
 
 ### `logLevel?`
 
@@ -299,6 +299,6 @@ Artifacts that were created so far during the render. [See here for an example o
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/render-still-on-lambda.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/render-still-on-lambda.ts)
 - [renderMediaOnLambda()](/docs/lambda/rendermediaonlambda)
 - [renderStill()](/docs/renderer/render-still)

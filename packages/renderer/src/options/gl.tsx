@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export const validOpenGlRenderers = [
 	'swangle',
@@ -27,15 +27,15 @@ const AngleChangelog: React.FC = () => {
 			<summary>Changelog</summary>
 			<ul>
 				<li>
-					From Remotion v2.6.7 until v3.0.7, the default for Remotion Lambda was{' '}
+					From Picus v2.6.7 until v3.0.7, the default for Picus Lambda was{' '}
 					<code>swiftshader</code>, but from v3.0.8 the default is{' '}
 					<code>swangle</code> (Swiftshader on Angle) since Chrome 101 added
 					support for it.
 				</li>
 				<li>
-					From Remotion v2.4.3 until v2.6.6, the default was <code>angle</code>,
+					From Picus v2.4.3 until v2.6.6, the default was <code>angle</code>,
 					however it turns out to have a small memory leak that could crash long
-					Remotion renders.
+					Picus renders.
 				</li>
 			</ul>
 		</details>
@@ -46,7 +46,7 @@ const cliFlag = 'gl' as const;
 
 export const glOption = {
 	cliFlag,
-	docLink: 'https://www.remotion.dev/docs/chromium-flags#--gl',
+	docLink: 'https://www.picus.dev/docs/chromium-flags#--gl',
 	name: 'OpenGL renderer',
 	type: 'angle' as OpenGlRenderer | null,
 	ssrName: 'gl',
@@ -72,10 +72,10 @@ export const glOption = {
 						<code>{'"swangle"'}</code>
 					</li>
 					<li>
-						<code>{'"vulkan"'}</code> (<em>from Remotion v4.0.41</em>)
+						<code>{'"vulkan"'}</code> (<em>from Picus v4.0.41</em>)
 					</li>
 					<li>
-						<code>{'"angle-egl"'}</code> (<em>from Remotion v4.0.51</em>)
+						<code>{'"angle-egl"'}</code> (<em>from Picus v4.0.51</em>)
 					</li>
 				</ul>
 				<p>
@@ -111,7 +111,7 @@ export const glOption = {
 		openGlRenderer = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<OpenGlRenderer | null>;
+} satisfies AnyPicusOption<OpenGlRenderer | null>;
 
 export const validateOpenGlRenderer = (
 	option: unknown,

@@ -15,7 +15,7 @@ import {addSequenceStackTraces} from './enable-sequence-stack-traces.js';
 import type {StaticFile} from './get-static-files.js';
 import {useIsPlayer} from './is-player.js';
 import type {LogLevel} from './log.js';
-import {checkMultipleRemotionVersions} from './multiple-versions-warning.js';
+import {checkMultiplePicusVersions} from './multiple-versions-warning.js';
 import {Null} from './Null.js';
 import type {ProResProfile} from './prores-profile.js';
 import type {PixelFormat, VideoImageFormat} from './render-types.js';
@@ -37,63 +37,63 @@ export type VideoConfigWithSerializedProps = Omit<
 
 declare global {
 	interface Window {
-		remotion_renderReady: boolean;
-		remotion_delayRenderTimeouts: {
+		picus_renderReady: boolean;
+		picus_delayRenderTimeouts: {
 			[key: string]: {
 				label: string | null;
 				timeout: number | Timer;
 				startTime: number;
 			};
 		};
-		remotion_delayRenderHandles: number[];
-		remotion_cancelledError: string | undefined;
-		remotion_getCompositionNames: () => string[];
+		picus_delayRenderHandles: number[];
+		picus_cancelledError: string | undefined;
+		picus_getCompositionNames: () => string[];
 		// Fallback list of seen composition IDs, populated as early as possible by <Composition>
-		remotion_seenCompositionIds: string[];
+		picus_seenCompositionIds: string[];
 		getStaticCompositions: () => Promise<VideoConfigWithSerializedProps[]>;
-		remotion_calculateComposition: (
+		picus_calculateComposition: (
 			compId: string,
 		) => Promise<VideoConfigWithSerializedProps>;
-		remotion_setBundleMode: (bundleMode: BundleState) => void;
-		remotion_staticBase: string;
-		remotion_staticFiles: StaticFile[];
-		remotion_publicPath: string;
-		remotion_publicFolderExists: string | null;
-		remotion_editorName: string | null;
-		remotion_ignoreFastRefreshUpdate: number | null;
-		remotion_numberOfAudioTags: number;
-		remotion_audioLatencyHint: AudioContextLatencyCategory | undefined;
-		remotion_logLevel: LogLevel;
-		remotion_projectName: string;
-		remotion_cwd: string;
-		remotion_studioServerCommand: string;
-		remotion_setFrame: (
+		picus_setBundleMode: (bundleMode: BundleState) => void;
+		picus_staticBase: string;
+		picus_staticFiles: StaticFile[];
+		picus_publicPath: string;
+		picus_publicFolderExists: string | null;
+		picus_editorName: string | null;
+		picus_ignoreFastRefreshUpdate: number | null;
+		picus_numberOfAudioTags: number;
+		picus_audioLatencyHint: AudioContextLatencyCategory | undefined;
+		picus_logLevel: LogLevel;
+		picus_projectName: string;
+		picus_cwd: string;
+		picus_studioServerCommand: string;
+		picus_setFrame: (
 			frame: number,
 			composition: string,
 			attempt: number,
 		) => void;
-		remotion_attempt: number;
-		remotion_initialFrame: number;
-		remotion_proxyPort: number;
-		remotion_audioEnabled: boolean;
-		remotion_videoEnabled: boolean;
-		remotion_puppeteerTimeout: number;
-		remotion_broadcastChannel: BroadcastChannel | undefined;
-		remotion_inputProps: string;
-		remotion_envVariables: string;
-		remotion_isMainTab: boolean;
-		remotion_mediaCacheSizeInBytes: number | null;
-		remotion_initialMemoryAvailable: number | null;
-		remotion_collectAssets: () => TRenderAsset[];
-		remotion_isPlayer: boolean;
-		remotion_isStudio: boolean;
-		remotion_isReadOnlyStudio: boolean;
-		remotion_isBuilding: undefined | (() => void);
-		remotion_finishedBuilding: undefined | (() => void);
+		picus_attempt: number;
+		picus_initialFrame: number;
+		picus_proxyPort: number;
+		picus_audioEnabled: boolean;
+		picus_videoEnabled: boolean;
+		picus_puppeteerTimeout: number;
+		picus_broadcastChannel: BroadcastChannel | undefined;
+		picus_inputProps: string;
+		picus_envVariables: string;
+		picus_isMainTab: boolean;
+		picus_mediaCacheSizeInBytes: number | null;
+		picus_initialMemoryAvailable: number | null;
+		picus_collectAssets: () => TRenderAsset[];
+		picus_isPlayer: boolean;
+		picus_isStudio: boolean;
+		picus_isReadOnlyStudio: boolean;
+		picus_isBuilding: undefined | (() => void);
+		picus_finishedBuilding: undefined | (() => void);
 		siteVersion: '11';
-		remotion_version: string;
-		remotion_imported: string | boolean;
-		remotion_unsavedProps: boolean | undefined;
+		picus_version: string;
+		picus_imported: string | boolean;
+		picus_unsavedProps: boolean | undefined;
 	}
 }
 
@@ -125,12 +125,12 @@ export type BundleState =
 	| BundleEvaluationState
 	| BundleCompositionState;
 
-checkMultipleRemotionVersions();
+checkMultiplePicusVersions();
 export * from './AbsoluteFill.js';
 export * from './animated-image/index.js';
 export type {AnyZodObject} from './any-zod-type.js';
 export {Artifact} from './Artifact.js';
-export {Audio, Html5Audio, RemotionAudioProps} from './audio/index.js';
+export {Audio, Html5Audio, PicusAudioProps} from './audio/index.js';
 export type {LoopVolumeCurveBehavior} from './audio/use-audio-frame.js';
 export {cancelRender} from './cancel-render.js';
 export type {Codec} from './codec.js';
@@ -149,7 +149,7 @@ export * from './easing.js';
 export * from './Folder.js';
 export * from './freeze.js';
 export type {NonceHistory} from './nonce.js';
-export {getRemotionEnvironment} from './get-remotion-environment.js';
+export {getPicusEnvironment} from './get-picus-environment.js';
 export {getStaticFiles, StaticFile} from './get-static-files.js';
 export * from './IFrame.js';
 export {Img, ImgProps} from './Img.js';
@@ -190,7 +190,7 @@ export {
 	useCurrentScale,
 } from './use-current-scale';
 export {useDelayRender} from './use-delay-render';
-export {useRemotionEnvironment} from './use-remotion-environment.js';
+export {usePicusEnvironment} from './use-picus-environment.js';
 export * from './use-video-config.js';
 export * from './version.js';
 export * from './video-config.js';
@@ -198,9 +198,9 @@ export {
 	Html5Video,
 	OffthreadVideo,
 	OffthreadVideoProps,
-	RemotionMainVideoProps,
-	RemotionOffthreadVideoProps,
-	RemotionVideoProps,
+	PicusMainVideoProps,
+	PicusOffthreadVideoProps,
+	PicusVideoProps,
 	Video,
 } from './video/index.js';
 export type {OnVideoFrame} from './video/props.js';
@@ -209,13 +209,13 @@ export {watchStaticFile} from './watch-static-file.js';
 
 export const Experimental = {
 	/**
-	 * @description This is a special component that will cause Remotion to only partially capture the frame of the video.
-	 * @see [Documentation](https://www.remotion.dev/docs/clipper)
+	 * @description This is a special component that will cause Picus to only partially capture the frame of the video.
+	 * @see [Documentation](https://www.picus.dev/docs/clipper)
 	 */
 	Clipper,
 	/**
 	 * @description This is a special component, that, when rendered, will skip rendering the frame altogether.
-	 * @see [Documentation](https://www.remotion.dev/docs/null)
+	 * @see [Documentation](https://www.picus.dev/docs/null)
 	 */
 	Null,
 	useIsPlayer,
@@ -238,17 +238,17 @@ export const Config = new Proxy(proxyObj, {
 		return () => {
 			/* eslint-disable no-console */
 			console.warn(
-				'⚠️  The CLI configuration has been extracted from Remotion Core.',
+				'⚠️  The CLI configuration has been extracted from Picus Core.',
 			);
 			console.warn('Update the import from the config file:');
 			console.warn();
 			console.warn('- Delete:');
-			console.warn('import {Config} from "remotion";');
+			console.warn('import {Config} from "picus";');
 			console.warn('+ Replace:');
-			console.warn('import {Config} from "@remotion/cli/config";');
+			console.warn('import {Config} from "@picus/cli/config";');
 			console.warn();
 			console.warn(
-				'For more information, see https://www.remotion.dev/docs/4-0-migration.',
+				'For more information, see https://www.picus.dev/docs/4-0-migration.',
 			);
 			/* eslint-enable no-console */
 

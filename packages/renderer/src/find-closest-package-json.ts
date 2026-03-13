@@ -19,7 +19,7 @@ export const findClosestPackageJson = (): string | null => {
 	return null;
 };
 
-export const findRemotionRoot = (): string => {
+export const findPicusRoot = (): string => {
 	const closestPackageJson = findClosestPackageJson();
 	if (closestPackageJson === null) {
 		return process.cwd();

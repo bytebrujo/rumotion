@@ -5,7 +5,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from '@remotion/design';
+} from '@picus/design';
 import type {InputAudioTrack} from 'mediabunny';
 import React from 'react';
 import type {AudioOperation} from '~/lib/audio-operation';

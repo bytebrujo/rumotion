@@ -23,7 +23,7 @@ Use Sequence to delay when an element appears in the timeline.
 **Correct (Sequence component):**
 
 ```tsx
-import { Sequence } from "remotion";
+import { Sequence } from "picus";
 
 <Sequence from={30} durationInFrames={90}>
   <Title />
@@ -38,7 +38,7 @@ import { Sequence } from "remotion";
 Use Series when elements should play one after another without overlap.
 
 ```tsx
-import { Series } from "remotion";
+import { Series } from "picus";
 
 <Series>
   <Series.Sequence durationInFrames={45}>

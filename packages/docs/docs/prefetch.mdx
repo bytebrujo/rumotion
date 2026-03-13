@@ -18,7 +18,7 @@ Remote assets need to support [CORS](https://developer.mozilla.org/en-US/docs/We
   <summary>More info</summary>
   <ul>
     <li>
-      Remotion's origin is usually <code>http://localhost:3000</code>, but it may be different if rendering on Lambda or the port is busy.
+      Picus's origin is usually <code>http://localhost:3000</code>, but it may be different if rendering on Lambda or the port is busy.
     </li>
     <li>
       You can <a href="/docs/chromium-flags#--disable-web-security">disable CORS</a> during renders.
@@ -28,7 +28,7 @@ Remote assets need to support [CORS](https://developer.mozilla.org/en-US/docs/We
 :::
 
 ```tsx twoslash
-import {prefetch} from 'remotion';
+import {prefetch} from 'picus';
 
 const {free, waitUntilDone} = prefetch('https://example.com/video.mp4', {
   method: 'blob-url',
@@ -44,7 +44,7 @@ free();
 
 This API is only useful if you are using the [`<Player />`](/docs/player) component and you want to display a media asset and want to be sure it is fully loaded before it appears.
 
-An alternative to `prefetch()` are the [`@remotion/preload`](/docs/preload) APIs. See [`@remotion/preload` vs `prefetch()`](/docs/player/preloading#remotionpreload-vs-prefetch) to decide which one is better for your usecase.
+An alternative to `prefetch()` are the [`@picus/preload`](/docs/preload) APIs. See [`@picus/preload` vs `prefetch()`](/docs/player/preloading#picuspreload-vs-prefetch) to decide which one is better for your usecase.
 
 ## API
 
@@ -78,8 +78,8 @@ Set a value for [`credentials`](https://developer.mozilla.org/en-US/docs/Web/API
 Callback for progress events.
 
 ```tsx twoslash
-import {prefetch} from 'remotion';
-import type {PrefetchOnProgress} from 'remotion';
+import {prefetch} from 'picus';
+import type {PrefetchOnProgress} from 'picus';
 
 const onProgress: PrefetchOnProgress = (progress) => {
   if (progress.totalBytes === null) {
@@ -143,6 +143,6 @@ This issue may arise in Safari specifically. We recommend testing your implement
 
 ## See also
 
-- [`@remotion/preload`](/docs/preload)
-- [`@remotion/preload` vs `prefetch()`](/docs/player/preloading#remotionpreload-vs-prefetch)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/prefetch.ts)
+- [`@picus/preload`](/docs/preload)
+- [`@picus/preload` vs `prefetch()`](/docs/player/preloading#picuspreload-vs-prefetch)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/prefetch.ts)

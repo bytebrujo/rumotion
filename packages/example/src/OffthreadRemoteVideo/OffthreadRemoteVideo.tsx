@@ -1,6 +1,6 @@
-import {parseMedia} from '@remotion/media-parser';
-import {StudioInternals} from '@remotion/studio';
-import {CalculateMetadataFunction, OffthreadVideo, staticFile} from 'remotion';
+import {parseMedia} from '@picus/media-parser';
+import {StudioInternals} from '@picus/studio';
+import {CalculateMetadataFunction, OffthreadVideo, staticFile} from 'picus';
 
 const fps = 30;
 const src = staticFile('bigbuckbunny.mp4') + '#t=lol';
@@ -10,7 +10,7 @@ export const calculateMetadataFn: CalculateMetadataFunction<
 > = async () => {
 	const {slowDurationInSeconds, dimensions} = await parseMedia({
 		src,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			slowDurationInSeconds: true,
 			dimensions: true,

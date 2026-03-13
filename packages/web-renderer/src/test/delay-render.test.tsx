@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {flushSync} from 'react-dom';
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 import {test} from 'vitest';
 import {renderStillOnWeb} from '../render-still-on-web';
 import '../symbol-dispose';

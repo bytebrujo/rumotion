@@ -1,4 +1,4 @@
-import type {VideoConfig} from 'remotion/no-react';
+import type {VideoConfig} from 'picus/no-react';
 import type {RenderMediaOnDownload} from './assets/download-and-map-assets-to-file';
 import type {DownloadMap} from './assets/download-map';
 import type {Page} from './browser/BrowserPage';

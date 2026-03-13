@@ -1,4 +1,4 @@
-import {Audio as NewAudio} from '@remotion/media';
+import {Audio as NewAudio} from '@picus/media';
 
 interface NewAudioProps {
 	src?: string;

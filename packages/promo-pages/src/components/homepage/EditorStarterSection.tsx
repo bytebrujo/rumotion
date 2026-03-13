@@ -38,7 +38,7 @@ const EditorStarterSection: React.FC = () => {
 						<div className="h-5" />
 						<div className="flex gap-2 items-center">
 							<a
-								href="https://www.remotion.pro/editor-starter?ref=remotion.dev"
+								href="https://www.picus.pro/editor-starter?ref=picus.dev"
 								target="_blank"
 								className="no-underline"
 							>
@@ -47,7 +47,7 @@ const EditorStarterSection: React.FC = () => {
 								</BlueButton>
 							</a>
 							<a
-								href="https://editor-starter.remotion.dev?ref=remotion.dev"
+								href="https://editor-starter.picus.dev?ref=picus.dev"
 								target="_blank"
 								className="no-underline"
 							>
@@ -56,7 +56,7 @@ const EditorStarterSection: React.FC = () => {
 								</ClearButton>
 							</a>{' '}
 							<a
-								href="https://remotion.dev/editor-starter"
+								href="https://picus.dev/editor-starter"
 								className="no-underline"
 							>
 								<ClearButton size="sm" loading={false}>

@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../../controller/media-parser-controller';
 import {nodeReader} from '../../node';
 import {parseMedia} from '../../parse-media';
@@ -44,7 +44,7 @@ test('seek flac', async () => {
 				}
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 

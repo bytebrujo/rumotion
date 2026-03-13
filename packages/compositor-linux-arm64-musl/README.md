@@ -1,6 +1,6 @@
-# @remotion/compositor-linux-arm64-musl
+# @picus/compositor-linux-arm64-musl
 
-Linux ARM64 binary for the Remotion Rust code
+Linux ARM64 binary for the Picus Rust code
 
 ## Usage
 

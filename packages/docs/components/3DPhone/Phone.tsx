@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import {useThree} from '@react-three/fiber';
 import React, {useEffect, useMemo} from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import type {VideoTexture} from 'three';
 import {
 	CAMERA_DISTANCE,

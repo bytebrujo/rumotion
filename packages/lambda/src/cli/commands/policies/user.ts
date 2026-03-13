@@ -1,4 +1,4 @@
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {getUserPolicy} from '../../../api/iam-validation/suggested-policy';
 import {Log} from '../../log';
 

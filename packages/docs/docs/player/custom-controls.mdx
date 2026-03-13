@@ -3,7 +3,7 @@ image: /generated/articles-docs-player-custom-controls.png
 id: custom-controls
 sidebar_label: 'Custom controls'
 title: 'Custom controls for the Player'
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 You may want to implement custom controls for the [`<Player>`](/docs/player/player) component.
@@ -37,7 +37,7 @@ Use this when you want to add custom buttons or indicators that blend in with th
 ```tsx twoslash title="ControlsSlot.tsx"
 const MyVideo: React.FC = () => null;
 // ---cut---
-import {Player, PlayerRef, RenderCustomControls} from '@remotion/player';
+import {Player, PlayerRef, RenderCustomControls} from '@picus/player';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 
 const DownloadButton: React.FC<{
@@ -118,7 +118,7 @@ Use the following starting points to implement your own controls. You will need 
 ### Play / Pause button
 
 ```tsx twoslash title="PlayPauseButton.tsx"
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import {useCallback, useEffect, useState} from 'react';
 
 export const PlayPauseButton: React.FC<{
@@ -167,7 +167,7 @@ The [buffering indicator](/docs/player/buffer-state) is not implemented in this 
 ### Time display
 
 ```tsx twoslash title="TimeDisplay.tsx"
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import React, {useEffect} from 'react';
 
 export const formatTime = (frame: number, fps: number): string => {
@@ -232,7 +232,7 @@ export const TimeDisplay: React.FC<{
 ```
 
 :::note
-The [conventional time formatting for video editors](https://github.com/remotion-dev/remotion/issues/694#issuecomment-968318664) is `hh:mm:ss.ff` where `hh` is hours, `mm` is minutes, `ss` is seconds and `ff` is frames past the second.  
+The [conventional time formatting for video editors](https://github.com/picus-dev/picus/issues/694#issuecomment-968318664) is `hh:mm:ss.ff` where `hh` is hours, `mm` is minutes, `ss` is seconds and `ff` is frames past the second.  
 :::
 
 ### Fullscreen button
@@ -243,7 +243,7 @@ Pay attention to two nuances when implementing the Fullscreen button:
 - If using server-side rendering, feature detection should be performed after the component has been mounted on the client to avoid a React hydration mismatch.
 
 ```tsx twoslash title="FullscreenButton.tsx"
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import React, {useCallback, useEffect, useState} from 'react';
 
 export const FullscreenButton: React.FC<{
@@ -313,9 +313,9 @@ The `Exit Fullscreen` label is hypothetical since if it is rendered outside of t
 ### Seek bar
 
 ```tsx twoslash title="SeekBar.tsx"
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 
 type Size = {
   width: number;
@@ -793,7 +793,7 @@ const MyComp: React.FC = () => {
 // ---cut---
 import React, {useState} from 'react';
 import {LoopButton} from './LoopButton';
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 
 export const MyComponent: React.FC = () => {
   const [loop, setLoop] = useState(false);
@@ -826,7 +826,7 @@ The following component handles the special case of the video being "muted":
 This allows us to keep an internal state of the volume that was set before muting the video and reset the slider to that value after unmuting.
 
 ```tsx twoslash title="VolumeSlider.tsx"
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import React, {useEffect, useState} from 'react';
 
 export const VolumeSlider: React.FC<{
@@ -890,11 +890,11 @@ export const VolumeSlider: React.FC<{
 
 ### Mute button
 
-Remotion also considers a video "muted" if the volume is 0.  
+Picus also considers a video "muted" if the volume is 0.  
 You don't need to handle a special case here.
 
 ```tsx twoslash title="MuteButton.tsx"
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import React, {useEffect, useState} from 'react';
 
 export const MuteButton: React.FC<{

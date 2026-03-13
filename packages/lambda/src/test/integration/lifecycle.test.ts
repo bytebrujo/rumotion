@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
 
 test('Lifecycle', () => {
 	expect(LambdaClientInternals.getLifeCycleRules()).toEqual([

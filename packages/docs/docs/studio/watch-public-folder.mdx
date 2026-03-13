@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-studio-watch-public-folder.png
 title: watchPublicFolder()
-crumb: "@remotion/studio"
+crumb: "@picus/studio"
 ---
 
 # watchPublicFolder()<AvailableFrom v="4.0.154"/>
@@ -9,13 +9,13 @@ crumb: "@remotion/studio"
 Watches for changes in the [public directory](/docs/terminology/public-dir) and calls a callback function when a file is added, removed or modified.
 
 :::note
-This feature is only available within the Remotion Studio environment. In the Player, events will never fire.
+This feature is only available within the Picus Studio environment. In the Player, events will never fire.
 :::
 
 ## Example
 
 ```tsx twoslash title="example.tsx"
-import { StaticFile, watchPublicFolder } from "@remotion/studio";
+import { StaticFile, watchPublicFolder } from "@picus/studio";
 
 // Watch for changes in a specific static file
 const { cancel } = watchPublicFolder((newFiles: StaticFile[]) => {
@@ -36,7 +36,7 @@ A callback function that will be called when the directory is modified. As an ar
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/studio/src/api/watch-public-folder.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/studio/src/api/watch-public-folder.ts)
 - [`watchStaticFile()`](/docs/studio/watch-static-file)
 - [`staticFile()`](/docs/staticfile)
 - [`getStaticFiles()`](/docs/studio/get-static-files)

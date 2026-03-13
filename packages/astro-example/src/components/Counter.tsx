@@ -1,5 +1,5 @@
-import {Gif} from '@remotion/gif';
-import {Player} from '@remotion/player';
+import {Gif} from '@picus/gif';
+import {Player} from '@picus/player';
 import './Counter.css';
 
 const Comp: React.FC = () => {

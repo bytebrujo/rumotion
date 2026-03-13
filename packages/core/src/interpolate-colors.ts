@@ -469,7 +469,7 @@ const interpolateColorsRGB = (
 
 /*
  * @description Allows you to map a range of values to colors using a concise syntax.
- * @see [Documentation](https://remotion.dev/docs/interpolate-colors)
+ * @see [Documentation](https://picus.dev/docs/interpolate-colors)
  */
 export const interpolateColors = (
 	input: number,

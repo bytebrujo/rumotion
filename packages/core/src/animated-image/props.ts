@@ -1,9 +1,9 @@
-export type RemotionAnimatedImageLoopBehavior =
+export type PicusAnimatedImageLoopBehavior =
 	| 'loop'
 	| 'pause-after-finish'
 	| 'clear-after-finish';
 
-export type RemotionAnimatedImageProps = {
+export type PicusAnimatedImageProps = {
 	src: string;
 	width?: number;
 	height?: number;
@@ -11,7 +11,7 @@ export type RemotionAnimatedImageProps = {
 	fit?: AnimatedImageFillMode;
 	playbackRate?: number;
 	style?: React.CSSProperties;
-	loopBehavior?: RemotionAnimatedImageLoopBehavior;
+	loopBehavior?: PicusAnimatedImageLoopBehavior;
 	id?: string;
 	className?: string;
 };

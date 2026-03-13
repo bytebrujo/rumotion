@@ -1,5 +1,5 @@
-import {TransitionSeries} from '@remotion/transitions';
-import {Html5Video, Sequence} from 'remotion';
+import {TransitionSeries} from '@picus/transitions';
+import {Html5Video, Sequence} from 'picus';
 
 // test case: Nested sequences should be considered premounted
 export const PremountOnTransitionSeries = () => {
@@ -11,7 +11,7 @@ export const PremountOnTransitionSeries = () => {
 			<TransitionSeries.Sequence durationInFrames={100} premountFor={150}>
 				<Sequence>
 					<Sequence>
-						<Html5Video src="https://remotion.media/BigBuckBunny.mp4" />
+						<Html5Video src="https://picus.media/BigBuckBunny.mp4" />
 					</Sequence>
 				</Sequence>
 			</TransitionSeries.Sequence>

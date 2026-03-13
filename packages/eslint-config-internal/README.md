@@ -1,6 +1,6 @@
-# @remotion/eslint-config-internal
+# @picus/eslint-config-internal
 
-ESLint condig for Remotion's internal packages
+ESLint condig for Picus's internal packages
 
 ## Usage
 

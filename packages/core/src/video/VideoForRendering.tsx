@@ -21,15 +21,15 @@ import {SequenceContext} from '../SequenceContext.js';
 import {useTimelinePosition} from '../timeline-position-state.js';
 import {useCurrentFrame} from '../use-current-frame.js';
 import {useDelayRender} from '../use-delay-render.js';
-import {useRemotionEnvironment} from '../use-remotion-environment.js';
+import {usePicusEnvironment} from '../use-picus-environment.js';
 import {useUnsafeVideoConfig} from '../use-unsafe-video-config.js';
 import {evaluateVolume} from '../volume-prop.js';
 import {warnAboutTooHighVolume} from '../volume-safeguard.js';
 import {getMediaTime} from './get-current-time.js';
-import type {OnVideoFrame, RemotionVideoProps} from './props';
+import type {OnVideoFrame, PicusVideoProps} from './props';
 import {seekToTimeMultipleUntilRight} from './seek-until-right.js';
 
-type VideoForRenderingProps = RemotionVideoProps & {
+type VideoForRenderingProps = PicusVideoProps & {
 	readonly onDuration: (src: string, durationInSeconds: number) => void;
 	readonly onVideoFrame: null | OnVideoFrame;
 };
@@ -66,7 +66,7 @@ const VideoForRenderingForwardFunction: React.ForwardRefRenderFunction<
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const sequenceContext = useContext(SequenceContext);
 	const mediaStartsAt = useMediaStartsAt();
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 	const logLevel = useLogLevel();
 	const mountTime = useMountTime();
 	const {delayRender, continueRender} = useDelayRender();
@@ -114,7 +114,7 @@ const VideoForRenderingForwardFunction: React.ForwardRefRenderFunction<
 			return;
 		}
 
-		if (!window.remotion_audioEnabled) {
+		if (!window.picus_audioEnabled) {
 			return;
 		}
 
@@ -152,7 +152,7 @@ const VideoForRenderingForwardFunction: React.ForwardRefRenderFunction<
 	}, []);
 
 	useEffect(() => {
-		if (!window.remotion_videoEnabled) {
+		if (!window.picus_videoEnabled) {
 			return;
 		}
 
@@ -224,7 +224,7 @@ const VideoForRenderingForwardFunction: React.ForwardRefRenderFunction<
 				}
 
 				throw new Error(
-					`The browser threw an error while playing the video ${props.src}: Code ${current.error.code} - ${current?.error?.message}. See https://remotion.dev/docs/media-playback-error for help. Pass an onError() prop to handle the error.`,
+					`The browser threw an error while playing the video ${props.src}: Code ${current.error.code} - ${current?.error?.message}. See https://picus.dev/docs/media-playback-error for help. Pass an onError() prop to handle the error.`,
 				);
 			} else {
 				throw new Error('The browser threw an error');

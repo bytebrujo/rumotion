@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT = false;
 
@@ -7,8 +7,8 @@ const cliFlag = 'disable-git-source';
 export const disableGitSourceOption = {
 	cliFlag,
 	description: () =>
-		`Disables the Git Source being connected to the Remotion Studio. Clicking on stack traces and certain menu items will be disabled.`,
-	docLink: 'https://remotion.dev/docs/bundle',
+		`Disables the Git Source being connected to the Picus Studio. Clicking on stack traces and certain menu items will be disabled.`,
+	docLink: 'https://picus.dev/docs/bundle',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag]) {
 			return {
@@ -29,4 +29,4 @@ export const disableGitSourceOption = {
 	ssrName: 'disableGitSource',
 	type: false as boolean,
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

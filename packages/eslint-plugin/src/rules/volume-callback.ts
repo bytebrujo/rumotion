@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://github.com/remotion-dev/remotion`;
+	return `https://github.com/picus-dev/picus`;
 });
 
 type Options = [];
@@ -9,7 +9,7 @@ type Options = [];
 type MessageIds = 'VolumeCallback';
 
 const VolumeCallback =
-	'Prefer a callback function for setting the volume: `volume={(f) => interpolate(...)}`. See https://www.remotion.dev/docs/audio/volume';
+	'Prefer a callback function for setting the volume: `volume={(f) => interpolate(...)}`. See https://www.picus.dev/docs/audio/volume';
 
 export default createRule<Options, MessageIds>({
 	name: 'volume-callback',

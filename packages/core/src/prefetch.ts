@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {getRemotionEnvironment} from './get-remotion-environment.js';
+import {getPicusEnvironment} from './get-picus-environment.js';
 import type {LogLevel} from './log.js';
 import {Log} from './log.js';
 import {playbackLogging} from './playback-logging.js';
@@ -108,7 +108,7 @@ const getBlobFromReader = async ({
 
 /*
  * @description When you call the prefetch() function, an asset will be fetched and kept in memory so it is ready when you want to play it in a <Player>.
- * @see [Documentation](https://www.remotion.dev/docs/prefetch)
+ * @see [Documentation](https://www.picus.dev/docs/prefetch)
  */
 export const prefetch = (
 	src: string,
@@ -124,7 +124,7 @@ export const prefetch = (
 	const logLevel = options?.logLevel ?? 'info';
 	const srcWithoutHash = getSrcWithoutHash(src);
 
-	if (getRemotionEnvironment().isRendering) {
+	if (getPicusEnvironment().isRendering) {
 		return {
 			free: () => undefined,
 			waitUntilDone: () => Promise.resolve(srcWithoutHash),

@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'image-sequence-pattern' as const;
 
@@ -35,4 +35,4 @@ export const imageSequencePatternOption = {
 		currentImageSequencePattern = pattern;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

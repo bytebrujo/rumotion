@@ -1,14 +1,14 @@
 ---
 image: /generated/articles-docs-media-parser-index.png
 sidebar_label: Overview
-title: '@remotion/media-parser'
+title: '@picus/media-parser'
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {TableOfContents, MediaParserGuideTableOfContents, ReadersTableOfContents, WritersTableOfContents, TypesTableOfContents} from './TableOfContents';
 
-# @remotion/media-parser
+# @picus/media-parser
 
 :::warning
 [We are phasing out Media Parser and are moving to Mediabunny](/blog/mediabunny)!
@@ -50,17 +50,17 @@ Design goals:
 
 ## Installation
 
-<Installation pkg="@remotion/media-parser" />
+<Installation pkg="@picus/media-parser" />
 
 ## Hello World
 
 Get metadata from a video file - [over 20 different fields are supported.](/docs/media-parser/fields)
 
 ```tsx twoslash title="Get the duration and codec of a video"
-import {parseMedia} from '@remotion/media-parser';
+import {parseMedia} from '@picus/media-parser';
 
 const {durationInSeconds, videoCodec} = await parseMedia({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   fields: {
     durationInSeconds: true,
     videoCodec: true,
@@ -74,10 +74,10 @@ console.log(videoCodec); // 'h264';
 Extract samples from a video file - [supports WebCodecs](/docs/media-parser/webcodecs).
 
 ```tsx twoslash title="Extract samples from a video"
-import {parseMedia} from '@remotion/media-parser';
+import {parseMedia} from '@picus/media-parser';
 
 await parseMedia({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   onVideoTrack: ({track}) => {
     // Get information about the
     console.log(track.width);
@@ -129,14 +129,14 @@ Choose how to store files downloaded using [`downloadAndParseMedia()`](/docs/med
 
 - Media Parser specializes for JavaScript and on the web.  
   It is designed to embrace the language and make use of the APIs that JavaScript has to offer.
-- Unlike FFmpeg, Remotion Media Parser does not have functionality for decoding and encoding – it only parses media files.  
+- Unlike FFmpeg, Picus Media Parser does not have functionality for decoding and encoding – it only parses media files.  
   Instead, we hope you combine it with WebCodecs, the native API built into browsers.
 - Media Parser has no command line interface and cannot be integrated into native applications.
 
 ## How does this compare to MP4Box.js?
 
 MP4Box.js does a better job at parsing the ISO Base Media Format (`.mp4`, `.m4a`, `.mov`) and supports reading more information from it.  
-Remotion Media Parser supports more [container formats](/docs/media-parser/format-support), with the goal that it can handle arbitrary user-provided media files.
+Picus Media Parser supports more [container formats](/docs/media-parser/format-support), with the goal that it can handle arbitrary user-provided media files.
 
 ## Thank you
 
@@ -146,11 +146,11 @@ Remotion Media Parser supports more [container formats](/docs/media-parser/forma
       <img style={{width: 100}} src="https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/tellahq_logo.jpeg" />
     </td>
     <td>
-      <a href="https://tella.com">Tella</a> for boosting the development of @remotion/media-parser with $10.000!
+      <a href="https://tella.com">Tella</a> for boosting the development of @picus/media-parser with $10.000!
     </td>
   </tr>
 </table>
 
 ## License
 
-[Remotion License](https://remotion.dev/license)
+[Picus License](https://picus.dev/license)

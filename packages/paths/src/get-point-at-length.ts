@@ -3,7 +3,7 @@ import {construct} from './helpers/construct';
 
 /*
  * @description Gets the coordinates of a point which is on an SVG path.
- * @see [Documentation](https://www.remotion.dev/docs/paths/get-point-at-length)
+ * @see [Documentation](https://www.picus.dev/docs/paths/get-point-at-length)
  */
 export const getPointAtLength = (path: string, length: number) => {
 	const constructed = construct(path);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {cmdOrCtrlCharacter} from '../error-overlay/remotion-overlay/ShortcutHint';
+import {cmdOrCtrlCharacter} from '../error-overlay/picus-overlay/ShortcutHint';
 import {
 	INPUT_BACKGROUND,
 	INPUT_BORDER_COLOR_UNHOVERED,
@@ -71,7 +71,7 @@ export const KeyboardShortcutsExplainer: React.FC = () => {
 						<li style={li}>
 							b) Config.setKeyboardShortcutsEnabled(false) being set or
 						</li>
-						<li style={li}> c) a Remotion version mismatch.</li>
+						<li style={li}> c) a Picus version mismatch.</li>
 					</ul>
 				</div>
 			) : null}

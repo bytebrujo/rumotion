@@ -52,7 +52,7 @@ export default ({columns}) => {
 
 	useEffect(() => {
 		if (colorMode === 'dark') {
-			setSrc('/img/remotion-white.png');
+			setSrc('/img/picus-white.png');
 		} else {
 			setSrc('/img/new-logo.png');
 		}
@@ -75,7 +75,7 @@ export default ({columns}) => {
 					}}
 				/>
 				<p style={copyright}>
-					© Copyright {new Date().getFullYear()} Remotion AG. <br /> Website
+					© Copyright {new Date().getFullYear()} Picus AG. <br /> Website
 					created with Docusaurus.
 				</p>
 			</div>

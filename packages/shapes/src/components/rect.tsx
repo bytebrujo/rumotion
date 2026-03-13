@@ -12,7 +12,7 @@ export type RectProps = MakeRectOptions & AllShapesProps;
  * @param {Number} height The height of the Rectangle
  * @param {Number} cornerRadius Rounds the corner using an arc. Similar to CSS's border-radius. Cannot be used together with edgeRoundness.
  * @param {null|Number} edgeRoundness Allows to modify the shape by rounding the edges using bezier curves. Default null.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/rect)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/rect)
  */
 export const Rect: React.FC<RectProps> = ({
 	width,

@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-presentations-none.png
-crumb: "@remotion/transitions - Presentations"
+crumb: "@picus/transitions - Presentations"
 title: "none()"
 ---
 
@@ -14,7 +14,7 @@ Instead, you control the visual effect by using the [`useTransitionProgress()`](
 ## Example
 
 ```tsx twoslash title="NoneTransition.tsx"
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -36,8 +36,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import { linearTiming, TransitionSeries } from "@remotion/transitions";
-import { none } from "@remotion/transitions/none";
+import { linearTiming, TransitionSeries } from "@picus/transitions";
+import { none } from "@picus/transitions/none";
 
 const BasicTransition = () => {
   return (
@@ -63,5 +63,5 @@ An object which takes no options.
 
 ## See also
 
-- [Source code for this presentation](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/presentations/none.tsx)
+- [Source code for this presentation](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/presentations/none.tsx)
 - [Presentations](/docs/transitions/presentations)

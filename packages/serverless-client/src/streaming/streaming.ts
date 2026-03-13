@@ -1,4 +1,4 @@
-import {makeStreamPayloadMessage} from '@remotion/streaming';
+import {makeStreamPayloadMessage} from '@picus/streaming';
 import type {SerializedArtifact} from '../serialize-artifact';
 import type {CloudProvider, RenderStillFunctionResponsePayload} from '../types';
 import type {FunctionErrorInfo} from '../write-error-to-storage';

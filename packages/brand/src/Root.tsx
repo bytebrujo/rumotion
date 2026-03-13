@@ -1,5 +1,5 @@
 import './index.css';
-import {Composition, Folder, staticFile} from 'remotion';
+import {Composition, Folder, staticFile} from 'picus';
 import {AnimatedBanner} from './animated-logo/AnimatedBanner';
 import {AnimatedLogo} from './animated-logo/AnimatedLogo';
 import {AnimatedLogoStringer} from './animated-logo/AnimatedLogoStinger';
@@ -9,10 +9,10 @@ import {Banner} from './Brand/Banner';
 import {Comp} from './Brand/Composition';
 import {TriangleDemo} from './Brand/TriangleToSquare';
 import {
-	WhatIsRemotion,
-	whatIsRemotionCalculateMetadata,
-	whatIsRemotionSchema,
-} from './Compose/WhatIsRemotion';
+	WhatIsPicus,
+	whatIsPicusCalculateMetadata,
+	whatIsPicusSchema,
+} from './Compose/WhatIsPicus';
 import {EmailSignature} from './EmailSignature';
 import {Logo} from './Logo';
 import {LogoCollab, logoCollabSchema} from './LogoCollab/LogoCollab';
@@ -38,7 +38,7 @@ import {StepGuide, stepGuideSchema} from './video-elements/step-guide';
 import {GithubRepo, githubRepoSchema} from './video-elements/upper-reference';
 import {UpperThird, upperThirdSchema} from './video-elements/UpperThird';
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="static-logo">
@@ -78,14 +78,14 @@ export const RemotionRoot: React.FC = () => {
 				/>
 			</Folder>
 			<Composition
-				id="WhatIsRemotion"
-				component={WhatIsRemotion}
+				id="WhatIsPicus"
+				component={WhatIsPicus}
 				width={1080}
 				fps={30}
 				durationInFrames={273}
-				schema={whatIsRemotionSchema}
+				schema={whatIsPicusSchema}
 				defaultProps={{fade: false, whiteBackground: false, reel: false}}
-				calculateMetadata={whatIsRemotionCalculateMetadata}
+				calculateMetadata={whatIsPicusCalculateMetadata}
 			/>
 			<Composition
 				component={ProductHuntLogo}
@@ -186,7 +186,7 @@ export const RemotionRoot: React.FC = () => {
 					component={GithubRepo}
 					schema={githubRepoSchema}
 					defaultProps={{
-						repoName: 'remotion-dev/remotion',
+						repoName: 'picus-dev/picus',
 					}}
 					durationInFrames={5 * 30}
 					fps={30}
@@ -199,7 +199,7 @@ export const RemotionRoot: React.FC = () => {
 					schema={upperThirdSchema}
 					defaultProps={{
 						title: 'Title',
-						subtitle: 'remotion.dev',
+						subtitle: 'picus.dev',
 					}}
 					durationInFrames={5 * 30}
 					fps={30}
@@ -236,7 +236,7 @@ export const RemotionRoot: React.FC = () => {
 					height={1080}
 					schema={PromptSchema}
 					defaultProps={{
-						prompt: 'Use Remotion Best Practices.',
+						prompt: 'Use Picus Best Practices.',
 						thinkingIndex: 40,
 					}}
 					calculateMetadata={() => {
@@ -341,9 +341,9 @@ export const RemotionRoot: React.FC = () => {
 						partnerLogoUrl: staticFile('logo/external/opencode.svg'),
 						theme: 'light' as const,
 						partnerLogoScale: 1,
-						remotionLogoScale: 2.6,
+						picusLogoScale: 2.6,
 						partnerLogoX: -36,
-						remotionLogoX: -8,
+						picusLogoX: -8,
 					}}
 					durationInFrames={90}
 					fps={30}
@@ -358,7 +358,7 @@ export const RemotionRoot: React.FC = () => {
 						heading: 'AI Best Practices',
 						rules: [
 							{
-								title: 'Tell the agent to use Remotion Best Practices skill',
+								title: 'Tell the agent to use Picus Best Practices skill',
 								description:
 									'Be explicit, so that the agent picks it up correctly.',
 							},
@@ -368,7 +368,7 @@ export const RemotionRoot: React.FC = () => {
 									'Do not ask for 5 or 10 changes in one message. Otherwise, the AI gets confused.',
 							},
 							{
-								title: 'Use Remotion documentation',
+								title: 'Use Picus documentation',
 								description:
 									'You can copy the page or add .md to the end of the URL to get a Markdown version and feed it to your AI agent.',
 							},

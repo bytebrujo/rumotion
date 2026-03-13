@@ -2,23 +2,23 @@
 image: /generated/articles-docs-player-preloading.png
 sidebar_label: 'Preloading'
 title: 'Preloading assets'
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
-By default, assets such as videos, audio, or images will only be loaded as they enter the video. When using the [Remotion Player](/docs/terminology/player), you may want to preload those assets beforehand to make them play immediately once they enter the video.
+By default, assets such as videos, audio, or images will only be loaded as they enter the video. When using the [Picus Player](/docs/terminology/player), you may want to preload those assets beforehand to make them play immediately once they enter the video.
 
 Two ways of preloading are supported:
 
-- Signaling to the browser that assets should be loaded using the [`@remotion/preload`](/docs/preload) APIs
+- Signaling to the browser that assets should be loaded using the [`@picus/preload`](/docs/preload) APIs
 - Fetching the assets beforehand and then playing them locally using [`prefetch()`](/docs/prefetch)
 
-## Preloading videos using `@remotion/preload`
+## Preloading videos using `@picus/preload`
 
 By preloading, a `<link type='preload'>` tag is placed on the page, signaling to the browser that it may start loading the media.  
 For videos, use [`preloadVideo()`](/docs/preload/preload-video) API, for audio use [`preloadAudio()`](/docs/preload/preload-audio), for images use [`preloadImage()`](/docs/preload/preload-image). Perform the preload outside a component or inside an [`useEffect()`](https://react.dev/reference/react/useEffect).
 
 ```tsx twoslash
-import {preloadAudio, preloadVideo} from '@remotion/preload';
+import {preloadAudio, preloadVideo} from '@picus/preload';
 
 const unpreloadVideo = preloadVideo('https://example.com/video.mp4');
 const unpreloadAudio = preloadAudio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
@@ -36,7 +36,7 @@ By prefetching, the full media is downloaded and turned into a Blob URL using [`
 If you pass the original URL into either an [`<Audio>`](/docs/media/audio), [`<Video>`](/docs/media/video), [`<OffthreadVideo>`](/docs/offthreadvideo), [`<Html5Audio>`](/docs/html5-audio), [`<Html5Video>`](/docs/html5-video), or [`<Img>`](/docs/img) tag and the asset is prefetched, those components will use Blob URL instead.
 
 ```tsx twoslash
-import {prefetch} from 'remotion';
+import {prefetch} from 'picus';
 
 const {free, waitUntilDone} = prefetch('https://example.com/video.mp4');
 
@@ -48,11 +48,11 @@ waitUntilDone().then(() => {
 free();
 ```
 
-## `@remotion/preload` vs. `prefetch()`
+## `@picus/preload` vs. `prefetch()`
 
 [`prefetch()`](/docs/prefetch) is a more reliable way of ensuring the media is ready when it needs to displayed, but the asset needs to be downloaded in full for it.
 
-[`@remotion/preload`](/docs/preload) is preferrable if the asset is large since you don't have to wait for it finish downloading,
+[`@picus/preload`](/docs/preload) is preferrable if the asset is large since you don't have to wait for it finish downloading,
 
 <table>
   <tr>
@@ -135,8 +135,8 @@ free();
   </tr>
   <tr>
     <td>Package</td>
-    <td>@remotion/preload</td>
-    <td>remotion</td>
+    <td>@picus/preload</td>
+    <td>picus</td>
   </tr>
   <tr>
     <td>Handles HTTP redirects</td>
@@ -174,6 +174,6 @@ You can preload and preparse GIFs using [`preloadGif()`](/docs/gif/preload-gif)
 
 ## See also
 
-- [`@remotion/preload`](/docs/preload)
+- [`@picus/preload`](/docs/preload)
 - [`prefetch()`](/docs/prefetch)
 - [Avoiding flickering in `<Player>`](/docs/troubleshooting/player-flicker)

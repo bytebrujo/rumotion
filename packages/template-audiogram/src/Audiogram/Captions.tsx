@@ -1,6 +1,6 @@
-import { Caption } from "@remotion/captions";
+import { Caption } from "@picus/captions";
 import React, { useMemo, useRef } from "react";
-import { useCurrentFrame } from "remotion";
+import { useCurrentFrame } from "picus";
 import { msToFrame } from "../helpers/ms-to-frame";
 import { CAPTIONS_FONT_SIZE } from "./constants";
 import { FONT_FAMILY } from "./font";

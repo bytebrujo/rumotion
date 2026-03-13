@@ -1,6 +1,6 @@
 import React, {useContext, useMemo} from 'react';
-import type {TSequence} from 'remotion';
-import {Internals, useCurrentFrame} from 'remotion';
+import type {TSequence} from 'picus';
+import {Internals, useCurrentFrame} from 'picus';
 import {BLUE} from '../../helpers/colors';
 import {
 	SEQUENCE_BORDER_WIDTH,

@@ -16,7 +16,7 @@ import {ensureOutputDirectory} from './ensure-output-directory';
 import {symbolicateError} from './error-handling/symbolicate-error';
 import {SymbolicateableError} from './error-handling/symbolicateable-error';
 import {defaultFileExtensionMap} from './file-extensions';
-import {findRemotionRoot} from './find-closest-package-json';
+import {findPicusRoot} from './find-closest-package-json';
 import {validateFrameRange} from './frame-range';
 import {internalGetCompositions} from './get-compositions';
 import {resolveConcurrency} from './get-concurrency';
@@ -109,10 +109,10 @@ export {
 	DownloadBrowserProgressFn,
 	OnBrowserDownload,
 } from './options/on-browser-download';
-export {AnyRemotionOption, RemotionOption, ToOptions} from './options/option';
+export {AnyPicusOption, PicusOption, ToOptions} from './options/option';
 export {X264Preset} from './options/x264-preset';
 export {PixelFormat} from './pixel-format';
-export {RemotionServer} from './prepare-server';
+export {PicusServer} from './prepare-server';
 export {OnArtifact, RenderFramesOptions, renderFrames} from './render-frames';
 export {
 	InternalRenderMediaOptions,
@@ -207,7 +207,7 @@ export const RenderInternals = {
 	isValidLogLevel,
 	perf,
 	convertToPositiveFrameIndex,
-	findRemotionRoot,
+	findPicusRoot,
 	validateBitrate,
 	getMinConcurrency,
 	getMaxConcurrency,

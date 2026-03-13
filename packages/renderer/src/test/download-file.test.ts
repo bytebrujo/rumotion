@@ -9,12 +9,12 @@ test(
 	async () => {
 		const downloadDir = tmpdir();
 		const {to} = await downloadFile({
-			url: 'https://remotion.dev/',
+			url: 'https://picus.dev/',
 			to: (contentDisposition, contentType) => {
 				return getSanitizedFilenameForAssetUrl({
 					contentDisposition,
 					downloadDir,
-					src: 'https://remotion.dev/',
+					src: 'https://picus.dev/',
 					contentType,
 				});
 			},

@@ -30,7 +30,7 @@ export const warnAboutNonSeekableMedia = (
 			'1) The media resource was replaced while the video is playing but it was not loaded yet.',
 			'2) The media does not support seeking.',
 			'3) The media was loaded with security headers prventing it from being included.',
-			'Please see https://remotion.dev/docs/non-seekable-media for assistance.',
+			'Please see https://picus.dev/docs/non-seekable-media for assistance.',
 		].join('\n');
 
 		if (type === 'console-error') {
@@ -39,7 +39,7 @@ export const warnAboutNonSeekableMedia = (
 		} else if (type === 'console-warning') {
 			// eslint-disable-next-line no-console
 			console.warn(
-				`The media ${ref.src} does not support seeking. The video will render fine, but may not play correctly in the Remotion Studio and in the <Player>. See https://remotion.dev/docs/non-seekable-media for an explanation.`,
+				`The media ${ref.src} does not support seeking. The video will render fine, but may not play correctly in the Picus Studio and in the <Player>. See https://picus.dev/docs/non-seekable-media for an explanation.`,
 			);
 		} else {
 			throw new Error(msg);

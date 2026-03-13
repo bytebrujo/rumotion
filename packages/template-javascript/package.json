@@ -1,24 +1,24 @@
 {
   "name": "template-javascript",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "My Picus video",
   "scripts": {
-    "dev": "remotion studio",
-    "build": "remotion bundle",
-    "upgrade": "remotion upgrade",
+    "dev": "picus studio",
+    "build": "picus bundle",
+    "upgrade": "picus upgrade",
     "lint": "eslint src"
   },
   "repository": {},
   "license": "UNLICENSED",
   "dependencies": {
-    "@remotion/cli": "workspace:*",
+    "@picus/cli": "workspace:*",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "workspace:*",
+    "picus": "workspace:*",
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@remotion/eslint-config-flat": "workspace:*",
+    "@picus/eslint-config-flat": "workspace:*",
     "prettier": "3.8.1",
     "eslint": "9.19.0"
   },

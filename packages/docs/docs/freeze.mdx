@@ -25,7 +25,7 @@ If a component is a child of `<Freeze/>`, calling the [`useCurrentFrame()`](/doc
 ```tsx twoslash title="MyComp.tsx"
 // @include: example-BlueSquare
 // ---cut---
-import {Freeze} from 'remotion';
+import {Freeze} from 'picus';
 
 const MyVideo = () => {
   return (
@@ -52,7 +52,7 @@ You may also pass a callback function and accept the current frame and return a 
 ```tsx twoslash title="From frame 30 on"
 // @include: example-BlueSquare
 // ---cut---
-import {Freeze} from 'remotion';
+import {Freeze} from 'picus';
 
 const MyVideo = () => {
   return (
@@ -73,5 +73,5 @@ const MyVideo = () => {
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/freeze.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/core/src/freeze.tsx)
 - [`useCurrentFrame()`](/docs/use-current-frame)

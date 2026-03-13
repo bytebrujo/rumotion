@@ -5,7 +5,7 @@ title: Data fetching
 crumb: "How to"
 ---
 
-In Remotion, you may fetch data from an API to use it in your video. On this page, we document recipes and best practices.
+In Picus, you may fetch data from an API to use it in your video. On this page, we document recipes and best practices.
 
 ## Fetching data before the render<AvailableFrom v="4.0.0"/>
 
@@ -20,7 +20,7 @@ The data being fetched using `calculateMetadata()` must be JSON-serializable. Th
 Pass a callback function which takes the untransformed `props`, and return an object with the new props.
 
 ```tsx twoslash title="src/Root.tsx"
-import { Composition } from "remotion";
+import { Composition } from "picus";
 
 type ApiResponse = {
   title: string;
@@ -90,7 +90,7 @@ const MyComp: React.FC<MyCompProps> = ({ data }) => {
 
 ### TypeScript typing
 
-You may use the `CalculateMetadataFunction` type from `remotion` to type your callback function. Pass as the generic value (`<>`) the type of your props.
+You may use the `CalculateMetadataFunction` type from `picus` to type your callback function. Pass as the generic value (`<>`) the type of your props.
 
 ```tsx twoslash title="src/Root.tsx"
 type ApiResponse = {
@@ -103,7 +103,7 @@ type MyCompProps = {
 };
 
 // ---cut---
-import { CalculateMetadataFunction } from "remotion";
+import { CalculateMetadataFunction } from "picus";
 
 export const calculateMyCompMetadata: CalculateMetadataFunction<
   MyCompProps
@@ -127,7 +127,7 @@ export const MyComp: React.FC<MyCompProps> = () => null;
 Here is an example of how you could define a schema, a component and a fetcher function in the same file:
 
 ```tsx twoslash title="MyComp.tsx"
-import { CalculateMetadataFunction } from "remotion";
+import { CalculateMetadataFunction } from "picus";
 import { z } from "zod";
 
 const apiResponse = z.object({ title: z.string(), description: z.string() });
@@ -166,7 +166,7 @@ export const MyComp: React.FC<Props> = ({ data }) => {
 // @filename: src/MyComp.tsx
 // organize-imports-ignore
 import React from "react";
-import { CalculateMetadataFunction } from "remotion";
+import { CalculateMetadataFunction } from "picus";
 import { z } from "zod";
 
 const apiResponse = z.object({ title: z.string(), description: z.string() });
@@ -203,7 +203,7 @@ export const MyComp: React.FC<Props> = ({ data }) => {
 // @filename: src/Root.tsx
 // ---cut---
 import React from "react";
-import { Composition } from "remotion";
+import { Composition } from "picus";
 import { MyComp, calcMyCompMetadata, myCompSchema } from "./MyComp";
 
 export const Root = () => {
@@ -226,14 +226,14 @@ export const Root = () => {
 };
 ```
 
-By implementing this pattern, The `id` in the [props editor](/docs/visual-editing) can now be tweaked and Remotion will refetch the data whenever it changes.
+By implementing this pattern, The `id` in the [props editor](/docs/visual-editing) can now be tweaked and Picus will refetch the data whenever it changes.
 
 ### Setting the duration based on data
 
 You may set the `durationInFrames`, `fps`, `width` and `height` by returning those keys in the callback function:
 
 ```tsx twoslash
-import { CalculateMetadataFunction } from "remotion";
+import { CalculateMetadataFunction } from "picus";
 
 type MyCompProps = {
   durationInSeconds: number;
@@ -261,7 +261,7 @@ It is a good practice to cancel requests which are stale using the `abortSignal`
 
 ```tsx twoslash title="src/MyComp.tsx" {3-6}
 // ---cut---
-import type { CalculateMetadataFunction } from "remotion";
+import type { CalculateMetadataFunction } from "picus";
 
 type ApiResponse = {
   title: string;
@@ -292,17 +292,17 @@ export const calculateMyCompMetadata: CalculateMetadataFunction<
 export const MyComp: React.FC<MyCompProps> = () => null;
 ```
 
-This `abortSignal` is created by Remotion using the [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) API.
+This `abortSignal` is created by Picus using the [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) API.
 
 ### Debouncing requests
 
 If you are making requests to an expensive API, you might want to only fire a request after the user has stopped typing for a while. You may use the following function for doing so:
 
 ```tsx twoslash title="src/wait-for-no-input.ts"
-import { getRemotionEnvironment } from "remotion";
+import { getPicusEnvironment } from "picus";
 export const waitForNoInput = (signal: AbortSignal, ms: number) => {
   // Don't wait during rendering
-  if (getRemotionEnvironment().isRendering) {
+  if (getPicusEnvironment().isRendering) {
     return Promise.resolve();
   }
 
@@ -326,11 +326,11 @@ export const waitForNoInput = (signal: AbortSignal, ms: number) => {
 ```
 
 ```tsx twoslash title="src/MyComp.tsx" {4}
-import { CalculateMetadataFunction, getRemotionEnvironment } from "remotion";
+import { CalculateMetadataFunction, getPicusEnvironment } from "picus";
 
 const waitForNoInput = (signal: AbortSignal, ms: number) => {
   // Don't wait during rendering
-  if (getRemotionEnvironment().isRendering) {
+  if (getPicusEnvironment().isRendering) {
     return Promise.resolve();
   }
 
@@ -384,15 +384,15 @@ export const MyComp: React.FC<MyCompProps> = () => null;
 
 ### Time limit
 
-When Remotion calls the `calculateMetadata()` function, it wraps it in a [`delayRender()`](/docs/delay-render), which by default times out after 30 seconds.
+When Picus calls the `calculateMetadata()` function, it wraps it in a [`delayRender()`](/docs/delay-render), which by default times out after 30 seconds.
 
 ## Fetching data during the render
 
-Using [`delayRender()`](/docs/delay-render) and [`continueRender()`](/docs/continue-render) you can tell Remotion to wait for asynchronous operations to finish before rendering a frame.
+Using [`delayRender()`](/docs/delay-render) and [`continueRender()`](/docs/continue-render) you can tell Picus to wait for asynchronous operations to finish before rendering a frame.
 
 ### When to use
 
-Use this approach to load assets which are not JSON serializable or if you are using a Remotion version lower than 4.0.
+Use this approach to load assets which are not JSON serializable or if you are using a Picus version lower than 4.0.
 
 ### Usage
 
@@ -400,7 +400,7 @@ Call [`delayRender()`](/docs/delay-render) as soon as possible, for example when
 
 ```tsx twoslash
 import { useCallback, useEffect, useState } from "react";
-import { cancelRender, continueRender, delayRender } from "remotion";
+import { cancelRender, continueRender, delayRender } from "picus";
 
 export const MyComp = () => {
   const [data, setData] = useState(null);
@@ -432,7 +432,7 @@ export const MyComp = () => {
 };
 ```
 
-Once the data is fetched, you can call [`continueRender()`](/docs/continue-render) to tell Remotion to continue rendering the video.  
+Once the data is fetched, you can call [`continueRender()`](/docs/continue-render) to tell Picus to continue rendering the video.  
 In case the data fetching fails, you can call [`cancelRender()`](/docs/cancel-render) to cancel the render without waiting for the timeout.
 
 ### Time limit
@@ -442,7 +442,7 @@ You need to clear all handles created by [`delayRender()`](/docs/delay-render) w
 ### Prevent overfetching
 
 During rendering, multiple headless browser tabs are opened to speed up rendering.  
-In Remotion Lambda, the [rendering concurrency](/docs/lambda/concurrency) may be up to 200x.  
+In Picus Lambda, the [rendering concurrency](/docs/lambda/concurrency) may be up to 200x.  
 This means that if you are fetching data inside your component, the data fetching will be performed many times.
 
 <Step>1</Step> Prefer fetching the data before rendering if possible. <br/>

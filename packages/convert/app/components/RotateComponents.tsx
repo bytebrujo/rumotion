@@ -1,4 +1,4 @@
-import {makePie} from '@remotion/shapes';
+import {makePie} from '@picus/shapes';
 import React, {useCallback} from 'react';
 import {MultiSelectItem} from './MultiSelect';
 

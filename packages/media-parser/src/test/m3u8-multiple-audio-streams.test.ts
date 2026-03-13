@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
 import path from 'path';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
@@ -11,7 +11,7 @@ test('separate video and  audio streams', async () => {
 			m3uStreams: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(audio).toEqual({
@@ -53,7 +53,7 @@ test('separate video and  audio streams', async () => {
 test('multiple audio streams', async () => {
 	const {m3uStreams} = await parseMedia({
 		src: exampleVideos.multipleAudio,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			m3uStreams: true,
 		},

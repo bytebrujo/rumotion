@@ -1,4 +1,4 @@
-module github.com/remotion-dev/lambda_go_sdk
+module github.com/picus-dev/lambda_go_sdk
 
 
 require (

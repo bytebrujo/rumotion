@@ -1,4 +1,4 @@
-import {Button} from '@remotion/design';
+import {Button} from '@picus/design';
 import React from 'react';
 
 export const BackButton: React.FC<{

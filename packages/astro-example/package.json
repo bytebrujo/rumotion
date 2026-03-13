@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/astro-example"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/astro-example"
 	},
-	"name": "@remotion/astro-example",
+	"name": "@picus/astro-example",
 	"private": true,
 	"type": "module",
 	"version": "4.0.434",
@@ -15,17 +15,17 @@
 	},
 	"dependencies": {
 		"@astrojs/react": "4.0.0",
-		"@remotion/gif": "workspace:*",
-		"@remotion/lottie": "workspace:*",
-		"@remotion/motion-blur": "workspace:*",
-		"@remotion/player": "workspace:*",
-		"@remotion/skia": "workspace:*",
-		"@remotion/three": "workspace:*",
-		"@remotion/transitions": "workspace:*",
+		"@picus/gif": "workspace:*",
+		"@picus/lottie": "workspace:*",
+		"@picus/motion-blur": "workspace:*",
+		"@picus/player": "workspace:*",
+		"@picus/skia": "workspace:*",
+		"@picus/three": "workspace:*",
+		"@picus/transitions": "workspace:*",
 		"lottie-web": "5.13.0",
 		"astro": "5.13.1",
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	}
 }

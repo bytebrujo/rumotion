@@ -6,7 +6,7 @@ import {addSequenceStackTraces} from '../enable-sequence-stack-traces.js';
 import {Loop} from '../loop/index.js';
 import {usePreload} from '../prefetch.js';
 import {Sequence} from '../Sequence.js';
-import {useRemotionEnvironment} from '../use-remotion-environment.js';
+import {usePicusEnvironment} from '../use-picus-environment.js';
 import {useVideoConfig} from '../use-video-config.js';
 import {validateMediaProps} from '../validate-media-props.js';
 import {
@@ -14,14 +14,14 @@ import {
 	validateMediaTrimProps,
 } from '../validate-start-from-props.js';
 import {DurationsContext} from './duration-state.js';
-import type {RemotionMainVideoProps, RemotionVideoProps} from './props';
+import type {PicusMainVideoProps, PicusVideoProps} from './props';
 import {VideoForPreview} from './VideoForPreview.js';
 import {VideoForRendering} from './VideoForRendering.js';
 
 const VideoForwardingFunction: React.ForwardRefRenderFunction<
 	HTMLVideoElement,
-	RemotionVideoProps &
-		RemotionMainVideoProps & {
+	PicusVideoProps &
+		PicusMainVideoProps & {
 			/**
 			 * @deprecated For internal use only
 			 */
@@ -36,18 +36,18 @@ const VideoForwardingFunction: React.ForwardRefRenderFunction<
 		name,
 		pauseWhenBuffering,
 		stack,
-		_remotionInternalNativeLoopPassed,
+		_picusInternalNativeLoopPassed,
 		showInTimeline,
 		onAutoPlayError,
 		...otherProps
 	} = props;
 	const {loop, ...propsOtherThanLoop} = props;
 	const {fps} = useVideoConfig();
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 
 	if (environment.isClientSideRendering) {
 		throw new Error(
-			'<Html5Video> is not supported in @remotion/web-renderer. Use <Video> from @remotion/media instead. See https://remotion.dev/docs/client-side-rendering/limitations',
+			'<Html5Video> is not supported in @picus/web-renderer. Use <Video> from @picus/media instead. See https://picus.dev/docs/client-side-rendering/limitations',
 		);
 	}
 
@@ -95,7 +95,7 @@ const VideoForwardingFunction: React.ForwardRefRenderFunction<
 					{...propsOtherThanLoop}
 					ref={ref}
 					stack={stack}
-					_remotionInternalNativeLoopPassed
+					_picusInternalNativeLoopPassed
 				/>
 			);
 		}
@@ -117,7 +117,7 @@ const VideoForwardingFunction: React.ForwardRefRenderFunction<
 					{...propsOtherThanLoop}
 					ref={ref}
 					stack={stack}
-					_remotionInternalNativeLoopPassed
+					_picusInternalNativeLoopPassed
 				/>
 			</Loop>
 		);
@@ -174,9 +174,9 @@ const VideoForwardingFunction: React.ForwardRefRenderFunction<
 			// Proposal: Make this default to true in v5
 			pauseWhenBuffering={pauseWhenBuffering ?? false}
 			onDuration={onDuration}
-			_remotionInternalStack={stack ?? null}
-			_remotionInternalNativeLoopPassed={
-				_remotionInternalNativeLoopPassed ?? false
+			_picusInternalStack={stack ?? null}
+			_picusInternalNativeLoopPassed={
+				_picusInternalNativeLoopPassed ?? false
 			}
 			showInTimeline={showInTimeline ?? true}
 			onAutoPlayError={onAutoPlayError ?? undefined}
@@ -185,14 +185,14 @@ const VideoForwardingFunction: React.ForwardRefRenderFunction<
 };
 
 /**
- * @description Wraps the native `<video>` element to include video in your component that is synchronized with Remotion's time.
- * @see [Documentation](https://www.remotion.dev/docs/html5-video)
+ * @description Wraps the native `<video>` element to include video in your component that is synchronized with Picus's time.
+ * @see [Documentation](https://www.picus.dev/docs/html5-video)
  */
 export const Html5Video = forwardRef(VideoForwardingFunction);
 addSequenceStackTraces(Html5Video);
 
 /**
  * @deprecated This component has been renamed to `Html5Video`.
- * @see [Documentation](https://www.remotion.dev/docs/html5-video)
+ * @see [Documentation](https://www.picus.dev/docs/html5-video)
  */
 export const Video = Html5Video;

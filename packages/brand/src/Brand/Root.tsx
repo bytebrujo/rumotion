@@ -1,9 +1,9 @@
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 import {Banner} from './Banner';
 import {Comp} from './Composition';
 import {TriangleDemo} from './TriangleToSquare';
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
 	return (
 		<>
 			<Composition

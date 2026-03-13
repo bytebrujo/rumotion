@@ -4,7 +4,7 @@ import {
 	random,
 	staticFile,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 
 export function selectColor(color: string, frame: number): number {
 	return Math.floor((random(`${color}-${frame}`) * 255) % 255);

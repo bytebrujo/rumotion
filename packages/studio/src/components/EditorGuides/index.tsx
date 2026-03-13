@@ -1,6 +1,6 @@
-import {type Size} from '@remotion/player';
+import {type Size} from '@picus/player';
 import {useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import type {AssetMetadata} from '../../helpers/get-asset-metadata';
 import type {Dimensions} from '../../helpers/is-current-selected-still';
 import {useStudioCanvasDimensions} from '../../helpers/use-studio-canvas-dimensions';

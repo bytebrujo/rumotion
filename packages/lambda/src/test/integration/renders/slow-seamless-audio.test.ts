@@ -1,8 +1,8 @@
 import {expect, test} from 'bun:test';
 import {existsSync, unlinkSync} from 'fs';
 import path from 'path';
-import {LambdaClientInternals} from '@remotion/lambda-client';
-import {rendersPrefix} from '@remotion/serverless';
+import {LambdaClientInternals} from '@picus/lambda-client';
+import {rendersPrefix} from '@picus/serverless';
 import {$} from 'bun';
 import {mockImplementation} from '../../mocks/mock-implementation';
 import {streamToUint8Array} from '../../mocks/mock-store';
@@ -35,7 +35,7 @@ test(
 		}
 
 		const stream = await streamToUint8Array(file);
-		await $`bunx remotion ffmpeg -i - -ac 1 -c:a pcm_s16le -y ${wav} < ${stream}`.quiet();
+		await $`bunx picus ffmpeg -i - -ac 1 -c:a pcm_s16le -y ${wav} < ${stream}`.quiet();
 
 		const wd = new Wavedraw(wav);
 

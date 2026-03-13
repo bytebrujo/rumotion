@@ -3,8 +3,8 @@ import os from 'node:os';
 import path from 'node:path';
 import {promisify} from 'node:util';
 import {isMainThread} from 'node:worker_threads';
-import type {GitSource, RenderDefaults} from '@remotion/studio-shared';
-import {getProjectName, SOURCE_MAP_ENDPOINT} from '@remotion/studio-shared';
+import type {GitSource, RenderDefaults} from '@picus/studio-shared';
+import {getProjectName, SOURCE_MAP_ENDPOINT} from '@picus/studio-shared';
 import webpack from 'webpack';
 import {copyDir} from './copy-dir';
 import {indexHtml} from './index-html';
@@ -22,7 +22,7 @@ const prepareOutDir = async (specified: string | null) => {
 	}
 
 	return fs.promises.mkdtemp(
-		path.join(os.tmpdir(), 'remotion-webpack-bundle-'),
+		path.join(os.tmpdir(), 'picus-webpack-bundle-'),
 	);
 };
 
@@ -61,7 +61,7 @@ export type LegacyBundleOptions = Partial<MandatoryLegacyBundleOptions>;
 export const getConfig = ({
 	entryPoint,
 	outDir,
-	resolvedRemotionRoot,
+	resolvedPicusRoot,
 	onProgress,
 	options,
 	bufferStateDelayInMilliseconds,
@@ -71,7 +71,7 @@ export const getConfig = ({
 }: {
 	outDir: string;
 	entryPoint: string;
-	resolvedRemotionRoot: string;
+	resolvedPicusRoot: string;
 	bufferStateDelayInMilliseconds: number | null;
 	experimentalClientSideRenderingEnabled: boolean;
 	experimentalVisualModeEnabled: boolean;
@@ -81,7 +81,7 @@ export const getConfig = ({
 }) => {
 	const configArgs = {
 		entry: path.join(
-			require.resolve('@remotion/studio/renderEntry'),
+			require.resolve('@picus/studio/renderEntry'),
 			'..',
 			'esm',
 			'renderEntry.mjs',
@@ -95,7 +95,7 @@ export const getConfig = ({
 		},
 		enableCaching: options?.enableCaching ?? true,
 		maxTimelineTracks,
-		remotionRoot: resolvedRemotionRoot,
+		picusRoot: resolvedPicusRoot,
 		keyboardShortcutsEnabled: options?.keyboardShortcutsEnabled ?? true,
 		bufferStateDelayInMilliseconds,
 		poll: null,
@@ -206,7 +206,7 @@ export const internalBundle = async (
 	actualArgs: MandatoryBundleOptions,
 ): Promise<string> => {
 	const entryPoint = path.resolve(process.cwd(), actualArgs.entryPoint);
-	const resolvedRemotionRoot =
+	const resolvedPicusRoot =
 		actualArgs?.rootDir ??
 		findClosestPackageJsonFolder(entryPoint) ??
 		process.cwd();
@@ -219,18 +219,18 @@ export const internalBundle = async (
 	actualArgs.onDirectoryCreated?.(outDir);
 
 	// The config might use an override which might use
-	// `process.cwd()`. The context should always be the Remotion root.
+	// `process.cwd()`. The context should always be the Picus root.
 	// This is not supported in worker threads (used for tests)
 	const currentCwd = process.cwd();
 	if (isMainThread) {
-		process.chdir(resolvedRemotionRoot);
+		process.chdir(resolvedPicusRoot);
 	}
 
 	const {onProgress, ...options} = actualArgs;
 	const [, config] = await getConfig({
 		outDir,
 		entryPoint,
-		resolvedRemotionRoot,
+		resolvedPicusRoot,
 		onProgress,
 		options,
 		// Should be null to keep cache hash working
@@ -305,8 +305,8 @@ export const internalBundle = async (
 			.join('/');
 
 	const from = options?.publicDir
-		? path.resolve(resolvedRemotionRoot, options.publicDir)
-		: path.join(resolvedRemotionRoot, 'public');
+		? path.resolve(resolvedPicusRoot, options.publicDir)
+		: path.join(resolvedPicusRoot, 'public');
 	const to = path.join(outDir, 'public');
 
 	let symlinkWarningShown = false;
@@ -346,7 +346,7 @@ export const internalBundle = async (
 		publicPath,
 		editorName: null,
 		inputProps: null,
-		remotionRoot: resolvedRemotionRoot,
+		picusRoot: resolvedPicusRoot,
 		studioServerCommand: null,
 		renderQueue: null,
 		numberOfAudioTags: 0,
@@ -362,13 +362,13 @@ export const internalBundle = async (
 			};
 		}),
 		includeFavicon: true,
-		title: 'Remotion Bundle',
+		title: 'Picus Bundle',
 		renderDefaults: actualArgs.renderDefaults ?? undefined,
 		publicFolderExists: `${publicPath + (publicPath.endsWith('/') ? '' : '/')}public`,
 		gitSource: actualArgs.gitSource ?? null,
 		projectName: getProjectName({
 			gitSource: actualArgs.gitSource ?? null,
-			resolvedRemotionRoot,
+			resolvedPicusRoot,
 			basename: path.basename,
 		}),
 		installedDependencies: null,
@@ -392,8 +392,8 @@ export const internalBundle = async (
 };
 
 /*
- * @description Bundles a Remotion project using Webpack and prepares it for rendering.
- * @see [Documentation](https://remotion.dev/docs/bundle)
+ * @description Bundles a Picus project using Webpack and prepares it for rendering.
+ * @see [Documentation](https://picus.dev/docs/bundle)
  */
 export async function bundle(...args: Arguments): Promise<string> {
 	const actualArgs = convertArgumentsIntoOptions(args);

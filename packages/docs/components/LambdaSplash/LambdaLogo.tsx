@@ -7,5 +7,5 @@ const align: React.CSSProperties = {
 };
 
 export const LambdaLogo: React.FC = () => {
-	return <div style={align}>@remotion/lambda</div>;
+	return <div style={align}>@picus/lambda</div>;
 };

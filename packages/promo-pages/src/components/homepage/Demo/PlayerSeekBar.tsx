@@ -1,6 +1,6 @@
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 import {useElementSize} from '../layout/use-el-size';
 
 const getFrameFromX = (

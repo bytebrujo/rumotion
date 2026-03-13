@@ -1,4 +1,4 @@
-import {interpolate, NoReactInternals, random} from 'remotion/no-react';
+import {interpolate, NoReactInternals, random} from 'picus/no-react';
 export * from './constants';
 export {
 	artifactName,
@@ -47,13 +47,13 @@ export type {
 	ToOptions,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
-export type {BrowserSafeApis} from '@remotion/renderer/client';
-export {wrapWithErrorHandling} from '@remotion/renderer/error-handling';
-export {makeStreamer, makeStreamPayloadMessage} from '@remotion/streaming';
-export type {_InternalTypes} from 'remotion';
-export type {DownloadBehavior, VideoConfig} from 'remotion/no-react';
-export {VERSION} from 'remotion/version';
+} from '@picus/renderer';
+export type {BrowserSafeApis} from '@picus/renderer/client';
+export {wrapWithErrorHandling} from '@picus/renderer/error-handling';
+export {makeStreamer, makeStreamPayloadMessage} from '@picus/streaming';
+export type {_InternalTypes} from 'picus';
+export type {DownloadBehavior, VideoConfig} from 'picus/no-react';
+export {VERSION} from 'picus/version';
 export {Await} from './await';
 export {calculateChunkTimes} from './calculate-chunk-times';
 export {
@@ -82,7 +82,7 @@ export {
 	internalGetOrCreateBucket,
 } from './get-or-create-bucket';
 export {getOverallProgressFromStorage} from './get-overall-progress-from-storage';
-export {getRemotionVersionFromIndexHtml} from './get-remotion-version-from-index-html';
+export {getPicusVersionFromIndexHtml} from './get-picus-version-from-index-html';
 export {inputPropsKey, resolvedPropsKey} from './input-props-keys';
 export {inspectErrors} from './inspect-error';
 export {makeBucketName} from './make-bucket-name';

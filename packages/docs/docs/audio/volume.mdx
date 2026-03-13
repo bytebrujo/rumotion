@@ -14,7 +14,7 @@ You can use the [`volume`](/docs/html5-audio#volume) prop to control the volume.
 The simplest way is to pass a number between `0` and `1`.
 
 ```tsx twoslash {7} title="MyComp.tsx"
-import {Html5Audio, staticFile, AbsoluteFill} from 'remotion';
+import {Html5Audio, staticFile, AbsoluteFill} from 'picus';
 
 export const MyComposition = () => {
   return (
@@ -31,7 +31,7 @@ export const MyComposition = () => {
 You can also change volume over time by passing in a function that takes a frame number and returns the volume.
 
 ```tsx twoslash {8}
-import {AbsoluteFill, Html5Audio, interpolate, staticFile, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Html5Audio, interpolate, staticFile, useVideoConfig} from 'picus';
 
 export const MyComposition = () => {
   const {fps} = useVideoConfig();
@@ -51,7 +51,7 @@ Note that because values below 0 are not allowed, we need to set the [`extrapola
 Inside the callback function, the value of `f` starts always `0` when the audio begins to play.  
 It is not the same as the value of [`useCurrentFrame()`](/docs/use-current-frame).
 
-Prefer using a callback function if the volume is changing. This will enable Remotion to draw a volume curve in the [Studio](/docs/studio) and is more performant.
+Prefer using a callback function if the volume is changing. This will enable Picus to draw a volume curve in the [Studio](/docs/studio) and is more performant.
 
 ## Limitations<AvailableFrom v="4.0.306" />
 
@@ -64,10 +64,10 @@ By default, you'll face 2 limitations by default regarding volume:
 You can work around these limitations by enabling the Web Audio API for your [`<Html5Audio>`](/docs/html5-audio#usewebaudioapi), [`<Html5Video>`](/docs/html5-video#usewebaudioapi) and [`<OffthreadVideo>`](/docs/offthreadvideo#usewebaudioapi) tags.
 
 ```tsx twoslash
-import {Html5Audio, staticFile, AbsoluteFill} from 'remotion';
+import {Html5Audio, staticFile, AbsoluteFill} from 'picus';
 // ---cut---
 
-<Html5Audio src="https://remotion.media/audio.wav" volume={2} useWebAudioApi crossOrigin="anonymous" />;
+<Html5Audio src="https://picus.media/audio.wav" volume={2} useWebAudioApi crossOrigin="anonymous" />;
 ```
 
 However, this comes with two caveats:

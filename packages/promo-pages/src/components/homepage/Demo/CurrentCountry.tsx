@@ -1,4 +1,4 @@
-import {getBoundingBox, resetPath} from '@remotion/paths';
+import {getBoundingBox, resetPath} from '@picus/paths';
 import React from 'react';
 import {
 	AbsoluteFill,
@@ -6,7 +6,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 export const CurrentCountry: React.FC<{
 	readonly theme: 'dark' | 'light';

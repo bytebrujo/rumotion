@@ -1,4 +1,4 @@
-import type {ParseMediaSrc} from '@remotion/media-parser';
+import type {ParseMediaSrc} from '@picus/media-parser';
 import type {ConvertMediaContainer} from './get-available-containers';
 
 export const generateOutputFilename = (

@@ -3,15 +3,15 @@ import type {
 	LogLevel,
 	OnBrowserDownload,
 	openBrowser,
-	RemotionServer,
-} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+	PicusServer,
+} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	Await,
 	CloudProvider,
 	ProviderSpecifics,
 	VideoConfig,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	validateDimension,
 	validateDurationInFrames,
@@ -32,7 +32,7 @@ type ValidateCompositionOptions<Provider extends CloudProvider> = {
 	forceFps: number | null;
 	forceDurationInFrames: number | null;
 	logLevel: LogLevel;
-	server: RemotionServer | undefined;
+	server: PicusServer | undefined;
 	offthreadVideoCacheSizeInBytes: number | null;
 	mediaCacheSizeInBytes: number | null;
 	offthreadVideoThreads: number | null;

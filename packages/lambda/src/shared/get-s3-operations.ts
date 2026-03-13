@@ -1,6 +1,6 @@
 import type {_Object} from '@aws-sdk/client-s3';
-import type {AwsProvider} from '@remotion/lambda-client';
-import type {FullClientSpecifics} from '@remotion/serverless';
+import type {AwsProvider} from '@picus/lambda-client';
+import type {FullClientSpecifics} from '@picus/serverless';
 
 export const getS3DiffOperations = async ({
 	objects,

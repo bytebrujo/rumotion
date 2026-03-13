@@ -1,7 +1,7 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {z} from 'zod';
 
-export const REMOTION_COLOR_BRAND = '__remotion-color';
+export const PICUS_COLOR_BRAND = '__picus-color';
 
 export const parseColor = (value: string) => {
 	const colored = NoReactInternals.processColor(value)
@@ -31,4 +31,4 @@ export const zColor = () =>
 			},
 			{message: 'Invalid color'},
 		)
-		.describe(REMOTION_COLOR_BRAND);
+		.describe(PICUS_COLOR_BRAND);

@@ -5,7 +5,7 @@ import {videoIteratorManager} from '../video-iterator-manager';
 
 const prepare = async () => {
 	const input = new Input({
-		source: new UrlSource('https://remotion.media/video.mp4'),
+		source: new UrlSource('https://picus.media/video.mp4'),
 		formats: ALL_FORMATS,
 	});
 	const videoTrack = await input.getPrimaryVideoTrack();

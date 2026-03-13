@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import {Row, Spacing} from '../layout';
-import {RemotionInput} from '../NewComposition/RemInput';
+import {PicusInput} from '../NewComposition/RemInput';
 import {ValidationMessage} from '../NewComposition/ValidationMessage';
 import {InlineEyeButton} from './InlineEyeIcon';
 import {InlineRemoveButton} from './InlineRemoveButton';
@@ -87,7 +87,7 @@ export const EnvInput: React.FC<{
 	return (
 		<>
 			<Row align="center" style={optionRow}>
-				<RemotionInput
+				<PicusInput
 					status={
 						isNodeEnvKey || isDuplicate || isKeyMissing ? 'warning' : 'ok'
 					}
@@ -101,7 +101,7 @@ export const EnvInput: React.FC<{
 					rightAlign={false}
 				/>
 				<Spacing x={1} />
-				<RemotionInput
+				<PicusInput
 					status={isValMissing ? 'warning' : 'ok'}
 					placeholder="Value"
 					type={showInPlainText ? 'text' : 'password'}
@@ -120,7 +120,7 @@ export const EnvInput: React.FC<{
 					<ValidationMessage
 						align="flex-start"
 						type="warning"
-						message="NODE_ENV will be overwritten by Remotion during the render process."
+						message="NODE_ENV will be overwritten by Picus during the render process."
 					/>
 				</div>
 			) : null}

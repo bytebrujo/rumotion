@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Internals} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import {Internals} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {NoRegisterRoot} from './components/NoRegisterRoot';
 import {startErrorOverlay} from './error-overlay/entry-basic';
 import {enableHotMiddleware} from './hot-middleware-client/client';
@@ -13,12 +13,12 @@ Internals.CSSUtils.injectCSS(
 
 declare global {
 	interface Window {
-		__remotionOverlayStarted: boolean;
+		__picusOverlayStarted: boolean;
 	}
 }
 
-if (!window.__remotionOverlayStarted) {
-	window.__remotionOverlayStarted = true;
+if (!window.__picusOverlayStarted) {
+	window.__picusOverlayStarted = true;
 	try {
 		startErrorOverlay();
 		enableHotMiddleware();
@@ -43,7 +43,7 @@ const renderToDOM = (content: React.ReactElement) => {
 	if (!ReactDOM.createRoot) {
 		if (NoReactInternals.ENABLE_V5_BREAKING_CHANGES) {
 			throw new Error(
-				'Remotion 5.0 does only support React 18+. However, ReactDOM.createRoot() is undefined.',
+				'Picus 5.0 does only support React 18+. However, ReactDOM.createRoot() is undefined.',
 			);
 		}
 

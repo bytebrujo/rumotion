@@ -1,6 +1,6 @@
-# @remotion/studio-server
+# @picus/studio-server
 
-Run a Remotion Studio with a server backend
+Run a Picus Studio with a server backend
 
 ## Usage
 

@@ -1,5 +1,5 @@
-import { Caption } from "@remotion/captions";
-import { zColor } from "@remotion/zod-types";
+import { Caption } from "@picus/captions";
+import { zColor } from "@picus/zod-types";
 import { z } from "zod";
 
 const baseVisualizerSchema = z.object({

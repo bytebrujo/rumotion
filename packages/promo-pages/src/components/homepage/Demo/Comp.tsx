@@ -1,12 +1,12 @@
-import type {EmojiName} from '@remotion/animated-emoji';
-import {Audio} from '@remotion/media';
+import type {EmojiName} from '@picus/animated-emoji';
+import {Audio} from '@picus/media';
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {
 	AbsoluteFill,
 	prefetch,
 	staticFile,
 	type CalculateMetadataFunction,
-} from 'remotion';
+} from 'picus';
 import {Cards} from './Cards';
 import type {Location} from './types';
 
@@ -32,7 +32,7 @@ export const getDataAndProps = async () => {
 	).then((res) => res.json())) as Location;
 
 	const trending = await fetch(
-		`https://bugs.remotion.dev/trending?lat=${location.latitude}&lng=${location.longitude}&country=${location.country}`,
+		`https://bugs.picus.dev/trending?lat=${location.latitude}&lng=${location.longitude}&country=${location.country}`,
 	)
 		.then((res) => res.json())
 		.then((data) => {

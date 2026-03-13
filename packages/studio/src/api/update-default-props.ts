@@ -1,4 +1,4 @@
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import type {UpdateDefaultPropsFunction} from './helpers/calc-new-props';
 import {calcNewProps} from './helpers/calc-new-props';
 
@@ -17,7 +17,7 @@ export const updateDefaultProps = ({
 	const propsStore = Internals.editorPropsProviderRef.current;
 	if (!propsStore) {
 		throw new Error(
-			'No props store found. Are you in the Remotion Studio and are the Remotion versions aligned?',
+			'No props store found. Are you in the Picus Studio and are the Picus versions aligned?',
 		);
 	}
 

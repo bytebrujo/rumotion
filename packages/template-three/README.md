@@ -1,16 +1,16 @@
-# Remotion + React Three Fiber Starter Template
+# Picus + React Three Fiber Starter Template
 
 <p align="center">
     <img src="demo.gif" style="border-radius: 5px">
 </p>
 
-[This is a template repository, click "Use this template" to create a repository based off this template!](https://github.com/JonnyBurger/remotion-template-three/generate)
+[This is a template repository, click "Use this template" to create a repository based off this template!](https://github.com/JonnyBurger/picus-template-three/generate)
 
-This is a lightweight boilerplate for [Remotion](https://github.com/jonnyburger/remotion) with [React Three Fiber](https://github.com/pmndrs/react-three-fiber) and [@remotion/three](http://remotion.dev/docs/three) preinstalled.
+This is a lightweight boilerplate for [Picus](https://github.com/jonnyburger/picus) with [React Three Fiber](https://github.com/pmndrs/react-three-fiber) and [@picus/three](http://picus.dev/docs/three) preinstalled.
 
-- [Remotion documentation](https://remotion.dev)
+- [Picus documentation](https://picus.dev)
 - [React Three Fiber documentation](https://docs.pmnd.rs/react-three-fiber)
-- [@remotion/three documentation](http://remotion.dev/docs/three)
+- [@picus/three documentation](http://picus.dev/docs/three)
 
 This example features a phone with a screen. You can easily switch out the video and change a series of parameters, like size, color, aspect ratio, corner radius etc. of the phone.
 
@@ -33,18 +33,18 @@ npm run dev
 **Render MP4 video**
 
 ```console
-npx remotion render
+npx picus render
 ```
 
-**Upgrade Remotion**
+**Upgrade Picus**
 
 ```console
-npx remotion upgrade
+npx picus upgrade
 ```
 
 ## Docs
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+Get started with Picus by reading the [fundamentals page](https://www.picus.dev/docs/the-fundamentals).
 
 ## Help
 
@@ -52,10 +52,10 @@ We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
 
 ## Issues
 
-Found an issue with Remotion? [File an issue here](https://github.com/JonnyBurger/remotion/issues/new).
+Found an issue with Picus? [File an issue here](https://github.com/JonnyBurger/picus/issues/new).
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Note that for some entities a company license is needed. [Read the terms here](https://github.com/picus-dev/picus/blob/main/LICENSE.md).
 
 The content of this template is licensed under MIT.

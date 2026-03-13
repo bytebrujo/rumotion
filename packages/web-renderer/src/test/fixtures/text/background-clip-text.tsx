@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const baseStyle: React.CSSProperties = {
 	border: '0.8em rgba(0, 0, 0, 0.2)',

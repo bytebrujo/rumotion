@@ -1,6 +1,6 @@
 import js from "@eslint/js";
 import nextPlugin from "@next/eslint-plugin-next";
-import remotion from "@remotion/eslint-plugin";
+import picus from "@picus/eslint-plugin";
 import tseslint from "typescript-eslint";
 
 // Build Next.js recommended rules and an "off" map for overrides
@@ -35,17 +35,17 @@ export default [
       ...nextRecommendedRules,
     },
   },
-  // Remotion rules applied only to remotion files
+  // Picus rules applied only to picus files
   {
-    files: ["src/remotion/**"],
-    ...remotion.flatPlugin,
+    files: ["src/picus/**"],
+    ...picus.flatPlugin,
     rules: {
-      ...remotion.flatPlugin.rules,
+      ...picus.flatPlugin.rules,
     },
   },
-  // Disable all Next.js rules within remotion files
+  // Disable all Next.js rules within picus files
   {
-    files: ["src/remotion/**"],
+    files: ["src/picus/**"],
     rules: {
       ...offNextRules,
     },

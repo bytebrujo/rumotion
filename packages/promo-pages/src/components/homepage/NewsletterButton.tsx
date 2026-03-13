@@ -1,4 +1,4 @@
-import {Button, CheckIcon, Input, PlanePaperIcon} from '@remotion/design';
+import {Button, CheckIcon, Input, PlanePaperIcon} from '@picus/design';
 import React, {useCallback, useState} from 'react';
 import {SectionTitle} from './VideoAppsTitle';
 
@@ -14,7 +14,7 @@ export const NewsletterButton: React.FC<{}> = () => {
 				e.preventDefault();
 
 				const response = await fetch(
-					'https://www.remotion.pro/api/newsletter',
+					'https://www.picus.pro/api/newsletter',
 					{
 						method: 'POST',
 						body: JSON.stringify({email}),
@@ -54,7 +54,7 @@ export const NewsletterButton: React.FC<{}> = () => {
 						>
 							<div className={'fontbrand text-center mb-10 -mt-4'}>
 								Read about new features and noteworthy updates we have made on
-								Remotion once in a while.{' '}
+								Picus once in a while.{' '}
 							</div>
 							<div className="flex flex-col md:flex-row gap-2 justify-center">
 								<Input

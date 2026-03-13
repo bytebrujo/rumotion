@@ -1,4 +1,4 @@
-import type {bundle, BundleOptions} from '@remotion/bundler';
+import type {bundle, BundleOptions} from '@picus/bundler';
 
 const convertArgumentsIntoOptions = (
 	args: Parameters<typeof bundle>,

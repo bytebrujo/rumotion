@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 // Test of Devanagari script and emojis,
 export const Scripts: React.FC = () => {

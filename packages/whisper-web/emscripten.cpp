@@ -208,9 +208,9 @@ static bool output_json(
     end_obj(true);
 
     if (final) {
-        printf("remotion_final:%s\n", output.c_str());
+        printf("picus_final:%s\n", output.c_str());
     } else {
-        printf("remotion_update:%s\n", output.c_str());
+        printf("picus_update:%s\n", output.c_str());
     }
 
     return true;
@@ -230,7 +230,7 @@ void whisper_print_segment_callback(struct whisper_context * ctx, struct whisper
 
 // Define the progress callback function
 void progress_callback(struct whisper_context * ctx, struct whisper_state * state, int progress, void * user_data) {    
-    printf("remotion_progress:%d%%\n", progress);
+    printf("picus_progress:%d%%\n", progress);
 }
 
 std::vector<struct whisper_context *> g_contexts(1, nullptr);
@@ -239,7 +239,7 @@ std::vector<struct whisper_context *> g_contexts(1, nullptr);
 EMSCRIPTEN_BINDINGS(whisper) {
     emscripten::function("full_default", emscripten::optional_override([](const std::string & path_model, const emscripten::val & audio, const std::string & model, const std::string & lang, int nthreads, bool translate) {
         if (g_contexts[0] != nullptr) {
-            printf("remotion_busy:\n");
+            printf("picus_busy:\n");
             return 0;
         }
 

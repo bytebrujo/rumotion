@@ -1,6 +1,6 @@
-import {getGifDurationInSeconds} from '@remotion/gif';
+import {getGifDurationInSeconds} from '@picus/gif';
 import {useEffect, useState} from 'react';
-import {AbsoluteFill, staticFile} from 'remotion';
+import {AbsoluteFill, staticFile} from 'picus';
 
 const GifTest: React.FC = () => {
 	const giphy = staticFile('giphy.gif');

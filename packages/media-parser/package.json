@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/media-parser"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/media-parser"
 	},
-	"name": "@remotion/media-parser",
+	"name": "@picus/media-parser",
 	"version": "4.0.434",
 	"main": "dist/index.js",
 	"sideEffects": false,
@@ -15,9 +15,9 @@
 		"prepublishOnly": "bun ensure-correct-version.ts"
 	},
 	"devDependencies": {
-		"@remotion/example-videos": "workspace:*",
+		"@picus/example-videos": "workspace:*",
 		"@types/wicg-file-system-access": "2023.10.5",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"mediabunny": "catalog:",
 		"@types/bun": "catalog:",
@@ -27,7 +27,7 @@
 		"access": "public"
 	},
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"exports": {
 		"./package.json": "./package.json",
@@ -114,15 +114,15 @@
 			]
 		}
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
-	"license": "Remotion License https://remotion.dev/license",
+	"author": "Jonny Burger <jonny@picus.dev>",
+	"license": "Picus License https://picus.dev/license",
 	"keywords": [
-		"remotion",
+		"picus",
 		"ffmpeg",
 		"video",
 		"react",
 		"player"
 	],
-	"homepage": "https://www.remotion.dev/docs/media-parser",
+	"homepage": "https://www.picus.dev/docs/media-parser",
 	"description": "A pure JavaScript library for parsing video files"
 }

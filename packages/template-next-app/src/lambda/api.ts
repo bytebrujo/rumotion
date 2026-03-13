@@ -1,4 +1,4 @@
-import type { RenderMediaOnLambdaOutput } from "@remotion/lambda/client";
+import type { RenderMediaOnLambdaOutput } from "@picus/lambda/client";
 import { z } from "zod";
 import { ApiResponse } from "../helpers/api-response";
 import { CompositionProps } from "../types/constants";

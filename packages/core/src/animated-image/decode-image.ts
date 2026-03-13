@@ -1,4 +1,4 @@
-import type {RemotionAnimatedImageLoopBehavior} from './props';
+import type {PicusAnimatedImageLoopBehavior} from './props';
 
 export type AnimatedImageCacheItem = {
 	timeInSeconds: number;
@@ -6,10 +6,10 @@ export type AnimatedImageCacheItem = {
 	frame: VideoFrame | null;
 };
 
-export type RemotionImageDecoder = {
+export type PicusImageDecoder = {
 	getFrame: (
 		i: number,
-		loopBehavior: RemotionAnimatedImageLoopBehavior,
+		loopBehavior: PicusAnimatedImageLoopBehavior,
 	) => Promise<AnimatedImageCacheItem | null>;
 	frameCount: number;
 };
@@ -21,7 +21,7 @@ const getActualTime = ({
 	durationFound,
 	timeInSec,
 }: {
-	loopBehavior: RemotionAnimatedImageLoopBehavior;
+	loopBehavior: PicusAnimatedImageLoopBehavior;
 	durationFound: number | null;
 	timeInSec: number;
 }) => {
@@ -41,8 +41,8 @@ export const decodeImage = async ({
 	resolvedSrc: string;
 	signal: AbortSignal;
 	currentTime: number;
-	initialLoopBehavior: RemotionAnimatedImageLoopBehavior;
-}): Promise<RemotionImageDecoder> => {
+	initialLoopBehavior: PicusAnimatedImageLoopBehavior;
+}): Promise<PicusImageDecoder> => {
 	if (typeof ImageDecoder === 'undefined') {
 		throw new Error(
 			'Your browser does not support the WebCodecs ImageDecoder API.',
@@ -122,7 +122,7 @@ export const decodeImage = async ({
 		loopBehavior,
 	}: {
 		timeInSec: number;
-		loopBehavior: RemotionAnimatedImageLoopBehavior;
+		loopBehavior: PicusAnimatedImageLoopBehavior;
 	}) => {
 		const actualTimeInSec = getActualTime({
 			durationFound,
@@ -182,7 +182,7 @@ export const decodeImage = async ({
 
 	const getFrame = async (
 		timeInSec: number,
-		loopBehavior: RemotionAnimatedImageLoopBehavior,
+		loopBehavior: PicusAnimatedImageLoopBehavior,
 	) => {
 		if (
 			durationFound !== null &&

@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT = false;
 
@@ -8,7 +8,7 @@ export const throwIfSiteExistsOption = {
 	cliFlag,
 	description: () =>
 		`Prevents accidential update of an existing site. If there are any files in the subfolder where the site should be placed, the function will throw.`,
-	docLink: 'https://remotion.dev/docs/lambda/deploy-site',
+	docLink: 'https://picus.dev/docs/lambda/deploy-site',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag]) {
 			return {
@@ -29,4 +29,4 @@ export const throwIfSiteExistsOption = {
 	ssrName: 'throwIfSiteExists',
 	type: false as boolean,
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

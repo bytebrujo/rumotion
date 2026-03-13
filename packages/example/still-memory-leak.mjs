@@ -1,5 +1,5 @@
-import {bundle} from '@remotion/bundler';
-import {openBrowser, renderStill, selectComposition} from '@remotion/renderer';
+import {bundle} from '@picus/bundler';
+import {openBrowser, renderStill, selectComposition} from '@picus/renderer';
 import {createRequire} from 'module';
 import {webpackOverride} from './src/webpack-override.mjs';
 

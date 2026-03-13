@@ -1,9 +1,9 @@
 import {afterEach, beforeEach, expect, test} from 'bun:test';
 import fs from 'fs';
 import path from 'path';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import execa from 'execa';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 
 const outputPath = path.join(process.cwd(), 'packages/example/out-scale.mp4');
 
@@ -25,7 +25,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'src/index.ts',
 				'ten-frame-tester',
@@ -76,7 +76,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'build',
 				'ten-frame-tester',

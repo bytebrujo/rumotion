@@ -93,7 +93,7 @@ export const NewFolderDialog: React.FC<{
           <DialogTitle>New Folder</DialogTitle>
           <DialogDescription>
             Create a new subfolder in the <code>public/</code> directory. This
-            should map to the ID of your composition in the Remotion Studio.
+            should map to the ID of your composition in the Picus Studio.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
@@ -103,7 +103,7 @@ export const NewFolderDialog: React.FC<{
             </Label>
 
             <Input
-              id="remotion_video_name"
+              id="picus_video_name"
               placeholder="my-video"
               value={newProject}
               className="col-span-3"

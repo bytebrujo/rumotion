@@ -13,7 +13,7 @@ To retrieve a list of functions, call [`getFunctions()`](/docs/lambda/getfunctio
 ## Example
 
 ```ts twoslash
-import {deleteFunction, getFunctions} from '@remotion/lambda';
+import {deleteFunction, getFunctions} from '@picus/lambda';
 
 const functions = await getFunctions({
   region: 'us-east-1',
@@ -45,6 +45,6 @@ Nothing. If the deletion failed, the function rejects with an error.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/delete-function.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/delete-function.ts)
 - [deployFunction()](/docs/lambda/deployfunction)
 - [getFunctions()](/docs/lambda/getfunctions)

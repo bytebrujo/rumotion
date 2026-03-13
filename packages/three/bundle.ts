@@ -9,9 +9,9 @@ const output = await build({
 	naming: '[name].mjs',
 	external: [
 		'react',
-		'remotion',
-		'@remotion/media-utils',
-		'remotion/no-react',
+		'picus',
+		'@picus/media-utils',
+		'picus/no-react',
 		'react/jsx-runtime',
 		'@react-three/fiber',
 		'three/src/textures/VideoTexture.js',

@@ -1,10 +1,10 @@
-import {TransitionSeries} from '@remotion/transitions';
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {TransitionSeries} from '@picus/transitions';
+import {AbsoluteFill, useCurrentFrame} from 'picus';
 
 const durations: number[] = [3.000002, 4];
 
 // this should never show 2 sequences at once
-// https://github.com/remotion-dev/remotion/issues/4922
+// https://github.com/picus-dev/picus/issues/4922
 export const TransitionRounding: React.FC = () => {
 	const currentFrame = useCurrentFrame();
 	return (

@@ -7,7 +7,7 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 type Props = {
 	readonly title: string;
@@ -79,7 +79,7 @@ const CarSlideshow = ({title, bgColor, color}: Props) => {
 					style={{
 						height: 200,
 					}}
-					src="https://remotion.media/BigBuckBunny.mp4"
+					src="https://picus.media/BigBuckBunny.mp4"
 				/>
 			</Sequence>
 		</div>

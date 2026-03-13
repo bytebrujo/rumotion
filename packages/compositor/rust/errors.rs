@@ -2,7 +2,7 @@ use crate::frame_cache::FrameCache;
 use crate::opened_stream::OpenedStream;
 use crate::opened_video_manager::OpenedVideoManager;
 use crate::payloads::payloads::{CliInputAndMaxCacheSize, ErrorPayload};
-use ffmpeg_next as remotionffmpeg;
+use ffmpeg_next as picusffmpeg;
 use png::EncodingError;
 use std::any::Any;
 use std::backtrace::Backtrace;
@@ -40,7 +40,7 @@ pub fn handle_global_error(err: ErrorWithBacktrace) -> ! {
 
 enum PossibleErrors {
     IoError(std::io::Error),
-    FfmpegError(remotionffmpeg::Error),
+    FfmpegError(picusffmpeg::Error),
     TryFromIntError(std::num::TryFromIntError),
     DecodingError(png::DecodingError),
     SerdeError(serde_json::Error),
@@ -65,8 +65,8 @@ impl From<Box<dyn Any + Send>> for ErrorWithBacktrace {
     }
 }
 
-impl From<remotionffmpeg::Error> for ErrorWithBacktrace {
-    fn from(err: remotionffmpeg::Error) -> ErrorWithBacktrace {
+impl From<picusffmpeg::Error> for ErrorWithBacktrace {
+    fn from(err: picusffmpeg::Error) -> ErrorWithBacktrace {
         ErrorWithBacktrace {
             error: PossibleErrors::FfmpegError(err),
             backtrace: Backtrace::force_capture().to_string(),

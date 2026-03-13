@@ -3,14 +3,14 @@ image: /generated/articles-docs-webcodecs-convert-a-video.png
 id: convert-a-video
 title: Convert a video
 slug: /webcodecs/convert-a-video
-crumb: '@remotion/webcodecs'
+crumb: '@picus/webcodecs'
 ---
 
 :::warning
-[We are phasing out Remotion WebCodecs and are moving to Mediabunny](/blog/mediabunny)!
+[We are phasing out Picus WebCodecs and are moving to Mediabunny](/blog/mediabunny)!
 :::
 
-You can convert a video in the browser from one format to another using the [`convertMedia()`](/docs/webcodecs/convert-media) function from [`@remotion/webcodecs`](/docs/webcodecs).
+You can convert a video in the browser from one format to another using the [`convertMedia()`](/docs/webcodecs/convert-media) function from [`@picus/webcodecs`](/docs/webcodecs).
 
 import {LicenseDisclaimer} from './LicenseDisclaimer';
 import {UnstableDisclaimer} from './UnstableDisclaimer';
@@ -52,9 +52,9 @@ The following output audio codecs are supported:
 
 ## Installation
 
-Install the `@remotion/webcodecs` and `@remotion/media-parser` packages:
+Install the `@picus/webcodecs` and `@picus/media-parser` packages:
 
-<Installation pkg="@remotion/webcodecs @remotion/media-parser" />
+<Installation pkg="@picus/webcodecs @picus/media-parser" />
 <br />
 <details>
   <summary>🚧 Unstable API</summary>
@@ -68,10 +68,10 @@ Install the `@remotion/webcodecs` and `@remotion/media-parser` packages:
 (needs to be CORS-enabled)
 
 ```tsx twoslash title="Converting an MP4 to a WebM"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 const result = await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
 });
 
@@ -81,7 +81,7 @@ const blob = await result.save();
 ### Converting from a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File):
 
 ```tsx twoslash title="Converting a file"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 // Get an actual file from an <input type="file"> element
 const file = new File([], 'video.mp4');
@@ -99,10 +99,10 @@ const blob = await result.save();
 You can specify the output codec by passing the [`videoCodec`](/docs/webcodecs/convert-media#videocodec) and [`audioCodec`](/docs/webcodecs/convert-media#audiocodec) options:
 
 ```tsx twoslash title="Converting to VP9"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 const result = await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
   videoCodec: 'vp9',
   audioCodec: 'opus',
@@ -118,10 +118,10 @@ The `convertMedia()` function returns a result object with a `save()` method tha
 ### Download the converted video
 
 ```tsx twoslash title="Download converted video"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 const result = await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
 });
 
@@ -141,10 +141,10 @@ URL.revokeObjectURL(url);
 ### Upload the converted video
 
 ```tsx twoslash title="Upload converted video"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 const result = await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
 });
 
@@ -163,10 +163,10 @@ await fetch('/api/upload', {
 ### Display the converted video
 
 ```tsx twoslash title="Display converted video"
-import {convertMedia} from '@remotion/webcodecs';
+import {convertMedia} from '@picus/webcodecs';
 
 const result = await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
 });
 

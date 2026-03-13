@@ -30,15 +30,15 @@ import {
 import {evaluateVolume} from '../volume-prop.js';
 import {warnAboutTooHighVolume} from '../volume-safeguard.js';
 import {useEmitVideoFrame} from './emit-video-frame.js';
-import type {NativeVideoProps, OnVideoFrame, RemotionVideoProps} from './props';
+import type {NativeVideoProps, OnVideoFrame, PicusVideoProps} from './props';
 import {isIosSafari, useAppendVideoFragment} from './video-fragment.js';
 
-type VideoForPreviewProps = RemotionVideoProps & {
+type VideoForPreviewProps = PicusVideoProps & {
 	readonly onlyWarnForMediaSeekingError: boolean;
 	readonly onDuration: (src: string, durationInSeconds: number) => void;
 	readonly pauseWhenBuffering: boolean;
-	readonly _remotionInternalNativeLoopPassed: boolean;
-	readonly _remotionInternalStack: string | null;
+	readonly _picusInternalNativeLoopPassed: boolean;
+	readonly _picusInternalStack: string | null;
 	readonly showInTimeline: boolean;
 	readonly onVideoFrame: null | OnVideoFrame;
 	readonly crossOrigin?: '' | 'anonymous' | 'use-credentials';
@@ -80,7 +80,7 @@ const VideoForDevelopmentRefForwardingFunction: React.ForwardRefRenderFunction<
 	const effectToUse = React.useInsertionEffect ?? React.useLayoutEffect;
 
 	// Disconnecting the SharedElementSourceNodes if the tag unmounts to prevent leak.
-	// https://github.com/remotion-dev/remotion/issues/6285
+	// https://github.com/picus-dev/picus/issues/6285
 	// But useInsertionEffect will fire before other effects, meaning the
 	// nodes might still be used. Using rAF to ensure it's after other effects.
 	effectToUse(() => {
@@ -103,8 +103,8 @@ const VideoForDevelopmentRefForwardingFunction: React.ForwardRefRenderFunction<
 		acceptableTimeShiftInSeconds,
 		toneFrequency,
 		name,
-		_remotionInternalNativeLoopPassed,
-		_remotionInternalStack,
+		_picusInternalNativeLoopPassed,
+		_picusInternalStack,
 		style,
 		pauseWhenBuffering,
 		showInTimeline,
@@ -164,7 +164,7 @@ const VideoForDevelopmentRefForwardingFunction: React.ForwardRefRenderFunction<
 		playbackRate: props.playbackRate ?? 1,
 		displayName: name ?? null,
 		id: timelineId,
-		stack: _remotionInternalStack,
+		stack: _picusInternalStack,
 		showInTimeline,
 		premountDisplay: parentSequence?.premountDisplay ?? null,
 		postmountDisplay: parentSequence?.postmountDisplay ?? null,
@@ -253,7 +253,7 @@ const VideoForDevelopmentRefForwardingFunction: React.ForwardRefRenderFunction<
 				}
 
 				throw new Error(
-					`The browser threw an error while playing the video ${src}: Code ${current.error.code} - ${current?.error?.message}. See https://remotion.dev/docs/media-playback-error for help. Pass an onError() prop to handle the error.`,
+					`The browser threw an error while playing the video ${src}: Code ${current.error.code} - ${current?.error?.message}. See https://picus.dev/docs/media-playback-error for help. Pass an onError() prop to handle the error.`,
 				);
 			} else {
 				// If user is handling the error, we don't cause an unhandled exception
@@ -344,7 +344,7 @@ const VideoForDevelopmentRefForwardingFunction: React.ForwardRefRenderFunction<
 			}
 			playsInline
 			src={actualSrc}
-			loop={_remotionInternalNativeLoopPassed}
+			loop={_picusInternalNativeLoopPassed}
 			style={actualStyle}
 			disableRemotePlayback
 			crossOrigin={crossOriginValue}

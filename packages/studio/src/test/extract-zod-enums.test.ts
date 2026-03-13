@@ -1,8 +1,8 @@
 import {expect, test} from 'bun:test';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import * as zodTypes from '@remotion/zod-types';
+import * as zodTypes from '@picus/zod-types';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import {zMatrix} from '@remotion/zod-types';
+import {zMatrix} from '@picus/zod-types';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import {z} from 'zod';
 import {extractEnumJsonPaths} from '../components/RenderModal/SchemaEditor/extract-enum-json-paths';

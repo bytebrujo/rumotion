@@ -139,7 +139,7 @@ export const stringToPascalString = (str: string) => {
 export const padIsoBaseMediaBytes = (data: Uint8Array, totalLength: number) => {
 	if (data.length - 8 > totalLength) {
 		throw new Error(
-			`Data is longer than the total length: ${data.length - 8} > ${totalLength}. Set the 'expectedDurationInSeconds' value to avoid this problem: https://www.remotion.dev/docs/webcodecs/convert-media#expecteddurationinseconds`,
+			`Data is longer than the total length: ${data.length - 8} > ${totalLength}. Set the 'expectedDurationInSeconds' value to avoid this problem: https://www.picus.dev/docs/webcodecs/convert-media#expecteddurationinseconds`,
 		);
 	}
 

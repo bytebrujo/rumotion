@@ -1,5 +1,5 @@
 import type {Codec} from '../codec';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export const x264PresetOptions = [
 	'ultrafast',
@@ -67,7 +67,7 @@ export const x264Option = {
 		</>
 	),
 	ssrName: 'x264Preset' as const,
-	docLink: 'https://www.remotion.dev/docs/renderer/render-media',
+	docLink: 'https://www.picus.dev/docs/renderer/render-media',
 	type: 'fast' as X264Preset | null,
 	getValue: ({commandLine}) => {
 		const value = commandLine[cliFlag];
@@ -85,4 +85,4 @@ export const x264Option = {
 		preset = profile;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<X264Preset | null>;
+} satisfies AnyPicusOption<X264Preset | null>;

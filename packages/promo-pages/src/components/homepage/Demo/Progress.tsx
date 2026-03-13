@@ -1,4 +1,4 @@
-import {makeCircle, makePie} from '@remotion/shapes';
+import {makeCircle, makePie} from '@picus/shapes';
 import React from 'react';
 import {PALETTE} from '../layout/colors';
 

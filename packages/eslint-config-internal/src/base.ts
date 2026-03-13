@@ -183,7 +183,7 @@ export const rules = ({react}: {react: boolean}) => {
 					'querystring',
 					'colors',
 				],
-				patterns: ['**/src/**', '**/dist/**', '!@remotion/promo-pages/dist/**'],
+				patterns: ['**/src/**', '**/dist/**', '!@picus/promo-pages/dist/**'],
 			},
 		],
 		'func-name-matching': [

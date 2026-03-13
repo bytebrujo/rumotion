@@ -8,7 +8,7 @@ import {
 	openBrowser,
 	renderFrames,
 	stitchFramesToVideo,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 
 const exampleBuild = path.join(__dirname, '..', '..', '..', 'example', 'build');
 
@@ -29,7 +29,7 @@ test('Legacy SSR way of rendering videos should still work', async () => {
 
 	// We create a temporary directory for storing the frames
 	const framesDir = await fs.promises.mkdtemp(
-		path.join(os.tmpdir(), 'remotion-'),
+		path.join(os.tmpdir(), 'picus-'),
 	);
 
 	const outPath = path.join(tmpDir, 'out.mp4');

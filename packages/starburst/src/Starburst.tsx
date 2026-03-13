@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {type SequenceControls, type SequenceSchema} from 'remotion';
+import {type SequenceControls, type SequenceSchema} from 'picus';
 import {
 	AbsoluteFill,
 	Internals,
@@ -9,7 +9,7 @@ import {
 	type AbsoluteFillLayout,
 	type LayoutAndStyle,
 	type SequenceProps,
-} from 'remotion';
+} from 'picus';
 
 export type StarburstProps = Omit<
 	SequenceProps,
@@ -283,7 +283,7 @@ const StarburstCanvas: React.FC<{
 
 /*
  * @description Renders a static WebGL-based starburst ray pattern as a Sequence.
- * @see [Documentation](https://www.remotion.dev/docs/starburst/starburst)
+ * @see [Documentation](https://www.picus.dev/docs/starburst/starburst)
  */
 const starburstSchema = {
 	rays: {

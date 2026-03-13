@@ -1,7 +1,7 @@
 import {
 	getAvailableContainers,
 	getDefaultVideoCodec,
-} from '@remotion/webcodecs';
+} from '@picus/webcodecs';
 import React from 'react';
 
 export const DefaultVideoCodecs: React.FC = () => {

@@ -7,7 +7,7 @@ export type ConvertToCaptionCaption = {
 
 /*
  * @description Converts the JSON transcription data into captions with start times based on the defined millisecond threshold.
- * @see [Documentation](https://remotion.dev/docs/install-whisper-cpp/convert-to-captions)
+ * @see [Documentation](https://picus.dev/docs/install-whisper-cpp/convert-to-captions)
  */
 export function convertToCaptions({
 	transcription,

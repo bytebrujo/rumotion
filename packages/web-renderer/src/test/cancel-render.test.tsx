@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {useDelayRender} from 'remotion';
+import {useDelayRender} from 'picus';
 import {expect, test} from 'vitest';
 import {renderStillOnWeb} from '../render-still-on-web';
 import '../symbol-dispose';

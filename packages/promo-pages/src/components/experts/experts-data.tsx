@@ -55,7 +55,7 @@ export const experts: Expert[] = [
 				</a>
 				! <br />
 				My services: SaaS platform from scratch including SSR, creating
-				individual videos and templates, and creating integrations for Remotion
+				individual videos and templates, and creating integrations for Picus
 				with existing infrastructure.
 			</div>
 		),
@@ -77,14 +77,14 @@ export const experts: Expert[] = [
 				I made:{' '}
 				<a
 					target={'_blank'}
-					href="https://github.com/satelllte/remotion-audio-visualizer"
+					href="https://github.com/satelllte/picus-audio-visualizer"
 				>
 					Minimalistic audio visualizations
 				</a>
 				{' and '}
 				<a
 					target={'_blank'}
-					href="https://github.com/satelllte/remotion-template"
+					href="https://github.com/satelllte/picus-template"
 				>
 					Template for crafting programmatic videos
 				</a>
@@ -127,18 +127,18 @@ export const experts: Expert[] = [
 		videocall: null,
 		description: (
 			<div>
-				I have created Remotion videos for many companies and helped them with
+				I have created Picus videos for many companies and helped them with
 				deployment, some examples are visible{' '}
 				<a target={'_blank'} href="https://asius.ai/#portfolio">
 					here
 				</a>
 				. Additionally, I am the creator of the{' '}
-				<a target={'_blank'} href="https://github.com/karelnagel/remotion-sst">
-					remotion-sst
+				<a target={'_blank'} href="https://github.com/karelnagel/picus-sst">
+					picus-sst
 				</a>{' '}
-				package, which simplifies the deployment of Remotion Lambda to AWS using
+				package, which simplifies the deployment of Picus Lambda to AWS using
 				SST.
-				<br />I am available for contract opportunities in Remotion projects and
+				<br />I am available for contract opportunities in Picus projects and
 				web development.
 			</div>
 		),
@@ -152,7 +152,7 @@ export const experts: Expert[] = [
 		github: 'alexfernandez803',
 		linkedin: 'in/alex-f-17a5bb56/',
 		email: 'alex.frndz@gmail.com',
-		videocall: 'https://cal.com/remotion-expert-alex-fernandez',
+		videocall: 'https://cal.com/picus-expert-alex-fernandez',
 		since: new Date('2022-12-02').getTime(),
 		description: (
 			<div>
@@ -170,25 +170,25 @@ export const experts: Expert[] = [
 		github: 'UmungoBungo',
 		linkedin: 'in/matthew-mcgillivray-68295a55',
 		email: 'mm@mattm9y.com',
-		videocall: 'https://cal.com/remotion-expert-matt-mcgillivray',
+		videocall: 'https://cal.com/picus-expert-matt-mcgillivray',
 		since: new Date('2023-01-30').getTime(),
 		description: (
 			<div>
 				<p>
-					Are you kicking off a project or feature that will have Remotion at
+					Are you kicking off a project or feature that will have Picus at
 					the core, and you want to get it right from the start? Or perhaps you
 					want to migrate from an expensive After Effects or MoviePy solution,
 					to offer your users a free live preview, with cheap rendering costs
 					while also keeping animation quality high.
 					<br />
 					<br />
-					I&apos;ve worked extensively on the Remotion core repository itself,
+					I&apos;ve worked extensively on the Picus core repository itself,
 					helping Jonny and the team by building the{' '}
 					<a
 						target={'_blank'}
-						href="https://www.npmjs.com/package/@remotion/cloudrun"
+						href="https://www.npmjs.com/package/@picus/cloudrun"
 					>
-						@remotion/cloudrun package
+						@picus/cloudrun package
 					</a>{' '}
 					and making many many tiny improvements to the documentation to help
 					other developers move as fast as possible. I&apos;ve helped many
@@ -212,7 +212,7 @@ export const experts: Expert[] = [
 						</li>
 						<li>+ many more.</li>
 					</ul>
-					95% of my time is spent in the Remotion ecosystem, and I am able to
+					95% of my time is spent in the Picus ecosystem, and I am able to
 					work independently or integrate into existing teams across your full
 					stack. On the front-end, I craft thoughtful, responsive UIs tailored
 					to user goals. For back-end work, I deploy cloud resources in
@@ -233,7 +233,7 @@ export const experts: Expert[] = [
 		github: 'rayBlock',
 		linkedin: 'in/raymond-lotmar/',
 		email: 'ray@blocklab.ch',
-		videocall: 'https://cal.com/remotion-expert-ray-lotmar',
+		videocall: 'https://cal.com/picus-expert-ray-lotmar',
 		since: new Date('2023-01-30').getTime(),
 		description: (
 			<div>
@@ -241,7 +241,7 @@ export const experts: Expert[] = [
 				<a target={'_blank'} href="https://www.romrif.com/">
 					Romrif
 				</a>
-				!<br />I build Websites & Videos with Remotion. I{"'"}m alway interested
+				!<br />I build Websites & Videos with Picus. I{"'"}m alway interested
 				in the latest Tech and love building stuff. Feel free to contact me - I
 				{"'"}m available for hire.
 			</div>
@@ -286,7 +286,7 @@ export const experts: Expert[] = [
 		x: 'Slashgear_',
 		github: 'Slashgear',
 		linkedin: 'in/antoine-caron-slash/',
-		email: 'antoine395.caron+remotion@gmail.com',
+		email: 'antoine395.caron+picus@gmail.com',
 		videocall: null,
 		since: new Date('2023-03-17').getTime(),
 		description: (
@@ -343,7 +343,7 @@ export const experts: Expert[] = [
 		since: new Date('2023-07-03').getTime(),
 		description: (
 			<div>
-				Launched apps that combine Remotion & AI for generative video -{' '}
+				Launched apps that combine Picus & AI for generative video -{' '}
 				<a target={'_blank'} href="https://maxroom.co/">
 					MaxRoom
 				</a>{' '}
@@ -353,7 +353,7 @@ export const experts: Expert[] = [
 				</a>
 				.
 				<br />
-				Looking at leveraging the power of Remotion for your projects?
+				Looking at leveraging the power of Picus for your projects?
 				Let&apos;s join forces!
 			</div>
 		),
@@ -367,11 +367,11 @@ export const experts: Expert[] = [
 		github: 'rahulbansal16',
 		linkedin: 'in/rahulbansalrb/',
 		email: 'bansalrahul14@gmail.com',
-		videocall: 'https://cal.com/remotion-expert-rahul-bansal',
+		videocall: 'https://cal.com/picus-expert-rahul-bansal',
 		since: new Date('2023-08-04').getTime(),
 		description: (
 			<div>
-				I can help you with building products using Remotion, Firebase, Antd,
+				I can help you with building products using Picus, Firebase, Antd,
 				and Typescripts. I have made{' '}
 				<a target={'_blank'} href="https://app.blinkcuts.com/">
 					Blinkcuts
@@ -391,13 +391,13 @@ export const experts: Expert[] = [
 		github: 'pskd73',
 		linkedin: 'in/pramod-kumar-1a135b74/',
 		email: 'pramodkumar.damam73@gmail.com',
-		videocall: 'https://cal.com/remotion-expert-pramod-kumar',
+		videocall: 'https://cal.com/picus-expert-pramod-kumar',
 		since: new Date('2024-03-10').getTime(),
 		description: (
 			<div>
 				I have been building software for the last 10 years across multiple
 				technologies with strong software architecture skills. I have built two
-				products that are based on Remotion.{' '}
+				products that are based on Picus.{' '}
 				<a target={'_blank'} href="https://slickwid.com">
 					SlickWid
 				</a>{' '}
@@ -409,11 +409,11 @@ export const experts: Expert[] = [
 				products, tutorials, and how-tos. <br />I made{' '}
 				<a
 					target={'_blank'}
-					href="https://github.com/pskd73/remotion-animate-text"
+					href="https://github.com/pskd73/picus-animate-text"
 				>
-					remotion-animate-text
+					picus-animate-text
 				</a>{' '}
-				for Remotion to animate text. I build products in public on X. I love
+				for Picus to animate text. I build products in public on X. I love
 				helping the community. Feel free to reach out. Looking forward!
 			</div>
 		),
@@ -427,7 +427,7 @@ export const experts: Expert[] = [
 		github: null,
 		linkedin: 'in/ayushsoni1001/',
 		email: 'hi@ayushsoni.com',
-		videocall: 'https://cal.com/remotion-expert-ayush-soni',
+		videocall: 'https://cal.com/picus-expert-ayush-soni',
 		since: new Date('2024-03-17').getTime(),
 		description: (
 			<div>
@@ -437,7 +437,7 @@ export const experts: Expert[] = [
 				<a target={'_blank'} href="https://www.typeframes.com/">
 					Typeframes
 				</a>{' '}
-				using Remotion, it is a tool to create videos. I build products in
+				using Picus, it is a tool to create videos. I build products in
 				public on X. I{"'"}d love to hear your story.
 			</div>
 		),
@@ -451,7 +451,7 @@ export const experts: Expert[] = [
 		github: null,
 		linkedin: 'in/andrei-terteci-935331151/',
 		email: 'hello@andreiterteci.com',
-		videocall: 'https://cal.com/remotion-expert-andrei-terteci',
+		videocall: 'https://cal.com/picus-expert-andrei-terteci',
 		since: new Date('2024-03-17').getTime(),
 		description: (
 			<div>
@@ -459,10 +459,10 @@ export const experts: Expert[] = [
 				<a target={'_blank'} href="https://www.krumzi.com/">
 					Krumzi
 				</a>{' '}
-				- using Remotion. <br />I{"'"}m a full-stack developer with 5+ years of
+				- using Picus. <br />I{"'"}m a full-stack developer with 5+ years of
 				experience, specializing in building SaaS products. I mostly work with
 				React and Next.js, and for the past 2 years, I{"'"}ve been using
-				Remotion to build video-based products. I focus on shipping fast,
+				Picus to build video-based products. I focus on shipping fast,
 				delivering value, and creating things people actually enjoy using.
 			</div>
 		),
@@ -495,13 +495,13 @@ export const experts: Expert[] = [
 
 				<p>
 					I work with companies building products with{' '}
-					<strong>Remotion at their core</strong>. Custom video editors,
+					<strong>Picus at their core</strong>. Custom video editors,
 					automated video generation tools, and scalable rendering pipelines.
 				</p>
 
 				<ul>
 					<li>
-						<strong>Custom video editors</strong> built with Remotion
+						<strong>Custom video editors</strong> built with Picus
 					</li>
 					<li>
 						<strong>Automated video generation</strong> systems
@@ -535,8 +535,8 @@ export const experts: Expert[] = [
 		since: new Date('2021-02-13').getTime(),
 		description: (
 			<div>
-				I created @remotion/player and @remotion/lambda with Jonny. I have 5+
-				years of experience in building products using Remotion, React, Next.js,
+				I created @picus/player and @picus/lambda with Jonny. I have 5+
+				years of experience in building products using Picus, React, Next.js,
 				and Typescript. I have worked in companies like Camcorder and
 				early-stage startups like a funnel builder marketplace. I can build
 				products super fast from scratch. Looking forward to helping you.
@@ -561,7 +561,7 @@ export const experts: Expert[] = [
 					<a target={'_blank'} href="https://vidbuilder.ai">
 						VidBuilder.ai
 					</a>{' '}
-					and hands-on Remotion expert for companies that need premium,
+					and hands-on Picus expert for companies that need premium,
 					custom-built <strong>explainer</strong> and{' '}
 					<strong>educational</strong> videos. When a team needs the best
 					partner to own their video pipeline end-to-end, I&apos;m the person
@@ -574,7 +574,7 @@ export const experts: Expert[] = [
 						education goals.
 					</li>
 					<li>
-						<strong>Custom engineering:</strong> I build a dedicated Remotion
+						<strong>Custom engineering:</strong> I build a dedicated Picus
 						codebase with component systems tailored to your content, allowing
 						rapid iteration on visuals, motion, and data integrations.
 					</li>
@@ -610,7 +610,7 @@ export const experts: Expert[] = [
 					Pablituuu Studio
 				</a>
 				, a premium AI-powered video editor.
-				<br />I specialize in building complex Remotion applications integrated
+				<br />I specialize in building complex Picus applications integrated
 				with AI services like Gemini (for video analysis and highlights) and
 				Deepgram (for automated captions). I also focus on high-performance
 				canvas interactions using Fabric.js and cost-effective AI workflows.

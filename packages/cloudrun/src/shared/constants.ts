@@ -1,10 +1,10 @@
 import type {GcpRegion} from '../pricing/gcp-regions';
 
 export const DEFAULT_REGION: GcpRegion = 'us-east1';
-export const BINARY_NAME = 'remotion cloudrun';
+export const BINARY_NAME = 'picus cloudrun';
 
-export const REMOTION_BUCKET_PREFIX = 'remotioncloudrun-';
-export const RENDER_SERVICE_PREFIX = 'remotion';
+export const PICUS_BUCKET_PREFIX = 'picuscloudrun-';
+export const RENDER_SERVICE_PREFIX = 'picus';
 
 export const getSitesKey = (siteId: string) => `sites/${siteId}`;
 

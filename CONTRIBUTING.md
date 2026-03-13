@@ -1,4 +1,4 @@
-Issues and pull requests of all sorts are welcome! Please read the [contribution guide](https://remotion.dev/docs/contributing) before you start.
+Issues and pull requests of all sorts are welcome! Please read the [contribution guide](https://picus.dev/docs/contributing) before you start.
 
 ## Getting started (Video)
 
@@ -6,6 +6,6 @@ Watch the contributing video tutorial: [Click here](https://www.youtube.com/watc
 
 ## Contribution guide
 
-- [General information](https://remotion.dev/docs/contributing)
-- [Implementing a new feature](https://remotion.dev/docs/contributing/feature)
-- [Implementing a new option](https://remotion.dev/docs/contributing/option)
+- [General information](https://picus.dev/docs/contributing)
+- [Implementing a new feature](https://picus.dev/docs/contributing/feature)
+- [Implementing a new option](https://picus.dev/docs/contributing/option)

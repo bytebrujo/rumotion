@@ -1,4 +1,4 @@
-import {Lottie} from '@remotion/lottie';
+import {Lottie} from '@picus/lottie';
 import {useEffect, useState} from 'react';
 import {
 	AbsoluteFill,
@@ -8,7 +8,7 @@ import {
 	interpolate,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import HeaderAndCredits from './HeaderAndCredits';
 import './common.css';
 

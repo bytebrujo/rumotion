@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-captions-create-tiktok-style-captions.png
 title: createTikTokStyleCaptions()
-crumb: '@remotion/captions'
+crumb: '@picus/captions'
 ---
 
 # createTikTokStyleCaptions()<AvailableFrom v="4.0.216"/>
@@ -18,7 +18,7 @@ This API expects the whitespace to be included in the `text` field **before each
 :::
 
 ```tsx twoslash title="Create pages from captions"
-import {createTikTokStyleCaptions, Caption} from '@remotion/captions';
+import {createTikTokStyleCaptions, Caption} from '@picus/captions';
 
 const captions: Caption[] = [
   {
@@ -29,7 +29,7 @@ const captions: Caption[] = [
     confidence: null,
   },
   {
-    text: " Remotion's",
+    text: " Picus's",
     startMs: 300,
     endMs: 900,
     timestampMs: 440,
@@ -58,7 +58,7 @@ const {pages} = createTikTokStyleCaptions({
 
 /* pages: [
   {
-    text: "Using Remotion's",
+    text: "Using Picus's",
     startMs: 40,
     durationMs: 860,
     tokens: [
@@ -68,7 +68,7 @@ const {pages} = createTikTokStyleCaptions({
         toMs: 300,
       },
       {
-        text: " Remotion's",
+        text: " Picus's",
         fromMs: 300,
         toMs: 900,
       },
@@ -130,5 +130,5 @@ While rendering, apply the [`white-space: pre`](https://developer.mozilla.org/en
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/captions/src/create-tiktok-style-captions.ts)
-- [`@remotion/captions`](/docs/captions/api)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/captions/src/create-tiktok-style-captions.ts)
+- [`@picus/captions`](/docs/captions/api)

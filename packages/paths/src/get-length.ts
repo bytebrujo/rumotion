@@ -4,7 +4,7 @@ import {construct} from './helpers/construct';
 
 /*
  * @description Gets the length of an SVG path.
- * @see [Documentation](https://www.remotion.dev/docs/paths/get-length)
+ * @see [Documentation](https://www.picus.dev/docs/paths/get-length)
  */
 export const getLength = (path: string) => {
 	const constructucted = construct(path);

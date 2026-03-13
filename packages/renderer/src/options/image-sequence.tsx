@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'sequence' as const;
 
@@ -18,7 +18,7 @@ export const imageSequenceOption = {
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setimagesequence',
+	docLink: 'https://www.picus.dev/docs/config#setimagesequence',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -37,4 +37,4 @@ export const imageSequenceOption = {
 	},
 	type: false as boolean,
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

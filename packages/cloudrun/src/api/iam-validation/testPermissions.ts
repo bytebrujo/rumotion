@@ -21,8 +21,8 @@ type TestPermissionsOutput = {
 };
 
 /*
- * @description Makes a call to the Test Iam Permissions method of the Resource Manager API in GCP, which returns the list of permissions the Service Account has on the GCP Project. This is then validated against the list of permissions required for the version of Remotion.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/testpermissions)
+ * @description Makes a call to the Test Iam Permissions method of the Resource Manager API in GCP, which returns the list of permissions the Service Account has on the GCP Project. This is then validated against the list of permissions required for the version of Picus.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/testpermissions)
  */
 export const testPermissions = async (
 	params?: TestPermissionsInput,

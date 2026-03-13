@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import type {VideoConfig} from 'remotion';
+import type {VideoConfig} from 'picus';
 import {getTimelineSequenceLayout} from '../helpers/get-timeline-sequence-layout';
 
 const makeVideoConfig = (durationInFrames: number): VideoConfig => ({

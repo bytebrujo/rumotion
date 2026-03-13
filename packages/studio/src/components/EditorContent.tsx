@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {useIsStill} from '../helpers/is-current-selected-still';
 import {InitialCompositionLoader} from './InitialCompositionLoader';
 import {MenuToolbar} from './MenuToolbar';

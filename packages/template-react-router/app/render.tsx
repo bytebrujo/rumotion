@@ -1,8 +1,8 @@
 import { ActionFunction } from "react-router";
 import { renderVideo } from "./lib/render-video.server";
-import { SITE_NAME, COMPOSITION_ID } from "./remotion/constants.mjs";
+import { SITE_NAME, COMPOSITION_ID } from "./picus/constants.mjs";
 import { errorAsJson } from "./lib/return-error-as-json";
-import { RenderRequest } from "./remotion/schemata";
+import { RenderRequest } from "./picus/schemata";
 
 export const action: ActionFunction = errorAsJson(async ({ request }) => {
   const formData = await request.json();

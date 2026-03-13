@@ -1,4 +1,4 @@
-import type {SamplePosition} from '@remotion/media-parser';
+import type {SamplePosition} from '@picus/media-parser';
 import {truthy} from '../../../../../truthy';
 import {combineUint8Arrays} from '../../../../matroska/matroska-utils';
 import {addSize, stringsToUint8Array} from '../../../primitives';

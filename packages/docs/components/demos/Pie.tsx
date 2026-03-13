@@ -1,6 +1,6 @@
-import {Pie} from '@remotion/shapes';
+import {Pie} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const PieDemo: React.FC<{
 	readonly radius: number;

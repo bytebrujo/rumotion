@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'browser' as const;
 
@@ -10,12 +10,12 @@ export const browserOption = {
 			Specify the browser which should be used for opening a tab. The default
 			browser will be used by default. Pass an absolute path or{' '}
 			<code>&quot;chrome&quot;</code> to use Chrome. If Chrome is selected as
-			the browser and you are on macOS, Remotion will try to reuse an existing
+			the browser and you are on macOS, Picus will try to reuse an existing
 			tab.
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/cli/studio#--browser',
+	docLink: 'https://www.picus.dev/docs/cli/studio#--browser',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -36,4 +36,4 @@ export const browserOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

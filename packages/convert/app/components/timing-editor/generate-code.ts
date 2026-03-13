@@ -208,7 +208,7 @@ export const generateCode = (components: TimingComponent[]): GeneratedCode => {
 
 	const imports =
 		importsList.length > 0
-			? `import {${importsList.join(', ')}} from 'remotion';`
+			? `import {${importsList.join(', ')}} from 'picus';`
 			: '';
 
 	// Generate variable declarations

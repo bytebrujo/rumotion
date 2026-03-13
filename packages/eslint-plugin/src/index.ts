@@ -31,32 +31,32 @@ const rules = {
 };
 
 const recommendedRuleConfig = {
-	'@remotion/warn-native-media-tag': 'error',
-	'@remotion/deterministic-randomness': 'error',
-	'@remotion/no-string-assets': 'error',
-	'@remotion/even-dimensions': 'error',
-	'@remotion/duration-in-frames': 'error',
-	'@remotion/from-0': 'error',
-	'@remotion/volume-callback': 'error',
-	'@remotion/use-gif-component': 'error',
-	'@remotion/staticfile-no-relative': 'error',
-	'@remotion/staticfile-no-remote': 'error',
-	'@remotion/no-background-image': 'error',
-	'@remotion/non-pure-animation': 'warn',
-	'@remotion/v4-config-import': 'error',
+	'@picus/warn-native-media-tag': 'error',
+	'@picus/deterministic-randomness': 'error',
+	'@picus/no-string-assets': 'error',
+	'@picus/even-dimensions': 'error',
+	'@picus/duration-in-frames': 'error',
+	'@picus/from-0': 'error',
+	'@picus/volume-callback': 'error',
+	'@picus/use-gif-component': 'error',
+	'@picus/staticfile-no-relative': 'error',
+	'@picus/staticfile-no-remote': 'error',
+	'@picus/no-background-image': 'error',
+	'@picus/non-pure-animation': 'warn',
+	'@picus/v4-config-import': 'error',
 } as const;
 
 const configs = {
 	recommended: {
 		rules: recommendedRuleConfig,
-		plugins: ['@remotion'],
+		plugins: ['@picus'],
 	},
 } as const;
 
 const flatPlugin = {
 	rules: recommendedRuleConfig,
 	plugins: {
-		'@remotion': {
+		'@picus': {
 			rules: rules,
 		},
 	},

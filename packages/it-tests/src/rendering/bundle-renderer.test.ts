@@ -3,9 +3,9 @@ import {execSync} from 'node:child_process';
 import {copyFileSync, cpSync, readdirSync, rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
-import {BundlerInternals} from '@remotion/bundler';
-import {exampleVideos} from '@remotion/example-videos';
-import {RenderInternals} from '@remotion/renderer';
+import {BundlerInternals} from '@picus/bundler';
+import {exampleVideos} from '@picus/example-videos';
+import {RenderInternals} from '@picus/renderer';
 
 test(
 	'Should be able to bundle the renderer',
@@ -48,7 +48,7 @@ test(
 		const filesInCwd = readdirSync(ffmpegCwd);
 		const filesToCopy = filesInCwd.filter(
 			(f) =>
-				f.startsWith('remotion') ||
+				f.startsWith('picus') ||
 				f.endsWith('.so') ||
 				f.endsWith('.dll') ||
 				f.endsWith('.dylib') ||

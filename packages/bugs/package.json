@@ -1,6 +1,6 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/bugs"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/bugs"
 	},
 	"name": "bugs",
 	"private": true,

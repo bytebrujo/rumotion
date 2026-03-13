@@ -5,12 +5,12 @@ export const writeStaticFile = async ({
 	contents: string | ArrayBuffer;
 	filePath: string;
 }): Promise<void> => {
-	if (window.remotion_isReadOnlyStudio) {
+	if (window.picus_isReadOnlyStudio) {
 		throw new Error('writeStaticFile() is not available in read-only Studio');
 	}
 
 	const url = new URL(
-		`${window.remotion_staticBase}/api/add-asset`,
+		`${window.picus_staticBase}/api/add-asset`,
 		window.location.origin,
 	);
 

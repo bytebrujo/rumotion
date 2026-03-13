@@ -7,19 +7,19 @@ sidebar_label: As Three.js texture
 
 If you want to embed a video as a texture in Three.js, you have multiple options.
 
-## Using `@remotion/media`<AvailableFrom v="4.0.387" />
+## Using `@picus/media`<AvailableFrom v="4.0.387" />
 
 We recommend that you mount a [`<Video>`](/docs/media/video) tag in [`headless`](/docs/media/video#headless) mode and use the [`onVideoFrame`](/docs/media/video#onvideoframe) prop to update the Three.js texture whenever a new frame is being drawn.
 
 ```tsx twoslash title="VideoTexture.tsx"
 import {useThree} from '@react-three/fiber';
-import {Video} from '@remotion/media';
-import {ThreeCanvas} from '@remotion/three';
+import {Video} from '@picus/media';
+import {ThreeCanvas} from '@picus/three';
 import React, {useCallback, useState} from 'react';
-import {useRemotionEnvironment, useVideoConfig} from 'remotion';
+import {usePicusEnvironment, useVideoConfig} from 'picus';
 import {CanvasTexture} from 'three';
 
-const videoSrc = 'https://remotion.media/video.mp4';
+const videoSrc = 'https://picus.media/video.mp4';
 
 const videoWidth = 1920;
 const videoHeight = 1080;
@@ -37,7 +37,7 @@ const Inner: React.FC = () => {
   });
 
   const {invalidate, advance} = useThree();
-  const {isRendering} = useRemotionEnvironment();
+  const {isRendering} = usePicusEnvironment();
 
   const onVideoFrame = useCallback(
     (frame: CanvasImageSource) => {
@@ -72,7 +72,7 @@ const Inner: React.FC = () => {
   );
 };
 
-export const RemotionMediaVideoTexture: React.FC = () => {
+export const PicusMediaVideoTexture: React.FC = () => {
   const {width, height} = useVideoConfig();
 
   return (
@@ -92,33 +92,33 @@ export const RemotionMediaVideoTexture: React.FC = () => {
 ## Examples
 
 - Look at the source code of the [React Three Fiber template](/templates/three) for a practical example.
-- The above example can be found in the [Remotion testbed](https://github.com/remotion-dev/remotion/tree/main/packages/example/src/VideoTexture.tsx).
+- The above example can be found in the [Picus testbed](https://github.com/picus-dev/picus/tree/main/packages/example/src/VideoTexture.tsx).
 
 ## Using `<OffthreadVideo>`
 
-_deprecated in favor of using `@remotion/media`_
+_deprecated in favor of using `@picus/media`_
 
-You can use the [`useOffthreadVideoTexture()`](/docs/use-offthread-video-texture) hook from [`@remotion/three`](/docs/three-canvas) to get a texture from a video.
+You can use the [`useOffthreadVideoTexture()`](/docs/use-offthread-video-texture) hook from [`@picus/three`](/docs/three-canvas) to get a texture from a video.
 
 **Drawbacks:**
 
 - It requires the whole video to be downloaded to disk first before frames can be extracted
 - It does not work in [client-side rendering](/docs/client-side-rendering)
-- It creates a new texture for each frame, which is less efficient than using `@remotion/media`
+- It creates a new texture for each frame, which is less efficient than using `@picus/media`
 
 This API is therefore **deprecated** in favor of using the recommended approach mentioned above.
 
 ## Using `<Html5Video>`
 
-_deprecated in favor of using `@remotion/media`_
+_deprecated in favor of using `@picus/media`_
 
-You can use the [`useVideoTexture()`](/docs/use-video-texture) hook from [`@remotion/three`](/docs/three-canvas) to get a texture from a video.
+You can use the [`useVideoTexture()`](/docs/use-video-texture) hook from [`@picus/three`](/docs/three-canvas) to get a texture from a video.
 
 It has all the drawbacks of the [`<Html5Video>`](/docs/video-tags) tag and is therefore **deprecated** in favor of using the recommended approach mentioned above.
 
 ## See also
 
-- [`@remotion/three`](/docs/three)
+- [`@picus/three`](/docs/three)
 - [React Three Fiber template](/templates/three)
 - [Comparison of video tags](/docs/video-tags)
 - [`<Video>`→ `headless` prop](/docs/media/video)

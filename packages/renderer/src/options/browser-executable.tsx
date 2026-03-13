@@ -1,5 +1,5 @@
 import type {BrowserExecutable} from '../browser-executable';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentBrowserExecutablePath: BrowserExecutable = null;
 
@@ -10,7 +10,7 @@ export const browserExecutableOption = {
 	cliFlag,
 	description: () => (
 		<>
-			Set a custom Chrome or Chromium executable path. By default Remotion will
+			Set a custom Chrome or Chromium executable path. By default Picus will
 			try to find an existing version of Chrome on your system and if not found,
 			it will download one. This flag is useful if you don&apos;t have Chrome
 			installed in a standard location and you want to prevent downloading an
@@ -18,7 +18,7 @@ export const browserExecutableOption = {
 		</>
 	),
 	ssrName: 'browserExecutable' as const,
-	docLink: 'https://www.remotion.dev/docs/config#setbrowserexecutable',
+	docLink: 'https://www.picus.dev/docs/config#setbrowserexecutable',
 	type: null as BrowserExecutable,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -44,4 +44,4 @@ export const browserExecutableOption = {
 		currentBrowserExecutablePath = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<BrowserExecutable>;
+} satisfies AnyPicusOption<BrowserExecutable>;

@@ -20,14 +20,14 @@ If you find a file that you like, click on it, then click `Download` <InlineStep
 
 <img src="https://pub-646d808d9cb240cea53bedc76dd3cd0c.r2.dev/lottiefiles-instructions.png" />
 
-### Import the file into Remotion
+### Import the file into Picus
 
-Copy the file into the Remotion project. The recommended way is to put the JSON inside the `public/` folder of Remotion (create it if necessary) and then load it using [`staticFile()`](/docs/staticfile):
+Copy the file into the Picus project. The recommended way is to put the JSON inside the `public/` folder of Picus (create it if necessary) and then load it using [`staticFile()`](/docs/staticfile):
 
 ```tsx twoslash title="Animation.tsx"
-import {Lottie, LottieAnimationData} from '@remotion/lottie';
+import {Lottie, LottieAnimationData} from '@picus/lottie';
 import {useEffect, useState} from 'react';
-import {cancelRender, continueRender, delayRender, staticFile} from 'remotion';
+import {cancelRender, continueRender, delayRender, staticFile} from 'picus';
 
 const Balloons = () => {
   const [handle] = useState(() => delayRender('Loading Lottie animation'));

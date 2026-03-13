@@ -8,7 +8,7 @@ crumb: '#@!*'
 A CORS issue is best debugged with Google Chrome because of the useful error messages.  
 Upon a CORS failure, an error message is printed to the console, explaining why the request has been blocked:
 
-<span style={{opacity: 0.5}}>`Access to fetch at 'https://google.com/' from origin 'https://remotion.dev' has been blocked by CORS policy:` </span>
+<span style={{opacity: 0.5}}>`Access to fetch at 'https://google.com/' from origin 'https://picus.dev' has been blocked by CORS policy:` </span>
 <br />
 `No 'Access-Control-Allow-Origin' header is present on the requested resource.`
 
@@ -70,7 +70,7 @@ Again, notice that the error message was very specific!
 
 Sometimes a request cannot be made not because a website on the internet requests a `localhost` URL:
 
-<span style={{opacity: 0.5}}>`Access to fetch at 'http://localhost:3005/' from origin 'https://www.remotion.dev' has been blocked by CORS policy:`</span>
+<span style={{opacity: 0.5}}>`Access to fetch at 'http://localhost:3005/' from origin 'https://www.picus.dev' has been blocked by CORS policy:`</span>
 <br />
 `Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Private-Network' header was present in the preflight response for this private network request targeting the "local" address space.`
 

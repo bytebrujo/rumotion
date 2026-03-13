@@ -1,4 +1,4 @@
-import {AbsoluteFill, Html5Audio, Sequence, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, Sequence, staticFile} from 'picus';
 
 export const TwentyTwoKHzAudio = () => {
 	const twenty = staticFile('22khz.wav');

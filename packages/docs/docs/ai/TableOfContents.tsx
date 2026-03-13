@@ -8,23 +8,23 @@ export const TableOfContents: React.FC = () => {
 			<Grid>
 				<TOCItem link="/docs/ai/claude-code">
 					<strong>{'Claude Code'}</strong>
-					<div>Use Claude Code to prompt Remotion videos</div>
+					<div>Use Claude Code to prompt Picus videos</div>
 				</TOCItem>
 				<TOCItem link="/docs/ai/chatbot">
 					<strong>{'Chatbot'}</strong>
-					<div>Use the chatbot to get help with Remotion</div>
+					<div>Use the chatbot to get help with Picus</div>
 				</TOCItem>
 				<TOCItem link="/docs/ai/mcp">
 					<strong>{'MCP'}</strong>
-					<div>Get Remotion-domain specific help from LLMs</div>
+					<div>Get Picus-domain specific help from LLMs</div>
 				</TOCItem>
 				<TOCItem link="/docs/ai/bolt">
 					<strong>{'Bolt.new'}</strong>
-					<div>Use Bolt.new to prompt Remotion videos</div>
+					<div>Use Bolt.new to prompt Picus videos</div>
 				</TOCItem>
 				<TOCItem link="/docs/ai/system-prompt">
 					<strong>{'System Prompt'}</strong>
-					<div>to teach LLMs Remotion rules</div>
+					<div>to teach LLMs Picus rules</div>
 				</TOCItem>
 				<TOCItem link="/docs/ai/skills">
 					<strong>{'Agent Skills'}</strong>
@@ -32,11 +32,11 @@ export const TableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/ai/generate">
 					<strong>{'Code generation with LLMs'}</strong>
-					<div>Generate Remotion code by invoking AI</div>
+					<div>Generate Picus code by invoking AI</div>
 				</TOCItem>
 				<TOCItem link="/docs/ai/dynamic-compilation">
 					<strong>{'Just-in-time compilation'}</strong>
-					<div>Compile a Remotion component in JavaScript</div>
+					<div>Compile a Picus component in JavaScript</div>
 				</TOCItem>
 				<TOCItem link="/docs/ai/ai-saas-template">
 					<strong>{'AI SaaS Template'}</strong>

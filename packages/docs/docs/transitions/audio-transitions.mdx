@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-audio-transitions.png
-crumb: '@remotion/transitions'
+crumb: '@picus/transitions'
 sidebar_label: 'Audio transitions'
 title: 'Transitioning with audio'
 ---
@@ -10,8 +10,8 @@ _working from v4.0.58_
 To add sound to a transition, you may use this function to wrap any [presentation](/docs/transitions/presentations/):
 
 ```tsx twoslash title="add-sound.tsx"
-import {TransitionPresentation, TransitionPresentationComponentProps} from '@remotion/transitions';
-import {Html5Audio} from 'remotion';
+import {TransitionPresentation, TransitionPresentationComponentProps} from '@picus/transitions';
+import {Html5Audio} from 'picus';
 
 export function addSound<T extends Record<string, unknown>>(transition: TransitionPresentation<T>, src: string): TransitionPresentation<T> {
   const {component: Component, ...other} = transition;
@@ -39,8 +39,8 @@ Customize the volume, offset, playback rate, and other properties of the [`<Html
 You may use it like this:
 
 ```tsx twoslash title="example.tsx"
-import {TransitionPresentation, TransitionPresentationComponentProps} from '@remotion/transitions';
-import {Html5Audio} from 'remotion';
+import {TransitionPresentation, TransitionPresentationComponentProps} from '@picus/transitions';
+import {Html5Audio} from 'picus';
 
 export function addSound<T extends Record<string, unknown>>(transition: TransitionPresentation<T>, src: string): TransitionPresentation<T> {
   const {component: Component, ...other} = transition;
@@ -64,8 +64,8 @@ export function addSound<T extends Record<string, unknown>>(transition: Transiti
 
 // ---cut---
 
-import {slide} from '@remotion/transitions/slide';
-import {staticFile} from 'remotion';
+import {slide} from '@picus/transitions/slide';
+import {staticFile} from 'picus';
 
 const presentation = slide();
 const withSound = addSound(presentation, staticFile('whoosh.mp3'));

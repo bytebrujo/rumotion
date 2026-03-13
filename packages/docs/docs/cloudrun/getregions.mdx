@@ -11,12 +11,12 @@ crumb: 'Cloud Run API'
   </p>
 </ExperimentalBadge>
 
-Gets an array of all supported GCP regions of this release of Remotion Cloud Run.
+Gets an array of all supported GCP regions of this release of Picus Cloud Run.
 
 ## Example
 
 ```tsx twoslash
-import {getRegions} from '@remotion/cloudrun/client';
+import {getRegions} from '@picus/cloudrun/client';
 
 // ---cut---
 
@@ -25,14 +25,14 @@ const regions = getRegions();
 ```
 
 :::note
-Import from [`@remotion/cloudrun/client`](/docs/cloudrun/light-client) to not import the whole renderer, which cannot be bundled.
+Import from [`@picus/cloudrun/client`](/docs/cloudrun/light-client) to not import the whole renderer, which cannot be bundled.
 :::
 
 ## Return value
 
-An array of supported regions by this release of Remotion Cloud Run.
+An array of supported regions by this release of Picus Cloud Run.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/cloudrun/src/api/get-regions.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/cloudrun/src/api/get-regions.ts)
 - [Region selection](/docs/cloudrun/region-selection)

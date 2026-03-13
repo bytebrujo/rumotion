@@ -1537,7 +1537,7 @@ export const DEMO_STATE = {
 			durationInFrames: 92,
 			from: 5481,
 			type: 'text',
-			text: 'remotion.dev/editor-starter',
+			text: 'picus.dev/editor-starter',
 			color: '#000000',
 			top: 931,
 			left: 623,
@@ -1618,7 +1618,7 @@ export const DEMO_STATE = {
 			durationInFrames: 311,
 			from: 6093,
 			type: 'text',
-			text: 'remotion.dev/editor-starter',
+			text: 'picus.dev/editor-starter',
 			color: '#ffffff',
 			top: 243,
 			left: 1186,
@@ -1690,7 +1690,7 @@ export const DEMO_STATE = {
 			durationInFrames: 311,
 			from: 6093,
 			type: 'text',
-			text: 'remotion.pro/editor-starter',
+			text: 'picus.pro/editor-starter',
 			color: '#ffffff',
 			top: 402,
 			left: 1186,
@@ -1744,7 +1744,7 @@ export const DEMO_STATE = {
 			durationInFrames: 311,
 			from: 6093,
 			type: 'text',
-			text: 'editor-starter.remotion.dev',
+			text: 'editor-starter.picus.dev',
 			color: '#ffffff',
 			top: 560,
 			left: 1186,
@@ -1856,7 +1856,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'timeline-import.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/16d0beba-e560-4c46-a42f-ba84b95063c7',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/16d0beba-e560-4c46-a42f-ba84b95063c7',
 			remoteFileKey: '16d0beba-e560-4c46-a42f-ba84b95063c7',
 			size: 12278513,
 			mimeType: 'video/quicktime',
@@ -1870,7 +1870,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'trim-left.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/2ba69490-b2ec-47de-88b6-51adbbbf8ee6',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/2ba69490-b2ec-47de-88b6-51adbbbf8ee6',
 			remoteFileKey: '2ba69490-b2ec-47de-88b6-51adbbbf8ee6',
 			size: 9215747,
 			mimeType: 'video/quicktime',
@@ -1884,7 +1884,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'trim-right.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/3da578d1-d845-458e-9a86-1b16441bf09e',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/3da578d1-d845-458e-9a86-1b16441bf09e',
 			remoteFileKey: '3da578d1-d845-458e-9a86-1b16441bf09e',
 			size: 6374814,
 			mimeType: 'video/quicktime',
@@ -1898,7 +1898,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'upload-loading-indicator.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/97d96cd9-d9bf-48aa-a35f-800a25689c47',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/97d96cd9-d9bf-48aa-a35f-800a25689c47',
 			remoteFileKey: '97d96cd9-d9bf-48aa-a35f-800a25689c47',
 			size: 9045551,
 			mimeType: 'video/quicktime',
@@ -1912,7 +1912,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'volume-control.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/6a63810a-7b71-4d9c-b501-06f6286b94ef',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/6a63810a-7b71-4d9c-b501-06f6286b94ef',
 			remoteFileKey: '6a63810a-7b71-4d9c-b501-06f6286b94ef',
 			size: 11785032,
 			mimeType: 'video/quicktime',
@@ -1926,7 +1926,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'fade-in.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/5f55503f-4fc1-4ee9-a512-71a525befffc',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/5f55503f-4fc1-4ee9-a512-71a525befffc',
 			remoteFileKey: '5f55503f-4fc1-4ee9-a512-71a525befffc',
 			size: 7582661,
 			mimeType: 'video/quicktime',
@@ -1940,7 +1940,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'pinch-to-zoom.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/743c0e5a-254f-493c-9a19-e64107197352',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/743c0e5a-254f-493c-9a19-e64107197352',
 			remoteFileKey: '743c0e5a-254f-493c-9a19-e64107197352',
 			size: 14839283,
 			mimeType: 'video/quicktime',
@@ -1954,7 +1954,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'solid-drawing-tool.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/c2d40b45-f442-4212-9dd2-d17ef0e71f31',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/c2d40b45-f442-4212-9dd2-d17ef0e71f31',
 			remoteFileKey: 'c2d40b45-f442-4212-9dd2-d17ef0e71f31',
 			size: 6867849,
 			mimeType: 'video/quicktime',
@@ -1968,7 +1968,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'font-styles.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/58028f7a-55b3-4136-a1f2-86651b9c6d8b',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/58028f7a-55b3-4136-a1f2-86651b9c6d8b',
 			remoteFileKey: '58028f7a-55b3-4136-a1f2-86651b9c6d8b',
 			size: 11121516,
 			mimeType: 'video/quicktime',
@@ -1982,7 +1982,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'font-styles.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/c29aa6e3-56a3-4a83-a096-84ac7855ef84',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/c29aa6e3-56a3-4a83-a096-84ac7855ef84',
 			remoteFileKey: 'c29aa6e3-56a3-4a83-a096-84ac7855ef84',
 			size: 11121516,
 			mimeType: 'video/quicktime',
@@ -1996,7 +1996,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'generating-captions.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/c1d269ca-ce60-43d8-8b0e-81d904820723',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/c1d269ca-ce60-43d8-8b0e-81d904820723',
 			remoteFileKey: 'c1d269ca-ce60-43d8-8b0e-81d904820723',
 			size: 7810792,
 			mimeType: 'video/quicktime',
@@ -2010,7 +2010,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'send-to-back-center-border-radius.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/f844cc15-2459-48b1-86c0-aa4203b21c55',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/f844cc15-2459-48b1-86c0-aa4203b21c55',
 			remoteFileKey: 'f844cc15-2459-48b1-86c0-aa4203b21c55',
 			size: 7752851,
 			mimeType: 'video/quicktime',
@@ -2024,7 +2024,7 @@ export const DEMO_STATE = {
 			filename:
 				'ES_Ordinary Love (Instrumental Version) - Lisa Town (Version 2d129ab4) - fullmix_preview.mp3',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/767ecf85-2f78-47b2-82e5-52aa1d7a83d1',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/767ecf85-2f78-47b2-82e5-52aa1d7a83d1',
 			remoteFileKey: '767ecf85-2f78-47b2-82e5-52aa1d7a83d1',
 			size: 2340480,
 			mimeType: 'audio/mpeg',
@@ -2036,7 +2036,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'captions-and-playback.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/db784bf9-9dac-45a4-966f-4e4209e1a7aa',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/db784bf9-9dac-45a4-966f-4e4209e1a7aa',
 			remoteFileKey: 'db784bf9-9dac-45a4-966f-4e4209e1a7aa',
 			size: 6500755,
 			mimeType: 'video/quicktime',
@@ -2050,7 +2050,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'caption-highlight-color.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/e080f6a4-6983-4895-9945-df0e6a383466',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/e080f6a4-6983-4895-9945-df0e6a383466',
 			remoteFileKey: 'e080f6a4-6983-4895-9945-df0e6a383466',
 			size: 9436828,
 			mimeType: 'video/quicktime',
@@ -2064,7 +2064,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'canvas-marquee-selection-and-move.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/fc14f9a9-5c0b-45b3-895d-8ad0a3674bf2',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/fc14f9a9-5c0b-45b3-895d-8ad0a3674bf2',
 			remoteFileKey: 'fc14f9a9-5c0b-45b3-895d-8ad0a3674bf2',
 			size: 6272614,
 			mimeType: 'video/quicktime',
@@ -2078,7 +2078,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'timeline-marquee-selection.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/5acabfa7-b354-40cf-b910-1e99bdb557de',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/5acabfa7-b354-40cf-b910-1e99bdb557de',
 			remoteFileKey: '5acabfa7-b354-40cf-b910-1e99bdb557de',
 			size: 9675287,
 			mimeType: 'video/quicktime',
@@ -2092,7 +2092,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'timeline-zoom.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/f34f5e93-7fd3-4f8a-be82-71cc076227a0',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/f34f5e93-7fd3-4f8a-be82-71cc076227a0',
 			remoteFileKey: 'f34f5e93-7fd3-4f8a-be82-71cc076227a0',
 			size: 7412199,
 			mimeType: 'video/quicktime',
@@ -2106,7 +2106,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'split-item-and-rolling-edit.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/aa6fadfb-a3bf-4070-ae04-245704b80e85',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/aa6fadfb-a3bf-4070-ae04-245704b80e85',
 			remoteFileKey: 'aa6fadfb-a3bf-4070-ae04-245704b80e85',
 			size: 10713134,
 			mimeType: 'video/quicktime',
@@ -2120,7 +2120,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'editor-buildup.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/17798fec-689b-4aab-9ba2-06da367a49f4',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/17798fec-689b-4aab-9ba2-06da367a49f4',
 			remoteFileKey: '17798fec-689b-4aab-9ba2-06da367a49f4',
 			size: 18550830,
 			mimeType: 'video/quicktime',
@@ -2134,7 +2134,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'rendering.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/0b190f36-b878-4227-8cb5-f0f52068a427',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/0b190f36-b878-4227-8cb5-f0f52068a427',
 			remoteFileKey: '0b190f36-b878-4227-8cb5-f0f52068a427',
 			size: 10429143,
 			mimeType: 'video/quicktime',
@@ -2148,7 +2148,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'IMG_4820.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/094912f3-7a5d-486b-a02c-0f1ae42f8ae9',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/094912f3-7a5d-486b-a02c-0f1ae42f8ae9',
 			remoteFileKey: '094912f3-7a5d-486b-a02c-0f1ae42f8ae9',
 			size: 52128823,
 			mimeType: 'video/quicktime',
@@ -2162,7 +2162,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'IMG_4821.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/32559b91-2275-4442-8e29-ec2ba86fa005',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/32559b91-2275-4442-8e29-ec2ba86fa005',
 			remoteFileKey: '32559b91-2275-4442-8e29-ec2ba86fa005',
 			size: 33249197,
 			mimeType: 'video/quicktime',
@@ -2176,7 +2176,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'IMG_4823.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/e9facfe0-201a-4a75-86b1-91265e66db69',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/e9facfe0-201a-4a75-86b1-91265e66db69',
 			remoteFileKey: 'e9facfe0-201a-4a75-86b1-91265e66db69',
 			size: 45710186,
 			mimeType: 'video/quicktime',
@@ -2190,7 +2190,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'IMG_4822.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/d9631099-8813-4d26-937d-d1e88fd2e853',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/d9631099-8813-4d26-937d-d1e88fd2e853',
 			remoteFileKey: 'd9631099-8813-4d26-937d-d1e88fd2e853',
 			size: 160696493,
 			mimeType: 'video/quicktime',
@@ -2204,7 +2204,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'IMG_4824.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/50e6a8e9-e889-4ebd-be5e-9d149d8b6fc4',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/50e6a8e9-e889-4ebd-be5e-9d149d8b6fc4',
 			remoteFileKey: '50e6a8e9-e889-4ebd-be5e-9d149d8b6fc4',
 			size: 28329407,
 			mimeType: 'video/quicktime',
@@ -2218,7 +2218,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'IMG_4825.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/2794f812-ddc5-4fec-8a20-cffcdefa9e39',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/2794f812-ddc5-4fec-8a20-cffcdefa9e39',
 			remoteFileKey: '2794f812-ddc5-4fec-8a20-cffcdefa9e39',
 			size: 24680130,
 			mimeType: 'video/quicktime',
@@ -2232,7 +2232,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'IMG_4826.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/8fc0e89e-4105-4daa-83c0-b55de8d1dd86',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/8fc0e89e-4105-4daa-83c0-b55de8d1dd86',
 			remoteFileKey: '8fc0e89e-4105-4daa-83c0-b55de8d1dd86',
 			size: 20994221,
 			mimeType: 'video/quicktime',
@@ -2246,7 +2246,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: true,
 			filename: 'IMG_4827.MOV',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/ac33073c-2f83-4b9e-95a8-8aa3219da709',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/ac33073c-2f83-4b9e-95a8-8aa3219da709',
 			remoteFileKey: 'ac33073c-2f83-4b9e-95a8-8aa3219da709',
 			size: 35229503,
 			mimeType: 'video/quicktime',
@@ -2450,7 +2450,7 @@ export const DEMO_STATE = {
 					confidence: null,
 					endMs: 39500,
 					startMs: 38880.001068115234,
-					text: ' Remotion',
+					text: ' Picus',
 					timestampMs: 39190.00053405762,
 				},
 				{
@@ -2521,7 +2521,7 @@ export const DEMO_STATE = {
 			type: 'image',
 			filename: 'Screenshot 2025-08-20 at 10.21.47.png',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/c277a908-2a1b-4553-9b47-1199c93dfea8',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/c277a908-2a1b-4553-9b47-1199c93dfea8',
 			remoteFileKey: 'c277a908-2a1b-4553-9b47-1199c93dfea8',
 			size: 336843,
 			mimeType: 'image/png',
@@ -2535,7 +2535,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: false,
 			filename: 'Screen Recording 2025-08-20 at 10.35.46.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/f8808361-5b95-4c24-8e52-73ec3d6cf2c0',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/f8808361-5b95-4c24-8e52-73ec3d6cf2c0',
 			remoteFileKey: 'f8808361-5b95-4c24-8e52-73ec3d6cf2c0',
 			size: 2971451,
 			mimeType: 'video/quicktime',
@@ -2547,7 +2547,7 @@ export const DEMO_STATE = {
 			type: 'image',
 			filename: 'Screenshot 2025-08-20 at 10.51.58.png',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/67c67dd6-bc55-46e9-8634-27ff3e014727',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/67c67dd6-bc55-46e9-8634-27ff3e014727',
 			remoteFileKey: '67c67dd6-bc55-46e9-8634-27ff3e014727',
 			size: 183685,
 			mimeType: 'image/png',
@@ -2561,7 +2561,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: false,
 			filename: 'Screen Recording 2025-08-20 at 10.54.12.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/af14436f-4754-4217-8880-3dca5ea055e4',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/af14436f-4754-4217-8880-3dca5ea055e4',
 			remoteFileKey: 'af14436f-4754-4217-8880-3dca5ea055e4',
 			size: 5413599,
 			mimeType: 'video/quicktime',
@@ -2573,9 +2573,9 @@ export const DEMO_STATE = {
 			type: 'video',
 			durationInSeconds: 9.152,
 			hasAudioTrack: true,
-			filename: 'WhatIsRemotion.mp4',
+			filename: 'WhatIsPicus.mp4',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/bdf2c99d-6a3d-46b9-972f-e8a093b8b31a',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/bdf2c99d-6a3d-46b9-972f-e8a093b8b31a',
 			remoteFileKey: 'bdf2c99d-6a3d-46b9-972f-e8a093b8b31a',
 			size: 2175501,
 			mimeType: 'video/mp4',
@@ -2589,7 +2589,7 @@ export const DEMO_STATE = {
 			hasAudioTrack: false,
 			filename: 'Screen Recording 2025-08-20 at 11.06.32.mov',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/a3ca1e37-3463-4920-991a-0b0b5095b186',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/a3ca1e37-3463-4920-991a-0b0b5095b186',
 			remoteFileKey: 'a3ca1e37-3463-4920-991a-0b0b5095b186',
 			size: 4315705,
 			mimeType: 'video/quicktime',
@@ -2601,7 +2601,7 @@ export const DEMO_STATE = {
 			type: 'image',
 			filename: 'Screenshot 2025-08-20 at 11.17.22.png',
 			remoteUrl:
-				'https://remotionlambda-gxzle4ynoh.s3-accelerate.amazonaws.com/95bad561-51dc-4c3a-88ca-93941e62e91b',
+				'https://picuslambda-gxzle4ynoh.s3-accelerate.amazonaws.com/95bad561-51dc-4c3a-88ca-93941e62e91b',
 			remoteFileKey: '95bad561-51dc-4c3a-88ca-93941e62e91b',
 			size: 1137056,
 			mimeType: 'image/png',
@@ -2612,6 +2612,6 @@ export const DEMO_STATE = {
 	deletedAssets: [],
 };
 
-export const DEMO_URL = `https://editor-starter.remotion.dev/#state=${btoa(
+export const DEMO_URL = `https://editor-starter.picus.dev/#state=${btoa(
 	JSON.stringify(DEMO_STATE),
 )}`;

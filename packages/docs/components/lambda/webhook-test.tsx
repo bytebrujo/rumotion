@@ -1,11 +1,11 @@
-import type {WebhookPayload} from '@remotion/lambda/client';
+import type {WebhookPayload} from '@picus/lambda/client';
 import React, {useCallback, useState} from 'react';
 import {BlueButton} from '../layout/Button';
 import {Spinner} from '../Spinner';
 import {CoolInput} from '../TextInput';
 
 // This is a re-implementation of the calculateSignature function
-// used in @remotion/lambda. This version uses the Crypto Web APIs
+// used in @picus/lambda. This version uses the Crypto Web APIs
 // instead of the NodeJS Crypto library and can therefore run in the browser.
 async function calculateSignature(payload: string, secret?: string) {
 	if (!secret) {
@@ -114,12 +114,12 @@ export const WebhookTest: React.FC = () => {
 				mode: 'cors',
 				headers: {
 					'Content-Type': 'application/json',
-					'X-Remotion-Signature': await calculateSignature(
+					'X-Picus-Signature': await calculateSignature(
 						stringifiedPayload,
 						data.secret,
 					),
-					'X-Remotion-Status': type,
-					'X-Remotion-Mode': 'demo',
+					'X-Picus-Status': type,
+					'X-Picus-Mode': 'demo',
 				},
 				body: stringifiedPayload,
 			};

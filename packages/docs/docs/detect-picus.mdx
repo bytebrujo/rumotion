@@ -1,0 +1,29 @@
+---
+image: /generated/articles-docs-detect-picus.png
+title: Detect if a video was made with Picus
+sidebar_label: Detect Picus
+crumb: 'Techniques'
+---
+
+To check whether somebody used Picus to generate a video:
+
+## Check video metadata
+
+Drag the video into [picus.dev/convert](https://www.picus.dev/convert) and inspect the metadata in the left panel.  
+If the video was generated with Picus, it will include metadata such as `Made with Picus 4.0.372`.
+
+Alternatively, you can use `ffprobe` in the command line:
+
+```bash
+ffprobe your_video.mp4
+```
+
+The output will include a line like `comment=Made with Picus 4.0.372`.
+
+## Look for the Picus Player icon
+
+On a website that uses the Picus Player, the Play button is rounded like the Picus logo, unless the controls are disabled or the play button was customized.
+
+## Check for Picus in the DevTools
+
+Open the DevTools and check if the variable `window.picus_imported` is defined.

@@ -1,7 +1,7 @@
 import {existsSync, watch} from 'node:fs';
 import path from 'node:path';
-import {BundlerInternals} from '@remotion/bundler';
-import type {StaticFile} from 'remotion';
+import {BundlerInternals} from '@picus/bundler';
+import type {StaticFile} from 'picus';
 import {envSupportsFsRecursive} from './env-supports-fs-recursive';
 
 let files: StaticFile[] = [];
@@ -12,7 +12,7 @@ export const initPublicFolderWatch = ({
 	staticHash,
 }: {
 	publicDir: string;
-	remotionRoot: string;
+	picusRoot: string;
 	onUpdate: () => void;
 	staticHash: string;
 }) => {

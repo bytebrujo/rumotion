@@ -1,14 +1,14 @@
-import type {ProviderSpecifics} from '@remotion/serverless-client';
+import type {ProviderSpecifics} from '@picus/serverless-client';
 import {
 	getExpectedOutName,
 	getOverallProgressFromStorage,
 	rendersPrefix,
 	type CustomCredentials,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
 import {awsImplementation} from './aws-provider';
 import {cleanItems} from './clean-items';
-import {REMOTION_BUCKET_PREFIX} from './constants';
+import {PICUS_BUCKET_PREFIX} from './constants';
 import type {AwsRegion} from './regions';
 import type {RequestHandler} from './types';
 
@@ -49,7 +49,7 @@ export const internalDeleteRender = async (
 		renderMetadata: progress.renderMetadata,
 		bucketName: input.bucketName,
 		customCredentials: input.customCredentials ?? null,
-		bucketNamePrefix: REMOTION_BUCKET_PREFIX,
+		bucketNamePrefix: PICUS_BUCKET_PREFIX,
 	});
 
 	await input.providerSpecifics.deleteFile({
@@ -103,7 +103,7 @@ export const internalDeleteRender = async (
 
 /*
  * @description Deletes a rendered video, audio or still and its associated metadata.
- * @see [Documentation](https://remotion.dev/docs/lambda/deleterender)
+ * @see [Documentation](https://picus.dev/docs/lambda/deleterender)
  */
 export const deleteRender = (input: DeleteRenderInput) => {
 	return internalDeleteRender({

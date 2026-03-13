@@ -1,6 +1,6 @@
 import type {StandardLonghandProperties} from 'csstype';
-import type {PreviewSize, VideoConfig} from 'remotion';
-import {Internals} from 'remotion';
+import type {PreviewSize, VideoConfig} from 'picus';
+import {Internals} from 'picus';
 import {calculatePlayerSize} from './utils/calculate-player-size.js';
 import type {Size} from './utils/use-element-size.js';
 

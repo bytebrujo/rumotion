@@ -9,7 +9,7 @@ export const getGcpRegion = (): GcpRegion => {
 		return parsedCloudrunCli.region;
 	}
 
-	const envVariable = process.env.REMOTION_GCP_REGION;
+	const envVariable = process.env.PICUS_GCP_REGION;
 	if (envVariable) {
 		validateGcpRegion(envVariable);
 		return envVariable;

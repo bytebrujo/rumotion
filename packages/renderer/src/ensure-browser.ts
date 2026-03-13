@@ -57,7 +57,7 @@ const internalEnsureBrowserUncapped = async ({
 			: '';
 		Log.info(
 			{indent, logLevel},
-			`This version of Remotion uses Chrome version ${TESTED_VERSION}, but the installed one differs${versionInfo}. Re-downloading.`,
+			`This version of Picus uses Chrome version ${TESTED_VERSION}, but the installed one differs${versionInfo}. Re-downloading.`,
 		);
 	}
 
@@ -111,8 +111,8 @@ const getBrowserStatus = ({
 };
 
 /*
- * @description Ensures a browser is locally installed so a Remotion render can be executed.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/ensure-browser)
+ * @description Ensures a browser is locally installed so a Picus render can be executed.
+ * @see [Documentation](https://www.picus.dev/docs/renderer/ensure-browser)
  */
 export const ensureBrowser = (options?: EnsureBrowserOptions) => {
 	const indent = false;

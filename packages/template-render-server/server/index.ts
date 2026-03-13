@@ -1,19 +1,19 @@
 import express from "express";
 import { makeRenderQueue } from "./render-queue";
-import { bundle } from "@remotion/bundler";
+import { bundle } from "@picus/bundler";
 import path from "node:path";
-import { ensureBrowser } from "@remotion/renderer";
+import { ensureBrowser } from "@picus/renderer";
 
-const { PORT = 3000, REMOTION_SERVE_URL } = process.env;
+const { PORT = 3000, PICUS_SERVE_URL } = process.env;
 
-function setupApp({ remotionBundleUrl }: { remotionBundleUrl: string }) {
+function setupApp({ picusBundleUrl }: { picusBundleUrl: string }) {
   const app = express();
 
   const rendersDir = path.resolve("renders");
 
   const queue = makeRenderQueue({
     port: Number(PORT),
-    serveUrl: remotionBundleUrl,
+    serveUrl: picusBundleUrl,
     rendersDir,
   });
 
@@ -70,16 +70,16 @@ function setupApp({ remotionBundleUrl }: { remotionBundleUrl: string }) {
 async function main() {
   await ensureBrowser();
 
-  const remotionBundleUrl = REMOTION_SERVE_URL
-    ? REMOTION_SERVE_URL
+  const picusBundleUrl = PICUS_SERVE_URL
+    ? PICUS_SERVE_URL
     : await bundle({
-        entryPoint: path.resolve("remotion/index.ts"),
+        entryPoint: path.resolve("picus/index.ts"),
         onProgress(progress) {
-          console.info(`Bundling Remotion project: ${progress}%`);
+          console.info(`Bundling Picus project: ${progress}%`);
         },
       });
 
-  const app = setupApp({ remotionBundleUrl });
+  const app = setupApp({ picusBundleUrl });
 
   app.listen(PORT, () => {
     console.info(`Server is running on port ${PORT}`);

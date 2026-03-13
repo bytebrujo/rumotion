@@ -47,8 +47,8 @@ const fn = (src: string): Promise<number> => {
 
 /**
  * @description Gets the duration in seconds of an audio source by creating an invisible `<audio>` tag, loading the audio, and returning the duration.
- * @see [Documentation](https://remotion.dev/docs/get-audio-duration-in-seconds)
- * @deprecated Use `parseMedia()` instead: https://www.remotion.dev/docs/media-parser/parse-media
+ * @see [Documentation](https://picus.dev/docs/get-audio-duration-in-seconds)
+ * @deprecated Use `parseMedia()` instead: https://www.picus.dev/docs/media-parser/parse-media
  */
 export const getAudioDurationInSeconds = (src: string) => {
 	return limit(fn, src);

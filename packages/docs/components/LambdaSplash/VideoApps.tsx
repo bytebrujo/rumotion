@@ -67,7 +67,7 @@ const docsButton: React.CSSProperties = {
 };
 
 export const VideoApps: React.FC<{
-	readonly active: 'remotion' | 'player' | 'lambda';
+	readonly active: 'picus' | 'player' | 'lambda';
 }> = ({active}) => {
 	const {colorMode} = useColorMode();
 
@@ -90,8 +90,8 @@ export const VideoApps: React.FC<{
 	return (
 		<div className={videoapps.row}>
 			<div style={step}>
-				{active === 'remotion' ? <YouAreHere /> : null}
-				<h2 style={stepTitle}>Remotion</h2>
+				{active === 'picus' ? <YouAreHere /> : null}
+				<h2 style={stepTitle}>Picus</h2>
 				<strong style={center}>Make videos programmatically</strong>
 				<br />
 				<div
@@ -112,7 +112,7 @@ export const VideoApps: React.FC<{
 					<li>Render real MP4 videos</li>
 				</ul>
 				<div style={row}>
-					{active === 'remotion' ? null : (
+					{active === 'picus' ? null : (
 						<>
 							<div style={flex}>
 								<a style={docsButton} href="/">
@@ -139,7 +139,7 @@ export const VideoApps: React.FC<{
 			<Spacer />
 			<div style={step}>
 				{active === 'player' ? <YouAreHere /> : null}
-				<h2 style={stepTitle}>Remotion Player</h2>
+				<h2 style={stepTitle}>Picus Player</h2>
 				<strong style={center}>Embeddable interactive videos</strong>
 				<br />
 
@@ -188,7 +188,7 @@ export const VideoApps: React.FC<{
 			<Spacer />
 			<div style={step}>
 				{active === 'lambda' ? <YouAreHere /> : null}
-				<h2 style={stepTitle}>Remotion Lambda</h2>
+				<h2 style={stepTitle}>Picus Lambda</h2>
 				<strong style={center}>Render at scale</strong>
 				<br />
 				<div

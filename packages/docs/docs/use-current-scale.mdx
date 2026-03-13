@@ -14,7 +14,7 @@ In the [Studio](/docs/terminology/studio), it will correspond to the zoom level 
 In the [Player](/docs/terminology/player), it will correspond to the scale that is needed to fit the video canvas in the Player.
 
 ```tsx twoslash title="MyComp.tsx"
-import {Sequence, useCurrentScale} from 'remotion';
+import {Sequence, useCurrentScale} from 'picus';
 
 const MyVideo = () => {
   const scale = useCurrentScale();
@@ -23,15 +23,15 @@ const MyVideo = () => {
 };
 ```
 
-If you are outside of a Remotion context, the hook will throw an error.  
-If you want to avoid this error and return a default scale, you can pass an options object with the property `dontThrowIfOutsideOfRemotion` set to `true`.  
+If you are outside of a Picus context, the hook will throw an error.  
+If you want to avoid this error and return a default scale, you can pass an options object with the property `dontThrowIfOutsideOfPicus` set to `true`.  
 In this case, the hook will return `1`.
 
 ```tsx twoslash title="MyComp.tsx"
-import {useCurrentScale} from 'remotion';
+import {useCurrentScale} from 'picus';
 
 const MyRegularReactComponent = () => {
-  const scale = useCurrentScale({dontThrowIfOutsideOfRemotion: true});
+  const scale = useCurrentScale({dontThrowIfOutsideOfPicus: true});
 
   return <div>The current scale is {scale}</div>;
 };
@@ -43,5 +43,5 @@ const MyRegularReactComponent = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/use-current-scale.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/use-current-scale.ts)
 - [Measuring DOM nodes](/docs/measuring)

@@ -7,14 +7,14 @@ crumb: Captions
 
 # Exporting subtitles
 
-This guide covers different ways to export subtitles from your Remotion video.
+This guide covers different ways to export subtitles from your Picus video.
 
 ## Burned-in subtitles
 
 If you want the subtitles to be part of the video itself (burned in), follow the instructions in [Displaying captions](/docs/captions/displaying) to render the captions, then simply [render the video](/docs/render) as usual.
 
 ```bash
-npx remotion render
+npx picus render
 ```
 
 ## Exporting as a separate .srt file
@@ -22,9 +22,9 @@ npx remotion render
 To export subtitles as a separate `.srt` file, use the [`<Artifact>`](/docs/artifact) component together with [`serializeSrt()`](/docs/captions/serialize-srt).
 
 ```tsx twoslash title="Exporting captions as .srt"
-import {Artifact, useCurrentFrame} from 'remotion';
-import {serializeSrt} from '@remotion/captions';
-import type {Caption} from '@remotion/captions';
+import {Artifact, useCurrentFrame} from 'picus';
+import {serializeSrt} from '@picus/captions';
+import type {Caption} from '@picus/captions';
 
 const captions: Caption[] = [
   {
@@ -71,8 +71,8 @@ The artifact will be saved to `out/[composition-id]/subtitles.srt` when renderin
 If your captions are word-by-word, you may want to group multiple words into a single subtitle line. You can use [`createTikTokStyleCaptions()`](/docs/captions/create-tiktok-style-captions) to create pages, then convert them back to the format expected by `serializeSrt()`:
 
 ```tsx twoslash title="Grouping captions into lines"
-import {serializeSrt, createTikTokStyleCaptions} from '@remotion/captions';
-import type {Caption} from '@remotion/captions';
+import {serializeSrt, createTikTokStyleCaptions} from '@picus/captions';
+import type {Caption} from '@picus/captions';
 
 const captions: Caption[] = [];
 

@@ -1,4 +1,4 @@
-export type {Instruction} from '@remotion/paths';
+export type {Instruction} from '@picus/paths';
 export {Arrow, ArrowProps} from './components/arrow';
 export {Circle, CircleProps} from './components/circle';
 export {Ellipse, EllipseProps} from './components/ellipse';

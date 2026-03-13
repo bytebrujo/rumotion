@@ -1,5 +1,5 @@
 import React from 'react';
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 import {BrowserTest} from './BrowserTest';
 
 export const BrowserTestRoot: React.FC = () => {

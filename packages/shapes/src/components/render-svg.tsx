@@ -1,4 +1,4 @@
-import type {Instruction} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
 import React, {useMemo} from 'react';
 import {version} from 'react-dom';
 import {doesReactSupportTransformOriginProperty} from '../utils/does-react-support-canary';

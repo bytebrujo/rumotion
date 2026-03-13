@@ -1,4 +1,4 @@
-import type {GenericRenderProgress, Privacy} from '@remotion/serverless-client';
+import type {GenericRenderProgress, Privacy} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
 import type {AwsRegion} from './regions';
 
@@ -12,7 +12,7 @@ export const MAX_TIMEOUT = 900;
 
 export const DEFAULT_FRAMES_PER_LAMBDA = 20;
 
-export const BINARY_NAME = 'remotion lambda';
+export const BINARY_NAME = 'picus lambda';
 export const DEFAULT_REGION: AwsRegion = 'us-east-1';
 export const DEFAULT_MAX_RETRIES = 1;
 
@@ -25,7 +25,7 @@ export const DEFAULT_OUTPUT_PRIVACY: Privacy = 'public';
 
 export const DEFAULT_CLOUDWATCH_RETENTION_PERIOD = 14;
 
-export const RENDER_FN_PREFIX = 'remotion-render-';
+export const RENDER_FN_PREFIX = 'picus-render-';
 export const LOG_GROUP_PREFIX = '/aws/lambda/';
 export const LAMBDA_INSIGHTS_PREFIX = '/aws/lambda-insights';
 
@@ -35,4 +35,4 @@ export type RenderProgress = GenericRenderProgress<AwsProvider>;
 
 export const LAMBDA_CONCURRENCY_LIMIT_QUOTA = 'L-B99A9384';
 
-export const REMOTION_BUCKET_PREFIX = 'remotionlambda-';
+export const PICUS_BUCKET_PREFIX = 'picuslambda-';

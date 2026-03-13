@@ -11,7 +11,7 @@ crumb: 'Cloud Run API'
   </p>
 </ExperimentalBadge>
 
-Kicks off a media rendering process on Remotion Cloud Run.
+Kicks off a media rendering process on Picus Cloud Run.
 
 Requires a [service](/docs/cloudrun/deployservice) to already be deployed to execute the render.  
 A [site](/docs/cloudrun/deploysite) or a [Serve URL](/docs/terminology/serve-url) needs to be specified to determine what will be rendered.
@@ -20,13 +20,13 @@ A [site](/docs/cloudrun/deploysite) or a [Serve URL](/docs/terminology/serve-url
 
 ```tsx twoslash
 // ---cut---
-import {renderMediaOnCloudrun} from '@remotion/cloudrun/client';
+import {renderMediaOnCloudrun} from '@picus/cloudrun/client';
 
 const result = await renderMediaOnCloudrun({
   region: 'us-east1',
-  serviceName: 'remotion-render-bds9aab',
+  serviceName: 'picus-render-bds9aab',
   composition: 'MyVideo',
-  serveUrl: 'https://storage.googleapis.com/remotioncloudrun-123asd321/sites/abcdefgh',
+  serveUrl: 'https://storage.googleapis.com/picuscloudrun-123asd321/sites/abcdefgh',
   codec: 'h264',
 });
 
@@ -37,7 +37,7 @@ if (result.type === 'success') {
 ```
 
 :::note
-Import from [`@remotion/cloudrun/client`](/docs/cloudrun/light-client) to not load the whole renderer, which cannot be bundled.
+Import from [`@picus/cloudrun/client`](/docs/cloudrun/light-client) to not load the whole renderer, which cannot be bundled.
 :::
 
 ## Arguments
@@ -54,11 +54,11 @@ Required if `cloudRunUrl` not supplied. The name of the Cloud Run service which 
 
 ### `region`
 
-In which [GCP region](/docs/cloudrun/region-selection) your Cloud Run service is deployed. It's highly recommended that your Remotion site is also in the same region.
+In which [GCP region](/docs/cloudrun/region-selection) your Cloud Run service is deployed. It's highly recommended that your Picus site is also in the same region.
 
 ### `serveUrl`
 
-A URL pointing to a Remotion project. Use [`deploySite()`](/docs/cloudrun/deploysite) to deploy a Remotion project.
+A URL pointing to a Picus project. Use [`deploySite()`](/docs/cloudrun/deploysite) to deploy a Picus project.
 
 ### `composition`
 
@@ -94,12 +94,12 @@ One of:
 
 ### `forceBucketName?`
 
-Specify a specific bucket name to be used for the output. The resulting Google Cloud Storage URL will be in the format `gs://{bucket-name}/renders/{render-id}/{file-name}`. If not set, Remotion will choose the right bucket to use based on the region.
+Specify a specific bucket name to be used for the output. The resulting Google Cloud Storage URL will be in the format `gs://{bucket-name}/renders/{render-id}/{file-name}`. If not set, Picus will choose the right bucket to use based on the region.
 
 ### `updateRenderProgress?`
 
 ```tsx twoslash
-import type {UpdateRenderProgress} from '@remotion/cloudrun/client';
+import type {UpdateRenderProgress} from '@picus/cloudrun/client';
 
 const updateRenderProgress: UpdateRenderProgress = (progress: number, error: boolean) => {
   if (error) {
@@ -400,4 +400,4 @@ Seconds elapsed between the request start and crash time. Can be checked against
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/cloudrun/src/api/render-media-on-cloudrun.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/cloudrun/src/api/render-media-on-cloudrun.ts)

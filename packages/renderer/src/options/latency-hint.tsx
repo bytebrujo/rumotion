@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'audio-latency-hint' as const;
 
@@ -13,7 +13,7 @@ export const audioLatencyHintOption = {
 			<a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/AudioContext">
 				audio latency
 			</a>{' '}
-			hint for the global <code>AudioContext</code> context that Remotion uses
+			hint for the global <code>AudioContext</code> context that Picus uses
 			to play audio.
 			<br />
 			Possible values: <code>interactive</code>, <code>balanced</code>,{' '}
@@ -21,7 +21,7 @@ export const audioLatencyHintOption = {
 		</>
 	),
 	ssrName: 'audioLatencyHint' as const,
-	docLink: 'https://www.remotion.dev/docs/renderer/render-media',
+	docLink: 'https://www.picus.dev/docs/renderer/render-media',
 	type: 'interactive' as AudioContextLatencyCategory,
 	getValue: ({commandLine}) => {
 		const val = commandLine[cliFlag];
@@ -39,4 +39,4 @@ export const audioLatencyHintOption = {
 		value = profile;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<AudioContextLatencyCategory | null>;
+} satisfies AnyPicusOption<AudioContextLatencyCategory | null>;

@@ -5,26 +5,26 @@ title: v4.0 Migration
 crumb: 'Version Upgrade'
 ---
 
-When upgrading from Remotion 3 to Remotion 4, note the following changes and apply them to your project.
+When upgrading from Picus 3 to Picus 4, note the following changes and apply them to your project.
 
 ## How to upgrade
 
-See the [changelog](https://remotion.dev/changelog) to find the latest version.
-Upgrade `remotion` and all packages starting with `@remotion` to the latest version, e.g. `4.0.0`:
+See the [changelog](https://picus.dev/changelog) to find the latest version.
+Upgrade `picus` and all packages starting with `@picus` to the latest version, e.g. `4.0.0`:
 
 ```diff
-- "remotion": "^3.3.43"
-- "@remotion/bundler": "^3.3.43"
-- "@remotion/eslint-config": "^3.3.43"
-- "@remotion/eslint-plugin": "^3.3.43"
-- "@remotion/cli": "^3.3.43"
-- "@remotion/renderer": "^3.3.43"
-+ "remotion": "4.0.0"
-+ "@remotion/bundler": "4.0.0"
-+ "@remotion/eslint-config": "4.0.0"
-+ "@remotion/eslint-plugin": "4.0.0"
-+ "@remotion/cli": "4.0.0"
-+ "@remotion/renderer": "4.0.0"
+- "picus": "^3.3.43"
+- "@picus/bundler": "^3.3.43"
+- "@picus/eslint-config": "^3.3.43"
+- "@picus/eslint-plugin": "^3.3.43"
+- "@picus/cli": "^3.3.43"
+- "@picus/renderer": "^3.3.43"
++ "picus": "4.0.0"
++ "@picus/bundler": "4.0.0"
++ "@picus/eslint-config": "4.0.0"
++ "@picus/eslint-plugin": "4.0.0"
++ "@picus/cli": "4.0.0"
++ "@picus/renderer": "4.0.0"
 ```
 
 Run `npm i `, `yarn` or `pnpm i` respectively afterwards.
@@ -35,15 +35,15 @@ The minimum Node version is now 16.0.0.
 
 Only the following platforms are supported: Windows (x64 only), macOS, Linux.
 
-Linux distros with glibc need to have at least version 2.35. [See here](https://github.com/remotion-dev/remotion/issues/2439) for more information.
+Linux distros with glibc need to have at least version 2.35. [See here](https://github.com/picus-dev/picus/issues/2439) for more information.
 
 ## Config file changes
 
-The CLI configuration file has been moved out from the core Remotion package to `@remotion/cli/config`. Update your imports like this:
+The CLI configuration file has been moved out from the core Picus package to `@picus/cli/config`. Update your imports like this:
 
 ```diff
-- import {Config} from 'remotion';
-+ import {Config} from '@remotion/cli/config';
+- import {Config} from 'picus';
++ import {Config} from '@picus/cli/config';
 ```
 
 The options have been flattened. For example, instead of `Config.Bundling.overrideWebpackConfig`, you now use `Config.overrideWebpackConfig`.
@@ -60,7 +60,7 @@ Apply this to all configuration calls.
 
 ## Separating `ImageFormat`
 
-Previously, the `imageFormat` option would be used for both stills and videos. While for stills, PNG is often preferrable, for videos it is overall faster to use JPEG as a default. In Remotion 4.0, the image formats are being separated so you can set defaults for videos and stills separately.
+Previously, the `imageFormat` option would be used for both stills and videos. While for stills, PNG is often preferrable, for videos it is overall faster to use JPEG as a default. In Picus 4.0, the image formats are being separated so you can set defaults for videos and stills separately.
 
 - `Config.setImageFormat` got replaced by [`Config.setVideoImageFormat()`](/docs/config#setvideoimageformat) and [`Config.setStillImageFormat()`](/docs/config#setstillimageformat).
 
@@ -103,11 +103,11 @@ This change was made since users export ProRes mainly for getting high-quality f
 
 To clarify the meaning of this option, it is now universally called "JPEG Quality". Adjust the following options:
 
-- [`npx remotion render`](/docs/cli/render): Use `--jpeg-quality` insted of `--quality`
-- [`npx remotion still`](/docs/cli/still): Use `--jpeg-quality` insted of `--quality`
-- [`npx remotion benchmark`](/docs/cli/benchmark): Use `--jpeg-quality` insted of `--quality`
-- [`npx remotion lambda render`](/docs/lambda/cli/render): Use `--jpeg-quality` insted of `--quality`
-- [`npx remotion lambda still`](/docs/lambda/cli/still): Use `--jpeg-quality` insted of `--quality`
+- [`npx picus render`](/docs/cli/render): Use `--jpeg-quality` insted of `--quality`
+- [`npx picus still`](/docs/cli/still): Use `--jpeg-quality` insted of `--quality`
+- [`npx picus benchmark`](/docs/cli/benchmark): Use `--jpeg-quality` insted of `--quality`
+- [`npx picus lambda render`](/docs/lambda/cli/render): Use `--jpeg-quality` insted of `--quality`
+- [`npx picus lambda still`](/docs/lambda/cli/still): Use `--jpeg-quality` insted of `--quality`
 - [`renderFrames()`](/docs/renderer/render-frames): Use `jpegQuality` instead of `quality`
 - [`renderMedia()`](/docs/renderer/render-media): Use `jpegQuality` instead of `quality`
 - [`renderStill()`](/docs/renderer/render-still): Use `jpegQuality` instead of `quality`
@@ -116,9 +116,9 @@ To clarify the meaning of this option, it is now universally called "JPEG Qualit
 
 ## No more FFmpeg install, `ffmpegExecutable` option removed
 
-FFmpeg is now baked into the `@remotion/renderer` package. Therefore, the `ffmpegExecutable` and `ffprobeExecutable` options have been removed.
+FFmpeg is now baked into the `@picus/renderer` package. Therefore, the `ffmpegExecutable` and `ffprobeExecutable` options have been removed.
 
-Furthermore, the `npx remotion install ffmpeg` and `npx remotion install ffprobe` commands no longer exist.
+Furthermore, the `npx picus install ffmpeg` and `npx picus install ffprobe` commands no longer exist.
 
 **How to upgrade:**
 
@@ -126,14 +126,14 @@ Furthermore, the `npx remotion install ffmpeg` and `npx remotion install ffprobe
 - Remove the `ffprobeExecutable` option from [`renderMedia()`](/docs/renderer/render-media), [`renderStill()`](/docs/renderer/render-still), [`getCompositions()`](/docs/renderer/get-compositions), [`renderFrames()`](/docs/renderer/render-frames) and [`stitchFramesToVideo()`](/docs/renderer/stitch-frames-to-video) calls.
 - Remove all calls to [`ensureFfmpeg()`](/docs/renderer/ensure-ffmpeg).
 - Remove all calls to [`ensureFfprobe()`](/docs/renderer/ensure-ffprobe).
-- Remove the `--ffmpeg-executable` flag from [`npx remotion render`](/docs/cli/render), [`npx remotion still`](/docs/cli/still) and [`npx remotion benchmark`](/docs/cli/benchmark)
-- Remove the `--ffprobe-executable` flag from [`npx remotion render`](/docs/cli/render), [`npx remotion still`](/docs/cli/still) and [`npx remotion benchmark`](/docs/cli/benchmark)
-- Don't use the [`npx remotion install`](/docs/cli/install) command anymore
+- Remove the `--ffmpeg-executable` flag from [`npx picus render`](/docs/cli/render), [`npx picus still`](/docs/cli/still) and [`npx picus benchmark`](/docs/cli/benchmark)
+- Remove the `--ffprobe-executable` flag from [`npx picus render`](/docs/cli/render), [`npx picus still`](/docs/cli/still) and [`npx picus benchmark`](/docs/cli/benchmark)
+- Don't use the [`npx picus install`](/docs/cli/install) command anymore
 
-## Added `npx remotion ffmpeg` and `npx remotion ffprobe`
+## Added `npx picus ffmpeg` and `npx picus ffprobe`
 
-Since FFmpeg and FFprobe no longer have to be installed, the `ffmpeg` and `ffprobe` commands might also not be in your environment anymore. In order to still be able to use some of FFmpeg's handy commands, we introduced [`npx remotion ffmpeg`](/docs/cli/ffmpeg) and [`npx remotion ffprobe`](/docs/cli/ffprobe).
-Note that in order to keep the binary size small, those FFmpeg binaries only understand the codecs that Remotion itself supports: H.264, H.265, VP8, VP9 and ProRes.
+Since FFmpeg and FFprobe no longer have to be installed, the `ffmpeg` and `ffprobe` commands might also not be in your environment anymore. In order to still be able to use some of FFmpeg's handy commands, we introduced [`npx picus ffmpeg`](/docs/cli/ffmpeg) and [`npx picus ffprobe`](/docs/cli/ffprobe).
+Note that in order to keep the binary size small, those FFmpeg binaries only understand the codecs that Picus itself supports: H.264, H.265, VP8, VP9 and ProRes.
 
 A binary from the 6.0 release line of FFmpeg is used.
 
@@ -144,7 +144,7 @@ In V4, this data has been moved to the [return value](/docs/renderer/render-medi
 
 ## ImageFormat removed
 
-The [@remotion/renderer](/docs/renderer) `ImageFormat` Type got replaced by the more specific Types `VideoImageFormat` and `StillImageFormat`.
+The [@picus/renderer](/docs/renderer) `ImageFormat` Type got replaced by the more specific Types `VideoImageFormat` and `StillImageFormat`.
 
 ## Removal of deprecated APIs
 
@@ -157,7 +157,7 @@ The [@remotion/renderer](/docs/renderer) `ImageFormat` Type got replaced by the 
 - `getParts()` has been removed. Use [`getSubpaths()`](/docs/paths/get-subpaths) instead:
 
 ```tsx twoslash title="paths.ts"
-import {getLength, getPointAtLength, getSubpaths, getTangentAtLength} from '@remotion/paths';
+import {getLength, getPointAtLength, getSubpaths, getTangentAtLength} from '@picus/paths';
 
 const path = 'M 0 0 L 100 100';
 const parts = getSubpaths(path[0]);
@@ -213,7 +213,7 @@ staticFile('my-image#portrait.png'); // "my-image%23portrait.png"
 
 ## Type `WebpackOverrideFn` moved
 
-The `WebpackOverrideFn` type useful for overriding the Webpack config in the config file and in [`bundle()`](/docs/bundle) has moved from the `remotion` to the `@remotion/bundler` package.
+The `WebpackOverrideFn` type useful for overriding the Webpack config in the config file and in [`bundle()`](/docs/bundle) has moved from the `picus` to the `@picus/bundler` package.
 
 **How to upgrade:**
 
@@ -221,11 +221,11 @@ If you encoded the path by yourself until now, don't do so anymore to avoid doub
 
 ## `react-native` no longer aliases to `react-native-web`
 
-Remotion no longer aliases `react-native` automatically to `react-native-web`.  
+Picus no longer aliases `react-native` automatically to `react-native-web`.  
 If you are using `react-native-web`, override the Webpack config like this to restore the previous behavior:
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 Config.overrideWebpackConfig((config) => {
   return {
@@ -241,7 +241,7 @@ Config.overrideWebpackConfig((config) => {
 });
 ```
 
-The [`@remotion/skia`](/docs/skia) package does not require `react-native` or `react-native-web` anymore.
+The [`@picus/skia`](/docs/skia) package does not require `react-native` or `react-native-web` anymore.
 
 ## The `TComposition` type now includes a Zod schema
 
@@ -254,7 +254,7 @@ export type TComposition<Schema extends AnyZodObject, Props> = {};
 If you need a type for a generic composition, you can use the new `AnyComposition` type:
 
 ```ts
-import {AnyComposition} from 'remotion';
+import {AnyComposition} from 'picus';
 
 const composition: AnyComposition = {
   width: 1920,
@@ -311,7 +311,7 @@ If you register a composition with a component that requires some props, you now
 [`renderMedia()`](/docs/renderer/render-media) accepts a `VideoConfig` object for the `composition` option, which now has a `props` field:
 
 ```tsx twoslash {5-7}
-import {renderMedia} from '@remotion/renderer';
+import {renderMedia} from '@picus/renderer';
 
 const options = {
   codec: 'h264',
@@ -355,66 +355,66 @@ The recommended way is to get the `composition` object using [`selectComposition
 
 ## Changelog
 
-- **remotion**: `defaultProps` of a [`<Composition>`](/docs/composition) is now mandatory if the component accepts props
-- **remotion**: [`<Composition>`](/docs/composition) now accepts a schema
-- **remotion**: [`<Composition>`](/docs/composition) now accepts a [`calculateMetadata`](/docs/composition) prop
-- **remotion**: The `OffthreadVideoImageFormat` type has been removed.
-- **remotion**: [`imageFormat`](/docs/offthreadvideo#imageformat-) has been removed from `<OffthreadVideo>`
-- **remotion**: [`transparent`](/docs/offthreadvideo#transparent) has been added to `<OffthreadVideo>`.
-- **remotion**: [`<Img>`](/docs/img) will cancel the render if the image cannot be loaded
-- **remotion**: If an [`<Html5Audio>`](/docs/html5-audio) tag cannot be loaded, it will cancel the render.
-- **remotion**: The `TComposition` type now requires a Zod schema as a generic.
-- **remotion**: Type `WebpackOverrideFn` moved from `remotion` to `@remotion/bundler`
-- **remotion**: [`staticFile()`](/docs/staticfile#handling-uri-unsafe-characters) now supports URI-unsafe characters by default
-- **remotion**: Types: `src` is required for an [`<Img>`](/docs/img) tag
-- **@remotion/bundler**: The development Webpack cache will not be removed anymore if setting [`--bundle-cache=false`](/docs/cli/render#--bundle-cache).
-- **@remotion/bundler**: `react-native` no longer aliases to `react-native-web`
-- **@remotion/bundler**: Webpack has been upgraded to `5.83.1`
-- **@remotion/cli**: `npx remotion preview` is deprecated for [`npx remotion studio`](/docs/cli/studio)
-- **@remotion/cli**: New [Props editor](/docs/visual-editing) allows for editing props with schema
-- **@remotion/cli**: New [Render button](/docs/render) allows for rendering through the CLI
-- **@remotion/cli**: New [`npx remotion ffmpeg`](/docs/cli/ffmpeg) command
-- **@remotion/cli**: New [`npx remotion ffprobe`](/docs/cli/ffprobe) command
-- **@remotion/cli**: Configuration logic has been moved to [`@remotion/cli/config`](/docs/4-0-migration)
-- **@remotion/cli**: [Rich timeline was removed](https://github.com/remotion-dev/remotion/issues/1602#issuecomment-1401618644).
-- **@remotion/cli**: [`Config.*.setOption()`](/docs/4-0-migration) syntax has been removed.
-- **@remotion/cli**: [`Config.setOutputFormat()`](/docs/config#setoutputformat) has now been removed.
-- **@remotion/cli**: Studio now has custom dark scrollbars
-- **@remotion/cli**: New logger for verbose mode: No more interlacing between logs and progress bars
-- **@remotion/cli**: New indicator whether a file has been overwritten (`○`) or newly created (`+`)
-- **@remotion/cli**: Printing server URL again to the console if all Studio instances have been closed
-- **@remotion/cli**: Less React re-renders across the Remotion Studio
-- **@remotion/cli**: Dropdowns cannot overflow anymore
-- **@remotion/cli**: New shortcut for collapsing left sidebar: `Cmd/Ctrl+B`
-- **@remotion/cli** Allow open of the project in editor from the Remotion Studio
-- **@remotion/cli**: `Date` objects now work properly in `defaultProps`
-- **@remotion/cli**: Remotion Studio is tested to work well offline.
-- **@remotion/cli**: "Remotion Preview" has been renamed to ["Remotion Studio"](/docs/studio)
-- **@remotion/eslint-config**: `eslint-plugin-react` has been updated to `7.32.2`
-- **@remotion/eslint-config**: `eslint-plugin-react-hooks` has been updated to `4.6.0`
-- **@remotion/eslint-plugin**: New ESLint rule: Use the right import in the config file
-- **@remotion/lambda**: Lambda does not support the [x86 architecture anymore](/docs/lambda/runtime)
-- **@remotion/lambda**: Chrome on Lambda [has been updated to 114](/docs/lambda/runtime)
-- **@remotion/lambda**: [`downloadVideo()`](/docs/lambda/downloadmedia) alias has been removed.
-- **@remotion/lambda**: [`estimatePrice()`](/docs/lambda/estimateprice) does not accept `architecture` anymore.
-- **@remotion/lambda**: Removed FFmpeg from the Lambda Layer.
-- **@remotion/motion-blur**: [`<MotionBlur>`](/docs/motion-blur/motion-blur) has been removed
-- **@remotion/paths**: [`getParts()`](/docs/paths/get-parts) has been removed
-- **@remotion/renderer**: New [`selectComposition()`](/docs/renderer/select-composition) API
-- **@remotion/renderer**: [`getCanExtractFramesFast()`](/docs/renderer/get-can-extract-frames-fast) has been removed
-- **@remotion/renderer**: FFmpeg is now included in Remotion (v6.0), no need to install it anymore
-- **@remotion/renderer**: [ProRes](/docs/encoding) now exports uncompressed audio by default.
-- **@remotion/renderer**: [`onSlowestFrames`](/docs/renderer/render-media#onslowestframes) has been removed
-- **@remotion/renderer**: [`renderMedia()`](/docs/renderer/render-media#return-value) now returns an object instead of a `Buffer`.
-- **@remotion/renderer**: The `ImageFormat` type has been removed in favor of `StillImageFormat` and `VideoImageFormat`
-- **@remotion/renderer**: You can now [export stills as PDF or WebP](/docs/stills)
-- **@remotion/renderer**: `quality` is now [`jpegQuality`](/docs/renderer/render-media#jpegquality)
-- **@remotion/renderer**: Removed [`ensureFfmpeg()`](/docs/renderer/ensure-ffmpeg) and [`ensureFfprobe()`](/docs/renderer/ensure-ffprobe)
-- **@remotion/renderer**: [`<OffthreadVideo>`](/docs/offthreadvideo) now uses a Rust-based frame extractor
-- **@remotion/renderer**: Noisy Chrome messages are filtered out.
-- **@remotion/renderer**: `console.log` statements in your React app now get printed in a tidy format, contain location, use colors and object previews are printed out.
-- **@remotion/zod-types**: [New package](/docs/zod-types)!
-- Only the following platforms are supported by Remotion now: macOS (x64 and arm64), Windows (x64), Linux (x64 and ARM, GNU Libc and MUSL)
+- **picus**: `defaultProps` of a [`<Composition>`](/docs/composition) is now mandatory if the component accepts props
+- **picus**: [`<Composition>`](/docs/composition) now accepts a schema
+- **picus**: [`<Composition>`](/docs/composition) now accepts a [`calculateMetadata`](/docs/composition) prop
+- **picus**: The `OffthreadVideoImageFormat` type has been removed.
+- **picus**: [`imageFormat`](/docs/offthreadvideo#imageformat-) has been removed from `<OffthreadVideo>`
+- **picus**: [`transparent`](/docs/offthreadvideo#transparent) has been added to `<OffthreadVideo>`.
+- **picus**: [`<Img>`](/docs/img) will cancel the render if the image cannot be loaded
+- **picus**: If an [`<Html5Audio>`](/docs/html5-audio) tag cannot be loaded, it will cancel the render.
+- **picus**: The `TComposition` type now requires a Zod schema as a generic.
+- **picus**: Type `WebpackOverrideFn` moved from `picus` to `@picus/bundler`
+- **picus**: [`staticFile()`](/docs/staticfile#handling-uri-unsafe-characters) now supports URI-unsafe characters by default
+- **picus**: Types: `src` is required for an [`<Img>`](/docs/img) tag
+- **@picus/bundler**: The development Webpack cache will not be removed anymore if setting [`--bundle-cache=false`](/docs/cli/render#--bundle-cache).
+- **@picus/bundler**: `react-native` no longer aliases to `react-native-web`
+- **@picus/bundler**: Webpack has been upgraded to `5.83.1`
+- **@picus/cli**: `npx picus preview` is deprecated for [`npx picus studio`](/docs/cli/studio)
+- **@picus/cli**: New [Props editor](/docs/visual-editing) allows for editing props with schema
+- **@picus/cli**: New [Render button](/docs/render) allows for rendering through the CLI
+- **@picus/cli**: New [`npx picus ffmpeg`](/docs/cli/ffmpeg) command
+- **@picus/cli**: New [`npx picus ffprobe`](/docs/cli/ffprobe) command
+- **@picus/cli**: Configuration logic has been moved to [`@picus/cli/config`](/docs/4-0-migration)
+- **@picus/cli**: [Rich timeline was removed](https://github.com/picus-dev/picus/issues/1602#issuecomment-1401618644).
+- **@picus/cli**: [`Config.*.setOption()`](/docs/4-0-migration) syntax has been removed.
+- **@picus/cli**: [`Config.setOutputFormat()`](/docs/config#setoutputformat) has now been removed.
+- **@picus/cli**: Studio now has custom dark scrollbars
+- **@picus/cli**: New logger for verbose mode: No more interlacing between logs and progress bars
+- **@picus/cli**: New indicator whether a file has been overwritten (`○`) or newly created (`+`)
+- **@picus/cli**: Printing server URL again to the console if all Studio instances have been closed
+- **@picus/cli**: Less React re-renders across the Picus Studio
+- **@picus/cli**: Dropdowns cannot overflow anymore
+- **@picus/cli**: New shortcut for collapsing left sidebar: `Cmd/Ctrl+B`
+- **@picus/cli** Allow open of the project in editor from the Picus Studio
+- **@picus/cli**: `Date` objects now work properly in `defaultProps`
+- **@picus/cli**: Picus Studio is tested to work well offline.
+- **@picus/cli**: "Picus Preview" has been renamed to ["Picus Studio"](/docs/studio)
+- **@picus/eslint-config**: `eslint-plugin-react` has been updated to `7.32.2`
+- **@picus/eslint-config**: `eslint-plugin-react-hooks` has been updated to `4.6.0`
+- **@picus/eslint-plugin**: New ESLint rule: Use the right import in the config file
+- **@picus/lambda**: Lambda does not support the [x86 architecture anymore](/docs/lambda/runtime)
+- **@picus/lambda**: Chrome on Lambda [has been updated to 114](/docs/lambda/runtime)
+- **@picus/lambda**: [`downloadVideo()`](/docs/lambda/downloadmedia) alias has been removed.
+- **@picus/lambda**: [`estimatePrice()`](/docs/lambda/estimateprice) does not accept `architecture` anymore.
+- **@picus/lambda**: Removed FFmpeg from the Lambda Layer.
+- **@picus/motion-blur**: [`<MotionBlur>`](/docs/motion-blur/motion-blur) has been removed
+- **@picus/paths**: [`getParts()`](/docs/paths/get-parts) has been removed
+- **@picus/renderer**: New [`selectComposition()`](/docs/renderer/select-composition) API
+- **@picus/renderer**: [`getCanExtractFramesFast()`](/docs/renderer/get-can-extract-frames-fast) has been removed
+- **@picus/renderer**: FFmpeg is now included in Picus (v6.0), no need to install it anymore
+- **@picus/renderer**: [ProRes](/docs/encoding) now exports uncompressed audio by default.
+- **@picus/renderer**: [`onSlowestFrames`](/docs/renderer/render-media#onslowestframes) has been removed
+- **@picus/renderer**: [`renderMedia()`](/docs/renderer/render-media#return-value) now returns an object instead of a `Buffer`.
+- **@picus/renderer**: The `ImageFormat` type has been removed in favor of `StillImageFormat` and `VideoImageFormat`
+- **@picus/renderer**: You can now [export stills as PDF or WebP](/docs/stills)
+- **@picus/renderer**: `quality` is now [`jpegQuality`](/docs/renderer/render-media#jpegquality)
+- **@picus/renderer**: Removed [`ensureFfmpeg()`](/docs/renderer/ensure-ffmpeg) and [`ensureFfprobe()`](/docs/renderer/ensure-ffprobe)
+- **@picus/renderer**: [`<OffthreadVideo>`](/docs/offthreadvideo) now uses a Rust-based frame extractor
+- **@picus/renderer**: Noisy Chrome messages are filtered out.
+- **@picus/renderer**: `console.log` statements in your React app now get printed in a tidy format, contain location, use colors and object previews are printed out.
+- **@picus/zod-types**: [New package](/docs/zod-types)!
+- Only the following platforms are supported by Picus now: macOS (x64 and arm64), Windows (x64), Linux (x64 and ARM, GNU Libc and MUSL)
 - All packages: The minimum Node version is now 16.0.0
 - All packages: ESLint has been upgraded to `8.42.0`
 - All packages: TypeScript ESLint has been upgraded to `5.59.9`

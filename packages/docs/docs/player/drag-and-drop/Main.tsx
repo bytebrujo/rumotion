@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import type {Item} from './item';
 import {Layer} from './Layer';
 import {SortedOutlines} from './SortedOutlines';

@@ -1,4 +1,4 @@
-import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {ExtrudeDiv} from '../3DContext/Div3D';
 import {RotateY, Scale} from '../3DContext/transformation-context';
 

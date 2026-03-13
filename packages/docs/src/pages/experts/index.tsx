@@ -1,7 +1,7 @@
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {ExpertsPageContent} from '@remotion/promo-pages/dist/experts.js';
+import {ExpertsPageContent} from '@picus/promo-pages/dist/experts.js';
 import Layout from '@theme/Layout';
 import React from 'react';
 import {Seo} from '../../components/Seo';
@@ -12,12 +12,12 @@ const Experts: React.FC = () => {
 	return (
 		<Layout>
 			<Head>
-				{Seo.renderTitle('Remotion Experts | Hire Remotion freelancers')}
+				{Seo.renderTitle('Picus Experts | Hire Picus freelancers')}
 				{Seo.renderDescription(
-					'Find Remotion freelancers and hire them to create, progress or unblock your Remotion project.',
+					'Find Picus freelancers and hire them to create, progress or unblock your Picus project.',
 				)}
 				{Seo.renderImage(
-					'/img/remotion-experts-og-image.png',
+					'/img/picus-experts-og-image.png',
 					context.siteConfig.url,
 				)}
 			</Head>

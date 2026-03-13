@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Test for https://github.com/remotion-dev/remotion/issues/1243
+// Test for https://github.com/picus-dev/picus/issues/1243
 test('Should not have disableRemotePlayback props in the <VideoForPreview> component type definition', () => {
 	const file = path.resolve(
 		process.cwd(),

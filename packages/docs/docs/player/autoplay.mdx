@@ -4,11 +4,11 @@ id: autoplay
 sidebar_label: 'Autoplay'
 title: 'Combatting autoplay issues'
 slug: /player/autoplay
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 Browsers place restrictions on websites that play audio without user interaction.  
-Read on how to properly use the Remotion Player so you don't run into a browser policy.
+Read on how to properly use the Picus Player so you don't run into a browser policy.
 
 The most strict browser is **Mobile Safari**.  
 If your composition plays well there, you should have no problems elsewhere.
@@ -29,12 +29,12 @@ Pass this event to the [`play()`](/docs/player/player#play) or [`toggle()`](/doc
 
 ```tsx twoslash
 // @allowUmdGlobalAccess
-// @filename: ./remotion/MyComp.tsx
+// @filename: ./picus/MyComp.tsx
 export const MyComp = () => <></>;
 
 // @filename: index.tsx
 // ---cut---
-import {PlayerRef} from '@remotion/player';
+import {PlayerRef} from '@picus/player';
 import {useRef} from 'react';
 
 export const App: React.FC = () => {
@@ -64,7 +64,7 @@ Media that contains audio and that plays without user interaction requires speci
 Consider the following scenario:
 
 ```tsx twoslash
-import {AbsoluteFill, Html5Audio, OffthreadVideo, Sequence, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, OffthreadVideo, Sequence, staticFile} from 'picus';
 
 // ---cut---
 export const MyComp = () => {
@@ -93,7 +93,7 @@ There are three different cases here:
 
 ## Using the `numberOfSharedAudioTags` prop
 
-By default, Remotion will mount 5 auxiliary `<audio>` tags that will "warm" up with the first user interaction.  
+By default, Picus will mount 5 auxiliary `<audio>` tags that will "warm" up with the first user interaction.  
 If an `<Html5Audio>` tag is played after the first user interaction, it will be mounted into one of the auxiliary tags and will be allowed to play.
 
 If you have more than 5 `<Html5Audio>` tags that play at the same time, you can increase the number of auxiliary tags by passing the [`numberOfSharedAudioTags`](/docs/player/player#numberofsharedaudiotags) prop to the `<Player>`, because otherwise an error will be thrown.
@@ -107,8 +107,8 @@ If the browser blocks a video from being autoplayed due to it having sound and n
 **Custom behavior**: You may handle an autoplay failure using the [`onAutoPlayError`](/docs/offthreadvideo#onautoplayerror) prop of `<OffthreadVideo>` and `<Video>`:
 
 ```tsx twoslash
-import {OffthreadVideo, staticFile} from 'remotion';
-import type {PlayerRef} from '@remotion/player';
+import {OffthreadVideo, staticFile} from 'picus';
+import type {PlayerRef} from '@picus/player';
 
 export const MyComp: React.FC<{
   playerRef: React.RefObject<PlayerRef>;

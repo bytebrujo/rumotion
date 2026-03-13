@@ -1,4 +1,4 @@
-const key = 'remotion.mute';
+const key = 'picus.mute';
 
 export const persistMuteOption = (option: boolean) => {
 	localStorage.setItem(key, String(option));

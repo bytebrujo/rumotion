@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {ServerlessRoutines} from '@remotion/serverless';
+import {ServerlessRoutines} from '@picus/serverless';
 import {mockImplementation} from '../mocks/mock-implementation';
 
 test('Info handler should return version', async () => {
@@ -9,7 +9,7 @@ test('Info handler should return version', async () => {
 			logLevel: 'info',
 			type: ServerlessRoutines.info,
 		},
-		functionName: 'remotion-dev-lambda',
+		functionName: 'picus-dev-lambda',
 		region: 'us-east-1',
 		timeoutInTest: 120000,
 		requestHandler: null,

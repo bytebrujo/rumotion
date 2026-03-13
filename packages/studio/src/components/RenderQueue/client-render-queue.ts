@@ -1,5 +1,5 @@
 import type {ComponentType} from 'react';
-import type {CalculateMetadataFunction} from 'remotion';
+import type {CalculateMetadataFunction} from 'picus';
 import type {
 	ClientStillRenderJob,
 	ClientVideoRenderJob,

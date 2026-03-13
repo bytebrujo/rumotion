@@ -9,7 +9,7 @@ export const convertToServeUrl = ({
 }) => {
 	if (urlOrId.startsWith('src/')) {
 		throw new Error(
-			`Remotion Lambda can only render based on a URL in the cloud. It seems like you passed a local file: ${urlOrId}. Read the setup guide for Remotion Lambda ${DOCS_URL}/docs/cloudrun/setup`,
+			`Picus Lambda can only render based on a URL in the cloud. It seems like you passed a local file: ${urlOrId}. Read the setup guide for Picus Lambda ${DOCS_URL}/docs/cloudrun/setup`,
 		);
 	}
 

@@ -5,7 +5,7 @@ sidebar_label: Adding a transparent video
 crumb: 'How To'
 ---
 
-You can embed transparent videos in Remotion.
+You can embed transparent videos in Picus.
 
 ## With an alpha channel
 
@@ -13,7 +13,7 @@ To embed a video which has an alpha channel, use the [`<OffthreadVideo>`](/docs/
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return <OffthreadVideo src={staticFile('transparent.webm')} transparent />;
@@ -26,7 +26,7 @@ To embed a video which does not have an alpha channel but just a black backgroun
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return (

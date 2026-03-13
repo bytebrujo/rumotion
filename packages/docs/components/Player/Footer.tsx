@@ -40,13 +40,13 @@ export const PlayerPageFooter: React.FC = () => {
 					}}
 				>
 					<div style={inner}>
-						<h2 className={styles.title}>New to Remotion?</h2>
+						<h2 className={styles.title}>New to Picus?</h2>
 						<p>Learn about how to make videos in React.</p>
 						<div style={{height: 100}} />
 
 						<a href="/" style={{textDecoration: 'none'}}>
 							<BlueButton loading={false} fullWidth size="sm">
-								Learn Remotion
+								Learn Picus
 							</BlueButton>
 						</a>
 					</div>
@@ -54,7 +54,7 @@ export const PlayerPageFooter: React.FC = () => {
 				<div style={{width: 20, height: 20}} />
 				<div style={{...half, backgroundColor: '#0B84F3'}}>
 					<div style={inner}>
-						<h2 className={styles.title}>Already used Remotion?</h2>
+						<h2 className={styles.title}>Already used Picus?</h2>
 						<p>Let{"'"}s get setup with the Player.</p>
 						<div style={{height: 100}} />
 						<a href="/docs/player" style={{textDecoration: 'none'}}>

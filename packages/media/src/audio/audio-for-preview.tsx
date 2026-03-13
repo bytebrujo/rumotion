@@ -4,14 +4,14 @@ import type {
 	LoopVolumeCurveBehavior,
 	SequenceControls,
 	VolumeProp,
-} from 'remotion';
+} from 'picus';
 import {
 	Internals,
-	Audio as RemotionAudio,
+	Audio as PicusAudio,
 	useBufferState,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {getTimeInSeconds} from '../get-time-in-seconds';
 import {MediaPlayer} from '../media-player';
 import {type MediaOnError, callOnErrorAndResolve} from '../on-error';
@@ -260,7 +260,7 @@ const AudioForPreviewAssertedShowing: React.FC<
 							throw errorToUse;
 						} else {
 							Internals.Log.warn(
-								{logLevel, tag: '@remotion/media'},
+								{logLevel, tag: '@picus/media'},
 								fallbackMessage,
 							);
 							setShouldFallbackToNativeAudio(true);
@@ -270,7 +270,7 @@ const AudioForPreviewAssertedShowing: React.FC<
 					if (result.type === 'unknown-container-format') {
 						handleError(
 							new Error(`Unknown container format ${preloadedSrc}.`),
-							`Unknown container format for ${preloadedSrc} (Supported formats: https://www.remotion.dev/docs/mediabunny/formats), falling back to <Html5Audio>`,
+							`Unknown container format for ${preloadedSrc} (Supported formats: https://www.picus.dev/docs/mediabunny/formats), falling back to <Html5Audio>`,
 						);
 						return;
 					}
@@ -304,7 +304,7 @@ const AudioForPreviewAssertedShowing: React.FC<
 						setMediaDurationInSeconds(result.durationInSeconds);
 
 						Internals.Log.trace(
-							{logLevel, tag: '@remotion/media'},
+							{logLevel, tag: '@picus/media'},
 							`[AudioForPreview] MediaPlayer initialized successfully`,
 						);
 					}
@@ -321,7 +321,7 @@ const AudioForPreviewAssertedShowing: React.FC<
 						throw errorToUse;
 					} else {
 						Internals.Log.error(
-							{logLevel, tag: '@remotion/media'},
+							{logLevel, tag: '@picus/media'},
 							'[AudioForPreview] Failed to initialize MediaPlayer',
 							error,
 						);
@@ -341,7 +341,7 @@ const AudioForPreviewAssertedShowing: React.FC<
 			}
 
 			Internals.Log.error(
-				{logLevel, tag: '@remotion/media'},
+				{logLevel, tag: '@picus/media'},
 				'[AudioForPreview] MediaPlayer initialization failed',
 				errorToUse,
 			);
@@ -351,7 +351,7 @@ const AudioForPreviewAssertedShowing: React.FC<
 		return () => {
 			if (mediaPlayerRef.current) {
 				Internals.Log.trace(
-					{logLevel, tag: '@remotion/media'},
+					{logLevel, tag: '@picus/media'},
 					`[AudioForPreview] Disposing MediaPlayer`,
 				);
 				mediaPlayerRef.current.dispose();
@@ -377,7 +377,7 @@ const AudioForPreviewAssertedShowing: React.FC<
 
 	if (shouldFallbackToNativeAudio && !disallowFallbackToHtml5Audio) {
 		return (
-			<RemotionAudio
+			<PicusAudio
 				src={src}
 				muted={muted}
 				volume={volume}
@@ -411,12 +411,12 @@ type InnerAudioProps = {
 	readonly loopVolumeCurveBehavior?: LoopVolumeCurveBehavior;
 	readonly playbackRate?: number;
 	// Props we ignore but are passed from old usage
-	readonly _remotionInternalNativeLoopPassed?: boolean;
+	readonly _picusInternalNativeLoopPassed?: boolean;
 	readonly shouldPreMountAudioTags?: boolean;
 	readonly onNativeError?: React.ReactEventHandler<HTMLAudioElement>;
 	readonly onDuration?: (src: string, durationInSeconds: number) => void;
 	readonly pauseWhenBuffering?: boolean;
-	readonly _remotionInternalNeedsDurationCalculation?: boolean;
+	readonly _picusInternalNeedsDurationCalculation?: boolean;
 	readonly showInTimeline?: boolean;
 	readonly trimAfter?: number | undefined;
 	readonly trimBefore?: number | undefined;

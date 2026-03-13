@@ -7,7 +7,7 @@ import {useNonce} from './nonce.js';
 import {SequenceContext} from './SequenceContext.js';
 import {SequenceManager} from './SequenceManager.js';
 import {useTimelineContext} from './timeline-position-state.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 import {useVideoConfig} from './use-video-config.js';
 import type {VolumeProp} from './volume-prop.js';
 import {evaluateVolume} from './volume-prop.js';
@@ -83,7 +83,7 @@ export const useBasicMediaInTimeline = ({
 	useEffect(() => {
 		if (typeof volume === 'number' && volume !== initialVolume) {
 			warnOnce(
-				`Remotion: The ${mediaType} with src ${src} has changed it's volume. Prefer the callback syntax for setting volume to get better timeline display: https://www.remotion.dev/docs/audio/volume`,
+				`Picus: The ${mediaType} with src ${src} has changed it's volume. Prefer the callback syntax for setting volume to get better timeline display: https://www.picus.dev/docs/audio/volume`,
 			);
 		}
 	}, [initialVolume, mediaType, src, volume]);
@@ -92,7 +92,7 @@ export const useBasicMediaInTimeline = ({
 
 	const nonce = useNonce();
 	const {rootId} = useTimelineContext();
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	return {
 		volumes,

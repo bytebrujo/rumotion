@@ -1,4 +1,4 @@
-import {AbsoluteFill, Img} from 'remotion';
+import {AbsoluteFill, Img} from 'picus';
 
 const edgeBlurWithOffset = (offset: number): React.CSSProperties => {
 	return {

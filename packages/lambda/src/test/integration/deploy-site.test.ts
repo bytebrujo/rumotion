@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
-import {LambdaClientInternals} from '@remotion/lambda-client';
-import {internalGetOrCreateBucket} from '@remotion/serverless';
+import {LambdaClientInternals} from '@picus/lambda-client';
+import {internalGetOrCreateBucket} from '@picus/serverless';
 import {internalDeleteSite} from '../../api/delete-site';
 import {internalDeploySite} from '../../api/deploy-site';
 import {mockFullClientSpecifics} from '../mock-implementation';
@@ -31,7 +31,7 @@ test('Should throw on wrong prefix', async () => {
 test('Should throw if invalid region was passed', () => {
 	expect(
 		internalDeploySite({
-			bucketName: 'remotionlambda-testing',
+			bucketName: 'picuslambda-testing',
 			entryPoint: 'first',
 			// @ts-expect-error
 			region: 'ap-northeast-9',
@@ -52,7 +52,7 @@ test('Should throw if invalid region was passed', () => {
 test("Should throw if bucket doesn't exist", () => {
 	expect(
 		internalDeploySite({
-			bucketName: 'remotionlambda-non-existed',
+			bucketName: 'picuslambda-non-existed',
 			entryPoint: 'first',
 			region: 'ap-northeast-1',
 			siteName: 'testing',
@@ -68,7 +68,7 @@ test("Should throw if bucket doesn't exist", () => {
 			requestHandler: null,
 		}),
 	).rejects.toThrow(
-		/No bucket with the name remotionlambda-non-existed exists/,
+		/No bucket with the name picuslambda-non-existed exists/,
 	);
 });
 
@@ -103,7 +103,7 @@ test('Should apply name if given', async () => {
 	).toEqual({
 		siteName: 'testing',
 		serveUrl:
-			'https://remotionlambda-apnortheast1-abcdef.s3.ap-northeast-1.amazonaws.com/sites/testing/index.html',
+			'https://picuslambda-apnortheast1-abcdef.s3.ap-northeast-1.amazonaws.com/sites/testing/index.html',
 		stats: {
 			deletedFiles: 0,
 			untouchedFiles: 0,
@@ -144,7 +144,7 @@ test('Should overwrite site if given siteName is already taken', async () => {
 	).toEqual({
 		siteName: 'testing',
 		serveUrl:
-			'https://remotionlambda-apnortheast1-abcdef.s3.ap-northeast-1.amazonaws.com/sites/testing/index.html',
+			'https://picuslambda-apnortheast1-abcdef.s3.ap-northeast-1.amazonaws.com/sites/testing/index.html',
 		stats: {
 			deletedFiles: 0,
 			untouchedFiles: 3,

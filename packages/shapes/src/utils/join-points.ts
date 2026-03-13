@@ -1,4 +1,4 @@
-import type {Instruction} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
 
 const shortenVector = (vector: readonly [number, number], radius: number) => {
 	const [x, y] = vector;

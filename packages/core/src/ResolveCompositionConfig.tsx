@@ -3,7 +3,7 @@ import type {AnyComposition} from './CompositionManager.js';
 import {CompositionManager} from './CompositionManagerContext.js';
 import {getInputProps} from './config/input-props.js';
 import {EditorPropsContext} from './EditorProps.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 import {validateDimension} from './validation/validate-dimensions.js';
 import {validateDurationInFrames} from './validation/validate-duration-in-frames.js';
 import {validateFps} from './validation/validate-fps.js';
@@ -43,7 +43,7 @@ export const needsResolution = (composition: AnyComposition) => {
 	return Boolean(composition.calculateMetadata);
 };
 
-export const PROPS_UPDATED_EXTERNALLY = 'remotion.propsUpdatedExternally';
+export const PROPS_UPDATED_EXTERNALLY = 'picus.propsUpdatedExternally';
 
 export const useResolvedVideoConfig = (
 	preferredCompositionId: string | null,
@@ -63,7 +63,7 @@ export const useResolvedVideoConfig = (
 		return composition ? (allEditorProps[composition.id] ?? {}) : {};
 	}, [allEditorProps, composition]);
 
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	return useMemo(() => {
 		if (!composition) {
@@ -116,9 +116,9 @@ export const useResolvedVideoConfig = (
 						...(selectedEditorProps ?? {}),
 						...(typeof window === 'undefined' ||
 						env.isPlayer ||
-						// In tests, we don't set window.remotion_inputProps,
+						// In tests, we don't set window.picus_inputProps,
 						// otherwise it should be available here
-						!window.remotion_inputProps
+						!window.picus_inputProps
 							? {}
 							: (getInputProps() ?? {})),
 					},

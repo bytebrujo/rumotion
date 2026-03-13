@@ -1,4 +1,4 @@
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, useCurrentFrame} from 'picus';
 
 export const ErrorOnFrame10: React.FC = () => {
 	const frame = useCurrentFrame();

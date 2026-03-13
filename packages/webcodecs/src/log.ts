@@ -1,5 +1,5 @@
-import type {MediaParserLogLevel} from '@remotion/media-parser';
-import {MediaParserInternals} from '@remotion/media-parser';
+import type {MediaParserLogLevel} from '@picus/media-parser';
+import {MediaParserInternals} from '@picus/media-parser';
 
 const {Log} = MediaParserInternals;
 

@@ -6,7 +6,7 @@ test('aac packets smaller than 188', async () => {
 	let audioSamples = 0;
 	await parseMedia({
 		src: 'https://test-streams.mux.dev/x36xhzz/url_0/url_462/193039199_mp4_h264_aac_hd_7.ts',
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		logLevel: 'info',
 		onAudioTrack: () => {
 			return (s) => {

@@ -11,7 +11,7 @@ export const downloadAndParseMedia: DownloadAndParseMedia = async (options) => {
 	if (!options) {
 		return Promise.reject(
 			new Error(
-				'No options provided. See https://www.remotion.dev/media-parser for how to get started.',
+				'No options provided. See https://www.picus.dev/media-parser for how to get started.',
 			),
 		);
 	}
@@ -79,7 +79,7 @@ export const downloadAndParseMedia: DownloadAndParseMedia = async (options) => {
 
 			return action;
 		},
-		acknowledgeRemotionLicense: Boolean(options.acknowledgeRemotionLicense),
+		acknowledgePicusLicense: Boolean(options.acknowledgePicusLicense),
 		apiName: 'parseAndDownloadMedia()',
 		makeSamplesStartAtZero: options.makeSamplesStartAtZero ?? true,
 		seekingHints: options.seekingHints ?? null,

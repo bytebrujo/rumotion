@@ -8,13 +8,13 @@ sidebar_label: Overview
 
 import {TableOfContents} from './renderer/TableOfContents';
 
-Remotion's rendering engine is built with Node.JS, which makes it easy to render a video in the cloud.
+Picus's rendering engine is built with Node.JS, which makes it easy to render a video in the cloud.
 
 See the [Comparison of SSR options](/docs/compare-ssr) to help you decide which option is best for you.
 
 ## Render a video on AWS Lambda
 
-The fastest way to render videos in the cloud is to use [`@remotion/lambda`](/docs/lambda).
+The fastest way to render videos in the cloud is to use [`@picus/lambda`](/docs/lambda).
 
 ## Render using Vercel Sandbox
 
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
       - run: npm i
-      - run: npx remotion render MyComp out/video.mp4
+      - run: npx picus render MyComp out/video.mp4
       - uses: actions/upload-artifact@v4
         with:
           name: out.mp4
@@ -61,7 +61,7 @@ on:
       titleText:
         description: 'Which text should it say?'
         required: true
-        default: 'Welcome to Remotion'
+        default: 'Welcome to Picus'
       titleColor:
         description: 'Which color should it be in?'
         required: true
@@ -77,7 +77,7 @@ jobs:
       - run: echo $WORKFLOW_INPUT > input-props.json
         env:
           WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
-      - run: npx remotion render MyComp out/video.mp4 --props="./input-props.json"
+      - run: npx picus render MyComp out/video.mp4 --props="./input-props.json"
       - uses: actions/upload-artifact@v4
         with:
           name: out.mp4
@@ -97,7 +97,7 @@ See also: [Passing input props in GitHub Actions](/docs/passing-props#passing-in
 
 ## Render a video using Docker
 
-See: [Dockerizing a Remotion project](/docs/docker)
+See: [Dockerizing a Picus project](/docs/docker)
 
 ## Render a video using GCP Cloud Run (Alpha)
 

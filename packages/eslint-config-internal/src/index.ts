@@ -17,7 +17,7 @@ const compat = new FlatCompat({
 	baseDirectory: __dirname,
 });
 
-export const remotionFlatConfig = ({
+export const picusFlatConfig = ({
 	react,
 }: {
 	react: boolean;

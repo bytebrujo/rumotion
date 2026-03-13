@@ -1,6 +1,6 @@
 import {statSync} from 'fs';
-import {RenderInternals} from '@remotion/renderer';
-import {NoReactInternals} from 'remotion/no-react';
+import {RenderInternals} from '@picus/renderer';
+import {NoReactInternals} from 'picus/no-react';
 
 type InternalStillOptions = Parameters<
 	typeof RenderInternals.internalRenderStill

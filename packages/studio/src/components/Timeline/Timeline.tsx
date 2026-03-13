@@ -1,5 +1,5 @@
 import React, {useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {calculateTimeline} from '../../helpers/calculate-timeline';
 import {BACKGROUND} from '../../helpers/colors';
 import type {TrackWithHash} from '../../helpers/get-timeline-sequence-sort-key';

@@ -1,5 +1,5 @@
-import type {PlayerRef, RenderCustomControls} from '@remotion/player';
-import {Player} from '@remotion/player';
+import type {PlayerRef, RenderCustomControls} from '@picus/player';
+import {Player} from '@picus/player';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import CarSlideshow from './CarSlideshow';
 
@@ -71,7 +71,7 @@ export const CustomControlsExample: React.FC = () => {
 				compositionHeight={1080}
 				fps={30}
 				controls
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				renderCustomControls={renderCustomControls}
 				inputProps={{
 					title: 'Custom Controls Demo',

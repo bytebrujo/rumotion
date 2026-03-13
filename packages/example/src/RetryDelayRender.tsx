@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {random, useCurrentFrame, useDelayRender} from 'remotion';
+import {random, useCurrentFrame, useDelayRender} from 'picus';
 
 export const RetryDelayRender: React.FC = () => {
 	const frame = useCurrentFrame();

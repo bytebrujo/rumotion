@@ -1,4 +1,4 @@
-# @remotion/example-without-zod
+# @picus/example-without-zod
 
 ## Usage
 

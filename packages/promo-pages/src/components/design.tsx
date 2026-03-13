@@ -16,7 +16,7 @@ import {
 	TabsList,
 	TabsTrigger,
 	Textarea,
-} from '@remotion/design';
+} from '@picus/design';
 import {useCallback, useState} from 'react';
 import {ManageTeamMembers} from './ManageTeamMembers';
 
@@ -63,9 +63,9 @@ export const DesignPage: React.FC = () => {
 	return (
 		<div className="bg-[var(--background)] relative">
 			<div className="max-w-[800px] mx-auto pt-10 pb-10 px-4">
-				<h1>@remotion/design</h1>
+				<h1>@picus/design</h1>
 				<a
-					href="https://github.com/remotion-dev/remotion/blob/main/packages/promo-pages/src/components/design.tsx"
+					href="https://github.com/picus-dev/picus/blob/main/packages/promo-pages/src/components/design.tsx"
 					className="font-brand text-brand"
 					target="_blank"
 				>
@@ -151,7 +151,7 @@ export const DesignPage: React.FC = () => {
 				</Button>
 				<br />
 				<Explainer>External link button</Explainer>
-				<Button href="https://github.com/remotion-dev/remotion" target="_blank">
+				<Button href="https://github.com/picus-dev/picus" target="_blank">
 					GitHub
 				</Button>
 				<div className="h-8" />
@@ -244,11 +244,11 @@ export const DesignPage: React.FC = () => {
 				<p className="font-brand">
 					See the{' '}
 					<Link
-						href="https://www.remotion.dev/docs"
+						href="https://www.picus.dev/docs"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Remotion documentation
+						Picus documentation
 					</Link>{' '}
 					for more information.
 				</p>

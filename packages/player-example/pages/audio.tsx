@@ -1,13 +1,13 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React, {useCallback, useState} from 'react';
-import {Html5Audio} from 'remotion';
+import {Html5Audio} from 'picus';
 
 export const Comp1 = () => {
-	return <Html5Audio src="https://remotion.media/audio.wav" muted={false} />;
+	return <Html5Audio src="https://picus.media/audio.wav" muted={false} />;
 };
 
 export const Comp2 = () => {
-	return <Html5Audio src="https://remotion.media/dialogue.wav" />;
+	return <Html5Audio src="https://picus.media/dialogue.wav" />;
 };
 
 const Page: React.FC = () => {
@@ -25,7 +25,7 @@ const Page: React.FC = () => {
 				compositionHeight={1080}
 				fps={30}
 				durationInFrames={1200}
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				controls
 				style={{
 					width: 500,

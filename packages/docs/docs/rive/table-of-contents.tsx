@@ -6,8 +6,8 @@ export const TableOfContents: React.FC = () => {
 	return (
 		<div>
 			<Grid>
-				<TOCItem link="/docs/rive/remotionrivecanvas">
-					<strong>{'<RemotionRiveCanvas>'}</strong>
+				<TOCItem link="/docs/rive/picusrivecanvas">
+					<strong>{'<PicusRiveCanvas>'}</strong>
 					<div>Render a Rive animation</div>
 				</TOCItem>
 			</Grid>

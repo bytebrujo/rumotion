@@ -890,7 +890,7 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
-            "name": "remotion/lambda",
+            "name": "picus/lambda",
             "version": "4.0.363",
             "dist": {
                 "type": "path",
@@ -906,8 +906,8 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Remotion\\LambdaPhp\\": "src/",
-                    "Remotion\\LambdaPhp\\Tests\\": "tests/"
+                    "Picus\\LambdaPhp\\": "src/",
+                    "Picus\\LambdaPhp\\Tests\\": "tests/"
                 }
             },
             "scripts": {
@@ -918,7 +918,7 @@
             "license": [
                 "proprietary"
             ],
-            "description": "A PHP library for working with Remotion Lambda",
+            "description": "A PHP library for working with Picus Lambda",
             "transport-options": {
                 "relative": true
             }

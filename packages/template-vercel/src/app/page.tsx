@@ -1,6 +1,6 @@
 "use client";
 
-import { Player } from "@remotion/player";
+import { Player } from "@picus/player";
 import type { NextPage } from "next";
 import { useMemo, useState } from "react";
 import { z } from "zod";
@@ -14,7 +14,7 @@ import {
 } from "../../types/constants";
 import { RenderControls } from "../components/RenderControls";
 import { Tips } from "../components/Tips";
-import { Main } from "../remotion/MyComp/Main";
+import { Main } from "../picus/MyComp/Main";
 
 const Home: NextPage = () => {
   const [text, setText] = useState<string>(defaultMyCompProps.title);

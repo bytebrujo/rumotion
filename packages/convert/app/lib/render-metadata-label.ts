@@ -1,10 +1,10 @@
-export const parseIsMadeWithRemotion = (key: string, value: unknown) => {
+export const parseIsMadeWithPicus = (key: string, value: unknown) => {
 	if (key !== 'comment') {
 		return null;
 	}
 
-	const isMadeWithRemotion = String(value).includes('Made with Remotion');
-	if (!isMadeWithRemotion) {
+	const isMadeWithPicus = String(value).includes('Made with Picus');
+	if (!isMadeWithPicus) {
 		return null;
 	}
 
@@ -13,9 +13,9 @@ export const parseIsMadeWithRemotion = (key: string, value: unknown) => {
 };
 
 export const renderMetadataLabel = (key: string, value: unknown) => {
-	const version = parseIsMadeWithRemotion(key, value);
+	const version = parseIsMadeWithPicus(key, value);
 	if (version) {
-		return 'Made with Remotion';
+		return 'Made with Picus';
 	}
 
 	if (key === 'com.apple.quicktime.location.accuracy.horizontal') {
@@ -235,7 +235,7 @@ export const renderMetadataValue = ({
 	key: string;
 	value: string | number;
 }) => {
-	const version = parseIsMadeWithRemotion(key, value);
+	const version = parseIsMadeWithPicus(key, value);
 	if (version) {
 		return 'v' + version;
 	}

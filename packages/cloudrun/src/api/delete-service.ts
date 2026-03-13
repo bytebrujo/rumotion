@@ -8,7 +8,7 @@ export type DeleteServiceInput = {
 
 /*
  * @description Deletes a deployed Cloud Run service based on its name.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/deleteservice)
+ * @see [Documentation](https://picus.dev/docs/cloudrun/deleteservice)
  */
 export const deleteService = async (
 	params: DeleteServiceInput,

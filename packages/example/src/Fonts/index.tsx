@@ -1,6 +1,6 @@
-import {loadFont} from '@remotion/fonts';
+import {loadFont} from '@picus/fonts';
 import React from 'react';
-import {AbsoluteFill, staticFile} from 'remotion';
+import {AbsoluteFill, staticFile} from 'picus';
 
 loadFont({
 	family: 'Bangers',

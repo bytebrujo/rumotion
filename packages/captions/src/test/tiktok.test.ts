@@ -11,7 +11,7 @@ const captions: Caption[] = [
 		confidence: 0.948258,
 	},
 	{
-		text: " Remotion's",
+		text: " Picus's",
 		startMs: 300,
 		endMs: 900,
 		timestampMs: 440,
@@ -41,7 +41,7 @@ test('Should create captions', () => {
 	expect(tikTokStyleCaptions).toEqual([
 		{
 			durationMs: 860,
-			text: "Using Remotion's",
+			text: "Using Picus's",
 			startMs: 40,
 			tokens: [
 				{
@@ -50,7 +50,7 @@ test('Should create captions', () => {
 					toMs: 300,
 				},
 				{
-					text: " Remotion's",
+					text: " Picus's",
 					fromMs: 300,
 					toMs: 900,
 				},

@@ -2,7 +2,7 @@ import {
 	Internals,
 	type CalculateMetadataFunction,
 	type LogLevel,
-} from 'remotion';
+} from 'picus';
 import type {$ZodObject} from 'zod/v4/core';
 import type {WebRendererOnArtifact} from './artifact';
 import {handleArtifacts} from './artifact';
@@ -199,7 +199,7 @@ export const renderStillOnWeb = <
 				...options,
 				delayRenderTimeoutInMilliseconds:
 					options.delayRenderTimeoutInMilliseconds ?? 30000,
-				logLevel: options.logLevel ?? window.remotion_logLevel ?? 'info',
+				logLevel: options.logLevel ?? window.picus_logLevel ?? 'info',
 				schema: options.schema ?? undefined,
 				mediaCacheSizeInBytes: options.mediaCacheSizeInBytes ?? null,
 				signal: options.signal ?? null,

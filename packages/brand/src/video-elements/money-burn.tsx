@@ -1,11 +1,11 @@
-import {fontFamily, loadFont} from '@remotion/google-fonts/Bangers';
+import {fontFamily, loadFont} from '@picus/google-fonts/Bangers';
 import {
 	AbsoluteFill,
 	interpolate,
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 loadFont();
 

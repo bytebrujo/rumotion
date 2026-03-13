@@ -15,7 +15,7 @@ const DEFAULT_THREADS = 4;
 
 declare global {
 	interface Window {
-		remotion_wasm_moduleOverrides?: Record<string, (...args: any[]) => void>;
+		picus_wasm_moduleOverrides?: Record<string, (...args: any[]) => void>;
 	}
 }
 

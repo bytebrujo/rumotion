@@ -1,11 +1,11 @@
-import type {AwsProvider} from '@remotion/lambda-client';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import type {AwsProvider} from '@picus/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
 import type {
 	RequestContext,
 	ResponseStream,
 	ServerlessPayload,
-} from '@remotion/serverless';
-import {innerHandler, streamWriter} from '@remotion/serverless';
+} from '@picus/serverless';
+import {innerHandler, streamWriter} from '@picus/serverless';
 import {serverAwsImplementation} from './aws-server-implementation';
 import {streamifyResponse} from './helpers/streamify-response';
 

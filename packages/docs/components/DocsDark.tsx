@@ -1,7 +1,7 @@
 import {useColorMode} from '@docusaurus/theme-common';
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {Spacer} from './layout/Spacer';
 
 export const SingleVideoDemo: React.FC<{

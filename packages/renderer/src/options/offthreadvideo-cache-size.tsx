@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let offthreadVideoCacheSizeInBytes: number | null = null;
 
@@ -13,8 +13,8 @@ export const offthreadVideoCacheSizeInBytesOption = {
 	cliFlag,
 	description: () => (
 		<>
-			From v4.0, Remotion has a cache for{' '}
-			<a href="https://remotion.dev/docs/offthreadvideo">
+			From v4.0, Picus has a cache for{' '}
+			<a href="https://picus.dev/docs/offthreadvideo">
 				<code>&lt;OffthreadVideo&gt;</code>
 			</a>{' '}
 			frames. The default is <code>null</code>, corresponding to half of the
@@ -28,7 +28,7 @@ export const offthreadVideoCacheSizeInBytesOption = {
 		</>
 	),
 	ssrName: 'offthreadVideoCacheSizeInBytes' as const,
-	docLink: 'https://www.remotion.dev/docs/offthreadvideo',
+	docLink: 'https://www.picus.dev/docs/offthreadvideo',
 	type: 0 as number | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -54,7 +54,7 @@ export const offthreadVideoCacheSizeInBytesOption = {
 		offthreadVideoCacheSizeInBytes = size ?? null;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;
 
 export const validateOffthreadVideoCacheSizeInBytes = (option: unknown) => {
 	if (option === undefined || option === null) {

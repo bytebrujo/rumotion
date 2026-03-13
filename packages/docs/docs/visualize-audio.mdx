@@ -2,10 +2,10 @@
 image: /generated/articles-docs-visualize-audio.png
 title: visualizeAudio()
 id: visualize-audio
-crumb: '@remotion/media-utils'
+crumb: '@picus/media-utils'
 ---
 
-_Part of the `@remotion/media-utils` package of helper functions._
+_Part of the `@picus/media-utils` package of helper functions._
 
 This function takes in `AudioData` (for example fetched by [`useAudioData()`](/docs/use-audio-data)) and processes it for displaying as bars.
 
@@ -47,7 +47,7 @@ When set to `true` the returned values will be an average of the current, previo
 
 _`"accuracy" | "speed"`_
 
-Default `"accuracy"`. When set to `"speed"`, a faster Fast Fourier transform is used. Recommended for Remotion Lambda and when using a high number of samples. Read [user](https://discord.com/channels/809501355504959528/1189048518988550264/1190228606287360030) [experiences](https://discord.com/channels/809501355504959528/1155110845488046111/1155111360481480725) [here](https://github.com/remotion-dev/remotion/issues/2925).
+Default `"accuracy"`. When set to `"speed"`, a faster Fast Fourier transform is used. Recommended for Picus Lambda and when using a high number of samples. Read [user](https://discord.com/channels/809501355504959528/1189048518988550264/1190228606287360030) [experiences](https://discord.com/channels/809501355504959528/1155110845488046111/1155111360481480725) [here](https://github.com/picus-dev/picus/issues/2925).
 
 ### `dataOffsetInSeconds`<AvailableFrom v="4.0.268" />
 
@@ -68,8 +68,8 @@ Usually the values on left side of the array can become much larger than the val
 In this example, we render a bar chart visualizing the audio spectrum of an audio file we imported using [`useAudioData()`](/docs/use-audio-data) and `visualizeAudio()`.
 
 ```tsx twoslash
-import {useAudioData, visualizeAudio} from '@remotion/media-utils';
-import {Html5Audio, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {useAudioData, visualizeAudio} from '@picus/media-utils';
+import {Html5Audio, staticFile, useCurrentFrame, useVideoConfig} from 'picus';
 
 export const MyComponent: React.FC = () => {
   const frame = useCurrentFrame();
@@ -105,7 +105,7 @@ export const MyComponent: React.FC = () => {
 A logarithmic representation of the audio will look more appealing than a linear one. Below is an example of a postprocessing step that looks prettier than the default one.
 
 ```tsx twoslash
-import {visualizeAudio} from '@remotion/media-utils';
+import {visualizeAudio} from '@picus/media-utils';
 const params = {
   audioData: {
     channelWaveforms: [],
@@ -148,7 +148,7 @@ const amplitudes = frequencyData.map((value) => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/media-utils/src/visualize-audio.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/media-utils/src/visualize-audio.ts)
 - [Audio visualization](/docs/audio/visualization)
 - [`useAudioData()`](/docs/use-audio-data)
 - [`getAudioData()`](/docs/get-audio-data)

@@ -1,3 +1,3 @@
 bindings.rs
-ffmpeg/remotion/include
-ffmpeg/remotion/lib/pkgconfig
+ffmpeg/picus/include
+ffmpeg/picus/lib/pkgconfig

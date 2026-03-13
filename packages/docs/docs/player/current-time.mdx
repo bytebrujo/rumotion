@@ -4,7 +4,7 @@ id: current-time
 sidebar_label: 'Getting the current time'
 title: 'Displaying the current time'
 slug: /player/current-time
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 When rendering a [`<Player>`](/docs/player) in your app, special considerations must be taken to prevent constant re-renders of the app or [`<Player>`](/docs/player) if the time changes.
@@ -20,7 +20,7 @@ Do not put this hook into the same component in which the `<Player>` is rendered
 If you want to display a component that synchronizes with the time of the player, for example the cursor of a timeline component or a custom time display, you can use the following hook:
 
 ```tsx twoslash title="use-current-player-frame.ts"
-import {CallbackListener, PlayerRef} from '@remotion/player';
+import {CallbackListener, PlayerRef} from '@picus/player';
 import {useCallback, useSyncExternalStore} from 'react';
 
 export const useCurrentPlayerFrame = (
@@ -59,19 +59,19 @@ Add a ref to a React Player and pass it to another component:
 
 ```tsx twoslash
 // @allowUmdGlobalAccess
-// @filename: ./remotion/MyVideo.tsx
+// @filename: ./picus/MyVideo.tsx
 export const MyVideo = () => <></>;
-// @filename: ./remotion/TimeDisplay.tsx
+// @filename: ./picus/TimeDisplay.tsx
 export const TimeDisplay: React.FC<{
   playerRef: React.RefObject<PlayerRef | null>;
 }> = () => <></>;
 
 // @filename: index.tsx
 // ---cut---
-import {Player, PlayerRef} from '@remotion/player';
+import {Player, PlayerRef} from '@picus/player';
 import {useRef} from 'react';
-import {MyVideo} from './remotion/MyVideo';
-import {TimeDisplay} from './remotion/TimeDisplay';
+import {MyVideo} from './picus/MyVideo';
+import {TimeDisplay} from './picus/TimeDisplay';
 
 export const App: React.FC = () => {
   const playerRef = useRef<PlayerRef>(null);
@@ -96,7 +96,7 @@ This is how a component could access the current time:
 
 ```tsx twoslash title="TimeDisplay.tsx"
 // @filename: ./use-current-player-frame.ts
-import {CallbackListener, PlayerRef} from '@remotion/player';
+import {CallbackListener, PlayerRef} from '@picus/player';
 import {useCallback, useSyncExternalStore} from 'react';
 
 export const useCurrentPlayerFrame = (
@@ -131,7 +131,7 @@ export const useCurrentPlayerFrame = (
 // @filename: TimeDisplay.tsx
 // ---cut---
 import React from 'react';
-import {PlayerRef} from '@remotion/player';
+import {PlayerRef} from '@picus/player';
 import {useCurrentPlayerFrame} from './use-current-player-frame';
 
 export const TimeDisplay: React.FC<{

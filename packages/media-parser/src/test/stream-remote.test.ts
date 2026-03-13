@@ -12,7 +12,7 @@ test(
 				dimensions: true,
 				videoCodec: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 		expect(result.durationInSeconds).toBe(10);
 		expect(result.fps).toBe(60);
@@ -38,7 +38,7 @@ test(
 				internalStats: true,
 				mimeType: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 		expect(result.durationInSeconds).toBe(634.571);
 		expect(result.fps).toBe(null);
@@ -55,14 +55,14 @@ test(
 
 test('Should handle redirect', async () => {
 	const result = await parseMedia({
-		src: 'https://remotion.dev/bbb.mp4',
+		src: 'https://picus.dev/bbb.mp4',
 		fields: {
 			fps: true,
 			videoCodec: true,
 			durationInSeconds: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(result.videoCodec).toEqual('h264');
 	expect(result.fps).toEqual(24);

@@ -17,7 +17,7 @@ import {
 let tmpDir: string;
 
 beforeEach(() => {
-	tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'remotion-catalog-test-'));
+	tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'picus-catalog-test-'));
 });
 
 afterEach(() => {
@@ -37,11 +37,11 @@ test('isCatalogProtocol detects catalog: prefixes and rejects other version spec
 test('findVersionSpecifier finds packages across all dependency groups and returns null for unknown', () => {
 	const depsWithVersions = {
 		dependencies: {
-			'@remotion/core': '^4.0.10',
+			'@picus/core': '^4.0.10',
 			zod: 'catalog:',
 		},
 		devDependencies: {
-			'@remotion/bundler': 'workspace:*',
+			'@picus/bundler': 'workspace:*',
 			eslint: 'catalog:',
 		},
 		optionalDependencies: {
@@ -52,10 +52,10 @@ test('findVersionSpecifier finds packages across all dependency groups and retur
 		},
 	};
 
-	expect(findVersionSpecifier(depsWithVersions, '@remotion/core')).toBe(
+	expect(findVersionSpecifier(depsWithVersions, '@picus/core')).toBe(
 		'^4.0.10',
 	);
-	expect(findVersionSpecifier(depsWithVersions, '@remotion/bundler')).toBe(
+	expect(findVersionSpecifier(depsWithVersions, '@picus/bundler')).toBe(
 		'workspace:*',
 	);
 	expect(findVersionSpecifier(depsWithVersions, 'sharp')).toBe('^0.34.0');
@@ -72,7 +72,7 @@ test('parsePnpmWorkspaceCatalog handles basic, quoted, scoped entries and stops 
 		'  zod: 4.3.6',
 		'  "react-dom": "^18.3.1"',
 		"  typescript: '5.8.3'",
-		'  "@remotion/core": 4.0.10',
+		'  "@picus/core": 4.0.10',
 		'  "@aws-sdk/client-s3": 3.986.0',
 		'catalogs:',
 		'  testing:',
@@ -84,7 +84,7 @@ test('parsePnpmWorkspaceCatalog handles basic, quoted, scoped entries and stops 
 	expect(result.zod).toBe('4.3.6');
 	expect(result['react-dom']).toBe('^18.3.1');
 	expect(result.typescript).toBe('5.8.3');
-	expect(result['@remotion/core']).toBe('4.0.10');
+	expect(result['@picus/core']).toBe('4.0.10');
 	expect(result['@aws-sdk/client-s3']).toBe('3.986.0');
 	expect(result.jest).toBeUndefined();
 

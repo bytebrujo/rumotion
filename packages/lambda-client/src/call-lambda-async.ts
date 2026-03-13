@@ -3,7 +3,7 @@ import type {
 	CallFunctionOptions,
 	CloudProvider,
 	ServerlessRoutines,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {getLambdaClient} from './aws-clients';
 import type {AwsRegion} from './regions';
 
@@ -19,7 +19,7 @@ export const callFunctionAsyncImplementation = async <
 	const stringifiedPayload = JSON.stringify(payload);
 	if (stringifiedPayload.length > 256 * 1024) {
 		throw new Error(
-			`Payload is too big: ${stringifiedPayload.length} bytes. Maximum size is 256 KB. This should not happen, please report this to the Remotion team. Payload: ${stringifiedPayload}`,
+			`Payload is too big: ${stringifiedPayload.length} bytes. Maximum size is 256 KB. This should not happen, please report this to the Picus team. Payload: ${stringifiedPayload}`,
 		);
 	}
 

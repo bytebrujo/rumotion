@@ -1,6 +1,6 @@
 import {parseToRgb} from 'polished';
 import React from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {AbsoluteFill, Sequence} from 'picus';
 import {Big} from './Big';
 import {Shade} from './ColorName';
 import {Name} from './Name';

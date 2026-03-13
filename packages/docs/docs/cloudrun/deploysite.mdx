@@ -12,21 +12,21 @@ crumb: 'Cloud Run API'
   </p>
 </ExperimentalBadge>
 
-Takes a Remotion project, bundles it and uploads it to an Cloud Storage bucket. Once uploaded, a Cloud Run service can render any composition in the Remotion project by specifying the URL.
+Takes a Picus project, bundles it and uploads it to an Cloud Storage bucket. Once uploaded, a Cloud Run service can render any composition in the Picus project by specifying the URL.
 
 - If you make changes locally, you need to redeploy the site. You can use [`siteName`](#sitename) to overwrite the previous site.
-- Note that the Remotion project will be deployed to a subdirectory, not the root of the domain. Therefore you must ensure that if you have specified paths in your Remotion project, they are able to handle this scenario.
+- Note that the Picus project will be deployed to a subdirectory, not the root of the domain. Therefore you must ensure that if you have specified paths in your Picus project, they are able to handle this scenario.
 - Before calling this function, you should create a bucket, see [`getOrCreateBucket()`](/docs/cloudrun/getorcreatebucket).
 
 ## Example
 
 ```ts twoslash
-import {deploySite} from '@remotion/cloudrun';
+import {deploySite} from '@picus/cloudrun';
 import path from 'path';
 
 const {serveUrl} = await deploySite({
   entryPoint: path.resolve(process.cwd(), 'src/index.ts'),
-  bucketName: 'remotioncloudrun-c7fsl3d',
+  bucketName: 'picuscloudrun-c7fsl3d',
   options: {
     onBundleProgress: (progress) => {
       // Progress is between 0 and 100
@@ -46,11 +46,11 @@ An object with the following properties:
 
 ### `entryPoint`
 
-An absolute path pointing to the entry point of your Remotion project. [Usually the entry point in your Remotion project is stored at `src/entry.tsx`](/docs/terminology/entry-point).
+An absolute path pointing to the entry point of your Picus project. [Usually the entry point in your Picus project is stored at `src/entry.tsx`](/docs/terminology/entry-point).
 
 ### `bucketName`
 
-The bucket to where the website will be deployed. The bucket must have been created by Remotion Cloud Run.
+The bucket to where the website will be deployed. The bucket must have been created by Picus Cloud Run.
 
 ### `siteName?`
 
@@ -91,7 +91,7 @@ Allows to pass a custom webpack override. See [`bundle()` -> webpackOverride](/d
 
 #### `rootDir?`
 
-The directory in which the Remotion project is rooted in. This should be set to the directory that contains the `package.json` which installs Remotion. By default, it is the current working directory.
+The directory in which the Picus project is rooted in. This should be set to the directory that contains the `package.json` which installs Picus. By default, it is the current working directory.
 
 :::note
 The current working directory is the directory from which your program gets executed from. It is not the same as the file where bundle() gets called.
@@ -125,14 +125,14 @@ An object with the following values:
 
 _string_
 
-An URL such as `https://storage.googleapis.com/remotioncloudrun-123asd321/sites/abcdefgh/index.html`.
+An URL such as `https://storage.googleapis.com/picuscloudrun-123asd321/sites/abcdefgh/index.html`.
 
-You can use this "Serve URL" to render a video on Remotion Cloud Run using:
+You can use this "Serve URL" to render a video on Picus Cloud Run using:
 
-- The [`npx remotion cloudrun render`](/docs/cloudrun/cli/render) command
+- The [`npx picus cloudrun render`](/docs/cloudrun/cli/render) command
 - The [`renderMediaOnCloudrun()`](/docs/cloudrun/rendermediaoncloudrun) and [`renderStillOnCloudrun()`](/docs/cloudrun/renderstilloncloudrun) functions.
 - Locally using the [`renderMedia()`](/docs/renderer/render-media) and [`renderStill()`](/docs/renderer/render-still) functions.
-- Locally using the [`npx remotion render`](/docs/cli) and [`npx remotion still`](/docs/cli) commands
+- Locally using the [`npx picus render`](/docs/cli) and [`npx picus still`](/docs/cli) commands
 
 If you are rendering on Cloud Run, you can also pass the site name (in this case `abcdefgh`) as an abbreviation.
 
@@ -154,7 +154,7 @@ Each one is a `number`.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/cloudrun/src/api/deploy-site.ts)
-- [CLI equivalent: `npx remotion cloudrun sites create`](/docs/cloudrun/cli/sites/create)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/cloudrun/src/api/deploy-site.ts)
+- [CLI equivalent: `npx picus cloudrun sites create`](/docs/cloudrun/cli/sites/create)
 - [getSites()](/docs/cloudrun/getsites)
 - [deleteSite()](/docs/cloudrun/deletesite)

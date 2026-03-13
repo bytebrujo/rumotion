@@ -25,25 +25,25 @@ As mentioned above, you need to ensure that the user is unable to undo the delet
 
 ### Deleting assets from IndexedDB
 
-If you have a `assetId` from an object in the `deletedAssets` array, you can delete it from IndexedDB by calling the [`deleteCachedAsset`](https://github.com/remotion-dev/editor-starter/blob/9fdd35812f8505273edf29f207dd9d021c901491/src/editor/caching/indexeddb.ts#L92) method.
+If you have a `assetId` from an object in the `deletedAssets` array, you can delete it from IndexedDB by calling the [`deleteCachedAsset`](https://github.com/picus-dev/editor-starter/blob/9fdd35812f8505273edf29f207dd9d021c901491/src/editor/caching/indexeddb.ts#L92) method.
 
 ### Deleting assets from S3
 
 If you have a `remoteFileKey` from an object in the `deletedAssets` array, you can delete it from S3 using the following code:
 
 ```ts title="Delete an asset from S3 - must be called from the backend"
-import {getAwsClient} from '@remotion/lambda/client';
+import {getAwsClient} from '@picus/lambda/client';
 import {requireServerEnv} from '../../editor/utils/server-env';
 
-const {REMOTION_AWS_BUCKET_NAME, REMOTION_AWS_REGION} = requireServerEnv();
+const {PICUS_AWS_BUCKET_NAME, PICUS_AWS_REGION} = requireServerEnv();
 
 const {client, sdk} = getAwsClient({
-  region: REMOTION_AWS_REGION,
+  region: PICUS_AWS_REGION,
   service: 's3',
 });
 
 const command = new sdk.DeleteObjectCommand({
-  Bucket: REMOTION_AWS_BUCKET_NAME,
+  Bucket: PICUS_AWS_BUCKET_NAME,
   Key: remoteFileKey,
 });
 
@@ -54,7 +54,7 @@ You only need to clear assets which have an `assetStatus` of `uploaded`.
 
 ### Removing from the state
 
-Once an asset has been successfully deleted from S3 and IndexedDB, you can remove it from the state by calling the [`clearDeletedAsset()`](https://github.com/remotion-dev/editor-starter/blob/main/src/editor/state/actions/clear-deleted-asset.ts) method.
+Once an asset has been successfully deleted from S3 and IndexedDB, you can remove it from the state by calling the [`clearDeletedAsset()`](https://github.com/picus-dev/editor-starter/blob/main/src/editor/state/actions/clear-deleted-asset.ts) method.
 
 ## See also
 

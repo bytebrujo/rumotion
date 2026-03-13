@@ -1,7 +1,7 @@
 import type {
 	MediaParserAudioCodec,
 	MediaParserVideoCodec,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import type {ConvertMediaAudioCodec} from './get-available-audio-codecs';
 import type {ConvertMediaVideoCodec} from './get-available-video-codecs';
 

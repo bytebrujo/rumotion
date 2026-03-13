@@ -1,4 +1,4 @@
-# @remotion/lambda-php
+# @picus/lambda-php
 
 ## Usage
 

@@ -8,7 +8,7 @@ import {springCalculation} from './spring-utils.js';
 
 /*
  * @description Calculates a position based on physical parameters, start and end value, and time.
- * @see [Documentation](https://www.remotion.dev/docs/spring)
+ * @see [Documentation](https://www.picus.dev/docs/spring)
  */
 export function spring({
 	frame: passedFrame,
@@ -57,7 +57,7 @@ export function spring({
 		: {
 				get: () => {
 					throw new Error(
-						'did not calculate natural duration, this is an error with Remotion. Please report',
+						'did not calculate natural duration, this is an error with Picus. Please report',
 					);
 				},
 			};

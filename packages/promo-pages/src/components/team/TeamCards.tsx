@@ -135,32 +135,32 @@ export const TeamCardsLayout: React.FC = () => {
 			<TeamMemberCard
 				name="Jonny Burger"
 				title="Chief Hacker"
-				description="Making cool software for myself and others and getting to know all kinds of different people - that's what makes Remotion my dream job!"
+				description="Making cool software for myself and others and getting to know all kinds of different people - that's what makes Picus my dream job!"
 				image="/img/team/jonny.png"
 				twitter="https://twitter.com/JNYBGR"
 				linkedin="https://ch.linkedin.com/in/jonny-burger-4115109b"
 				github="https://github.com/JonnyBurger"
-				email="jonny@remotion.dev"
+				email="jonny@picus.dev"
 			/>
 			<TeamMemberCard
 				name="Mehmet Ademi"
 				title="Business Manager"
-				description="Transitioning from traditional business, Remotion allowed me to merge my passion for technology and business in a distinctive way."
+				description="Transitioning from traditional business, Picus allowed me to merge my passion for technology and business in a distinctive way."
 				image="/img/team/mehmet.png"
 				twitter="https://twitter.com/mehmetademi"
 				linkedin="https://www.linkedin.com/in/mehmetademi"
 				github="https://github.com/MehmetAdemi"
-				email="mehmet@remotion.dev"
+				email="mehmet@picus.dev"
 			/>
 			<TeamMemberCard
 				name="Igor Samokhovets"
 				title="Product Engineer"
-				description="With a background in music industry and a passion for coding, I've been building tools to help musicians create. Remotion is the perfect place to blend my tech skills and creativity."
+				description="With a background in music industry and a passion for coding, I've been building tools to help musicians create. Picus is the perfect place to blend my tech skills and creativity."
 				image="/img/team/igor.jpg"
 				twitter="https://x.com/tequilafunks"
 				linkedin="https://www.linkedin.com/in/samohovets/"
 				github="https://github.com/samohovets"
-				email="igor@remotion.dev"
+				email="igor@picus.dev"
 			/>
 		</div>
 	);

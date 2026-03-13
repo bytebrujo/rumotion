@@ -2,9 +2,9 @@ import {
   getStaticFiles,
   reevaluateComposition,
   watchPublicFolder,
-} from "@remotion/studio";
+} from "@picus/studio";
 import React, { useEffect, useState } from "react";
-import { useRemotionEnvironment } from "remotion";
+import { usePicusEnvironment } from "picus";
 
 const getCurrentHash = () => {
   const files = getStaticFiles();
@@ -15,7 +15,7 @@ const getCurrentHash = () => {
 
 export const RefreshOnCodeChange: React.FC = () => {
   const [files, setFiles] = useState(getCurrentHash());
-  const env = useRemotionEnvironment();
+  const env = usePicusEnvironment();
 
   useEffect(() => {
     if (env.isReadOnlyStudio) {

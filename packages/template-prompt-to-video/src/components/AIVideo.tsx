@@ -1,6 +1,6 @@
-import { loadFont } from "@remotion/google-fonts/BreeSerif";
-import { Audio } from "@remotion/media";
-import { AbsoluteFill, Sequence, staticFile, useVideoConfig } from "remotion";
+import { loadFont } from "@picus/google-fonts/BreeSerif";
+import { Audio } from "@picus/media";
+import { AbsoluteFill, Sequence, staticFile, useVideoConfig } from "picus";
 import { z } from "zod";
 import { FPS, INTRO_DURATION } from "../lib/constants";
 import { TimelineSchema } from "../lib/types";

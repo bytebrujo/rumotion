@@ -1,6 +1,6 @@
 // Must keep this file in sync with the one in packages/lambda/src/shared/serialize-props.ts!
 
-import {getRemotionEnvironment} from './get-remotion-environment.js';
+import {getPicusEnvironment} from './get-picus-environment.js';
 
 export type SerializedJSONWithCustomFields = {
 	serializedString: string;
@@ -10,8 +10,8 @@ export type SerializedJSONWithCustomFields = {
 	setUsed: boolean;
 };
 
-export const DATE_TOKEN = 'remotion-date:';
-export const FILE_TOKEN = 'remotion-file:';
+export const DATE_TOKEN = 'picus-date:';
+export const FILE_TOKEN = 'picus-file:';
 
 export const serializeJSONWithSpecialTypes = ({
 	data,
@@ -78,7 +78,7 @@ export const deserializeJSONWithSpecialTypes = <T = Record<string, unknown>>(
 		}
 
 		if (typeof value === 'string' && value.startsWith(FILE_TOKEN)) {
-			return `${window.remotion_staticBase}/${value.replace(FILE_TOKEN, '')}`;
+			return `${window.picus_staticBase}/${value.replace(FILE_TOKEN, '')}`;
 		}
 
 		return value;
@@ -90,7 +90,7 @@ export const serializeThenDeserialize = (props: Record<string, unknown>) => {
 		serializeJSONWithSpecialTypes({
 			data: props,
 			indent: 2,
-			staticBase: window.remotion_staticBase,
+			staticBase: window.picus_staticBase,
 		}).serializedString,
 	);
 };
@@ -100,7 +100,7 @@ export const serializeThenDeserializeInStudio = (
 ) => {
 	// Serializing once in the Studio, to catch potential serialization errors before
 	// you only get them during rendering
-	if (getRemotionEnvironment().isStudio) {
+	if (getPicusEnvironment().isStudio) {
 		return serializeThenDeserialize(props);
 	}
 

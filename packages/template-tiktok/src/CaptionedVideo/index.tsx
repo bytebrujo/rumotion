@@ -1,5 +1,5 @@
-import { Caption, createTikTokStyleCaptions } from "@remotion/captions";
-import { getVideoMetadata } from "@remotion/media-utils";
+import { Caption, createTikTokStyleCaptions } from "@picus/captions";
+import { getVideoMetadata } from "@picus/media-utils";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   AbsoluteFill,
@@ -11,7 +11,7 @@ import {
   useDelayRender,
   useVideoConfig,
   watchStaticFile,
-} from "remotion";
+} from "picus";
 import { z } from "zod";
 import { loadFont } from "../load-font";
 import { NoCaptionFile } from "./NoCaptionFile";

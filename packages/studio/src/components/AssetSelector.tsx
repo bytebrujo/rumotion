@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {writeStaticFile} from '../api/write-static-file';
 import {StudioServerConnectionCtx} from '../helpers/client-id';
 import {BACKGROUND, CLEAR_HOVER, LIGHT_TEXT} from '../helpers/colors';
@@ -67,7 +67,7 @@ export const AssetSelector: React.FC<{
 	}, [showCurrentAsset]);
 
 	const staticFiles = useStaticFiles();
-	const publicFolderExists = window.remotion_publicFolderExists;
+	const publicFolderExists = window.picus_publicFolderExists;
 
 	const assetTree = useMemo(() => {
 		return buildAssetFolderStructure(staticFiles, null, assetFoldersExpanded);
@@ -164,7 +164,7 @@ export const AssetSelector: React.FC<{
 				)
 			) : (
 				<div
-					className="__remotion-vertical-scrollbar"
+					className="__picus-vertical-scrollbar"
 					style={{
 						...list,
 						backgroundColor: isDropDiv ? CLEAR_HOVER : BACKGROUND,

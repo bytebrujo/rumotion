@@ -24,7 +24,7 @@ export const WHISPER_VERSION = "1.6.0";
 // | large            | 2.9 GB | ~4.7 GB  |
 
 /**
- * @type {import('@remotion/install-whisper-cpp').WhisperModel}
+ * @type {import('@picus/install-whisper-cpp').WhisperModel}
  */
 export const WHISPER_MODEL = "medium.en";
 
@@ -32,6 +32,6 @@ export const WHISPER_MODEL = "medium.en";
 // If you set another language than 'en', remove .en from the WHISPER_MODEL
 // List of languages: https://github.com/openai/whisper/blob/main/whisper/tokenizer.py
 /**
- * @type {import('@remotion/install-whisper-cpp').Language}
+ * @type {import('@picus/install-whisper-cpp').Language}
  */
 export const WHISPER_LANG = "en";

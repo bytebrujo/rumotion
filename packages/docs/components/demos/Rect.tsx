@@ -1,6 +1,6 @@
-import {Rect} from '@remotion/shapes';
+import {Rect} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const RectDemo: React.FC<{
 	readonly width: number;

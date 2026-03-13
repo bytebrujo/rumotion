@@ -2,7 +2,7 @@ export type {
 	EnhancedErrorInfo,
 	GetOrCreateBucketInput,
 	GetOrCreateBucketOutput,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 export type {RuntimePreference} from './runtime-preference';
 import {
 	getCloudWatchLogsClient,
@@ -64,7 +64,7 @@ export type {
 	WebhookPayload,
 	WebhookSuccessPayload,
 	WebhookTimeoutPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 export {appRouterWebhook, NextWebhookArgs} from './app-router-webhook';
 export {AwsProvider} from './aws-provider';
 export type {RenderProgress} from './constants';

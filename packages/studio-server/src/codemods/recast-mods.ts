@@ -15,7 +15,7 @@ import type {
 	VariableDeclaration,
 	VariableDeclarator,
 } from '@babel/types';
-import type {RecastCodemod} from '@remotion/studio-shared';
+import type {RecastCodemod} from '@picus/studio-shared';
 import {applyVisualControl} from './apply-visual-control';
 
 export type Change = {

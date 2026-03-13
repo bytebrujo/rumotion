@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import type {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
@@ -26,7 +26,7 @@ const NonePresentation: React.FC<
 
 /*
  * @description A presentation that has no visual effect on its own. Instead, you control the visual effect by using the useTransitionProgress() hook.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/presentations/none)
+ * @see [Documentation](https://www.picus.dev/docs/transitions/presentations/none)
  */
 export const none = (props?: NoneProps): TransitionPresentation<NoneProps> => {
 	return {

@@ -1,4 +1,4 @@
-import type {MediaParserDimensions} from '@remotion/media-parser';
+import type {MediaParserDimensions} from '@picus/media-parser';
 import type {ResizeOperation} from './mode';
 
 const ensureMultipleOfTwo = ({

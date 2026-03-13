@@ -1,14 +1,14 @@
-import {CliInternals} from '@remotion/cli';
-import {AwsProvider, LambdaClientInternals} from '@remotion/lambda-client';
+import {CliInternals} from '@picus/cli';
+import {AwsProvider, LambdaClientInternals} from '@picus/lambda-client';
 import {
 	DEFAULT_CLOUDWATCH_RETENTION_PERIOD,
 	DEFAULT_EPHEMERAL_STORAGE_IN_MB,
 	DEFAULT_MEMORY_SIZE,
 	DEFAULT_TIMEOUT,
-} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
-import {FullClientSpecifics, ProviderSpecifics} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
+import {FullClientSpecifics, ProviderSpecifics} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 import {internalDeployFunction} from '../../../api/deploy-function';
 import {validateCustomRoleArn} from '../../../shared/validate-custom-role-arn';
 import {validateTimeout} from '../../../shared/validate-timeout';

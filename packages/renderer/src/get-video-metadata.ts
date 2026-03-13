@@ -6,7 +6,7 @@ import type {LogLevel} from './log-level';
 export {VideoMetadata} from './compositor/payloads';
 
 /**
- * @deprecated Use `parseMedia()` instead: https://www.remotion.dev/docs/media-parser/parse-media
+ * @deprecated Use `parseMedia()` instead: https://www.picus.dev/docs/media-parser/parse-media
  */
 export const getVideoMetadata = async (
 	videoSource: string,

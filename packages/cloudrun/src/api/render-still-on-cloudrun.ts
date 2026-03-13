@@ -2,11 +2,11 @@ import type {
 	ChromiumOptions,
 	StillImageFormat,
 	ToOptions,
-} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {wrapWithErrorHandling} from '@remotion/renderer/error-handling';
-import {NoReactInternals} from 'remotion/no-react';
-import {VERSION} from 'remotion/version';
+} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {wrapWithErrorHandling} from '@picus/renderer/error-handling';
+import {NoReactInternals} from 'picus/no-react';
+import {VERSION} from 'picus/version';
 import type {z} from 'zod';
 import type {Privacy} from '../defaults';
 import type {
@@ -56,7 +56,7 @@ export type RenderStillOnCloudrunInput = Partial<OptionalParameters> &
 
 /**
  * @description Triggers a render on a GCP Cloud Run service given a composition and a Cloud Run URL.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/renderstilloncloudrun)
+ * @see [Documentation](https://picus.dev/docs/cloudrun/renderstilloncloudrun)
  * @param params.cloudRunUrl The URL of the Cloud Run service that should be used. Use either this or serviceName.
  * @param params.serviceName The name of the Cloud Run service that should be used. Use either this or cloudRunUrl.
  * @param params.region The region that the Cloud Run service is deployed in.

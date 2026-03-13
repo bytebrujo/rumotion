@@ -1,6 +1,6 @@
 package lambda_go_sdk
 
-type RemotionOptions struct {
+type PicusOptions struct {
 	ServeUrl                       string                 `json:"serveUrl" validate:"required"`
 	FunctionName                   string                 `json:"functionName" validate:"required"`
 	RendererFunctionName           string                 `json:"rendererFunctionName"`
@@ -118,7 +118,7 @@ type RawInvokeResponse struct {
 	Type string `json:"type"`
 }
 
-type RemotionRenderResponse struct {
+type PicusRenderResponse struct {
 	BucketName string `json:"bucketName"`
 	RenderId   string `json:"renderId"`
 }

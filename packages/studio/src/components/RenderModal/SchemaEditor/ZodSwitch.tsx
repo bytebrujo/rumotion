@@ -85,7 +85,7 @@ export const ZodSwitch: React.FC<{
 		// In v4, .refine() doesn't wrap in ZodEffects, so check brand here too
 		if (
 			zodTypes &&
-			description === zodTypes.ZodZypesInternals.REMOTION_COLOR_BRAND
+			description === zodTypes.ZodZypesInternals.PICUS_COLOR_BRAND
 		) {
 			return (
 				<ZodColorEditor
@@ -104,7 +104,7 @@ export const ZodSwitch: React.FC<{
 			);
 		}
 
-		if ((value as string).startsWith(window.remotion_staticBase)) {
+		if ((value as string).startsWith(window.picus_staticBase)) {
 			return (
 				<ZodStaticFileEditor
 					setValue={setValue as UpdaterFunction<string>}
@@ -124,7 +124,7 @@ export const ZodSwitch: React.FC<{
 
 		if (
 			zodTypes &&
-			description === zodTypes.ZodZypesInternals.REMOTION_TEXTAREA_BRAND
+			description === zodTypes.ZodZypesInternals.PICUS_TEXTAREA_BRAND
 		) {
 			return (
 				<ZodTextareaEditor
@@ -278,7 +278,7 @@ export const ZodSwitch: React.FC<{
 		// In v4, .refine() doesn't wrap in ZodEffects, so check brand here too
 		if (
 			zodTypes &&
-			description === zodTypes.ZodZypesInternals.REMOTION_MATRIX_BRAND
+			description === zodTypes.ZodZypesInternals.PICUS_MATRIX_BRAND
 		) {
 			return (
 				<ZodMatrixEditor
@@ -335,7 +335,7 @@ export const ZodSwitch: React.FC<{
 	if (typeName === 'effects') {
 		if (
 			zodTypes &&
-			description === zodTypes.ZodZypesInternals.REMOTION_COLOR_BRAND
+			description === zodTypes.ZodZypesInternals.PICUS_COLOR_BRAND
 		) {
 			return (
 				<ZodColorEditor
@@ -356,7 +356,7 @@ export const ZodSwitch: React.FC<{
 
 		if (
 			zodTypes &&
-			description === zodTypes.ZodZypesInternals.REMOTION_MATRIX_BRAND
+			description === zodTypes.ZodZypesInternals.PICUS_MATRIX_BRAND
 		) {
 			return (
 				<ZodMatrixEditor

@@ -1,6 +1,6 @@
 'use strict';
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[62],
 	{
 		/***/ 7062:
@@ -16,31 +16,31 @@
 					/* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
 					/* harmony export */
 				});
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_1__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_1__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_1___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_1___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_1__,
+						picus__WEBPACK_IMPORTED_MODULE_1__,
 					);
 				/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(2386);
-				/* harmony import */ var _remotion_media_utils__WEBPACK_IMPORTED_MODULE_2__ =
+				/* harmony import */ var _picus_media_utils__WEBPACK_IMPORTED_MODULE_2__ =
 					__webpack_require__(8006);
-				/* harmony import */ var _remotion_media_utils__WEBPACK_IMPORTED_MODULE_2___default =
+				/* harmony import */ var _picus_media_utils__WEBPACK_IMPORTED_MODULE_2___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						_remotion_media_utils__WEBPACK_IMPORTED_MODULE_2__,
+						_picus_media_utils__WEBPACK_IMPORTED_MODULE_2__,
 					);
 
 				const C4_FREQUENCY = 261.63;
 				const sampleRate = 44100;
 				const OfflineAudioBufferExample = () => {
 					const [handle] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(
-						() => (0, remotion__WEBPACK_IMPORTED_MODULE_1__.delayRender)(),
+						() => (0, picus__WEBPACK_IMPORTED_MODULE_1__.delayRender)(),
 					);
 					const [audioBuffer, setAudioBuffer] = (0,
 					react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
 					const {fps, durationInFrames} = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_1__.useVideoConfig)();
+					picus__WEBPACK_IMPORTED_MODULE_1__.useVideoConfig)();
 					const lengthInSeconds = durationInFrames / fps;
 					const renderAudio = (0,
 					react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(async () => {
@@ -62,27 +62,27 @@
 						const buffer = await offlineContext.startRendering();
 						setAudioBuffer(
 							(0,
-							_remotion_media_utils__WEBPACK_IMPORTED_MODULE_2__.audioBufferToDataUrl)(
+							_picus_media_utils__WEBPACK_IMPORTED_MODULE_2__.audioBufferToDataUrl)(
 								buffer,
 							),
 						);
-						(0, remotion__WEBPACK_IMPORTED_MODULE_1__.continueRender)(handle);
+						(0, picus__WEBPACK_IMPORTED_MODULE_1__.continueRender)(handle);
 					}, [handle, lengthInSeconds]);
 					(0, react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
 						renderAudio();
 					}, [renderAudio]);
 					return /* @__PURE__ */ React.createElement(
-						remotion__WEBPACK_IMPORTED_MODULE_1__.AbsoluteFill,
+						picus__WEBPACK_IMPORTED_MODULE_1__.AbsoluteFill,
 						null,
 						audioBuffer &&
 							/* @__PURE__ */ React.createElement(
-								remotion__WEBPACK_IMPORTED_MODULE_1__.Audio,
+								picus__WEBPACK_IMPORTED_MODULE_1__.Audio,
 								{
 									src: audioBuffer,
 									startFrom: 0,
 									endAt: 100,
 									volume: (f) =>
-										(0, remotion__WEBPACK_IMPORTED_MODULE_1__.interpolate)(
+										(0, picus__WEBPACK_IMPORTED_MODULE_1__.interpolate)(
 											f,
 											[0, 50, 100],
 											[0, 1, 0],
@@ -94,7 +94,7 @@
 								},
 							),
 						/* @__PURE__ */ React.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_1__.AbsoluteFill,
+							picus__WEBPACK_IMPORTED_MODULE_1__.AbsoluteFill,
 							{
 								style: {
 									fontFamily: 'Helvetica, Arial',
@@ -744,7 +744,7 @@
 				Object.defineProperty(exports, '__esModule', {value: true});
 				exports.useAudioData = void 0;
 				const react_1 = __webpack_require__(2386);
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				const get_audio_data_1 = __webpack_require__(889);
 				const useAudioData = (src) => {
 					if (!src) {
@@ -760,12 +760,12 @@
 					}, []);
 					const [metadata, setMetadata] = (0, react_1.useState)(null);
 					const fetchMetadata = (0, react_1.useCallback)(async () => {
-						const handle = (0, remotion_1.delayRender)();
+						const handle = (0, picus_1.delayRender)();
 						const data = await (0, get_audio_data_1.getAudioData)(src);
 						if (mountState.current.isMounted) {
 							setMetadata(data);
 						}
-						(0, remotion_1.continueRender)(handle);
+						(0, picus_1.continueRender)(handle);
 					}, [src]);
 					(0, react_1.useEffect)(() => {
 						fetchMetadata();

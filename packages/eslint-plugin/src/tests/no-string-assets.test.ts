@@ -14,7 +14,7 @@ ruleTester.run('no-string-assets', rule, {
 	valid: [
 		// Network image should be allowed
 		`
-import {Img} from 'remotion';
+import {Img} from 'picus';
 
 export const Re = () => {
   return (
@@ -23,7 +23,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Img} from 'remotion';
+import {Img} from 'picus';
 
 export const Re = () => {
   return (
@@ -38,7 +38,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Img} from 'remotion';
+import {Img} from 'picus';
 import img from './img.png';
 
 export const Re = () => {
@@ -51,7 +51,7 @@ export const Re = () => {
 	invalid: [
 		{
 			code: `
-import {Img} from 'remotion';
+import {Img} from 'picus';
 
 export const Re = () => {
   return (
@@ -67,7 +67,7 @@ export const Re = () => {
 		},
 		{
 			code: `
-import {Img} from 'remotion';
+import {Img} from 'picus';
 
 export const Re = () => {
   return (
@@ -83,7 +83,7 @@ export const Re = () => {
 		},
 		{
 			code: `
-import {Html5Audio} from 'remotion';
+import {Html5Audio} from 'picus';
 
 export const Re = () => {
   return (

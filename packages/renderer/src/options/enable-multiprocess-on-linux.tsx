@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT_VALUE = true;
 
@@ -19,11 +19,11 @@ export const enableMultiprocessOnLinuxOption = {
 			Default: <code>false</code> until v4.0.136, then <code>true</code> from
 			v4.0.137 on because newer Chrome versions {"don't"} allow rendering with
 			the <code>--single-process</code> flag. <br />
-			This flag will be removed in Remotion v5.0.
+			This flag will be removed in Picus v5.0.
 		</>
 	),
 	ssrName: 'chromiumOptions.enableMultiprocessOnLinux',
-	docLink: 'https://www.remotion.dev/docs/chromium-flags',
+	docLink: 'https://www.picus.dev/docs/chromium-flags',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -49,4 +49,4 @@ export const enableMultiprocessOnLinuxOption = {
 		multiProcessOnLinux = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

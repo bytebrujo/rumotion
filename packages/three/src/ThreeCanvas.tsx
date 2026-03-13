@@ -11,8 +11,8 @@ import {
 	Internals,
 	useCurrentFrame,
 	useDelayRender,
-	useRemotionEnvironment,
-} from 'remotion';
+	usePicusEnvironment,
+} from 'picus';
 import {SuspenseLoader} from './SuspenseLoader';
 import {validateDimension} from './validate';
 
@@ -56,14 +56,14 @@ const ManualFrameRenderer = ({
 };
 
 /*
- * @description A wrapper for React Three Fiber's <Canvas /> which synchronizes with Remotion's useCurrentFrame().
- * @see [Documentation](https://www.remotion.dev/docs/three-canvas)
+ * @description A wrapper for React Three Fiber's <Canvas /> which synchronizes with Picus's useCurrentFrame().
+ * @see [Documentation](https://www.picus.dev/docs/three-canvas)
  */
 export const ThreeCanvas = (props: ThreeCanvasProps) => {
 	const {children, width, height, style, frameloop, onCreated, ...rest} = props;
-	const {isRendering} = useRemotionEnvironment();
+	const {isRendering} = usePicusEnvironment();
 	const {delayRender, continueRender} = useDelayRender();
-	const contexts = Internals.useRemotionContexts();
+	const contexts = Internals.usePicusContexts();
 	const frame = useCurrentFrame();
 
 	const [waitForCreated] = useState(() =>
@@ -80,7 +80,7 @@ export const ThreeCanvas = (props: ThreeCanvasProps) => {
 		...style,
 	};
 
-	const remotion_onCreated: typeof onCreated = useCallback(
+	const picus_onCreated: typeof onCreated = useCallback(
 		(state: RootState) => {
 			if (isRendering) {
 				state.advance(performance.now());
@@ -121,13 +121,13 @@ export const ThreeCanvas = (props: ThreeCanvasProps) => {
 				style={actualStyle}
 				{...rest}
 				frameloop={isRendering ? 'never' : (frameloop ?? 'always')}
-				onCreated={remotion_onCreated}
+				onCreated={picus_onCreated}
 			>
 				<Scale width={width} height={height} />
-				<Internals.RemotionContextProvider contexts={contexts}>
+				<Internals.PicusContextProvider contexts={contexts}>
 					{isRendering && <ManualFrameRenderer onRendered={handleRendered} />}
 					{children}
-				</Internals.RemotionContextProvider>
+				</Internals.PicusContextProvider>
 			</Canvas>
 		</SuspenseLoader>
 	);

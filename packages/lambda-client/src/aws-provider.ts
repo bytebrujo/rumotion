@@ -24,14 +24,14 @@ export type AwsProvider = {
 
 import {EventEmitter} from 'node:events';
 import type {StorageClass} from '@aws-sdk/client-s3';
-import type {ProviderSpecifics} from '@remotion/serverless-client';
-import {expiryDays} from '@remotion/serverless-client';
+import type {ProviderSpecifics} from '@picus/serverless-client';
+import {expiryDays} from '@picus/serverless-client';
 import {bucketExistsInRegionImplementation} from './bucket-exists';
 import {callFunctionAsyncImplementation} from './call-lambda-async';
 import {callFunctionWithStreamingImplementation} from './call-lambda-streaming';
 import {callFunctionSyncImplementation} from './call-lambda-sync';
 import {checkCredentials} from './check-credentials';
-import {MAX_EPHEMERAL_STORAGE_IN_MB, REMOTION_BUCKET_PREFIX} from './constants';
+import {MAX_EPHEMERAL_STORAGE_IN_MB, PICUS_BUCKET_PREFIX} from './constants';
 import {convertToServeUrlImplementation} from './convert-to-serve-url';
 import {createBucket} from './create-bucket';
 import {lambdaDeleteFileImplementation} from './delete-file';
@@ -39,7 +39,7 @@ import {deleteFunction} from './delete-function';
 import {estimatePrice} from './estimate-price';
 import {getAccountIdImplementation} from './get-account-id';
 import {getCloudwatchMethodUrl, getCloudwatchRendererUrl} from './get-aws-urls';
-import {getRemotionBuckets} from './get-buckets';
+import {getPicusBuckets} from './get-buckets';
 import {getFunctions} from './get-functions';
 import {getOutputUrlFromMetadata} from './get-output-url-from-metadata';
 import {lambdaHeadFileImplementation} from './head-file';
@@ -101,7 +101,7 @@ export const awsImplementation: ProviderSpecifics<AwsProvider> = {
 	getChromiumPath() {
 		return '/opt/bin/chromium';
 	},
-	getBuckets: getRemotionBuckets,
+	getBuckets: getPicusBuckets,
 	createBucket,
 	applyLifeCycle: applyLifeCyleOperation,
 	listObjects: lambdaLsImplementation,
@@ -135,5 +135,5 @@ export const awsImplementation: ProviderSpecifics<AwsProvider> = {
 	getFunctions,
 	parseFunctionName,
 	checkCredentials,
-	getBucketPrefix: () => REMOTION_BUCKET_PREFIX,
+	getBucketPrefix: () => PICUS_BUCKET_PREFIX,
 };

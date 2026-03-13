@@ -65,7 +65,7 @@ const Pane: React.FC<{
 };
 
 export const VideoApps: React.FC<{
-	readonly active: 'remotion' | 'player' | 'lambda';
+	readonly active: 'picus' | 'player' | 'lambda';
 }> = ({active}) => {
 	const {colorMode} = useColorMode();
 
@@ -89,8 +89,8 @@ export const VideoApps: React.FC<{
 		<div className="w-full">
 			<div className={'flex flex-col lg:flex-row gap-2'}>
 				<Pane>
-					{active === 'remotion' ? <YouAreHere /> : null}
-					<StepTitle>Remotion</StepTitle>
+					{active === 'picus' ? <YouAreHere /> : null}
+					<StepTitle>Picus</StepTitle>
 					<Subtitle>Make videos programmatically</Subtitle>
 					<br />
 					<div
@@ -111,7 +111,7 @@ export const VideoApps: React.FC<{
 						<li>Render real MP4 videos</li>
 					</ul>
 					<div style={row}>
-						{active === 'remotion' ? null : (
+						{active === 'picus' ? null : (
 							<>
 								<div style={flex}>
 									<a style={docsButton} href="/">
@@ -135,7 +135,7 @@ export const VideoApps: React.FC<{
 				</Pane>
 				<Pane>
 					{active === 'player' ? <YouAreHere /> : null}
-					<StepTitle>Remotion Player</StepTitle>
+					<StepTitle>Picus Player</StepTitle>
 					<Subtitle>Embeddable interactive videos</Subtitle>
 					<br />
 
@@ -181,7 +181,7 @@ export const VideoApps: React.FC<{
 				</Pane>
 				<Pane>
 					{active === 'lambda' ? <YouAreHere /> : null}
-					<StepTitle>Remotion Lambda</StepTitle>
+					<StepTitle>Picus Lambda</StepTitle>
 					<Subtitle>Render at scale</Subtitle>
 					<br />
 					<div

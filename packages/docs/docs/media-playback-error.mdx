@@ -6,7 +6,7 @@ sidebar_label: Media playback error
 crumb: 'Troubleshooting'
 ---
 
-The following error may occur in your Remotion project during development or while rendering:
+The following error may occur in your Picus project during development or while rendering:
 
 ```diff
 - Error: Could not play video with src [source] [object MediaError]
@@ -18,7 +18,7 @@ or
 - Error: Could not play audio with src [source] [object MediaError]
 ```
 
-This error happens when you are trying to embed a [`<Html5Video/>`](/docs/html5-video) or [`<Html5Audio/>`](/docs/html5-audio) tag in your Remotion project but the browser is unable to load and play the media. Although the browser does not report the exact error, there are two common reasons for this error.
+This error happens when you are trying to embed a [`<Html5Video/>`](/docs/html5-video) or [`<Html5Audio/>`](/docs/html5-audio) tag in your Picus project but the browser is unable to load and play the media. Although the browser does not report the exact error, there are two common reasons for this error.
 
 ## Codec not supported by Chrome
 
@@ -56,12 +56,12 @@ First check that you are not accidentially creating an infite render loop. For e
 const uuidv4 = () => '';
 
 // ---cut---
-import {Html5Video} from 'remotion';
+import {Html5Video} from 'picus';
 
 export default function SBSVideo() {
   return (
     <>
-      {['https://remotion.media/BigBuckBunny.mp4', 'https://remotion.media/BigBuckBunny.mp4'].map((video, i) => {
+      {['https://picus.media/BigBuckBunny.mp4', 'https://picus.media/BigBuckBunny.mp4'].map((video, i) => {
         return <Html5Video key={uuidv4()} src={video} />;
       })}
     </>

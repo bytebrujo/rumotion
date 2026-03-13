@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {getCloudStorageClient} from './helpers/get-cloud-storage-client';
 
 /**

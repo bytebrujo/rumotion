@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'props' as const;
 
@@ -17,7 +17,7 @@ export const propsOption = {
 	),
 	ssrName: null,
 	docLink:
-		'https://www.remotion.dev/docs/passing-props#passing-input-props-in-the-cli',
+		'https://www.picus.dev/docs/passing-props#passing-input-props-in-the-cli',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -38,4 +38,4 @@ export const propsOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

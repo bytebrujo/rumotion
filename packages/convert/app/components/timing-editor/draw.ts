@@ -1,4 +1,4 @@
-import {measureText} from '@remotion/layout-utils';
+import {measureText} from '@picus/layout-utils';
 import {
 	AXIS_LABEL_WIDTH,
 	PADDING_BOTTOM,

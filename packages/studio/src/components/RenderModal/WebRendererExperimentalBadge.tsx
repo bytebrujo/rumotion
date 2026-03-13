@@ -33,9 +33,9 @@ export const WebRendererExperimentalBadge: React.FC = () => {
 		<div style={row}>
 			<WarningTriangle type="warning" style={icon} />
 			<div style={text}>
-				The Remotion Web Renderer is experimental.{' '}
+				The Picus Web Renderer is experimental.{' '}
 				<a
-					href="https://github.com/remotion-dev/remotion/issues/5913"
+					href="https://github.com/picus-dev/picus/issues/5913"
 					target="_blank"
 					rel="noopener noreferrer"
 					style={link}
@@ -44,7 +44,7 @@ export const WebRendererExperimentalBadge: React.FC = () => {
 				</a>{' '}
 				and discuss in the{' '}
 				<a
-					href="https://remotion.dev/discord"
+					href="https://picus.dev/discord"
 					target="_blank"
 					rel="noopener noreferrer"
 					style={link}

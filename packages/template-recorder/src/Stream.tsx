@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 import { Spinner } from "./components/Spinner";
 import type { SelectedSource } from "./helpers/get-selected-video-source";
 import {

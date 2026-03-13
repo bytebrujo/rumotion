@@ -1,4 +1,4 @@
-import {stringifyDefaultProps, type EnumPath} from '@remotion/studio-shared';
+import {stringifyDefaultProps, type EnumPath} from '@picus/studio-shared';
 import * as recast from 'recast';
 import {parseAst, serializeAst} from './parse-ast';
 

@@ -3,7 +3,7 @@ import {cleanup, render} from '@testing-library/react';
 import React from 'react';
 import {Composition} from '../Composition.js';
 import {CompositionManagerProvider} from '../CompositionManagerProvider.js';
-import {RemotionRootContexts} from '../RemotionRoot.js';
+import {PicusRootContexts} from '../PicusRoot.js';
 import {RenderAssetManagerProvider} from '../RenderAssetManager.js';
 import {expectToThrow} from './expect-to-throw.js';
 
@@ -58,7 +58,7 @@ describe('Render composition-rules should throw with invalid props', () => {
 						initialCompositions={[]}
 						initialCanvasContent={null}
 					>
-						<RemotionRootContexts
+						<PicusRootContexts
 							visualModeEnabled={false}
 							frameState={null}
 							videoEnabled
@@ -85,7 +85,7 @@ describe('Render composition-rules should throw with invalid props', () => {
 									id="id"
 								/>
 							</RenderAssetManagerProvider>
-						</RemotionRootContexts>
+						</PicusRootContexts>
 					</CompositionManagerProvider>,
 				),
 			/Multiple composition with id id/,

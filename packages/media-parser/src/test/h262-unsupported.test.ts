@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
@@ -11,7 +11,7 @@ test('Should not support H.262', async () => {
 				slowKeyframes: true,
 			},
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (err) {
 		expect((err as Error).message).toContain(

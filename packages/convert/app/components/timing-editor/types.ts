@@ -1,4 +1,4 @@
-import type {SpringConfig} from 'remotion';
+import type {SpringConfig} from 'picus';
 
 export type EasingType =
 	| 'linear'

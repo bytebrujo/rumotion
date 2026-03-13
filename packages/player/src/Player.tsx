@@ -15,8 +15,8 @@ import type {
 	PlayableMediaTag,
 	SetTimelineContextValue,
 	TimelineContextValue,
-} from 'remotion';
-import {Composition, Internals} from 'remotion';
+} from 'picus';
+import {Composition, Internals} from 'picus';
 import type {BrowserMediaControlsBehavior} from './browser-mediasession.js';
 import {PlayerEmitterProvider} from './EmitterProvider.js';
 import type {RenderMuteButton} from './MediaVolumeSlider.js';
@@ -30,7 +30,7 @@ import type {PosterFillMode, RenderLoading, RenderPoster} from './PlayerUI.js';
 import PlayerUI from './PlayerUI.js';
 import type {RenderVolumeSlider} from './render-volume-slider.js';
 import {PLAYER_COMP_ID, SharedPlayerContexts} from './SharedPlayerContext.js';
-import {acknowledgeRemotionLicenseMessage} from './use-remotion-license-acknowledge.js';
+import {acknowledgePicusLicenseMessage} from './use-picus-license-acknowledge.js';
 import type {PropsIfHasProps} from './utils/props-if-has-props.js';
 import {validateInOutFrames} from './utils/validate-in-out-frame.js';
 import {validateInitialFrame} from './utils/validate-initial-frame.js';
@@ -94,7 +94,7 @@ export type PlayerProps<
 	readonly overrideInternalClassName?: string;
 	readonly logLevel?: LogLevel;
 	readonly noSuspense?: boolean;
-	readonly acknowledgeRemotionLicense?: boolean;
+	readonly acknowledgePicusLicense?: boolean;
 	readonly audioLatencyHint?: AudioContextLatencyCategory;
 	readonly volumePersistenceKey?: string;
 } & CompProps<Props> &
@@ -164,7 +164,7 @@ const PlayerFn = <
 		overrideInternalClassName,
 		logLevel = 'info',
 		noSuspense,
-		acknowledgeRemotionLicense,
+		acknowledgePicusLicense,
 		audioLatencyHint = 'interactive',
 		volumePersistenceKey,
 		...componentProps
@@ -172,7 +172,7 @@ const PlayerFn = <
 	ref: MutableRefObject<PlayerRef>,
 ) => {
 	if (typeof window !== 'undefined') {
-		window.remotion_isPlayer = true;
+		window.picus_isPlayer = true;
 	}
 
 	// @ts-expect-error
@@ -189,19 +189,19 @@ const PlayerFn = <
 	// @ts-expect-error
 	if (componentForValidation?.type === Composition) {
 		throw new TypeError(
-			`'component' should not be an instance of <Composition/>. Pass the React component directly, and set the duration, fps and dimensions as separate props. See https://www.remotion.dev/docs/player/examples for an example.`,
+			`'component' should not be an instance of <Composition/>. Pass the React component directly, and set the duration, fps and dimensions as separate props. See https://www.picus.dev/docs/player/examples for an example.`,
 		);
 	}
 
 	if (componentForValidation === Composition) {
 		throw new TypeError(
-			`'component' must not be the 'Composition' component. Pass your own React component directly, and set the duration, fps and dimensions as separate props. See https://www.remotion.dev/docs/player/examples for an example.`,
+			`'component' must not be the 'Composition' component. Pass your own React component directly, and set the duration, fps and dimensions as separate props. See https://www.picus.dev/docs/player/examples for an example.`,
 		);
 	}
 
 	useState(() =>
-		acknowledgeRemotionLicenseMessage(
-			Boolean(acknowledgeRemotionLicense),
+		acknowledgePicusLicenseMessage(
+			Boolean(acknowledgePicusLicense),
 			logLevel,
 		),
 	);
@@ -480,7 +480,7 @@ const forward = forwardRef as <T, P = {}>(
 ) => (props: P & React.RefAttributes<T>) => React.ReactElement | null;
 
 /*
- * @description A component which can be rendered in a regular React App to display a Remotion video.
- * @see [Documentation](https://www.remotion.dev/docs/player/player)
+ * @description A component which can be rendered in a regular React App to display a Picus video.
+ * @see [Documentation](https://www.picus.dev/docs/player/player)
  */
 export const Player = forward(PlayerFn);

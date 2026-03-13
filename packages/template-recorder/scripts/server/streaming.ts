@@ -1,4 +1,4 @@
-import { makeStreamPayloadMessage } from "@remotion/streaming";
+import { makeStreamPayloadMessage } from "@picus/streaming";
 
 const transcribingProgress = "transcribing-progress" as const;
 const installWhisperProgress = "install-whisper-progress" as const;

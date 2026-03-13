@@ -1,4 +1,4 @@
-const KEY = "remotionrecorder.selectedFolder";
+const KEY = "picusrecorder.selectedFolder";
 
 const params = new URLSearchParams(window.location.search);
 const folderFromUrl = params.get("folder");
@@ -14,7 +14,7 @@ export const loadFolderFromUrl = () => {
 };
 
 export const loadSelectedFolder = () => {
-  if (!window.remotionServerEnabled) {
+  if (!window.picusServerEnabled) {
     return null;
   }
 

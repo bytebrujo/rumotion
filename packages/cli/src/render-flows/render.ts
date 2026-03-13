@@ -20,10 +20,10 @@ import type {
 	RenderMediaOnDownload,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import type {
 	AggregateRenderProgress,
 	BundlingState,
@@ -32,14 +32,14 @@ import type {
 	JobProgressCallback,
 	RenderingProgressInput,
 	StitchingProgressInput,
-} from '@remotion/studio-server';
+} from '@picus/studio-server';
 import {
 	formatBytes,
 	type ArtifactProgress,
 	type BrowserDownloadState,
-} from '@remotion/studio-shared';
-import type {_InternalTypes} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+} from '@picus/studio-shared';
+import type {_InternalTypes} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {defaultBrowserDownloadProgress} from '../browser-download-bar';
 import {chalk} from '../chalk';
 import {ConfigInternals} from '../config';
@@ -65,7 +65,7 @@ import {getUserPassedOutputLocation} from '../user-passed-output-location';
 import {addLogToAggregateProgress} from './add-log-to-aggregate-progress';
 
 export const renderVideoFlow = async ({
-	remotionRoot,
+	picusRoot,
 	fullEntryPoint,
 	indent,
 	logLevel,
@@ -133,7 +133,7 @@ export const renderVideoFlow = async ({
 	keyboardShortcutsEnabled,
 	shouldCache,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	fullEntryPoint: string;
 	entryPointReason: string;
 	browserExecutable: BrowserExecutable;
@@ -323,7 +323,7 @@ export const renderVideoFlow = async ({
 	const {urlOrBundle, cleanup: cleanupBundle} = await bundleOnCliOrTakeServeUrl(
 		{
 			fullPath: fullEntryPoint,
-			remotionRoot,
+			picusRoot,
 			publicDir,
 			onProgress: ({bundling, copying}) => {
 				bundlingProgress = bundling;
@@ -378,7 +378,7 @@ export const renderVideoFlow = async ({
 			RenderInternals.DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS,
 		indent,
 		port,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		webpackConfigOrServeUrl: urlOrBundle,
 		offthreadVideoCacheSizeInBytes,
@@ -476,13 +476,13 @@ export const renderVideoFlow = async ({
 			.filter(truthy)
 			.join(' '),
 		color: 'gray',
-		link: 'https://www.remotion.dev/docs/terminology/composition',
+		link: 'https://www.picus.dev/docs/terminology/composition',
 	});
 	printFact('info')({
 		indent,
 		logLevel,
 		left: 'Codec',
-		link: 'https://www.remotion.dev/docs/encoding',
+		link: 'https://www.picus.dev/docs/encoding',
 		right: [codec, isVerbose ? `(${codecReason})` : null]
 			.filter(truthy)
 			.join(' '),
@@ -499,7 +499,7 @@ export const renderVideoFlow = async ({
 		indent,
 		logLevel,
 		left: 'Concurrency',
-		link: 'https://www.remotion.dev/docs/terminology/concurrency',
+		link: 'https://www.picus.dev/docs/terminology/concurrency',
 		right: `${resolvedConcurrency}x`,
 		color: 'gray',
 	});

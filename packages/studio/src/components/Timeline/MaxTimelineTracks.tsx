@@ -1,4 +1,4 @@
-import {DEFAULT_TIMELINE_TRACKS} from '@remotion/studio-shared';
+import {DEFAULT_TIMELINE_TRACKS} from '@picus/studio-shared';
 import React from 'react';
 import {TIMELINE_PADDING} from '../../helpers/timeline-layout';
 
@@ -27,7 +27,7 @@ export const MaxTimelineTracksReached: React.FC = () => {
 			Limited display to {MAX_TIMELINE_TRACKS} tracks to sustain performance.
 			{''}
 			You can change this by setting Config.setMaxTimelineTracks() in your
-			remotion.config.ts file.
+			picus.config.ts file.
 		</div>
 	);
 };

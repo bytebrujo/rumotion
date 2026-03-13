@@ -66,10 +66,10 @@ export const FEATURED_TEMPLATES: Template[] = [
 		homePageLabel: 'Blank',
 		shortName: 'Blank',
 		description: 'Nothing except an empty canvas',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-empty',
 		longerDescription:
-			'A template containing nothing but an empty canvas. Recommended if you already used Remotion or plan to write your code with AI.',
+			'A template containing nothing but an empty canvas. Recommended if you already used Picus or plan to write your code with AI.',
 		promoVideo: {
 			muxId: 'JD00x15y859GjqO7C9hpILkrSddGzd55K4lfj02dv8gU4',
 			width: 1280,
@@ -90,7 +90,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Hello World',
 		shortName: 'Hello World',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-helloworld',
 		description: 'A playground with a simple animation',
 		longerDescription:
@@ -104,7 +104,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 		type: 'video' as const,
 		defaultBranch: 'main',
 		featuredOnHomePage: 'Hello World',
-		previewURL: 'https://remotion-helloworld.vercel.app/?/HelloWorld',
+		previewURL: 'https://picus-helloworld.vercel.app/?/HelloWorld',
 		previewLabel: null,
 		templateInMonorepo: 'template-helloworld',
 		allowEnableTailwind: true,
@@ -114,11 +114,11 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Next.js',
 		shortName: 'Next.js',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-next-app-dir-tailwind',
 		description: 'SaaS template for video generation apps',
 		longerDescription:
-			'A SaaS starter kit which has the Remotion Player and rendering via Remotion Lambda built-in. Our recommended choice for people who want to build an app that can generate videos.',
+			'A SaaS starter kit which has the Picus Player and rendering via Picus Lambda built-in. Our recommended choice for people who want to build an app that can generate videos.',
 		promoVideo: {
 			width: 1280,
 			height: 720,
@@ -128,7 +128,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 		type: 'video' as const,
 		defaultBranch: 'main',
 		featuredOnHomePage: 'Next.js',
-		previewURL: 'https://next.remotion.dev',
+		previewURL: 'https://next.picus.dev',
 		templateInMonorepo: 'template-next-app-tailwind',
 		previewLabel: 'Live Demo',
 		allowEnableTailwind: false,
@@ -138,7 +138,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Next.js (Vercel Sandbox)',
 		shortName: 'Next.js (Vercel Sandbox)',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-vercel',
 		description: 'Render videos on-demand using Vercel Sandbox',
 		longerDescription:
@@ -152,7 +152,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 		type: 'video' as const,
 		defaultBranch: 'main',
 		featuredOnHomePage: null,
-		previewURL: 'https://template-vercel.remotion.dev',
+		previewURL: 'https://template-vercel.picus.dev',
 		templateInMonorepo: 'template-vercel',
 		allowEnableTailwind: false,
 		contributedBy: null,
@@ -162,11 +162,11 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Next.js (No Tailwind)',
 		shortName: 'Next.js (No Tailwind)',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-next-app-dir',
 		description: 'SaaS template for video generation apps',
 		longerDescription:
-			'A SaaS starter kit which has the Remotion Player and rendering via Remotion Lambda built-in. Our recommended choice for people who want to build an app that can generate videos.',
+			'A SaaS starter kit which has the Picus Player and rendering via Picus Lambda built-in. Our recommended choice for people who want to build an app that can generate videos.',
 		promoVideo: {
 			width: 1280,
 			height: 720,
@@ -176,7 +176,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 		type: 'video' as const,
 		defaultBranch: 'main',
 		featuredOnHomePage: null,
-		previewURL: 'https://next.remotion.dev',
+		previewURL: 'https://next.picus.dev',
 		templateInMonorepo: 'template-next-app',
 		previewLabel: 'Live Demo',
 		allowEnableTailwind: false,
@@ -186,11 +186,11 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Next.js (Pages dir)',
 		shortName: 'Next.js (Pages dir)',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-next-pages-dir',
 		description: 'SaaS template for video generation apps',
 		longerDescription:
-			'A SaaS starter kit which has the Remotion Player and rendering via Remotion Lambda built-in. Our recommended choice for people who want to build an app that can generate videos.',
+			'A SaaS starter kit which has the Picus Player and rendering via Picus Lambda built-in. Our recommended choice for people who want to build an app that can generate videos.',
 		promoVideo: {
 			width: 1280,
 			height: 720,
@@ -200,7 +200,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 		type: 'video' as const,
 		defaultBranch: 'main',
 		featuredOnHomePage: null,
-		previewURL: 'https://next.remotion.dev',
+		previewURL: 'https://next.picus.dev',
 		previewLabel: 'Live Demo',
 		templateInMonorepo: 'template-next-pages',
 		allowEnableTailwind: false,
@@ -211,11 +211,11 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Recorder',
 		shortName: 'Recorder',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'recorder',
 		description: 'A video production tool built entirely in JavaScript',
 		longerDescription:
-			'The Remotion Recorder is a video production tool that allows you to record webcam and screen content, generate captions, add music, end-to-end in JavaScript. <a href="https://remotion.dev/recorder">See docs</a>',
+			'The Picus Recorder is a video production tool that allows you to record webcam and screen content, generate captions, add music, end-to-end in JavaScript. <a href="https://picus.dev/recorder">See docs</a>',
 		promoVideo: {
 			muxId: '2A4z88QNjBTbxziIKqbI7IKLUO9iuaMp6UTZUBOItx00', // This would need a real promo video mux ID
 			height: 1080,
@@ -235,11 +235,11 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Prompt to Motion Graphics SaaS Starter Kit',
 		shortName: 'Prompt to Motion Graphics SaaS Starter Kit',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-prompt-to-motion-graphics-saas',
-		description: 'SaaS template for AI-powered code generation with Remotion',
+		description: 'SaaS template for AI-powered code generation with Picus',
 		longerDescription:
-			'A SaaS template for "Prompt to Motion Graphics" products. Generates Remotion code, streams it to the frontend, and compiles and previews it in the browser. See the <a href="/docs/ai/ai-saas-template">documentation page</a> for more details.',
+			'A SaaS template for "Prompt to Motion Graphics" products. Generates Picus code, streams it to the frontend, and compiles and previews it in the browser. See the <a href="/docs/ai/ai-saas-template">documentation page</a> for more details.',
 		promoBanner: {
 			width: 2880,
 			height: 1512,
@@ -259,7 +259,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'JavaScript',
 		shortName: 'Hello World (JavaScript)',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-helloworld-javascript',
 		description: 'The default starter template in plain JS',
 		longerDescription:
@@ -284,11 +284,11 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Render Server (Express.js)',
 		shortName: 'Render Server',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-render-server',
-		description: 'An Express.js server for rendering videos with Remotion',
+		description: 'An Express.js server for rendering videos with Picus',
 		longerDescription:
-			'A template that provides an Express.js server starting, tracking, and canceling Remotion renders.',
+			'A template that provides an Express.js server starting, tracking, and canceling Picus renders.',
 		promoVideo: {
 			muxId: 'JhsWde00fJ6L00SUrIwOZv2XOl7j00DgT5kED01FVVOUJTU',
 			width: 1920,
@@ -308,11 +308,11 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'React Router 7',
 		shortName: 'React Router',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-react-router',
 		description: 'SaaS template for video generation apps',
 		longerDescription:
-			'A software-as-a-service starter kit which has the Remotion Player and rendering via Remotion Lambda built-in. Built with React Router 7.',
+			'A software-as-a-service starter kit which has the Picus Player and rendering via Picus Lambda built-in. Built with React Router 7.',
 		promoBanner: {
 			width: 918,
 			height: 720,
@@ -332,9 +332,9 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: '3D',
 		shortName: 'React Three Fiber',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-three',
-		description: 'Remotion + React Three Fiber Starter Template',
+		description: 'Picus + React Three Fiber Starter Template',
 		longerDescription:
 			'A template with a React Three Fiber scene to play around.',
 		promoVideo: {
@@ -346,7 +346,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 		type: 'video' as const,
 		defaultBranch: 'main',
 		featuredOnHomePage: null,
-		previewURL: 'https://template-three-remotion.vercel.app/',
+		previewURL: 'https://template-three-picus.vercel.app/',
 		previewLabel: null,
 		templateInMonorepo: 'template-three',
 		allowEnableTailwind: false,
@@ -356,7 +356,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Stills',
 		shortName: 'Still images',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-still',
 		description: 'Dynamic PNG/JPEG template with built-in server',
 		longerDescription:
@@ -380,7 +380,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Audiogram',
 		shortName: 'Audiogram',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-audiogram',
 		description: 'Text and waveform visualization for podcasts',
 		longerDescription:
@@ -404,7 +404,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Music Visualization',
 		shortName: 'Music Visualization',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-music-visualization',
 		description: 'Text and waveform visualization for podcasts',
 		longerDescription:
@@ -428,7 +428,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Prompt to Video',
 		shortName: 'Prompt to Video',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-prompt-to-video',
 		description: 'Create a story with images and voiceover from a prompt',
 		longerDescription:
@@ -452,7 +452,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Skia',
 		shortName: 'Skia',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-skia',
 		description: 'React Native Skia starter',
 		longerDescription: 'A template with React Native Skia already setup.',
@@ -475,7 +475,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Overlay',
 		shortName: 'Overlay',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-overlay',
 		description: 'Overlays for video editing software',
 		longerDescription: `
@@ -504,7 +504,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'Code Hike',
 		shortName: 'Code Hike',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-code-hike',
 		description: 'Beautiful code animations',
 		longerDescription: `			
@@ -555,7 +555,7 @@ export const FEATURED_TEMPLATES: Template[] = [
 	{
 		homePageLabel: 'TikTok',
 		shortName: 'TikTok',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'template-tiktok',
 		description: 'Generate animated word-by-word captions',
 		longerDescription:
@@ -582,12 +582,12 @@ export const PAID_TEMPLATES = [
 	{
 		homePageLabel: 'Editor Starter',
 		shortName: 'Editor Starter',
-		org: 'remotion-dev',
+		org: 'picus-dev',
 		repoName: 'editor-starter',
 		description: 'A boilerplate for starting a video editor',
 		longerDescription: 'A starting point for building your own video editor.',
 		cliId: 'editor-starter' as const,
 		defaultBranch: 'main',
-		previewURL: 'https://www.remotion.pro/editor-starter',
+		previewURL: 'https://www.picus.pro/editor-starter',
 	},
 ].filter(truthy);

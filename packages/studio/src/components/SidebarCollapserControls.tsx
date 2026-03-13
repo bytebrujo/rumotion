@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useEffect} from 'react';
-import {cmdOrCtrlCharacter} from '../error-overlay/remotion-overlay/ShortcutHint';
+import {cmdOrCtrlCharacter} from '../error-overlay/picus-overlay/ShortcutHint';
 import {
 	areKeyboardShortcutsDisabled,
 	useKeybinding,

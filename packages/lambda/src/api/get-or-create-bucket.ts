@@ -1,11 +1,11 @@
-import type {AwsProvider} from '@remotion/lambda-client';
-import {LambdaClientInternals} from '@remotion/lambda-client';
-import type {GetOrCreateBucketInput} from '@remotion/serverless';
-import {internalGetOrCreateBucket} from '@remotion/serverless';
+import type {AwsProvider} from '@picus/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
+import type {GetOrCreateBucketInput} from '@picus/serverless';
+import {internalGetOrCreateBucket} from '@picus/serverless';
 
 /*
- * @description Creates a Cloud Storage bucket for Remotion Cloud Run in your GCP project. If one already exists, it will get returned instead.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/getorcreatebucket)
+ * @description Creates a Cloud Storage bucket for Picus Cloud Run in your GCP project. If one already exists, it will get returned instead.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/getorcreatebucket)
  */
 export const getOrCreateBucket = (
 	options: GetOrCreateBucketInput<AwsProvider>,

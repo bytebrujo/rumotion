@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'picus';
 import {extractFrames} from '../../helpers/extract-frames';
 import type {FrameDatabaseKey} from '../../helpers/frame-database';
 import {

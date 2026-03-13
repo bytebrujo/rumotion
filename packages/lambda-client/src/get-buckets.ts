@@ -1,7 +1,7 @@
 import {GetBucketLocationCommand, ListBucketsCommand} from '@aws-sdk/client-s3';
-import type {ProviderSpecifics} from '@remotion/serverless-client';
+import type {ProviderSpecifics} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
-import {REMOTION_BUCKET_PREFIX} from './constants';
+import {PICUS_BUCKET_PREFIX} from './constants';
 import {getS3Client} from './get-s3-client';
 import type {AwsRegion} from './regions';
 import {parseBucketName} from './validate-bucketname';
@@ -12,7 +12,7 @@ export type BucketWithLocation = {
 	region: AwsRegion;
 };
 
-export const getRemotionBuckets: ProviderSpecifics<AwsProvider>['getBuckets'] =
+export const getPicusBuckets: ProviderSpecifics<AwsProvider>['getBuckets'] =
 	async ({
 		region,
 		forceBucketName,
@@ -29,16 +29,16 @@ export const getRemotionBuckets: ProviderSpecifics<AwsProvider>['getBuckets'] =
 			return [];
 		}
 
-		const remotionBuckets = Buckets.filter((b) => {
+		const picusBuckets = Buckets.filter((b) => {
 			if (forceBucketName) {
 				return b.Name === forceBucketName;
 			}
 
-			return b.Name?.startsWith(REMOTION_BUCKET_PREFIX);
+			return b.Name?.startsWith(PICUS_BUCKET_PREFIX);
 		});
 
 		const locations = await Promise.all(
-			remotionBuckets.map(async (bucket) => {
+			picusBuckets.map(async (bucket) => {
 				const {region: parsedRegion} = parseBucketName(bucket.Name as string);
 				if (parsedRegion) {
 					return parsedRegion;
@@ -68,7 +68,7 @@ export const getRemotionBuckets: ProviderSpecifics<AwsProvider>['getBuckets'] =
 			}),
 		);
 
-		const bucketsWithLocation = remotionBuckets
+		const bucketsWithLocation = picusBuckets
 			.map((bucket, i): BucketWithLocation => {
 				return {
 					creationDate: (bucket.CreationDate as Date).getTime(),

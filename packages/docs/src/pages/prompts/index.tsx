@@ -1,7 +1,7 @@
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import type {PromptSubmission} from '@remotion/promo-pages/dist/prompts/prompt-types';
-import {PromptsGalleryPage} from '@remotion/promo-pages/dist/prompts/PromptsGallery.js';
+import type {PromptSubmission} from '@picus/promo-pages/dist/prompts/prompt-types';
+import {PromptsGalleryPage} from '@picus/promo-pages/dist/prompts/PromptsGallery.js';
 import Layout from '@theme/Layout';
 import React from 'react';
 import allPromptSubmissions from '../../../static/_raw/prompt-submissions.json';
@@ -20,9 +20,9 @@ export default () => {
 	return (
 		<Layout>
 			<Head>
-				{Seo.renderTitle('Prompt Gallery | Remotion')}
+				{Seo.renderTitle('Prompt Gallery | Picus')}
 				{Seo.renderDescription(
-					'Browse AI-generated video prompts for Remotion Skills.',
+					'Browse AI-generated video prompts for Picus Skills.',
 				)}
 				{Seo.renderImage(
 					'/generated/articles-prompts-gallery.png',

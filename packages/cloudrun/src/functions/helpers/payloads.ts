@@ -1,4 +1,4 @@
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import {z} from 'zod';
 
 const codec = z.enum(BrowserSafeApis.validCodecs);

@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
-import {cmdOrCtrlCharacter} from '../error-overlay/remotion-overlay/ShortcutHint';
+import {Internals} from 'picus';
+import {cmdOrCtrlCharacter} from '../error-overlay/picus-overlay/ShortcutHint';
 import {BACKGROUND, BORDER_COLOR, LIGHT_TEXT} from '../helpers/colors';
 import {
 	createFolderTree,
@@ -197,7 +197,7 @@ export const CompositionSelector: React.FC = () => {
 					)}
 				</button>
 			</div>
-			<div className="__remotion-vertical-scrollbar" style={list}>
+			<div className="__picus-vertical-scrollbar" style={list}>
 				{items.map((c) => {
 					return (
 						<CompositionSelectorItem

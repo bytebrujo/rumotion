@@ -19,6 +19,6 @@ export function getZodSchemaFromPrimitive(
 	} catch {}
 
 	throw new Error(
-		`visualControl(): Specify a schema for this value: ${stringified ?? '[non-serializable value]'}. See https://remotion.dev/docs/studio/visual-control`,
+		`visualControl(): Specify a schema for this value: ${stringified ?? '[non-serializable value]'}. See https://picus.dev/docs/studio/visual-control`,
 	);
 }

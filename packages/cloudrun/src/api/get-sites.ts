@@ -1,5 +1,5 @@
 import type {GcpRegion} from '../pricing/gcp-regions';
-import {REMOTION_BUCKET_PREFIX} from '../shared/constants';
+import {PICUS_BUCKET_PREFIX} from '../shared/constants';
 import {getCloudStorageClient} from './helpers/get-cloud-storage-client';
 
 export type Site = {
@@ -21,8 +21,8 @@ export type GetSitesOutput = {
 };
 
 /*
- * @description Gets an array of Remotion projects in Cloud Storage, in your GCP project.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/getsites)
+ * @description Gets an array of Picus projects in Cloud Storage, in your GCP project.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/getsites)
  */
 export const getSites = async (
 	region: GcpRegion | 'all regions',
@@ -35,7 +35,7 @@ export const getSites = async (
 
 	for (const bucket of fetchedBuckets) {
 		if (
-			bucket.name?.startsWith(REMOTION_BUCKET_PREFIX) &&
+			bucket.name?.startsWith(PICUS_BUCKET_PREFIX) &&
 			(region === 'all regions' ||
 				bucket.metadata.location === region.toUpperCase())
 		) {

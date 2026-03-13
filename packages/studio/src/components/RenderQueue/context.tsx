@@ -1,4 +1,4 @@
-import type {CompletedClientRender, RenderJob} from '@remotion/studio-shared';
+import type {CompletedClientRender, RenderJob} from '@picus/studio-shared';
 import React, {
 	createRef,
 	useCallback,
@@ -31,13 +31,13 @@ import type {
 
 declare global {
 	interface Window {
-		remotion_initialRenderQueue: RenderJob[] | null;
-		remotion_initialClientRenders: CompletedClientRender[] | null;
+		picus_initialRenderQueue: RenderJob[] | null;
+		picus_initialClientRenders: CompletedClientRender[] | null;
 	}
 }
 
 const restorePersistedClientRenders = (): RestoredClientRenderJob[] => {
-	const persisted = window.remotion_initialClientRenders ?? [];
+	const persisted = window.picus_initialClientRenders ?? [];
 	return persisted.map(
 		(r): RestoredClientRenderJob => ({...r, status: 'done'}),
 	);
@@ -114,7 +114,7 @@ export const RenderQueueContextProvider: React.FC<{
 	readonly children: React.ReactNode;
 }> = ({children}) => {
 	const [serverJobs, setServerJobs] = useState<RenderJob[]>(
-		window.remotion_initialRenderQueue ?? [],
+		window.picus_initialRenderQueue ?? [],
 	);
 	const [clientJobs, setClientJobs] = useState<ClientRenderJob[]>(
 		restorePersistedClientRenders,

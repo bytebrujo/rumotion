@@ -1,18 +1,18 @@
 import {
   loadFont as loadRegular,
   fontFamily as regularFont,
-} from "@remotion/google-fonts/Inter";
+} from "@picus/google-fonts/Inter";
 
 import {
   loadFont as loadMonospace,
   fontFamily as monospaceFont,
-} from "@remotion/google-fonts/RobotoMono";
+} from "@picus/google-fonts/RobotoMono";
 
 import {
   fontFamily as endcardFont,
   loadFont as loadEndcard,
-} from "@remotion/google-fonts/Inter";
-import { cancelRender, continueRender, delayRender } from "remotion";
+} from "@picus/google-fonts/Inter";
+import { cancelRender, continueRender, delayRender } from "picus";
 
 const regular = loadRegular("normal", {
   weights: ["600", "700"],

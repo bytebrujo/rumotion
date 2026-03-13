@@ -1,16 +1,16 @@
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	CloudProvider,
 	OrError,
 	ProviderSpecifics,
 	ServerlessPayload,
 	StreamingPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	COMMAND_NOT_FOUND,
 	makeStreamPayload,
 	ServerlessRoutines,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {compositionsHandler} from './handlers/compositions';
 import {launchHandler} from './handlers/launch';
 import {progressHandler} from './handlers/progress';
@@ -39,7 +39,7 @@ export const innerHandler = async <Provider extends CloudProvider>({
 	insideFunctionSpecifics: InsideFunctionSpecifics<Provider>;
 }): Promise<void> => {
 	setCurrentRequestId(context.awsRequestId);
-	process.env.__RESERVED_IS_INSIDE_REMOTION_LAMBDA = 'true';
+	process.env.__RESERVED_IS_INSIDE_PICUS_LAMBDA = 'true';
 	const timeoutInMilliseconds = context.getRemainingTimeInMillis();
 
 	RenderInternals.Log.verbose(

@@ -1,7 +1,7 @@
-import type {ChromiumOptions, LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {NoReactInternals} from 'remotion/no-react';
+import type {ChromiumOptions, LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {NoReactInternals} from 'picus/no-react';
 import {defaultBrowserDownloadProgress} from './browser-download-bar';
 import {registerCleanupJob} from './cleanup-before-quit';
 import {getRendererPortFromConfigFileAndCliFlag} from './config/preview-server';
@@ -39,13 +39,13 @@ const {
 } = BrowserSafeApis.options;
 
 export const listCompositionsCommand = async (
-	remotionRoot: string,
+	picusRoot: string,
 	args: string[],
 	logLevel: LogLevel,
 ) => {
 	const {file, reason} = findEntryPoint({
 		args,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		allowDirectory: true,
 	});
@@ -57,11 +57,11 @@ export const listCompositionsCommand = async (
 		);
 		Log.error(
 			{indent: false, logLevel},
-			'  npx remotion compositions src/index.ts',
+			'  npx picus compositions src/index.ts',
 		);
 		Log.error(
 			{indent: false, logLevel},
-			'See https://www.remotion.dev/docs/register-root for more information.',
+			'See https://www.picus.dev/docs/register-root for more information.',
 		);
 		process.exit(1);
 	}
@@ -149,13 +149,13 @@ export const listCompositionsCommand = async (
 	if (experimentalClientSideRenderingEnabled) {
 		Log.warn(
 			{indent: false, logLevel},
-			'Enabling WIP client-side rendering. Please see caveats on https://www.remotion.dev/docs/client-side-rendering/.',
+			'Enabling WIP client-side rendering. Please see caveats on https://www.picus.dev/docs/client-side-rendering/.',
 		);
 	}
 
 	const {urlOrBundle: bundled, cleanup: cleanupBundle} =
 		await bundleOnCliOrTakeServeUrl({
-			remotionRoot,
+			picusRoot,
 			fullPath: file,
 			publicDir,
 			onProgress: () => undefined,

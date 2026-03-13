@@ -3,7 +3,7 @@ import React from "react";
 
 const isLambdaNotConfiguredError = (message: string): boolean => {
   return (
-    message.includes("Set up Remotion Lambda") ||
+    message.includes("Set up Picus Lambda") ||
     message.includes("Function not found:")
   );
 };
@@ -16,13 +16,13 @@ export const ErrorComp: React.FC<{
   if (isLambdaError) {
     return (
       <ErrorDisplay
-        error={`To render videos, set up Remotion Lambda and add your AWS credentials to the .env file.`}
+        error={`To render videos, set up Picus Lambda and add your AWS credentials to the .env file.`}
         title="Lambda not configured"
         variant="card"
         size="md"
       >
         <a
-          href="https://www.remotion.dev/docs/lambda/setup"
+          href="https://www.picus.dev/docs/lambda/setup"
           target="_blank"
           rel="noopener noreferrer"
           className="underline text-sm"

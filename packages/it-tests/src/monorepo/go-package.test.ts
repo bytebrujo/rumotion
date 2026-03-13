@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import {execSync} from 'child_process';
 import {readFileSync, writeFileSync} from 'fs';
 import path from 'path';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
 
 test('Set the right version for gotest', () => {
 	const referenceVersion = readFileSync(
@@ -34,7 +34,7 @@ test(
 			await LambdaClientInternals.makeLambdaRenderMediaPayload({
 				region: 'us-east-1',
 				composition: 'react-svg',
-				functionName: 'remotion-render',
+				functionName: 'picus-render',
 				serveUrl: 'testbed',
 				codec: 'h264',
 				audioBitrate: null,
@@ -81,7 +81,7 @@ test(
 				indent: false,
 				forcePathStyle: false,
 				metadata: {
-					Author: 'Remotion',
+					Author: 'Picus',
 				},
 				licenseKey: null,
 				storageClass: null,

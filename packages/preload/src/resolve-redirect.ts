@@ -1,6 +1,6 @@
 /**
  * @description Follows the redirects of a URL (most commonly a remote video or audio) until the final URL is resolved and returns that.
- * @see [Documentation](https://www.remotion.dev/docs/preload/resolve-redirect)
+ * @see [Documentation](https://www.picus.dev/docs/preload/resolve-redirect)
  */
 
 export const resolveRedirect = async (videoOrAudio: string) => {

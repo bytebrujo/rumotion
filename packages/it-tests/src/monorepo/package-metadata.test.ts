@@ -1,7 +1,7 @@
 import {expect, test} from 'bun:test';
 import {writeFileSync} from 'fs';
 import {join} from 'path';
-import {Pkgs, apiDocs, descriptions} from '@remotion/studio-shared';
+import {Pkgs, apiDocs, descriptions} from '@picus/studio-shared';
 import {getAllPackages, updatePackageJson} from './get-all-packages';
 
 test('All packages should have a repository field', () => {
@@ -14,7 +14,7 @@ test('All packages should have a repository field', () => {
 			return {
 				...data,
 				repository: {
-					url: `https://github.com/remotion-dev/remotion/tree/main/packages/${pkg}`,
+					url: `https://github.com/picus-dev/picus/tree/main/packages/${pkg}`,
 				},
 			};
 		});
@@ -70,11 +70,11 @@ test('All packages should have a README.md file', () => {
 
 		const readmePath = join(path, '..', 'README.md');
 
-		const name = pkg === 'create-video' ? 'create-video' : `@remotion/${pkg}`;
+		const name = pkg === 'create-video' ? 'create-video' : `@picus/${pkg}`;
 
 		const readme =
 			[
-				`# @remotion/${pkg}`,
+				`# @picus/${pkg}`,
 				description ? '' : null,
 				description ?? null,
 				'',
@@ -89,7 +89,7 @@ test('All packages should have a README.md file', () => {
 				docs ? '```' : null,
 				docs ? '' : null,
 				docs
-					? 'When installing a Remotion package, make sure to align the version of all `remotion` and `@remotion/*` packages to the same version.'
+					? 'When installing a Picus package, make sure to align the version of all `picus` and `@picus/*` packages to the same version.'
 					: null,
 				docs
 					? 'Remove the `^` character from the version number to use the exact version.'

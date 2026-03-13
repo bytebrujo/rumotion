@@ -1,7 +1,7 @@
 import type {
 	CancelRenderRequest,
 	CancelRenderResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import type {ApiHandler} from '../api-types';
 
 export const handleCancelRender: ApiHandler<

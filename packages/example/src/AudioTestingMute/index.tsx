@@ -5,7 +5,7 @@ import {
 	Sequence,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import movie from '../resources/framer-music.mp4';
 import music from '../resources/sound1.mp3';
 

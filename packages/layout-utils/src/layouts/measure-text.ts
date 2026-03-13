@@ -113,7 +113,7 @@ const takeMeasurement = ({
 
 /*
  * @description Calculates the width and height of specified text to be used for layout calculations. Only works in the browser, not in Node.js or Bun.
- * @see [Documentation](https://remotion.dev/docs/layout-utils/measure-text)
+ * @see [Documentation](https://picus.dev/docs/layout-utils/measure-text)
  */
 export const measureText = ({
 	text,
@@ -173,7 +173,7 @@ export const measureText = ({
 					fontFamily,
 				)} but it looks like the font is not loaded at the time of calling.`,
 				`A measurement with the fallback font ${computedFallback} was taken and had the same dimensions, indicating that the browser used the fallback font.`,
-				'See https://remotion.dev/docs/layout-utils/best-practices for best practices.',
+				'See https://picus.dev/docs/layout-utils/best-practices for best practices.',
 			];
 			throw new Error(err.join('\n'));
 		}

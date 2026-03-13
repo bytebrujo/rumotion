@@ -5,7 +5,7 @@ import {Upload} from '@aws-sdk/lib-storage';
 import type {
 	CustomCredentials,
 	WriteFileInput,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import mimeTypes from 'mime-types';
 import type {AwsProvider} from './aws-provider';
 import {getContentDispositionHeader} from './content-disposition-header';

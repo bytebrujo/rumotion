@@ -1,5 +1,5 @@
 import {adjustHue, lighten} from 'polished';
-import {AbsoluteFill, interpolateColors} from 'remotion';
+import {AbsoluteFill, interpolateColors} from 'picus';
 
 export const SpringSeasonLogo: React.FC<{index: number}> = ({index}) => {
 	const size = 200;

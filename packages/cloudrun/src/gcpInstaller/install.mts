@@ -9,7 +9,7 @@ import {generateEnv} from './installerScripts/tasks/generateEnv.mjs';
 import {setupGcpProject} from './installerScripts/tasks/setupGcpProject.mjs';
 
 /****************************************
- * Splash screen for Remotion Cloud Run
+ * Splash screen for Picus Cloud Run
  ****************************************/
 cloudRunSplashScreen();
 

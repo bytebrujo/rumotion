@@ -1,4 +1,4 @@
-# @remotion/lambda-client
+# @picus/lambda-client
 
 ## Usage
 

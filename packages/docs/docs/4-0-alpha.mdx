@@ -5,28 +5,28 @@ title: v4.0 Alpha
 crumb: "Version Upgrade"
 ---
 
-Remotion 4.0 has now been released. This page has been archived.
+Picus 4.0 has now been released. This page has been archived.
 
 Thanks for testing and reporting bugs! 🎉
 
 ## How to upgrade
 
 See the [changelog](#changelog) to find the latest version.
-Upgrade `remotion` and all packages starting with `@remotion` to the latest version, e.g. `4.0.0`:
+Upgrade `picus` and all packages starting with `@picus` to the latest version, e.g. `4.0.0`:
 
 ```diff title="package.json"
-- "remotion": "^3.3.87"
-- "@remotion/bundler": "^3.3.87"
-- "@remotion/eslint-config": "^3.3.87"
-- "@remotion/eslint-plugin": "^3.3.87"
-- "@remotion/cli": "^3.3.87"
-- "@remotion/renderer": "^3.3.87"
-+ "remotion": "4.0.0-alpha13"
-+ "@remotion/bundler": "4.0.0-alpha13"
-+ "@remotion/eslint-config": "4.0.0-alpha13"
-+ "@remotion/eslint-plugin": "4.0.0-alpha13"
-+ "@remotion/cli": "4.0.0-alpha13"
-+ "@remotion/renderer": "4.0.0-alpha13"
+- "picus": "^3.3.87"
+- "@picus/bundler": "^3.3.87"
+- "@picus/eslint-config": "^3.3.87"
+- "@picus/eslint-plugin": "^3.3.87"
+- "@picus/cli": "^3.3.87"
+- "@picus/renderer": "^3.3.87"
++ "picus": "4.0.0-alpha13"
++ "@picus/bundler": "4.0.0-alpha13"
++ "@picus/eslint-config": "4.0.0-alpha13"
++ "@picus/eslint-plugin": "4.0.0-alpha13"
++ "@picus/cli": "4.0.0-alpha13"
++ "@picus/renderer": "4.0.0-alpha13"
 ```
 
 Make sure the versions don't have a `^` character in front of it.
@@ -36,7 +36,7 @@ Most important breaking changes:
 <Step>1</Step> The config file must now import the config like the following:<br/>
 
 ```ts
-import { Config } from "@remotion/cli/config";
+import { Config } from "@picus/cli/config";
 ```
 
 <Step>2</Step> Also in the config file:<br/>
@@ -99,18 +99,18 @@ Release candidate!
 
 ### `4.0.0-alpha11`
 
-- Performance improvements for the Remotion Studio
+- Performance improvements for the Picus Studio
 - Your component should do less unnecessary re-renders.
 
 ### `4.0.0-alpha10`
 
-- Renamed Remotion Preview to Remotion Studio
-- Various fixes for the Remotion Studio
+- Renamed Picus Preview to Picus Studio
+- Various fixes for the Picus Studio
 - New prop for Composition: `calculateMetadata`! See: [Data fetching](/docs/data-fetching) and [Variable metadata](/docs/dynamic-metadata)
 
 ### `4.0.0-alpha9`
 
-- Various polish for the Remotion Preview
+- Various polish for the Picus Preview
 
 ### `4.0.0-alpha8`
 
@@ -137,8 +137,8 @@ Release candidate!
 May 3rd 2023:
 
 - Features the new Rust renderer enabling faster `<OffthreadVideo>`!
-- `z` is not exported from Remotion anymore, instead, just install `zod`!
-- `zColor` is now to be installed from `@remotion/zod-types`
+- `z` is not exported from Picus anymore, instead, just install `zod`!
+- `zColor` is now to be installed from `@picus/zod-types`
 - Overall polish of the editor
 
 ### `4.0.0-alpha.185+1b8f0e746`

@@ -1,11 +1,11 @@
-import {getBoundingBox, translatePath} from '@remotion/paths';
-import {makeStar} from '@remotion/shapes';
+import {getBoundingBox, translatePath} from '@picus/paths';
+import {makeStar} from '@picus/shapes';
 import type {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
-} from '@remotion/transitions';
+} from '@picus/transitions';
 import React, {useMemo, useState} from 'react';
-import {AbsoluteFill, random} from 'remotion';
+import {AbsoluteFill, random} from 'picus';
 
 type CustomPresentationProps = {
 	width: number;

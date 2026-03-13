@@ -1,4 +1,4 @@
-# @remotion/studio-shared
+# @picus/studio-shared
 
 Internal package for shared objects between the Studio backend and frontend
 

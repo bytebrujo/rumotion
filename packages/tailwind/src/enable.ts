@@ -1,8 +1,8 @@
-import type {WebpackConfiguration} from '@remotion/bundler';
+import type {WebpackConfiguration} from '@picus/bundler';
 
 /**
  * @description A function that modifies the default Webpack configuration to make the necessary changes to support Tailwind.
- * @see [Documentation](https://www.remotion.dev/docs/tailwind/enable-tailwind)
+ * @see [Documentation](https://www.picus.dev/docs/tailwind/enable-tailwind)
  */
 export const enableTailwind: (
 	currentConfiguration: WebpackConfiguration,

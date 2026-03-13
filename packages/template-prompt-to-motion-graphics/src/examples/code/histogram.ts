@@ -1,7 +1,7 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
-export const histogramCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring } from "remotion";
-import { Rect } from "@remotion/shapes";
+export const histogramCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring } from "picus";
+import { Rect } from "@picus/shapes";
 
 export const MyAnimation = () => {
   const frame = useCurrentFrame();
@@ -92,10 +92,10 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const histogramExample: RemotionExample = {
+export const histogramExample: PicusExample = {
   id: "histogram",
   name: "Histogram",
-  description: "Animated bar chart using @remotion/shapes",
+  description: "Animated bar chart using @picus/shapes",
   category: "Charts",
   durationInFrames: 120,
   fps: 30,

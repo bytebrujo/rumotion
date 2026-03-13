@@ -16,7 +16,7 @@ const upload = async (file: File) => {
   return 'https://example.com';
 };
 // ---cut---
-import {AbsoluteFill, OffthreadVideo} from 'remotion';
+import {AbsoluteFill, OffthreadVideo} from 'picus';
 
 type VideoProps = {
   videoURL: string;
@@ -31,7 +31,7 @@ export const MyComponent: React.FC<VideoProps> = ({videoURL}) => {
 };
 ```
 
-The video URL will be passed from the Remotion Player to our component.  
+The video URL will be passed from the Picus Player to our component.  
 Using a `<input type="file">` element, we allow a user upload.  
 As soon as a file is fully uploaded to the cloud, the URL will be set and can be used by the component to display the video.
 
@@ -45,10 +45,10 @@ const upload = async (file: File) => {
 };
 
 // ---cut---
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import {useState} from 'react';
 
-export const RemotionPlayer: React.FC = () => {
+export const PicusPlayer: React.FC = () => {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
   const handleChange = useCallback(async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,7 +89,7 @@ const upload = async (file: File) => {
 };
 
 // ---cut---
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import {useCallback, useState} from 'react';
 
 type VideoState =
@@ -101,7 +101,7 @@ type VideoState =
       url: string;
     };
 
-export const RemotionPlayer: React.FC = () => {
+export const PicusPlayer: React.FC = () => {
   const [videoState, setVideoState] = useState<VideoState>({
     type: 'empty',
   });

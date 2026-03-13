@@ -1,8 +1,8 @@
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-import {parseMedia} from '@remotion/media-parser';
-import {nodeReader} from '@remotion/media-parser/node';
+import {parseMedia} from '@picus/media-parser';
+import {nodeReader} from '@picus/media-parser/node';
 import {$} from 'bun';
 import {hasBenchmark} from './persistance';
 import {BenchmarkItem, getBenchmarkKey, QualityControl} from './types';
@@ -67,7 +67,7 @@ export const runBenchmark = async ({
 	const output = `${os.tmpdir()}/output.mp4`;
 
 	const time = Date.now();
-	await $`bunx remotion ffmpeg -hide_banner -i ${exampleVideo} -c:v ${encoder} ${stringifyQualityControl(qualityControl)} -an -y ${output}`
+	await $`bunx picus ffmpeg -hide_banner -i ${exampleVideo} -c:v ${encoder} ${stringifyQualityControl(qualityControl)} -an -y ${output}`
 		.cwd(path.join(__dirname, '..', '..', '..', 'example'))
 		.quiet();
 	const timeToEncodeInMs = Date.now() - time;

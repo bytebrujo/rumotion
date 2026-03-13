@@ -1,4 +1,4 @@
-import {Button, Card} from '@remotion/design';
+import {Button, Card} from '@picus/design';
 import React, {useEffect, useRef, useState} from 'react';
 import {CardLikeButton} from './CardLikeButton';
 import {Page} from './Page';
@@ -191,7 +191,7 @@ export const PromptsGalleryPage: React.FC<{
 							href="/docs/ai/skills"
 							className="underline hover:text-text underline-offset-4"
 						>
-							Remotion Skills
+							Picus Skills
 						</a>
 						, you can create videos simply by giving a prompt to your coding
 						agent, whether it&apos;s Claude Code, Codex, or OpenCode. Browse the

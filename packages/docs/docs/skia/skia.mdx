@@ -2,7 +2,7 @@
 image: /generated/articles-docs-skia-skia.png
 id: skia
 sidebar_label: Overview
-title: '@remotion/skia'
+title: '@picus/skia'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,19 +10,19 @@ import TabItem from '@theme/TabItem';
 import {ExperimentalBadge} from '../../components/Experimental';
 import {TableOfContents} from './TableOfContents';
 
-This package provides utilities useful for integrating [React Native Skia](https://github.com/Shopify/react-native-skia) with Remotion.
+This package provides utilities useful for integrating [React Native Skia](https://github.com/Shopify/react-native-skia) with Picus.
 
 ## Installation
 
-Install, `@remotion/skia` as well as `@shopify/react-native-skia`.
+Install, `@picus/skia` as well as `@shopify/react-native-skia`.
 
-<Installation pkg="@remotion/skia @shopify/react-native-skia" />
+<Installation pkg="@picus/skia @shopify/react-native-skia" />
 
 :::note
-Since Remotion `v3.3.93` and React Native Skia `0.1.191`, `react-native-web` is not a dependency anymore. You may remove it from your project.
+Since Picus `v3.3.93` and React Native Skia `0.1.191`, `react-native-web` is not a dependency anymore. You may remove it from your project.
 :::
 
-Also update **all the other Remotion packages** to have the same version: `remotion`, `@remotion/cli` and others.
+Also update **all the other Picus packages** to have the same version: `picus`, `@picus/cli` and others.
 
 :::note
 Make sure no package version number has a `^` character in front of it as it can lead to a version conflict.
@@ -30,9 +30,9 @@ Make sure no package version number has a `^` character in front of it as it can
 
 [Override the Webpack config](/docs/webpack) by using [`enableSkia()`](/docs/skia/enable-skia).
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
-import {enableSkia} from '@remotion/skia/enable';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
+import {enableSkia} from '@picus/skia/enable';
 
 Config.overrideWebpackConfig((currentConfiguration) => {
   return enableSkia(currentConfiguration);
@@ -47,25 +47,25 @@ Next, you need to refactor the [entry point](/docs/terminology/entry-point) file
 
 ```ts twoslash title="src/index.ts"
 // @filename: ./Root.tsx
-export const RemotionRoot = () => <></>;
+export const PicusRoot = () => <></>;
 
 // @filename: index.tsx
 // ---cut---
 import { LoadSkia } from "@shopify/react-native-skia/src/web";
-import { registerRoot } from "remotion";
+import { registerRoot } from "picus";
 
 (async () => {
   await LoadSkia();
-  const { RemotionRoot } = await import("./Root");
-  registerRoot(RemotionRoot);
+  const { PicusRoot } = await import("./Root");
+  registerRoot(PicusRoot);
 })();
 ```
 
-You can now start using the [`<SkiaCanvas>`](/docs/skia/skia-canvas) in your Remotion project.
+You can now start using the [`<SkiaCanvas>`](/docs/skia/skia-canvas) in your Picus project.
 
 ## Templates
 
-You can find the [starter template](https://github.com/remotion-dev/template-skia) here or install it using:
+You can find the [starter template](https://github.com/picus-dev/template-skia) here or install it using:
 
 <Tabs
 defaultValue="npm"
@@ -110,15 +110,15 @@ pnpm create video --skia
 
 ## Rendering
 
-By default Remotion rendering are done on the CPU. Some Skia effects rely on advanced GPU features, which may be slow to run on the CPU depending on the kind of effect you are using. If your Skia export is extremely slow, we found that enabling the GPU via the `--gl=angle` option improves things substantially. Please check out the documentation on [GPU rendering](/docs/gpu).
+By default Picus rendering are done on the CPU. Some Skia effects rely on advanced GPU features, which may be slow to run on the CPU depending on the kind of effect you are using. If your Skia export is extremely slow, we found that enabling the GPU via the `--gl=angle` option improves things substantially. Please check out the documentation on [GPU rendering](/docs/gpu).
 
 ```sh
-remotion render Main out/video.mp4 --gl=angle
+picus render Main out/video.mp4 --gl=angle
 ```
 
 ## Resources
 
-- [Example project by William Candillon](https://github.com/wcandillon/remotion-skia-tutorial)
+- [Example project by William Candillon](https://github.com/wcandillon/picus-skia-tutorial)
 - [Tutorial for the example project](https://www.youtube.com/watch?v=-7MOoWN2_nk)
 
 ## APIs

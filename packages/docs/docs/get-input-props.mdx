@@ -24,28 +24,28 @@ In both cases, you can type the props, which is better than using this API which
 
 ## API
 
-Pass in a [parseable](/docs/cli) JSON representation using the `--props` flag to either `remotion studio` or `remotion render`:
+Pass in a [parseable](/docs/cli) JSON representation using the `--props` flag to either `picus studio` or `picus render`:
 
 ```bash
-npx remotion render --props='{"hello": "world"}'
+npx picus render --props='{"hello": "world"}'
 ```
 
-To simulate how it behaves, you can also pass props when using the Remotion Studio:
+To simulate how it behaves, you can also pass props when using the Picus Studio:
 
 ```bash
-npx remotion studio --props='{"hello": "world"}'
+npx picus studio --props='{"hello": "world"}'
 ```
 
-You may also specify a file containing JSON and Remotion will parse the file for you:
+You may also specify a file containing JSON and Picus will parse the file for you:
 
 ```bash
-npx remotion render --props=./path/to/props.json
+npx picus render --props=./path/to/props.json
 ```
 
-You can then access the props anywhere in your Remotion project:
+You can then access the props anywhere in your Picus project:
 
 ```tsx twoslash {3}
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 const getInputProps = () => ({hello: 'world'}) as const;
 const MyComp: React.FC = () => null;
 const config = {
@@ -73,5 +73,5 @@ In this example, the props also get passed to the component of the composition w
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/config/input-props.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/config/input-props.ts)
 - [Dynamic duration, FPS & dimensions](/docs/dynamic-metadata)

@@ -7,8 +7,8 @@ import {
 	random,
 	useCurrentFrame,
 	useDelayRender,
-	useRemotionEnvironment,
-} from 'remotion';
+	usePicusEnvironment,
+} from 'picus';
 import {useMaxMediaCacheSize} from '../caches';
 import {applyVolume} from '../convert-audiodata/apply-volume';
 import {TARGET_SAMPLE_RATE} from '../convert-audiodata/resample-audiodata';
@@ -49,7 +49,7 @@ export const AudioForRendering: React.FC<AudioProps> = ({
 	);
 	const startsAt = Internals.useMediaStartsAt();
 
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 
 	if (!videoConfig) {
 		throw new Error('No video config found');
@@ -148,7 +148,7 @@ export const AudioForRendering: React.FC<AudioProps> = ({
 					}
 
 					Internals.Log.warn(
-						{logLevel, tag: '@remotion/media'},
+						{logLevel, tag: '@picus/media'},
 						fallbackMessage,
 					);
 
@@ -159,9 +159,9 @@ export const AudioForRendering: React.FC<AudioProps> = ({
 					handleError(
 						new Error(`Unknown container format ${src}.`),
 						new Error(
-							`Cannot render audio "${src}": Unknown container format. See supported formats: https://www.remotion.dev/docs/mediabunny/formats`,
+							`Cannot render audio "${src}": Unknown container format. See supported formats: https://www.picus.dev/docs/mediabunny/formats`,
 						),
-						`Unknown container format for ${src} (Supported formats: https://www.remotion.dev/docs/mediabunny/formats), falling back to <Html5Audio>`,
+						`Unknown container format for ${src} (Supported formats: https://www.picus.dev/docs/mediabunny/formats), falling back to <Html5Audio>`,
 					);
 					return;
 				}

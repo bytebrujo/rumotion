@@ -1,15 +1,15 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return 'https://remotion.dev/docs/troubleshooting/background-image';
+	return 'https://picus.dev/docs/troubleshooting/background-image';
 });
 
 type Options = [];
 type MessageIds = 'BackgroundImage';
 
 const BackgroundImage = [
-	"Don't use background-image in Remotion.",
-	'See: https://remotion.dev/docs/troubleshooting/background-image',
+	"Don't use background-image in Picus.",
+	'See: https://picus.dev/docs/troubleshooting/background-image',
 ].join('\n');
 
 export default createRule<Options, MessageIds>({

@@ -15,7 +15,7 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import {cancelRender, Internals, useDelayRender} from 'remotion';
+import {cancelRender, Internals, useDelayRender} from 'picus';
 import {combineFloat32Arrays} from './combine-float32-arrays';
 import {getPartialAudioData} from './get-partial-audio-data';
 import {isRemoteAsset} from './is-remote-asset';
@@ -233,7 +233,7 @@ export const useWindowedAudioData = ({
 				if (isMatroska && !warnedMatroska[src]) {
 					warnedMatroska[src] = true;
 					Internals.Log.warn(
-						{logLevel: 'info', tag: '@remotion/media-utils'},
+						{logLevel: 'info', tag: '@picus/media-utils'},
 						`[useWindowedAudioData] Matroska/WebM file detected at "${src}".\n\nDue to format limitation, audio decoding must start from the beginning of the file, which may lead to increased memory usage and slower performance for large files. Consider converting the audio to a more suitable format like MP3 or AAC for better performance.`,
 					);
 				}

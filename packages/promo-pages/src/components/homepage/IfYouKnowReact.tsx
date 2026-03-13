@@ -50,7 +50,7 @@ export const IfYouKnowReact: React.FC = () => {
 					className="no-underline text-brand font-brand font-bold inline-flex flex-row items-center"
 					href="/docs/the-fundamentals"
 				>
-					Learn Remotion{' '}
+					Learn Picus{' '}
 					<svg
 						style={icon}
 						xmlns="http://www.w3.org/2000/svg"

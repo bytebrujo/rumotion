@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/layout-utils"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/layout-utils"
 	},
-	"name": "@remotion/layout-utils",
+	"name": "@picus/layout-utils",
 	"version": "4.0.434",
 	"description": "Utilities for working with layouts",
 	"main": "dist/cjs/index.js",
@@ -25,26 +25,26 @@
 		}
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"author": "Yehor Misiats (https://github.com/satelllte)",
 	"maintainers": [
-		"Jonny Burger <jonny@remotion.dev>",
+		"Jonny Burger <jonny@picus.dev>",
 		"Yehor Misiats (https://github.com/satelllte)"
 	],
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"layout-utils"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/layout-utils"
+	"homepage": "https://www.picus.dev/docs/layout-utils"
 }

@@ -1,6 +1,6 @@
-import {Gif} from '@remotion/gif';
+import {Gif} from '@picus/gif';
 import {useRef} from 'react';
-import {Sequence, staticFile, useVideoConfig} from 'remotion';
+import {Sequence, staticFile, useVideoConfig} from 'picus';
 
 const GifTest: React.FC = () => {
 	const {width, height} = useVideoConfig();

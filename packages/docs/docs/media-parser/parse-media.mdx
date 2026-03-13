@@ -3,23 +3,23 @@ image: /generated/articles-docs-media-parser-parse-media.png
 id: parse-media
 title: parseMedia()
 slug: /media-parser/parse-media
-crumb: '@remotion/media-parser'
+crumb: '@picus/media-parser'
 ---
 
 :::warning
 [We are phasing out Media Parser and are moving to Mediabunny](/blog/mediabunny)!
 :::
 
-_Part of the [`@remotion/media-parser`](/docs/media-parser) package._
+_Part of the [`@picus/media-parser`](/docs/media-parser) package._
 _available from v4.0.190_
 
 ## Examples
 
 ```tsx twoslash title="Parsing a hosted video"
-import {parseMedia} from '@remotion/media-parser';
+import {parseMedia} from '@picus/media-parser';
 
 const result = await parseMedia({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   fields: {
     durationInSeconds: true,
     dimensions: true,
@@ -31,8 +31,8 @@ console.log(result.dimensions); // {width: 1920, height: 1080}
 ```
 
 ```tsx twoslash title="Parsing a local file"
-import {parseMedia} from '@remotion/media-parser';
-import {nodeReader} from '@remotion/media-parser/node';
+import {parseMedia} from '@picus/media-parser';
+import {nodeReader} from '@picus/media-parser/node';
 
 const result = await parseMedia({
   src: '/Users/jonnyburger/Downloads/video.mp4',
@@ -87,7 +87,7 @@ You must return either `null` or a callback that is called for each sample that 
 The `sample` has the type [`MediaParserVideoSample`](/docs/media-parser/types#mediaparservideosample), which is compatible with the mandatory fields for the WebCodecs [`EncodedVideoChunk`](https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk) constructor.
 
 ```tsx twoslash title="Reading video frames"
-import {parseMedia, MediaParserOnVideoTrack} from '@remotion/media-parser';
+import {parseMedia, MediaParserOnVideoTrack} from '@picus/media-parser';
 
 const onVideoTrack: MediaParserOnVideoTrack = ({track}) => {
   console.log(track);
@@ -112,7 +112,7 @@ The `sample` has the type [`MediaParserAudioSample`](/docs/media-parser/types#me
 
 ```tsx twoslash title="Reading audio frames"
 // @noErrors
-import {parseMedia, MediaParserOnAudioTrack} from '@remotion/media-parser';
+import {parseMedia, MediaParserOnAudioTrack} from '@picus/media-parser';
 
 const onAudioTrack: MediaParserOnAudioTrack = ({track}) => {
   console.log(track);
@@ -139,7 +139,7 @@ A callback that is called from time to time when bytes have been read from the m
 It includes the following data:
 
 ```tsx twoslash
-import {ParseMediaProgress} from '@remotion/media-parser';
+import {ParseMediaProgress} from '@picus/media-parser';
 //          ^?
 ```
 
@@ -173,9 +173,9 @@ See [Seeking Hints](/docs/media-parser/seeking-hints) for more information.
 One of `"error"`, `"warn"`, `"info"`, `"debug"`, `"trace"`.  
 Default value: `"info"`, which logs only important information.
 
-### `acknowledgeRemotionLicense?`
+### `acknowledgePicusLicense?`
 
-Acknowledge the [Remotion License](https://remotion.dev/license) to make the console message disappear.
+Acknowledge the [Picus License](https://picus.dev/license) to make the console message disappear.
 
 ## Callbacks
 
@@ -185,10 +185,10 @@ You do not have to add the field to the [`fields`](#fields) object if you use th
 However, just like with [`fields`](#fields), adding a callback for a [slow field](/docs/media-parser/fast-and-slow) may require reading more of the file.
 
 ```tsx twoslash title="Using a callback"
-import {parseMedia} from '@remotion/media-parser';
+import {parseMedia} from '@picus/media-parser';
 
 const result = await parseMedia({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   onDurationInSeconds: (durationInSeconds) => {
     console.log(durationInSeconds);
   },
@@ -200,5 +200,5 @@ const result = await parseMedia({
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/media-parser/src/parse-media.ts)
-- [`@remotion/media-parser`](/docs/media-parser)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/media-parser/src/parse-media.ts)
+- [`@picus/media-parser`](/docs/media-parser)

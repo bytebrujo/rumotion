@@ -10,9 +10,9 @@ const PageHeader: React.FC = () => {
 		<div>
 			<h1 className={headerStyles.title}>Add to showcase</h1>
 			<p>
-				The <a href="/showcase">Showcase</a> features videos made with Remotion
+				The <a href="/showcase">Showcase</a> features videos made with Picus
 				to show use cases, share code and celebrate the creations of the
-				Remotion community.
+				Picus community.
 			</p>
 			<p>
 				You too can add your creations to the showcase! Please read carefully
@@ -26,7 +26,7 @@ const PageHeader: React.FC = () => {
 					<li>Title: Max 80 characters, no emojis, no CAPS text</li>
 					<li>
 						Description: Max 280 characters, use descriptive and neutral
-						language, focusing on how Remotion was used for your project. To
+						language, focusing on how Picus was used for your project. To
 						plug your project, use the links section.
 					</li>
 					<li>
@@ -69,7 +69,7 @@ const PageHeader: React.FC = () => {
 			<h2>How to submit</h2>
 			<ol>
 				<li>
-					<a href="https://showcase-upload.remotion.dev/" target="_blank">
+					<a href="https://showcase-upload.picus.dev/" target="_blank">
 						Click here
 					</a>{' '}
 					to upload your video.

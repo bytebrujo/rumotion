@@ -1,5 +1,5 @@
-import {RenderInternals} from '@remotion/renderer';
-import type {LogLevel} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {makeHyperlink} from '../../hyperlinks/make-link';
 
 let warnedAboutPrettier = false;

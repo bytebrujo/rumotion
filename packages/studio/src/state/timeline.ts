@@ -1,4 +1,4 @@
-const localStorageKey = (id: string) => `remotion.editor.timelineFlex.${id}`;
+const localStorageKey = (id: string) => `picus.editor.timelineFlex.${id}`;
 
 const persistTimelineFlex = (value: number, id: string) => {
 	localStorage.setItem(localStorageKey(id), String(value));

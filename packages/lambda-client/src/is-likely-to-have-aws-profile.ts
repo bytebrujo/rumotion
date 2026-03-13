@@ -39,7 +39,7 @@ const pathOfCredentialsFile = () => {
 
 export const isLikelyToHaveAwsProfile = (): boolean => {
 	// Supabase uses Deno and does not support readFile
-	// https://github.com/remotion-dev/remotion/issues/4844
+	// https://github.com/picus-dev/picus/issues/4844
 	if (typeof Deno !== 'undefined') {
 		return false;
 	}

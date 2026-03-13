@@ -1,30 +1,30 @@
-import {getRemotionEnvironment} from 'remotion';
+import {getPicusEnvironment} from 'picus';
 import type {StaticFile} from './get-static-files';
 import {watchPublicFolder} from './watch-public-folder';
 
 type WatcherCallback = (newData: StaticFile | null) => void;
 
-export type WatchRemotionStaticFilesPayload = {
+export type WatchPicusStaticFilesPayload = {
 	files: StaticFile[];
 };
 
 /*
- * @description Watches for changes in a specific static file and invokes a callback function when the file changes, enabling dynamic updates in your Remotion projects.
- * @see [Documentation](https://www.remotion.dev/docs/studio/watch-static-file)
+ * @description Watches for changes in a specific static file and invokes a callback function when the file changes, enabling dynamic updates in your Picus projects.
+ * @see [Documentation](https://www.picus.dev/docs/studio/watch-static-file)
  */
 export const watchStaticFile = (
 	fileName: string,
 	callback: WatcherCallback,
 ): {cancel: () => void} => {
-	if (!getRemotionEnvironment().isStudio) {
+	if (!getPicusEnvironment().isStudio) {
 		// eslint-disable-next-line no-console
 		console.warn(
-			'watchStaticFile() is only available while using the Remotion Studio.',
+			'watchStaticFile() is only available while using the Picus Studio.',
 		);
 		return {cancel: () => undefined};
 	}
 
-	if (window.remotion_isReadOnlyStudio) {
+	if (window.picus_isReadOnlyStudio) {
 		// eslint-disable-next-line no-console
 		console.warn(
 			'watchStaticFile() is only available in an interactive Studio.',
@@ -32,14 +32,14 @@ export const watchStaticFile = (
 		return {cancel: () => undefined};
 	}
 
-	const withoutStaticBase = fileName.startsWith(window.remotion_staticBase)
-		? fileName.replace(window.remotion_staticBase, '')
+	const withoutStaticBase = fileName.startsWith(window.picus_staticBase)
+		? fileName.replace(window.picus_staticBase, '')
 		: fileName;
 	const withoutLeadingSlash = withoutStaticBase.startsWith('/')
 		? withoutStaticBase.slice(1)
 		: withoutStaticBase;
 
-	let prevFileData = window.remotion_staticFiles.find(
+	let prevFileData = window.picus_staticFiles.find(
 		(file: StaticFile) => file.name === withoutLeadingSlash,
 	);
 

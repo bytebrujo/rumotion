@@ -1,4 +1,4 @@
-import {getAvailableFonts} from '@remotion/google-fonts';
+import {getAvailableFonts} from '@picus/google-fonts';
 import sortBy from 'lodash.sortby';
 import prettier from 'prettier';
 
@@ -30,11 +30,11 @@ const topFonts = sortBy(
 );
 
 const availableFonts = getAvailableFonts();
-const remotionList = topFonts.map((t) => {
+const picusList = topFonts.map((t) => {
 	const {importName} = availableFonts.find((f) => f.fontFamily === t.family);
-	return `{family: "${t.family}", load: () => import("@remotion/google-fonts/${importName}") as Promise<GoogleFont>},`;
+	return `{family: "${t.family}", load: () => import("@picus/google-fonts/${importName}") as Promise<GoogleFont>},`;
 });
-const js = `import type {GoogleFont} from '@remotion/google-fonts';\n\nexport const top${amount} = [${remotionList.join(
+const js = `import type {GoogleFont} from '@picus/google-fonts';\n\nexport const top${amount} = [${picusList.join(
 	'',
 )}]`;
 const prettified = await prettier.format(js, {

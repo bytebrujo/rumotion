@@ -1,4 +1,4 @@
-import type {VideoConfig} from 'remotion/no-react';
+import type {VideoConfig} from 'picus/no-react';
 import type {ServerlessRoutines} from './constants';
 import type {GenericRenderProgress} from './render-progress';
 import type {CloudProvider} from './types';

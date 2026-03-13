@@ -1,5 +1,5 @@
 import {beforeAll, expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -30,7 +30,7 @@ test('mp4-av1', async () => {
 					samples++;
 				};
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 
 	expect(samples).toBe(1185);

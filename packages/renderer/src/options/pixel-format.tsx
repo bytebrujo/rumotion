@@ -1,6 +1,6 @@
 import type {PixelFormat} from '../pixel-format';
 import {DEFAULT_PIXEL_FORMAT, validPixelFormats} from '../pixel-format';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentPixelFormat: PixelFormat = DEFAULT_PIXEL_FORMAT;
 
@@ -19,7 +19,7 @@ export const pixelFormatOption = {
 		</>
 	),
 	ssrName: 'pixelFormat' as const,
-	docLink: 'https://www.remotion.dev/docs/config#setpixelformat',
+	docLink: 'https://www.picus.dev/docs/config#setpixelformat',
 	type: DEFAULT_PIXEL_FORMAT as PixelFormat,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -49,4 +49,4 @@ export const pixelFormatOption = {
 		currentPixelFormat = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<PixelFormat>;
+} satisfies AnyPicusOption<PixelFormat>;

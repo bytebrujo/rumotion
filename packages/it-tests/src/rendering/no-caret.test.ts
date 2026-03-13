@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import fs from 'fs';
 import path from 'path';
 
-test('Should not have carets in Remotion versions', async () => {
+test('Should not have carets in Picus versions', async () => {
 	const packagesDir = path.join(process.cwd(), '..');
 	const packages = await fs.promises.readdir(packagesDir);
 	for (const pkg of packages) {
@@ -24,10 +24,10 @@ test('Should not have carets in Remotion versions', async () => {
 		if (!json.dependencies) {
 			continue;
 		}
-		const remotionDeps = Object.keys(json.dependencies).filter(
-			(j) => j === 'remotion' || j.startsWith('@remotion'),
+		const picusDeps = Object.keys(json.dependencies).filter(
+			(j) => j === 'picus' || j.startsWith('@picus'),
 		);
-		for (const dep of remotionDeps) {
+		for (const dep of picusDeps) {
 			const val = json.dependencies[dep];
 			if (val.includes('^')) {
 				throw new Error(`package ${pkg} has dep ${dep} version ${val}`);

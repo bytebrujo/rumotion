@@ -52,7 +52,7 @@ export const TimelineContextProvider: React.FC<{
 
 	const [playbackRate, setPlaybackRate] = useState(1);
 	const audioAndVideoTags = useRef<PlayableMediaTag[]>([]);
-	const [remotionRootId] = useState(() => String(random(null)));
+	const [picusRootId] = useState(() => String(random(null)));
 	const [_frame, setFrame] = useState<Record<string, number>>(() =>
 		getInitialFrameState(),
 	);
@@ -64,14 +64,14 @@ export const TimelineContextProvider: React.FC<{
 	if (typeof window !== 'undefined') {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		useLayoutEffect(() => {
-			window.remotion_setFrame = (f: number, composition: string, attempt) => {
-				window.remotion_attempt = attempt;
+			window.picus_setFrame = (f: number, composition: string, attempt) => {
+				window.picus_attempt = attempt;
 				const id = delayRender(`Setting the current frame to ${f}`);
 
 				let asyncUpdate = true;
 
 				setFrame((s) => {
-					const currentFrame = s[composition] ?? window.remotion_initialFrame;
+					const currentFrame = s[composition] ?? window.picus_initialFrame;
 					// Avoid cloning the object
 					if (currentFrame === f) {
 						asyncUpdate = false;
@@ -92,7 +92,7 @@ export const TimelineContextProvider: React.FC<{
 				}
 			};
 
-			window.remotion_isPlayer = false;
+			window.picus_isPlayer = false;
 		}, [continueRender, delayRender]);
 	}
 
@@ -101,12 +101,12 @@ export const TimelineContextProvider: React.FC<{
 			frame,
 			playing,
 			imperativePlaying,
-			rootId: remotionRootId,
+			rootId: picusRootId,
 			playbackRate,
 			setPlaybackRate,
 			audioAndVideoTags,
 		};
-	}, [frame, playbackRate, playing, remotionRootId]);
+	}, [frame, playbackRate, playing, picusRootId]);
 
 	const setTimelineContextValue = useMemo((): SetTimelineContextValue => {
 		return {

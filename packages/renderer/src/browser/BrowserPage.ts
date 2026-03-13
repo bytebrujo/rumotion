@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {BrowserLog} from '../browser-log';
 import {formatRemoteObject} from '../format-logs';
 import type {LogLevel} from '../log-level';
@@ -94,23 +94,23 @@ const format = (
 ) => {
 	const previewString = args
 		.filter(
-			(a) => !(a.type === 'symbol' && a.description?.includes(`__remotion_`)),
+			(a) => !(a.type === 'symbol' && a.description?.includes(`__picus_`)),
 		)
 		.map((a) => formatRemoteObject(a))
 		.filter(Boolean)
 		.join(' ');
 
-	let logLevelFromRemotionLog: LogLevel | null = null;
+	let logLevelFromPicusLog: LogLevel | null = null;
 	let tag: string | null = null;
 
 	for (const a of args) {
-		if (a.type === 'symbol' && a.description?.includes(`__remotion_level_`)) {
-			logLevelFromRemotionLog = a.description
-				?.split('__remotion_level_')?.[1]
+		if (a.type === 'symbol' && a.description?.includes(`__picus_level_`)) {
+			logLevelFromPicusLog = a.description
+				?.split('__picus_level_')?.[1]
 				?.replace(')', '') as LogLevel;
 		}
-		if (a.type === 'symbol' && a.description?.includes(`__remotion_tag_`)) {
-			tag = a.description?.split('__remotion_tag_')?.[1]?.replace(')', '');
+		if (a.type === 'symbol' && a.description?.includes(`__picus_tag_`)) {
+			tag = a.description?.split('__picus_tag_')?.[1]?.replace(')', '');
 		}
 	}
 
@@ -123,7 +123,7 @@ const format = (
 					? 'warn'
 					: 'verbose';
 
-	return {previewString, logLevelFromRemotionLog, logLevelFromEvent, tag};
+	return {previewString, logLevelFromPicusLog, logLevelFromEvent, tag};
 };
 
 export type OnLog = ({
@@ -395,7 +395,7 @@ export class Page extends EventEmitter {
 			});
 		}
 
-		const {previewString, logLevelFromRemotionLog, logLevelFromEvent, tag} =
+		const {previewString, logLevelFromPicusLog, logLevelFromEvent, tag} =
 			format(level, args ?? []);
 
 		if (source !== 'worker') {
@@ -405,7 +405,7 @@ export class Page extends EventEmitter {
 				args: [],
 				stackTraceLocations: [{url, lineNumber}],
 				previewString,
-				logLevel: logLevelFromRemotionLog ?? logLevelFromEvent,
+				logLevel: logLevelFromPicusLog ?? logLevelFromEvent,
 				tag,
 			});
 			this.onBrowserLog?.({
@@ -561,9 +561,9 @@ export class Page extends EventEmitter {
 			}
 		}
 
-		const {previewString, logLevelFromRemotionLog, logLevelFromEvent, tag} =
+		const {previewString, logLevelFromPicusLog, logLevelFromEvent, tag} =
 			format(eventType, args.map((a) => a._remoteObject) ?? []);
-		const logLevel = (logLevelFromRemotionLog as LogLevel) ?? logLevelFromEvent;
+		const logLevel = (logLevelFromPicusLog as LogLevel) ?? logLevelFromEvent;
 
 		const message = new ConsoleMessage({
 			type: eventType,

@@ -2,9 +2,9 @@ import {
   createSmoothSvgPath,
   useWindowedAudioData,
   visualizeAudioWaveform,
-} from "@remotion/media-utils";
+} from "@picus/media-utils";
 import React from "react";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig } from "picus";
 
 const height = 120;
 const container: React.CSSProperties = {

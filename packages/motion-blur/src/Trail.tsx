@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Freeze, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Freeze, useCurrentFrame} from 'picus';
 
 export type TrailProps = {
 	readonly children: React.ReactNode;
@@ -10,7 +10,7 @@ export type TrailProps = {
 
 /*
  * @description The <Trail> component duplicates its children and adds a time offset to each layer in order to create a trail effect.
- * @see [Documentation](https://www.remotion.dev/docs/motion-blur/trail)
+ * @see [Documentation](https://www.picus.dev/docs/motion-blur/trail)
  */
 export const Trail: React.FC<TrailProps> = ({
 	children,

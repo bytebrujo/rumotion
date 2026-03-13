@@ -13,11 +13,11 @@ import type {
 	ToOptions,
 	VideoImageFormat,
 	WebhookOption,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	ServerlessRoutines,
 	wrapWithErrorHandling,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {awsImplementation, type AwsProvider} from './aws-provider';
 import {
 	getCloudwatchMethodUrl,
@@ -148,7 +148,7 @@ export const internalRenderMediaOnLambdaRaw = async (
 	} catch (err) {
 		if ((err as Error).stack?.includes('UnrecognizedClientException')) {
 			throw new Error(
-				'UnrecognizedClientException: The AWS credentials provided were probably mixed up. Learn how to fix this issue here: https://remotion.dev/docs/lambda/troubleshooting/unrecognizedclientexception',
+				'UnrecognizedClientException: The AWS credentials provided were probably mixed up. Learn how to fix this issue here: https://picus.dev/docs/lambda/troubleshooting/unrecognizedclientexception',
 			);
 		}
 
@@ -221,8 +221,8 @@ export const renderMediaOnLambdaOptionalToRequired = (
 const wrapped = wrapWithErrorHandling(internalRenderMediaOnLambdaRaw);
 
 /*
- * @description Kicks off a render process on Remotion Lambda. The progress can be tracked using getRenderProgress().
- * @see [Documentation](https://remotion.dev/docs/lambda/rendermediaonlambda)
+ * @description Kicks off a render process on Picus Lambda. The progress can be tracked using getRenderProgress().
+ * @see [Documentation](https://picus.dev/docs/lambda/rendermediaonlambda)
  */
 export const renderMediaOnLambda = (
 	options: RenderMediaOnLambdaInput,

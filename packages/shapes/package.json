@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/shapes"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/shapes"
 	},
-	"name": "@remotion/shapes",
+	"name": "@picus/shapes",
 	"version": "4.0.434",
 	"description": "Generate SVG shapes",
 	"main": "dist/index.js",
@@ -16,10 +16,10 @@
 	},
 	"types": "dist/index.d.ts",
 	"module": "dist/esm/index.mjs",
-	"author": "Alex Fernandez, Jonny Burger <jonny@remotion.dev>",
+	"author": "Alex Fernandez, Jonny Burger <jonny@picus.dev>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"exports": {
 		"./package.json": "./package.json",
@@ -35,7 +35,7 @@
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"@happy-dom/global-registrator": "14.5.1",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
@@ -52,7 +52,7 @@
 		"react-dom": ">=16.8.0"
 	},
 	"dependencies": {
-		"@remotion/paths": "workspace:*"
+		"@picus/paths": "workspace:*"
 	},
-	"homepage": "https://www.remotion.dev/docs/shapes"
+	"homepage": "https://www.picus.dev/docs/shapes"
 }

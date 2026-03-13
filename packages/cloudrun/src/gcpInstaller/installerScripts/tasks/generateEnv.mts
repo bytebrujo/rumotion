@@ -8,7 +8,7 @@ export async function generateEnv(projectID: string) {
 	 * Generate .env file
 	 ****************************************/
 
-	const gloudSAKeyCmd = `gcloud iam service-accounts keys list --iam-account=remotion-sa@${projectID}.iam.gserviceaccount.com --format json | 
+	const gloudSAKeyCmd = `gcloud iam service-accounts keys list --iam-account=picus-sa@${projectID}.iam.gserviceaccount.com --format json | 
 	jq -r '.[] | select(.keyType != "SYSTEM_MANAGED") | "\\(.name | split("/") | last) \\(.validAfterTime) \\(.validBeforeTime) \\(.keyOrigin)"'`;
 
 	function countKeys() {
@@ -67,7 +67,7 @@ export async function generateEnv(projectID: string) {
 
 					rl.close();
 					execSync(
-						`gcloud iam service-accounts keys delete ${answer.trim()} --iam-account=remotion-sa@${projectID}.iam.gserviceaccount.com`,
+						`gcloud iam service-accounts keys delete ${answer.trim()} --iam-account=picus-sa@${projectID}.iam.gserviceaccount.com`,
 						{stdio: 'inherit'},
 					);
 
@@ -93,7 +93,7 @@ export async function generateEnv(projectID: string) {
 		);
 
 		execSync(
-			`echo "You should delete any of these keys that are no longer in use for ${colorCode.blueText}remotion-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText}:"`,
+			`echo "You should delete any of these keys that are no longer in use for ${colorCode.blueText}picus-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText}:"`,
 			{
 				stdio: 'inherit',
 			},
@@ -113,7 +113,7 @@ export async function generateEnv(projectID: string) {
 	// generate key.json file
 	try {
 		execSync(
-			`gcloud iam service-accounts keys create key.json --iam-account=remotion-sa@${projectID}.iam.gserviceaccount.com`,
+			`gcloud iam service-accounts keys create key.json --iam-account=picus-sa@${projectID}.iam.gserviceaccount.com`,
 			{stdio: 'inherit'},
 		);
 	} catch (e) {
@@ -126,7 +126,7 @@ export async function generateEnv(projectID: string) {
 
 	// generate .env file
 	execSync(
-		`echo "REMOTION_GCP_PRIVATE_KEY=$(jq '.private_key' key.json)" >> .env && echo "REMOTION_GCP_CLIENT_EMAIL=$(jq --raw-output '.client_email' key.json)" >> .env && echo "REMOTION_GCP_PROJECT_ID=${projectID}" >> .env`,
+		`echo "PICUS_GCP_PRIVATE_KEY=$(jq '.private_key' key.json)" >> .env && echo "PICUS_GCP_CLIENT_EMAIL=$(jq --raw-output '.client_email' key.json)" >> .env && echo "PICUS_GCP_PROJECT_ID=${projectID}" >> .env`,
 		{stdio: 'inherit'},
 	);
 

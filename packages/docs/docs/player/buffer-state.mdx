@@ -11,13 +11,13 @@ _available from 4.0.111_
 Just like regular video players, it is possible that the content being displayed in the Player is not yet fully loaded.  
 In this case, the best practice is to briefly pause the video, let the content load and then resume playback.
 
-Remotion has a native buffer state, which can be used to pause the video when the buffer is empty.
+Picus has a native buffer state, which can be used to pause the video when the buffer is empty.
 
 ## TL;DR
 
 You can add a `pauseWhenBuffering` prop to your [`<Html5Video>`](/docs/html5-video/#pausewhenbuffering), [`<OffthreadVideo>`](/docs/offthreadvideo/#pausewhenbuffering), [`<Html5Audio>`](/docs/html5-audio/#pausewhenbuffering) tags.  
 The prop is called `pauseWhenLoading` for [`<Img>`](/docs/img/#pausewhenloading) tags.  
-For [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio) from [`@remotion/media`](/docs/media), the buffer state is enabled by default.
+For [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio) from [`@picus/media`](/docs/media), the buffer state is enabled by default.
 By doing so, the Player will briefly pause until your media is loaded.
 
 ## Mechanism
@@ -28,7 +28,7 @@ A component can tell the player to switch into a buffer state by first using the
 
 ```tsx twoslash title="MyComp.tsx"
 import React from 'react';
-import {useBufferState} from 'remotion';
+import {useBufferState} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();
@@ -61,7 +61,7 @@ Use the cleanup function of <code>useEffect()</code> to clear the handle when yo
 
 ```tsx twoslash title="❌ Causes problems with React strict mode"
 import React, {useState} from 'react';
-import {useBufferState} from 'remotion';
+import {useBufferState} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();
@@ -85,7 +85,7 @@ While the following implementation works in production, it fails in React Strict
 
 ```tsx twoslash title="❌ Doesn't clear the buffer handle when seeking to a different portion of a video"
 import React, {useState} from 'react';
-import {useBufferState} from 'remotion';
+import {useBufferState} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();
@@ -114,7 +114,7 @@ If you are loading data, you might want to delay the screenshotting of your comp
 
 ```tsx twoslash title="Using delayRender() and delayPlayback() together"
 import React from 'react';
-import {useBufferState, delayRender, continueRender} from 'remotion';
+import {useBufferState, delayRender, continueRender} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();
@@ -154,7 +154,7 @@ Only in state <InlineStep>1</InlineStep> the time moves forward.
 
 ---
 
-By default, Remotion will display the following UI based on the state of the player:
+By default, Picus will display the following UI based on the state of the player:
 
 <p>
   When in State <InlineStep>1</InlineStep> a Pause button is shown. <br />
@@ -174,14 +174,14 @@ Once it resumes, it emits the `resume` event.
 
 ```tsx twoslash title="Listening to waiting and resume events"
 // @allowUmdGlobalAccess
-// @filename: ./remotion/MyVideo.tsx
+// @filename: ./picus/MyVideo.tsx
 export const MyVideo = () => <></>;
 
 // @filename: index.tsx
 // ---cut---
-import {Player, PlayerRef} from '@remotion/player';
+import {Player, PlayerRef} from '@picus/player';
 import {useEffect, useRef, useState} from 'react';
-import {MyVideo} from './remotion/MyVideo';
+import {MyVideo} from './picus/MyVideo';
 
 export const App: React.FC = () => {
   const playerRef = useRef<PlayerRef>(null);
@@ -232,14 +232,14 @@ You may customize the timeout of `300` milliseconds by passing the [`bufferState
 
 ```tsx twoslash title="Setting the delay until the spinner is shown"
 // @allowUmdGlobalAccess
-// @filename: ./remotion/MyVideo.tsx
+// @filename: ./picus/MyVideo.tsx
 export const MyVideo = () => <></>;
 
 // @filename: index.tsx
 // ---cut---
-import {Player, PlayerRef} from '@remotion/player';
+import {Player, PlayerRef} from '@picus/player';
 import {useEffect, useRef, useState} from 'react';
-import {MyVideo} from './remotion/MyVideo';
+import {MyVideo} from './picus/MyVideo';
 
 export const App: React.FC = () => {
   return (
@@ -257,8 +257,8 @@ export const App: React.FC = () => {
 
 In the Studio, you can change the delay in the [config file](/docs/config#setbufferstatedelayinmilliseconds):
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
 
 Config.setBufferStateDelayInMilliseconds(0);
 ```
@@ -271,7 +271,7 @@ const MyPauseButton: React.FC = () => null;
 const MySpinner: React.FC = () => null;
 const MyVideo: React.FC = () => null;
 // ---cut---
-import {Player, RenderPlayPauseButton} from '@remotion/player';
+import {Player, RenderPlayPauseButton} from '@picus/player';
 import {useCallback} from 'react';
 
 export const App: React.FC = () => {
@@ -291,15 +291,15 @@ To display a loading UI layered on top of the Player (e.g. a spinner), you can s
 
 ```tsx twoslash title="Rendering a custom spinner on top of the Player"
 import {useCallback} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Component: React.FC = () => null;
 const Spinner: React.FC = () => null;
 
 // ---cut---
 
-import type {RenderPoster} from '@remotion/player';
-import {Player} from '@remotion/player';
+import type {RenderPoster} from '@picus/player';
+import {Player} from '@picus/player';
 
 const MyApp: React.FC = () => {
   const renderPoster: RenderPoster = useCallback(({isBuffering}) => {
@@ -318,11 +318,11 @@ const MyApp: React.FC = () => {
 };
 ```
 
-## Upcoming changes in Remotion 5.0
+## Upcoming changes in Picus 5.0
 
-In Remotion 4.0, the tags `<Html5Audio>`, `<Html5Video>`, `<OffthreadVideo>` will need to opt-in to use the buffer state.
+In Picus 4.0, the tags `<Html5Audio>`, `<Html5Video>`, `<OffthreadVideo>` will need to opt-in to use the buffer state.
 
-In Remotion 5.0, it is planned that `<Html5Audio>`, `<Html5Video>` and `<OffthreadVideo>` will automatically use the buffer state, but they can opt out of it.
+In Picus 5.0, it is planned that `<Html5Audio>`, `<Html5Video>` and `<OffthreadVideo>` will automatically use the buffer state, but they can opt out of it.
 
 ## See also
 

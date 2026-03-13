@@ -1,4 +1,4 @@
-import {NoReactAPIs} from '@remotion/renderer/pure';
+import {NoReactAPIs} from '@picus/renderer/pure';
 import type {RenderMetadata} from './render-metadata';
 import type {CloudProvider} from './types';
 

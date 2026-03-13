@@ -2,7 +2,7 @@ import type {
 	CloudProvider,
 	OutNameInput,
 	OutNameInputWithoutCredentials,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 
 export const removeOutnameCredentials = <Provider extends CloudProvider>(
 	outname: OutNameInput<Provider> | undefined,

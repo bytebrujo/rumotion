@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/motion-blur"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/motion-blur"
 	},
-	"name": "@remotion/motion-blur",
+	"name": "@picus/motion-blur",
 	"version": "4.0.434",
-	"description": "Motion blur effect for Remotion",
+	"description": "Motion blur effect for Picus",
 	"main": "dist/cjs/index.js",
 	"types": "dist/cjs/index.d.ts",
 	"module": "dist/esm/index.mjs",
@@ -15,14 +15,14 @@
 		"lint": "eslint src",
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Matt McGillivray, Ilija Boshkov <ilija@codechem.com>, Jonny Burger <jonny@remotion.dev>",
+	"author": "Matt McGillivray, Ilija Boshkov <ilija@codechem.com>, Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.0",
@@ -40,18 +40,18 @@
 	"devDependencies": {
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"remotion": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"picus": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"motion",
 		"blur"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/motion-blur"
+	"homepage": "https://www.picus.dev/docs/motion-blur"
 }

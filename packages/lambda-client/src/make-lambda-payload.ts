@@ -20,7 +20,7 @@ import type {
 	VideoImageFormat,
 	WebhookOption,
 	X264Preset,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	compressInputProps,
 	ENABLE_V5_BREAKING_CHANGES,
@@ -29,8 +29,8 @@ import {
 	ServerlessRoutines,
 	validateDownloadBehavior,
 	VERSION,
-} from '@remotion/serverless-client';
-import {validateWebhook} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {validateWebhook} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
 import {awsImplementation} from './aws-provider';
 import type {GetRenderProgressInput} from './get-render-progress';

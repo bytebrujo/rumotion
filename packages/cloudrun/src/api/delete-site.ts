@@ -6,8 +6,8 @@ export type DeleteSiteInput = {
 };
 
 /*
- * @description Removes a Remotion project from your Cloud Storage bucket.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/deletesite)
+ * @description Removes a Picus project from your Cloud Storage bucket.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/deletesite)
  */
 export const deleteSite = ({
 	bucketName,

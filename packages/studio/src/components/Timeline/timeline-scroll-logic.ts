@@ -1,4 +1,4 @@
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 import {TIMELINE_PADDING} from '../../helpers/timeline-layout';
 import {scrollableRef} from './timeline-refs';
 import {redrawTimelineSliderFast} from './TimelineSlider';

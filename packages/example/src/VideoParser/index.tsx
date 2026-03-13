@@ -1,7 +1,7 @@
-import {parseMedia} from '@remotion/media-parser';
-import {getVideoMetadata} from '@remotion/media-utils';
+import {parseMedia} from '@picus/media-parser';
+import {getVideoMetadata} from '@picus/media-utils';
 import {useEffect} from 'react';
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
 const src = staticFile('blush-2x.mp4');
 
@@ -16,7 +16,7 @@ export const VideoParser: React.FC = () => {
 			},
 		}).then(({durationInSeconds, dimensions}) => {
 			console.log(
-				'@remotion/media-parser',
+				'@picus/media-parser',
 				durationInSeconds,
 				dimensions,
 				'in ',

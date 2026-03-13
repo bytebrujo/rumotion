@@ -302,7 +302,7 @@ function waitForWSEndpoint({
 						'Failed to launch the browser process!',
 						error ? error.stack : null,
 						stdioString,
-						'Troubleshooting: https://remotion.dev/docs/troubleshooting/browser-launch',
+						'Troubleshooting: https://picus.dev/docs/troubleshooting/browser-launch',
 					]
 						.filter(truthy)
 						.join('\n'),

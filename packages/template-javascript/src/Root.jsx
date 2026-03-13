@@ -1,15 +1,15 @@
-import { Composition } from "remotion";
+import { Composition } from "picus";
 import { HelloWorld } from "./HelloWorld";
 import { Logo } from "./HelloWorld/Logo";
 
 // Each <Composition> is an entry in the sidebar!
 
-export const RemotionRoot = () => {
+export const PicusRoot = () => {
   return (
     <>
       <Composition
         // You can take the "id" to render a video:
-        // npx remotion render HelloWorld
+        // npx picus render HelloWorld
         id="HelloWorld"
         component={HelloWorld}
         durationInFrames={150}
@@ -17,9 +17,9 @@ export const RemotionRoot = () => {
         width={1920}
         height={1080}
         // You can override these props for each render:
-        // https://www.remotion.dev/docs/parametrized-rendering
+        // https://www.picus.dev/docs/parametrized-rendering
         defaultProps={{
-          titleText: "Welcome to Remotion",
+          titleText: "Welcome to Picus",
           titleColor: "black",
         }}
       />

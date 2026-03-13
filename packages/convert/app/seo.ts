@@ -118,7 +118,7 @@ export const getHeaderTitle = (routeAction: RouteAction) => {
 	}
 
 	if (routeAction.type === 'report') {
-		return `Report bad videos to Remotion`;
+		return `Report bad videos to Picus`;
 	}
 
 	if (routeAction.type === 'transcribe') {
@@ -126,7 +126,7 @@ export const getHeaderTitle = (routeAction: RouteAction) => {
 	}
 
 	if (routeAction.type === 'timing-editor') {
-		return 'Remotion Timing Editor';
+		return 'Picus Timing Editor';
 	}
 
 	if (routeAction.type === 'generic-crop') {
@@ -142,59 +142,59 @@ export const getHeaderTitle = (routeAction: RouteAction) => {
 
 export const getPageTitle = (routeAction: RouteAction) => {
 	if (routeAction.type === 'generic-convert') {
-		return 'Remotion Convert - Fast video conversion in the browser';
+		return 'Picus Convert - Fast video conversion in the browser';
 	}
 
 	if (routeAction.type === 'convert') {
-		return `Online ${renderHumanReadableContainer(routeAction.input)} to ${renderHumanReadableContainer(routeAction.output)} converter - Remotion Convert`;
+		return `Online ${renderHumanReadableContainer(routeAction.input)} to ${renderHumanReadableContainer(routeAction.output)} converter - Picus Convert`;
 	}
 
 	if (routeAction.type === 'generic-probe') {
-		return 'Online Video Metadata Viewer - Remotion Convert';
+		return 'Online Video Metadata Viewer - Picus Convert';
 	}
 
 	if (routeAction.type === 'generic-rotate') {
-		return 'Online Video Rotation - Remotion Convert';
+		return 'Online Video Rotation - Picus Convert';
 	}
 
 	if (routeAction.type === 'generic-mirror') {
-		return 'Online Video Mirrorer - Remotion Convert';
+		return 'Online Video Mirrorer - Picus Convert';
 	}
 
 	if (routeAction.type === 'rotate-format') {
-		return `Online ${renderHumanReadableContainer(routeAction.format)} Rotator - Remotion Convert`;
+		return `Online ${renderHumanReadableContainer(routeAction.format)} Rotator - Picus Convert`;
 	}
 
 	if (routeAction.type === 'mirror-format') {
-		return `Online ${renderHumanReadableContainer(routeAction.format)} Mirrorer - Remotion Convert`;
+		return `Online ${renderHumanReadableContainer(routeAction.format)} Mirrorer - Picus Convert`;
 	}
 
 	if (routeAction.type === 'generic-resize') {
-		return 'Online Video Resizer - Remotion Convert';
+		return 'Online Video Resizer - Picus Convert';
 	}
 
 	if (routeAction.type === 'resize-format') {
-		return `Online ${renderHumanReadableContainer(routeAction.format)} Resizer - Remotion Convert`;
+		return `Online ${renderHumanReadableContainer(routeAction.format)} Resizer - Picus Convert`;
 	}
 
 	if (routeAction.type === 'report') {
-		return `Report bad videos to Remotion`;
+		return `Report bad videos to Picus`;
 	}
 
 	if (routeAction.type === 'transcribe') {
-		return `Online Audio and Video Transcriber - Remotion Convert`;
+		return `Online Audio and Video Transcriber - Picus Convert`;
 	}
 
 	if (routeAction.type === 'timing-editor') {
-		return `Remotion Timing Editor - Springs, easing, interpolation, and more`;
+		return `Picus Timing Editor - Springs, easing, interpolation, and more`;
 	}
 
 	if (routeAction.type === 'generic-crop') {
-		return 'Online Video Cropper - Remotion Convert';
+		return 'Online Video Cropper - Picus Convert';
 	}
 
 	if (routeAction.type === 'crop-format') {
-		return `Online ${renderHumanReadableContainer(routeAction.format)} Cropper - Remotion Convert`;
+		return `Online ${renderHumanReadableContainer(routeAction.format)} Cropper - Picus Convert`;
 	}
 
 	throw new Error(`Invalid route action ${routeAction satisfies never}`);
@@ -244,7 +244,7 @@ export const getDescription = (routeAction: RouteAction) => {
 	}
 
 	if (routeAction.type === 'report') {
-		return `Report bad videos to Remotion. We will investigate and fix them.`;
+		return `Report bad videos to Picus. We will investigate and fix them.`;
 	}
 
 	if (routeAction.type === 'transcribe') {

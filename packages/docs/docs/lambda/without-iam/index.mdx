@@ -7,7 +7,7 @@ crumb: 'Lambda without IAM'
 
 import {UserPolicy} from '../../../components/lambda/user-permissions.tsx';
 
-As documented on the [`Permissions page`](/docs/lambda/permissions), the default way of using Remotion Lambda involves creating a Remotion user and assign it policies.
+As documented on the [`Permissions page`](/docs/lambda/permissions), the default way of using Picus Lambda involves creating a Picus user and assign it policies.
 
 These policies give permission to Lambda to render a video with [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda). These credentials are considered long-term which is less secure and are disallowed in some companies.
 
@@ -34,11 +34,11 @@ The steps below provide authorization for the Lambda function to execute `render
 - Click on JSON
 - Copy the JSON policy template below:
   <details>
-    <summary>Show full role permissions JSON file for latest Remotion Lambda version</summary>
+    <summary>Show full role permissions JSON file for latest Picus Lambda version</summary>
     <UserPolicy />
   </details>
 - Click next. On the tags page, you don't need to fill in anything. Click next again.
-- Give the policy the name `remotion-executionrole-policy`. The other fields can be left as they are.
+- Give the policy the name `picus-executionrole-policy`. The other fields can be left as they are.
 
 ### 2. Assign the policy to the Lambda execution role
 
@@ -52,13 +52,13 @@ The steps below provide authorization for the Lambda function to execute `render
   - When redirected, click "Permissions" tab
   - Click on `Add permissions`
   - Attach policy
-  - Find the policy, i.e. `remotion-executionrole-policy`
+  - Find the policy, i.e. `picus-executionrole-policy`
   - Select the policy
   - Click the `Attach policies` button.
 
 With the assignment of the `policy` to the Lambda execution role, it is now empowered to execute the [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda) API without permission issues.
 
-In the background, when the Lambda function is executed, it is provided with environment variables such as `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN` that has temporary permission to AWS resources that `renderMediaOnLambda()` requires to render the video. The elevated powers come from the policy statements in `remotion-executionrole-policy`.
+In the background, when the Lambda function is executed, it is provided with environment variables such as `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN` that has temporary permission to AWS resources that `renderMediaOnLambda()` requires to render the video. The elevated powers come from the policy statements in `picus-executionrole-policy`.
 
 :::note
 This procedure can be also applied to other AWS compute services such as `EC2`, `Fargate` etc..
@@ -73,13 +73,13 @@ Optionally, if you want to move the video to another S3 bucket after it is rende
 Use the `outName` property to select a different bucket. See: [Custom output destination](/docs/lambda/custom-destination)
 
 ```ts twoslash title="my-function.ts"
-import {renderMediaOnLambda} from '@remotion/lambda/client';
+import {renderMediaOnLambda} from '@picus/lambda/client';
 
 const {bucketName, renderId} = await renderMediaOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
+  functionName: 'picus-render-bds9aab',
   composition: 'MyVideo',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   codec: 'h264',
   outName: {
     key: 'my-output',

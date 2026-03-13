@@ -3,7 +3,7 @@ image: /generated/articles-docs-media-parser-seeking-hints.png
 id: seeking-hints
 title: Seeking Hints
 slug: /media-parser/seeking-hints
-crumb: '@remotion/media-parser'
+crumb: '@picus/media-parser'
 ---
 
 :::warning
@@ -23,7 +23,7 @@ Seeking hints are produced from previous [`parseMedia()`](/docs/media-parser/par
 To get seeking hints, you can call [`getSeekingHints()`](/docs/media-parser/media-parser-controller#getseekinghints) on the controller.
 
 ```tsx twoslash title="Getting seeking hints"
-import {mediaParserController, parseMedia} from '@remotion/media-parser';
+import {mediaParserController, parseMedia} from '@picus/media-parser';
 
 const controller = mediaParserController();
 
@@ -46,7 +46,7 @@ const hints = await controller.getSeekingHints();
 Once you have obtained seeking hints from a previous parse, you can pass them to a new [`parseMedia()`](/docs/media-parser/parse-media), [`parseMediaOnWebWorker()`](/docs/media-parser/parse-media-on-web-worker), [`parseMediaOnServerWorker()`](/docs/media-parser/parse-media-on-server-worker), [`downloadAndParseMedia()`](/docs/media-parser/download-and-parse-media) or [`convertMedia()`](/docs/webcodecs/convert-media) call.
 
 ```tsx twoslash title="Using seeking hints from a previous parse"
-import {parseMedia, mediaParserController} from '@remotion/media-parser';
+import {parseMedia, mediaParserController} from '@picus/media-parser';
 
 const controller = mediaParserController();
 const seekingHints = await controller.getSeekingHints();

@@ -41,7 +41,7 @@ export const isFlakyError = (err: Error): boolean => {
 		return true;
 	}
 
-	// https://github.com/remotion-dev/remotion/issues/2742
+	// https://github.com/picus-dev/picus/issues/2742
 	if (message.includes('while trying to connect to the browser')) {
 		return true;
 	}

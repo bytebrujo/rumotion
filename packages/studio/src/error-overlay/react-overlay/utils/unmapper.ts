@@ -13,8 +13,8 @@ import type {
 	SomeStackFrame,
 	StackFrame,
 	SymbolicatedStackFrame,
-} from '@remotion/studio-shared';
-import {Internals} from 'remotion';
+} from '@picus/studio-shared';
+import {Internals} from 'picus';
 import type {SourceMapConsumer} from 'source-map';
 import {getLinesAround} from './get-lines-around';
 import {getOriginalPosition, getSourceMap} from './get-source-map';

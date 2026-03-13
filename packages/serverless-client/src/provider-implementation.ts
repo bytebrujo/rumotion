@@ -1,6 +1,6 @@
 import type {Readable} from 'node:stream';
-import type {LogLevel} from '@remotion/renderer';
-import type {DownloadBehavior} from 'remotion';
+import type {LogLevel} from '@picus/renderer';
+import type {DownloadBehavior} from 'picus';
 import type {CustomCredentials, Privacy, ServerlessRoutines} from './constants';
 import type {RenderMetadata} from './render-metadata';
 import type {ServerlessReturnValues} from './return-values';

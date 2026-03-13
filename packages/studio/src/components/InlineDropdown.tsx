@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import {useCallback, useMemo, useRef, useState} from 'react';
 import ReactDOM from 'react-dom';
 import {useMobileLayout} from '../helpers/mobile-layout';

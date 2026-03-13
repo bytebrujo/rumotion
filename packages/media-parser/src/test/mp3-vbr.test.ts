@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
@@ -7,7 +7,7 @@ test('mp3 info section path', async () => {
 	const {durationInSeconds, internalStats} = await parseMedia({
 		src: exampleVideos.mp3infosection,
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			durationInSeconds: true,
 			internalStats: true,
@@ -22,7 +22,7 @@ test('mp3 info section slow path', async () => {
 	const {slowDurationInSeconds, internalStats} = await parseMedia({
 		src: exampleVideos.mp3infosection,
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			internalStats: true,
 			slowDurationInSeconds: true,

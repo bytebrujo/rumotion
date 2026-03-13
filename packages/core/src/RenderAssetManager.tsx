@@ -63,7 +63,7 @@ export const RenderAssetManagerProvider: React.FC<{
 
 	useLayoutEffect(() => {
 		if (typeof window !== 'undefined') {
-			window.remotion_collectAssets = () => {
+			window.picus_collectAssets = () => {
 				const assets = renderAssetsRef.current;
 				renderAssetsRef.current = [];
 				setRenderAssets([]);

@@ -30,7 +30,7 @@ export const isIosSafari = () => {
 	return isIpadIPodIPhone && isSafari();
 };
 
-// https://github.com/remotion-dev/remotion/issues/1655
+// https://github.com/picus-dev/picus/issues/1655
 const isIOSSafariAndBlob = (actualSrc: string) => {
 	return isIosSafari() && actualSrc.startsWith('blob:');
 };

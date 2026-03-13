@@ -13,7 +13,7 @@ Let's create a simple fade in animation.
 If we want to fade the text in over 60 frames, we need to gradually change the `opacity` over time so that it goes from 0 to 1.
 
 ```tsx twoslash {4, 15} title="FadeIn.tsx"
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, useCurrentFrame } from "picus";
 // ---cut---
 export const FadeIn = () => {
   const frame = useCurrentFrame();
@@ -42,10 +42,10 @@ export const FadeIn = () => {
 Using the [`interpolate()`](/docs/interpolate) function can make animations more readable. The above animation can also be written as:
 
 ```tsx twoslash
-import { useCurrentFrame } from "remotion";
+import { useCurrentFrame } from "picus";
 const frame = useCurrentFrame();
 // ---cut---
-import { interpolate } from "remotion";
+import { interpolate } from "picus";
 
 const opacity = interpolate(frame, [0, 60], [0, 1], {
   /*                        ^^^^^   ^^^^^    ^^^^
@@ -63,7 +63,7 @@ In this example, we map the frames 0 to 60 to their opacity values `(0, 0.0166, 
 Spring animations are a natural animation primitive. By default, they animate from 0 to 1 over time. This time, let's animate the scale of the text.
 
 ```tsx twoslash {7-12, 20}
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig } from "picus";
 
 export const MyVideo = () => {
   const frame = useCurrentFrame();
@@ -99,4 +99,4 @@ The default spring configuration leads to a little bit of overshoot, meaning the
 
 Watch out for flickering issues during rendering that arise if you write animations that are not driven by [`useCurrentFrame()`](/docs/use-current-frame) – for example CSS transitions.
 
-[Read more about how Remotion's rendering works](/docs/flickering) - understanding it will help you avoid issues down the road.
+[Read more about how Picus's rendering works](/docs/flickering) - understanding it will help you avoid issues down the road.

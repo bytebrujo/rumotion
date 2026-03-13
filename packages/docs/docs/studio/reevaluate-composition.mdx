@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-studio-reevaluate-composition.png
 title: reevaluateComposition()
-crumb: "@remotion/studio"
+crumb: "@picus/studio"
 ---
 
 # reevaluateComposition()<AvailableFrom v="4.0.167"/>
@@ -18,7 +18,7 @@ This is useful if the function relies on:
 
 ```tsx twoslash title="Re-run calculateMetadata() on the currently selected composition"
 import React, { useCallback } from "react";
-import { reevaluateComposition } from "@remotion/studio";
+import { reevaluateComposition } from "@picus/studio";
 
 export const ReevaluateCompositionComp: React.FC = () => {
   const reevaluate = useCallback(async () => {
@@ -33,5 +33,5 @@ export const ReevaluateCompositionComp: React.FC = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/studio/src/api/reevaluate-composition.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/studio/src/api/reevaluate-composition.ts)
 - [`calculateMetadata()`](/docs/calculate-metadata)

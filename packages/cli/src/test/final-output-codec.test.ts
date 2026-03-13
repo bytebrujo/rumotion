@@ -1,6 +1,6 @@
 import {describe, expect, test} from 'bun:test';
-import type {Codec, CodecOrUndefined} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {Codec, CodecOrUndefined} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 
 const {videoCodecOption} = BrowserSafeApis.options;
 

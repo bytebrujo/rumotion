@@ -1,7 +1,7 @@
-import type {GitSource} from '@remotion/studio-shared';
-import {SOURCE_MAP_ENDPOINT} from '@remotion/studio-shared';
+import type {GitSource} from '@picus/studio-shared';
+import {SOURCE_MAP_ENDPOINT} from '@picus/studio-shared';
 import React, {useCallback, useContext, useMemo, useState} from 'react';
-import type {TSequence} from 'remotion';
+import type {TSequence} from 'picus';
 import {SourceMapConsumer} from 'source-map';
 import type {OriginalPosition} from '../../../error-overlay/react-overlay/utils/get-source-map';
 import {StudioServerConnectionCtx} from '../../../helpers/client-id';
@@ -20,7 +20,7 @@ import {Spinner} from '../../Spinner';
 import {getOriginalSourceAttribution} from './source-attribution';
 
 const publicPath =
-	window.remotion_publicPath === '/' ? '' : window.remotion_publicPath;
+	window.picus_publicPath === '/' ? '' : window.picus_publicPath;
 
 const withoutSlashInTheEnd = publicPath.endsWith('/')
 	? publicPath.slice(0, -1)
@@ -49,13 +49,13 @@ export const TimelineStack: React.FC<{
 			return null;
 		}
 
-		const isStatic = sequence.src.startsWith(window.remotion_staticBase);
+		const isStatic = sequence.src.startsWith(window.picus_staticBase);
 		if (!isStatic) {
 			return null;
 		}
 
 		const relativePath = sequence.src.replace(
-			window.remotion_staticBase + '/',
+			window.picus_staticBase + '/',
 			'',
 		);
 		return relativePath;
@@ -70,7 +70,7 @@ export const TimelineStack: React.FC<{
 	);
 
 	const openEditor = useCallback(async (location: OriginalPosition) => {
-		if (!window.remotion_editorName) {
+		if (!window.picus_editorName) {
 			return;
 		}
 
@@ -85,11 +85,11 @@ export const TimelineStack: React.FC<{
 	}, []);
 
 	const canOpenInEditor =
-		window.remotion_editorName &&
+		window.picus_editorName &&
 		connectionStatus === 'connected' &&
 		originalLocation;
 
-	const canOpenInGitHub = window.remotion_gitSource && originalLocation;
+	const canOpenInGitHub = window.picus_gitSource && originalLocation;
 
 	const titleHoverable =
 		(isCompact && (canOpenInEditor || canOpenInGitHub)) || assetPath;
@@ -116,7 +116,7 @@ export const TimelineStack: React.FC<{
 
 		if (canOpenInGitHub) {
 			window.open(
-				getGitRefUrl(window.remotion_gitSource as GitSource, originalLocation),
+				getGitRefUrl(window.picus_gitSource as GitSource, originalLocation),
 				'_blank',
 			);
 		}
@@ -142,7 +142,7 @@ export const TimelineStack: React.FC<{
 
 		if (canOpenInGitHub) {
 			window.open(
-				getGitRefUrl(window.remotion_gitSource as GitSource, originalLocation),
+				getGitRefUrl(window.picus_gitSource as GitSource, originalLocation),
 				'_blank',
 			);
 		}

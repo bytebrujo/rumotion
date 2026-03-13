@@ -1,4 +1,4 @@
-import {AbsoluteFill, Html5Audio, Series, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, Series, staticFile} from 'picus';
 import music from '../resources/sound1.mp3';
 
 export const ComplexSounds: React.FC = () => {

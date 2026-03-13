@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {EditorShowRulersContext} from '../../state/editor-rulers';
 
 export const useIsRulerVisible = () => {

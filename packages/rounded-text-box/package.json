@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/rounded-text-box"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/rounded-text-box"
 	},
-	"name": "@remotion/rounded-text-box",
+	"name": "@picus/rounded-text-box",
 	"version": "4.0.434",
 	"description": "Create a TikTok-like multiline text box SVG path with rounded corners",
 	"main": "dist/cjs/index.js",
@@ -25,29 +25,29 @@
 		}
 	},
 	"dependencies": {
-		"@remotion/layout-utils": "workspace:*",
-		"@remotion/paths": "workspace:*"
+		"@picus/layout-utils": "workspace:*",
+		"@picus/paths": "workspace:*"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"maintainers": [
-		"Jonny Burger <jonny@remotion.dev>"
+		"Jonny Burger <jonny@picus.dev>"
 	],
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"svg"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/rounded-text-box"
+	"homepage": "https://www.picus.dev/docs/rounded-text-box"
 }

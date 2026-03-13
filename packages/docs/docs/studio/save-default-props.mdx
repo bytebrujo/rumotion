@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-studio-save-default-props.png
 title: saveDefaultProps()
-crumb: "@remotion/studio"
+crumb: "@picus/studio"
 ---
 
 # saveDefaultProps()<AvailableFrom v="4.0.147"/>
@@ -13,7 +13,7 @@ If you just want to update the default props in the Props Editor (right sidebar 
 
 ```tsx twoslash title="Saving {color: 'green'} to Root.tsx"
 // @target: esnext
-import { saveDefaultProps } from "@remotion/studio";
+import { saveDefaultProps } from "@picus/studio";
 
 await saveDefaultProps({
   compositionId: "my-composition",
@@ -29,7 +29,7 @@ You can access the saved default props to only override part of it (reducer-styl
 
 ```tsx twoslash title="Accessing the saved default props"
 // @target: esnext
-import { saveDefaultProps } from "@remotion/studio";
+import { saveDefaultProps } from "@picus/studio";
 
 await saveDefaultProps({
   compositionId: "my-composition",
@@ -46,7 +46,7 @@ If you modified props in the Props Editor (right sidebar in the Studio), you can
 
 ```tsx twoslash title="Save props from the Props Editor"
 // @target: esnext
-import { saveDefaultProps } from "@remotion/studio";
+import { saveDefaultProps } from "@picus/studio";
 
 await saveDefaultProps({
   compositionId: "my-composition",
@@ -60,7 +60,7 @@ If you have a Zod schema, you can also access its runtime value:
 
 ```tsx twoslash title="Save props from the Props Editor"
 // @target: esnext
-import { saveDefaultProps } from "@remotion/studio";
+import { saveDefaultProps } from "@picus/studio";
 
 await saveDefaultProps({
   compositionId: "my-composition",
@@ -79,7 +79,7 @@ await saveDefaultProps({
 
 In order to use this function:
 
-<Step>1</Step> You need to be inside the Remotion Studio.
+<Step>1</Step> You need to be inside the Picus Studio.
 <br />
 <Step>2</Step> The Studio must be running (no static deployment)
 <br />
@@ -91,4 +91,4 @@ Otherwise, the function will throw.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/studio/src/api/save-default-props.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/studio/src/api/save-default-props.ts)

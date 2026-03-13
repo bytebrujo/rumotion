@@ -1,6 +1,6 @@
-import type {ChromiumOptions, LogLevel} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {NoReactInternals} from 'remotion/no-react';
+import type {ChromiumOptions, LogLevel} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {NoReactInternals} from 'picus/no-react';
 import {registerCleanupJob} from './cleanup-before-quit';
 import {getRendererPortFromConfigFileAndCliFlag} from './config/preview-server';
 import {convertEntryPointToServeUrl} from './convert-entry-point-to-serve-url';
@@ -44,7 +44,7 @@ const {
 } = BrowserSafeApis.options;
 
 export const still = async (
-	remotionRoot: string,
+	picusRoot: string,
 	args: string[],
 	logLevel: LogLevel,
 ) => {
@@ -52,7 +52,7 @@ export const still = async (
 		file,
 		remainingArgs,
 		reason: entryPointReason,
-	} = findEntryPoint({args, remotionRoot, logLevel, allowDirectory: true});
+	} = findEntryPoint({args, picusRoot, logLevel, allowDirectory: true});
 
 	if (!file) {
 		Log.error(
@@ -61,11 +61,11 @@ export const still = async (
 		);
 		Log.error(
 			{indent: false, logLevel},
-			'   npx remotion render [entry-point] [composition-name] [out-name]',
+			'   npx picus render [entry-point] [composition-name] [out-name]',
 		);
 		Log.error(
 			{indent: false, logLevel},
-			'Documentation: https://www.remotion.dev/docs/render',
+			'Documentation: https://www.picus.dev/docs/render',
 		);
 		process.exit(1);
 	}
@@ -75,7 +75,7 @@ export const still = async (
 	if (parsedCli.frames) {
 		Log.error(
 			{indent: false, logLevel},
-			'--frames flag was passed to the `still` command. This flag only works with the `render` command. Did you mean `--frame`? See reference: https://www.remotion.dev/docs/cli/',
+			'--frames flag was passed to the `still` command. This flag only works with the `render` command. Did you mean `--frame`? See reference: https://www.picus.dev/docs/cli/',
 		);
 		process.exit(1);
 	}
@@ -173,7 +173,7 @@ export const still = async (
 	};
 
 	await renderStillFlow({
-		remotionRoot,
+		picusRoot,
 		entryPointReason,
 		fullEntryPoint,
 		remainingArgs,

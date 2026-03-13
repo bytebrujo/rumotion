@@ -3,7 +3,7 @@ import path from 'path';
 import type {
 	DeleteStaticFileRequest,
 	DeleteStaticFileResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import type {ApiHandler} from '../api-types';
 
 export const deleteStaticFileHandler: ApiHandler<

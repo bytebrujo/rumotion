@@ -7,7 +7,7 @@ cd ../dockerfiles
 # Build the browser-test bundle from packages/example
 echo "Building browser-test bundle..."
 cd ../example
-bunx remotion bundle src/browser-test-entry.ts --out-dir ../dockerfiles/bundle
+bunx picus bundle src/browser-test-entry.ts --out-dir ../dockerfiles/bundle
 cd ../dockerfiles
 
 echo "Bundle created at packages/dockerfiles/bundle"
@@ -43,15 +43,15 @@ build_and_extract() {
 
 # x86 (amd64) emulation builds - useful for testing on ARM machines
 
-build_and_extract Dockerfile.ubuntu24 remotion-ubuntu24-x86 ubuntu24-x86.mp4 linux/amd64
-build_and_extract Dockerfile.ubuntu22 remotion-ubuntu22-x86 ubuntu22-x86.mp4 linux/amd64
-build_and_extract Dockerfile.debian remotion-debian-x86 debian-x86.mp4 linux/amd64
+build_and_extract Dockerfile.ubuntu24 picus-ubuntu24-x86 ubuntu24-x86.mp4 linux/amd64
+build_and_extract Dockerfile.ubuntu22 picus-ubuntu22-x86 ubuntu22-x86.mp4 linux/amd64
+build_and_extract Dockerfile.debian picus-debian-x86 debian-x86.mp4 linux/amd64
 
-# build_and_extract Dockerfile.al2023 remotion-al2023 al2023.mp4
-build_and_extract Dockerfile.ubuntu24 remotion-ubuntu24 ubuntu24.mp4
-build_and_extract Dockerfile.ubuntu22 remotion-ubuntu22 ubuntu22.mp4
-build_and_extract Dockerfile.debian remotion-debian debian.mp4
-# build_and_extract Dockerfile.nix remotion-nix nix.mp4
+# build_and_extract Dockerfile.al2023 picus-al2023 al2023.mp4
+build_and_extract Dockerfile.ubuntu24 picus-ubuntu24 ubuntu24.mp4
+build_and_extract Dockerfile.ubuntu22 picus-ubuntu22 ubuntu22.mp4
+build_and_extract Dockerfile.debian picus-debian debian.mp4
+# build_and_extract Dockerfile.nix picus-nix nix.mp4
 
 
 

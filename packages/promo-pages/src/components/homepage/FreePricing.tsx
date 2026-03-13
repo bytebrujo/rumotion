@@ -1,4 +1,4 @@
-import {Switch} from '@remotion/design';
+import {Switch} from '@picus/design';
 import React, {useCallback, useMemo} from 'react';
 import {cn} from '../../cn';
 import {InfoTooltip} from './InfoTooltip';
@@ -151,7 +151,7 @@ export const FreePricing: React.FC = () => {
 				>
 					<a
 						target="_blank"
-						href="https://www.remotion.dev/docs"
+						href="https://www.picus.dev/docs"
 						className="font-brand text-brand flex flex-row items-center gap-1 no-underline"
 					>
 						No sign up needed - get started{' '}
@@ -187,7 +187,7 @@ export const EnterpriseLicense: React.FC = () => {
 				text={
 					<span>
 						<a
-							href="https://www.remotion.dev/editor-starter"
+							href="https://www.picus.dev/editor-starter"
 							className="underline underline-offset-4 text-inherit"
 						>
 							Editor Starter
@@ -211,7 +211,7 @@ export const EnterpriseLicense: React.FC = () => {
 								'cursor-pointer no-underline text-inherit hover:text-brand'
 							}
 							target={'_blank'}
-							href="https://www.remotion.pro/contact"
+							href="https://www.picus.pro/contact"
 						>
 							Contact us
 						</a>
@@ -313,11 +313,11 @@ export const CompanyPricing: React.FC = () => {
 			</PricingBulletPoint>
 			<div style={{height: 30}} />
 
-			{/* Remotion for Creators Section */}
+			{/* Picus for Creators Section */}
 			<SectionCheckbox
 				checked={creatorsSelected}
 				onChange={setCreatorsSelected}
-				title="Remotion for Creators"
+				title="Picus for Creators"
 				subtitle="Create videos for yourself - $25/mo per seat"
 			>
 				<InfoTooltip>
@@ -368,11 +368,11 @@ export const CompanyPricing: React.FC = () => {
 
 			<div className="h-6" />
 
-			{/* Remotion for Automators Section */}
+			{/* Picus for Automators Section */}
 			<SectionCheckbox
 				checked={automatorsSelected}
 				onChange={setAutomatorsSelected}
-				title="Remotion for Automators"
+				title="Picus for Automators"
 				subtitle="Build video creation tools - $0.01 per render, $100/mo minimum"
 			>
 				<InfoTooltip>
@@ -433,7 +433,7 @@ export const CompanyPricing: React.FC = () => {
 						data-visible={showMinimumMessage}
 						className="opacity-0 data-[visible=true]:opacity-100 transition-opacity"
 					>
-						The minimum is $100 per month for Remotion for Automators
+						The minimum is $100 per month for Picus for Automators
 					</BottomInfo>
 					<BottomInfo
 						data-visible={showEnterpriseMessage}
@@ -444,7 +444,7 @@ export const CompanyPricing: React.FC = () => {
 						<a
 							className="bluelink"
 							target="_blank"
-							href="https://www.remotion.pro/contact"
+							href="https://www.picus.pro/contact"
 						>
 							contact us
 						</a>
@@ -460,7 +460,7 @@ export const CompanyPricing: React.FC = () => {
 					}}
 				>
 					<a
-						href="https://remotion.pro/dashboard"
+						href="https://picus.pro/dashboard"
 						className="font-brand text-brand flex flex-row items-center gap-1 no-underline"
 					>
 						Buy now{' '}

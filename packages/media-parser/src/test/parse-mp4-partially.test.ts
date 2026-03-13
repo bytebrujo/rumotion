@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -13,7 +13,7 @@ test('Should be able to parse only header of MP4', async () => {
 			internalStats: true,
 			mimeType: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -37,7 +37,7 @@ test('Should be able to parse only tracks of MP4', async () => {
 			mimeType: true,
 			keyframes: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -72,7 +72,7 @@ test('Should read the whole file', async () => {
 		onAudioTrack: () => {
 			return () => {};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 

@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export const validChromeModeOptions = [
 	'headless-shell',
@@ -26,14 +26,14 @@ export const chromeModeOption = {
 					</code>
 				))}
 				. Default <code>headless-shell</code>.{' '}
-				<a href="https://remotion.dev/docs/miscellaneous/chrome-headless-shell">
+				<a href="https://picus.dev/docs/miscellaneous/chrome-headless-shell">
 					Use <code>chrome-for-testing</code> to take advantage of GPU drivers
 					on Linux.
 				</a>
 			</>
 		);
 	},
-	docLink: 'https://www.remotion.dev/chrome-for-testing',
+	docLink: 'https://www.picus.dev/chrome-for-testing',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag]) {
 			if (
@@ -69,4 +69,4 @@ export const chromeModeOption = {
 	},
 	type: 'headless-shell' as ChromeMode,
 	id: cliFlag,
-} satisfies AnyRemotionOption<ChromeMode>;
+} satisfies AnyPicusOption<ChromeMode>;

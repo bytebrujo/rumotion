@@ -9,7 +9,7 @@ import {
 	translateY,
 	translateZ,
 	Vector4D,
-} from '@remotion/svg-3d-engine';
+} from '@picus/svg-3d-engine';
 import React, {useContext, useMemo} from 'react';
 
 type Context = MatrixTransform4D;

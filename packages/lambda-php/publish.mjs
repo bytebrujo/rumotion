@@ -9,7 +9,7 @@ import {
 } from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 
 const tmpDir = tmpdir();
 
@@ -21,7 +21,7 @@ mkdirSync(workingDir);
 console.log(tmpDir);
 
 execSync(
-	`git clone git@github.com:remotion-dev/lambda-php-sdk.git ${workingDir}`,
+	`git clone git@github.com:picus-dev/lambda-php-sdk.git ${workingDir}`,
 	{
 		cwd: tmpDir,
 	},
@@ -33,14 +33,14 @@ cpSync('src', path.join(workingDir, 'src'), {recursive: true});
 writeFileSync(
 	path.join(workingDir, 'README.md'),
 	[
-		'# Remotion Lambda PHP SDK',
+		'# Picus Lambda PHP SDK',
 		'This repository exists because Composer packages need to have a composer.json file placed in the root of the repository.',
-		'The actual source code is located in the [Remotion repository](https://remotion.dev/github).',
-		'This repository is automatically updated when a new version of Remotion is released.',
+		'The actual source code is located in the [Picus repository](https://picus.dev/github).',
+		'This repository is automatically updated when a new version of Picus is released.',
 		'Do not open issues or pull requests here.',
 		'',
 		'## Installation',
-		'Visit https://www.remotion.dev/docs/lambda/php to learn how to install the Remotion Lambda PHP SDK.',
+		'Visit https://www.picus.dev/docs/lambda/php to learn how to install the Picus Lambda PHP SDK.',
 	].join('\n'),
 );
 execSync('git add .', {cwd: workingDir, stdio: 'inherit'});

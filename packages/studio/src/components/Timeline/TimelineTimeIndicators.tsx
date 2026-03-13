@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useMemo, useRef} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {
 	BACKGROUND,
 	LIGHT_TEXT,

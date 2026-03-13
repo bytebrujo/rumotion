@@ -17,13 +17,13 @@ if (!hasPython()) {
 }
 
 const commands = [
-	'python -m venv remotion-env-lint',
-	'. ./remotion-env-lint/bin/activate',
+	'python -m venv picus-env-lint',
+	'. ./picus-env-lint/bin/activate',
 	"pip install boto3 pylint mypy 'boto3-stubs[essential]'",
-	'pylint ./remotion_lambda',
-	'mypy ./remotion_lambda',
+	'pylint ./picus_lambda',
+	'mypy ./picus_lambda',
 	'deactivate',
-	'rm -rf remotion-env-lint',
+	'rm -rf picus-env-lint',
 ];
 
 execSync(commands.join(' && '), {

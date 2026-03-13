@@ -1,6 +1,6 @@
-import {fillTextBox, measureText} from '@remotion/layout-utils';
+import {fillTextBox, measureText} from '@picus/layout-utils';
 import React from 'react';
-import {SpringConfig, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {SpringConfig, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 export const Title: React.FC<{
 	readonly line1: string;

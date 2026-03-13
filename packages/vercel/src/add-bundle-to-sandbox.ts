@@ -1,9 +1,9 @@
 import {readdir, readFile} from 'fs/promises';
 import path from 'path';
 import type {Sandbox} from '@vercel/sandbox';
-import {REMOTION_SANDBOX_BUNDLE_DIR} from './internals/add-bundle';
+import {PICUS_SANDBOX_BUNDLE_DIR} from './internals/add-bundle';
 
-async function getRemotionBundleFiles(
+async function getPicusBundleFiles(
 	bundleDir: string,
 ): Promise<{path: string; content: Buffer}[]> {
 	const fullBundleDir = path.join(process.cwd(), bundleDir);
@@ -35,7 +35,7 @@ export async function addBundleToSandbox({
 	sandbox: Sandbox;
 	bundleDir: string;
 }): Promise<void> {
-	const bundleFiles = await getRemotionBundleFiles(bundleDir);
+	const bundleFiles = await getPicusBundleFiles(bundleDir);
 
 	const dirs = new Set<string>();
 	for (const file of bundleFiles) {
@@ -46,12 +46,12 @@ export async function addBundleToSandbox({
 	}
 
 	for (const dir of Array.from(dirs).sort()) {
-		await sandbox.mkDir(REMOTION_SANDBOX_BUNDLE_DIR + '/' + dir);
+		await sandbox.mkDir(PICUS_SANDBOX_BUNDLE_DIR + '/' + dir);
 	}
 
 	await sandbox.writeFiles(
 		bundleFiles.map((file) => ({
-			path: REMOTION_SANDBOX_BUNDLE_DIR + '/' + file.path,
+			path: PICUS_SANDBOX_BUNDLE_DIR + '/' + file.path,
 			content: file.content,
 		})),
 	);

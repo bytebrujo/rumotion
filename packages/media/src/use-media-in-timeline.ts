@@ -1,6 +1,6 @@
 import {useContext, useState, useEffect} from 'react';
-import type {LoopDisplay, SequenceControls} from 'remotion';
-import {Internals, useCurrentFrame, type VolumeProp} from 'remotion';
+import type {LoopDisplay, SequenceControls} from 'picus';
+import {Internals, useCurrentFrame, type VolumeProp} from 'picus';
 
 export const useMediaInTimeline = ({
 	volume,

@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import type {InternalState} from '../../internal-state';
 import type {ProcessNodeReturnValue} from '../process-node';
 import {processNode} from '../process-node';

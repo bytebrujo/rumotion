@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import '@remotion/design/register';
+@import '@picus/design/register';
 
 @plugin 'tailwindcss-animate';
 

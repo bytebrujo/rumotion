@@ -1,4 +1,4 @@
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 
 export type BackgroundKeepalive = {
 	waitForTick: () => Promise<void>;
@@ -37,7 +37,7 @@ export function createBackgroundKeepalive({
 
 	if (typeof Worker === 'undefined') {
 		Internals.Log.warn(
-			{logLevel, tag: '@remotion/web-renderer'},
+			{logLevel, tag: '@picus/web-renderer'},
 			'Web Workers not available. Rendering may pause when tab is backgrounded.',
 		);
 
@@ -65,7 +65,7 @@ export function createBackgroundKeepalive({
 
 	worker.onerror = (event) => {
 		Internals.Log.error(
-			{logLevel, tag: '@remotion/web-renderer'},
+			{logLevel, tag: '@picus/web-renderer'},
 			'Background keepalive worker encountered an error and will be terminated.',
 			event,
 		);

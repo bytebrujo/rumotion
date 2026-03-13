@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'binaries-directory' as const;
 
@@ -10,18 +10,18 @@ export const binariesDirectoryOption = {
 	description: () => (
 		<>
 			The directory where the platform-specific binaries and libraries that
-			Remotion needs are located. Those include an <code>ffmpeg</code> and{' '}
+			Picus needs are located. Those include an <code>ffmpeg</code> and{' '}
 			<code>ffprobe</code> binary, a Rust binary for various tasks, and various
 			shared libraries. If the value is set to <code>null</code>, which is the
 			default, then the path of a platform-specific package located at{' '}
-			<code>node_modules/@remotion/compositor-*</code> is selected.
+			<code>node_modules/@picus/compositor-*</code> is selected.
 			<br />
-			This option is useful in environments where Remotion is not officially
+			This option is useful in environments where Picus is not officially
 			supported to run like bundled serverless functions or Electron.
 		</>
 	),
 	ssrName: 'binariesDirectory' as const,
-	docLink: 'https://www.remotion.dev/docs/renderer',
+	docLink: 'https://www.picus.dev/docs/renderer',
 	type: '' as string | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -47,4 +47,4 @@ export const binariesDirectoryOption = {
 		currentDirectory = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

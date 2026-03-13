@@ -7,7 +7,7 @@ import React, {
 	useMemo,
 	useState,
 } from 'react';
-import {getInputProps, Internals} from 'remotion';
+import {getInputProps, Internals} from 'picus';
 import {FastRefreshContext} from './fast-refresh-context';
 
 type VideoConfigState =
@@ -57,7 +57,7 @@ export const ResolveCompositionConfigInStudio: React.FC<
 		(c) => c.id === currentRenderModalComposition,
 	);
 	const {props: allEditorProps} = useContext(Internals.EditorPropsContext);
-	const env = Internals.getRemotionEnvironment();
+	const env = Internals.getPicusEnvironment();
 
 	const inputProps = useMemo(() => {
 		return typeof window === 'undefined' || env.isPlayer
@@ -282,8 +282,8 @@ export const ResolveCompositionConfigInStudio: React.FC<
 
 	const shouldIgnoreUpdate =
 		typeof window !== 'undefined' &&
-		window.remotion_ignoreFastRefreshUpdate &&
-		fastRefreshes <= window.remotion_ignoreFastRefreshUpdate;
+		window.picus_ignoreFastRefreshUpdate &&
+		fastRefreshes <= window.picus_ignoreFastRefreshUpdate;
 
 	useEffect(() => {
 		if (shouldIgnoreUpdate) {

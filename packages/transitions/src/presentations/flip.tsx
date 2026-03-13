@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill, interpolate} from 'remotion';
+import {AbsoluteFill, interpolate} from 'picus';
 import type {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
@@ -86,7 +86,7 @@ const Flip: React.FC<TransitionPresentationComponentProps<FlipProps>> = ({
 };
 /*
  * @description A presentation where the exiting slide flips by 180 degrees, revealing the next slide on the back side.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/presentations/flip)
+ * @see [Documentation](https://www.picus.dev/docs/transitions/presentations/flip)
  */
 
 export const flip = (props?: FlipProps): TransitionPresentation<FlipProps> => {

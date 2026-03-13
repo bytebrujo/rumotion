@@ -4,7 +4,7 @@ export type ExtrapolateType = 'extend' | 'identity' | 'clamp' | 'wrap';
 
 /**
  * @description This function allows you to map a range of values to another with a concise syntax
- * @see [Documentation](https://www.remotion.dev/docs/interpolate)
+ * @see [Documentation](https://www.picus.dev/docs/interpolate)
  */
 
 export type EasingFunction = (input: number) => number;
@@ -116,7 +116,7 @@ function checkInfiniteRange(name: string, arr: readonly number[]) {
 
 /*
  * @description Allows you to map a range of values to another using a concise syntax.
- * @see [Documentation](https://remotion.dev/docs/interpolate)
+ * @see [Documentation](https://picus.dev/docs/interpolate)
  */
 export function interpolate(
 	input: number,

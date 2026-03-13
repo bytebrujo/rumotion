@@ -1,5 +1,5 @@
-import type {Caption, TikTokToken} from '@remotion/captions';
-import {createTikTokStyleCaptions} from '@remotion/captions';
+import type {Caption, TikTokToken} from '@picus/captions';
+import {createTikTokStyleCaptions} from '@picus/captions';
 import React, {useMemo} from 'react';
 import {
 	Sequence,
@@ -7,7 +7,7 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const Token: React.FC<{
 	readonly token: TikTokToken;

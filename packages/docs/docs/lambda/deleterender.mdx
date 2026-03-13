@@ -9,10 +9,10 @@ crumb: 'Lambda API'
 Deletes a rendered video, audio or still and its associated metada.
 
 ```ts twoslash
-import {deleteRender} from '@remotion/lambda';
+import {deleteRender} from '@picus/lambda';
 
 const {freedBytes} = await deleteRender({
-  bucketName: 'remotionlambda-r42fs9fk',
+  bucketName: 'picuslambda-r42fs9fk',
   region: 'us-east-1',
   renderId: '8hfxlw',
 });
@@ -54,4 +54,4 @@ The amount of bytes that were removed from the S3 bucket.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/delete-render.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/delete-render.ts)

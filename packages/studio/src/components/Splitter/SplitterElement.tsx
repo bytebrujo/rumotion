@@ -1,5 +1,5 @@
 import React, {useContext, useMemo} from 'react';
-import {interpolateColors, random} from 'remotion';
+import {interpolateColors, random} from 'picus';
 import {SplitterContext} from './SplitterContext';
 
 export const SplitterElement: React.FC<{

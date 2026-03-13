@@ -1,5 +1,5 @@
-import type {AudioCodec, Codec} from '@remotion/renderer';
-import {NoReactAPIs} from '@remotion/renderer/pure';
+import type {AudioCodec, Codec} from '@picus/renderer';
+import {NoReactAPIs} from '@picus/renderer/pure';
 import type {OutNameInputWithoutCredentials} from './constants';
 import {validateBucketName} from './validate-bucket-name';
 
@@ -43,7 +43,7 @@ export const validateOutname = ({
 			bucketName: outName.bucketName,
 			bucketNamePrefix,
 			options: {
-				mustStartWithRemotion: false,
+				mustStartWithPicus: false,
 			},
 		});
 		return;

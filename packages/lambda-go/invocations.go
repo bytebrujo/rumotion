@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/lambda"
 )
 
-func invokeRenderLambda(options RemotionOptions) (*RemotionRenderResponse, error) {
+func invokeRenderLambda(options PicusOptions) (*PicusRenderResponse, error) {
 
 	// Create a new AWS session
 	sess := session.Must(session.NewSessionWithOptions(session.Options{
@@ -44,7 +44,7 @@ func invokeRenderLambda(options RemotionOptions) (*RemotionRenderResponse, error
 	}
 
 	// Unmarshal response from Lambda function
-	var renderResponseOutput RemotionRenderResponse
+	var renderResponseOutput PicusRenderResponse
 
 	responseMarshallingError := json.Unmarshal(invocationResult.Payload, &renderResponseOutput)
 

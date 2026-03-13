@@ -1,7 +1,7 @@
-import {CliInternals} from '@remotion/cli';
-import {deleteFunction} from '@remotion/lambda-client';
-import {BINARY_NAME} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import {deleteFunction} from '@picus/lambda-client';
+import {BINARY_NAME} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
 import {getFunctionInfo} from '../../../api/get-function-info';
 import {getAwsRegion} from '../../get-aws-region';
 import {confirmCli} from '../../helpers/confirm';

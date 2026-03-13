@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'port' as const;
 
@@ -10,11 +10,11 @@ export const portOption = {
 	description: () => (
 		<>
 			Set a custom HTTP server port for the Studio or the render process. If not
-			defined, Remotion will try to find a free port.
+			defined, Picus will try to find a free port.
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setstudioport',
+	docLink: 'https://www.picus.dev/docs/config#setstudioport',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -40,4 +40,4 @@ export const portOption = {
 	},
 	type: 0 as number | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;

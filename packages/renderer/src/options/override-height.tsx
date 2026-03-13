@@ -1,5 +1,5 @@
 import {validateDimension} from '../validate';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentHeight: number | null = null;
 
@@ -10,7 +10,7 @@ export const overrideHeightOption = {
 	cliFlag,
 	description: () => <>Overrides the height of the composition.</>,
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#overrideheight',
+	docLink: 'https://www.picus.dev/docs/config#overrideheight',
 	type: null as number | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -40,4 +40,4 @@ export const overrideHeightOption = {
 		currentHeight = height;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;

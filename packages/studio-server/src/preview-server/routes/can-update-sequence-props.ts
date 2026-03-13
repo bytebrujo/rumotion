@@ -12,9 +12,9 @@ import type {
 import type {
 	CanUpdateSequencePropsResponse,
 	SequenceNodePath,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import * as recast from 'recast';
-import type {CanUpdateSequencePropStatus} from 'remotion';
+import type {CanUpdateSequencePropStatus} from 'picus';
 import {parseAst} from '../../codemods/parse-ast';
 
 type CanUpdatePropStatus = CanUpdateSequencePropStatus;
@@ -337,16 +337,16 @@ export const computeSequencePropsStatus = ({
 	fileName,
 	nodePath,
 	keys,
-	remotionRoot,
+	picusRoot,
 }: {
 	fileName: string;
 	nodePath: SequenceNodePath;
 	keys: string[];
-	remotionRoot: string;
+	picusRoot: string;
 }): CanUpdateSequencePropsResponse => {
 	try {
-		const absolutePath = path.resolve(remotionRoot, fileName);
-		const fileRelativeToRoot = path.relative(remotionRoot, absolutePath);
+		const absolutePath = path.resolve(picusRoot, fileName);
+		const fileRelativeToRoot = path.relative(picusRoot, absolutePath);
 		if (fileRelativeToRoot.startsWith('..')) {
 			throw new Error('Cannot read a file outside the project');
 		}
@@ -365,16 +365,16 @@ export const computeSequencePropsStatusByLine = ({
 	fileName,
 	line,
 	keys,
-	remotionRoot,
+	picusRoot,
 }: {
 	fileName: string;
 	line: number;
 	keys: string[];
-	remotionRoot: string;
+	picusRoot: string;
 }): CanUpdateSequencePropsResponse => {
 	try {
-		const absolutePath = path.resolve(remotionRoot, fileName);
-		const fileRelativeToRoot = path.relative(remotionRoot, absolutePath);
+		const absolutePath = path.resolve(picusRoot, fileName);
+		const fileRelativeToRoot = path.relative(picusRoot, absolutePath);
 		if (fileRelativeToRoot.startsWith('..')) {
 			throw new Error('Cannot read a file outside the project');
 		}
@@ -391,7 +391,7 @@ export const computeSequencePropsStatusByLine = ({
 			fileName,
 			nodePath: resolvedNodePath,
 			keys,
-			remotionRoot,
+			picusRoot,
 		});
 	} catch (err) {
 		return {

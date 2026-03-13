@@ -1,21 +1,21 @@
-import { Player } from "@remotion/player";
+import { Player } from "@picus/player";
 import { useMemo, useState } from "react";
 import {
   DURATION_IN_FRAMES,
   COMPOSITION_FPS,
   COMPOSITION_HEIGHT,
   COMPOSITION_WIDTH,
-} from "./remotion/constants.mjs";
+} from "./picus/constants.mjs";
 import "./app.css";
 import { z } from "zod";
-import { Main } from "./remotion/components/Main";
+import { Main } from "./picus/components/Main";
 import { RenderControls } from "./components/RenderControls";
 import { Spacing } from "./components/Spacing";
 import { Tips } from "./components/Tips";
-import { CompositionProps } from "./remotion/schemata";
+import { CompositionProps } from "./picus/schemata";
 
 export default function Index() {
-  const [text, setText] = useState("React Router + Remotion");
+  const [text, setText] = useState("React Router + Picus");
 
   const inputProps: z.infer<typeof CompositionProps> = useMemo(() => {
     return {

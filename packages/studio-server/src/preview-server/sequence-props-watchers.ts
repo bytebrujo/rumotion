@@ -2,7 +2,7 @@ import path from 'node:path';
 import type {
 	CanUpdateSequencePropsResponse,
 	SequenceNodePath,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import {installFileWatcher} from '../file-watcher';
 import {waitForLiveEventsListener} from './live-events';
 import {
@@ -30,23 +30,23 @@ export const subscribeToSequencePropsWatchers = ({
 	fileName,
 	line,
 	keys,
-	remotionRoot,
+	picusRoot,
 	clientId,
 }: {
 	fileName: string;
 	line: number;
 	keys: string[];
-	remotionRoot: string;
+	picusRoot: string;
 	clientId: string;
 }): CanUpdateSequencePropsResponse => {
-	const absolutePath = path.resolve(remotionRoot, fileName);
+	const absolutePath = path.resolve(picusRoot, fileName);
 
 	// Initial lookup by line+column to resolve the nodePath
 	const initialResult = computeSequencePropsStatusByLine({
 		fileName,
 		line,
 		keys,
-		remotionRoot,
+		picusRoot,
 	});
 
 	if (!initialResult.canUpdate) {
@@ -72,7 +72,7 @@ export const subscribeToSequencePropsWatchers = ({
 				fileName,
 				nodePath,
 				keys,
-				remotionRoot,
+				picusRoot,
 			});
 
 			waitForLiveEventsListener().then((listener) => {
@@ -98,15 +98,15 @@ export const subscribeToSequencePropsWatchers = ({
 export const unsubscribeFromSequencePropsWatchers = ({
 	fileName,
 	nodePath,
-	remotionRoot,
+	picusRoot,
 	clientId,
 }: {
 	fileName: string;
 	nodePath: SequenceNodePath;
-	remotionRoot: string;
+	picusRoot: string;
 	clientId: string;
 }) => {
-	const absolutePath = path.resolve(remotionRoot, fileName);
+	const absolutePath = path.resolve(picusRoot, fileName);
 	const watcherKey = makeWatcherKey({absolutePath, nodePath});
 
 	if (

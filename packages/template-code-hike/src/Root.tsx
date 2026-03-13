@@ -1,10 +1,10 @@
-import { Composition } from "remotion";
+import { Composition } from "picus";
 import { Main } from "./Main";
 
 import { calculateMetadata } from "./calculate-metadata/calculate-metadata";
 import { schema } from "./calculate-metadata/schema";
 
-export const RemotionRoot = () => {
+export const PicusRoot = () => {
   return (
     <Composition
       id="Main"

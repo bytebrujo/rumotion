@@ -8,7 +8,7 @@ import {
   toCaptions,
   type WhisperModel,
   type Language,
-} from "@remotion/install-whisper-cpp";
+} from "@picus/install-whisper-cpp";
 import { execSync } from "child_process";
 import * as readline from "readline";
 
@@ -73,7 +73,7 @@ async function transcribeAudio(options: TranscriptionOptions) {
 
   // Cut the audio starting from speech start time and convert to 16-bit WAV
   execSync(
-    `npx remotion ffmpeg -i "${options.audioPath}" -ss ${options.speechStartsAtSecond} -ar 16000 -ac 1 "${tempAudioForWhisper}" -y`,
+    `npx picus ffmpeg -i "${options.audioPath}" -ss ${options.speechStartsAtSecond} -ar 16000 -ac 1 "${tempAudioForWhisper}" -y`,
   );
 
   const whisperCppOutput = await transcribe({

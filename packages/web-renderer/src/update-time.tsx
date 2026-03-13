@@ -1,7 +1,7 @@
 import React, {useImperativeHandle, useState} from 'react';
 import {flushSync} from 'react-dom';
-import type {LogLevel} from 'remotion';
-import {Internals} from 'remotion';
+import type {LogLevel} from 'picus';
+import {Internals} from 'picus';
 
 export type TimeUpdaterRef = {
 	update: (frame: number) => void;
@@ -35,7 +35,7 @@ export const UpdateTime: React.FC<{
 	}));
 
 	return (
-		<Internals.RemotionRootContexts
+		<Internals.PicusRootContexts
 			visualModeEnabled={false}
 			audioEnabled={audioEnabled}
 			videoEnabled={videoEnabled}
@@ -47,6 +47,6 @@ export const UpdateTime: React.FC<{
 			}}
 		>
 			{children}
-		</Internals.RemotionRootContexts>
+		</Internals.PicusRootContexts>
 	);
 };

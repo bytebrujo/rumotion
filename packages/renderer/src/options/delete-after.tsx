@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export type DeleteAfter = '1-day' | '3-days' | '7-days' | '30-days';
 
@@ -20,7 +20,7 @@ export const deleteAfterOption = {
 		);
 	},
 	ssrName: 'deleteAfter' as const,
-	docLink: 'https://www.remotion.dev/docs/lambda/autodelete',
+	docLink: 'https://www.picus.dev/docs/lambda/autodelete',
 	type: '1-day' as DeleteAfter | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -46,4 +46,4 @@ export const deleteAfterOption = {
 		deleteAfter = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<DeleteAfter | null>;
+} satisfies AnyPicusOption<DeleteAfter | null>;

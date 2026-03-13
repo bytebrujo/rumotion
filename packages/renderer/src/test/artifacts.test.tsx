@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
 import React from 'react';
-import {Artifact, useCurrentFrame} from 'remotion';
+import {Artifact, useCurrentFrame} from 'picus';
 import {getAssetsForMarkup} from './get-assets-for-markup';
 
 const basicConfig = {

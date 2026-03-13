@@ -5,15 +5,15 @@ sidebar_label: Sound effects
 crumb: Audio
 ---
 
-You can add sound effects to your Remotion video using the [`<Audio>`](/docs/media/audio) tag.
+You can add sound effects to your Picus video using the [`<Audio>`](/docs/media/audio) tag.
 
-## Using `@remotion/sfx`
+## Using `@picus/sfx`
 
-The [`@remotion/sfx`](/docs/sfx) package provides a collection of ready-to-use sound effects:
+The [`@picus/sfx`](/docs/sfx) package provides a collection of ready-to-use sound effects:
 
 ```tsx twoslash title="MyComp.tsx"
-import {whoosh, whip} from '@remotion/sfx';
-import {Audio, Sequence} from 'remotion';
+import {whoosh, whip} from '@picus/sfx';
+import {Audio, Sequence} from 'picus';
 
 const MyVideo = () => {
   return (
@@ -33,13 +33,13 @@ See the [full list of available sounds](/docs/sfx).
 
 ## Using the CDN directly
 
-You can also use the [`remotion.media`](https://remotion.media/#category-sound-effects) CDN URLs directly without installing the package:
+You can also use the [`picus.media`](https://picus.media/#category-sound-effects) CDN URLs directly without installing the package:
 
 ```tsx twoslash title="MyComp.tsx"
-import {Audio} from 'remotion';
+import {Audio} from 'picus';
 
 const MyVideo = () => {
-  return <Audio src="https://remotion.media/whoosh.wav" />;
+  return <Audio src="https://picus.media/whoosh.wav" />;
 };
 ```
 
@@ -58,5 +58,5 @@ Want to add a new sound effect? See the [contributing guide](/docs/contributing/
 
 ## See also
 
-- [`@remotion/sfx`](/docs/sfx)
+- [`@picus/sfx`](/docs/sfx)
 - [Importing audio](/docs/audio/importing)

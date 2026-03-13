@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-lambda-cli-sites-rmall.png
 sidebar_label: rmall
-title: 'npx remotion lambda sites rmall'
+title: 'npx picus lambda sites rmall'
 slug: /lambda/cli/sites/rmall
 crumb: 'Lambda CLI Reference'
 ---
@@ -9,13 +9,13 @@ crumb: 'Lambda CLI Reference'
 Remove all sites in the selected AWS region.
 
 ```bash
-npx remotion lambda sites rmall
+npx picus lambda sites rmall
 ```
 
 <details>
   <summary>Example output</summary>
   <pre>
-    Site abcdef in bucket remotionlambda-gc1w0xbfzl (14.7 MB): Delete? (Y/n): Y
+    Site abcdef in bucket picuslambda-gc1w0xbfzl (14.7 MB): Delete? (Y/n): Y
     <br />
     Deleted sites/abcdef/052787b08233d85edebfc4ce4610944e.mp4
     <br />
@@ -117,12 +117,12 @@ The [AWS region](/docs/lambda/region-selection) to select. Both project and func
 Removes all sites without asking for confirmation.
 
 ```
-npx remotion lambda sites rmall -y
+npx picus lambda sites rmall -y
 ```
 
 ## `--force-bucket-name`<AvailableFrom v="3.3.42" />
 
-Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Remotion discover the right bucket automatically.
+Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Picus discover the right bucket automatically.
 
 ## `--force-path-style`<AvailableFrom v="4.0.202" />
 

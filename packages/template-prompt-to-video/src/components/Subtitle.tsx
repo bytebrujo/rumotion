@@ -4,7 +4,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 import { Word } from "./Word";
 
 const Subtitle: React.FC<{ text: string }> = ({ text }) => {

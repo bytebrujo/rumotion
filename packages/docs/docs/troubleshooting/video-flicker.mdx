@@ -9,7 +9,7 @@ crumb: 'Frame-perfection'
 Consider the following markup:
 
 ```tsx twoslash title="MyComponent.tsx"
-import {AbsoluteFill, Sequence, OffthreadVideo} from 'remotion';
+import {AbsoluteFill, Sequence, OffthreadVideo} from 'picus';
 
 const MyComponent: React.FC = () => {
   return (
@@ -25,26 +25,26 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-Since Remotion is only aware of the current frame, the video with the source `video2.mp4` will only start loading once it starts appearing in the scene. This can lead to an effect in the Player where some frames will be empty, since the loading of the video will usually not complete immediately.
+Since Picus is only aware of the current frame, the video with the source `video2.mp4` will only start loading once it starts appearing in the scene. This can lead to an effect in the Player where some frames will be empty, since the loading of the video will usually not complete immediately.
 
-This is a design tradeoff of Remotion, but can be fought with different levels of aggression.
+This is a design tradeoff of Picus, but can be fought with different levels of aggression.
 
 ## Strategies
 
 ### Option 1: Ignore
 
-This effect is only happening in the Remotion Studio and the Remotion Player, and will not appear in the rendered video. If you are only looking for a frame-perfect rendered video, you do not need to take additional steps.
+This effect is only happening in the Picus Studio and the Picus Player, and will not appear in the rendered video. If you are only looking for a frame-perfect rendered video, you do not need to take additional steps.
 
 ### Option 2: Pause the `<Player />` when media is buffering
 
-<strong style={{color: 'var(--ifm-color-primary)'}}>Recommended</strong>: This will become the default behavior in Remotion 5.0
+<strong style={{color: 'var(--ifm-color-primary)'}}>Recommended</strong>: This will become the default behavior in Picus 5.0
 
 You may want to pause the `<Player>` temporarily to allow loading of the assets and resume once the assets are ready for playback.
 
 You can do so by adding a `pauseWhenBuffering` prop to your [`<Html5Video>`](/docs/html5-video/#pausewhenbuffering), [`<OffthreadVideo>`](/docs/offthreadvideo/#pausewhenbuffering), [`<Html5Audio>`](/docs/html5-audio/#pausewhenbuffering) and [`<Img>`](/docs/img#pausewhenloading) tags. [Learn more about the buffer state.](/docs/player/buffer-state)
 
 :::note
-The `pauseWhenBuffering` prop is enabled by default for [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio) from [`@remotion/media`](/docs/media).
+The `pauseWhenBuffering` prop is enabled by default for [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio) from [`@picus/media`](/docs/media).
 :::
 
 ### Option 3: Premounting the video<AvailableFrom v="4.0.140"/>
@@ -96,7 +96,7 @@ Alternatively, the [`prefetch()`](/docs/prefetch) function allows to fetch an as
 
 - [Preloading assets](/docs/player/preloading)
 - [`prefetch()`](/docs/prefetch)
-- [`@remotion/preload` vs `prefetch()`](/docs/player/preloading#remotionpreload-vs-prefetch)
+- [`@picus/preload` vs `prefetch()`](/docs/player/preloading#picuspreload-vs-prefetch)
 - [`preloadVideo()`](/docs/preload/preload-video)
 - [Flickering (during rendering)](/docs/flickering)
 - [Premounting](/docs/player/premounting)

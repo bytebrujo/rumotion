@@ -1,8 +1,8 @@
 import type {
 	CloudProvider,
 	FunctionErrorInfo,
-} from '@remotion/serverless-client';
-import {errorIsOutOfSpaceError} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {errorIsOutOfSpaceError} from '@picus/serverless-client';
 import type {InsideFunctionSpecifics} from './provider-implementation';
 
 export const getTmpDirStateIfENoSp = <Provider extends CloudProvider>(

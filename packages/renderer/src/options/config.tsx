@@ -1,13 +1,13 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'config' as const;
 
 export const configOption = {
 	name: 'Config file',
 	cliFlag,
-	description: () => <>Specify a location for the Remotion config file.</>,
+	description: () => <>Specify a location for the Picus config file.</>,
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config',
+	docLink: 'https://www.picus.dev/docs/config',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -28,4 +28,4 @@ export const configOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

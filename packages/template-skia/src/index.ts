@@ -1,8 +1,8 @@
 import { LoadSkia } from "@shopify/react-native-skia/src/web";
-import { registerRoot } from "remotion";
+import { registerRoot } from "picus";
 
 (async () => {
   await LoadSkia();
-  const { RemotionRoot } = await import("./Root");
-  registerRoot(RemotionRoot);
+  const { PicusRoot } = await import("./Root");
+  registerRoot(PicusRoot);
 })();

@@ -8,7 +8,7 @@ export const TableOfContents: React.FC = () => {
 			<Grid>
 				<TOCItem link="/docs/cli/studio">
 					<strong>studio</strong>
-					<div>Start the Remotion Studio</div>
+					<div>Start the Picus Studio</div>
 				</TOCItem>
 				<TOCItem link="/docs/cli/render">
 					<strong>render</strong>
@@ -24,19 +24,19 @@ export const TableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/lambda/cli">
 					<strong>lambda</strong>
-					<div>Control Remotion Lambda</div>
+					<div>Control Picus Lambda</div>
 				</TOCItem>
 				<TOCItem link="/docs/cli/bundle">
 					<strong>bundle</strong>
-					<div>Create a Remotion Bundle</div>
+					<div>Create a Picus Bundle</div>
 				</TOCItem>
 				<TOCItem link="/docs/cli/browser">
 					<strong>browser</strong>
-					<div>Ensure Remotion has a browser to use</div>
+					<div>Ensure Picus has a browser to use</div>
 				</TOCItem>
 				<TOCItem link="/docs/cloudrun/cli">
 					<strong>cloudrun</strong>
-					<div>Control Remotion Cloud Run</div>
+					<div>Control Picus Cloud Run</div>
 				</TOCItem>
 				<TOCItem link="/docs/cli/benchmark">
 					<strong>benchmark</strong>
@@ -48,7 +48,7 @@ export const TableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/cli/versions">
 					<strong>versions</strong>
-					<div>List and validate Remotion package versions</div>
+					<div>List and validate Picus package versions</div>
 				</TOCItem>
 				<TOCItem link="/docs/cli/upgrade">
 					<strong>upgrade</strong>
@@ -56,7 +56,7 @@ export const TableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/cli/add">
 					<strong>add</strong>
-					<div>Add Remotion packages with matching version</div>
+					<div>Add Picus packages with matching version</div>
 				</TOCItem>
 				<TOCItem link="/docs/cli/gpu">
 					<strong>gpu</strong>

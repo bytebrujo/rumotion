@@ -11,7 +11,7 @@ This document explains a few factors and settings that can be used to control th
 ## CRF
 
 The main setting to control the quality of the video is the [Constant Rate Factor (CRF)](/docs/encoding/#controlling-quality-using-the-crf-setting).  
-All ways to render a video in Remotion allow passing a CRF value. Allowed values depend on the codec.
+All ways to render a video in Picus allow passing a CRF value. Allowed values depend on the codec.
 
 :::note
 If you enable [hardware acceleration](/docs/hardware-acceleration), you cannot set a `crf`. Use the [`--video-bitrate`](/docs/cli/render#--video-bitrate) option instead.
@@ -24,7 +24,7 @@ A somewhat surprising way to lose quality is the fact that many computers have a
 Consider a 1920x1080 video, in which you render text:
 
 ```tsx twoslash
-import { Composition } from "remotion";
+import { Composition } from "picus";
 
 const MyComponent = () => {
   return <div>Hello World</div>;
@@ -58,7 +58,7 @@ Use [Output Scaling](/docs/scaling) to render the video with a higher pixel dens
 
 ## JPEG Quality
 
-Remotion makes screenshots of the browser page by default in JPEG format.  
+Picus makes screenshots of the browser page by default in JPEG format.  
 The JPEG quality by default is 80 (on a scale of 0 to 100).  
 You may tweak it using the [`--jpeg-quality`](/docs/cli/render#--jpeg-quality) flag or switch to PNG as the image format using [`--image-format=png`](/docs/cli/render#--image-format) (slower).
 
@@ -67,12 +67,12 @@ You may tweak it using the [`--jpeg-quality`](/docs/cli/render#--jpeg-quality) f
 Export your video in [`bt709`](/docs/cli/render#--color-space) for more accurate colors.
 
 :::note
-This will become the default in Remotion 5.0.
+This will become the default in Picus 5.0.
 :::
 
 ## GIF Colors
 
-Ensure you are on at least Remotion version v4.0.138 to get the best color accuracy.  
+Ensure you are on at least Picus version v4.0.138 to get the best color accuracy.  
 GIFs only support a 256 colors palette, which leads to a big quality loss. Embrace it, or choose a different format if it is not acceptable.
 
 ## Video bitrate

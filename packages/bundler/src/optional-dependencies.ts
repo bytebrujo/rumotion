@@ -4,7 +4,7 @@ import type {Compiler} from 'webpack';
 
 const OPTIONAL_DEPENDENCIES = [
 	'zod',
-	'@remotion/zod-types',
+	'@picus/zod-types',
 	'react-native-reanimated',
 	'react-native-reanimated/package.json',
 ];

@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT_RUNS = 3;
 
@@ -16,7 +16,7 @@ export const runsOption = {
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/cli/benchmark#--runs',
+	docLink: 'https://www.picus.dev/docs/cli/benchmark#--runs',
 	type: DEFAULT_RUNS as number,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -44,4 +44,4 @@ export const runsOption = {
 		currentRuns = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number>;
+} satisfies AnyPicusOption<number>;

@@ -1,6 +1,6 @@
 import type React from 'react';
 import {useEffect} from 'react';
-import {Internals, useVideoConfig} from 'remotion';
+import {Internals, useVideoConfig} from 'picus';
 
 export const FramePersistor: React.FC = () => {
 	const [playing] = Internals.Timeline.usePlayingState();

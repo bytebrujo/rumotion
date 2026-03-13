@@ -1,6 +1,6 @@
-import {useAudioData} from '@remotion/media-utils';
+import {useAudioData} from '@picus/media-utils';
 import React from 'react';
-import {Html5Audio, staticFile} from 'remotion';
+import {Html5Audio, staticFile} from 'picus';
 import {VoiceVis} from './VoiceVisualization';
 
 const padding = 80;

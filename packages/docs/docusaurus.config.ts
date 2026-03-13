@@ -2,9 +2,9 @@ import type {Config} from '@docusaurus/types';
 import remarkExportRaw from './plugins/remark-export-raw.js';
 
 const config: Config = {
-	title: 'Remotion | Make videos programmatically',
+	title: 'Picus | Make videos programmatically',
 	tagline: 'Make videos programmatically',
-	url: 'https://www.remotion.dev',
+	url: 'https://www.picus.dev',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
 	markdown: {
@@ -13,8 +13,8 @@ const config: Config = {
 		},
 	},
 	favicon: 'img/favicon.png',
-	organizationName: 'remotion-dev', // Usually your GitHub org/user name.
-	projectName: 'remotion', // Usually your repo name.
+	organizationName: 'picus-dev', // Usually your GitHub org/user name.
+	projectName: 'picus', // Usually your repo name.
 	future: {
 		experimental_faster: true,
 		v4: {
@@ -25,15 +25,15 @@ const config: Config = {
 		algolia: {
 			appId: 'PLSDUOL1CA',
 			apiKey: '3e42dbd4f895fe93ff5cf40d860c4a85',
-			indexName: 'remotion',
+			indexName: 'picus',
 			contextualSearch: false,
 		},
 		image: 'img/social-preview.png',
 		navbar: {
 			logo: {
-				alt: 'Remotion Logo',
+				alt: 'Picus Logo',
 				src: 'img/new-logo.png',
-				srcDark: 'img/remotion-white.png',
+				srcDark: 'img/picus-white.png',
 			},
 			items: [
 				{
@@ -67,7 +67,7 @@ const config: Config = {
 					label: 'Resources',
 					position: 'left',
 					items: [
-						{to: 'https://remotion.dev/prompts', label: 'Prompts'},
+						{to: 'https://picus.dev/prompts', label: 'Prompts'},
 						{to: 'learn', label: 'Learn'},
 						{
 							to: '/docs/resources',
@@ -75,8 +75,8 @@ const config: Config = {
 						},
 						{to: 'blog', label: 'Blog'},
 						{to: 'showcase', label: 'Showcase'},
-						{to: 'https://remotion.dev/convert', label: 'Convert a video'},
-						{to: 'https://remotion.dev/timing-editor', label: 'Timing Editor'},
+						{to: 'https://picus.dev/convert', label: 'Convert a video'},
+						{to: 'https://picus.dev/timing-editor', label: 'Timing Editor'},
 						{to: '/docs/support', label: 'Support'},
 					],
 				},
@@ -85,8 +85,8 @@ const config: Config = {
 					label: 'Commercial',
 					position: 'left',
 					items: [
-						{to: 'https://remotion.pro/license', label: 'License + Pricing'},
-						{to: 'https://remotion.pro/store', label: 'Store'},
+						{to: 'https://picus.pro/license', label: 'License + Pricing'},
+						{to: 'https://picus.pro/store', label: 'Store'},
 						{to: 'success-stories', label: 'Success Stories'},
 						{to: 'experts', label: 'Experts'},
 						{to: 'about', label: 'About us'},
@@ -96,19 +96,19 @@ const config: Config = {
 				},
 
 				{
-					href: 'https://github.com/remotion-dev/remotion',
+					href: 'https://github.com/picus-dev/picus',
 					position: 'right',
 					className: 'header-github-link',
 					'aria-label': 'GitHub repository',
 				},
 				{
-					href: 'https://remotion.dev/discord',
+					href: 'https://picus.dev/discord',
 					position: 'right',
 					className: 'header-discord-link',
 					'aria-label': 'Discord',
 				},
 				{
-					href: 'https://x.com/remotion',
+					href: 'https://x.com/picus',
 					position: 'right',
 					className: 'header-x-link',
 					'aria-label': 'X / Twitter',
@@ -119,7 +119,7 @@ const config: Config = {
 			style: 'light',
 			links: [
 				{
-					title: 'Remotion',
+					title: 'Picus',
 					items: [
 						{
 							label: 'Getting started',
@@ -143,19 +143,19 @@ const config: Config = {
 						},
 						{
 							label: 'Convert a video',
-							to: 'https://convert.remotion.dev',
+							to: 'https://convert.picus.dev',
 						},
 						{
 							label: 'Store',
-							href: 'https://remotion.pro/store',
+							href: 'https://picus.pro/store',
 						},
 						{
 							label: 'GitHub',
-							href: 'https://github.com/remotion-dev/remotion',
+							href: 'https://github.com/picus-dev/picus',
 						},
 						{
-							label: 'Remotion Pro',
-							href: 'https://remotion.pro',
+							label: 'Picus Pro',
+							href: 'https://picus.pro',
 						},
 					],
 				},
@@ -164,7 +164,7 @@ const config: Config = {
 					items: [
 						{
 							label: 'Prompt Gallery',
-							to: 'https://remotion.dev/prompts',
+							to: 'https://picus.dev/prompts',
 						},
 						{
 							label: 'Showcase',
@@ -176,27 +176,27 @@ const config: Config = {
 						},
 						{
 							label: 'Discord',
-							href: 'https://remotion.dev/discord',
+							href: 'https://picus.dev/discord',
 						},
 						{
 							label: 'X',
-							href: 'https://x.com/remotion',
+							href: 'https://x.com/picus',
 						},
 						{
 							label: 'YouTube',
-							href: 'https://youtube.com/@remotion_dev',
+							href: 'https://youtube.com/@picus_dev',
 						},
 						{
 							label: 'LinkedIn',
-							href: 'https://www.linkedin.com/company/remotion-dev/',
+							href: 'https://www.linkedin.com/company/picus-dev/',
 						},
 						{
 							label: 'Instagram',
-							href: 'https://instagram.com/remotion',
+							href: 'https://instagram.com/picus',
 						},
 						{
 							label: 'TikTok',
-							href: 'https://www.tiktok.com/@remotion',
+							href: 'https://www.tiktok.com/@picus',
 						},
 					],
 				},
@@ -225,27 +225,27 @@ const config: Config = {
 						},
 						{
 							label: 'Changelog',
-							href: 'https://remotion.dev/changelog',
+							href: 'https://picus.dev/changelog',
 						},
 						{
 							label: 'Acknowledgements',
-							href: 'https://remotion.dev/acknowledgements',
+							href: 'https://picus.dev/acknowledgements',
 						},
 						{
 							label: 'License',
-							href: 'https://remotion.dev/license',
+							href: 'https://picus.dev/license',
 						},
 						{
 							label: 'Terms and Conditions',
-							href: 'https://remotion.pro/terms',
+							href: 'https://picus.pro/terms',
 						},
 						{
 							label: 'Privacy Policy',
-							href: 'https://remotion.pro/privacy',
+							href: 'https://picus.pro/privacy',
 						},
 						{
 							label: 'Brand',
-							href: 'https://remotion.dev/brand',
+							href: 'https://picus.dev/brand',
 						},
 					].filter(Boolean),
 				},
@@ -263,7 +263,7 @@ const config: Config = {
 					path: 'docs',
 					sidebarPath: './sidebars.ts',
 					editUrl:
-						'https://github.com/remotion-dev/remotion/edit/main/packages/docs/',
+						'https://github.com/picus-dev/picus/edit/main/packages/docs/',
 					showLastUpdateTime: true,
 					remarkPlugins: [remarkExportRaw],
 				},
@@ -273,7 +273,7 @@ const config: Config = {
 					showReadingTime: true,
 					// Please change this to your repo.
 					editUrl:
-						'https://github.com/remotion-dev/remotion/edit/main/packages/docs/blog/',
+						'https://github.com/picus-dev/picus/edit/main/packages/docs/blog/',
 				},
 				theme: {
 					customCss: [require.resolve('./src/css/custom.css')],

@@ -3,13 +3,13 @@ import {
 	GetServiceQuotaCommand,
 	ListRequestedServiceQuotaChangeHistoryByQuotaCommand,
 } from '@aws-sdk/client-service-quotas';
-import {CliInternals} from '@remotion/cli';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import {CliInternals} from '@picus/cli';
+import {LambdaClientInternals} from '@picus/lambda-client';
 import {
 	BINARY_NAME,
 	LAMBDA_CONCURRENCY_LIMIT_QUOTA,
-} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
+} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
 import {QUOTAS_COMMAND} from '.';
 import {getAwsRegion} from '../../get-aws-region';
 import {Log} from '../../log';

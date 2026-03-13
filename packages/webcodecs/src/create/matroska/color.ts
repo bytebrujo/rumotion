@@ -4,7 +4,7 @@ import type {
 	MediaParserPrimaries,
 	MediaParserTransferCharacteristics,
 	PossibleEbml,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {truthy} from '../../truthy';
 import {makeMatroskaBytes} from './matroska-utils';
 

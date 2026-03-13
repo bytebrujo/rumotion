@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Img, Series} from 'remotion';
+import {AbsoluteFill, Img, Series} from 'picus';
 
 const Inside: React.FC = () => {
 	return (

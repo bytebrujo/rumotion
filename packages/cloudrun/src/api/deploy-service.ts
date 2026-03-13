@@ -1,6 +1,6 @@
 import type {google} from '@google-cloud/run/build/protos/protos';
-import type {LogLevel} from '@remotion/renderer';
-import {wrapWithErrorHandling} from '@remotion/renderer/error-handling';
+import type {LogLevel} from '@picus/renderer';
+import {wrapWithErrorHandling} from '@picus/renderer/error-handling';
 import {
 	DEFAULT_MAX_INSTANCES,
 	DEFAULT_MIN_INSTANCES,
@@ -8,7 +8,7 @@ import {
 } from '../shared/constants';
 import {generateServiceName} from '../shared/generate-service-name';
 import {validateGcpRegion} from '../shared/validate-gcp-region';
-import {validateImageRemotionVersion} from '../shared/validate-image-remotion-version';
+import {validateImagePicusVersion} from '../shared/validate-image-picus-version';
 import {validateProjectID} from '../shared/validate-project-id';
 import {checkIfServiceExists} from './check-if-service-exists';
 import {constructServiceTemplate} from './helpers/construct-service-deploy-request';
@@ -62,7 +62,7 @@ const deployServiceRaw = async ({
 	validateGcpRegion(region);
 	validateProjectID(projectID);
 	if (performImageVersionValidation) {
-		validateImageRemotionVersion();
+		validateImagePicusVersion();
 	}
 
 	const parent = `projects/${projectID}/locations/${region}`;
@@ -125,7 +125,7 @@ export const internalDeployService = wrapWithErrorHandling(deployServiceRaw);
 
 /*
  * @description Creates a Cloud Run service in your project that will be able to render a video in GCP.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/deployservice)
+ * @see [Documentation](https://picus.dev/docs/cloudrun/deployservice)
  */
 
 export const deployService = ({

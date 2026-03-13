@@ -1,6 +1,6 @@
 'use strict';
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[801],
 	{
 		/***/ 2801:

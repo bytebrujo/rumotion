@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 export const Showcase: React.FC = (props) => {
 	const frame = useCurrentFrame();

@@ -13,7 +13,7 @@ import {
   topRight,
 } from "@shopify/react-native-skia";
 import React, { useMemo } from "react";
-import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, useCurrentFrame, useVideoConfig } from "picus";
 
 const CLAMP = {
   extrapolateLeft: "clamp",

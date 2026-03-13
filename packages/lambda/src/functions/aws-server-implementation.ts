@@ -1,10 +1,10 @@
-import {LambdaClientInternals, type AwsProvider} from '@remotion/lambda-client';
-import type {InsideFunctionSpecifics} from '@remotion/serverless';
+import {LambdaClientInternals, type AwsProvider} from '@picus/lambda-client';
+import type {InsideFunctionSpecifics} from '@picus/serverless';
 import {
 	forgetBrowserEventLoopImplementation,
 	getBrowserInstanceImplementation,
 	invokeWebhook,
-} from '@remotion/serverless';
+} from '@picus/serverless';
 import {deleteTmpDir} from './helpers/clean-tmpdir';
 import {getCurrentRegionInFunctionImplementation} from './helpers/get-current-region';
 import {getFolderFiles} from './helpers/get-folder-files';

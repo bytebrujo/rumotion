@@ -1,1 +1,1 @@
-export * from '@remotion/lambda-client';
+export * from '@picus/lambda-client';

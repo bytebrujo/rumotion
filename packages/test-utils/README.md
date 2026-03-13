@@ -1,4 +1,4 @@
-# @remotion/test-utils
+# @picus/test-utils
 
 ## Usage
 

@@ -2,18 +2,18 @@
 image: /generated/articles-docs-get-audio-duration-in-seconds.png
 title: getAudioDurationInSeconds()
 id: get-audio-duration-in-seconds
-crumb: '@remotion/media-utils'
+crumb: '@picus/media-utils'
 ---
 
 :::warning Deprecated
 This function has been deprecated. Use [`parseMedia()`](/docs/media-parser/parse-media) instead, which is faster and supports more formats.
 :::
 
-_Part of the `@remotion/media-utils` package of helper functions._
+_Part of the `@picus/media-utils` package of helper functions._
 
 _Previously called `getAudioDuration()`._
 
-Gets the duration in seconds of an audio source. Remotion will create an invisible `<audio>` tag, load the audio and return the duration.
+Gets the duration in seconds of an audio source. Picus will create an invisible `<audio>` tag, load the audio and return the duration.
 
 ## Arguments
 
@@ -29,9 +29,9 @@ A string pointing to an audio asset
 
 ```tsx twoslash
 import {useCallback, useEffect} from 'react';
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 // ---cut---
-import {getAudioDurationInSeconds} from '@remotion/media-utils';
+import {getAudioDurationInSeconds} from '@picus/media-utils';
 import music from './music.mp3';
 
 const MyComp: React.FC = () => {
@@ -51,4 +51,4 @@ const MyComp: React.FC = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/media-utils/src/get-audio-duration-in-seconds.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/media-utils/src/get-audio-duration-in-seconds.ts)

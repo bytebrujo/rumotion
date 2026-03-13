@@ -1,12 +1,12 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import React, {
 	createRef,
 	useCallback,
 	useEffect,
 	useImperativeHandle,
 } from 'react';
-import {Internals} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import {Internals} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {BLUE} from '../helpers/colors';
 import {
 	areKeyboardShortcutsDisabled,

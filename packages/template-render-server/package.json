@@ -1,31 +1,31 @@
 {
   "name": "template-render-server",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "My Picus video",
   "scripts": {
-    "build": "remotion bundle",
+    "build": "picus bundle",
     "dev": "tsx watch server",
     "start": "tsx server",
     "lint": "eslint . && tsc",
-    "remotion:upgrade": "remotion upgrade",
-    "remotion:studio": "remotion studio"
+    "picus:upgrade": "picus upgrade",
+    "picus:studio": "picus studio"
   },
   "repository": {},
   "license": "UNLICENSED",
   "dependencies": {
-    "@remotion/bundler": "workspace:*",
-    "@remotion/cli": "workspace:*",
-    "@remotion/renderer": "workspace:*",
-    "@remotion/zod-types": "workspace:*",
+    "@picus/bundler": "workspace:*",
+    "@picus/cli": "workspace:*",
+    "@picus/renderer": "workspace:*",
+    "@picus/zod-types": "workspace:*",
     "express": "5.1.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "workspace:*",
+    "picus": "workspace:*",
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@remotion/eslint-config-flat": "workspace:*",
-    "@remotion/eslint-plugin": "workspace:*",
+    "@picus/eslint-config-flat": "workspace:*",
+    "@picus/eslint-plugin": "workspace:*",
     "@types/express": "5.0.1",
     "@types/react": "19.2.7",
     "@types/web": "0.0.166",

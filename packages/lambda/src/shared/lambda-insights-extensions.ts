@@ -1,4 +1,4 @@
-import type {AwsRegion} from '@remotion/lambda-client';
+import type {AwsRegion} from '@picus/lambda-client';
 
 export const lambdaInsightsExtensions: {[region in AwsRegion]: string | null} =
 	{

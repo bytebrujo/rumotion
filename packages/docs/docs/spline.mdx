@@ -8,9 +8,9 @@ import {SplineVideo} from '../components/SplineVideo';
 
 _Authors: [Dhroov Makwana](https://github.com/pabloescoder) and [Jonny Burger](https://twitter.com/JNYBGR)_
 
-[Spline](https://app.spline.design/) allows to design 3D models on the web. It allows exporting these models as React Three Fiber code, meaning that can be directly used and animated in Remotion.
+[Spline](https://app.spline.design/) allows to design 3D models on the web. It allows exporting these models as React Three Fiber code, meaning that can be directly used and animated in Picus.
 
-This tutorial shows how to design, export and animate a scene with Spline and Remotion.
+This tutorial shows how to design, export and animate a scene with Spline and Picus.
 
 ## Create the 3D model in Spline
 
@@ -68,9 +68,9 @@ Your 3D model should look like this:
 
 ![Export Model Code](../static/img/spline-guide/11_export_model_code.png)
 
-## Animating 3D Model using Remotion
+## Animating 3D Model using Picus
 
-1. Create a new Remotion project from the React Three Fiber template by running `npx create-video@latest`.
+1. Create a new Picus project from the React Three Fiber template by running `npx create-video@latest`.
 
    ![Project Starter](../static/img/spline-guide/12_project_starter.png)
 
@@ -93,8 +93,8 @@ export default Torus;
 // @filename: src/Root.tsx
 // ---cut---
 // @jsx: react-jsx
-import {ThreeCanvas} from '@remotion/three';
-import {useVideoConfig} from 'remotion';
+import {ThreeCanvas} from '@picus/three';
+import {useVideoConfig} from 'picus';
 import Torus from './Torus';
 
 export const Scene: React.FC = () => {
@@ -113,13 +113,13 @@ export const Scene: React.FC = () => {
 ```ts title="src/Torus.tsx"
 import React, {useEffect} from 'react';
 import {useThree} from '@react-three/fiber';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 ```
 
 8. Add the following code inside the Torus function below the `useSpline()` call:
 
 ```tsx twoslash title="src/Torus.tsx"
-import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from 'picus';
 
 // ---cut---
 const frame = useCurrentFrame();
@@ -142,7 +142,7 @@ useEffect(() => {
 9. Let's add some animation. Below the above code, insert the following:
 
 ```tsx twoslash title="src/Torus.tsx"
-import {interpolate, spring} from 'remotion';
+import {interpolate, spring} from 'picus';
 const durationInFrames = 300;
 const frame = 0;
 const fps = 30;
@@ -177,12 +177,12 @@ rotation={[constantRotation / 2, constantRotation, 0]}
 The X rotation is half of the Y rotation, so for every 2 turns in the Y axis, our Torus will turn once in the X axis.
 :::
 
-11. That's it! See a rotating Torus in the Remotion Studio.
+11. That's it! See a rotating Torus in the Picus Studio.
 
 12. If you want to export your video to a MP4 video file, run:
 
 ```shell
-npx remotion render
+npx picus render
 ```
 
 ## Final Result / Generated Video
@@ -202,6 +202,6 @@ npx remotion render
 
 ## See also
 
-- [`@remotion/three`](/docs/three)
-- [Remotion Three Template](https://github.com/remotion-dev/template-three)
+- [`@picus/three`](/docs/three)
+- [Picus Three Template](https://github.com/picus-dev/template-three)
 - [Spline](https://docs.spline.design/)

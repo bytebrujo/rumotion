@@ -31,8 +31,8 @@ export const isAmazonLinux2023 = (): boolean => {
 	}
 };
 
-// remotion.media binaries are built on Ubuntu 24.04 which requires glibc 2.35+
-const MINIMUM_GLIBC_FOR_REMOTION_MEDIA = [2, 35] as const;
+// picus.media binaries are built on Ubuntu 24.04 which requires glibc 2.35+
+const MINIMUM_GLIBC_FOR_PICUS_MEDIA = [2, 35] as const;
 
 const getGlibcVersion = (): [number, number] | null => {
 	if (process.platform !== 'linux') {
@@ -86,13 +86,13 @@ const isGlibcVersionAtLeast = (
 	return false;
 };
 
-export const canUseRemotionMediaBinaries = (): boolean => {
+export const canUsePicusMediaBinaries = (): boolean => {
 	if (process.platform !== 'linux') {
-		// remotion.media binaries are only for Linux
+		// picus.media binaries are only for Linux
 		return false;
 	}
 
-	return isGlibcVersionAtLeast(MINIMUM_GLIBC_FOR_REMOTION_MEDIA);
+	return isGlibcVersionAtLeast(MINIMUM_GLIBC_FOR_PICUS_MEDIA);
 };
 
 export function getChromeDownloadUrl({
@@ -108,7 +108,7 @@ export function getChromeDownloadUrl({
 		// Amazon Linux 2023 on arm64 needs a special build.
 		// This binary is compatible with older glibc (no 2.35 requirement).
 		if (isAmazonLinux2023() && chromeMode === 'headless-shell' && !version) {
-			return 'https://remotion.media/chromium-headless-shell-amazon-linux-arm64-144.0.7559.20.zip';
+			return 'https://picus.media/chromium-headless-shell-amazon-linux-arm64-144.0.7559.20.zip';
 		}
 
 		if (chromeMode === 'chrome-for-testing') {
@@ -120,8 +120,8 @@ export function getChromeDownloadUrl({
 		}
 
 		// Regular arm64 binary requires glibc 2.35+
-		if (canUseRemotionMediaBinaries()) {
-			return `https://remotion.media/chromium-headless-shell-linux-arm64-${TESTED_VERSION}.zip?clearcache`;
+		if (canUsePicusMediaBinaries()) {
+			return `https://picus.media/chromium-headless-shell-linux-arm64-${TESTED_VERSION}.zip?clearcache`;
 		}
 
 		// Fall back to Playwright for older glibc (non-Amazon Linux systems)
@@ -132,12 +132,12 @@ export function getChromeDownloadUrl({
 		// Amazon Linux 2023 needs a special build.
 		// This binary is compatible with older glibc (no 2.35 requirement).
 		if (isAmazonLinux2023() && platform === 'linux64' && !version) {
-			return `https://remotion.media/chromium-headless-shell-amazon-linux-x64-144.0.7559.20.zip`;
+			return `https://picus.media/chromium-headless-shell-amazon-linux-x64-144.0.7559.20.zip`;
 		}
 
 		if (platform === 'linux64' && version === null) {
-			if (canUseRemotionMediaBinaries()) {
-				return `https://remotion.media/chromium-headless-shell-linux-x64-${TESTED_VERSION}.zip?clearcache`;
+			if (canUsePicusMediaBinaries()) {
+				return `https://picus.media/chromium-headless-shell-linux-x64-${TESTED_VERSION}.zip?clearcache`;
 			}
 
 			// Fall back to Google's CDN for older glibc

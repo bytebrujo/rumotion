@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'out-dir' as const;
 
@@ -12,12 +12,12 @@ export const outDirOption = {
 			<>
 				Define the location of the resulting bundle. By default it is a folder
 				called <code>build</code>, adjacent to the{' '}
-				<a href="/docs/terminology/remotion-root">Remotion Root</a>.
+				<a href="/docs/terminology/picus-root">Picus Root</a>.
 			</>
 		);
 	},
 	ssrName: 'outDir' as const,
-	docLink: 'https://www.remotion.dev/docs/cli/bundle#--out-dir',
+	docLink: 'https://www.picus.dev/docs/cli/bundle#--out-dir',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -43,4 +43,4 @@ export const outDirOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

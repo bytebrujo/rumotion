@@ -2,10 +2,10 @@ import type {
 	RenderFramesOptions,
 	RenderMediaOptions,
 	RenderStillOptions,
-} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import type {RenderDefaults} from '@remotion/studio-shared';
-import type {renderMediaOnWeb} from '@remotion/web-renderer';
+} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import type {RenderDefaults} from '@picus/studio-shared';
+import type {renderMediaOnWeb} from '@picus/web-renderer';
 
 type RenderMode = 'still' | 'video' | 'audio' | 'sequence';
 
@@ -81,10 +81,10 @@ const addTrueBooleanFlagsIfChanged = (
 	}
 };
 
-export const getNpmRemotionCommandPrefix = (version: string) => {
+export const getNpmPicusCommandPrefix = (version: string) => {
 	return version.trim() === ''
-		? 'bunx --yes --location=global -p @remotion/cli remotion'
-		: `bunx --yes --location=global -p @remotion/cli@${version} remotion`;
+		? 'bunx --yes --location=global -p @picus/cli picus'
+		: `bunx --yes --location=global -p @picus/cli@${version} picus`;
 };
 
 export const normalizeServeUrlForRenderCommand = ({
@@ -222,7 +222,7 @@ type ReadOnlyStudioRenderCommandInput = RenderMediaCommandOptions &
 	RenderStillCommandOptions &
 	RenderFramesSharedOptions &
 	CrossRendererOptions & {
-		remotionVersion: string;
+		picusVersion: string;
 		locationHref: string;
 		compositionId: string;
 		outName: string;
@@ -248,7 +248,7 @@ type ReadOnlyStudioRenderCommandInput = RenderMediaCommandOptions &
 	};
 
 export const makeReadOnlyStudioRenderCommand = ({
-	remotionVersion,
+	picusVersion,
 	locationHref,
 	compositionId,
 	outName,
@@ -310,7 +310,7 @@ export const makeReadOnlyStudioRenderCommand = ({
 	const isSequenceRender = renderMode === 'sequence';
 	const hasCodecSpecificOptions = !isSequenceRender;
 	const commandType = isStillRender ? 'still' : 'render';
-	const command = getNpmRemotionCommandPrefix(remotionVersion);
+	const command = getNpmPicusCommandPrefix(picusVersion);
 	const {options} = BrowserSafeApis;
 	const flags: string[] = [];
 

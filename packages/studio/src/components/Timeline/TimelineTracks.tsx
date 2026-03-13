@@ -1,5 +1,5 @@
 import React, {useContext, useMemo} from 'react';
-import type {SequenceControls} from 'remotion';
+import type {SequenceControls} from 'picus';
 import {StudioServerConnectionCtx} from '../../helpers/client-id';
 import type {TrackWithHash} from '../../helpers/get-timeline-sequence-sort-key';
 import {

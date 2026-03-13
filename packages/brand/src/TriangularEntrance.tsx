@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {AbsoluteFill, random} from 'remotion';
+import {AbsoluteFill, random} from 'picus';
 
 export const TriangleEntrance: React.FC<{
 	readonly progress: number;

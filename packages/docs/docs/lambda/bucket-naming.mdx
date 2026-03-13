@@ -1,14 +1,14 @@
 ---
 image: /generated/articles-docs-lambda-bucket-naming.png
-title: Bucket names in Remotion Lambda
+title: Bucket names in Picus Lambda
 slug: /lambda/bucket-naming
 sidebar_label: Bucket naming
-crumb: '@remotion/lambda'
+crumb: '@picus/lambda'
 ---
 
-A Remotion Lambda bucket name (for example `remotionlambda-apsouth1-3ysk0nyazp`) has two special attributes:
+A Picus Lambda bucket name (for example `picuslambda-apsouth1-3ysk0nyazp`) has two special attributes:
 
-<Step>1</Step> It is prefixed with <code>remotionlambda-</code>
+<Step>1</Step> It is prefixed with <code>picuslambda-</code>
 <br />
 <Step>2</Step> It contains the region in their name <br />
 <br />
@@ -18,7 +18,7 @@ It is not recommended to use a custom bucket name because it requires changing y
 ## Using a different bucket name
 
 :::note
-By using a custom bucket name, you are opting out of Remotion's defaults and validation.  
+By using a custom bucket name, you are opting out of Picus's defaults and validation.  
 Ensure you are passing the bucket name explicitly to all APIs, especially to those for which the bucket name is optional.  
 Also ensure Lambda and S3 buckets are accessible with the role permission that you use.
 :::
@@ -26,20 +26,20 @@ Also ensure Lambda and S3 buckets are accessible with the role permission that y
 To use a custom bucket name, you need to:
 
 - Manually create a bucket in AWS yourself
-- Change the [policies](/docs/lambda/permissions) created by Remotion Lambda to change the `remotionlambda-` prefix. This prefix is used to exlude non-Remotion buckets from being able to be accessed by credentials supposed for Remotion.
+- Change the [policies](/docs/lambda/permissions) created by Picus Lambda to change the `picuslambda-` prefix. This prefix is used to exlude non-Picus buckets from being able to be accessed by credentials supposed for Picus.
 - Pass the bucket name explicitly to:
   - [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda)
   - [`getCompositionsOnLambda()`](/docs/lambda/getcompositionsonlambda)
   - [`renderStillOnLambda()`](/docs/lambda/renderstillonlambda)
-  - [`npx remotion lambda render`](/docs/lambda/cli/render)
-  - [`npx remotion lambda still`](/docs/lambda/cli/render)
-  - [`npx remotion lambda compositions`](/docs/lambda/cli/render)
-  - [`npx remotion lambda sites create`](/docs/lambda/cli/sites/create)
-  - [`npx remotion lambda sites rm`](/docs/lambda/cli/sites/rm)
-  - [`npx remotion lambda sites rmall`](/docs/lambda/cli/sites/rmall)
+  - [`npx picus lambda render`](/docs/lambda/cli/render)
+  - [`npx picus lambda still`](/docs/lambda/cli/render)
+  - [`npx picus lambda compositions`](/docs/lambda/cli/render)
+  - [`npx picus lambda sites create`](/docs/lambda/cli/sites/create)
+  - [`npx picus lambda sites rm`](/docs/lambda/cli/sites/rm)
+  - [`npx picus lambda sites rmall`](/docs/lambda/cli/sites/rmall)
     using the `--force-bucket-name` or `forceBucketName` option respectively.
 - Be aware that the following APIs are unavailable when using custom bucket names:
-  - [`npx remotion lambda sites ls`](/docs/lambda/cli/sites/ls)
+  - [`npx picus lambda sites ls`](/docs/lambda/cli/sites/ls)
   - [`getSites()`](/docs/lambda/getsites)
   - [`getOrCreateBucket()`](/docs/lambda/getorcreatebucket)
 - Be aware that you are opting out of automatic bucket discovery and validation. Be careful to:
@@ -48,11 +48,11 @@ To use a custom bucket name, you need to:
 
 ## AWS Region in the name
 
-The buckets contain the region in their name (for example `remotionlambda-apsouth1-3ysk0nyazp`). This is because when the list of AWS buckets is obtained through the AWS API, the region is not included in the response.
+The buckets contain the region in their name (for example `picuslambda-apsouth1-3ysk0nyazp`). This is because when the list of AWS buckets is obtained through the AWS API, the region is not included in the response.
 
 If the region is not in the bucket name, it needs to be queried for each bucket, which requires extra API calls and slows down the render.
 
-If you set up your buckets with a Remotion version before December 2022, you have bucket names that do not include the region in their name (for example `remotionlambda-0if1fa0wy0`). By renaming the buckets, you can speed up render and reduce API calls, especially if you have a lot of Remotion buckets across regions.
+If you set up your buckets with a Picus version before December 2022, you have bucket names that do not include the region in their name (for example `picuslambda-0if1fa0wy0`). By renaming the buckets, you can speed up render and reduce API calls, especially if you have a lot of Picus buckets across regions.
 
 ## See also
 

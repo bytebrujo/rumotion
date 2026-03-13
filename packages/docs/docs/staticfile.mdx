@@ -10,7 +10,7 @@ crumb: 'API'
 Turns a file in your `public/` folder into an URL which you can then load into your project.
 
 ```tsx twoslash
-import {Img, staticFile} from 'remotion';
+import {Img, staticFile} from 'picus';
 
 const myImage = staticFile(`/my-image.png`);
 
@@ -36,13 +36,13 @@ my-video/
 ```
 
 :::info
-The `public/` folder should always be in the same folder as your `package.json` that contains the `remotion` dependency, even if your Remotion code lives in a subdirectory.
+The `public/` folder should always be in the same folder as your `package.json` that contains the `picus` dependency, even if your Picus code lives in a subdirectory.
 :::
 
 Get an URL reference of your asset:
 
 ```tsx twoslash
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
 const myImage = staticFile(`/my-image.png`); // "/static-32e8nd/my-image.png"
 const font = staticFile(`/font.woff2`); // "/static-32e8nd/font.woff2"
@@ -57,11 +57,11 @@ You can now load the asset via:
 
 ## Why can't I just pass a string?
 
-If you are a Create React App or Next.JS user, you might be used to just to be able to reference the asset from a string: `<img src="/my-image.png"/>`. Remotion chooses to be different in that you need to use the `staticFile()` API because:
+If you are a Create React App or Next.JS user, you might be used to just to be able to reference the asset from a string: `<img src="/my-image.png"/>`. Picus chooses to be different in that you need to use the `staticFile()` API because:
 
 - It prevents breaking when deploying your site into a subdirectory of a domain: `https://example.com/my-folder/my-logo.png`
 - It avoids conflicts with composition names which might share the same name (for example `http://localhost:3000/conflicting-name` while running the studio)
-- It allows us to make paths framework-agnostic, so your code can work across Remotion, Create React App, Next.JS and potentially other frameworks.
+- It allows us to make paths framework-agnostic, so your code can work across Picus, Create React App, Next.JS and potentially other frameworks.
 
 ## Getting all files in the public folder
 
@@ -95,7 +95,7 @@ The image will now be loaded properly, however, you must avoid to encode the fil
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/static-file.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/static-file.ts)
 - [Loading assets](/docs/assets)
 - [`getStaticFiles()`](/docs/getstaticfiles)
 - [`watchStaticFile()`](/docs/watchstaticfile)

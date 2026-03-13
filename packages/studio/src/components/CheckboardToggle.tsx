@@ -1,5 +1,5 @@
 import React, {useCallback, useContext} from 'react';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {BLUE} from '../helpers/colors';
 import {areKeyboardShortcutsDisabled} from '../helpers/use-keybinding';
 import {CheckerboardContext} from '../state/checkerboard';

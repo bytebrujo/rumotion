@@ -1,4 +1,4 @@
-import {Html5Audio} from 'remotion';
+import {Html5Audio} from 'picus';
 
 const ShortAudioLoop: React.FC = () => {
 	return (

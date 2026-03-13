@@ -9,8 +9,8 @@ const output = await build({
 	naming: '[name].mjs',
 	external: [
 		'react',
-		'remotion',
-		'remotion/no-react',
+		'picus',
+		'picus/no-react',
 		'react/jsx-runtime',
 		'zod',
 	],

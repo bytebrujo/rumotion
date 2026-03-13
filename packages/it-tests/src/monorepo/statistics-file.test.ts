@@ -1,7 +1,7 @@
 import {expect, test} from 'bun:test';
 import {writeFileSync} from 'fs';
 import {join} from 'path';
-import {Pkgs, descriptions} from '@remotion/studio-shared';
+import {Pkgs, descriptions} from '@picus/studio-shared';
 import {getAllPackages} from './get-all-packages';
 
 test('Should make a STATS.md file', () => {
@@ -14,15 +14,15 @@ test('Should make a STATS.md file', () => {
 	const readme =
 		[
 			`# Download statistics`,
-			'Monthly downloads of Remotion packages  ',
+			'Monthly downloads of Picus packages  ',
 			dirs
 				.map(({pkg}) => {
 					const name =
 						pkg === 'core'
-							? 'remotion'
+							? 'picus'
 							: pkg === 'create-video'
 								? 'create-video'
-								: `@remotion/${pkg}`;
+								: `@picus/${pkg}`;
 					const description = descriptions[pkg as Pkgs];
 					if (!description) {
 						return null;

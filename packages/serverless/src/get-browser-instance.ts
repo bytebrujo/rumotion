@@ -1,11 +1,11 @@
-import type {ChromiumOptions, LogLevel, openBrowser} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {ChromiumOptions, LogLevel, openBrowser} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	Await,
 	CloudProvider,
 	ProviderSpecifics,
-} from '@remotion/serverless-client';
-import {VERSION} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {VERSION} from '@picus/serverless-client';
 import type {
 	ForgetBrowserEventLoop,
 	GetBrowserInstance,
@@ -96,7 +96,7 @@ export const getBrowserInstanceImplementation: GetBrowserInstance = async <
 	);
 	RenderInternals.Log.info(
 		{indent: false, logLevel},
-		`Rendering with Remotion v${VERSION}.`,
+		`Rendering with Picus v${VERSION}.`,
 	);
 
 	if (launching) {

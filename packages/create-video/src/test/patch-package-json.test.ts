@@ -6,29 +6,29 @@ const packageManagers: PackageManager[] = ['npm', 'pnpm', 'yarn', 'bun'];
 
 for (const packageManager of packageManagers) {
 	test(`Using ${packageManager} package manager provides the correct "packageManager" entry in package.json`, () => {
-		const latestRemotionVersion = '1.0.0';
+		const latestPicusVersion = '1.0.0';
 		const packageJson = {
 			name: 'my-video',
 			version: '1.0.0',
-			description: 'My Remotion video',
+			description: 'My Picus video',
 			scripts: {
-				start: 'remotion studio',
+				start: 'picus studio',
 			},
 			dependencies: {
-				'@remotion/cli': 'stale-remotion-version',
+				'@picus/cli': 'stale-picus-version',
 				react: '^18.0.0',
-				remotion: 'stale-remotion-version',
+				picus: 'stale-picus-version',
 			},
 			devDependencies: {
 				'@types/react': '^18.0.6',
-				'@remotion/eslint-config': '^2.0.0',
+				'@picus/eslint-config': '^2.0.0',
 			},
 		};
 		let newPackageJson: typeof packageJson | null = null;
 		patchPackageJson(
 			{
 				projectRoot: '/path/to/project',
-				latestRemotionVersion,
+				latestPicusVersion,
 				packageManager,
 				projectName: 'my-video',
 				addTailwind: true,
@@ -41,7 +41,7 @@ for (const packageManager of packageManagers) {
 			},
 		);
 		const expectedStartScript =
-			packageManager === 'bun' ? 'remotionb studio' : 'remotion studio';
+			packageManager === 'bun' ? 'picusb studio' : 'picus studio';
 		expect(newPackageJson as unknown).toEqual({
 			...packageJson,
 			scripts: {
@@ -49,15 +49,15 @@ for (const packageManager of packageManagers) {
 			},
 			dependencies: {
 				...packageJson.dependencies,
-				'@remotion/cli': latestRemotionVersion,
-				'@remotion/tailwind-v4': latestRemotionVersion,
+				'@picus/cli': latestPicusVersion,
+				'@picus/tailwind-v4': latestPicusVersion,
 				tailwindcss: '4.0.0',
-				remotion: latestRemotionVersion,
+				picus: latestPicusVersion,
 			},
 			sideEffects: ['*.css'],
 			devDependencies: {
 				...packageJson.devDependencies,
-				'@remotion/eslint-config': latestRemotionVersion,
+				'@picus/eslint-config': latestPicusVersion,
 			},
 		});
 	});

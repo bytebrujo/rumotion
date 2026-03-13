@@ -1,5 +1,5 @@
-import type {Caption} from '@remotion/captions';
-import type {DownloadWhisperModelProgress} from '@remotion/whisper-web';
+import type {Caption} from '@picus/captions';
+import type {DownloadWhisperModelProgress} from '@picus/whisper-web';
 
 export type TranscriptionState =
 	| {

@@ -1,4 +1,4 @@
-# @remotion/docs
+# @picus/docs
 
 ## Usage
 

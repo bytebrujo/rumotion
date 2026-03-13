@@ -7,11 +7,11 @@ crumb: 'Timeline basics'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Using the Remotion Studio, you can preview your video, and if a server is connected, even render the video.
+Using the Picus Studio, you can preview your video, and if a server is connected, even render the video.
 
 ## Prerequisites
 
-The Remotion CLI is required for this guide.  
+The Picus CLI is required for this guide.  
 Most templates have it out of the box, but you can install it by running the following command in your terminal:
 
 <Tabs
@@ -26,7 +26,7 @@ values={[
 <TabItem value="npm">
 
 ```bash
-npm i @remotion/cli
+npm i @picus/cli
 ```
 
   </TabItem>
@@ -34,7 +34,7 @@ npm i @remotion/cli
   <TabItem value="pnpm">
 
 ```bash
-pnpm i @remotion/cli
+pnpm i @picus/cli
 ```
 
   </TabItem>
@@ -42,7 +42,7 @@ pnpm i @remotion/cli
   <TabItem value="yarn">
 
 ```bash
-yarn add @remotion/cli
+yarn add @picus/cli
 ```
 
   </TabItem>
@@ -50,7 +50,7 @@ yarn add @remotion/cli
   <TabItem value="bun">
 
 ```bash
-bun i @remotion/cli
+bun i @picus/cli
 ```
 
   </TabItem>
@@ -58,7 +58,7 @@ bun i @remotion/cli
 
 ## Launching the Studio
 
-You can start the Remotion Studio by running the following command in your terminal:
+You can start the Picus Studio by running the following command in your terminal:
 
 <Tabs
 defaultValue="Regular templates"
@@ -78,20 +78,20 @@ npm start
   <TabItem value="Next.js and React Router templates">
 
 ```bash
-npm run remotion
+npm run picus
 ```
 
   </TabItem>
 </Tabs>
 
-This is a shorthand for the [`studio`](/docs/cli/studio) command of the [Remotion CLI](/docs/cli):
+This is a shorthand for the [`studio`](/docs/cli/studio) command of the [Picus CLI](/docs/cli):
 
 ```bash
-npx remotion studio
+npx picus studio
 ```
 
 See the available [options here](/docs/cli/studio).
 
-A server will be started on port `3000` (or a higher port if it isn't available) and the Remotion Studio should open in the browser.
+A server will be started on port `3000` (or a higher port if it isn't available) and the Picus Studio should open in the browser.
 
 <img src="/img/timeline.png"></img>

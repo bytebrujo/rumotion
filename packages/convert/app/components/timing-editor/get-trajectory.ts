@@ -1,4 +1,4 @@
-import {Easing, interpolate, spring} from 'remotion';
+import {Easing, interpolate, spring} from 'picus';
 import type {EasingType, TimingConfig} from './types';
 
 const getEasingFunction = (easing: EasingType): ((t: number) => number) => {

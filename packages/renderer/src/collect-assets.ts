@@ -1,4 +1,4 @@
-import type {ArtifactAsset, TRenderAsset} from 'remotion/no-react';
+import type {ArtifactAsset, TRenderAsset} from 'picus/no-react';
 import type {Page} from './browser/BrowserPage';
 import {puppeteerEvaluateWithCatch} from './puppeteer-evaluate';
 
@@ -13,7 +13,7 @@ export const collectAssets = async ({
 }) => {
 	const {value} = await puppeteerEvaluateWithCatch<TRenderAsset[]>({
 		pageFunction: () => {
-			return window.remotion_collectAssets();
+			return window.picus_collectAssets();
 		},
 		args: [],
 		frame,

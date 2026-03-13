@@ -2,21 +2,21 @@ import {describe, expect, test} from 'bun:test';
 import fs from 'fs';
 import {tmpdir} from 'os';
 import path from 'path';
-import {BundlerInternals} from '@remotion/bundler';
+import {BundlerInternals} from '@picus/bundler';
 
-test('Should not be able to bundle @remotion/lambda directly', async () => {
+test('Should not be able to bundle @picus/lambda directly', async () => {
 	expect(() =>
 		BundlerInternals.esbuild.build({
 			platform: 'node',
 			target: 'node16',
 			bundle: true,
-			entryPoints: [require.resolve('@remotion/lambda')],
+			entryPoints: [require.resolve('@picus/lambda')],
 			logLevel: 'silent',
 		}),
 	).toThrow(/Could not resolve "@swc\/wasm"/);
 });
 
-describe('Should be able to bundle @remotion/lambda/client with ESBuild', () => {
+describe('Should be able to bundle @picus/lambda/client with ESBuild', () => {
 	const outfile = path.join(tmpdir(), 'esbuild-test.js');
 
 	test('Should build without errors', async () => {
@@ -25,7 +25,7 @@ describe('Should be able to bundle @remotion/lambda/client with ESBuild', () => 
 			target: 'node16',
 			bundle: true,
 			outfile,
-			entryPoints: [require.resolve('@remotion/lambda/client')],
+			entryPoints: [require.resolve('@picus/lambda/client')],
 		});
 		expect(errors.length).toBe(0);
 		// AWS SDK code compares with -0 using ===, which is fine but triggers an esbuild warning
@@ -34,7 +34,7 @@ describe('Should be able to bundle @remotion/lambda/client with ESBuild', () => 
 		);
 		expect(unexpectedWarnings.length).toBe(0);
 
-		// Should not include remotion or react
+		// Should not include picus or react
 		const contents = fs.readFileSync(outfile, 'utf-8');
 		expect(contents.includes('jsx-runtime')).toBe(false);
 	});
@@ -47,8 +47,8 @@ describe('Should be able to bundle @remotion/lambda/client with ESBuild', () => 
 
 	test('Bundle should not include Renderer', async () => {
 		const file = await fs.promises.readFile(outfile, 'utf-8');
-		expect(file.includes('"@remotion/renderer"')).toBe(false);
-		expect(file.includes("'@remotion/renderer'")).toBe(false);
+		expect(file.includes('"@picus/renderer"')).toBe(false);
+		expect(file.includes("'@picus/renderer'")).toBe(false);
 	});
 
 	test('Should be able to delete it', () => {
@@ -56,7 +56,7 @@ describe('Should be able to bundle @remotion/lambda/client with ESBuild', () => 
 	});
 });
 
-describe('Should be able to bundle @remotion/renderer/pure without React', () => {
+describe('Should be able to bundle @picus/renderer/pure without React', () => {
 	const outfile = path.join(tmpdir(), 'esbuild-test.js');
 
 	test('Should build without errors', async () => {
@@ -65,7 +65,7 @@ describe('Should be able to bundle @remotion/renderer/pure without React', () =>
 			target: 'node16',
 			bundle: true,
 			outfile,
-			entryPoints: [require.resolve('@remotion/renderer/pure')],
+			entryPoints: [require.resolve('@picus/renderer/pure')],
 		});
 		expect(errors.length).toBe(0);
 		expect(warnings.length).toBe(0);

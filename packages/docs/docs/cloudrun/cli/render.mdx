@@ -2,7 +2,7 @@
 image: /generated/articles-docs-cloudrun-cli-render.png
 id: render
 sidebar_label: render
-title: 'npx remotion cloudrun render'
+title: 'npx picus cloudrun render'
 slug: /cloudrun/cli/render
 crumb: 'Cloud Run CLI Reference'
 ---
@@ -13,15 +13,15 @@ crumb: 'Cloud Run CLI Reference'
   </p>
 </ExperimentalBadge>
 
-Using the `npx remotion cloudrun render` command, you can render a video on GCP.
+Using the `npx picus cloudrun render` command, you can render a video on GCP.
 
 The structure of a command is as follows:
 
 ```
-npx remotion cloudrun render <serve-url> [<composition-id>] [<output-location>]
+npx picus cloudrun render <serve-url> [<composition-id>] [<output-location>]
 ```
 
-- The serve URL is obtained by deploying a Remotion project to a GCP Storage Bucket using the [`sites create`](/docs/cloudrun/cli/sites/create) command or calling [`deployService()`](/docs/cloudrun/deployservice).
+- The serve URL is obtained by deploying a Picus project to a GCP Storage Bucket using the [`sites create`](/docs/cloudrun/cli/sites/create) command or calling [`deployService()`](/docs/cloudrun/deployservice).
 - The [composition ID](/docs/terminology/composition#composition-id). If not specified, the list of compositions will be fetched and you can choose a composition.
 - The `output-location` parameter is optional. If you don't specify it, the video is stored in your Cloud Storage bucket. If you specify a location, it gets downloaded to your device in an additional step.
 
@@ -30,19 +30,19 @@ npx remotion cloudrun render <serve-url> [<composition-id>] [<output-location>]
 Rendering a video, passing the service name:
 
 ```
-npx remotion cloudrun render https://storage.googleapis.com/remotioncloudrun-123asd321/sites/abcdefgh/index.html tiles --service-name=remotion--3-3-82--mem512mi--cpu1-0--t-800
+npx picus cloudrun render https://storage.googleapis.com/picuscloudrun-123asd321/sites/abcdefgh/index.html tiles --service-name=picus--3-3-82--mem512mi--cpu1-0--t-800
 ```
 
 Using the site name as opposed to the full serve-url:
 
 ```
-npx remotion cloudrun render test-site tiles --service-name=remotion--3-3-82--mem512mi--cpu1-0--t-800
+npx picus cloudrun render test-site tiles --service-name=picus--3-3-82--mem512mi--cpu1-0--t-800
 ```
 
 Passing in input props:
 
 ```
-npx remotion cloudrun render test-site tiles --service-name=remotion--3-3-82--mem512mi--cpu1-0--t-800 --props='{"hi": "there"}'
+npx picus cloudrun render test-site tiles --service-name=picus--3-3-82--mem512mi--cpu1-0--t-800 --props='{"hi": "there"}'
 ```
 
 ## Flags
@@ -68,7 +68,7 @@ One of:
 
 ### `--force-bucket-name`
 
-Specify a specific bucket name to be used for the output. The resulting Google Cloud Storage URL will be in the format `gs://{bucket-name}/renders/{render-id}/{file-name}`. If not set, Remotion will choose the right bucket to use based on the region.
+Specify a specific bucket name to be used for the output. The resulting Google Cloud Storage URL will be in the format `gs://{bucket-name}/renders/{render-id}/{file-name}`. If not set, Picus will choose the right bucket to use based on the region.
 
 ### `--concurrency`
 

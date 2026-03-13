@@ -102,7 +102,7 @@ export const OffthreadVideoForRendering: React.FC<AllOffthreadVideoProps> = ({
 			throw new Error('No src passed');
 		}
 
-		if (!window.remotion_audioEnabled) {
+		if (!window.picus_audioEnabled) {
 			return;
 		}
 
@@ -166,7 +166,7 @@ export const OffthreadVideoForRendering: React.FC<AllOffthreadVideoProps> = ({
 	const {delayRender, continueRender} = useDelayRender();
 
 	useLayoutEffect(() => {
-		if (!window.remotion_videoEnabled) {
+		if (!window.picus_videoEnabled) {
 			return;
 		}
 
@@ -286,7 +286,7 @@ export const OffthreadVideoForRendering: React.FC<AllOffthreadVideoProps> = ({
 		[onVideoFrame],
 	);
 
-	if (!imageSrc || !window.remotion_videoEnabled) {
+	if (!imageSrc || !window.picus_videoEnabled) {
 		return null;
 	}
 

@@ -1,5 +1,5 @@
-import {StudioInternals} from '@remotion/studio';
-import {AbsoluteFill, AnimatedImage, staticFile} from 'remotion';
+import {StudioInternals} from '@picus/studio';
+import {AbsoluteFill, AnimatedImage, staticFile} from 'picus';
 
 const Comp = () => {
 	return (

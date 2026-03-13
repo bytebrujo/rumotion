@@ -1,4 +1,4 @@
-# @remotion/lambda-go
+# @picus/lambda-go
 
 ## Usage
 

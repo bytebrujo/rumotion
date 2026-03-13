@@ -3,8 +3,8 @@ import type {
 	DeleteAfter,
 	StillImageFormat,
 	VideoImageFormat,
-} from '@remotion/renderer';
-import type {DownloadBehavior} from 'remotion';
+} from '@picus/renderer';
+import type {DownloadBehavior} from 'picus';
 import type {
 	OutNameInputWithoutCredentials,
 	Privacy,

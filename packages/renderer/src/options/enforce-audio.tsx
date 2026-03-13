@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const DEFAULT_ENFORCE_AUDIO_TRACK = false;
 
@@ -13,7 +13,7 @@ export const enforceAudioOption = {
 		<>Render a silent audio track if there would be none otherwise.</>
 	),
 	ssrName: 'enforceAudioTrack',
-	docLink: 'https://www.remotion.dev/docs/config#setenforceaudiotrack-',
+	docLink: 'https://www.picus.dev/docs/config#setenforceaudiotrack-',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag]) {
@@ -39,4 +39,4 @@ export const enforceAudioOption = {
 		enforceAudioTrackState = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

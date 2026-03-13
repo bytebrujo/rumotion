@@ -1,8 +1,8 @@
-import type {Codec, LogLevel} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {NoReactAPIs} from '@remotion/renderer/pure';
+import type {Codec, LogLevel} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {NoReactAPIs} from '@picus/renderer/pure';
 import React, {useCallback, useMemo} from 'react';
-import type {_InternalTypes, VideoConfig} from 'remotion';
+import type {_InternalTypes, VideoConfig} from 'picus';
 import {labelProResProfile} from '../../helpers/prores-labels';
 import {useFileExistence} from '../../helpers/use-file-existence';
 import {Checkmark} from '../../icons/Checkmark';

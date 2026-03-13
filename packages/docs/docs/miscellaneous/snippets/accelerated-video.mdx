@@ -6,29 +6,29 @@ crumb: 'Snippets'
 ---
 
 :::note
-This does not work with [`<Video>`](/docs/media/video) from [`@remotion/media`](/docs/media) yet.
+This does not work with [`<Video>`](/docs/media/video) from [`@picus/media`](/docs/media) yet.
 :::
 
 import {AcceleratedVideoExample} from '../../../components/AcceleratedVideoPlayerExample.tsx';
 
-To speed up a video over time - for example to start with regular speed and then increasingly make it faster - we need to write some code to ensure we stay within Remotion's rules.
+To speed up a video over time - for example to start with regular speed and then increasingly make it faster - we need to write some code to ensure we stay within Picus's rules.
 
 It is not as easy as interpolating the [`playbackRate`](/docs/offthreadvideo#playbackrate):
 
 ```tsx twoslash title="❌ Does not work"
-import {interpolate, OffthreadVideo} from 'remotion';
+import {interpolate, OffthreadVideo} from 'picus';
 let frame = 0;
 // ---cut---
-<OffthreadVideo playbackRate={interpolate(frame, [0, 100], [1, 5])} src="https://remotion.media/BigBuckBunny.mp4#disable" />;
+<OffthreadVideo playbackRate={interpolate(frame, [0, 100], [1, 5])} src="https://picus.media/BigBuckBunny.mp4#disable" />;
 ```
 
-This is because Remotion will evaluate each frame independently from the other frames. If `frame` is 100, the `playbackRate` evaluates as 5 and Remotion will render the 500th frame of the video, which is undesired because it does not take into account that the speed has been building up to 5 until now.
+This is because Picus will evaluate each frame independently from the other frames. If `frame` is 100, the `playbackRate` evaluates as 5 and Picus will render the 500th frame of the video, which is undesired because it does not take into account that the speed has been building up to 5 until now.
 
 The correct way is to calculate the total time that has elapsed until the current frame, by accumulating the playback rates of the previous frames. Then we start the video from that frame and set the playback rate of that current frame to ensure the video plays smoothly.
 
 ```tsx twoslash title="✅ AcceleratedVideo.tsx"
 import React from 'react';
-import {interpolate, Sequence, useCurrentFrame, OffthreadVideo} from 'remotion';
+import {interpolate, Sequence, useCurrentFrame, OffthreadVideo} from 'picus';
 
 const remapSpeed = (frame: number, speed: (fr: number) => number) => {
   let framesPassed = 0;
@@ -48,7 +48,7 @@ export const AcceleratedVideo: React.FC = () => {
 
   return (
     <Sequence from={frame}>
-      <OffthreadVideo trimBefore={Math.round(remappedFrame)} playbackRate={speedFunction(frame)} src="https://remotion.media/BigBuckBunny.mp4#disable" />
+      <OffthreadVideo trimBefore={Math.round(remappedFrame)} playbackRate={speedFunction(frame)} src="https://picus.media/BigBuckBunny.mp4#disable" />
     </Sequence>
   );
 };
@@ -58,7 +58,7 @@ export const AcceleratedVideo: React.FC = () => {
 We are [disabling the media fragment hints](/docs/media-fragments) being appended to the video URL by adding `#disable` to the end of the URL.
 :::
 
-Note that the timeline in the Remotion Studio might move as you play the video because we reposition the sequence over time. This is okay as long as we calculate the frame in an idempotent way.
+Note that the timeline in the Picus Studio might move as you play the video because we reposition the sequence over time. This is okay as long as we calculate the frame in an idempotent way.
 
 ## Demo
 

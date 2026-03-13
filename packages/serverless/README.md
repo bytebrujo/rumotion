@@ -1,4 +1,4 @@
-# @remotion/serverless
+# @picus/serverless
 
 A runtime for distributed rendering
 

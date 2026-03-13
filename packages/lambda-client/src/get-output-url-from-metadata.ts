@@ -1,7 +1,7 @@
-import type {GetOutputUrl} from '@remotion/serverless-client';
-import {getExpectedOutName} from '@remotion/serverless-client';
+import type {GetOutputUrl} from '@picus/serverless-client';
+import {getExpectedOutName} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
-import {REMOTION_BUCKET_PREFIX} from './constants';
+import {PICUS_BUCKET_PREFIX} from './constants';
 
 export const getOutputUrlFromMetadata: GetOutputUrl<AwsProvider> = ({
 	renderMetadata,
@@ -13,7 +13,7 @@ export const getOutputUrlFromMetadata: GetOutputUrl<AwsProvider> = ({
 		renderMetadata,
 		bucketName,
 		customCredentials,
-		bucketNamePrefix: REMOTION_BUCKET_PREFIX,
+		bucketNamePrefix: PICUS_BUCKET_PREFIX,
 	});
 
 	return {

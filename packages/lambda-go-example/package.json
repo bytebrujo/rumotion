@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/lambda-go-example"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/lambda-go-example"
 	},
-	"name": "@remotion/lambda-go-example",
+	"name": "@picus/lambda-go-example",
 	"private": true,
 	"version": "4.0.434",
 	"scripts": {}

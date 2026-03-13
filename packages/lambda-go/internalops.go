@@ -6,7 +6,7 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-func constructRenderInternals(options *RemotionOptions) (*renderInternalOptions, error) {
+func constructRenderInternals(options *PicusOptions) (*renderInternalOptions, error) {
 
 	inputProps, serializeError := serializeInputProps(options.InputProps, options.Region, "video-or-audio", options.ForceBucketName)
 

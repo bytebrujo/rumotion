@@ -6,7 +6,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {ModalContainer} from './ModalContainer';
 import {ModalHeader} from './ModalHeader';
 
@@ -101,7 +101,7 @@ export const AskAiModal: React.FC = () => {
 					ref={iframe}
 					frameBorder={0}
 					style={container}
-					src="https://www.remotion.dev/ai-embed"
+					src="https://www.picus.dev/ai-embed"
 					allow="clipboard-read; clipboard-write"
 				/>
 			</ModalContainer>

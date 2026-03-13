@@ -20,7 +20,7 @@ import type {
 	RenderProgress,
 	RenderStillOnLambdaInput,
 	RenderStillOnLambdaOutput,
-} from '@remotion/lambda-client';
+} from '@picus/lambda-client';
 import {
 	deleteFunction,
 	deleteRender,
@@ -35,9 +35,9 @@ import {
 	getFunctions,
 	renderVideoOnLambda,
 	validateWebhookSignature,
-} from '@remotion/lambda-client';
-import type {FunctionInfo} from '@remotion/serverless';
-import {NoReactInternals} from 'remotion/no-react';
+} from '@picus/lambda-client';
+import type {FunctionInfo} from '@picus/serverless';
+import {NoReactInternals} from 'picus/no-react';
 import type {DeleteSiteInput, DeleteSiteOutput} from './api/delete-site';
 import {deleteSite} from './api/delete-site';
 import type {
@@ -70,59 +70,59 @@ import {
 	type _InternalOverallRenderProgress,
 } from './internals';
 
-export type {WebhookPayload} from '@remotion/lambda-client';
+export type {WebhookPayload} from '@picus/lambda-client';
 
 /**
- * @deprecated Import this from `@remotion/lambda-client` instead
+ * @deprecated Import this from `@picus/lambda-client` instead
  */
 const renderMediaOnLambda = NoReactInternals.ENABLE_V5_BREAKING_CHANGES
 	? () => {
 			throw new Error(
-				'renderMediaOnLambda() has moved to `@remotion/lambda-client`. Please import it from there.',
+				'renderMediaOnLambda() has moved to `@picus/lambda-client`. Please import it from there.',
 			);
 		}
 	: deprecatedRenderMediaOnLambda;
 
 /**
- * @deprecated Import this from `@remotion/lambda-client` instead
+ * @deprecated Import this from `@picus/lambda-client` instead
  */
 const getRenderProgress = NoReactInternals.ENABLE_V5_BREAKING_CHANGES
 	? () => {
 			throw new Error(
-				'getRenderProgress() has moved to `@remotion/lambda-client`. Please import it from there.',
+				'getRenderProgress() has moved to `@picus/lambda-client`. Please import it from there.',
 			);
 		}
 	: deprecatedGetRenderProgress;
 
 /**
- * @deprecated Import this from `@remotion/lambda-client` instead
+ * @deprecated Import this from `@picus/lambda-client` instead
  */
 const renderStillOnLambda = NoReactInternals.ENABLE_V5_BREAKING_CHANGES
 	? () => {
 			throw new Error(
-				'renderStillOnLambda() has moved to `@remotion/lambda-client`. Please import it from there.',
+				'renderStillOnLambda() has moved to `@picus/lambda-client`. Please import it from there.',
 			);
 		}
 	: deprecatedRenderStillOnLambda;
 
 /**
- * @deprecated Import this from `@remotion/lambda-client` instead
+ * @deprecated Import this from `@picus/lambda-client` instead
  */
 const presignUrl = NoReactInternals.ENABLE_V5_BREAKING_CHANGES
 	? () => {
 			throw new Error(
-				'presignUrl() has moved to `@remotion/lambda-client`. Please import it from there.',
+				'presignUrl() has moved to `@picus/lambda-client`. Please import it from there.',
 			);
 		}
 	: deprecatedPresignUrl;
 
 /**
- * @deprecated Import this from `@remotion/lambda-client` instead
+ * @deprecated Import this from `@picus/lambda-client` instead
  */
 const getSites = NoReactInternals.ENABLE_V5_BREAKING_CHANGES
 	? () => {
 			throw new Error(
-				'getSites() has moved to `@remotion/lambda-client`. Please import it from there.',
+				'getSites() has moved to `@picus/lambda-client`. Please import it from there.',
 			);
 		}
 	: deprecatedGetSites;

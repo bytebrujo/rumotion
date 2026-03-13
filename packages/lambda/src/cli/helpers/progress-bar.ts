@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import {NoReactInternals} from 'remotion/no-react';
+import {CliInternals} from '@picus/cli';
+import {NoReactInternals} from 'picus/no-react';
 
 export type BundleProgress = {
 	progress: number;

@@ -1,18 +1,18 @@
 import path from 'path';
-import {CliInternals} from '@remotion/cli';
-import {ConfigInternals} from '@remotion/cli/config';
-import {AwsProvider, LambdaClientInternals} from '@remotion/lambda-client';
+import {CliInternals} from '@picus/cli';
+import {ConfigInternals} from '@picus/cli/config';
+import {AwsProvider, LambdaClientInternals} from '@picus/lambda-client';
 import {
 	BINARY_NAME,
 	DEFAULT_MAX_RETRIES,
 	DEFAULT_OUTPUT_PRIVACY,
-} from '@remotion/lambda-client/constants';
-import type {ChromiumOptions, LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import type {ProviderSpecifics} from '@remotion/serverless';
-import {validatePrivacy} from '@remotion/serverless';
-import {NoReactInternals} from 'remotion/no-react';
+} from '@picus/lambda-client/constants';
+import type {ChromiumOptions, LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import type {ProviderSpecifics} from '@picus/serverless';
+import {validatePrivacy} from '@picus/serverless';
+import {NoReactInternals} from 'picus/no-react';
 import {internalDownloadMedia} from '../../api/download-media';
 import {validateMaxRetries} from '../../shared/validate-retries';
 import {parsedLambdaCli} from '../args';
@@ -58,12 +58,12 @@ export const STILL_COMMAND = 'still';
 
 export const stillCommand = async ({
 	args,
-	remotionRoot,
+	picusRoot,
 	logLevel,
 	providerSpecifics,
 }: {
 	args: string[];
-	remotionRoot: string;
+	picusRoot: string;
 	logLevel: LogLevel;
 	providerSpecifics: ProviderSpecifics<AwsProvider>;
 }) => {
@@ -73,7 +73,7 @@ export const stillCommand = async ({
 		Log.error({indent: false, logLevel}, 'No serve URL passed.');
 		Log.info(
 			{indent: false, logLevel},
-			'Pass an additional argument specifying a URL where your Remotion project is hosted.',
+			'Pass an additional argument specifying a URL where your Picus project is hosted.',
 		);
 		Log.info({indent: false, logLevel});
 		Log.info(
@@ -167,7 +167,7 @@ export const stillCommand = async ({
 			offthreadVideoThreads: 1,
 			indent: false,
 			port: ConfigInternals.getRendererPortFromConfigFileAndCliFlag(),
-			remotionRoot,
+			picusRoot,
 			logLevel,
 			webpackConfigOrServeUrl: serveUrl,
 			offthreadVideoCacheSizeInBytes,

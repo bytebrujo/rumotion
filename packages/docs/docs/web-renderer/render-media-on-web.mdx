@@ -2,27 +2,27 @@
 image: /generated/articles-docs-web-renderer-render-media-on-web.png
 id: render-media-on-web
 title: renderMediaOnWeb()
-crumb: '@remotion/web-renderer'
+crumb: '@picus/web-renderer'
 ---
 
 # renderMediaOnWeb()<AvailableFrom v="4.0.397" />
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.  
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
-_Part of the `@remotion/web-renderer` package._
+_Part of the `@picus/web-renderer` package._
 
 Renders a video or audio in the browser.  
 If you want to render a single frame to an image, use [`renderStillOnWeb()`](/docs/web-renderer/render-still-on-web).
 
 ```tsx twoslash title="Example usage"
-import {renderMediaOnWeb} from '@remotion/web-renderer';
-import {Video} from '@remotion/media';
+import {renderMediaOnWeb} from '@picus/web-renderer';
+import {Video} from '@picus/media';
 
 const Component: React.FC = () => {
-  return <Video src="https://remotion.media/video.mp4" />;
+  return <Video src="https://picus.media/video.mp4" />;
 };
 
 const {getBlob} = await renderMediaOnWeb({
@@ -69,13 +69,13 @@ You cannot use [`getInputProps()`](/docs/get-input-props) to read input props in
 
 ### `container?`
 
-_string_ <TsType type="WebRendererContainer" source="@remotion/web-renderer" href="/docs/web-renderer/types#webrenderercontainer" />
+_string_ <TsType type="WebRendererContainer" source="@picus/web-renderer" href="/docs/web-renderer/types#webrenderercontainer" />
 
 The container format to use for the output video. Default is `mp4`.
 
 ### `videoCodec?`
 
-_string_ <TsType type="WebRendererVideoCodec" source="@remotion/web-renderer" href="/docs/web-renderer/types#webrenderervideocodec" />
+_string_ <TsType type="WebRendererVideoCodec" source="@picus/web-renderer" href="/docs/web-renderer/types#webrenderervideocodec" />
 
 Which codec should be used to encode the video.  
 Default depends on the container:
@@ -85,7 +85,7 @@ Default depends on the container:
 
 ### `frameRange?`
 
-_number | [number, number] | [number, null]_ <TsType type="FrameRange" source="@remotion/web-renderer" href="/docs/web-renderer/types#framerange" />
+_number | [number, number] | [number, null]_ <TsType type="FrameRange" source="@picus/web-renderer" href="/docs/web-renderer/types#framerange" />
 
 Specify a single frame (passing a `number`) or a range of frames (passing a tuple `[number, number]`) to be rendered. By passing `null` (default) all frames of a composition get rendered. Pass `[number, null]` to render from a frame to the end of the composition.<AvailableFrom v="4.0.421" inline />
 
@@ -97,12 +97,12 @@ _number_
 
 ### `onProgress?`
 
-_function_ <TsType type="RenderMediaOnWebProgressCallback" source="@remotion/web-renderer" href="/docs/web-renderer/types#rendermediaonwebprogresscallback" />
+_function_ <TsType type="RenderMediaOnWebProgressCallback" source="@picus/web-renderer" href="/docs/web-renderer/types#rendermediaonwebprogresscallback" />
 
 React to render progress. The callback receives an object with the following properties:
 
 ```tsx twoslash
-import type {RenderMediaOnWebProgressCallback} from '@remotion/web-renderer';
+import type {RenderMediaOnWebProgressCallback} from '@picus/web-renderer';
 
 const onProgress: RenderMediaOnWebProgressCallback = ({
   encodedFrames,
@@ -122,7 +122,7 @@ const onProgress: RenderMediaOnWebProgressCallback = ({
 
 ### `videoBitrate?`
 
-_number | string_ <TsType type="WebRendererQuality" source="@remotion/web-renderer" href="/docs/web-renderer/types#webrendererquality" />
+_number | string_ <TsType type="WebRendererQuality" source="@picus/web-renderer" href="/docs/web-renderer/types#webrendererquality" />
 
 Controls the quality and file size of the output video. Can be either a number representing the bitrate in bits per second, or one of the preset quality levels:
 
@@ -167,7 +167,7 @@ If set to `true`, no audio will be included in the output video.
 
 ### `audioCodec?`
 
-_string_ <TsType type="WebRendererAudioCodec" source="@remotion/web-renderer" href="/docs/web-renderer/types#webrendereraudiocodec" />
+_string_ <TsType type="WebRendererAudioCodec" source="@picus/web-renderer" href="/docs/web-renderer/types#webrendereraudiocodec" />
 
 Which codec should be used to encode the audio.  
 Default depends on the container:
@@ -177,7 +177,7 @@ Default depends on the container:
 
 ### `audioBitrate?`
 
-_number | string_ <TsType type="WebRendererQuality" source="@remotion/web-renderer" href="/docs/web-renderer/types#webrendererquality" />
+_number | string_ <TsType type="WebRendererQuality" source="@picus/web-renderer" href="/docs/web-renderer/types#webrendererquality" />
 
 Controls the quality and file size of the audio. Can be either a number representing the bitrate in bits per second, or one of the preset quality levels:
 
@@ -196,7 +196,7 @@ Default is `30000`.
 
 ### `logLevel?`
 
-_string_ <TsType type="LogLevel" source="remotion" />
+_string_ <TsType type="LogLevel" source="picus" />
 
 Determines how much information is logged during rendering.  
 Default is `"info"`.
@@ -220,7 +220,7 @@ const composition = {
 };
 
 // ---cut---
-import {renderMediaOnWeb} from '@remotion/web-renderer';
+import {renderMediaOnWeb} from '@picus/web-renderer';
 
 const controller = new AbortController();
 
@@ -243,18 +243,18 @@ _number | null_
 
 ### `onArtifact?`
 
-_function_ <TsType type="WebRendererOnArtifact" source="@remotion/web-renderer" href="/docs/web-renderer/types#webrendereronartifact" />
+_function_ <TsType type="WebRendererOnArtifact" source="@picus/web-renderer" href="/docs/web-renderer/types#webrendereronartifact" />
 
 [Handle an artifact](/docs/artifacts#using-rendermedia-renderstill-or-renderframes) that was emitted by the [`<Artifact>`](/docs/artifact) component.
 
 ### `onFrame?`
 
-_function_ <TsType type="OnFrameCallback" source="@remotion/web-renderer" href="/docs/web-renderer/types#onframecallback" />
+_function_ <TsType type="OnFrameCallback" source="@picus/web-renderer" href="/docs/web-renderer/types#onframecallback" />
 
 A callback that receives each `VideoFrame` before it is encoded. This allows you to process or modify frames. The callback must return the same `VideoFrame` or a new `VideoFrame` with the same dimensions and timestamp.
 
 ```tsx twoslash
-import type {OnFrameCallback} from '@remotion/web-renderer';
+import type {OnFrameCallback} from '@picus/web-renderer';
 
 const onFrame: OnFrameCallback = (frame) => {
   // Process the frame...
@@ -264,14 +264,14 @@ const onFrame: OnFrameCallback = (frame) => {
 
 ### `outputTarget?`
 
-_string_ <TsType type="WebRendererOutputTarget" source="@remotion/web-renderer" href="/docs/web-renderer/types#webrendereroutputtarget" />
+_string_ <TsType type="WebRendererOutputTarget" source="@picus/web-renderer" href="/docs/web-renderer/types#webrendereroutputtarget" />
 
 Controls how the output is stored:
 
 - `"arraybuffer"`: Store the output in memory as an ArrayBuffer
 - `"web-fs"`: Use the [Origin Private File System](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system) for better memory efficiency with large files
 
-By default, Remotion will automatically choose `"web-fs"` if available, otherwise `"arraybuffer"`.
+By default, Picus will automatically choose `"web-fs"` if available, otherwise `"arraybuffer"`.
 
 ### `schema?`
 
@@ -314,7 +314,7 @@ const composition = {
 
 // ---cut---
 
-import {renderMediaOnWeb} from '@remotion/web-renderer';
+import {renderMediaOnWeb} from '@picus/web-renderer';
 
 const result = await renderMediaOnWeb({
   composition,
@@ -332,7 +332,7 @@ a.click();
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/web-renderer/src/render-media-on-web.tsx)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/web-renderer/src/render-media-on-web.tsx)
 - [Client-side rendering](/docs/client-side-rendering)
 - [`renderStillOnWeb()`](/docs/web-renderer/render-still-on-web)
 - [`renderMedia()`](/docs/renderer/render-media)

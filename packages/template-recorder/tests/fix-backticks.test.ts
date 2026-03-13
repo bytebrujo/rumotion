@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 
-import { Caption } from "@remotion/captions";
+import { Caption } from "@picus/captions";
 import { expect, test } from "bun:test";
-import { fixBackticks } from "../remotion/captions/processing/fix-backticks";
+import { fixBackticks } from "../picus/captions/processing/fix-backticks";
 
 const example: Caption[] = [
   {

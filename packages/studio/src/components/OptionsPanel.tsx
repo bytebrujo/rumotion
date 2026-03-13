@@ -7,8 +7,8 @@ import React, {
 	useMemo,
 	useState,
 } from 'react';
-import type {_InternalTypes} from 'remotion';
-import {Internals} from 'remotion';
+import type {_InternalTypes} from 'picus';
+import {Internals} from 'picus';
 import {BACKGROUND} from '../helpers/colors';
 import {useMobileLayout} from '../helpers/mobile-layout';
 import {SHOW_BROWSER_RENDERING} from '../helpers/show-browser-rendering';
@@ -23,7 +23,7 @@ import {VisualControlsContent} from './VisualControls/VisualControlsContent';
 
 type OptionsSidebarPanel = 'input-props' | 'renders' | 'visual-controls';
 
-const localStorageKey = 'remotion.sidebarPanel';
+const localStorageKey = 'picus.sidebarPanel';
 
 const getSelectedPanel = (renderingAvailable: boolean): OptionsSidebarPanel => {
 	if (!renderingAvailable) {
@@ -139,7 +139,7 @@ export const OptionsPanel: React.FC<{
 				return;
 			}
 
-			window.remotion_ignoreFastRefreshUpdate = null;
+			window.picus_ignoreFastRefreshUpdate = null;
 
 			updateProps({
 				id: composition.id,

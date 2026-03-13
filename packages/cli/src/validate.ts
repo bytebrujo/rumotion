@@ -1,5 +1,5 @@
 /* eslint-disable prefer-destructuring */
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 
 export const validateDimension: typeof NoReactInternals.validateDimension =
 	NoReactInternals.validateDimension;

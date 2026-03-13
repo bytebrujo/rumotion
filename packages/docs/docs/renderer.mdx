@@ -2,13 +2,13 @@
 image: /generated/articles-docs-renderer.png
 slug: renderer
 sidebar_label: Overview
-title: '@remotion/renderer'
+title: '@picus/renderer'
 ---
 
 import {TableOfContents} from './renderer/TableOfContents';
 
-The `@remotion/renderer` package provides APIs for rendering video server-side.
-The package is also internally used by the Remotion CLI and [Remotion Lambda](/docs/lambda).
+The `@picus/renderer` package provides APIs for rendering video server-side.
+The package is also internally used by the Picus CLI and [Picus Lambda](/docs/lambda).
 
 :::warning
 The configuration file has no effect when using these APIs.
@@ -16,7 +16,7 @@ The configuration file has no effect when using these APIs.
 
 ## Installation
 
-<Installation pkg="@remotion/renderer" />
+<Installation pkg="@picus/renderer" />
 
 ## Server-side rendering examples
 
@@ -24,10 +24,10 @@ See the [Server-side rendering](/docs/ssr) for some examples of how to use serve
 
 ## Available functions
 
-The following APIs are available in the `@remotion/renderer` package:
+The following APIs are available in the `@picus/renderer` package:
 
 <TableOfContents />
 
 ## What's the difference between `renderMedia()` and `renderFrames()`?
 
-In Remotion 3.0, we added the [`renderMedia()`](/docs/renderer/render-media) API which combines `renderFrames()` and `stitchFramesToVideo()` into one simplified step and performs the render faster. Prefer `renderMedia()` if you can.
+In Picus 3.0, we added the [`renderMedia()`](/docs/renderer/render-media) API which combines `renderFrames()` and `stitchFramesToVideo()` into one simplified step and performs the render faster. Prefer `renderMedia()` if you can.

@@ -2,8 +2,8 @@ import type {
 	MediaParserAudioTrack,
 	MediaParserLogLevel,
 	MediaParserOnAudioSample,
-} from '@remotion/media-parser';
-import {MediaParserInternals} from '@remotion/media-parser';
+} from '@picus/media-parser';
+import {MediaParserInternals} from '@picus/media-parser';
 import {getAudioDecoderConfig} from './audio-decoder-config';
 import {createAudioEncoder} from './audio-encoder';
 import {getAudioEncoderConfig} from './audio-encoder-config';

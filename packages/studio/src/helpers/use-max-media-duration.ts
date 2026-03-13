@@ -1,7 +1,7 @@
-import {getVideoMetadata} from '@remotion/media-utils';
+import {getVideoMetadata} from '@picus/media-utils';
 import {ALL_FORMATS, Input, InputDisposedError, UrlSource} from 'mediabunny';
 import {useEffect, useState} from 'react';
-import {type TSequence} from 'remotion';
+import {type TSequence} from 'picus';
 
 const cache = new Map<string, number>();
 

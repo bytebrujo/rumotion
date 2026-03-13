@@ -1,9 +1,9 @@
-import {useCurrentFrame} from 'remotion';
-import {useVideoConfig} from 'remotion';
-import {Easing} from 'remotion';
-import {interpolate} from 'remotion';
-import {spring} from 'remotion';
-import {Sequence} from 'remotion';
+import {useCurrentFrame} from 'picus';
+import {useVideoConfig} from 'picus';
+import {Easing} from 'picus';
+import {interpolate} from 'picus';
+import {spring} from 'picus';
+import {Sequence} from 'picus';
 import React from 'react';
 import {TriangleToSquare} from './TriangleToSquare';
 import type { Theme} from './colors';

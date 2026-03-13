@@ -1,4 +1,4 @@
-import {DOCS_URL} from '@remotion/serverless-client';
+import {DOCS_URL} from '@picus/serverless-client';
 import type {AwsRegion} from './regions';
 
 export const convertToServeUrlImplementation = ({
@@ -12,7 +12,7 @@ export const convertToServeUrlImplementation = ({
 }) => {
 	if (urlOrId.startsWith('src/')) {
 		throw new Error(
-			`Remotion Lambda can only render based on a URL in the cloud. It seems like you passed a local file: ${urlOrId}. Read the setup guide for Remotion Lambda ${DOCS_URL}/docs/lambda/setup`,
+			`Picus Lambda can only render based on a URL in the cloud. It seems like you passed a local file: ${urlOrId}. Read the setup guide for Picus Lambda ${DOCS_URL}/docs/lambda/setup`,
 		);
 	}
 

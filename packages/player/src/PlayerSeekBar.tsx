@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {Internals, interpolate} from 'remotion';
+import {Internals, interpolate} from 'picus';
 import {useHoverState} from './use-hover-state.js';
 import {usePlayer} from './use-player.js';
 import {useElementSize} from './utils/use-element-size.js';

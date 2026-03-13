@@ -230,7 +230,7 @@ export type SerializeableOptionalParseMediaParams<
 	logLevel: MediaParserLogLevel;
 	progressIntervalInMs: number | null;
 	fields: F | null;
-	acknowledgeRemotionLicense: boolean;
+	acknowledgePicusLicense: boolean;
 	m3uPlaylistContext: M3uPlaylistContext | null;
 	makeSamplesStartAtZero: boolean;
 	seekingHints: SeekingHints | null;

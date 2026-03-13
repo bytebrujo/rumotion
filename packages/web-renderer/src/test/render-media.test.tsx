@@ -1,6 +1,6 @@
 import {ALL_FORMATS, BlobSource, Input} from 'mediabunny';
-import {interpolateColors, useCurrentFrame} from 'remotion';
-import {VERSION} from 'remotion/version';
+import {interpolateColors, useCurrentFrame} from 'picus';
+import {VERSION} from 'picus/version';
 import {expect, test} from 'vitest';
 import type {RenderMediaOnWebProgress} from '../render-media-on-web';
 import {renderMediaOnWeb} from '../render-media-on-web';
@@ -233,7 +233,7 @@ test(
 	},
 );
 
-test('should include "Made with Remotion" metadata', async (t) => {
+test('should include "Made with Picus" metadata', async (t) => {
 	if (t.task.file.projectName === 'webkit') {
 		t.skip();
 		return;
@@ -261,7 +261,7 @@ test('should include "Made with Remotion" metadata', async (t) => {
 	});
 
 	const tags = await input.getMetadataTags();
-	expect(tags.comment).toBe(`Made with Remotion ${VERSION}`);
+	expect(tags.comment).toBe(`Made with Picus ${VERSION}`);
 });
 
 test('should not fire stale progress callbacks after render completes', async (t) => {

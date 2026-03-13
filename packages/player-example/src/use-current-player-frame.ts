@@ -1,4 +1,4 @@
-import {CallbackListener, PlayerRef} from '@remotion/player';
+import {CallbackListener, PlayerRef} from '@picus/player';
 import {useCallback, useSyncExternalStore} from 'react';
 
 export const useCurrentPlayerFrame = (

@@ -1,6 +1,6 @@
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {StudioServerInternals} from '@remotion/studio-server';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {StudioServerInternals} from '@picus/studio-server';
 import minimist from 'minimist';
 import {addCommand} from './add';
 import {benchmarkCommand} from './benchmark';
@@ -26,7 +26,7 @@ import {makeHyperlink} from './hyperlinks/make-link';
 import {getVideoImageFormat} from './image-formats';
 import {initializeCli} from './initialize-cli';
 import {lambdaCommand} from './lambda-command';
-import {listOfRemotionPackages} from './list-of-remotion-packages';
+import {listOfPicusPackages} from './list-of-picus-packages';
 import {Log} from './log';
 import {makeProgressBar} from './make-progress-bar';
 import {BooleanFlags, parsedCli, quietFlagProvided} from './parsed-cli';
@@ -59,12 +59,12 @@ export const cli = async () => {
 		commandLine: parsedCli,
 	}).value;
 
-	const remotionRoot = RenderInternals.findRemotionRoot();
+	const picusRoot = RenderInternals.findPicusRoot();
 	if (command !== VERSIONS_COMMAND && !parsedCli.help) {
-		await validateVersionsBeforeCommand(remotionRoot, 'info');
+		await validateVersionsBeforeCommand(picusRoot, 'info');
 	}
 
-	const logLevel = await initializeCli(remotionRoot);
+	const logLevel = await initializeCli(picusRoot);
 
 	const isBun = typeof Bun !== 'undefined';
 	if (isBun) {
@@ -81,7 +81,7 @@ export const cli = async () => {
 
 		Log.info(
 			{indent: false, logLevel},
-			'You are running Remotion with Bun, which is mostly supported. Visit https://remotion.dev/bun for more information.',
+			'You are running Picus with Bun, which is mostly supported. Visit https://picus.dev/bun for more information.',
 		);
 	}
 
@@ -96,19 +96,19 @@ export const cli = async () => {
 
 	try {
 		if (command === 'bundle') {
-			await bundleCommand(remotionRoot, args, logLevel);
+			await bundleCommand(picusRoot, args, logLevel);
 		} else if (command === 'compositions') {
-			await listCompositionsCommand(remotionRoot, args, logLevel);
+			await listCompositionsCommand(picusRoot, args, logLevel);
 		} else if (isStudio) {
-			await studioCommand(remotionRoot, args, logLevel);
+			await studioCommand(picusRoot, args, logLevel);
 		} else if (command === 'lambda') {
-			await lambdaCommand(remotionRoot, args, logLevel);
+			await lambdaCommand(picusRoot, args, logLevel);
 		} else if (command === 'cloudrun') {
-			await cloudrunCommand(remotionRoot, args, logLevel);
+			await cloudrunCommand(picusRoot, args, logLevel);
 		} else if (command === 'render') {
-			await render(remotionRoot, args, logLevel);
+			await render(picusRoot, args, logLevel);
 		} else if (command === 'still') {
-			await still(remotionRoot, args, logLevel);
+			await still(picusRoot, args, logLevel);
 		} else if (command === 'ffmpeg') {
 			ffmpegCommand(process.argv.slice(3), logLevel);
 		} else if (command === 'gpu') {
@@ -117,7 +117,7 @@ export const cli = async () => {
 			ffprobeCommand(process.argv.slice(3), logLevel);
 		} else if (command === 'upgrade') {
 			await upgradeCommand({
-				remotionRoot,
+				picusRoot,
 				packageManager: packageManager ?? undefined,
 				version:
 					versionFlagOption.getValue({commandLine: parsedCli}).value ??
@@ -128,7 +128,7 @@ export const cli = async () => {
 		} else if (command === 'add') {
 			if (args.length === 0) {
 				throw new Error(
-					'Please specify at least one package name. Example: npx remotion add @remotion/transitions',
+					'Please specify at least one package name. Example: npx picus add @picus/transitions',
 				);
 			}
 
@@ -138,7 +138,7 @@ export const cli = async () => {
 			const additionalArgs = flagIndex === -1 ? [] : args.slice(flagIndex);
 
 			await addCommand({
-				remotionRoot,
+				picusRoot,
 				packageManager: packageManager ?? undefined,
 				packageNames,
 				logLevel,
@@ -147,11 +147,11 @@ export const cli = async () => {
 		} else if (command === 'skills') {
 			await skillsCommand(args, logLevel);
 		} else if (command === VERSIONS_COMMAND) {
-			await versionsCommand(remotionRoot, logLevel);
+			await versionsCommand(picusRoot, logLevel);
 		} else if (command === BROWSER_COMMAND) {
 			await browserCommand(args, logLevel);
 		} else if (command === 'benchmark') {
-			await benchmarkCommand(remotionRoot, args, logLevel);
+			await benchmarkCommand(picusRoot, args, logLevel);
 		} else if (command === 'help') {
 			printHelp(logLevel);
 			process.exit(0);
@@ -195,7 +195,7 @@ export const CliInternals = {
 	findEntryPoint,
 	getVideoImageFormat,
 	printCompositions,
-	listOfRemotionPackages,
+	listOfPicusPackages,
 	shouldUseNonOverlayingLogger,
 	getCompositionWithDimensionOverride,
 	defaultBrowserDownloadProgress,

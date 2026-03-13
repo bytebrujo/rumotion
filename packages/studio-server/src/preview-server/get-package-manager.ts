@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {PackageManager} from '@remotion/studio-shared';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {PackageManager} from '@picus/studio-shared';
 
 type LockfilePath = {
 	manager: PackageManager;
@@ -16,43 +16,43 @@ export const lockFilePaths: LockfilePath[] = [
 		path: 'package-lock.json',
 		manager: 'npm',
 		installCommand: 'npm i',
-		startCommand: 'npx remotion studio',
+		startCommand: 'npx picus studio',
 	},
 	{
 		path: 'yarn.lock',
 		manager: 'yarn',
 		installCommand: 'yarn add',
-		startCommand: 'yarn remotion studio',
+		startCommand: 'yarn picus studio',
 	},
 	{
 		path: 'pnpm-lock.yaml',
 		manager: 'pnpm',
 		installCommand: 'pnpm i',
-		startCommand: 'pnpm exec remotion studio',
+		startCommand: 'pnpm exec picus studio',
 	},
 	{
 		path: 'bun.lock',
 		manager: 'bun',
 		installCommand: 'bun i',
-		startCommand: 'bunx remotion studio',
+		startCommand: 'bunx picus studio',
 	},
 	{
 		path: 'bun.lockb',
 		manager: 'bun',
 		installCommand: 'bun i',
-		startCommand: 'bunx remotion studio',
+		startCommand: 'bunx picus studio',
 	},
 ];
 
 let warnedAboutMultipleLockfiles = false;
 
 export const getPackageManager = ({
-	remotionRoot,
+	picusRoot,
 	packageManager,
 	dirUp,
 	logLevel,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	packageManager: string | undefined;
 	dirUp: number;
 	logLevel: LogLevel;
@@ -73,7 +73,7 @@ export const getPackageManager = ({
 
 	const existingPkgManagers = lockFilePaths.filter((p) =>
 		fs.existsSync(
-			path.join(remotionRoot, ...new Array(dirUp).fill('..'), p.path),
+			path.join(picusRoot, ...new Array(dirUp).fill('..'), p.path),
 		),
 	);
 
@@ -83,7 +83,7 @@ export const getPackageManager = ({
 
 	if (existingPkgManagers.length === 0) {
 		return getPackageManager({
-			remotionRoot,
+			picusRoot,
 			packageManager,
 			dirUp: dirUp + 1,
 			logLevel,

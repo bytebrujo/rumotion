@@ -3,7 +3,7 @@ import type {
 	MediaParserLogLevel,
 	MediaParserVideoSample,
 	WriterInterface,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import type {ConvertMediaContainer} from '../get-available-containers';
 import type {MakeTrackAudio, MakeTrackVideo} from './make-track-info';
 import type {ProgressTracker} from './progress-tracker';

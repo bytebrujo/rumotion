@@ -1,4 +1,4 @@
-import type {Browser} from '@remotion/renderer';
+import type {Browser} from '@picus/renderer';
 
 const currentBrowser: Browser | null = null;
 

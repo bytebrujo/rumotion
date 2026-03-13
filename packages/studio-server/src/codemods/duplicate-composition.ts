@@ -1,4 +1,4 @@
-import type {RecastCodemod} from '@remotion/studio-shared';
+import type {RecastCodemod} from '@picus/studio-shared';
 import {parseAst, serializeAst} from './parse-ast';
 import type {Change} from './recast-mods';
 import {applyCodemod} from './recast-mods';

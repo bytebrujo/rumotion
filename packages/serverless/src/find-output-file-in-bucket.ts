@@ -3,8 +3,8 @@ import type {
 	CustomCredentials,
 	ProviderSpecifics,
 	RenderMetadata,
-} from '@remotion/serverless-client';
-import {getExpectedOutName} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {getExpectedOutName} from '@picus/serverless-client';
 
 export type OutputFileMetadata = {
 	url: string;

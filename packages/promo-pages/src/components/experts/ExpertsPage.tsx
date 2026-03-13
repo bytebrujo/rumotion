@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {random} from 'remotion';
+import {random} from 'picus';
 import {
 	EmailLogo,
 	GitHubLogo,
@@ -198,15 +198,15 @@ export const ExpertsPageContent: React.FC<ExpertsPageProps> = ({Link}) => {
 	return (
 		<div className="relative bg-[var(--background)]">
 			<div style={wrapperStyle}>
-				<h1 className="experts-pagetitle">Find a Remotion Expert</h1>
+				<h1 className="experts-pagetitle">Find a Picus Expert</h1>
 				<p className="experts-tagline">
 					Get help by booking a call or hiring these freelancers to work on your
-					Remotion project.
+					Picus project.
 					<br />
 					They appear in random order.{' '}
 				</p>
 				<p className="experts-tagline">
-					<a href="mailto:hi@remotion.dev?subject=Remotion+Experts+directory">
+					<a href="mailto:hi@picus.dev?subject=Picus+Experts+directory">
 						<strong>Are you available for hire? Let us know!</strong>
 					</a>
 				</p>
@@ -235,10 +235,10 @@ export const ExpertsPageContent: React.FC<ExpertsPageProps> = ({Link}) => {
 						</defs>
 					</svg>
 					<div style={{flex: 1}}>
-						Remotion Experts are independent freelancers with proven Remotion
+						Picus Experts are independent freelancers with proven Picus
 						expertise and portfolios. However,{' '}
 						<strong> perform due diligence </strong> before hiring. <br />{' '}
-						Remotion does not arbitrate disputes between experts and clients.
+						Picus does not arbitrate disputes between experts and clients.
 					</div>
 				</div>
 				<br />

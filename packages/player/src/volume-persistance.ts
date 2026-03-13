@@ -1,6 +1,6 @@
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 
-const DEFAULT_VOLUME_PERSISTANCE_KEY = 'remotion.volumePreference';
+const DEFAULT_VOLUME_PERSISTANCE_KEY = 'picus.volumePreference';
 
 export const persistVolume = (
 	volume: number,
@@ -18,7 +18,7 @@ export const persistVolume = (
 		);
 	} catch (e) {
 		// User can disallow localStorage access
-		// https://github.com/remotion-dev/remotion/issues/3540
+		// https://github.com/picus-dev/picus/issues/3540
 
 		Internals.Log.error({logLevel, tag: null}, 'Could not persist volume', e);
 	}
@@ -38,7 +38,7 @@ export const getPreferredVolume = (
 		return val ? Number(val) : 1;
 	} catch {
 		// User can disallow localStorage access
-		// https://github.com/remotion-dev/remotion/issues/3540
+		// https://github.com/picus-dev/picus/issues/3540
 		return 1;
 	}
 };

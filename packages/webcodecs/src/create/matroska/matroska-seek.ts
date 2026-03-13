@@ -1,4 +1,4 @@
-import type {MatroskaElement} from '@remotion/media-parser';
+import type {MatroskaElement} from '@picus/media-parser';
 import {makeMatroskaBytes, padMatroskaBytes} from './matroska-utils';
 
 export type Seek = {

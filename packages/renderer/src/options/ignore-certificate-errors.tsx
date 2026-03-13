@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let ignoreCertificateErrors = false;
 
@@ -15,7 +15,7 @@ export const ignoreCertificateErrorsOption = {
 	),
 	ssrName: 'ignoreCertificateErrors' as const,
 	docLink:
-		'https://www.remotion.dev/docs/chromium-flags#--ignore-certificate-errors',
+		'https://www.picus.dev/docs/chromium-flags#--ignore-certificate-errors',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -41,4 +41,4 @@ export const ignoreCertificateErrorsOption = {
 		ignoreCertificateErrors = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

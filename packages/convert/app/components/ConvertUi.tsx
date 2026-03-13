@@ -1,5 +1,5 @@
 import type MediaFox from '@mediafox/core';
-import {Button} from '@remotion/design';
+import {Button} from '@picus/design';
 import type {
 	CropRectangle,
 	Input,

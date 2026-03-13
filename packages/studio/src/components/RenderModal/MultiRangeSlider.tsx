@@ -83,7 +83,7 @@ export const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
 				value={start}
 				step={step}
 				onChange={onChangeLeft}
-				className="__remotion_thumb"
+				className="__picus_thumb"
 			/>
 
 			<input
@@ -93,7 +93,7 @@ export const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
 				value={end}
 				step={step}
 				onChange={onChangeRight}
-				className="__remotion_thumb"
+				className="__picus_thumb"
 			/>
 			<div style={rangeStyle} />
 		</div>

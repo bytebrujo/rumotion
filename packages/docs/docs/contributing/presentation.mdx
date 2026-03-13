@@ -5,9 +5,9 @@ sidebar_label: Adding new presentations
 crumb: Contributing
 ---
 
-Make your custom presentation accessible for others in the `@remotion/transitions` package.
+Make your custom presentation accessible for others in the `@picus/transitions` package.
 
-## Setup the Remotion project
+## Setup the Picus project
 
 If this is your first contribution, see the [main instructions](/docs/contributing) first.
 
@@ -15,7 +15,7 @@ If this is your first contribution, see the [main instructions](/docs/contributi
 
 <Step>1</Step> Create a custom transition. Look at the <a href="/docs/transitions/presentations/custom">custom presentation</a> docs to see how it's done.
 <br />
-<Step>2</Step>Add your presentation to the remotion monorepository under <code>packages/transitions/src/presentations</code>.<br />
+<Step>2</Step>Add your presentation to the picus monorepository under <code>packages/transitions/src/presentations</code>.<br />
 <Step>3</Step> In the <code>bundle.ts</code>, add your presentation to the <code>presentations array</code>.
 <br />
 
@@ -23,7 +23,7 @@ If this is your first contribution, see the [main instructions](/docs/contributi
   const presentations = ['slide', 'flip', 'wipe', 'fade', ..., 'yourPresentation'];
 ```
 
-<Step>4</Step> Add your presentation to the <code>exports</code> of the <code>package.json</code> at <code>packages/transition/package.json</code> as well as to the <code>typesVersions</code>, so it can be correctly imported in other remotion projects.
+<Step>4</Step> Add your presentation to the <code>exports</code> of the <code>package.json</code> at <code>packages/transition/package.json</code> as well as to the <code>typesVersions</code>, so it can be correctly imported in other picus projects.
 
 ```json
 "exports": {
@@ -43,7 +43,7 @@ If this is your first contribution, see the [main instructions](/docs/contributi
   }
 ```
 
-Make sure to `pnpm build` in `remotion/packages/transitions` so your transition gets usable in your remotion repository.
+Make sure to `pnpm build` in `picus/packages/transitions` so your transition gets usable in your picus repository.
 
 <Step>5</Step> Write a documentation for your presentation. Have a look at the presentations linked in the <a href="/docs/transitions/presentations">presentation</a> docs for reference. The documentation should consist of the following parts:
 
@@ -71,7 +71,7 @@ one-liner describing what your presentation does.
 </TOCItem>
 ```
 
-An pull request for reference containing all required steps and filechanges can be found <a href="https://github.com/remotion-dev/remotion/pull/3199/files">here</a>.
+An pull request for reference containing all required steps and filechanges can be found <a href="https://github.com/picus-dev/picus/pull/3199/files">here</a>.
 
 ## See also
 

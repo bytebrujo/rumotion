@@ -1,5 +1,5 @@
 import {beforeAll, expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {mediaParserController} from '../../controller/media-parser-controller';
 import {hasBeenAborted} from '../../errors';
 import {parseMedia} from '../../parse-media';
@@ -22,7 +22,7 @@ test('seek moof, should make use of the mfra atom if available', async () => {
 		await parseMedia({
 			src: video,
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			controller: controller1,
 			fields: {
 				internalStats: true,
@@ -114,7 +114,7 @@ test('should use seeking hints from previous parse', async () => {
 		await parseMedia({
 			src: video,
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			controller: controller2,
 			seekingHints: hints,
 			onVideoTrack: () => {

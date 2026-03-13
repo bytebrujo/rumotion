@@ -16,7 +16,7 @@ https://user-images.githubusercontent.com/1911623/121809549-93342a80-cc33-11eb-8
 2. Go to https://github.com/settings/personal-access-tokens/new and create a token with default settings. Create a `.env` file and add it:
 
 ```
-REMOTION_GITHUB_TOKEN=github_pat_...
+PICUS_GITHUB_TOKEN=github_pat_...
 ```
 
 3. Install dependencies:
@@ -35,7 +35,7 @@ npm run dev
    Or use the command line:
 
 ```
-npx remotion render
+npx picus render
 ```
 
 ## Make your own video (GitHub Actions)
@@ -61,18 +61,18 @@ npx remotion render
 7. By clicking on this you can get your Stargazer video.
    <img src="https://user-images.githubusercontent.com/1911623/121809394-fb364100-cc32-11eb-8a82-e9a6d25f37cf.png" width="720"/>
 
-## Upgrade Remotion
+## Upgrade Picus
 
 ```
-npx remotion upgrade
+npx picus upgrade
 ```
 
 ## Credits
 
-Made with [Remotion](https://www.remotion.dev/)
+Made with [Picus](https://www.picus.dev/)
 
 ## License
 
 The code in this repository: Licensed under MIT.  
-The Remotion framework (a dependency of this project): Normally, companies need to obtain a paid license.  
+The Picus framework (a dependency of this project): Normally, companies need to obtain a paid license.  
 However, creating videos of this template [is accepted](https://github.com/pomber/stargazer/issues/19#issuecomment-1868469783) without needing a company license.

@@ -1,5 +1,5 @@
 import {useEffect, useRef} from 'react';
-import type {VideoConfig} from 'remotion';
+import type {VideoConfig} from 'picus';
 import {usePlayer} from './use-player.js';
 
 export type BrowserMediaControlsBehavior =

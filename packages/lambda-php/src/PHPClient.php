@@ -1,5 +1,5 @@
 <?php
-namespace Remotion\LambdaPhp;
+namespace Picus\LambdaPhp;
 
 use stdClass;
 use Exception;
@@ -10,7 +10,7 @@ use Aws\Exception\AwsException;
 
 class PHPClient
 {
-    private const BUCKET_NAME_PREFIX = 'remotionlambda-';
+    private const BUCKET_NAME_PREFIX = 'picuslambda-';
     private const REGION_US_EAST = 'us-east-1';
 
     protected $client;
@@ -81,7 +81,7 @@ class PHPClient
     }
 
     /**
-     * Generate a bucket name following Remotion conventions
+     * Generate a bucket name following Picus conventions
      */
     protected function makeBucketName(): string
     {
@@ -115,9 +115,9 @@ class PHPClient
     }
 
     /**
-     * Get all Remotion buckets in the current region
+     * Get all Picus buckets in the current region
      */
-    private function getRemotionBuckets(): array
+    private function getPicusBuckets(): array
     {
         $s3Client = $this->createS3Client();
 
@@ -150,13 +150,13 @@ class PHPClient
      */
     private function getOrCreateBucket(): string
     {
-        $buckets = $this->getRemotionBuckets();
+        $buckets = $this->getPicusBuckets();
 
         if (count($buckets) > 1) {
             throw new Exception(
                 sprintf(
-                    "You have multiple buckets (%s) in your S3 region (%s) starting with \"remotionlambda-\". " .
-                    "Please see https://remotion.dev/docs/lambda/multiple-buckets.",
+                    "You have multiple buckets (%s) in your S3 region (%s) starting with \"picuslambda-\". " .
+                    "Please see https://picus.dev/docs/lambda/multiple-buckets.",
                     implode(', ', $buckets),
                     $this->region
                 )
@@ -320,7 +320,7 @@ class PHPClient
 
         $classResponse = new RenderMediaOnLambdaResponse();
 
-        // Remotion response
+        // Picus response
         if ($response['type'] === 'error') {
             throw new Exception($response['message']);
         }

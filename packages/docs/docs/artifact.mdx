@@ -6,10 +6,10 @@ crumb: API
 
 # `<Artifact>`<AvailableFrom v="4.0.176"/>
 
-By rendering an `<Artifact>` tag in your Remotion markup, [an extra file will get emitted during rendering](/docs/artifacts).
+By rendering an `<Artifact>` tag in your Picus markup, [an extra file will get emitted during rendering](/docs/artifacts).
 
 ```tsx twoslash title="MyComp.tsx"
-import {Artifact, useCurrentFrame} from 'remotion';
+import {Artifact, useCurrentFrame} from 'picus';
 
 export const MyComp: React.FC = () => {
   const frame = useCurrentFrame();
@@ -21,7 +21,7 @@ export const MyComp: React.FC = () => {
 If rendered on the CLI or via the Studio, this will emit an additional file:
 
 ```
-$ npx remotion render MyComp
+$ npx picus render MyComp
 + out/MyComp.mp4
 + my-file.txt (12B)
 ```
@@ -32,7 +32,7 @@ However, the file names must be unique.
 The component will get evaluated on every frame, which means if you want to emit just one file, only render it on one frame.
 
 ```tsx twoslash title="❌ Will generate an asset on every frame and throw an error because the file name is not unique"
-import {Artifact, useCurrentFrame} from 'remotion';
+import {Artifact, useCurrentFrame} from 'picus';
 
 export const MyComp: React.FC = () => {
   const frame = useCurrentFrame();
@@ -70,7 +70,7 @@ The default behavior is the same download behavior you defined for the main rend
 A special symbol that if you pass it to the [`content`](/docs/artifact#content) prop, it will [emit the image data of the current frame as an artifact](/docs/artifacts#emitting-thumbnails).
 
 ```tsx twoslash title="Emitting the first frame as a thumbnail"
-import {Artifact, useCurrentFrame} from 'remotion';
+import {Artifact, useCurrentFrame} from 'picus';
 
 export const MyComp: React.FC = () => {
   const frame = useCurrentFrame();
@@ -87,4 +87,4 @@ See the [Emitting Thumbnails](/docs/artifacts#emitting-thumbnails) page for more
 ## See also
 
 - [Emitting Artifacts](/docs/artifacts)
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/Artifact.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/core/src/Artifact.tsx)

@@ -1,6 +1,6 @@
 import React, {useContext, useMemo} from 'react';
-import type {PreviewSize} from 'remotion';
-import {Internals} from 'remotion';
+import type {PreviewSize} from 'picus';
+import {Internals} from 'picus';
 import {Checkmark} from '../icons/Checkmark';
 import {CONTROL_BUTTON_PADDING} from './ControlButton';
 import type {ComboboxValue} from './NewComposition/ComboBox';

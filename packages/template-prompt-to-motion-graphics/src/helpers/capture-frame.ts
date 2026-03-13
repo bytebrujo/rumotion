@@ -1,4 +1,4 @@
-import { renderStillOnWeb } from "@remotion/web-renderer";
+import { renderStillOnWeb } from "@picus/web-renderer";
 import type { ComponentType } from "react";
 
 interface CaptureConfig {
@@ -9,7 +9,7 @@ interface CaptureConfig {
 }
 
 /**
- * Captures a frame from a Remotion composition and returns it as a base64 data URL.
+ * Captures a frame from a Picus composition and returns it as a base64 data URL.
  */
 export async function captureFrame(
   Component: ComponentType,

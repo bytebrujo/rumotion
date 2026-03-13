@@ -1,5 +1,5 @@
 import {createContext} from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {
 	TranslateX,
 	TranslateY,

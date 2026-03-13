@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig } from "picus";
 import { useThemeColors } from "./calculate-metadata/theme";
 
 const Step: React.FC<{

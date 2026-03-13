@@ -10,7 +10,7 @@ if (
   !Bun.semver.satisfies(Bun.version, ">=1.1.11")
 ) {
   throw new Error(
-    "Bun >=1.1.11 is required to run the Remotion Recorder. Previous versions had a bug which would break long recordings.",
+    "Bun >=1.1.11 is required to run the Picus Recorder. Previous versions had a bug which would break long recordings.",
   );
 }
 

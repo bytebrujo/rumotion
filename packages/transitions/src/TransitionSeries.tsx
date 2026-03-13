@@ -4,9 +4,9 @@ import type {
 	AbsoluteFillLayout,
 	LayoutAndStyle,
 	SequencePropsWithoutDuration,
-} from 'remotion';
-import {Internals, Sequence, useCurrentFrame, useVideoConfig} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+} from 'picus';
+import {Internals, Sequence, useCurrentFrame, useVideoConfig} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {
 	WrapInEnteringProgressContext,
 	WrapInExitingProgressContext,
@@ -531,8 +531,8 @@ const TransitionSeriesChildren: FC<{readonly children: React.ReactNode}> = ({
 };
 
 /*
- * @description Manages a series of transitions and sequences for advanced animation controls in Remotion projects, handling cases with varying timings and presentations.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/transitionseries)
+ * @description Manages a series of transitions and sequences for advanced animation controls in Picus projects, handling cases with varying timings and presentations.
+ * @see [Documentation](https://www.picus.dev/docs/transitions/transitionseries)
  */
 export const TransitionSeries: FC<SequencePropsWithoutDuration> & {
 	Sequence: typeof SeriesSequence;

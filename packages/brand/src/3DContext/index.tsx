@@ -1,4 +1,4 @@
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, useCurrentFrame} from 'picus';
 import {ExtrudeDiv} from './Div3D';
 import {RotateX, RotateY, Scale} from './transformation-context';
 

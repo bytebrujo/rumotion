@@ -1,6 +1,6 @@
-import {zColor, zMatrix, zTextarea} from '@remotion/zod-types';
+import {zColor, zMatrix, zTextarea} from '@picus/zod-types';
 import React from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {AbsoluteFill, Sequence} from 'picus';
 import {z} from 'zod';
 
 export const schemaTestSchema = z.object({

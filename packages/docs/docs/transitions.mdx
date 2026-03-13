@@ -18,7 +18,7 @@ The [`<TransitionSeries>`](/docs/transitions/transitionseries) component lets yo
 A transition animates from one scene to the next. During the transition, both scenes render simultaneously and the total duration is [shortened](/docs/transitions/transitionseries#duration-of-a-transitionseries).
 
 ```tsx twoslash title="SlideTransition.tsx"
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -40,8 +40,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import { linearTiming, TransitionSeries } from "@remotion/transitions";
-import { slide } from "@remotion/transitions/slide";
+import { linearTiming, TransitionSeries } from "@picus/transitions";
+import { slide } from "@picus/transitions/slide";
 
 const BasicTransition = () => {
   return (
@@ -81,7 +81,7 @@ During this time, both slides are rendered. This means the total duration of the
 You can get the duration of a transition by calling `getDurationInFrames()` on the timing:
 
 ```tsx twoslash title="Assuming a framerate of 30fps"
-import { springTiming } from "@remotion/transitions";
+import { springTiming } from "@picus/transitions";
 
 springTiming({ config: { damping: 200 } }).getDurationInFrames({ fps: 30 }); // 23
 ```
@@ -93,12 +93,12 @@ An [`<TransitionSeries.Overlay>`](/docs/transitions/transitionseries#transitions
 This is useful for effects like [light leaks](/docs/light-leaks/light-leak), flashes, or other visual elements that should appear over a cut without affecting timing. The overlay is centered on the cut point by default.
 
 ```tsx twoslash title="OverlayExample.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 const Fill = ({color}: {color: string}) => <AbsoluteFill style={{backgroundColor: color}} />;
 
 // ---cut---
-import {LightLeak} from '@remotion/light-leaks';
-import {TransitionSeries} from '@remotion/transitions';
+import {LightLeak} from '@picus/light-leaks';
+import {TransitionSeries} from '@picus/transitions';
 
 const OverlayExample = () => {
   return (
@@ -151,5 +151,5 @@ See here how to include [audio effects](/docs/transitions/audio-transitions) in 
 
 ## See also
 
-- [`@remotion/transitions`](/docs/transitions)
+- [`@picus/transitions`](/docs/transitions)
 - [`<TransitionSeries>`](/docs/transitions/transitionseries)

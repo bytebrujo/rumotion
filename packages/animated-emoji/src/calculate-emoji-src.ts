@@ -1,4 +1,4 @@
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 import type {EmojiName} from './get-available-emoji';
 
 export type Format = 'hevc' | 'webm';

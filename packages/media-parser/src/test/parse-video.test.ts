@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -10,7 +10,7 @@ test('Parse Big Buck bunny', async () => {
 			slowStructure: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(data.slowStructure.boxes.slice(0, 2)).toEqual([
 		{
@@ -38,7 +38,7 @@ test('Parse framer', async () => {
 			slowStructure: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(parsed.slowStructure.boxes.slice(0, 2)).toEqual([
 		{
@@ -64,7 +64,7 @@ test('Parse a full video', async () => {
 		src: exampleVideos.framer24fps,
 		fields: {slowStructure: true},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	if (!data) throw new Error('No data');
 
@@ -93,7 +93,7 @@ test('Should warn if missing node reader', () => {
 		fields: {
 			slowStructure: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(data).rejects.toThrow(/node/);
 });

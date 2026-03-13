@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-install-whisper-cpp-download-whisper-model.png
 title: downloadWhisperModel()
-crumb: '@remotion/install-whisper-cpp'
+crumb: '@picus/install-whisper-cpp'
 ---
 
 # downloadWhisperModel()<AvailableFrom v="4.0.115"/>
@@ -11,7 +11,7 @@ You should first install Whisper.cpp, for example through [`installWhisperCpp()`
 
 ```tsx twoslash title="install-whisper.mjs"
 import path from 'path';
-import {downloadWhisperModel} from '@remotion/install-whisper-cpp';
+import {downloadWhisperModel} from '@picus/install-whisper-cpp';
 
 const {alreadyExisted} = await downloadWhisperModel({
   model: 'medium.en',
@@ -34,7 +34,7 @@ The model to download. Possible values: `tiny`, `tiny.en`, `base`, `base.en`, `s
 Act upon download progress. This is the function signature:
 
 ```tsx twoslash
-import type {OnProgress} from '@remotion/install-whisper-cpp';
+import type {OnProgress} from '@picus/install-whisper-cpp';
 
 const onProgress: OnProgress = (downloadedBytes: number, totalBytes: number) => {
   const progress = downloadedBytes / totalBytes;
@@ -59,6 +59,6 @@ Indicates whether a file at the output path already existed. If it did, the func
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/install-whisper-cpp/src/download-whisper-model.ts)
-- [`@remotion/install-whisper-cpp`](/docs/install-whisper-cpp)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/install-whisper-cpp/src/download-whisper-model.ts)
+- [`@picus/install-whisper-cpp`](/docs/install-whisper-cpp)
 - [`installWhisperCpp()`](/docs/install-whisper-cpp/install-whisper-cpp)

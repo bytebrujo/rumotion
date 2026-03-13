@@ -6,7 +6,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {LIGHT_TEXT} from '../../helpers/colors';
 import {isCompositionStill} from '../../helpers/is-composition-still';
 import {useKeybinding} from '../../helpers/use-keybinding';
@@ -19,7 +19,7 @@ import {useSelectComposition} from '../InitialCompositionLoader';
 import {KeyboardShortcutsExplainer} from '../KeyboardShortcutsExplainer';
 import {Spacing} from '../layout';
 import {VERTICAL_SCROLLBAR_CLASSNAME} from '../Menu/is-menu-item';
-import {RemotionInput} from '../NewComposition/RemInput';
+import {PicusInput} from '../NewComposition/RemInput';
 import {algoliaSearch} from './algolia-search';
 import {AlgoliaCredit} from './AlgoliaCredit';
 import {fuzzySearch} from './fuzzy-search';
@@ -192,7 +192,7 @@ export const QuickSwitcherContent: React.FC<{
 						selectComposition(c, true);
 						setSelectedModal(null);
 
-						const selector = `.__remotion-composition[data-compname="${c.id}"]`;
+						const selector = `.__picus-composition[data-compname="${c.id}"]`;
 
 						Internals.compositionSelectorRef.current?.expandComposition(c.id);
 						waitForElm(selector).then(() => {
@@ -391,7 +391,7 @@ export const QuickSwitcherContent: React.FC<{
 				</button>
 			</div>
 			<div style={content}>
-				<RemotionInput
+				<PicusInput
 					ref={inputRef}
 					type="text"
 					style={input}

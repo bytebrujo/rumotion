@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -12,7 +12,7 @@ test('iPhone metadata', async () => {
 			location: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -108,7 +108,7 @@ test('AVI metadata', async () => {
 			metadata: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 	expect(internalStats).toEqual({
@@ -132,7 +132,7 @@ test('Metadata from Matroska', async () => {
 			slowStructure: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -145,7 +145,7 @@ test('Metadata from Matroska', async () => {
 		{
 			key: 'comment',
 			trackId: null,
-			value: 'Made with Remotion 4.0.192',
+			value: 'Made with Picus 4.0.192',
 		},
 		{
 			key: 'encoder',
@@ -176,7 +176,7 @@ test('webm Big buck bunny metadata', async () => {
 		fields: {
 			metadata: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 	expect(metadata).toEqual([
@@ -241,7 +241,7 @@ test('mp4 Big buck bunny metadata', async () => {
 			metadata: true,
 			slowStructure: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 

@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-use-transition-progress.png
-crumb: "@remotion/transitions"
+crumb: "@picus/transitions"
 sidebar_label: useTransitionProgress()
 title: useTransitionProgress()
 ---
@@ -14,9 +14,9 @@ It is meant to be used together with the [`none()`](/docs/transitions/presentati
 ## Example
 
 ```tsx twoslash title="useTransitionProgress()"
-import { useTransitionProgress } from "@remotion/transitions";
-import { linearTiming, TransitionSeries } from "@remotion/transitions";
-import { none } from "@remotion/transitions/none";
+import { useTransitionProgress } from "@picus/transitions";
+import { linearTiming, TransitionSeries } from "@picus/transitions";
+import { none } from "@picus/transitions/none";
 
 const A: React.FC = () => {
   const progress = useTransitionProgress();
@@ -84,5 +84,5 @@ Whether the current scene is inside a [`<TransitionSeries.Sequence>`](/docs/tran
 
 ## See also
 
-- [Source code for this hook](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/use-transition-progress.ts)
+- [Source code for this hook](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/use-transition-progress.ts)
 - [`<TransitionSeries>`](/docs/transitions/transitionseries)

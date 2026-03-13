@@ -1,6 +1,6 @@
 'use client';
 
-import {getLength} from '@remotion/paths';
+import {getLength} from '@picus/paths';
 import React, {useEffect} from 'react';
 
 const rx = 0.2;

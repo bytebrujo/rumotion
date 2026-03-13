@@ -38,7 +38,7 @@ export default ({editUrl}) => {
 			</a>
 			<div style={spacer} />
 			<a
-				href="https://remotion.dev/discord"
+				href="https://picus.dev/discord"
 				target="_blank"
 				rel="noreferrer noopener"
 				className={ThemeClassNames.common.editThisPage}

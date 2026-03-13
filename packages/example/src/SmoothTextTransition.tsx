@@ -1,5 +1,5 @@
-import {StudioInternals, visualControl} from '@remotion/studio';
-import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
+import {StudioInternals, visualControl} from '@picus/studio';
+import {AbsoluteFill, interpolate, useCurrentFrame} from 'picus';
 
 const Comp: React.FC = () => {
 	const frame = useCurrentFrame();

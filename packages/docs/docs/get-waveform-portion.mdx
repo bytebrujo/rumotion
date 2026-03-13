@@ -2,10 +2,10 @@
 image: /generated/articles-docs-get-waveform-portion.png
 title: getWaveformPortion()
 id: get-waveform-portion
-crumb: '@remotion/media-utils'
+crumb: '@picus/media-utils'
 ---
 
-_Part of the `@remotion/media-utils` package of helper functions._
+_Part of the `@picus/media-utils` package of helper functions._
 
 Takes bulky waveform data (for example fetched by [`getAudioData()`](/docs/get-audio-data)) and returns a trimmed and simplified version of it, for simpler visualization. This function is suitable if you only need volume data, if you need more detailed data about each frequency range, use [`visualizeAudio()`](/docs/visualize-audio).
 
@@ -79,8 +79,8 @@ A value describing the amplitude / volume / loudness of the audio. Values range 
 
 ```tsx twoslash
 // ---cut---
-import {getAudioData, getWaveformPortion} from '@remotion/media-utils';
-import {staticFile} from 'remotion';
+import {getAudioData, getWaveformPortion} from '@picus/media-utils';
+import {staticFile} from 'picus';
 
 const audioData = await getAudioData(staticFile('music.mp3')); /* {
   channelWaveforms: [Float32Array(4410000), Float32Array(4410000)],
@@ -108,6 +108,6 @@ The [`visualizeAudio()`](/docs/visualize-audio) function is more suitable for vi
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/media-utils/src/get-waveform-portion.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/media-utils/src/get-waveform-portion.ts)
 - [Using audio](/docs/using-audio)
 - [`<Html5Audio/>`](/docs/html5-audio)

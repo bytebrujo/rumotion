@@ -7,7 +7,7 @@ crumb: Editor Starter
 ---
 
 The Editor Starter comes with various features for controlling which fonts are used by the text and caption items.  
-The font stack is implemented on [`@remotion/google-fonts`](/docs/google-fonts).
+The font stack is implemented on [`@picus/google-fonts`](/docs/google-fonts).
 
 ## Supported font features
 
@@ -21,7 +21,7 @@ The font stack is implemented on [`@remotion/google-fonts`](/docs/google-fonts).
 - Changing the text alignment ("Left" / "Center" / "Right")
 - Changing the text direction (to support right-to-left languages like Arabic)
 
-The controls for text are mostly collected in the [`TextInspector`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter%20TextInspector&type=code) component.
+The controls for text are mostly collected in the [`TextInspector`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter%20TextInspector&type=code) component.
 
 ## Default font families
 
@@ -30,7 +30,7 @@ In addition, `TikTok Sans` was added, because it is the default font for TikTok.
 
 ### Changing the default font families
 
-Change the script [`generate-google-font-info.ts`](https://github.com/remotion-dev/editor-starter/blob/main/src/scripts/generate-google-font-info.ts) to include the fonts you want to include.
+Change the script [`generate-google-font-info.ts`](https://github.com/picus-dev/editor-starter/blob/main/src/scripts/generate-google-font-info.ts) to include the fonts you want to include.
 
 See the [font picker docs](/docs/font-picker) to for example get a list of more fonts.
 
@@ -66,4 +66,4 @@ See the [`FEATURE_FONT_FAMILY_DROPDOWN_HOVER_PREVIEW`](/docs/editor-starter/feat
 ## Custom fonts
 
 Loading fonts from another source than Google Fonts is not foreseen in the Editor Starter.  
-You will have to refactor the Editor Starter to be able to load fonts from other sources. We recommend using [`@remotion/fonts`](/docs/fonts-api) for this.
+You will have to refactor the Editor Starter to be able to load fonts from other sources. We recommend using [`@picus/fonts`](/docs/fonts-api) for this.

@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/paths"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/paths"
 	},
-	"name": "@remotion/paths",
+	"name": "@picus/paths",
 	"version": "4.0.434",
 	"description": "Utilities for working with SVG paths",
 	"main": "dist/index.js",
@@ -16,10 +16,10 @@
 		"test": "bun test src",
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"keywords": [
 		"svg",
@@ -27,7 +27,7 @@
 		"utilities"
 	],
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
@@ -43,5 +43,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/paths"
+	"homepage": "https://www.picus.dev/paths"
 }

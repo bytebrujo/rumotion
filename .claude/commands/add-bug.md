@@ -6,7 +6,7 @@ The user will describe the bug and the affected version(s). Add the new entry at
 {
     title: '<short title>',
     description: '<description with upgrade instruction>',
-    link: 'https://remotion.dev/changelog',
+    link: 'https://picus.dev/changelog',
     versions: ['<affected versions>'],
 },
 ```
@@ -14,5 +14,5 @@ The user will describe the bug and the affected version(s). Add the new entry at
 Rules:
 
 - The description should tell users which version to upgrade to.
-- The link should be `https://remotion.dev/changelog` unless the user provides a specific link.
+- The link should be `https://picus.dev/changelog` unless the user provides a specific link.
 - Add the entry at the top of the array so the most recent bugs come first.

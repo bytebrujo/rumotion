@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {LicensingInternals} from '@remotion/licensing';
+import {LicensingInternals} from '@picus/licensing';
 import type {ExecaChildProcess} from 'execa';
-import type {_InternalTypes} from 'remotion';
-import type {VideoConfig} from 'remotion/no-react';
-import {NoReactInternals} from 'remotion/no-react';
+import type {_InternalTypes} from 'picus';
+import type {VideoConfig} from 'picus/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {type RenderMediaOnDownload} from './assets/download-and-map-assets-to-file';
 import type {Bitrate} from './bitrate';
 import type {BrowserExecutable} from './browser-executable';
@@ -23,7 +23,7 @@ import {deleteDirectory} from './delete-directory';
 import {ensureFramesInOrder} from './ensure-frames-in-order';
 import {ensureOutputDirectory} from './ensure-output-directory';
 import type {FfmpegOverrideFn} from './ffmpeg-override';
-import {findRemotionRoot} from './find-closest-package-json';
+import {findPicusRoot} from './find-closest-package-json';
 import type {FrameRange} from './frame-range';
 import {resolveConcurrency} from './get-concurrency';
 import {getFramesToRender} from './get-duration-from-frame-range';
@@ -54,7 +54,7 @@ import {
 	DEFAULT_PIXEL_FORMAT,
 	validateSelectedPixelFormatAndCodecCombination,
 } from './pixel-format';
-import type {RemotionServer} from './prepare-server';
+import type {PicusServer} from './prepare-server';
 import {makeOrReuseServer} from './prepare-server';
 import {prespawnFfmpeg} from './prespawn-ffmpeg';
 import {shouldUseParallelEncoding} from './prestitcher-memory-usage';
@@ -142,7 +142,7 @@ export type InternalRenderMediaOptions = {
 	browserExecutable: BrowserExecutable | null;
 	onCtrlCExit: (label: string, fn: () => void) => void;
 	indent: boolean;
-	server: RemotionServer | undefined;
+	server: PicusServer | undefined;
 	preferLossless: boolean;
 	enforceAudioTrack: boolean;
 	ffmpegOverride: FfmpegOverrideFn | undefined;
@@ -629,7 +629,7 @@ const internalRenderMediaRaw = ({
 							DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS,
 						indent,
 						port,
-						remotionRoot: findRemotionRoot(),
+						picusRoot: findPicusRoot(),
 						logLevel,
 						webpackConfigOrServeUrl: serveUrl,
 						offthreadVideoCacheSizeInBytes:
@@ -946,7 +946,7 @@ export const internalRenderMedia = wrapWithErrorHandling(
 
 /*
  * @description Render a video or an audio programmatically.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/render-media)
+ * @see [Documentation](https://www.picus.dev/docs/renderer/render-media)
  */
 export const renderMedia = ({
 	proResProfile,

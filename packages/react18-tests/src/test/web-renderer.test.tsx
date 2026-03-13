@@ -1,4 +1,4 @@
-import {renderStillOnWeb} from '@remotion/web-renderer';
+import {renderStillOnWeb} from '@picus/web-renderer';
 import React, {useEffect} from 'react';
 import {expect, test} from 'vitest';
 

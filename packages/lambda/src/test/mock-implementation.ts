@@ -1,15 +1,15 @@
-import type {AwsProvider} from '@remotion/lambda-client';
+import type {AwsProvider} from '@picus/lambda-client';
 import {
 	LambdaClientInternals,
 	speculateFunctionName,
-} from '@remotion/lambda-client';
-import {openBrowser} from '@remotion/renderer';
+} from '@picus/lambda-client';
+import {openBrowser} from '@picus/renderer';
 import type {
 	FullClientSpecifics,
 	GetBrowserInstance,
 	InsideFunctionSpecifics,
 	InvokeWebhookParams,
-} from '@remotion/serverless';
+} from '@picus/serverless';
 import {Log} from '../cli/log';
 import {mockBundleSite} from './mocks/mock-bundle-site';
 import {mockCreateFunction} from './mocks/mock-create-function';
@@ -84,7 +84,7 @@ export const getWebhookCalls = () => {
 
 export const mockFullClientSpecifics: FullClientSpecifics<AwsProvider> = {
 	bundleSite: mockBundleSite,
-	id: '__remotion_full_client_specifics',
+	id: '__picus_full_client_specifics',
 	readDirectory: mockReadDirectory,
 	uploadDir: mockUploadDir,
 	createFunction: mockCreateFunction,

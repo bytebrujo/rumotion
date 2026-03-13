@@ -79,7 +79,7 @@ export const UseThisTake: React.FC<{
           setStatus(null);
         })
         .catch((err) => {
-          // ⚠️ might come from @remotion/webcodecs or from transcribe-video.ts
+          // ⚠️ might come from @picus/webcodecs or from transcribe-video.ts
           if ((err as Error).message.includes("aborted by user")) {
             aborted = true;
             return;
@@ -124,7 +124,7 @@ export const UseThisTake: React.FC<{
         });
       })
       .catch((err) => {
-        // ⚠️ might come from @remotion/webcodecs or from transcribe-video.ts
+        // ⚠️ might come from @picus/webcodecs or from transcribe-video.ts
         if ((err as Error).message.includes("aborted by user")) {
           return;
         }
@@ -198,7 +198,7 @@ export const UseThisTake: React.FC<{
   return (
     <>
       <div className="flex items-center">
-        {window.remotionServerEnabled ? (
+        {window.picusServerEnabled ? (
           <Button
             variant="default"
             className={"rounded-r-none"}
@@ -231,7 +231,7 @@ export const UseThisTake: React.FC<{
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            {window.remotionServerEnabled ? (
+            {window.picusServerEnabled ? (
               <DropdownMenuItem onClick={keepVideoOnClient}>
                 Download as file
               </DropdownMenuItem>

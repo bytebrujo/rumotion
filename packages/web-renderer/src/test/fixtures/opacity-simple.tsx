@@ -1,5 +1,5 @@
 import {useLayoutEffect, useRef} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Component: React.FC = () => {
 	const ref = useRef<HTMLCanvasElement>(null);

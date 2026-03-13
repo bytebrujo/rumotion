@@ -1,5 +1,5 @@
 import React from 'react';
-import {Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Easing, interpolate, useCurrentFrame, useVideoConfig} from 'picus';
 import {Arc} from './Arc';
 import {Atom} from './Atom';
 import {Black} from './Black';

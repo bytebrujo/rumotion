@@ -1,7 +1,7 @@
 import {
 	threeDIntoSvgPath,
 	type ThreeDReducedInstruction,
-} from '@remotion/svg-3d-engine';
+} from '@picus/svg-3d-engine';
 import React, {useState} from 'react';
 
 export type FaceSVGProps = {

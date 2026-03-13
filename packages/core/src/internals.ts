@@ -18,9 +18,9 @@ import {
 } from './buffering.js';
 import {calculateMediaDuration} from './calculate-media-duration.js';
 import {
-	CanUseRemotionHooks,
-	CanUseRemotionHooksProvider,
-} from './CanUseRemotionHooks.js';
+	CanUsePicusHooks,
+	CanUsePicusHooksProvider,
+} from './CanUsePicusHooks.js';
 import {type CompProps} from './Composition.js';
 import type {
 	TCompMetadata,
@@ -50,9 +50,9 @@ import {
 import {getEffectiveVisualModeValue} from './get-effective-visual-mode-value.js';
 import {
 	getPreviewDomElement,
-	REMOTION_STUDIO_CONTAINER_ELEMENT,
+	PICUS_STUDIO_CONTAINER_ELEMENT,
 } from './get-preview-dom-element.js';
-import {getRemotionEnvironment} from './get-remotion-environment.js';
+import {getPicusEnvironment} from './get-picus-environment.js';
 import {
 	getInputPropsOverride,
 	setInputPropsOverride,
@@ -71,9 +71,9 @@ import {PrefetchProvider} from './prefetch-state.js';
 import {usePreload} from './prefetch.js';
 import {PremountContext} from './PremountContext.js';
 import {getRoot, waitForRoot} from './register-root.js';
-import type {RemotionEnvironment} from './remotion-environment-context.js';
-import {RemotionEnvironmentContext} from './remotion-environment-context.js';
-import {RemotionRootContexts} from './RemotionRoot.js';
+import type {PicusEnvironment} from './picus-environment-context.js';
+import {PicusEnvironmentContext} from './picus-environment-context.js';
+import {PicusRootContexts} from './PicusRoot.js';
 import {
 	RenderAssetManager,
 	RenderAssetManagerProvider,
@@ -158,13 +158,13 @@ import {
 } from './volume-position-state.js';
 import {evaluateVolume} from './volume-prop.js';
 import {warnAboutTooHighVolume} from './volume-safeguard.js';
-import type {WatchRemotionStaticFilesPayload} from './watch-static-file.js';
-import {WATCH_REMOTION_STATIC_FILES} from './watch-static-file.js';
+import type {WatchPicusStaticFilesPayload} from './watch-static-file.js';
+import {WATCH_PICUS_STATIC_FILES} from './watch-static-file.js';
 import {wrapInSchema} from './wrap-in-schema.js';
 import {
-	RemotionContextProvider,
-	useRemotionContexts,
-} from './wrap-remotion-context.js';
+	PicusContextProvider,
+	usePicusContexts,
+} from './wrap-picus-context.js';
 
 // needs to be in core package so gets deduplicated in studio
 const compositionSelectorRef = createRef<{
@@ -197,7 +197,7 @@ export const Internals = {
 	useSchema,
 	wrapInSchema,
 	useSequenceControlOverride,
-	RemotionRootContexts,
+	PicusRootContexts,
 	CompositionManagerProvider,
 	useVideo,
 	getRoot,
@@ -208,13 +208,13 @@ export const Internals = {
 	truthy,
 	SequenceContext,
 	PremountContext,
-	useRemotionContexts,
-	RemotionContextProvider,
+	usePicusContexts,
+	PicusContextProvider,
 	CSSUtils,
 	setupEnvVariables,
 	MediaVolumeContext,
 	SetMediaVolumeContext,
-	getRemotionEnvironment,
+	getPicusEnvironment,
 	SharedAudioContext,
 	SharedAudioContextProvider,
 	invalidCompositionErrorMessage,
@@ -225,8 +225,8 @@ export const Internals = {
 	portalNode,
 	waitForRoot,
 	SetTimelineContext,
-	CanUseRemotionHooksProvider,
-	CanUseRemotionHooks,
+	CanUsePicusHooksProvider,
+	CanUsePicusHooks,
 	PrefetchProvider,
 	DurationsContextProvider,
 	IsPlayerContextProvider,
@@ -240,13 +240,13 @@ export const Internals = {
 	ResolveCompositionContext,
 	useResolvedVideoConfig,
 	resolveCompositionsRef,
-	REMOTION_STUDIO_CONTAINER_ELEMENT,
+	PICUS_STUDIO_CONTAINER_ELEMENT,
 	RenderAssetManager,
 	persistCurrentFrame,
 	useTimelineContext,
 	useTimelineSetFrame,
 	isIosSafari,
-	WATCH_REMOTION_STATIC_FILES,
+	WATCH_PICUS_STATIC_FILES,
 	addSequenceStackTraces,
 	useMediaStartsAt,
 	BufferingProvider,
@@ -264,7 +264,7 @@ export const Internals = {
 	playbackLogging,
 	timeValueRef,
 	compositionSelectorRef,
-	RemotionEnvironmentContext,
+	PicusEnvironmentContext,
 	warnAboutTooHighVolume,
 	AudioForPreview,
 	OBJECTFIT_CONTAIN_CLASS_NAME,
@@ -289,7 +289,7 @@ export type {
 	CompProps,
 	LoggingContextValue,
 	MediaVolumeContextValue,
-	RemotionEnvironment,
+	PicusEnvironment,
 	SequenceFieldSchema,
 	SequenceSchema,
 	SerializedJSONWithCustomFields,
@@ -300,7 +300,7 @@ export type {
 	TimelineContextValue,
 	TRenderAsset,
 	TSequence,
-	WatchRemotionStaticFilesPayload,
+	WatchPicusStaticFilesPayload,
 	ScheduleAudioNodeOptions,
 	CanUpdateSequencePropStatus,
 	ScheduleAudioNodeResult,

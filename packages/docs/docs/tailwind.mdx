@@ -59,7 +59,7 @@ The following templates support scaffolding with TailwindCSS: <TailwindSupport /
 
 _from v4.0.256_
 
-1. Install [`@remotion/tailwind-v4`](/docs/tailwind-v4/overview) package and TailwindCSS dependencies.
+1. Install [`@picus/tailwind-v4`](/docs/tailwind-v4/overview) package and TailwindCSS dependencies.
 
 <Tabs
 defaultValue="npm"
@@ -73,7 +73,7 @@ values={[
 <TabItem value="npm">
 
 ```bash
-npm i -D @remotion/tailwind-v4 tailwindcss
+npm i -D @picus/tailwind-v4 tailwindcss
 ```
 
   </TabItem>
@@ -81,31 +81,31 @@ npm i -D @remotion/tailwind-v4 tailwindcss
   <TabItem value="yarn">
 
 ```bash
-yarn add -D @remotion/tailwind-v4 tailwindcss
+yarn add -D @picus/tailwind-v4 tailwindcss
 ```
 
   </TabItem>
   <TabItem value="pnpm">
 
 ```bash
-pnpm i -D @remotion/tailwind-v4 tailwindcss
+pnpm i -D @picus/tailwind-v4 tailwindcss
 ```
 
   </TabItem>
   <TabItem value="bun">
 
 ```bash
-bun i -D @remotion/tailwind-v4 tailwindcss
+bun i -D @picus/tailwind-v4 tailwindcss
 ```
 
   </TabItem>
 </Tabs>
 
-2. Add the Webpack override from `@remotion/tailwind-v4` to your config file:
+2. Add the Webpack override from `@picus/tailwind-v4` to your config file:
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
-import {enableTailwind} from '@remotion/tailwind-v4';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
+import {enableTailwind} from '@picus/tailwind-v4';
 
 Config.overrideWebpackConfig((currentConfiguration) => {
   return enableTailwind(currentConfiguration);
@@ -140,9 +140,9 @@ import './index.css';
 
 ## Installing Tailwind v3 in existing project
 
-_from v3.3.95, see [instructions for older versions](https://github.com/remotion-dev/remotion/blob/88a5d8d17f50d6ab2b8a408556118d15a3686343/packages/docs/docs/tailwind.md)_
+_from v3.3.95, see [instructions for older versions](https://github.com/picus-dev/picus/blob/88a5d8d17f50d6ab2b8a408556118d15a3686343/packages/docs/docs/tailwind.md)_
 
-1. Install [`@remotion/tailwind`](/docs/tailwind/tailwind) package and TailwindCSS dependencies.
+1. Install [`@picus/tailwind`](/docs/tailwind/tailwind) package and TailwindCSS dependencies.
 
 <Tabs
 defaultValue="npm"
@@ -156,7 +156,7 @@ values={[
 <TabItem value="npm">
 
 ```bash
-npm i -D @remotion/tailwind
+npm i -D @picus/tailwind
 ```
 
   </TabItem>
@@ -164,31 +164,31 @@ npm i -D @remotion/tailwind
   <TabItem value="yarn">
 
 ```bash
-yarn add -D @remotion/tailwind
+yarn add -D @picus/tailwind
 ```
 
   </TabItem>
   <TabItem value="pnpm">
 
 ```bash
-pnpm i -D @remotion/tailwind
+pnpm i -D @picus/tailwind
 ```
 
   </TabItem>
   <TabItem value="bun">
 
 ```bash
-bun i -D @remotion/tailwind
+bun i -D @picus/tailwind
 ```
 
   </TabItem>
 </Tabs>
 
-2. Add the Webpack override from `@remotion/tailwind` to your config file:
+2. Add the Webpack override from `@picus/tailwind` to your config file:
 
-```ts twoslash title="remotion.config.ts"
-import {Config} from '@remotion/cli/config';
-import {enableTailwind} from '@remotion/tailwind';
+```ts twoslash title="picus.config.ts"
+import {Config} from '@picus/cli/config';
+import {enableTailwind} from '@picus/tailwind';
 
 Config.overrideWebpackConfig((currentConfiguration) => {
   return enableTailwind(currentConfiguration);

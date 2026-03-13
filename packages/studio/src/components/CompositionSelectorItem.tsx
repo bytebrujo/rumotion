@@ -1,6 +1,6 @@
 import type {KeyboardEvent, MouseEvent} from 'react';
 import React, {useCallback, useContext, useMemo, useState} from 'react';
-import {type _InternalTypes} from 'remotion';
+import {type _InternalTypes} from 'picus';
 import {
 	BACKGROUND,
 	LIGHT_TEXT,
@@ -290,7 +290,7 @@ export const CompositionSelectorItem: React.FC<{
 					onKeyPress={onKeyPress}
 					type="button"
 					title={item.composition.id}
-					className="__remotion-composition"
+					className="__picus-composition"
 					data-compname={item.composition.id}
 				>
 					{isCompositionStill(item.composition) ? (

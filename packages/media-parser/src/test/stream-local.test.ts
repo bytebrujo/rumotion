@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import type {MediaParserAudioCodec} from '../get-tracks';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
@@ -28,7 +28,7 @@ test('Should stream WebM with no duration', async () => {
 				videoSamples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(result.durationInSeconds).toBe(6.57);
@@ -70,7 +70,7 @@ test('Should stream AV1', async () => {
 				videoSamples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	const vidTracks = parsed.tracks.filter((t) => t.type === 'video');
@@ -154,7 +154,7 @@ test('Should stream corrupted video', async () => {
 			};
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	const vidTracks = parsed.tracks.filter((t) => t.type === 'video');
@@ -186,7 +186,7 @@ test('Should stream screen recording video', async () => {
 			rotation: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	const vidTracks = parsed.tracks.filter((t) => t.type === 'video');
@@ -218,7 +218,7 @@ test('Should stream ProRes video', async () => {
 			rotation: true,
 		},
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	const vidTracks = parsed.tracks.filter((t) => t.type === 'video');
@@ -252,7 +252,7 @@ test(
 				tracks: true,
 				slowStructure: true,
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			reader: nodeReader,
 			onAudioTrack: ({track: track_}) => {
 				expect(track_.type).toBe('audio');
@@ -359,7 +359,7 @@ test('Should stream MKV video', async () => {
 			slowFps: true,
 			slowNumberOfFrames: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		onVideoTrack: ({track}) => {
 			expect(track.codec).toBe('avc1.640020');
 
@@ -404,7 +404,7 @@ test('Should stream MP3 in MP4 video', async () => {
 			rotation: true,
 			slowStructure: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		onAudioTrack: ({track}) => {
 			expect(track.type).toBe('audio');
 			expect(track.codec).toBe('mp3');
@@ -446,7 +446,7 @@ test('Custom DAR', async () => {
 			rotation: true,
 			unrotatedDimensions: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -483,7 +483,7 @@ test('Get tracks from an AV1 if no info is requested', async () => {
 		fields: {
 			tracks: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -500,7 +500,7 @@ test('Should get correct avc1 string from matroska', async () => {
 			tracks: true,
 			slowStructure: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -525,7 +525,7 @@ test('VP8 Vorbis', async () => {
 				videoSamples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			audioCodec: true,
 		},
@@ -557,7 +557,7 @@ test('VP9', async () => {
 				videoSamples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -571,7 +571,7 @@ test('Stretched VP8', async () => {
 		fields: {
 			tracks: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -628,7 +628,7 @@ test('HEVC and AAC in Matroska', async () => {
 			audioCodec: true,
 			slowStructure: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 		onAudioTrack: ({track: audioTrack}) => {
 			expect(audioTrack.codec).toEqual('mp4a.40.02');
@@ -667,7 +667,7 @@ test('MP3 in matroska', async () => {
 			audioCodec: true,
 			slowStructure: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 		onAudioTrack: ({track: audioTrack}) => {
 			expect(audioTrack.codec).toEqual('mp3');
@@ -703,7 +703,7 @@ test('Should stream OPUS', async () => {
 			tracks: true,
 			audioCodec: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		onAudioCodec: (codec) => {
 			audioCodec = codec;
 		},
@@ -750,7 +750,7 @@ test('Should stream transparent video', async () => {
 				videoSamples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		onAudioTrack: () => {
 			audioTracks++;
 			return null;

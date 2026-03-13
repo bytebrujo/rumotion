@@ -5,13 +5,13 @@ title: Distributed rendering
 crumb: 'Advanced rendering'
 ---
 
-[Remotion Lambda](/docs/lambda) is our recommended solution if you are looking for a way to split up renders into chunks that run on different machines.
+[Picus Lambda](/docs/lambda) is our recommended solution if you are looking for a way to split up renders into chunks that run on different machines.
 
 It takes care of a lot of engineering work that you would have to undergo yourself otherwise:
 
 - Orchestrating the distributed render: Defining how work gets split up, keeping track of the progress, merging the chunks, saving it to cloud storage.
 - Streaming chunks and progress over one connection to enable smooth progress progress reporting
-- Bundling Chrome, Remotion binaries, necessary fonts and a custom Emoji font so they fit in a Lambda function.
+- Bundling Chrome, Picus binaries, necessary fonts and a custom Emoji font so they fit in a Lambda function.
 - Cleaning up all the created resources after a function invocation to avoid memory leaks when functions are reused.
 - Enabling logs, group them by renders and chunks, collect and surface errors, symbolicate stack traces to aid [debugging Lambda renders](/docs/lambda/troubleshooting/debug)
 - Supporting multiple media types: Rendering videos, images, GIFs and audio
@@ -37,7 +37,7 @@ Also consider how much savings you are getting by Lambda functions shutting down
 ## Implementing a distributed renderer
 
 Should you have come to the conclusion that you still need a distributed rendering solution, here is how to do it.  
-[Remotion Lambda](/docs/lambda) is following the same blueprint as well.
+[Picus Lambda](/docs/lambda) is following the same blueprint as well.
 
 ### 1. Splitting up the work
 

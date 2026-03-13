@@ -1,4 +1,4 @@
-import type {SamplePosition} from '@remotion/media-parser';
+import type {SamplePosition} from '@picus/media-parser';
 
 export const exampleVideoSamplePositions: SamplePosition[] = [
 	{

@@ -1,8 +1,8 @@
-import type {LogLevel} from '@remotion/serverless-client';
+import type {LogLevel} from '@picus/serverless-client';
 import {
 	COMMAND_NOT_FOUND,
 	ServerlessRoutines,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {awsImplementation} from './aws-provider';
 import type {AwsRegion} from './regions';
 import type {RequestHandler} from './types';

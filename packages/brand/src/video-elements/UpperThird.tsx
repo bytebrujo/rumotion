@@ -1,4 +1,4 @@
-import {noise2D} from '@remotion/noise';
+import {noise2D} from '@picus/noise';
 import React from 'react';
 import {
 	AbsoluteFill,
@@ -6,7 +6,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {z} from 'zod';
 import {BLUE} from '../colors';
 

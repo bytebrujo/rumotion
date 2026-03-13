@@ -1,6 +1,6 @@
 import {rmSync, writeFileSync} from 'fs';
 import {join} from 'path';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 import {callFf} from './call-ffmpeg';
 import type {Codec} from './codec';
 import {convertNumberOfGifLoopsToFfmpegSyntax} from './convert-number-of-gif-loops-to-ffmpeg';
@@ -20,7 +20,7 @@ export const combineVideoStreams = async ({
 	logLevel,
 	onProgress,
 	files,
-	addRemotionMetadata,
+	addPicusMetadata,
 	binariesDirectory,
 	cancelSignal,
 }: {
@@ -33,7 +33,7 @@ export const combineVideoStreams = async ({
 	logLevel: LogLevel;
 	onProgress: (p: number) => void;
 	files: string[];
-	addRemotionMetadata: boolean;
+	addPicusMetadata: boolean;
 	binariesDirectory: string | null;
 	cancelSignal: CancelSignal | undefined;
 }) => {
@@ -65,8 +65,8 @@ export const combineVideoStreams = async ({
 		encoder,
 		codec === 'h265' ? '-tag:v' : null,
 		codec === 'h265' ? 'hvc1' : null,
-		addRemotionMetadata ? `-metadata` : null,
-		addRemotionMetadata ? `comment=Made with Remotion ${VERSION}` : null,
+		addPicusMetadata ? `-metadata` : null,
+		addPicusMetadata ? `comment=Made with Picus ${VERSION}` : null,
 		'-y',
 		output,
 	].filter(truthy);

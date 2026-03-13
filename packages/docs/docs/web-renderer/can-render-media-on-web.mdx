@@ -2,21 +2,21 @@
 image: /generated/articles-docs-web-renderer-can-render-media-on-web.png
 id: can-render-media-on-web
 title: canRenderMediaOnWeb()
-crumb: '@remotion/web-renderer'
+crumb: '@picus/web-renderer'
 ---
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.  
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
-_Part of the `@remotion/web-renderer` package._
+_Part of the `@picus/web-renderer` package._
 
 Checks if a render can be performed with the given configuration before actually attempting it.
 This is useful for providing feedback to users about browser compatibility and configuration issues.
 
 ```tsx twoslash title="Example usage"
-import {canRenderMediaOnWeb} from '@remotion/web-renderer';
+import {canRenderMediaOnWeb} from '@picus/web-renderer';
 
 const result = await canRenderMediaOnWeb({
   container: 'mp4',
@@ -54,13 +54,13 @@ The height of the video in pixels.
 
 ### `container?`
 
-_string_ <TsType type="WebRendererContainer" source="@remotion/web-renderer" />
+_string_ <TsType type="WebRendererContainer" source="@picus/web-renderer" />
 
 The container format. Default is `"mp4"`.
 
 ### `videoCodec?`
 
-_string_ <TsType type="WebRendererVideoCodec" source="@remotion/web-renderer" />
+_string_ <TsType type="WebRendererVideoCodec" source="@picus/web-renderer" />
 
 The video codec to use. Default depends on the container:
 
@@ -69,7 +69,7 @@ The video codec to use. Default depends on the container:
 
 ### `audioCodec?`
 
-_string | null_ <TsType type="WebRendererAudioCodec" source="@remotion/web-renderer" />
+_string | null_ <TsType type="WebRendererAudioCodec" source="@picus/web-renderer" />
 
 The audio codec to use. Default depends on the container:
 
@@ -92,7 +92,7 @@ If `true`, audio codec checks are skipped. Default is `false`.
 
 ### `videoBitrate?`
 
-_number | string_ <TsType type="WebRendererQuality" source="@remotion/web-renderer" />
+_number | string_ <TsType type="WebRendererQuality" source="@picus/web-renderer" />
 
 The video bitrate. Can be a number (bits per second) or a quality preset: `"very-low"`, `"low"`, `"medium"`, `"high"`, `"very-high"`.
 
@@ -100,7 +100,7 @@ Default is `"medium"`.
 
 ### `audioBitrate?`
 
-_number | string_ <TsType type="WebRendererQuality" source="@remotion/web-renderer" />
+_number | string_ <TsType type="WebRendererQuality" source="@picus/web-renderer" />
 
 The audio bitrate. Can be a number (bits per second) or a quality preset: `"very-low"`, `"low"`, `"medium"`, `"high"`, `"very-high"`.
 
@@ -108,7 +108,7 @@ Default is `"medium"`.
 
 ### `outputTarget?`
 
-_string | null_ <TsType type="WebRendererOutputTarget" source="@remotion/web-renderer" />
+_string | null_ <TsType type="WebRendererOutputTarget" source="@picus/web-renderer" />
 
 The output target to use for rendering. Can be:
 
@@ -130,7 +130,7 @@ _boolean_
 
 ### `issues`
 
-<TsType type="CanRenderIssue[]" source="@remotion/web-renderer" />
+<TsType type="CanRenderIssue[]" source="@picus/web-renderer" />
 
 An array of issues found during the check. Each issue has:
 
@@ -140,19 +140,19 @@ An array of issues found during the check. Each issue has:
 
 ### `resolvedVideoCodec`
 
-_string_ <TsType type="WebRendererVideoCodec" source="@remotion/web-renderer" />
+_string_ <TsType type="WebRendererVideoCodec" source="@picus/web-renderer" />
 
 The video codec that will be used for rendering.
 
 ### `resolvedAudioCodec`
 
-_string | null_ <TsType type="WebRendererAudioCodec" source="@remotion/web-renderer" />
+_string | null_ <TsType type="WebRendererAudioCodec" source="@picus/web-renderer" />
 
 The audio codec that will be used for rendering. This may differ from the requested codec if a fallback was applied. `null` if `muted` is `true`.
 
 ### `resolvedOutputTarget`
 
-<TsType type="WebRendererOutputTarget" source="@remotion/web-renderer" />
+<TsType type="WebRendererOutputTarget" source="@picus/web-renderer" />
 
 The output target that will be used. See [`renderMediaOnWeb()` outputTarget](/docs/web-renderer/render-media-on-web#outputtarget) for details.
 
@@ -173,6 +173,6 @@ The following issue types may be returned:
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/web-renderer/src/can-render-media-on-web.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/web-renderer/src/can-render-media-on-web.ts)
 - [`renderMediaOnWeb()`](/docs/web-renderer/render-media-on-web)
 - [Client-side rendering limitations](/docs/client-side-rendering/limitations)

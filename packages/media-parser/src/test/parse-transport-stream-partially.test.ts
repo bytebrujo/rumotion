@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -12,7 +12,7 @@ test('Should be able to parse only header of Transport Stream', async () => {
 			name: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -37,7 +37,7 @@ test('Should be able to parse only tracks of Transport Stream', async () => {
 			sampleRate: true,
 			numberOfAudioChannels: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 

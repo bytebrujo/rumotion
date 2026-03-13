@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Img, staticFile} from 'remotion';
+import {AbsoluteFill, Img, staticFile} from 'picus';
 
 const Component: React.FC = () => {
 	return (
@@ -13,7 +13,7 @@ const Component: React.FC = () => {
 			<div style={{width: 550}}>
 				Hello from{' '}
 				<a href="https://github.com/WICG/html-in-canvas">
-					remotion-web-renderer
+					picus-web-renderer
 				</a>
 				!
 				<br />I{"'"}m multi-line, <b>formatted</b>, rotated text with emoji

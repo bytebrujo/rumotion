@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/lottie"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/lottie"
 	},
-	"name": "@remotion/lottie",
+	"name": "@picus/lottie",
 	"version": "4.0.434",
-	"description": "Include Lottie animations in Remotion",
+	"description": "Include Lottie animations in Picus",
 	"main": "dist/cjs/index.js",
 	"types": "dist/cjs/index.d.ts",
 	"module": "dist/esm/index.mjs",
@@ -17,16 +17,16 @@
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"author": "Arthur Denner <arthurdenner7@gmail.com>",
 	"maintainers": [
-		"Jonny Burger <jonny@remotion.dev>",
+		"Jonny Burger <jonny@picus.dev>",
 		"Arthur Denner <arthurdenner7@gmail.com>"
 	],
 	"license": "SEE LICENSE IN LICENSE.md",
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"peerDependencies": {
 		"lottie-web": "^5",
@@ -46,12 +46,12 @@
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"lottie-web": "5.13.0",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"ffmpeg",
 		"video",
 		"react",
@@ -61,5 +61,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/lottie"
+	"homepage": "https://www.picus.dev/docs/lottie"
 }

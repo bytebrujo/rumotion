@@ -1,5 +1,5 @@
-import {type _InternalTypes} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import {type _InternalTypes} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import type {Codec} from './codec';
 
 export const validateSelectedCodecAndProResCombination = ({

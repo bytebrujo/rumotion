@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import {createContext} from 'react';
 import {sliderAreaRef} from './timeline-refs';
 

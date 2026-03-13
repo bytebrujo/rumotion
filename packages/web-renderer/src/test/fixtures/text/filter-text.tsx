@@ -1,4 +1,4 @@
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const FilterTextBox: React.FC<{label: string; filter: string}> = ({
 	label,

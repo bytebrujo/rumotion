@@ -1,8 +1,8 @@
-import {CliInternals} from '@remotion/cli';
-import {AwsProvider} from '@remotion/lambda-client';
-import {BINARY_NAME} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
-import type {ProviderSpecifics} from '@remotion/serverless';
+import {CliInternals} from '@picus/cli';
+import {AwsProvider} from '@picus/lambda-client';
+import {BINARY_NAME} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
+import type {ProviderSpecifics} from '@picus/serverless';
 import {quit} from '../../helpers/quit';
 import {SITES_CREATE_SUBCOMMAND, sitesCreateSubcommand} from './create';
 import {SITES_LS_SUBCOMMAND, sitesLsSubcommand} from './ls';
@@ -25,7 +25,7 @@ const printSitesHelp = (logLevel: LogLevel) => {
 	);
 	CliInternals.Log.info(
 		{indent: false, logLevel},
-		CliInternals.chalk.gray('Creates a new site based on a Remotion project'),
+		CliInternals.chalk.gray('Creates a new site based on a Picus project'),
 	);
 	CliInternals.Log.info({indent: false, logLevel});
 	CliInternals.Log.info(
@@ -58,7 +58,7 @@ const printSitesHelp = (logLevel: LogLevel) => {
 
 export const sitesCommand = (
 	args: string[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 	providerSpecifics: ProviderSpecifics<AwsProvider>,
 ) => {
@@ -77,7 +77,7 @@ export const sitesCommand = (
 	if (args[0] === SITES_CREATE_SUBCOMMAND) {
 		return sitesCreateSubcommand(
 			args.slice(1),
-			remotionRoot,
+			picusRoot,
 			logLevel,
 			providerSpecifics,
 		);

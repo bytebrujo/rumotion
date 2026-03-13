@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Freeze, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Freeze, useCurrentFrame} from 'picus';
 
 export type CameraMotionBlurProps = {
 	readonly children: React.ReactNode;
@@ -29,7 +29,7 @@ const getNumberOfSamples = ({
 
 /*
  * @description Produces natural looking motion blur similar to what would be produced by a film camera.
- * @see [Documentation](https://www.remotion.dev/docs/motion-blur/camera-motion-blur)
+ * @see [Documentation](https://www.picus.dev/docs/motion-blur/camera-motion-blur)
  */
 export const CameraMotionBlur: React.FC<CameraMotionBlurProps> = ({
 	children,

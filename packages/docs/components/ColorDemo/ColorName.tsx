@@ -1,6 +1,6 @@
 import namer from 'color-namer';
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {getReadableColor} from './readable-color';
 import {defaultStyles} from './styles';
 

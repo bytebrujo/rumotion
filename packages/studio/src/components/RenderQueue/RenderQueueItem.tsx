@@ -1,4 +1,4 @@
-import type {RenderJob} from '@remotion/studio-shared';
+import type {RenderJob} from '@picus/studio-shared';
 import React, {
 	useCallback,
 	useContext,
@@ -6,8 +6,8 @@ import React, {
 	useMemo,
 	useState,
 } from 'react';
-import type {CanvasContent} from 'remotion';
-import {Internals} from 'remotion';
+import type {CanvasContent} from 'picus';
+import {Internals} from 'picus';
 import {getBackgroundFromHoverState} from '../../helpers/colors';
 import {pushUrl} from '../../helpers/url-state';
 import {Row, Spacing} from '../layout';
@@ -58,7 +58,7 @@ const subtitle: React.CSSProperties = {
 	overflow: 'hidden',
 };
 
-const SELECTED_CLASSNAME = '__remotion_selected_classname';
+const SELECTED_CLASSNAME = '__picus_selected_classname';
 
 export const RenderQueueItem: React.FC<{
 	readonly job: AnyRenderJob;

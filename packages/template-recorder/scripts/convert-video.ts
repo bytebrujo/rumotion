@@ -27,7 +27,7 @@ export const convertVideo = async ({
   const proc = spawn(
     "bunx",
     [
-      "remotion",
+      "picus",
       "ffmpeg",
       "-stats_period",
       "0.1",

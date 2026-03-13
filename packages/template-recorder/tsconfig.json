@@ -22,12 +22,12 @@
   },
   "include": [
     "src",
-    "remotion",
+    "picus",
     "sub.ts",
     "scripts",
     "config",
     "studio.ts",
     "tests"
   ],
-  "exclude": ["remotion.config.ts", "vite.config.ts"]
+  "exclude": ["picus.config.ts", "vite.config.ts"]
 }

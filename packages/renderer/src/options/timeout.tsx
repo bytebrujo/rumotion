@@ -1,5 +1,5 @@
 import {DEFAULT_TIMEOUT} from '../browser/TimeoutSettings';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentTimeout: number = DEFAULT_TIMEOUT;
 
@@ -20,18 +20,18 @@ export const delayRenderTimeoutInMillisecondsOption = {
 	description: () => (
 		<>
 			A number describing how long the render may take to resolve all{' '}
-			<a href="https://remotion.dev/docs/delay-render">
+			<a href="https://picus.dev/docs/delay-render">
 				<code>delayRender()</code>
 			</a>{' '}
 			calls{' '}
-			<a style={{fontSize: 'inherit'}} href="https://remotion.dev/docs/timeout">
+			<a style={{fontSize: 'inherit'}} href="https://picus.dev/docs/timeout">
 				before it times out
 			</a>
 			. Default: <code>30000</code>
 		</>
 	),
 	ssrName: 'timeoutInMilliseconds' as const,
-	docLink: 'https://www.remotion.dev/docs/timeout',
+	docLink: 'https://www.picus.dev/docs/timeout',
 	type: 0 as number,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -59,4 +59,4 @@ export const delayRenderTimeoutInMillisecondsOption = {
 		currentTimeout = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number>;
+} satisfies AnyPicusOption<number>;

@@ -1,4 +1,4 @@
-import type {StackFrame} from '@remotion/studio-shared';
+import type {StackFrame} from '@picus/studio-shared';
 
 export const makeStackFrame = ({
 	functionName,

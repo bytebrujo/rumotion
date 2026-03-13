@@ -1,5 +1,5 @@
 import React from 'react';
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 import {MyComposition} from './MyComposition';
 
 export const Root: React.FC = () => {

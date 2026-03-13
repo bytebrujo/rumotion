@@ -2,9 +2,9 @@ import {
 	MediaUtilsAudioData,
 	createSmoothSvgPath,
 	visualizeAudioWaveform,
-} from '@remotion/media-utils';
+} from '@picus/media-utils';
 import React from 'react';
-import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from 'picus';
 
 export const VoiceVis: React.FC<{
 	audioDataVoice: MediaUtilsAudioData;

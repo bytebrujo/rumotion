@@ -1,5 +1,5 @@
 import {validateDimension} from '../validate';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentWidth: number | null = null;
 
@@ -10,7 +10,7 @@ export const overrideWidthOption = {
 	cliFlag,
 	description: () => <>Overrides the width of the composition.</>,
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#overridewidth',
+	docLink: 'https://www.picus.dev/docs/config#overridewidth',
 	type: null as number | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -40,4 +40,4 @@ export const overrideWidthOption = {
 		currentWidth = width;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;

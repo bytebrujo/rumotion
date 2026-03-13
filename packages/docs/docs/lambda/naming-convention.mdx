@@ -6,15 +6,15 @@ slug: /lambda/naming-convention
 crumb: 'Lambda'
 ---
 
-A Remotion Lambda function has the following naming convention:
+A Picus Lambda function has the following naming convention:
 
 ```
-remotion-render-4-0-372-mem2048mb-disk2048mb-240sec
+picus-render-4-0-372-mem2048mb-disk2048mb-240sec
                 ^^^^^^^    ^^^^       ^^^^   ^^^
                   |         |          |      |-- Timeout in seconds
                   |         |          |--------- Disk size in MB
                   |         |------------------- Memory size in MB
-                  |----------------------------- Remotion version with dots replaced by dashes
+                  |----------------------------- Picus version with dots replaced by dashes
 ```
 
 When you deploy a function, the name is hardcoded. This has two functions:

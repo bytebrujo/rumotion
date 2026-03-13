@@ -1,6 +1,6 @@
 import {useCallback, useContext, useEffect} from 'react';
-import {Internals} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import {Internals} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {
 	areKeyboardShortcutsDisabled,
 	useKeybinding,

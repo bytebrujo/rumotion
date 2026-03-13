@@ -1,6 +1,6 @@
 import type React from 'react';
 import {useContext, useEffect} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {TIMELINE_MIN_ZOOM, TimelineZoomCtx} from '../../state/timeline-zoom';
 import {
 	getCurrentDuration,

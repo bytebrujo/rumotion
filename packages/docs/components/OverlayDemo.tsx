@@ -51,7 +51,7 @@ export const OverlayDemo: React.FC = () => {
 					{' '}
 					Use our template by cloning the{' '}
 					<a
-						href="https://github.com/remotion-dev/template-overlay"
+						href="https://github.com/picus-dev/template-overlay"
 						target="_blank"
 					>
 						GitHub repo

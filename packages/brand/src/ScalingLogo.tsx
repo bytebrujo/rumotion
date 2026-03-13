@@ -1,4 +1,4 @@
-import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {Triangle} from './Triangle';
 
 const centered = {

@@ -1,4 +1,4 @@
-extern crate ffmpeg_next as remotionffmpeg;
+extern crate ffmpeg_next as picusffmpeg;
 
 use std::sync::atomic::{AtomicUsize, Ordering};
 

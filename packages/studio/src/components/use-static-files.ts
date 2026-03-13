@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
-import {useRemotionEnvironment} from 'remotion';
+import {usePicusEnvironment} from 'picus';
 import {type StaticFile, getStaticFiles} from '../api/get-static-files';
 import {watchPublicFolder} from '../api/watch-public-folder';
 
@@ -9,7 +9,7 @@ export const StaticFilesProvider: React.FC<{
 	readonly children: React.ReactNode;
 }> = ({children}) => {
 	const [files, setFiles] = useState(() => getStaticFiles());
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	useEffect(() => {
 		if (!env.isStudio) {

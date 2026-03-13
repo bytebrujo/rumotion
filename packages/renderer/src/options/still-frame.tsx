@@ -1,5 +1,5 @@
-import {NoReactInternals} from 'remotion/no-react';
-import type {AnyRemotionOption} from './option';
+import {NoReactInternals} from 'picus/no-react';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'frame' as const;
 
@@ -24,7 +24,7 @@ export const stillFrameOption = {
 		</>
 	),
 	ssrName: 'frame' as const,
-	docLink: 'https://www.remotion.dev/docs/cli/still#--frame',
+	docLink: 'https://www.picus.dev/docs/cli/still#--frame',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			const frame = Number(commandLine[cliFlag]);
@@ -56,4 +56,4 @@ export const stillFrameOption = {
 	},
 	type: 0 as number | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<number | null>;
+} satisfies AnyPicusOption<number | null>;

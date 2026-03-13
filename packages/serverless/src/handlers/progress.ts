@@ -3,8 +3,8 @@ import type {
 	GenericRenderProgress,
 	ProviderSpecifics,
 	ServerlessPayload,
-} from '@remotion/serverless-client';
-import {ServerlessRoutines, getProgress} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {ServerlessRoutines, getProgress} from '@picus/serverless-client';
 import type {InsideFunctionSpecifics} from '../provider-implementation';
 import {checkVersionMismatch} from './check-version-mismatch';
 

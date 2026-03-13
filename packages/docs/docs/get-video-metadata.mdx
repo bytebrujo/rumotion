@@ -2,10 +2,10 @@
 image: /generated/articles-docs-get-video-metadata.png
 title: getVideoMetadata()
 id: get-video-metadata
-crumb: '@remotion/media-utils'
+crumb: '@picus/media-utils'
 ---
 
-_Part of the `@remotion/media-utils` package of helper functions._
+_Part of the `@picus/media-utils` package of helper functions._
 
 :::note
 Deprecated: Does not support H.265 videos on Linux and also fails on some other formats.  
@@ -43,9 +43,9 @@ Ensure handling for `Infinity` for user-provided videos and re-encode videos wit
 ## Example
 
 ```tsx twoslash
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 // ---cut---
-import {getVideoMetadata} from '@remotion/media-utils';
+import {getVideoMetadata} from '@picus/media-utils';
 
 await getVideoMetadata(staticFile('video.mp4')); /* {
   durationInSeconds: 100.00,
@@ -70,5 +70,5 @@ If you pass in the same argument to `src` multiple times, it will return a cache
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/media-utils/src/get-video-metadata.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/media-utils/src/get-video-metadata.ts)
 - [Using videos](/docs/assets#using-videos)

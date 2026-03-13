@@ -121,7 +121,7 @@ export const translateSegments = (
 
 /*
  * @description Translates the path by the given x and y coordinates.
- * @see [Documentation](https://www.remotion.dev/docs/paths/translate-path)
+ * @see [Documentation](https://www.picus.dev/docs/paths/translate-path)
  */
 export const translatePath = (path: string, x: number, y: number) => {
 	return serializeInstructions(translateSegments(parsePath(path), x, y));

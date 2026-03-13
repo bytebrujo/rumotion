@@ -1,9 +1,9 @@
-import {Video} from '@remotion/media';
-import {Player} from '@remotion/player';
+import {Video} from '@picus/media';
+import {Player} from '@picus/player';
 import React from 'react';
 
 const NewVideoTag: React.FC = () => {
-	return <Video src={'https://remotion.media/video.mp4'} />;
+	return <Video src={'https://picus.media/video.mp4'} />;
 };
 
 export default () => {

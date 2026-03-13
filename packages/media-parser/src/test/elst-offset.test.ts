@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../controller/media-parser-controller';
 import {hasBeenAborted} from '../errors';
 import {nodeReader} from '../node';
@@ -19,7 +19,7 @@ test('should subtract edit list offset from media time', async () => {
 				};
 			},
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (e) {
 		if (!hasBeenAborted(e)) {

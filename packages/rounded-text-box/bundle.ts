@@ -5,7 +5,7 @@ await buildPackage({
 		cjs: 'build',
 		esm: 'build',
 	},
-	external: ['@remotion/layout-utils', '@remotion/paths'],
+	external: ['@picus/layout-utils', '@picus/paths'],
 	entrypoints: [
 		{
 			path: 'src/index.ts',

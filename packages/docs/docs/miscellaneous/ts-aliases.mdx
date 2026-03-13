@@ -36,7 +36,7 @@ you can add the aliases to Webpack, however you need to add each of them manuall
 
 ```ts twoslash
 import path from 'path';
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 Config.overrideWebpackConfig((config) => {
   return {
@@ -59,7 +59,7 @@ Remember that in Node.JS APIs, the config file does not apply, so you need to ad
 To not duplicate the aliases in your Webpack override and in your `tsconfig.json`, you can install `tsconfig-paths-webpack-plugin` and use it:
 
 ```ts
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 Config.overrideWebpackConfig((config) => {
@@ -74,7 +74,7 @@ Config.overrideWebpackConfig((config) => {
 ```
 
 :::warning
-A common problem when enabling TypeScript aliases is that `import {} from "remotion"` will start mapping to the `remotion` folder that you may have in your project, like is the case in some of our templates.
+A common problem when enabling TypeScript aliases is that `import {} from "picus"` will start mapping to the `picus` folder that you may have in your project, like is the case in some of our templates.
 
 We recommend that you don't use TypeScript aliases.
 :::

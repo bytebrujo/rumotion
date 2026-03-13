@@ -1,4 +1,4 @@
-# @remotion/example-videos
+# @picus/example-videos
 
 ## Usage
 

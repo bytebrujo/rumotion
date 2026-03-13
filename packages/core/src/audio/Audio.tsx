@@ -7,7 +7,7 @@ import {addSequenceStackTraces} from '../enable-sequence-stack-traces.js';
 import {Loop} from '../loop/index.js';
 import {usePreload} from '../prefetch.js';
 import {Sequence} from '../Sequence.js';
-import {useRemotionEnvironment} from '../use-remotion-environment.js';
+import {usePicusEnvironment} from '../use-picus-environment.js';
 import {useVideoConfig} from '../use-video-config.js';
 import {validateMediaProps} from '../validate-media-props.js';
 import {
@@ -17,13 +17,13 @@ import {
 import {DurationsContext} from '../video/duration-state.js';
 import {AudioForPreview} from './AudioForPreview.js';
 import {AudioForRendering} from './AudioForRendering.js';
-import type {RemotionAudioProps, RemotionMainAudioProps} from './props.js';
+import type {PicusAudioProps, PicusMainAudioProps} from './props.js';
 import {SharedAudioContext} from './shared-audio-tags.js';
 
 const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 	HTMLAudioElement,
-	RemotionAudioProps &
-		RemotionMainAudioProps & {
+	PicusAudioProps &
+		PicusMainAudioProps & {
 			/**
 			 * @deprecated For internal use only
 			 */
@@ -40,16 +40,16 @@ const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 		stack,
 		pauseWhenBuffering,
 		showInTimeline,
-		onError: onRemotionError,
+		onError: onPicusError,
 		...otherProps
 	} = props;
 	const {loop, ...propsOtherThanLoop} = props;
 	const {fps} = useVideoConfig();
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 
 	if (environment.isClientSideRendering) {
 		throw new Error(
-			'<Html5Audio> is not supported in @remotion/web-renderer. Use <Audio> from @remotion/media instead. See https://remotion.dev/docs/client-side-rendering/limitations',
+			'<Html5Audio> is not supported in @picus/web-renderer. Use <Audio> from @picus/media instead. See https://picus.dev/docs/client-side-rendering/limitations',
 		);
 	}
 
@@ -71,22 +71,22 @@ const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 
 			// If there is no `loop` property, we don't need to get the duration
 			// and this does not need to be a fatal error
-			const errMessage = `Could not play audio with src ${preloadedSrc}: ${e.currentTarget.error}. See https://remotion.dev/docs/media-playback-error for help.`;
+			const errMessage = `Could not play audio with src ${preloadedSrc}: ${e.currentTarget.error}. See https://picus.dev/docs/media-playback-error for help.`;
 
 			if (loop) {
-				if (onRemotionError) {
-					onRemotionError(new Error(errMessage));
+				if (onPicusError) {
+					onPicusError(new Error(errMessage));
 					return;
 				}
 
 				cancelRender(new Error(errMessage));
 			} else {
-				onRemotionError?.(new Error(errMessage));
+				onPicusError?.(new Error(errMessage));
 				// eslint-disable-next-line no-console
 				console.warn(errMessage);
 			}
 		},
-		[loop, onRemotionError, preloadedSrc],
+		[loop, onPicusError, preloadedSrc],
 	);
 
 	const onDuration = useCallback(
@@ -115,7 +115,7 @@ const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 				<Html5Audio
 					{...propsOtherThanLoop}
 					ref={ref}
-					_remotionInternalNativeLoopPassed
+					_picusInternalNativeLoopPassed
 				/>
 			);
 		}
@@ -135,7 +135,7 @@ const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 				<Html5Audio
 					{...propsOtherThanLoop}
 					ref={ref}
-					_remotionInternalNativeLoopPassed
+					_picusInternalNativeLoopPassed
 				/>
 			</Loop>
 		);
@@ -154,7 +154,7 @@ const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 				name={name}
 			>
 				<Html5Audio
-					_remotionInternalNeedsDurationCalculation={Boolean(loop)}
+					_picusInternalNeedsDurationCalculation={Boolean(loop)}
 					pauseWhenBuffering={pauseWhenBuffering ?? false}
 					{...otherProps}
 					ref={ref}
@@ -175,17 +175,17 @@ const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 				{...props}
 				ref={ref}
 				onNativeError={onError}
-				_remotionInternalNeedsDurationCalculation={Boolean(loop)}
+				_picusInternalNeedsDurationCalculation={Boolean(loop)}
 			/>
 		);
 	}
 
 	return (
 		<AudioForPreview
-			_remotionInternalNativeLoopPassed={
-				props._remotionInternalNativeLoopPassed ?? false
+			_picusInternalNativeLoopPassed={
+				props._picusInternalNativeLoopPassed ?? false
 			}
-			_remotionInternalStack={stack ?? null}
+			_picusInternalStack={stack ?? null}
 			shouldPreMountAudioTags={
 				audioContext !== null && audioContext.numberOfAudioTags > 0
 			}
@@ -195,7 +195,7 @@ const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 			onDuration={onDuration}
 			// Proposal: Make this default to true in v5
 			pauseWhenBuffering={pauseWhenBuffering ?? false}
-			_remotionInternalNeedsDurationCalculation={Boolean(loop)}
+			_picusInternalNeedsDurationCalculation={Boolean(loop)}
 			showInTimeline={showInTimeline ?? true}
 		/>
 	);
@@ -203,13 +203,13 @@ const AudioRefForwardingFunction: React.ForwardRefRenderFunction<
 
 /**
  * @description With this component, you can add audio to your video. All audio formats which are supported by Chromium are supported by the component.
- * @see [Documentation](https://remotion.dev/docs/html5-audio)
+ * @see [Documentation](https://picus.dev/docs/html5-audio)
  */
 export const Html5Audio = forwardRef(AudioRefForwardingFunction);
 addSequenceStackTraces(Html5Audio);
 
 /**
  * @deprecated This component has been renamed to `Html5Audio`.
- * @see [Documentation](https://remotion.dev/docs/mediabunny/new-video)
+ * @see [Documentation](https://picus.dev/docs/mediabunny/new-video)
  */
 export const Audio = Html5Audio;

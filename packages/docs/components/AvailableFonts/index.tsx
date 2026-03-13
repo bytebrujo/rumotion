@@ -1,4 +1,4 @@
-import {getAvailableFonts} from '@remotion/google-fonts';
+import {getAvailableFonts} from '@picus/google-fonts';
 import React from 'react';
 
 export const AvailableFonts: React.FC = () => {
@@ -13,7 +13,7 @@ export const AvailableFonts: React.FC = () => {
 					<tr key={font.importName}>
 						<td>{font.fontFamily}</td>
 						<td>
-							<code>{`import {loadFont} from "@remotion/google-fonts/${font.importName}"`}</code>
+							<code>{`import {loadFont} from "@picus/google-fonts/${font.importName}"`}</code>
 						</td>
 					</tr>
 				);

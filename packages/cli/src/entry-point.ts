@@ -1,7 +1,7 @@
 import {existsSync} from 'node:fs';
 import path from 'node:path';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {ConfigInternals} from './config';
 import {Log} from './log';
 
@@ -10,19 +10,19 @@ const candidates = [
 	path.join('src', 'index.tsx'),
 	path.join('src', 'index.js'),
 	path.join('src', 'index.mjs'),
-	path.join('remotion', 'index.tsx'),
-	path.join('remotion', 'index.ts'),
-	path.join('remotion', 'index.js'),
-	path.join('remotion', 'index.mjs'),
-	path.join('src', 'remotion', 'index.tsx'),
-	path.join('src', 'remotion', 'index.ts'),
-	path.join('src', 'remotion', 'index.js'),
-	path.join('src', 'remotion', 'index.mjs'),
+	path.join('picus', 'index.tsx'),
+	path.join('picus', 'index.ts'),
+	path.join('picus', 'index.js'),
+	path.join('picus', 'index.mjs'),
+	path.join('src', 'picus', 'index.tsx'),
+	path.join('src', 'picus', 'index.ts'),
+	path.join('src', 'picus', 'index.js'),
+	path.join('src', 'picus', 'index.mjs'),
 ];
 
-const findCommonPath = (remotionRoot: string) => {
+const findCommonPath = (picusRoot: string) => {
 	return candidates.find((candidate) =>
-		existsSync(path.resolve(remotionRoot, candidate)),
+		existsSync(path.resolve(picusRoot, candidate)),
 	);
 };
 
@@ -37,11 +37,11 @@ type FoundReason =
 export const findEntryPoint = ({
 	args,
 	logLevel,
-	remotionRoot,
+	picusRoot,
 	allowDirectory,
 }: {
 	args: (string | number)[];
-	remotionRoot: string;
+	picusRoot: string;
 	logLevel: LogLevel;
 	allowDirectory: boolean;
 }): {
@@ -49,7 +49,7 @@ export const findEntryPoint = ({
 	remainingArgs: (string | number)[];
 	reason: FoundReason;
 } => {
-	const result = findEntryPointInner(args, remotionRoot, logLevel);
+	const result = findEntryPointInner(args, picusRoot, logLevel);
 	if (result.file === null) {
 		return result;
 	}
@@ -79,7 +79,7 @@ const isBundledCode = (p: string) => {
 
 const findEntryPointInner = (
 	args: (string | number)[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ): {
 	file: string | null;
@@ -97,7 +97,7 @@ const findEntryPointInner = (
 			'is the entry file',
 		);
 		const cwdResolution = path.resolve(process.cwd(), file);
-		const remotionRootResolution = path.resolve(remotionRoot, file);
+		const picusRootResolution = path.resolve(picusRoot, file);
 		// Checking if file was found in CWD
 		if (existsSync(cwdResolution)) {
 			return {
@@ -108,13 +108,13 @@ const findEntryPointInner = (
 			};
 		}
 
-		// Checking if file was found in remotion root
-		if (existsSync(remotionRootResolution)) {
+		// Checking if file was found in picus root
+		if (existsSync(picusRootResolution)) {
 			return {
-				file: remotionRootResolution,
+				file: picusRootResolution,
 				remainingArgs: args.slice(1),
 				reason: 'argument passed - found in root',
-				isDirectory: isBundledCode(remotionRootResolution),
+				isDirectory: isBundledCode(picusRootResolution),
 			};
 		}
 
@@ -138,18 +138,18 @@ const findEntryPointInner = (
 		);
 
 		return {
-			file: path.resolve(remotionRoot, file),
+			file: path.resolve(picusRoot, file),
 			remainingArgs: args,
 			reason: 'config file',
-			isDirectory: isBundledCode(path.resolve(remotionRoot, file)),
+			isDirectory: isBundledCode(path.resolve(picusRoot, file)),
 		};
 	}
 
 	// 3rd priority: Common paths
-	const found = findCommonPath(remotionRoot);
+	const found = findCommonPath(picusRoot);
 
 	if (found) {
-		const absolutePath = path.resolve(remotionRoot, found);
+		const absolutePath = path.resolve(picusRoot, found);
 		Log.verbose(
 			{indent: false, logLevel},
 			'Selected',

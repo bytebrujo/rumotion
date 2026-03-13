@@ -1,14 +1,14 @@
 ---
 image: /generated/articles-docs-ai-dynamic-compilation.png
 crumb: 'AI'
-title: Just-in-time compilation of Remotion code
+title: Just-in-time compilation of Picus code
 sidebar_label: Just-in-time compilation
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-If you have generated a Remotion component as a string (for example [using LLMs](/docs/ai/generate)), you can compile it in the browser to display a live preview.
+If you have generated a Picus component as a string (for example [using LLMs](/docs/ai/generate)), you can compile it in the browser to display a live preview.
 
 ```tsx
 const code = `
@@ -57,17 +57,17 @@ The component code is wrapped inside, and dependencies (in this case just React)
 const Component = createComponent(React);
 ```
 
-## Adding Remotion APIs
+## Adding Picus APIs
 
 Just React won't be enough for animations.  
-Remotion components need access to APIs like [`useCurrentFrame()`](/docs/use-current-frame) and [`<AbsoluteFill>`](/docs/absolute-fill). These are injected the same way.
+Picus components need access to APIs like [`useCurrentFrame()`](/docs/use-current-frame) and [`<AbsoluteFill>`](/docs/absolute-fill). These are injected the same way.
 
 All APIs used within the code must be explicitly passed in.
 
-Here's an example with a few Remotion APIs:
+Here's an example with a few Picus APIs:
 
 ```tsx
-import {AbsoluteFill, useCurrentFrame, spring} from 'remotion';
+import {AbsoluteFill, useCurrentFrame, spring} from 'picus';
 
 const createComponent = new Function('React', 'AbsoluteFill', 'useCurrentFrame', 'spring', `${transpiled.code}\nreturn MyComponent;`);
 
@@ -83,7 +83,7 @@ Since APIs are injected manually via the `Function` constructor, these imports n
 
 ```tsx
 // AI generates this:
-import {useCurrentFrame, AbsoluteFill} from 'remotion';
+import {useCurrentFrame, AbsoluteFill} from 'picus';
 
 export const MyComposition = () => {
   const frame = useCurrentFrame();
@@ -114,7 +114,7 @@ In this example, a React component is compiled and rendered by the [`<Player>`](
 
 ```tsx twoslash title="Preview.tsx"
 // @noErrors
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import {useCompilation} from './use-compilation';
 
 export const Preview: React.FC<{code: string}> = ({code}) => {
@@ -138,7 +138,7 @@ export const Preview: React.FC<{code: string}> = ({code}) => {
 ```tsx twoslash title="use-compilation.ts"
 import * as Babel from '@babel/standalone';
 import React, {useMemo} from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate, Sequence} from 'remotion';
+import {AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate, Sequence} from 'picus';
 
 interface CompilationResult {
   Component: React.ComponentType | null;
@@ -188,7 +188,7 @@ export function useCompilation(code: string): CompilationResult {
 <TabItem value="generated" label="Input code">
 
 ```ts title="Example AI Output"
-const generatedCode = `import {useCurrentFrame, AbsoluteFill, spring, useVideoConfig} from 'remotion';
+const generatedCode = `import {useCurrentFrame, AbsoluteFill, spring, useVideoConfig} from 'picus';
 
 export const MyComposition = () => {
   const frame = useCurrentFrame();
@@ -235,6 +235,6 @@ This is outside the scope of this guide.
 
 ## See Also
 
-- [Prompt to Motion Graphics template](https://remotion.dev/templates/prompt-to-motion-graphics) - Example implementation
-- [Code Generation](/docs/ai/generate) - How to generate Remotion code with AI
-- [System Prompt](/docs/ai/system-prompt) - Teaching LLMs about Remotion
+- [Prompt to Motion Graphics template](https://picus.dev/templates/prompt-to-motion-graphics) - Example implementation
+- [Code Generation](/docs/ai/generate) - How to generate Picus code with AI
+- [System Prompt](/docs/ai/system-prompt) - Teaching LLMs about Picus

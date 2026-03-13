@@ -3,10 +3,10 @@ image: /generated/articles-docs-lambda-data-transfer-cost.png
 title: Data transfer cost
 slug: /lambda/data-transfer-cost
 sidebar_label: Data transfer cost
-crumb: '@remotion/lambda'
+crumb: '@picus/lambda'
 ---
 
-When rendering on Remotion Lambda, a headless browser is opened, which opens your [bundle](/docs/terminology/bundle) via the [Serve URL](/docs/terminology/serve-url).  
+When rendering on Picus Lambda, a headless browser is opened, which opens your [bundle](/docs/terminology/bundle) via the [Serve URL](/docs/terminology/serve-url).  
 Your site and assets are being loaded via HTTP, meaning that you will be charged by AWS for the data transfer.
 
 If you have big assets, these charges may add up.  
@@ -18,7 +18,7 @@ No, with the default settings, since the transfer happens over HTTP, AWS counts 
 
 ## Option 1: Use an alternate CDN for storing assets
 
-Many Remotion users use Cloudflare R2 to store their big assets instead.  
+Many Picus users use Cloudflare R2 to store their big assets instead.  
 This is easy to achieve - simply put the assets in a Cloudflare R2 bucket and reference them using the HTTP URL that you get.
 
 Cloudflare does not charge for data transfer, so this is a great way to reduce the cost.
@@ -30,10 +30,10 @@ Make sure to disable the Bot fight mode for R2:
 
 This ensures no traffic gets blocked when the Lambda function uses a headless browser to load the assets.
 
-## Option 2: Use `@remotion/media` tags
+## Option 2: Use `@picus/media` tags
 
-The [`<Video />`](/docs/media/video) and [`<Audio />`](/docs/media/audio) components from [`@remotion/media`](/docs/media) support **partial downloads** of media files.
-Unlike [`<OffthreadVideo />`](/docs/offthreadvideo), which needs to download the entire file before extracting a frame, the [`@remotion/media`](/docs/media) tags use byte range requests to only fetch the parts of the file that are needed.
+The [`<Video />`](/docs/media/video) and [`<Audio />`](/docs/media/audio) components from [`@picus/media`](/docs/media) support **partial downloads** of media files.
+Unlike [`<OffthreadVideo />`](/docs/offthreadvideo), which needs to download the entire file before extracting a frame, the [`@picus/media`](/docs/media) tags use byte range requests to only fetch the parts of the file that are needed.
 
 This means that if your composition only uses a portion of a large video, the Lambda function will not download the full file — significantly reducing data transfer.
 
@@ -43,11 +43,11 @@ See the [comparison of video tags](/docs/video-tags) for a full feature comparis
 
 You can with some configuration set up a VPC for the Lambda function.
 
-Refer to these [notes](https://github.com/remotion-dev/remotion/issues/3817#issuecomment-3182273841) for how to enable VPC endpoints for Remotion Lambda.
+Refer to these [notes](https://github.com/picus-dev/picus/issues/3817#issuecomment-3182273841) for how to enable VPC endpoints for Picus Lambda.
 
 ### Caveats
 
-- If a Lambda function already existed, this will not update the settings. Delete the Remotion Lambda function and redeploy a new one.
+- If a Lambda function already existed, this will not update the settings. Delete the Picus Lambda function and redeploy a new one.
 - You still pay a flat fee per request.
 - Setting up a VPC endpoint might restrict other network traffic.
 - We do not have recommendations yet for how to configure the VPC endpoint.

@@ -1,13 +1,13 @@
-import { makeTransform, scale, translateY } from "@remotion/animation-utils";
-import { TikTokPage } from "@remotion/captions";
-import { fitText } from "@remotion/layout-utils";
+import { makeTransform, scale, translateY } from "@picus/animation-utils";
+import { TikTokPage } from "@picus/captions";
+import { fitText } from "@picus/layout-utils";
 import React from "react";
 import {
   AbsoluteFill,
   interpolate,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 import { TheBoldFont } from "../load-font";
 
 const fontFamily = TheBoldFont;

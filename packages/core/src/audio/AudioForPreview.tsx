@@ -24,16 +24,16 @@ import {
 } from '../volume-position-state.js';
 import {evaluateVolume} from '../volume-prop.js';
 import {warnAboutTooHighVolume} from '../volume-safeguard.js';
-import type {IsExact, NativeAudioProps, RemotionAudioProps} from './props.js';
+import type {IsExact, NativeAudioProps, PicusAudioProps} from './props.js';
 import {useSharedAudio} from './shared-audio-tags.js';
 import {useFrameForVolumeProp} from './use-audio-frame.js';
 
-type AudioForPreviewProps = RemotionAudioProps & {
+type AudioForPreviewProps = PicusAudioProps & {
 	readonly shouldPreMountAudioTags: boolean;
 	readonly onDuration: (src: string, durationInSeconds: number) => void;
 	readonly pauseWhenBuffering: boolean;
-	readonly _remotionInternalNativeLoopPassed: boolean;
-	readonly _remotionInternalStack: string | null;
+	readonly _picusInternalNativeLoopPassed: boolean;
+	readonly _picusInternalStack: string | null;
 	readonly showInTimeline: boolean;
 	readonly stack?: string | undefined;
 	readonly onNativeError: React.ReactEventHandler<HTMLAudioElement>;
@@ -62,9 +62,9 @@ const AudioForDevelopmentForwardRefFunction: React.ForwardRefRenderFunction<
 		src,
 		onDuration,
 		acceptableTimeShiftInSeconds,
-		_remotionInternalNeedsDurationCalculation,
-		_remotionInternalNativeLoopPassed,
-		_remotionInternalStack,
+		_picusInternalNeedsDurationCalculation,
+		_picusInternalNativeLoopPassed,
+		_picusInternalStack,
 		allowAmplificationDuringRender,
 		name,
 		pauseWhenBuffering,
@@ -132,12 +132,12 @@ const AudioForDevelopmentForwardRefFunction: React.ForwardRefRenderFunction<
 			muted:
 				muted || mediaMuted || isSequenceHidden || userPreferredVolume <= 0,
 			src: preloadedSrc,
-			loop: _remotionInternalNativeLoopPassed,
+			loop: _picusInternalNativeLoopPassed,
 			crossOrigin: crossOriginValue,
 			...nativeProps,
 		};
 	}, [
-		_remotionInternalNativeLoopPassed,
+		_picusInternalNativeLoopPassed,
 		isSequenceHidden,
 		mediaMuted,
 		muted,
@@ -184,7 +184,7 @@ const AudioForDevelopmentForwardRefFunction: React.ForwardRefRenderFunction<
 		playbackRate: playbackRate ?? 1,
 		displayName: name ?? null,
 		id: timelineId,
-		stack: _remotionInternalStack,
+		stack: _picusInternalStack,
 		showInTimeline,
 		premountDisplay: sequenceContext?.premountDisplay ?? null,
 		postmountDisplay: sequenceContext?.postmountDisplay ?? null,
@@ -233,7 +233,7 @@ const AudioForDevelopmentForwardRefFunction: React.ForwardRefRenderFunction<
 	const effectToUse = React.useInsertionEffect ?? React.useLayoutEffect;
 
 	// Disconnecting the SharedElementSourceNodes if the Audio tag unmounts to prevent leak.
-	// https://github.com/remotion-dev/remotion/issues/6285
+	// https://github.com/picus-dev/picus/issues/6285
 	// But useInsertionEffect will fire before other effects, meaning the
 	// nodes might still be used. Using rAF to ensure it's after other effects.
 	effectToUse(() => {

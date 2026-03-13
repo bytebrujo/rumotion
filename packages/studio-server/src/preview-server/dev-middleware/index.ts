@@ -1,5 +1,5 @@
-import type {webpack} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
+import type {webpack} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
 import type {MiddleWare} from './middleware';
 import {middleware} from './middleware';
 import {setupHooks} from './setup-hooks';
@@ -15,7 +15,7 @@ export const wdm = (
 		stats: undefined,
 		callbacks: [],
 		compiler,
-		logger: compiler.getInfrastructureLogger('remotion'),
+		logger: compiler.getInfrastructureLogger('picus'),
 		outputFileSystem: undefined,
 	};
 

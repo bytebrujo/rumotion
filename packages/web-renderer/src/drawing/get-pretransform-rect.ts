@@ -1,5 +1,5 @@
 // In some cases, we get a matrix that is too compressed:
-// e.g. https://github.com/remotion-dev/remotion/issues/6185
+// e.g. https://github.com/picus-dev/picus/issues/6185
 // > You're rotating around the X-axis by ~89.96°, which means the Y-axis gets compressed to ⁠cos(89.96°) ≈ 0.000691 of its original size in the viewport.
 const MAX_SCALE_FACTOR = 100;
 

@@ -1,6 +1,6 @@
-import {LightLeak} from '@remotion/light-leaks';
+import {LightLeak} from '@picus/light-leaks';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const LightLeakExample: React.FC = () => {
 	return (

@@ -2,9 +2,9 @@ import {expect, test} from 'bun:test';
 import {updateSequenceProps} from '../codemods/update-sequence-props';
 import {lineColumnToNodePath} from './test-utils';
 
-const componentInput = `import {Video} from '@remotion/media';
+const componentInput = `import {Video} from '@picus/media';
 
-const src = 'https://remotion.media/video.mp4';
+const src = 'https://picus.media/video.mp4';
 
 export const Component = () => {
     return <Video src={src} />;
@@ -27,9 +27,9 @@ test('Should add style.scale to a Video component and format with prettier', asy
 
 	expect(oldValueString).toBe('');
 	expect(formatted).toBe(true);
-	expect(output).toBe(`import {Video} from '@remotion/media';
+	expect(output).toBe(`import {Video} from '@picus/media';
 
-const src = 'https://remotion.media/video.mp4';
+const src = 'https://picus.media/video.mp4';
 
 export const Component = () => {
 \treturn (

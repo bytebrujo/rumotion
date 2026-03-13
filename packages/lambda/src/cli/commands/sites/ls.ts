@@ -1,6 +1,6 @@
-import {CliInternals} from '@remotion/cli';
-import {getSites} from '@remotion/lambda-client';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import {getSites} from '@picus/lambda-client';
+import type {LogLevel} from '@picus/renderer';
 import {parsedLambdaCli} from '../../args';
 import {getAwsRegion} from '../../get-aws-region';
 import {dateString} from '../../helpers/date-string';
@@ -27,7 +27,7 @@ export const sitesLsSubcommand = async (logLevel: LogLevel) => {
 	if (buckets.length > 1 && !CliInternals.quietFlagProvided()) {
 		CliInternals.Log.warn(
 			{indent: false, logLevel},
-			'Warning: You have more than one Remotion S3 bucket, but only one is needed. This can lead to conflicts. Remove all but one of them.',
+			'Warning: You have more than one Picus S3 bucket, but only one is needed. This can lead to conflicts. Remove all but one of them.',
 		);
 	}
 

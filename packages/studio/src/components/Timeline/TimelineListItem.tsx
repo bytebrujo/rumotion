@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo} from 'react';
-import type {TSequence} from 'remotion';
-import {Internals} from 'remotion';
+import type {TSequence} from 'picus';
+import {Internals} from 'picus';
 import {StudioServerConnectionCtx} from '../../helpers/client-id';
 import {TIMELINE_TRACK_SEPARATOR} from '../../helpers/colors';
 import {

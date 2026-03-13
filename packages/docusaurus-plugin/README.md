@@ -1,4 +1,4 @@
-# @remotion/docusaurus-plugin
+# @picus/docusaurus-plugin
 
 ## Usage
 

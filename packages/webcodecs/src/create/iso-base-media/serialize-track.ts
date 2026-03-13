@@ -1,4 +1,4 @@
-import type {SamplePosition} from '@remotion/media-parser';
+import type {SamplePosition} from '@picus/media-parser';
 import type {MakeTrackAudio, MakeTrackVideo} from '../make-track-info';
 import {createCodecSpecificData} from './codec-specific/create-codec-specific-data';
 import {createMdia} from './create-mdia';

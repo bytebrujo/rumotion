@@ -9,9 +9,9 @@ import type {
 	StillImageFormat,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
-import type {PackageManager, RenderDefaults} from '@remotion/studio-shared';
+} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
+import type {PackageManager, RenderDefaults} from '@picus/studio-shared';
 import type {
 	RenderStillOnWebImageFormat,
 	WebRendererAudioCodec,
@@ -19,10 +19,10 @@ import type {
 	WebRendererHardwareAcceleration,
 	WebRendererQuality,
 	WebRendererVideoCodec,
-} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
 import type React from 'react';
 import {createContext} from 'react';
-import type {_InternalTypes} from 'remotion';
+import type {_InternalTypes} from 'picus';
 import type {CompType} from '../components/NewComposition/DuplicateComposition';
 import type {QuickSwitcherMode} from '../components/QuickSwitcher/NoResults';
 import type {RenderType} from '../components/RenderModal/RenderModalAdvanced';

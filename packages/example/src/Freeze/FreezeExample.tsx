@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Freeze, Html5Video, Series, staticFile} from 'remotion';
+import {Freeze, Html5Video, Series, staticFile} from 'picus';
 
 export const FreezeExample: React.FC = () => {
 	const video = staticFile('framermp4withoutfileextension');

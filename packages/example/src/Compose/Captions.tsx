@@ -2,7 +2,7 @@ import {
 	Caption,
 	createTikTokStyleCaptions,
 	TikTokToken,
-} from '@remotion/captions';
+} from '@picus/captions';
 import React, {useMemo} from 'react';
 import {
 	Sequence,
@@ -10,7 +10,7 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const Token: React.FC<{
 	token: TikTokToken;

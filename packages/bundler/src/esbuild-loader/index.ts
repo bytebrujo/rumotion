@@ -20,9 +20,9 @@ async function ESBuildLoader(
 ): Promise<void> {
 	const done = this.async();
 	const options: LoaderOptions = this.getOptions();
-	const {implementation, remotionRoot, ...esbuildTransformOptions} = options;
+	const {implementation, picusRoot, ...esbuildTransformOptions} = options;
 
-	const tsConfigPath = path.join(remotionRoot, 'tsconfig.json');
+	const tsConfigPath = path.join(picusRoot, 'tsconfig.json');
 
 	if (implementation && typeof implementation.transform !== 'function') {
 		done(

@@ -1,9 +1,9 @@
-import {Composition} from 'remotion';
-import {MyAnimation as BarChartAnimation} from '../skills/remotion/rules/assets/charts-bar-chart';
-import {MyAnimation as TypewriterAnimation} from '../skills/remotion/rules/assets/text-animations-typewriter';
-import {MyAnimation as WordHighlightAnimation} from '../skills/remotion/rules/assets/text-animations-word-highlight';
+import {Composition} from 'picus';
+import {MyAnimation as BarChartAnimation} from '../skills/picus/rules/assets/charts-bar-chart';
+import {MyAnimation as TypewriterAnimation} from '../skills/picus/rules/assets/text-animations-typewriter';
+import {MyAnimation as WordHighlightAnimation} from '../skills/picus/rules/assets/text-animations-word-highlight';
 
-export const RemotionRoot = () => {
+export const PicusRoot = () => {
 	return (
 		<>
 			<Composition
@@ -22,7 +22,7 @@ export const RemotionRoot = () => {
 				width={1920}
 				height={1080}
 				defaultProps={{
-					fullText: 'From prompt to motion graphics. This is Remotion.',
+					fullText: 'From prompt to motion graphics. This is Picus.',
 					pauseAfter: 'From prompt to motion graphics.',
 				}}
 			/>

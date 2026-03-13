@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/enable-scss"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/enable-scss"
 	},
-	"name": "@remotion/enable-scss",
+	"name": "@picus/enable-scss",
 	"version": "4.0.434",
-	"description": "Enable SCSS support in Remotion",
+	"description": "Enable SCSS support in Picus",
 	"main": "dist/cjs/index.js",
 	"types": "dist/cjs/index.d.ts",
 	"module": "dist/esm/index.mjs",
@@ -15,11 +15,11 @@
 		"formatting": "oxfmt src --check",
 		"format": "oxfmt src"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
 		"style-loader": "4.0.0",
@@ -27,16 +27,16 @@
 		"sass-loader": "14.2.1"
 	},
 	"peerDependencies": {
-		"@remotion/bundler": "workspace:*"
+		"@picus/bundler": "workspace:*"
 	},
 	"devDependencies": {
-		"@remotion/bundler": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"tailwind"
 	],
 	"publishConfig": {
@@ -51,5 +51,5 @@
 			"require": "./dist/cjs/index.js"
 		}
 	},
-	"homepage": "https://www.remotion.dev/docs/enable-scss/overview"
+	"homepage": "https://www.picus.dev/docs/enable-scss/overview"
 }

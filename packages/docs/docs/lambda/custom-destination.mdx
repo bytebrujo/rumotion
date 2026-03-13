@@ -23,14 +23,14 @@ The output name must match `/^([0-9a-zA-Z-!_.*'()/]+)$/g`.
 To render into a different bucket, specify the `outName` option to [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda) or [`renderStillOnLambda()`](/docs/lambda/renderstillonlambda) and pass an object with the `key` and `bucketName` values:
 
 ```tsx twoslash {13-16}
-import {renderMediaOnLambda} from '@remotion/lambda';
+import {renderMediaOnLambda} from '@picus/lambda';
 // ---cut---
 
 const {bucketName, renderId} = await renderMediaOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
+  functionName: 'picus-render-bds9aab',
   composition: 'MyVideo',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   inputProps: {},
   codec: 'h264',
   imageFormat: 'jpeg',
@@ -45,7 +45,7 @@ const {bucketName, renderId} = await renderMediaOnLambda({
 
 If you like to use this feature:
 
-- You must extend the [default Remotion role policy](/docs/lambda/permissions) (not user policy) to allow read and write access to that bucket.
+- You must extend the [default Picus role policy](/docs/lambda/permissions) (not user policy) to allow read and write access to that bucket.
 - The bucket must be in the same region.
 - When calling APIs such as [`downloadMedia()`](/docs/lambda/downloadmedia) or [`getRenderProgress()`](/docs/lambda/getrenderprogress), you must pass the `bucketName` where the site resides in, not the bucket where the video gets saved.
 - The `key` must match `/^([0-9a-zA-Z-!_.*'()/]+)$/g`
@@ -77,14 +77,14 @@ You can upload the file to another S3-compatible provider.
 You must pass an `outName` [as specified above](#customizing-the-output-bucket) and also provide an `s3OutputProvider` like in the example below.
 
 ```tsx twoslash {13-21}
-import {renderMediaOnLambda} from '@remotion/lambda';
+import {renderMediaOnLambda} from '@picus/lambda';
 // ---cut---
 
 const {bucketName, renderId} = await renderMediaOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
+  functionName: 'picus-render-bds9aab',
   composition: 'MyVideo',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   inputProps: {},
   codec: 'h264',
   imageFormat: 'jpeg',
@@ -108,7 +108,7 @@ If you want to use this feature, note the following:
 
 - When calling [`downloadMedia()`](/docs/lambda/downloadmedia#bucketname) or [`getRenderProgress()`](/docs/lambda/getrenderprogress#bucketname), you must pass the AWS `bucketName` where the site resides in, not the bucket name of the foreign cloud.
 - When calling [`downloadMedia()`](/docs/lambda/downloadmedia) or [`getRenderProgress()`](/docs/lambda/getrenderprogress), you must provide the `s3OutputProvider` option with the same credentials again.
-- By default, Remotion [assumes you use ACL](/docs/lambda/troubleshooting/bucket-disallows-acl) which is less common on other clouds. You need to set `privacy: "no-acl"` if you don't want to use ACL.
+- By default, Picus [assumes you use ACL](/docs/lambda/troubleshooting/bucket-disallows-acl) which is less common on other clouds. You need to set `privacy: "no-acl"` if you don't want to use ACL.
 
 This feature is not supported from the CLI.
 

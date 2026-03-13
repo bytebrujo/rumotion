@@ -10,16 +10,16 @@ import type {
 	LoopVolumeCurveBehavior,
 	OnVideoFrame,
 	VolumeProp,
-} from 'remotion';
+} from 'picus';
 import {
 	Internals,
 	Loop,
 	random,
 	useCurrentFrame,
 	useDelayRender,
-	useRemotionEnvironment,
+	usePicusEnvironment,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {useMaxMediaCacheSize} from '../caches';
 import {applyVolume} from '../convert-audiodata/apply-volume';
 import {TARGET_SAMPLE_RATE} from '../convert-audiodata/resample-audiodata';
@@ -110,7 +110,7 @@ export const VideoForRendering: React.FC<InnerVideoProps> = ({
 		],
 	);
 
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 	const {delayRender, continueRender, cancelRender} = useDelayRender();
 
 	const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -211,9 +211,9 @@ export const VideoForRendering: React.FC<InnerVideoProps> = ({
 					}
 
 					// action === 'fallback'
-					if (window.remotion_isMainTab) {
+					if (window.picus_isMainTab) {
 						Internals.Log.warn(
-							{logLevel, tag: '@remotion/media'},
+							{logLevel, tag: '@picus/media'},
 							fallbackMessage,
 						);
 					}
@@ -227,9 +227,9 @@ export const VideoForRendering: React.FC<InnerVideoProps> = ({
 					handleError(
 						new Error(`Unknown container format ${src}.`),
 						new Error(
-							`Cannot render video "${src}": Unknown container format. See supported formats: https://www.remotion.dev/docs/mediabunny/formats`,
+							`Cannot render video "${src}": Unknown container format. See supported formats: https://www.picus.dev/docs/mediabunny/formats`,
 						),
-						`Unknown container format for ${src} (Supported formats: https://www.remotion.dev/docs/mediabunny/formats), falling back to <OffthreadVideo>`,
+						`Unknown container format for ${src} (Supported formats: https://www.picus.dev/docs/mediabunny/formats), falling back to <OffthreadVideo>`,
 						null,
 					);
 					return;
@@ -430,14 +430,14 @@ export const VideoForRendering: React.FC<InnerVideoProps> = ({
 				startFrom={undefined}
 				endAt={undefined}
 				stack={stack}
-				_remotionInternalNativeLoopPassed={false}
+				_picusInternalNativeLoopPassed={false}
 			/>
 		);
 
 		if (loop) {
 			if (!replaceWithOffthreadVideo.durationInSeconds) {
 				const err = new Error(
-					`Cannot render video ${src}: @remotion/media was unable to render, and fell back to <OffthreadVideo>. Also, "loop" was set, but <OffthreadVideo> does not support looping and @remotion/media could also not determine the duration of the video.`,
+					`Cannot render video ${src}: @picus/media was unable to render, and fell back to <OffthreadVideo>. Also, "loop" was set, but <OffthreadVideo> does not support looping and @picus/media could also not determine the duration of the video.`,
 				);
 
 				cancelRender(err);

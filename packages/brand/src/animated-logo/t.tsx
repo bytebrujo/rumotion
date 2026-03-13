@@ -1,6 +1,6 @@
-import {translatePath} from '@remotion/paths';
+import {translatePath} from '@picus/paths';
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {motionFixedPath} from './motion-fix';
 import {springB, springC} from './springs';
 import svg = require('svg-path-properties');

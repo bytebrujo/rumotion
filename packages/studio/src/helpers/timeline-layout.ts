@@ -1,4 +1,4 @@
-import type {SequenceControls, SequenceFieldSchema} from 'remotion';
+import type {SequenceControls, SequenceFieldSchema} from 'picus';
 
 export const TIMELINE_PADDING = 16;
 export const TIMELINE_BORDER = 1;

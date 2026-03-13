@@ -1,5 +1,5 @@
-import {getBoundingBox} from '@remotion/paths';
-import {MatrixTransform4D, transformPath} from '@remotion/svg-3d-engine';
+import {getBoundingBox} from '@picus/paths';
+import {MatrixTransform4D, transformPath} from '@picus/svg-3d-engine';
 import React, {useMemo} from 'react';
 
 export const Svg: React.FC<{

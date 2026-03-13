@@ -6,24 +6,24 @@ id: rendering
 crumb: Editor Starter
 ---
 
-Rendering videos to MP4 works using [Remotion Lambda](/docs/lambda), a distributed renderer on AWS Lambda.
+Rendering videos to MP4 works using [Picus Lambda](/docs/lambda), a distributed renderer on AWS Lambda.
 
 ## Setup
 
-Follow the [Remotion Lambda setup instructions](/docs/lambda/setup) step-by-step to set up your AWS account.
+Follow the [Picus Lambda setup instructions](/docs/lambda/setup) step-by-step to set up your AWS account.
 
 :::note
-If you have already setup [asset uploads](/docs/editor-starter/asset-uploads), you should skip steps 4 and 5 of the Remotion Lambda setup instructions.  
+If you have already setup [asset uploads](/docs/editor-starter/asset-uploads), you should skip steps 4 and 5 of the Picus Lambda setup instructions.  
 Don't create a new user, but select the user you created before.
 :::
 
 After that, fill in the following values in the `.env` file:
 
 ```
-REMOTION_AWS_REGION=
-REMOTION_AWS_ACCESS_KEY_ID=
-REMOTION_AWS_SECRET_ACCESS_KEY=
-REMOTION_AWS_BUCKET_NAME=
+PICUS_AWS_REGION=
+PICUS_AWS_ACCESS_KEY_ID=
+PICUS_AWS_SECRET_ACCESS_KEY=
+PICUS_AWS_BUCKET_NAME=
 ```
 
 Now, you can deploy a Lambda function and create a site by running:
@@ -33,7 +33,7 @@ bun deploy.ts
 ```
 
 :::note
-If you get an error `'MemorySize' value failed to satisfy constraint: Member must have value less than or equal to 3008`, you need to lower the memory size of your Lambda function by changing the [`MEM_SIZE_IN_MB`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter%20MEM_SIZE_IN_MB&type=code) variable to a lower value. You might be on the AWS free tier or have a low concurrency limit, which may hinder your ability to render many videos.
+If you get an error `'MemorySize' value failed to satisfy constraint: Member must have value less than or equal to 3008`, you need to lower the memory size of your Lambda function by changing the [`MEM_SIZE_IN_MB`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter%20MEM_SIZE_IN_MB&type=code) variable to a lower value. You might be on the AWS free tier or have a low concurrency limit, which may hinder your ability to render many videos.
 :::
 
 Alternatively, running the build command will also build the site and deploy it to your S3 bucket:
@@ -48,7 +48,7 @@ You should re-execute the deployment whenever:
 
 - You change the structure of the [state](/docs/editor-starter/state-management), e.g. add new fields or items
 - You change how videos are rendered visually
-- You upgrade to a new Remotion version
+- You upgrade to a new Picus version
 
 Running the deployment script if the infrastructure already exists will not do anything.  
 Therefore, you can run it as often as you want.
@@ -63,7 +63,7 @@ This prevents you from forgetting to deploy whenever you make a change.
 To make the deployment more robust, we recommend to separate production deployments from development deployments of the site, for example by giving the site a different name based on the `VERCEL_ENV` environment variable:
 
 ```ts
-export const SITE_NAME = process.env.VERCEL_ENV === 'production' ? 'remotion-editor-starter' : 'remotion-editor-starter-dev';
+export const SITE_NAME = process.env.VERCEL_ENV === 'production' ? 'picus-editor-starter' : 'picus-editor-starter-dev';
 ```
 
 [You don't need to separate function deployments between production and development](/docs/lambda/separate-environments).
@@ -80,6 +80,6 @@ Tweak the params you pass to [`renderMediaOnLambda()`](/docs/lambda/rendermediao
 
 ## See also
 
-- [Remotion Lambda](/docs/lambda)
+- [Picus Lambda](/docs/lambda)
 - [Setup](/docs/editor-starter/setup)
 - [Asset uploads](/docs/editor-starter/asset-uploads)

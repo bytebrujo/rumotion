@@ -1,4 +1,4 @@
-import type {TSequence} from 'remotion';
+import type {TSequence} from 'picus';
 
 // The goal for this function is to calculate an as unique as possible identifier
 // for a sequence based on it's properties. A sequence can be registered multiple times

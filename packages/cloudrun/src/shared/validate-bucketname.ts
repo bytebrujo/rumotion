@@ -1,12 +1,12 @@
 import type {GcpRegion} from '../pricing/gcp-regions';
 import {GCP_REGIONS} from '../regions';
-import {REMOTION_BUCKET_PREFIX} from './constants';
+import {PICUS_BUCKET_PREFIX} from './constants';
 import {randomHash} from './random-hash';
 
 export const validateBucketName = (
 	bucketName: unknown,
 	options: {
-		mustStartWithRemotion: boolean;
+		mustStartWithPicus: boolean;
 	},
 ) => {
 	if (typeof bucketName !== 'string') {
@@ -16,11 +16,11 @@ export const validateBucketName = (
 	}
 
 	if (
-		options.mustStartWithRemotion &&
-		!bucketName.startsWith(REMOTION_BUCKET_PREFIX)
+		options.mustStartWithPicus &&
+		!bucketName.startsWith(PICUS_BUCKET_PREFIX)
 	) {
 		throw new Error(
-			`The bucketName parameter must start with ${REMOTION_BUCKET_PREFIX}.`,
+			`The bucketName parameter must start with ${PICUS_BUCKET_PREFIX}.`,
 		);
 	}
 
@@ -39,7 +39,7 @@ export const parseBucketName = (
 	region: GcpRegion | null;
 } => {
 	const parsed = name.match(
-		new RegExp(`^${REMOTION_BUCKET_PREFIX}(.*)-([a-z0-9A-Z]+)$`),
+		new RegExp(`^${PICUS_BUCKET_PREFIX}(.*)-([a-z0-9A-Z]+)$`),
 	);
 	const region = parsed?.[1] as GcpRegion;
 
@@ -55,7 +55,7 @@ export const parseBucketName = (
 };
 
 export const makeBucketName = () => {
-	return `${REMOTION_BUCKET_PREFIX}${randomHash({
+	return `${PICUS_BUCKET_PREFIX}${randomHash({
 		randomInTests: false,
 	})}`;
 };

@@ -1,6 +1,6 @@
-# @remotion/compositor-darwin-x64
+# @picus/compositor-darwin-x64
 
-MacOS x64 binary for the Remotion Rust code
+MacOS x64 binary for the Picus Rust code
 
 ## Usage
 

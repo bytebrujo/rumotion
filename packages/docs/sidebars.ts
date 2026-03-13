@@ -133,10 +133,10 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: 'remotion',
+			label: 'picus',
 			link: {
 				type: 'doc',
-				id: 'remotion',
+				id: 'picus',
 			},
 			items: [
 				'absolute-fill',
@@ -150,7 +150,7 @@ const sidebars: SidebarsConfig = {
 				'folder',
 				'freeze',
 				'get-input-props',
-				'get-remotion-environment',
+				'get-picus-environment',
 				'getstaticfiles',
 				'html5-audio',
 				'html5-video',
@@ -174,7 +174,7 @@ const sidebars: SidebarsConfig = {
 				'use-current-frame',
 				'use-current-scale',
 				'use-delay-render',
-				'use-remotion-environment',
+				'use-picus-environment',
 				'use-video-config',
 				'version',
 				'watchstaticfile',
@@ -183,7 +183,7 @@ const sidebars: SidebarsConfig = {
 
 		{
 			type: 'category',
-			label: '@remotion/animated-emoji',
+			label: '@picus/animated-emoji',
 			link: {
 				type: 'doc',
 				id: 'animated-emoji/index',
@@ -195,7 +195,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/animation-utils',
+			label: '@picus/animation-utils',
 			link: {
 				type: 'doc',
 				id: 'animation-utils/index',
@@ -207,7 +207,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/bundler',
+			label: '@picus/bundler',
 			link: {
 				type: 'doc',
 				id: 'bundler',
@@ -216,7 +216,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/captions',
+			label: '@picus/captions',
 			link: {
 				type: 'doc',
 				id: 'captions/api',
@@ -230,7 +230,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/cloudrun',
+			label: '@picus/cloudrun',
 			link: {
 				type: 'doc',
 				id: 'cloudrun/api',
@@ -258,7 +258,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/enable-scss',
+			label: '@picus/enable-scss',
 			link: {
 				type: 'doc',
 				id: 'enable-scss/overview',
@@ -267,7 +267,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/fonts',
+			label: '@picus/fonts',
 			link: {
 				type: 'doc',
 				id: 'fonts-api/fonts-api',
@@ -276,7 +276,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/gif',
+			label: '@picus/gif',
 			link: {
 				type: 'doc',
 				id: 'gif/index',
@@ -285,7 +285,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/google-fonts',
+			label: '@picus/google-fonts',
 			link: {
 				type: 'doc',
 				id: 'google-fonts/google-fonts',
@@ -299,7 +299,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/install-whisper-cpp',
+			label: '@picus/install-whisper-cpp',
 			link: {
 				type: 'doc',
 				id: 'install-whisper-cpp/index',
@@ -314,7 +314,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/layout-utils',
+			label: '@picus/layout-utils',
 			link: {
 				type: 'doc',
 				id: 'layout-utils/index',
@@ -330,7 +330,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/lambda',
+			label: '@picus/lambda',
 			link: {
 				type: 'doc',
 				id: 'lambda/api',
@@ -371,7 +371,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/licensing',
+			label: '@picus/licensing',
 			link: {
 				type: 'doc',
 				id: 'licensing/index',
@@ -380,7 +380,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/lottie',
+			label: '@picus/lottie',
 			link: {
 				type: 'doc',
 				id: 'lottie/lottie-index',
@@ -395,7 +395,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/media',
+			label: '@picus/media',
 			link: {
 				type: 'doc',
 				id: 'media/index',
@@ -410,7 +410,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/media-utils',
+			label: '@picus/media-utils',
 			link: {
 				type: 'doc',
 				id: 'media-utils/index',
@@ -431,7 +431,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/motion-blur',
+			label: '@picus/motion-blur',
 			link: {
 				type: 'doc',
 				id: 'motion-blur/index',
@@ -444,7 +444,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/noise',
+			label: '@picus/noise',
 			link: {
 				type: 'doc',
 				id: 'noise/index',
@@ -453,7 +453,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/light-leaks',
+			label: '@picus/light-leaks',
 			link: {
 				type: 'doc',
 				id: 'light-leaks/light-leaks-api',
@@ -462,7 +462,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/starburst',
+			label: '@picus/starburst',
 			link: {
 				type: 'doc',
 				id: 'starburst/starburst-api',
@@ -471,7 +471,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/sfx',
+			label: '@picus/sfx',
 			link: {
 				type: 'doc',
 				id: 'sfx/index',
@@ -492,7 +492,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/openai-whisper',
+			label: '@picus/openai-whisper',
 			link: {
 				type: 'doc',
 				id: 'openai-whisper/index',
@@ -501,7 +501,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/paths',
+			label: '@picus/paths',
 			link: {
 				type: 'doc',
 				id: 'paths/index',
@@ -530,7 +530,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/player',
+			label: '@picus/player',
 			link: {
 				type: 'doc',
 				id: 'player/installation',
@@ -548,7 +548,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/preload',
+			label: '@picus/preload',
 			link: {
 				type: 'doc',
 				id: 'preload/preload',
@@ -563,7 +563,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/renderer',
+			label: '@picus/renderer',
 			link: {
 				type: 'doc',
 				id: 'renderer',
@@ -590,16 +590,16 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/rive',
+			label: '@picus/rive',
 			link: {
 				type: 'doc',
 				id: 'rive/index',
 			},
-			items: ['rive/index', 'rive/remotionrivecanvas'],
+			items: ['rive/index', 'rive/picusrivecanvas'],
 		},
 		{
 			type: 'category',
-			label: '@remotion/rounded-text-box',
+			label: '@picus/rounded-text-box',
 			link: {
 				type: 'doc',
 				id: 'rounded-text-box/index',
@@ -608,7 +608,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/shapes',
+			label: '@picus/shapes',
 			link: {
 				type: 'doc',
 				id: 'shapes/index',
@@ -636,7 +636,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/skia',
+			label: '@picus/skia',
 			link: {
 				type: 'doc',
 				id: 'skia/skia',
@@ -645,7 +645,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/studio',
+			label: '@picus/studio',
 			link: {
 				type: 'doc',
 				id: 'studio/api',
@@ -671,7 +671,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/tailwind',
+			label: '@picus/tailwind',
 			link: {
 				type: 'doc',
 				id: 'tailwind/tailwind',
@@ -680,7 +680,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/tailwind-v4',
+			label: '@picus/tailwind-v4',
 			link: {
 				type: 'doc',
 				id: 'tailwind-v4/overview',
@@ -689,7 +689,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/three',
+			label: '@picus/three',
 			link: {
 				type: 'doc',
 				id: 'three',
@@ -702,7 +702,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/transitions',
+			label: '@picus/transitions',
 			link: {
 				type: 'doc',
 				id: 'transitions/index',
@@ -752,7 +752,7 @@ const sidebars: SidebarsConfig = {
 
 		{
 			type: 'category',
-			label: '@remotion/vercel',
+			label: '@picus/vercel',
 			link: {
 				type: 'doc',
 				id: 'vercel/vercel-api',
@@ -768,7 +768,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/web-renderer',
+			label: '@picus/web-renderer',
 			link: {
 				type: 'doc',
 				id: 'web-renderer/index',
@@ -789,7 +789,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/whisper-web',
+			label: '@picus/whisper-web',
 			link: {
 				type: 'doc',
 				id: 'whisper-web/index',
@@ -806,7 +806,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/zod-types',
+			label: '@picus/zod-types',
 			link: {
 				type: 'doc',
 				id: 'zod-types/index',
@@ -826,7 +826,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/media-parser (deprecated)',
+			label: '@picus/media-parser (deprecated)',
 			link: {
 				type: 'doc',
 				id: 'media-parser/index',
@@ -853,7 +853,7 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'category',
-			label: '@remotion/webcodecs (deprecated)',
+			label: '@picus/webcodecs (deprecated)',
 			link: {
 				type: 'doc',
 				id: 'webcodecs/index',
@@ -1218,7 +1218,7 @@ const sidebars: SidebarsConfig = {
 			items: [
 				'brownfield',
 				'studio-into-app',
-				'player-into-remotion-project',
+				'player-into-picus-project',
 				'video-uploads',
 				'validating-user-videos',
 				'presigned-urls',
@@ -1315,7 +1315,7 @@ const sidebars: SidebarsConfig = {
 				'terminology/service-name',
 				'terminology/entry-point',
 				'terminology/root-file',
-				'terminology/remotion-root',
+				'terminology/picus-root',
 				'terminology/public-dir',
 				'terminology/serve-url',
 				'terminology/bundle',
@@ -1369,7 +1369,7 @@ const sidebars: SidebarsConfig = {
 				'cors-issues',
 				'media-fragments',
 				'react-native',
-				'detect-remotion',
+				'detect-picus',
 			],
 		},
 		'resources',
@@ -1425,12 +1425,12 @@ const sidebars: SidebarsConfig = {
 				},
 				{
 					type: 'link',
-					href: 'https://remotion.dev/discord',
+					href: 'https://picus.dev/discord',
 					label: 'Discord',
 				},
 				{
 					type: 'link',
-					href: 'https://remotion.dev/discord',
+					href: 'https://picus.dev/discord',
 					label: 'GitHub Issues',
 				},
 				'support',

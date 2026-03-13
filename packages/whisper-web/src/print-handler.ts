@@ -2,10 +2,10 @@ import type {LogLevel} from './log';
 import {Log} from './log';
 import type {TranscriptionJson} from './result';
 
-const RESULT_TOKEN = 'remotion_final:';
-const PROGRESS_TOKEN = 'remotion_progress:';
-const UPDATE_TOKEN = 'remotion_update:';
-const BUSY_TOKEN = 'remotion_busy:';
+const RESULT_TOKEN = 'picus_final:';
+const PROGRESS_TOKEN = 'picus_progress:';
+const UPDATE_TOKEN = 'picus_update:';
+const BUSY_TOKEN = 'picus_busy:';
 
 export const printHandler = ({
 	onProgress,

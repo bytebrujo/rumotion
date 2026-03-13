@@ -5,7 +5,7 @@ sidebar_label: Bucket Security
 crumb: 'Lambda'
 ---
 
-Before Remotion Lambda, v4.0.418, buckets created with Remotion Lambda used a `public-read` ACL. This means that:
+Before Picus Lambda, v4.0.418, buckets created with Picus Lambda used a `public-read` ACL. This means that:
 
 - Items not explicitly made private (by setting the `privacy` option in [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda#privacy)) are accessible to anyone.
 - People can "list" the buckets by visiting the bucket URL or using the AWS SDK
@@ -17,7 +17,7 @@ If you did not set the [`privacy`](/docs/lambda/rendermediaonlambda#privacy) opt
 
 ## The new default<AvailableFrom v="4.0.418" />
 
-From Remotion Lambda v4.0.418, the default is to not set an ACL, but to set a bucket policy:
+From Picus Lambda v4.0.418, the default is to not set an ACL, but to set a bucket policy:
 
 - Items not explicitly made private (by setting the `privacy` option in [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda#privacy)) are only accessible if you know the URL.
 - People cannot "list" the buckets anymore.

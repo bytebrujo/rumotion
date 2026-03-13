@@ -1,13 +1,13 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/gif"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/gif"
 	},
-	"name": "@remotion/gif",
+	"name": "@picus/gif",
 	"version": "4.0.434",
-	"description": "Embed GIFs in a Remotion video",
+	"description": "Embed GIFs in a Picus video",
 	"sideEffects": false,
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"license": "SEE LICENSE IN LICENSE.md",
 	"author": "Dmitry Ivakhnenko, Jonny Burger",
@@ -30,14 +30,14 @@
 		}
 	},
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"devDependencies": {
 		"esbuild": "0.25.0",
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"webpack": "5.105.0",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
@@ -46,7 +46,7 @@
 		"react-dom": ">=16.8.0"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"ffmpeg",
 		"video",
 		"react",
@@ -55,5 +55,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/gif"
+	"homepage": "https://www.picus.dev/docs/gif"
 }

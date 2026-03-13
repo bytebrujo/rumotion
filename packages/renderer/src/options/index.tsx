@@ -53,7 +53,7 @@ import {numberOfSharedAudioTagsOption} from './number-of-shared-audio-tags';
 import {offthreadVideoCacheSizeInBytesOption} from './offthreadvideo-cache-size';
 import {offthreadVideoThreadsOption} from './offthreadvideo-threads';
 import {onBrowserDownloadOption} from './on-browser-download';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 import {outDirOption} from './out-dir';
 import {overrideDurationOption} from './override-duration';
 import {overrideFpsOption} from './override-fps';
@@ -181,4 +181,4 @@ export const allOptions = {
 
 export type AvailableOptions = keyof typeof allOptions;
 export type TypeOfOption<Type> =
-	Type extends AnyRemotionOption<infer X> ? X : never;
+	Type extends AnyPicusOption<infer X> ? X : never;

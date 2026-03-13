@@ -1,4 +1,4 @@
-import { continueRender, delayRender, staticFile } from "remotion";
+import { continueRender, delayRender, staticFile } from "picus";
 
 export const TheBoldFont = `TheBoldFont`;
 

@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import {extractAudio} from './audio-extraction/extract-audio';
 import {isNetworkError} from './is-type-of-error';
 import {extractFrame} from './video-extraction/extract-frame';

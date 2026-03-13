@@ -1,10 +1,10 @@
 import fs from 'fs';
-import type {WebpackOverrideFn} from '@remotion/bundler';
-import {webpack} from '@remotion/bundler';
+import type {WebpackOverrideFn} from '@picus/bundler';
+import {webpack} from '@picus/bundler';
 
 /**
  * @description A function that modifies the default Webpack configuration to make the necessary changes to support Skia.
- * @see [Documentation](https://www.remotion.dev/docs/skia/enable-skia)
+ * @see [Documentation](https://www.picus.dev/docs/skia/enable-skia)
  */
 export const enableSkia: WebpackOverrideFn = (currentConfiguration) => {
 	const newExtensions = [

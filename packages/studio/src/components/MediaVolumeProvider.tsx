@@ -2,8 +2,8 @@ import React, {useMemo, useState} from 'react';
 import type {
 	MediaVolumeContextValue,
 	SetMediaVolumeContextValue,
-} from 'remotion';
-import {Internals} from 'remotion';
+} from 'picus';
+import {Internals} from 'picus';
 import {loadMuteOption} from '../state/mute';
 
 export const MediaVolumeProvider: React.FC<{

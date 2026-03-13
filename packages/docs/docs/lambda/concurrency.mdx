@@ -5,7 +5,7 @@ title: Concurrency
 crumb: 'Lambda'
 ---
 
-Remotion Lambda is a highly concurrent distributed video rendering system. That means that the video rendering work is split up across many Lambda functions. How many Lambda functions exactly can be defined by you, or you let Remotions defaults decide.
+Picus Lambda is a highly concurrent distributed video rendering system. That means that the video rendering work is split up across many Lambda functions. How many Lambda functions exactly can be defined by you, or you let Picuss defaults decide.
 
 ## Setting the concurrency
 
@@ -21,7 +21,7 @@ Example: You render a video that has a `durationInFrames` of `300` with a `frame
 
 ## Default values
 
-By default, Remotion chooses a value between 20 and ∞ for `framesPerLambda`. The longer the video, the higher the concurrency. As a baseline, no matter how short the video, always at least 20 frames are rendered per Lambda.
+By default, Picus chooses a value between 20 and ∞ for `framesPerLambda`. The longer the video, the higher the concurrency. As a baseline, no matter how short the video, always at least 20 frames are rendered per Lambda.
 
 The following chart shows how the `framesPerLambda` and the implied concurrency is chosen based on the frame count:
 
@@ -30,7 +30,7 @@ The following chart shows how the `framesPerLambda` and the implied concurrency 
 The code for determining the `framesPerLambda` parameter is:
 
 ```tsx twoslash
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 
 const bestFramesPerLambdaParam = (frameCount: number) => {
   // Between 0 and 10 minutes (at 30fps), interpolate the concurrency from 75 to 150
@@ -56,10 +56,10 @@ import {ConcurrencyCalculator} from '../../components/Concurrency';
 
 Ensure that you only set parameter within these limits to ensure the renders don't throw any errors:
 
-- Minimum `framesPerLambda`: 5 (4 up until Remotion 4.0.331)
+- Minimum `framesPerLambda`: 5 (4 up until Picus 4.0.331)
 - Maximum concurrency: 200
 
-The Remotion Lambda defaults will never go outside these bounds.
+The Picus Lambda defaults will never go outside these bounds.
 
 ## "Too many functions"
 
@@ -69,5 +69,5 @@ If you get an error:
 
 You have set a value for `framesPerLambda` that is very low and would cause many functions to be spawned. In our experience, renders will not become faster if the concurrency is increased beyond this point.
 
-- We recommend setting the `framesPerLambda` value to `null`. Remotion will choose a reasonable value that stays within the bounds.
+- We recommend setting the `framesPerLambda` value to `null`. Picus will choose a reasonable value that stays within the bounds.
 - If you don't want to use the default, ensure that you don't set values that go outside of the bounds defined above.

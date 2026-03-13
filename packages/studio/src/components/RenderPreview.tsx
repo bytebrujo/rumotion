@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import {StudioServerConnectionCtx} from '../helpers/client-id';
 import {LIGHT_TEXT} from '../helpers/colors';
 import type {AssetMetadata} from '../helpers/get-asset-metadata';
-import {remotion_outputsBase} from '../helpers/get-asset-metadata';
+import {picus_outputsBase} from '../helpers/get-asset-metadata';
 import {FilePreview} from './FilePreview';
 import {getPreviewFileType} from './Preview';
 
@@ -70,7 +70,7 @@ export const RenderPreview: React.FC<{
 		};
 	}, [getBlob]);
 
-	const src = blobUrl ?? remotion_outputsBase + path;
+	const src = blobUrl ?? picus_outputsBase + path;
 
 	if (connectionStatus === 'disconnected') {
 		return <div style={errMsgStyle}>Studio server disconnected</div>;

@@ -1,4 +1,4 @@
-import type {DownloadBehavior} from 'remotion';
+import type {DownloadBehavior} from 'picus';
 
 export type EmittedArtifact = {
 	filename: string;

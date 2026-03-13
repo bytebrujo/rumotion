@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://github.com/remotion-dev/remotion`;
+	return `https://github.com/picus-dev/picus`;
 });
 
 type Options = [];
@@ -13,13 +13,13 @@ type MessageIds =
 	| 'NoNativeVideoTag';
 
 const NoNativeImgTag =
-	"Prefer the <Img /> tag from 'remotion' package, because it will wait until the image is loaded when you are rendering your video.";
+	"Prefer the <Img /> tag from 'picus' package, because it will wait until the image is loaded when you are rendering your video.";
 const NoNativeIFrameTag =
-	"Prefer the <IFrame /> tag from 'remotion' package, because it will wait until the iframe is loaded when you are rendering your video.";
+	"Prefer the <IFrame /> tag from 'picus' package, because it will wait until the iframe is loaded when you are rendering your video.";
 const NoNativeAudioTag =
-	"Use the <Audio /> tag from '@remotion/media' package, because it will synchronize with the Remotion timeline.";
+	"Use the <Audio /> tag from '@picus/media' package, because it will synchronize with the Picus timeline.";
 const NoNativeVideoTag =
-	"Use the <Video /> tag from '@remotion/media' package, because it will synchronize with the Remotion timeline.";
+	"Use the <Video /> tag from '@picus/media' package, because it will synchronize with the Picus timeline.";
 
 export default createRule<Options, MessageIds>({
 	name: 'warn-native-media-tag',

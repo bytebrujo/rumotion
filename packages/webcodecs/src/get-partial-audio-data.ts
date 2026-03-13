@@ -2,7 +2,7 @@ import {
 	hasBeenAborted,
 	mediaParserController,
 	parseMedia,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {createAudioDecoder} from './create-audio-decoder';
 
 /**
@@ -118,7 +118,7 @@ export const getPartialAudioData = async ({
 		}
 
 		await parseMedia({
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			src,
 			controller,
 			onAudioTrack: async ({track}) => {

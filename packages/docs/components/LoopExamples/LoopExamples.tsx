@@ -1,4 +1,4 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React from 'react';
 import {
 	AbsoluteFill,
@@ -6,7 +6,7 @@ import {
 	Loop,
 	spring,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 
 const BlueSquare: React.FC = () => {
 	const frame = useCurrentFrame();
@@ -84,7 +84,7 @@ export const LoopExamples: React.FC<{
 	return (
 		<div>
 			<Player
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={component}
 				compositionWidth={1280}
 				compositionHeight={720}

@@ -15,7 +15,7 @@ interface TAssetManagerContext {
 
 const AssetManagerContext = createContext<TAssetManagerContext | null>(null);
 
-interface RemotionCanvasProps {
+interface PicusCanvasProps {
   readonly images: ImagesToLoad;
   readonly typefaces: TypefacesToLoad;
   readonly children: ReactNode;
@@ -57,7 +57,7 @@ export const AssetManager = ({
   children,
   images: imagesToLoad,
   typefaces: typefacesToLoad,
-}: RemotionCanvasProps) => {
+}: PicusCanvasProps) => {
   const [assetMgr, setAssetMgr] = useState<TAssetManagerContext | null>(null);
   useEffect(() => {
     (async () => {

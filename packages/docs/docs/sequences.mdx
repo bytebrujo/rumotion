@@ -7,7 +7,7 @@ crumb: 'The power of React'
 ---
 
 ```twoslash include example
-import {interpolate, useCurrentFrame, AbsoluteFill} from 'remotion'
+import {interpolate, useCurrentFrame, AbsoluteFill} from 'picus'
 
 const Title: React.FC<{title: string}> = ({title}) => {
     const frame = useCurrentFrame()
@@ -25,7 +25,7 @@ React components allow us to encapsulate video logic and reuse the same visuals 
 Consider a title - to make it reusable, factor it out into its own component:
 
 ```tsx twoslash title="MyComposition.tsx"
-import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, interpolate, useCurrentFrame} from 'picus';
 
 const Title: React.FC<{title: string}> = ({title}) => {
   const frame = useCurrentFrame();
@@ -54,7 +54,7 @@ You can also use the [`<Sequence>`](/docs/sequence) component to limit the durat
 ```tsx twoslash
 // @include: example-Title
 // ---cut---
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 
 export const MyVideo = () => {
   return (

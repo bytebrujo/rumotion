@@ -1,5 +1,5 @@
 import React from 'react';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'picus';
 
 export const Black: React.FC<{
 	readonly scale: number;

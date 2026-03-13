@@ -1,18 +1,18 @@
 ---
 image: /generated/articles-docs-videos-index.png
-title: Embedding videos into Remotion
+title: Embedding videos into Picus
 sidebar_label: Adding a video
 crumb: 'How To'
 ---
 
-You can embed existing videos into Remotion by using the [`<OffthreadVideo>`](/docs/offthreadvideo) component.
+You can embed existing videos into Picus by using the [`<OffthreadVideo>`](/docs/offthreadvideo) component.
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
-  return <OffthreadVideo src="https://remotion.media/BigBuckBunny.mp4" />;
+  return <OffthreadVideo src="https://picus.media/BigBuckBunny.mp4" />;
 };
 ```
 
@@ -22,7 +22,7 @@ Put a file into the [`public` folder](/docs/terminology/public-dir) and referenc
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return <OffthreadVideo src={staticFile('video.mp4')} />;
@@ -36,7 +36,7 @@ In the example below, the first two seconds of the video are skipped (assuming a
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return <OffthreadVideo src={staticFile('video.mp4')} trimBefore={60} />;
@@ -47,7 +47,7 @@ Similarly, you can use [`trimAfter`](/docs/offthreadvideo#trimafter) to trim the
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return <OffthreadVideo src={staticFile('video.mp4')} trimBefore={60} trimAfter={120} />;
@@ -61,7 +61,7 @@ In the example below, the video will start playing at frame 60.
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile, Sequence} from 'remotion';
+import {OffthreadVideo, staticFile, Sequence} from 'picus';
 
 export const MyComp: React.FC = () => {
   return (
@@ -79,7 +79,7 @@ You'll find the properties `width`, `height`, `position`, `left`, `top`, `right`
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return (
@@ -103,7 +103,7 @@ You can set the volume of the video using the [`volume`](/docs/offthreadvideo#vo
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return <OffthreadVideo src={staticFile('video.mp4')} volume={0.5} />;
@@ -114,7 +114,7 @@ You can also mute a video using the [`muted`](/docs/offthreadvideo#muted) prop.
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return <OffthreadVideo src={staticFile('video.mp4')} muted />;
@@ -129,7 +129,7 @@ You can use the [`playbackRate`](/docs/offthreadvideo#playbackrate) prop to chan
 
 ```tsx twoslash
 import React from 'react';
-import {OffthreadVideo, staticFile} from 'remotion';
+import {OffthreadVideo, staticFile} from 'picus';
 
 export const MyComp: React.FC = () => {
   return <OffthreadVideo src={staticFile('video.mp4')} playbackRate={2} />;

@@ -46,7 +46,7 @@ export class NodeWebSocketTransport implements ConnectionTransport {
 				perMessageDeflate: false,
 				maxPayload: 1024 * 1024 * 1024, // 1024Mb
 				headers: {
-					'User-Agent': `Remotion CLI`,
+					'User-Agent': `Picus CLI`,
 				},
 			});
 

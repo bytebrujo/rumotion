@@ -1,4 +1,4 @@
-import type {PlayerRef} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
 import React from 'react';
 import {PALETTE} from '../layout/colors';
 import {PlayerSeekBar} from './PlayerSeekBar';

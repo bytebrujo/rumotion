@@ -6,7 +6,7 @@ import {
 	useMemo,
 	useState,
 } from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import type {
 	ExpandedFoldersRef,
 	ExpandedFoldersState,

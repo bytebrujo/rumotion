@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'webhook-custom-data' as const;
 
@@ -15,7 +15,7 @@ export const webhookCustomDataOption = {
 		</>
 	),
 	ssrName: 'customData' as const,
-	docLink: 'https://www.remotion.dev/docs/lambda/webhooks',
+	docLink: 'https://www.picus.dev/docs/lambda/webhooks',
 	type: {} as Record<string, unknown> | null,
 	getValue: () => {
 		throw new Error('Option resolution not implemented');
@@ -24,4 +24,4 @@ export const webhookCustomDataOption = {
 		throw new Error('Not implemented');
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<Record<string, unknown> | null>;
+} satisfies AnyPicusOption<Record<string, unknown> | null>;

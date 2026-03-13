@@ -57,7 +57,7 @@ Your AWS user policy must at least have the ability to put an object and make it
 First, accept a file in your frontend, for example using `<input type="file">`. You should get a `File`, from which you can determine the content type and content length:
 
 ```ts twoslash title="App.tsx"
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 const file: File = {} as unknown as File;
 // ---cut---
 const contentType = file.type || 'application/octet-stream';
@@ -65,14 +65,14 @@ const arrayBuffer = await file.arrayBuffer();
 const contentLength = arrayBuffer.byteLength;
 ```
 
-This example uses [`@aws-sdk/s3-request-presigner`](https://github.com/aws/aws-sdk-js-v3/tree/main/packages/s3-request-presigner) and [the AWS SDK imported from `@remotion/lambda`](/docs/lambda/getawsclient). By calling the function below, two URLs are generated:
+This example uses [`@aws-sdk/s3-request-presigner`](https://github.com/aws/aws-sdk-js-v3/tree/main/packages/s3-request-presigner) and [the AWS SDK imported from `@picus/lambda`](/docs/lambda/getawsclient). By calling the function below, two URLs are generated:
 
 - `presignedUrl` is a URL to which the file can be uploaded to
 - `readUrl` is the URL from which the file can be read from.
 
 ```tsx twoslash title="generate-presigned-url.ts"
 import {getSignedUrl} from '@aws-sdk/s3-request-presigner';
-import {AwsRegion, getAwsClient} from '@remotion/lambda/client';
+import {AwsRegion, getAwsClient} from '@picus/lambda/client';
 
 export const generatePresignedUrl = async (contentType: string, contentLength: number, expiresIn: number, bucketName: string, region: AwsRegion): Promise<{presignedUrl: string; readUrl: string}> => {
   if (contentLength > 1024 * 1024 * 200) {
@@ -80,7 +80,7 @@ export const generatePresignedUrl = async (contentType: string, contentLength: n
   }
 
   const {client, sdk} = getAwsClient({
-    region: process.env.REMOTION_AWS_REGION as AwsRegion,
+    region: process.env.PICUS_AWS_REGION as AwsRegion,
     service: 's3',
   });
 
@@ -108,7 +108,7 @@ export const generatePresignedUrl = async (contentType: string, contentLength: n
 Explanation:
 
 - First, the upload request gets checked for constraints. In this example, we reject uploads that are over 200MB. You could add more constraints or add rate-limiting.
-- The AWS SDK gets imported using [getAwsClient()](/docs/lambda/getawsclient). If you don't use Remotion Lambda, install the [`@aws-sdk/client-s3`](https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-s3) package directly.
+- The AWS SDK gets imported using [getAwsClient()](/docs/lambda/getawsclient). If you don't use Picus Lambda, install the [`@aws-sdk/client-s3`](https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-s3) package directly.
 - A [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) gets used as the filename to avoid name clashes.
 - Finally, the presigned URL and output URL get calculated and returned.
 
@@ -120,7 +120,7 @@ The endpoint is available under `api/upload/route.ts`.
 ```tsx twoslash title="app/api/upload/route.ts"
 import {NextResponse} from 'next/server';
 import {getSignedUrl} from '@aws-sdk/s3-request-presigner';
-import {AwsRegion, getAwsClient} from '@remotion/lambda/client';
+import {AwsRegion, getAwsClient} from '@picus/lambda/client';
 
 const generatePresignedUrl = async ({contentType, contentLength, expiresIn, bucketName, region}: {contentType: string; contentLength: number; expiresIn: number; bucketName: string; region: AwsRegion}): Promise<{presignedUrl: string; readUrl: string}> => {
   if (contentLength > 1024 * 1024 * 200) {
@@ -128,7 +128,7 @@ const generatePresignedUrl = async ({contentType, contentLength, expiresIn, buck
   }
 
   const {client, sdk} = getAwsClient({
-    region: process.env.REMOTION_AWS_REGION as AwsRegion,
+    region: process.env.PICUS_AWS_REGION as AwsRegion,
     service: 's3',
   });
 
@@ -153,12 +153,12 @@ const generatePresignedUrl = async ({contentType, contentLength, expiresIn, buck
 };
 
 export const POST = async (request: Request) => {
-  if (!process.env.REMOTION_AWS_BUCKET_NAME) {
-    throw new Error('REMOTION_AWS_BUCKET_NAME is not set');
+  if (!process.env.PICUS_AWS_BUCKET_NAME) {
+    throw new Error('PICUS_AWS_BUCKET_NAME is not set');
   }
 
-  if (!process.env.REMOTION_AWS_REGION) {
-    throw new Error('REMOTION_AWS_REGION is not set');
+  if (!process.env.PICUS_AWS_REGION) {
+    throw new Error('PICUS_AWS_REGION is not set');
   }
 
   const json = await request.json();
@@ -173,8 +173,8 @@ export const POST = async (request: Request) => {
     contentType: json.contentType,
     contentLength: json.size,
     expiresIn: 60 * 60 * 24 * 7,
-    bucketName: process.env.REMOTION_AWS_BUCKET_NAME as string,
-    region: process.env.REMOTION_AWS_REGION as AwsRegion,
+    bucketName: process.env.PICUS_AWS_BUCKET_NAME as string,
+    region: process.env.PICUS_AWS_REGION as AwsRegion,
   });
 
   return NextResponse.json({presignedUrl, readUrl});
@@ -212,7 +212,7 @@ This example does not implement any rate limiting or authentication.
 Send the presigned URL back to the client. Afterwards, you can now perform an upload using the built-in [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) function:
 
 ```ts twoslash title="upload-with-fetch.ts"
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 const presignedUrl = 'hi';
 const file: File = {} as unknown as File;
 

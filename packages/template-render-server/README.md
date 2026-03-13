@@ -1,10 +1,10 @@
-# Remotion Render Server Template
+# Picus Render Server Template
 
 <p align="center">
-  <a href="https://github.com/remotion-dev/logo">
+  <a href="https://github.com/picus-dev/logo">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/picus-dev/logo/raw/main/animated-logo-banner-dark.apng">
+      <img alt="Animated Picus Logo" src="https://github.com/picus-dev/logo/raw/main/animated-logo-banner-light.gif">
     </picture>
   </a>
 </p>
@@ -39,22 +39,22 @@ This will start the Express server that handles render requests in watch mode fo
 npm start
 ```
 
-**Run Remotion Studio**
+**Run Picus Studio**
 
 ```console
-npm run remotion:studio
+npm run picus:studio
 ```
 
 **Render the example video locally**
 
 ```
-npx remotion render
+npx picus render
 ```
 
-**Upgrade all Remotion packages:**
+**Upgrade all Picus packages:**
 
 ```
-npx remotion upgrade
+npx picus upgrade
 ```
 
 ## Docker Support
@@ -62,13 +62,13 @@ npx remotion upgrade
 The template includes Docker support out of the box. Build and run the container using:
 
 ```console
-docker build -t remotion-render-server .
-docker run -d -p 3000:3000 remotion-render-server
+docker build -t picus-render-server .
+docker run -d -p 3000:3000 picus-render-server
 ```
 
 ## Docs
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+Get started with Picus by reading the [fundamentals page](https://www.picus.dev/docs/the-fundamentals).
 
 ## Help
 
@@ -76,8 +76,8 @@ We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
 
 ## Issues
 
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
+Found an issue with Picus? [File an issue here](https://github.com/picus-dev/picus/issues/new).
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Note that for some entities a company license is needed. [Read the terms here](https://github.com/picus-dev/picus/blob/main/LICENSE.md).

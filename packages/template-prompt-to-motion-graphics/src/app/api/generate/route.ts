@@ -10,7 +10,7 @@ import { z } from "zod";
 
 const VALIDATION_PROMPT = `You are a prompt classifier for a motion graphics generation tool.
 
-Determine if the user's prompt is asking for motion graphics/animation content that can be created as a React/Remotion component.
+Determine if the user's prompt is asking for motion graphics/animation content that can be created as a React/Picus component.
 
 VALID prompts include requests for:
 - Animated text, titles, or typography
@@ -37,7 +37,7 @@ INVALID prompts include:
 Return true if the prompt is valid for motion graphics generation, false otherwise.`;
 
 const SYSTEM_PROMPT = `
-You are an expert in generating React components for Remotion animations.
+You are an expert in generating React components for Picus animations.
 
 ## COMPONENT STRUCTURE
 
@@ -76,12 +76,12 @@ This allows users to easily customize the animation.
 ## AVAILABLE IMPORTS
 
 \`\`\`tsx
-import { useCurrentFrame, useVideoConfig, AbsoluteFill, interpolate, spring, Sequence } from "remotion";
-import { TransitionSeries, linearTiming, springTiming } from "@remotion/transitions";
-import { fade } from "@remotion/transitions/fade";
-import { slide } from "@remotion/transitions/slide";
-import { Circle, Rect, Triangle, Star, Ellipse, Pie } from "@remotion/shapes";
-import { ThreeCanvas } from "@remotion/three";
+import { useCurrentFrame, useVideoConfig, AbsoluteFill, interpolate, spring, Sequence } from "picus";
+import { TransitionSeries, linearTiming, springTiming } from "@picus/transitions";
+import { fade } from "@picus/transitions/fade";
+import { slide } from "@picus/transitions/slide";
+import { Circle, Rect, Triangle, Star, Ellipse, Pie } from "@picus/shapes";
+import { ThreeCanvas } from "@picus/three";
 import { useState, useEffect } from "react";
 \`\`\`
 
@@ -106,7 +106,7 @@ NEVER use these as variable names - they shadow imports:
 `;
 
 const FOLLOW_UP_SYSTEM_PROMPT = `
-You are an expert at making targeted edits to React/Remotion animation components.
+You are an expert at making targeted edits to React/Picus animation components.
 
 Given the current code and a user request, decide whether to:
 1. Use targeted edits (for small, specific changes)

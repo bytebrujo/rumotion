@@ -2,22 +2,22 @@
   "name": "template-stargazer",
   "version": "1.0.0",
   "scripts": {
-    "dev": "remotion studio",
-    "build": "remotion bundle",
+    "dev": "picus studio",
+    "build": "picus bundle",
     "lint": "eslint src && tsc"
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "@remotion/bundler": "workspace:*",
-    "@remotion/cli": "workspace:*",
-    "@remotion/renderer": "workspace:*",
+    "@picus/bundler": "workspace:*",
+    "@picus/cli": "workspace:*",
+    "@picus/renderer": "workspace:*",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "workspace:*",
+    "picus": "workspace:*",
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@remotion/eslint-config-flat": "workspace:*",
+    "@picus/eslint-config-flat": "workspace:*",
     "@types/react": "19.2.7",
     "eslint": "9.19.0",
     "prettier": "3.8.1",

@@ -1,19 +1,19 @@
 ---
 image: /generated/articles-docs-paths-warp-path.png
 title: warpPath()
-crumb: "@remotion/paths"
+crumb: "@picus/paths"
 ---
 
 import {WarpTextTutorial} from '../../src/components/tutorials';
 
 <WarpTextTutorial />
 
-_Part of the [`@remotion/paths`](/docs/paths) package. Available from v3.3.43_
+_Part of the [`@picus/paths`](/docs/paths) package. Available from v3.3.43_
 
 Allows you to remap the coordinates of an SVG using a function in order to create a warp effect.
 
 ```tsx twoslash title="warp-path.ts"
-import { warpPath, WarpPathFn } from "@remotion/paths";
+import { warpPath, WarpPathFn } from "@picus/paths";
 
 const fn: WarpPathFn = ({ x, y }) => ({
   x: x + Math.sin(y / 4) * 5,
@@ -58,10 +58,10 @@ An SVG path string.
 
 ### `fn`
 
-A function that takes the coordinates of the SVG path and returns the new coordinates. The type of the function is `WarpPathFn` which can also be imported from `@remotion/paths`.
+A function that takes the coordinates of the SVG path and returns the new coordinates. The type of the function is `WarpPathFn` which can also be imported from `@picus/paths`.
 
 ```tsx twoslash
-import { WarpPathFn } from "@remotion/paths";
+import { WarpPathFn } from "@picus/paths";
 
 const fn: WarpPathFn = ({ x, y }) => ({
   x: x + Math.sin(y / 4) * 5,
@@ -85,6 +85,6 @@ This function is based on the [WarpJS](https://benjamminf.github.io/warpjs/) lib
 
 ## See also
 
-- [`@remotion/paths`](/docs/paths)
-- [Example repo](https://github.com/remotion-dev/text-warping)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/paths/src/warp-path/index.ts)
+- [`@picus/paths`](/docs/paths)
+- [Example repo](https://github.com/picus-dev/text-warping)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/paths/src/warp-path/index.ts)

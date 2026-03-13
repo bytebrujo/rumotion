@@ -1,7 +1,7 @@
 import { CameraIcon, MicIcon } from "lucide-react";
 import React, { useCallback, useEffect, useMemo } from "react";
 import { FPS } from "../config/fps";
-import { truthy } from "../remotion/helpers/truthy";
+import { truthy } from "../picus/helpers/truthy";
 import { RecordCircle } from "./BlinkingCircle";
 import { ProcessStatus } from "./components/ProcessingStatus";
 import { Button } from "./components/ui/button";

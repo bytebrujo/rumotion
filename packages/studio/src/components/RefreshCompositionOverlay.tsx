@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {RunningCalculateMetadata} from './RunningCalculateMetadata';
 
 export const container: React.CSSProperties = {

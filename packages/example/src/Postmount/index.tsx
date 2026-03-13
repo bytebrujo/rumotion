@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Html5Video, Sequence, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Video, Sequence, staticFile} from 'picus';
 
 /**
  * Example demonstrating postmountFor feature
@@ -25,7 +25,7 @@ export const PostmountDemoComposition: React.FC = () => {
 				<AbsoluteFill style={{background: 'rgba(255, 0, 0, 0.5)'}}>
 					<Html5Video
 						pauseWhenBuffering
-						src="https://remotion.media/BigBuckBunny.mp4"
+						src="https://picus.media/BigBuckBunny.mp4"
 					/>
 				</AbsoluteFill>
 			</Sequence>

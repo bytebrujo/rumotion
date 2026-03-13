@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-whisper-web-can-use-whisper-web.png
 title: canUseWhisperWeb()
-crumb: '@remotion/whisper-web'
+crumb: '@picus/whisper-web'
 ---
 
 :::warning
@@ -10,7 +10,7 @@ crumb: '@remotion/whisper-web'
 
 # canUseWhisperWeb()
 
-Checks if the current browser environment supports running `@remotion/whisper-web` with a specified model.  
+Checks if the current browser environment supports running `@picus/whisper-web` with a specified model.  
 This function verifies various browser capabilities like `crossOriginIsolated`, `IndexedDB`, `navigator.storage.estimate()`, and available storage space.
 
 ## Enabling cross-origin isolation
@@ -20,7 +20,7 @@ This package requires a page that is [cross-origin isolated](/docs/miscellaneous
 ## Example usage
 
 ```tsx twoslash
-import {canUseWhisperWeb, type WhisperWebModel} from '@remotion/whisper-web';
+import {canUseWhisperWeb, type WhisperWebModel} from '@picus/whisper-web';
 import {useState, useEffect} from 'react';
 
 export default function MyComponent() {
@@ -90,7 +90,7 @@ If `supported` is `false`, this field may contain a more detailed, human-readabl
 
 ## Important considerations
 
-- **Cross-Origin Isolation:** For `SharedArrayBuffer` to work, which is required by `@remotion/whisper-web`, the page must be served with specific HTTP headers:
+- **Cross-Origin Isolation:** For `SharedArrayBuffer` to work, which is required by `@picus/whisper-web`, the page must be served with specific HTTP headers:
   - `Cross-Origin-Opener-Policy: same-origin`
   - `Cross-Origin-Embedder-Policy: require-corp`
     Ensure your server is configured to send these headers. See [MDN documentation on `crossOriginIsolated`](https://developer.mozilla.org/en-US/docs/Web/API/Window/crossOriginIsolated) for more details.
@@ -99,7 +99,7 @@ If `supported` is `false`, this field may contain a more detailed, human-readabl
 
 ## See also
 
-- [Source code for `canUseWhisperWeb()`](https://github.com/remotion-dev/remotion/blob/main/packages/whisper-web/src/can-use-whisper-web.ts)
-- [`@remotion/whisper-web`](/docs/whisper-web)
+- [Source code for `canUseWhisperWeb()`](https://github.com/picus-dev/picus/blob/main/packages/whisper-web/src/can-use-whisper-web.ts)
+- [`@picus/whisper-web`](/docs/whisper-web)
 - [`transcribe()`](/docs/whisper-web/transcribe)
 - [`downloadWhisperModel()`](/docs/whisper-web/download-whisper-model)

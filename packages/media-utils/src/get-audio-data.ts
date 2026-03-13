@@ -58,7 +58,7 @@ const fn = async (
 
 /*
  * @description Takes an audio or video src, loads it and returns data and metadata for the specified source.
- * @see [Documentation](https://remotion.dev/docs/get-audio-data)
+ * @see [Documentation](https://picus.dev/docs/get-audio-data)
  */
 export const getAudioData = (src: string, options?: Options) => {
 	return limit(fn, src, options);

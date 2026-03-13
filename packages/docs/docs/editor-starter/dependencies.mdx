@@ -5,7 +5,7 @@ sidebar_label: Dependencies
 crumb: Editor Starter
 ---
 
-The Editor Starter is built in [React 19](https://react.dev/) and [Remotion](https://www.remotion.dev/).  
+The Editor Starter is built in [React 19](https://react.dev/) and [Picus](https://www.picus.dev/).  
 The reference implementation is built in [React Router v7](https://reactrouter.com/) with the goal of being easily portable to other frameworks.  
 [Tailwind CSS v4](https://tailwindcss.com/) is used for styling.
 
@@ -21,7 +21,7 @@ This means that in order for asset uploads to work, an AWS account is required a
 
 ## Rendering
 
-[Remotion Lambda](https://www.remotion.dev/docs/lambda) is used for rendering.  
+[Picus Lambda](https://www.picus.dev/docs/lambda) is used for rendering.  
 This means that in order for rendering to work, an AWS account is required and AWS Lambda needs to be set up.
 
 ## Google Fonts
@@ -30,7 +30,7 @@ Fonts are loaded from [Google Fonts](https://fonts.google.com/). No API key is r
 
 ## NPM packages
 
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 
 The following NPM packages are used in the Editor Starter:
 
@@ -41,23 +41,23 @@ The following NPM packages are used in the Editor Starter:
   "@radix-ui/react-popover": "^1.1.14",
   "@radix-ui/react-select": "^2.2.5",
   "sonner": "^2.0.7",
-  "@remotion/captions": "^4.0.331",
-  "@remotion/cli": "^4.0.331",
-  "@remotion/gif": "^4.0.331",
-  "@remotion/google-fonts": "^4.0.331",
-  "@remotion/lambda": "^4.0.331",
-  "@remotion/layout-utils": "^4.0.331",
-  "@remotion/media-parser": "^4.0.331",
-  "@remotion/openai-whisper": "^4.0.331",
-  "@remotion/player": "^4.0.331",
-  "@remotion/shapes": "^4.0.331",
+  "@picus/captions": "^4.0.331",
+  "@picus/cli": "^4.0.331",
+  "@picus/gif": "^4.0.331",
+  "@picus/google-fonts": "^4.0.331",
+  "@picus/lambda": "^4.0.331",
+  "@picus/layout-utils": "^4.0.331",
+  "@picus/media-parser": "^4.0.331",
+  "@picus/openai-whisper": "^4.0.331",
+  "@picus/player": "^4.0.331",
+  "@picus/shapes": "^4.0.331",
   "@tanstack/react-virtual": "^3.13.10",
-  "remotion": "^4.0.331",
+  "picus": "^4.0.331",
   "openai": "^4.67.3",
   "zod": "^3.24.3"
 }
 ```
 
-It's always recommended to use the latest version of Remotion packages. Currently it is: <a href="https://remotion.dev/changelog"><code>{VERSION}</code></a>.
+It's always recommended to use the latest version of Picus packages. Currently it is: <a href="https://picus.dev/changelog"><code>{VERSION}</code></a>.
 
-Run `npx remotion upgrade` to upgrade to the latest version.
+Run `npx picus upgrade` to upgrade to the latest version.

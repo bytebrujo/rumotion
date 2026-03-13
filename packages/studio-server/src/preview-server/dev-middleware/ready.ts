@@ -1,4 +1,4 @@
-import type {webpack} from '@remotion/bundler';
+import type {webpack} from '@picus/bundler';
 import type {DevMiddlewareContext} from './types';
 
 export function ready(

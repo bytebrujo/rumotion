@@ -7,15 +7,15 @@ crumb: Captions
 
 # Transcribing audio
 
-Remotion provides several built-in options for transcribing audio to generate captions:
+Picus provides several built-in options for transcribing audio to generate captions:
 
-- [`@remotion/install-whisper-cpp`](/docs/install-whisper-cpp) - Transcribe audio locally on a server using [Whisper.cpp](https://github.com/ggerganov/whisper.cpp)
-- [`@remotion/whisper-web`](/docs/whisper-web) - Transcribe audio in the browser using WebAssembly
-- [`@remotion/openai-whisper`](/docs/openai-whisper) - Use the OpenAI Whisper API for cloud-based transcription
+- [`@picus/install-whisper-cpp`](/docs/install-whisper-cpp) - Transcribe audio locally on a server using [Whisper.cpp](https://github.com/ggerganov/whisper.cpp)
+- [`@picus/whisper-web`](/docs/whisper-web) - Transcribe audio in the browser using WebAssembly
+- [`@picus/openai-whisper`](/docs/openai-whisper) - Use the OpenAI Whisper API for cloud-based transcription
 
 ## Comparison
 
-|                      | [`@remotion/install-whisper-cpp`](/docs/install-whisper-cpp) | [`@remotion/whisper-web`](/docs/whisper-web)    | [`@remotion/openai-whisper`](/docs/openai-whisper)                                    |
+|                      | [`@picus/install-whisper-cpp`](/docs/install-whisper-cpp) | [`@picus/whisper-web`](/docs/whisper-web)    | [`@picus/openai-whisper`](/docs/openai-whisper)                                    |
 | -------------------- | ------------------------------------------------------------ | ----------------------------------------------- | ------------------------------------------------------------------------------------- |
 | **Environment**      | Server (Node.js)                                             | Client (Browser)                                | Cloud (API)                                                                           |
 | **Speed**            | Fast (depends on hardware)                                   | Slow (WASM overhead)                            | Fast                                                                                  |
@@ -26,11 +26,11 @@ Remotion provides several built-in options for transcribing audio to generate ca
 
 ## The `Caption` type
 
-All of these options can output captions in the [`Caption`](/docs/captions/caption) type format, which is recommended for use with Remotion. This format:
+All of these options can output captions in the [`Caption`](/docs/captions/caption) type format, which is recommended for use with Picus. This format:
 
-- Enables usage of the APIs in [`@remotion/captions`](/docs/captions/api), such as [`createTikTokStyleCaptions()`](/docs/captions/create-tiktok-style-captions)
-- Matches the format used in the [Remotion Editor Starter](https://remotion.pro/store/editor-starter)
-- Is compatible with the [Animated Captions](https://remotion.pro/store/animated-captions) package
+- Enables usage of the APIs in [`@picus/captions`](/docs/captions/api), such as [`createTikTokStyleCaptions()`](/docs/captions/create-tiktok-style-captions)
+- Matches the format used in the [Picus Editor Starter](https://picus.pro/store/editor-starter)
+- Is compatible with the [Animated Captions](https://picus.pro/store/animated-captions) package
 
 ## Alternatives
 
@@ -40,4 +40,4 @@ You can also define your own caption format and not rely on the `Caption` type -
 ## See also
 
 - [`Caption`](/docs/captions/caption) - The caption data structure
-- [`@remotion/captions`](/docs/captions/api) - Caption manipulation utilities
+- [`@picus/captions`](/docs/captions/api) - Caption manipulation utilities

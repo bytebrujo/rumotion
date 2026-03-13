@@ -1,5 +1,5 @@
-import {bundle} from '@remotion/bundler';
-import {renderStill, selectComposition} from '@remotion/renderer';
+import {bundle} from '@picus/bundler';
+import {renderStill, selectComposition} from '@picus/renderer';
 import {webpackOverride} from './src/webpack-override.mjs';
 
 const serveUrl = await bundle({

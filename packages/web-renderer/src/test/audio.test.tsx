@@ -1,6 +1,6 @@
-import {Audio, Video} from '@remotion/media';
+import {Audio, Video} from '@picus/media';
 import {ALL_FORMATS, BlobSource, Input, type InputAudioTrack} from 'mediabunny';
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 import {expect, test} from 'vitest';
 import {renderMediaOnWeb} from '../render-media-on-web';
 import '../symbol-dispose';

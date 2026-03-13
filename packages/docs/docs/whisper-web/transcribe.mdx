@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-whisper-web-transcribe.png
 title: transcribe()
-crumb: '@remotion/whisper-web'
+crumb: '@picus/whisper-web'
 ---
 
 # transcribe()
@@ -21,7 +21,7 @@ This package requires a page that is [cross-origin isolated](/docs/miscellaneous
 ## Example
 
 ```tsx twoslash title="app.ts"
-import {resampleTo16Khz} from '@remotion/whisper-web';
+import {resampleTo16Khz} from '@picus/whisper-web';
 const file = new File([], 'audio.wav');
 
 const channelWaveform = await resampleTo16Khz({
@@ -30,7 +30,7 @@ const channelWaveform = await resampleTo16Khz({
 });
 
 // ---cut---
-import {transcribe} from '@remotion/whisper-web';
+import {transcribe} from '@picus/whisper-web';
 
 const {transcription} = await transcribe({
   channelWaveform,
@@ -101,7 +101,7 @@ Determines how much info is being logged to the console.
 
 ## See also
 
-- [Source code for `transcribe()`](https://github.com/remotion-dev/remotion/blob/main/packages/whisper-web/src/transcribe.ts)
+- [Source code for `transcribe()`](https://github.com/picus-dev/picus/blob/main/packages/whisper-web/src/transcribe.ts)
 - [`resampleTo16Khz()`](/docs/whisper-web/resample-to-16khz)
 - [`downloadWhisperModel()`](/docs/whisper-web/download-whisper-model)
-- [`@remotion/whisper-web`](/docs/whisper-web)
+- [`@picus/whisper-web`](/docs/whisper-web)

@@ -1,4 +1,4 @@
-import {getInputProps, useVideoConfig} from 'remotion';
+import {getInputProps, useVideoConfig} from 'picus';
 import {expect, test} from 'vitest';
 import {makeInternalState} from '../internal-state';
 import {renderStillOnWeb} from '../render-still-on-web';
@@ -72,7 +72,7 @@ test('cannot call getInputProps() while rendering client-side', async () => {
 			imageFormat: 'png',
 		});
 	}).rejects.toThrow(
-		'Cannot call `getInputProps()` - window.remotion_inputProps is not set. This API is only available if you are in the Studio, or while you are rendering server-side.',
+		'Cannot call `getInputProps()` - window.picus_inputProps is not set. This API is only available if you are in the Studio, or while you are rendering server-side.',
 	);
 });
 

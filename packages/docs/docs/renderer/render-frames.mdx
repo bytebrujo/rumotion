@@ -2,17 +2,17 @@
 image: /generated/articles-docs-renderer-render-frames.png
 id: render-frames
 title: renderFrames()
-crumb: '@remotion/renderer'
+crumb: '@picus/renderer'
 ---
 
-_Part of the `@remotion/renderer` package._
+_Part of the `@picus/renderer` package._
 
 Renders a series of images using Puppeteer and computes information for mixing audio.
 
 If you want to render only a still image, use [renderStill()](/docs/renderer/render-still).
 
 :::info
-In Remotion 3.0, we added the [`renderMedia()`](/docs/renderer/render-media) API which combines `renderFrames()` and `stitchFramesToVideo()` into one simplified step and performs the render faster. Prefer `renderMedia()` if you can.
+In Picus 3.0, we added the [`renderMedia()`](/docs/renderer/render-media) API which combines `renderFrames()` and `stitchFramesToVideo()` into one simplified step and performs the render faster. Prefer `renderMedia()` if you can.
 :::
 
 ## Arguments
@@ -31,7 +31,7 @@ Call [`selectComposition()`](/docs/renderer/select-composition) or [`getComposit
 Callback function that gets called once the renderer has prepared to start rendering and has calculated the amount of frames that are going to be rendered:
 
 ```tsx twoslash
-import {OnStartData} from '@remotion/renderer';
+import {OnStartData} from '@picus/renderer';
 
 const onStart = ({
   frameCount,
@@ -81,7 +81,7 @@ You may transform input props using [`calculateMetadata()`](/docs/calculate-meta
 
 ### `serveUrl`
 
-Either a Webpack bundle or a URL pointing to a bundled Remotion project. Call [`bundle()`](/docs/bundle) to generate a bundle. You can either pass the file location or deploy it as a website and pass the URL.
+Either a Webpack bundle or a URL pointing to a bundled Picus project. Call [`bundle()`](/docs/bundle) to generate a bundle. You can either pass the file location or deploy it as a website and pass the URL.
 
 ### `imageFormat?`
 
@@ -111,7 +111,7 @@ renderFrames({
 
 ### `concurrency?`
 
-A `number` specifying how many render processes should be started in parallel, a `string` specifying the percentage of the CPU threads to use, or `null` to let Remotion decide based on the CPU of the host machine. Default is half of the CPU threads available.
+A `number` specifying how many render processes should be started in parallel, a `string` specifying the percentage of the CPU threads to use, or `null` to let Picus decide based on the CPU of the host machine. Default is half of the CPU threads available.
 
 ### `scale?`<AvailableFrom v="2.6.7" />
 
@@ -127,7 +127,7 @@ Only applies if `imageFormat` is `'jpeg'`, otherwise this option is invalid.
 
 ### `port?`
 
-Prefer a specific port that will be used to serve the Remotion project. If not specified, a random port will be used.
+Prefer a specific port that will be used to serve the Picus project. If not specified, a random port will be used.
 
 ### `frameRange?`
 
@@ -155,7 +155,7 @@ Despite the name, not actually compatible with `puppeteer`, only with [`openBrow
 
 ### `envVariables?`<AvailableFrom v="2.2.0" />
 
-An object containing key-value pairs of environment variables which will be injected into your Remotion projected and which can be accessed by reading the global `process.env` object.
+An object containing key-value pairs of environment variables which will be injected into your Picus projected and which can be accessed by reading the global `process.env` object.
 
 ### `onBrowserLog?`<AvailableFrom v="3.0.0" />
 
@@ -208,7 +208,7 @@ renderFrames({
 
 ### `browserExecutable?`<AvailableFrom v="3.0.11" />
 
-A string defining the absolute path on disk of the browser executable that should be used. By default Remotion will try to detect it automatically and download one if none is available. If `puppeteerInstance` is defined, it will take precedence over `browserExecutable`.
+A string defining the absolute path on disk of the browser executable that should be used. By default Picus will try to detect it automatically and download one if none is available. If `puppeteerInstance` is defined, it will take precedence over `browserExecutable`.
 
 ### `cancelSignal?`<AvailableFrom v="3.0.15" />
 
@@ -216,7 +216,7 @@ A token that allows the render to be cancelled. See: [`makeCancelSignal()`](/doc
 
 ### `onFrameBuffer?`<AvailableFrom v="3.0.0" />
 
-If you passed `null` to `outputDir`, this method will be called passing a buffer of the current frame. This is mostly used internally by Remotion to implement [`renderMedia()`](/docs/renderer/render-media) and might have limited usefulness for end users.
+If you passed `null` to `outputDir`, this method will be called passing a buffer of the current frame. This is mostly used internally by Picus to implement [`renderMedia()`](/docs/renderer/render-media) and might have limited usefulness for end users.
 
 ### `timeoutInMilliseconds?`<AvailableFrom v="2.6.3" />
 
@@ -324,7 +324,7 @@ An absolute path overriding the `ffprobe` executable to use.
 A promise resolving to an object containing the following properties:
 
 - `frameCount`: `number` - describing how many frames got rendered.
-- `assetsInfo`: `RenderAssetInfo` - information that can be passed to `stitchFramesToVideo()` to mix audio. The shape of this object should be considered as Remotion internals and may change across Remotion versions.
+- `assetsInfo`: `RenderAssetInfo` - information that can be passed to `stitchFramesToVideo()` to mix audio. The shape of this object should be considered as Picus internals and may change across Picus versions.
 
 ## Compatibility
 
@@ -332,7 +332,7 @@ A promise resolving to an object containing the following properties:
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/renderer/src/render-frames.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/renderer/src/render-frames.ts)
 - [`renderMedia()`](/docs/renderer/render-media)
 - [`bundle()`](/docs/bundle)
 - [Server-Side rendering](/docs/ssr)

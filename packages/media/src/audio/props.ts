@@ -1,4 +1,4 @@
-import type {LogLevel, LoopVolumeCurveBehavior, VolumeProp} from 'remotion';
+import type {LogLevel, LoopVolumeCurveBehavior, VolumeProp} from 'picus';
 import type {MediaOnError} from '../on-error';
 
 export type FallbackHtml5AudioProps = {
@@ -27,7 +27,7 @@ export type AudioProps = {
 	logLevel?: LogLevel;
 	loop?: boolean;
 	audioStreamIndex?: number;
-	_remotionInternalNativeLoopPassed?: boolean;
+	_picusInternalNativeLoopPassed?: boolean;
 	fallbackHtml5AudioProps?: FallbackHtml5AudioProps;
 	disallowFallbackToHtml5Audio?: boolean;
 	toneFrequency?: number;

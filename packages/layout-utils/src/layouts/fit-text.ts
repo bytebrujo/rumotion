@@ -7,7 +7,7 @@ import {measureText} from '../layouts/measure-text';
 const sampleSize = 100;
 /*
  * @description Calculates the font size needed to fit text into a specified width container.
- * @see [Documentation](https://remotion.dev/docs/layout-utils/fit-text)
+ * @see [Documentation](https://picus.dev/docs/layout-utils/fit-text)
  */
 export const fitText = ({
 	text,

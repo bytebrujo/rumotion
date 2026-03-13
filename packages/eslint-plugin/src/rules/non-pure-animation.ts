@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return 'https://www.remotion.dev/docs/flickering';
+	return 'https://www.picus.dev/docs/flickering';
 });
 
 type Options = [];
@@ -9,7 +9,7 @@ type MessageIds = 'NonPureAnimation';
 
 const NonPureAnimation = [
 	'This animation does not run purely off useCurrentFrame() and will lead to flickering.',
-	'See: https://www.remotion.dev/docs/flickering',
+	'See: https://www.picus.dev/docs/flickering',
 ].join('\n');
 
 const nonPureAnimationProperties = new Set(['transition']);

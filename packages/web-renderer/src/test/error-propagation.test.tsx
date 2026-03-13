@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {useCurrentFrame} from 'remotion';
+import {useCurrentFrame} from 'picus';
 import {expect, test} from 'vitest';
 import {renderMediaOnWeb} from '../render-media-on-web';
 import {renderStillOnWeb} from '../render-still-on-web';

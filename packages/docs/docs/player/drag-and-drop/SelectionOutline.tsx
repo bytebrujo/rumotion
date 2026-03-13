@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo} from 'react';
-import {useCurrentScale} from 'remotion';
+import {useCurrentScale} from 'picus';
 import type {Item} from './item';
 import {ResizeHandle} from './ResizeHandle';
 

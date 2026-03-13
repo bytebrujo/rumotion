@@ -21,14 +21,14 @@ const output = await build({
 		...presentations.map((p) => `src/presentations/${p}.tsx`),
 	],
 	external: [
-		'remotion',
-		'remotion/no-react',
+		'picus',
+		'picus/no-react',
 		'react',
 		'react/jsx-runtime',
 		'react/jsx-runtime',
 		'react/jsx-dev-runtime',
-		'@remotion/paths',
-		'@remotion/shapes',
+		'@picus/paths',
+		'@picus/shapes',
 	],
 	naming: '[name].mjs',
 });

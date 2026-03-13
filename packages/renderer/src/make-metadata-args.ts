@@ -1,8 +1,8 @@
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 import type {Metadata} from './options/metadata';
 
 export const makeMetadataArgs = (metadata: Metadata): string[] => {
-	const defaultComment = `Made with Remotion ${VERSION}`;
+	const defaultComment = `Made with Picus ${VERSION}`;
 
 	const newMetadata: Metadata = {
 		comment: defaultComment,

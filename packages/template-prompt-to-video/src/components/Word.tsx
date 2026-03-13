@@ -1,8 +1,8 @@
-import { makeTransform, scale, translateY } from "@remotion/animation-utils";
-import { loadFont } from "@remotion/google-fonts/BreeSerif";
-import { fitText } from "@remotion/layout-utils";
+import { makeTransform, scale, translateY } from "@picus/animation-utils";
+import { loadFont } from "@picus/google-fonts/BreeSerif";
+import { fitText } from "@picus/layout-utils";
 import type React from "react";
-import { AbsoluteFill, interpolate, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, useVideoConfig } from "picus";
 
 export const Word: React.FC<{
   enterProgress: number;

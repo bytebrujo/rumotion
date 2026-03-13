@@ -6,8 +6,8 @@ import React, {
 	useMemo,
 	useRef,
 } from 'react';
-import type {CurrentScaleContextType} from 'remotion';
-import {Internals} from 'remotion';
+import type {CurrentScaleContextType} from 'picus';
+import {Internals} from 'picus';
 import {
 	calculateCanvasTransformation,
 	calculateContainerStyle,
@@ -26,7 +26,7 @@ import {useElementSize} from './utils/use-element-size.js';
 const reactVersion = React.version.split('.')[0];
 if (reactVersion === '0') {
 	throw new Error(
-		`Version ${reactVersion} of "react" is not supported by Remotion`,
+		`Version ${reactVersion} of "react" is not supported by Picus`,
 	);
 }
 

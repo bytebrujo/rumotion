@@ -46,7 +46,7 @@ type SeriesProps = true extends typeof ENABLE_V5_BREAKING_CHANGES
 
 /**
  * @description with this component, you can easily stitch together scenes that should play sequentially after another.
- * @see [Documentation](https://www.remotion.dev/docs/series)
+ * @see [Documentation](https://www.picus.dev/docs/series)
  */
 const Series: FC<SeriesProps> & {
 	Sequence: typeof SeriesSequence;

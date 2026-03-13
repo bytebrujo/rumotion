@@ -2,15 +2,15 @@ import {beforeAll, expect, test} from 'bun:test';
 import {execSync} from 'child_process';
 import fs from 'fs';
 import path from 'path';
-import {LambdaClientInternals} from '@remotion/lambda-client';
-import {VERSION} from 'remotion';
+import {LambdaClientInternals} from '@picus/lambda-client';
+import {VERSION} from 'picus';
 
 const rubySdk = path.join(__dirname, '..', '..', '..', 'lambda-ruby');
 test('Set the right version for Ruby in version.rb', () => {
 	const versionPath = path.join(
 		rubySdk,
 		'lib',
-		'remotion_lambda',
+		'picus_lambda',
 		'version.rb',
 	);
 
@@ -24,8 +24,8 @@ beforeAll(() => {
 	});
 });
 
-test('Set the right version for Ruby in remotion_lambda.gemspec', () => {
-	const gemspecPath = path.join(rubySdk, 'remotion_lambda.gemspec');
+test('Set the right version for Ruby in picus_lambda.gemspec', () => {
+	const gemspecPath = path.join(rubySdk, 'picus_lambda.gemspec');
 
 	const contents = fs
 		.readFileSync(gemspecPath, 'utf-8')
@@ -43,7 +43,7 @@ test('Set the right version for Ruby in remotion_lambda.gemspec', () => {
 
 test('Render progress payload', () => {
 	const output = execSync(
-		'bundle exec ruby lib/remotion_lambda/render_progress_payload_spec.rb',
+		'bundle exec ruby lib/picus_lambda/render_progress_payload_spec.rb',
 		{
 			cwd: rubySdk,
 			stdio: 'pipe',
@@ -51,8 +51,8 @@ test('Render progress payload', () => {
 	).toString();
 	const nativeVersion = LambdaClientInternals.getRenderProgressPayload({
 		region: 'us-east-1',
-		functionName: 'remotion-render',
-		bucketName: 'remotion-render',
+		functionName: 'picus-render',
+		bucketName: 'picus-render',
 		renderId: 'abcdef',
 		logLevel: 'info',
 		s3OutputProvider: {
@@ -67,7 +67,7 @@ test('Render progress payload', () => {
 
 test('Render Media payload', async () => {
 	const output = execSync(
-		'ruby lib/remotion_lambda/render_media_on_lambda_payload_spec.rb',
+		'ruby lib/picus_lambda/render_media_on_lambda_payload_spec.rb',
 		{
 			cwd: rubySdk,
 		},
@@ -77,7 +77,7 @@ test('Render Media payload', async () => {
 		await LambdaClientInternals.makeLambdaRenderMediaPayload({
 			region: 'us-east-1',
 			composition: 'react-svg',
-			functionName: 'remotion-render',
+			functionName: 'picus-render',
 			serveUrl: 'testbed-v6',
 			codec: 'h264',
 			inputProps: {
@@ -149,7 +149,7 @@ test('Render Media payload', async () => {
 
 test('Render Still payload', async () => {
 	const output = execSync(
-		'ruby lib/remotion_lambda/render_still_on_lambda_payload_spec.rb',
+		'ruby lib/picus_lambda/render_still_on_lambda_payload_spec.rb',
 		{
 			cwd: rubySdk,
 		},
@@ -158,7 +158,7 @@ test('Render Still payload', async () => {
 		await LambdaClientInternals.makeLambdaRenderStillPayload({
 			region: 'us-east-1',
 			composition: 'still-helloworld',
-			functionName: 'remotion-render',
+			functionName: 'picus-render',
 			serveUrl: 'testbed-v6',
 			inputProps: {
 				message: 'Hello from props!',

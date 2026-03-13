@@ -1,6 +1,6 @@
 import { Skia, Text } from "@shopify/react-native-skia";
 import React from "react";
-import { useVideoConfig } from "remotion";
+import { useVideoConfig } from "picus";
 import { useTypefaces } from "./AssetManager";
 import { SkiaNeon } from "./SkiaNeon";
 

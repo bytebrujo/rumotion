@@ -1,5 +1,5 @@
 import type {Crf} from '../crf';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentCrf: Crf;
 
@@ -25,7 +25,7 @@ export const crfOption = {
 	),
 	ssrName: 'crf',
 	docLink:
-		'https://www.remotion.dev/docs/encoding/#controlling-quality-using-the-crf-setting',
+		'https://www.picus.dev/docs/encoding/#controlling-quality-using-the-crf-setting',
 	type: 0 as number,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -53,4 +53,4 @@ export const crfOption = {
 		currentCrf = crf;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<Crf>;
+} satisfies AnyPicusOption<Crf>;

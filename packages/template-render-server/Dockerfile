@@ -28,12 +28,12 @@ COPY . .
 RUN mkdir -p renders
 
 # Install browser
-RUN npx remotion browser ensure
+RUN npx picus browser ensure
 
-# Bundle the Remotion composition
-RUN npx remotion bundle
+# Bundle the Picus composition
+RUN npx picus bundle
 # By default, bundle command will create "build" directory with the bundle
-ENV REMOTION_SERVE_URL=build
+ENV PICUS_SERVE_URL=build
 
 ENV NODE_ENV=production
 

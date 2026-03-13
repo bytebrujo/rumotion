@@ -1,6 +1,6 @@
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import type {RenderDefaults} from '@remotion/studio-shared';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import type {RenderDefaults} from '@picus/studio-shared';
 import {ConfigInternals} from './config';
 import {parsedCli} from './parsed-cli';
 

@@ -1,4 +1,4 @@
-import { getStaticFiles } from "@remotion/studio";
+import { getStaticFiles } from "@picus/studio";
 
 export type PublicFolderFile = {
   filename: string;

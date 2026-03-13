@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {AbsoluteFill, continueRender, delayRender} from 'remotion';
+import {AbsoluteFill, continueRender, delayRender} from 'picus';
 
 const Component: React.FC = () => {
 	const [handle] = useState(() => delayRender());

@@ -1,7 +1,7 @@
 import {expect, test} from 'bun:test';
 
-test('@remotion/renderer/pure client', async () => {
-	const resolve = Bun.resolveSync('@remotion/renderer/pure', __dirname);
+test('@picus/renderer/pure client', async () => {
+	const resolve = Bun.resolveSync('@picus/renderer/pure', __dirname);
 	const out = await Bun.build({
 		entrypoints: [resolve],
 	});

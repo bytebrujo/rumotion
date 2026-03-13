@@ -11,7 +11,7 @@ test('should not return negative time for looping video with trim', () => {
 		mediaDurationInSeconds: 596.4741950113379,
 		fps: 24,
 		ifNoMediaDuration: 'fail',
-		src: 'https://remotion.media/BigBuckBunny.mp4',
+		src: 'https://picus.media/BigBuckBunny.mp4',
 	});
 
 	expect(result).not.toBeNull();

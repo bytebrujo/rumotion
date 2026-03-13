@@ -3,12 +3,12 @@ image: /generated/articles-docs-lambda-php.png
 title: Triggering renders from PHP
 slug: /lambda/php
 sidebar_label: Rendering from PHP
-crumb: '@remotion/lambda'
+crumb: '@picus/lambda'
 ---
 
 _available from v3.3.96_
 
-To trigger a Lambda render using PHP, install the `remotion/lambda` package using `composer`. Use the same version as the `remotion` version you are using from NPM and pin the version by removing the `^` character in your `composer.json`.
+To trigger a Lambda render using PHP, install the `picus/lambda` package using `composer`. Use the same version as the `picus` version you are using from NPM and pin the version by removing the `^` character in your `composer.json`.
 
 Below is a snippet showing how to initiate a render request and get its status. Note the following before continuing:
 
@@ -16,9 +16,9 @@ Below is a snippet showing how to initiate a render request and get its status. 
 - Set the following environment variables - the example below supports `.env` files:
   - `AWS_ACCESS_KEY_ID`
   - `AWS_SECRET_ACCESS_KEY`
-  - `REMOTION_APP_REGION`
-  - `REMOTION_APP_FUNCTION_NAME`
-  - `REMOTION_APP_SERVE_URL`
+  - `PICUS_APP_REGION`
+  - `PICUS_APP_FUNCTION_NAME`
+  - `PICUS_APP_SERVE_URL`
 
 ```php title="render.php"
 <?php
@@ -28,8 +28,8 @@ use Aws\Credentials\CredentialProvider;
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use Remotion\LambdaPhp\PHPClient;
-use Remotion\LambdaPhp\RenderParams;
+use Picus\LambdaPhp\PHPClient;
+use Picus\LambdaPhp\RenderParams;
 
 // Load environment variables
 // Use "unsafe" because AWS reads environment variables from getenv(), not $_ENV
@@ -37,11 +37,11 @@ $dotenv = Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->load();
 
 // Specify the region you deployed to, for example "us-east-1"
-$region = getenv('REMOTION_APP_REGION');
+$region = getenv('PICUS_APP_REGION');
 // Specify the function you would like to call
-$functionName = getenv('REMOTION_APP_FUNCTION_NAME');
+$functionName = getenv('PICUS_APP_FUNCTION_NAME');
 // Specify the URL to your Webpack bundle
-$serveUrl = getenv('REMOTION_APP_SERVE_URL');
+$serveUrl = getenv('PICUS_APP_SERVE_URL');
 
 
 $provider = CredentialProvider::defaultProvider();

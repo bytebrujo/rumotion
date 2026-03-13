@@ -21,8 +21,8 @@ export const DownloadPressRelease: React.FC = () => {
 			<div>
 				<a
 					style={style}
-					href="/documents/RemotionSeedFundingPressRelease.pdf"
-					download="remotion-press-release.pdf"
+					href="/documents/PicusSeedFundingPressRelease.pdf"
+					download="picus-press-release.pdf"
 				>
 					<svg
 						style={icon}
@@ -40,8 +40,8 @@ export const DownloadPressRelease: React.FC = () => {
 			<div>
 				<a
 					style={style}
-					href="/documents/RemotionSeedFundingPressKit.zip"
-					download="remotion-press-kit.zip"
+					href="/documents/PicusSeedFundingPressKit.zip"
+					download="picus-press-kit.zip"
 				>
 					<svg
 						style={icon}

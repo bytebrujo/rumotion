@@ -7,7 +7,7 @@ import type {
 	SequenceSchema,
 } from './sequence-field-schema.js';
 import {VisualModeOverridesContext} from './SequenceManager.js';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 
 export type CanUpdateSequencePropStatus =
 	| {canUpdate: true; codeValue: unknown}
@@ -23,7 +23,7 @@ export const useSchema = <
 	controls: SequenceControls | undefined;
 	values: T;
 } => {
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 	const earlyReturn = useMemo(() => {
 		if (!env.isStudio || env.isReadOnlyStudio) {
 			return {
@@ -39,7 +39,7 @@ export const useSchema = <
 		return earlyReturn;
 	}
 
-	// Intentional conditional hook call, useRemotionEnvironment is stable.
+	// Intentional conditional hook call, usePicusEnvironment is stable.
 	const [overrideId] = useState(() => String(Math.random()));
 	const {
 		visualModeEnabled,

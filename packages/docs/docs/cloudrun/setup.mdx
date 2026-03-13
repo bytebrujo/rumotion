@@ -15,9 +15,9 @@ import TabItem from '@theme/TabItem';
   </p>
 </ExperimentalBadge>
 
-## 1. Install `@remotion/cloudrun`
+## 1. Install `@picus/cloudrun`
 
-<Installation pkg="@remotion/cloudrun" />
+<Installation pkg="@picus/cloudrun" />
 
 ## 2. Create a GCP project
 
@@ -46,10 +46,10 @@ In order to enable the Cloud Run API, billing must be enabled in this project. N
 2. Within the Cloud Shell, type the following command and follow the prompts.
 
    ```bash
-   curl -L https://github.com/remotion-dev/remotion/raw/main/packages/cloudrun/src/gcpInstaller/gcpInstaller.tar | tar -x -C . && node install.mjs
+   curl -L https://github.com/picus-dev/picus/raw/main/packages/cloudrun/src/gcpInstaller/gcpInstaller.tar | tar -x -C . && node install.mjs
    ```
 
-- Select <Step>1</Step>to setup this project for Remotion Cloud Run, or to run the setup again for an update.
+- Select <Step>1</Step>to setup this project for Picus Cloud Run, or to run the setup again for an update.
 - Select <Step>2</Step>to generate a new .env file, or manage keys already created, and [follow these steps instead](/docs/cloudrun/generate-env).
 
 3. When prompted to apply the plan, type `yes`. When prompted to generate the .env files, type `yes`.
@@ -68,10 +68,10 @@ In order to enable the Cloud Run API, billing must be enabled in this project. N
 
 ## 5. Optional: Validate the permission setup
 
-From within your code base, run the following command to validate the permissions are setup correctly in GCP. As long as your GCP project was setup with a matching Remotion version, this should pass.
+From within your code base, run the following command to validate the permissions are setup correctly in GCP. As long as your GCP project was setup with a matching Picus version, this should pass.
 
 ```
-npx remotion cloudrun permissions
+npx picus cloudrun permissions
 ```
 
 <hr />
@@ -92,7 +92,7 @@ values={[
 Deploy a service that can render videos into your GCP project by executing the following command:
 
 ```bash
-npx remotion cloudrun services deploy
+npx picus cloudrun services deploy
 ```
 
 </TabItem>
@@ -101,11 +101,11 @@ npx remotion cloudrun services deploy
 You can deploy a service that can render videos into your GCP project using [`deployService()`](/docs/cloudrun/deployservice).
 
 ```ts twoslash
-import {deployService} from '@remotion/cloudrun';
+import {deployService} from '@picus/cloudrun';
 
 // ---cut---
 const deployResult = await deployService({
-  projectID: 'my-remotion-project',
+  projectID: 'my-picus-project',
   region: 'us-east1',
 });
 ```
@@ -115,7 +115,7 @@ The object that is returned contains a name field, which you'll need for renderi
 </TabItem>
 </Tabs>
 
-The service consists of necessary binaries and JavaScript code that can take a [serve URL](/docs/terminology/serve-url) and make renders from it. A service is bound to the Remotion version, if you upgrade Remotion, you [need to deploy a new service](/docs/cloudrun/upgrading). A service does not include your Remotion code, it will be deployed in the next step instead.
+The service consists of necessary binaries and JavaScript code that can take a [serve URL](/docs/terminology/serve-url) and make renders from it. A service is bound to the Picus version, if you upgrade Picus, you [need to deploy a new service](/docs/cloudrun/upgrading). A service does not include your Picus code, it will be deployed in the next step instead.
 
 A [`Cloud Run URL`](/docs/terminology/cloud-run-url) will be printed, providing unique endpoint for accessing the deployed service and performing a render. Alternatively you can use the [`Service Name`](/docs/terminology/service-name), that is also printed, for accessing the deployed service and performing a render.
 
@@ -130,15 +130,15 @@ values={[
 }>
 <TabItem value="cli">
 
-Run the following command to deploy your Remotion project to a Cloud Storage bucket. Pass as the last argument the [entry point](/docs/terminology/entry-point) of the project.
+Run the following command to deploy your Picus project to a Cloud Storage bucket. Pass as the last argument the [entry point](/docs/terminology/entry-point) of the project.
 
 ```bash
-npx remotion cloudrun sites create src/index.ts --site-name=my-video
+npx picus cloudrun sites create src/index.ts --site-name=my-video
 ```
 
 A [`serveUrl`](/docs/terminology/serve-url) will be printed pointing to the deployed project.
 
-When you update your Remotion code in the future, redeploy your site. Pass the same [`--site-name`](/docs/lambda/cli/sites/create#--site-name) to overwrite the previous deploy. If you don't pass [`--site-name`](/docs/lambda/cli/sites/create#--site-name), a unique URL will be generated on every deploy.
+When you update your Picus code in the future, redeploy your site. Pass the same [`--site-name`](/docs/lambda/cli/sites/create#--site-name) to overwrite the previous deploy. If you don't pass [`--site-name`](/docs/lambda/cli/sites/create#--site-name), a unique URL will be generated on every deploy.
 
 </TabItem>
 <TabItem value="node">
@@ -147,18 +147,18 @@ First, you need to create a Cloud Storage bucket in your preferred region. If on
 
 ```ts twoslash
 import path from 'path';
-import {deploySite, getOrCreateBucket} from '@remotion/cloudrun';
+import {deploySite, getOrCreateBucket} from '@picus/cloudrun';
 
 const {bucketName} = await getOrCreateBucket({
   region: 'us-east1',
 });
 ```
 
-Next, upload your Remotion project to a Cloud Storage bucket. Specify the entry point of your Remotion project, this is the file where [`registerRoot()`](/docs/register-root) is called.
+Next, upload your Picus project to a Cloud Storage bucket. Specify the entry point of your Picus project, this is the file where [`registerRoot()`](/docs/register-root) is called.
 
 ```ts twoslash
 import path from 'path';
-import {deploySite, getOrCreateBucket} from '@remotion/cloudrun';
+import {deploySite, getOrCreateBucket} from '@picus/cloudrun';
 
 const {bucketName} = await getOrCreateBucket({
   region: 'us-east1',
@@ -171,7 +171,7 @@ const {serveUrl} = await deploySite({
 });
 ```
 
-When you update your Remotion code in the future, redeploy your site. Pass the same [`siteName`](/docs/cloudrun/deploysite#sitename) to overwrite the previous deploy. If you don't pass [`siteName`](/docs/cloudrun/deploysite#sitename), a unique URL will be generated on every deploy.
+When you update your Picus code in the future, redeploy your site. Pass the same [`siteName`](/docs/cloudrun/deploysite#sitename) to overwrite the previous deploy. If you don't pass [`siteName`](/docs/cloudrun/deploysite#sitename), a unique URL will be generated on every deploy.
 
 </TabItem>
 </Tabs>
@@ -215,7 +215,7 @@ values={[
 - `<cloud-run-url>` The Cloud Run URL was returned during step 6, service deployment.
 
 ```bash
-npx remotion cloudrun render <serve-url | site-name> <composition-id> --cloud-run-url=<cloud-run-url>
+npx picus cloudrun render <serve-url | site-name> <composition-id> --cloud-run-url=<cloud-run-url>
 ```
 
 </TabItem>
@@ -225,13 +225,13 @@ npx remotion cloudrun render <serve-url | site-name> <composition-id> --cloud-ru
 - `<region>` The region the Service is in, which was returned during step 6, service deployment. This is only required if using the service name.
 
 ```bash
-npx remotion cloudrun render <serve-url | site-name> <composition-id> --service-name=<service-name> --region=<region>
+npx picus cloudrun render <serve-url | site-name> <composition-id> --service-name=<service-name> --region=<region>
 ```
 
 </TabItem>
 </Tabs>
 
-Progress will be printed until the video finished rendering. Congrats! You rendered your first video using Remotion Cloudrun 🚀
+Progress will be printed until the video finished rendering. Congrats! You rendered your first video using Picus Cloudrun 🚀
 
 </TabItem>
 <TabItem value="still">
@@ -253,7 +253,7 @@ values={[
 - `<cloud-run-url>` The Cloud Run URL was returned during step 6, service deployment.
 
 ```bash
-npx remotion cloudrun still <serve-url | site-name> <still-id> --cloud-run-url=<cloud-run-url>
+npx picus cloudrun still <serve-url | site-name> <still-id> --cloud-run-url=<cloud-run-url>
 ```
 
 </TabItem>
@@ -263,13 +263,13 @@ npx remotion cloudrun still <serve-url | site-name> <still-id> --cloud-run-url=<
 - `<region>` The region the Service is in, which was returned during step 6, service deployment. This is only required if using the service name.
 
 ```bash
-npx remotion cloudrun still <serve-url | site-name> <still-id> --service-name=<service-name> --region=<region>
+npx picus cloudrun still <serve-url | site-name> <still-id> --service-name=<service-name> --region=<region>
 ```
 
 </TabItem>
 </Tabs>
 
-Congrats! You rendered your first still using Remotion Cloudrun 🚀
+Congrats! You rendered your first still using Picus Cloudrun 🚀
 
 </TabItem>
 </Tabs>
@@ -290,7 +290,7 @@ values={[
 You already have the service name from a previous step. But since you only need to deploy a service once, it's useful to retrieve the name of your deployed service programmatically before rendering a video in case your Node.JS program restarts. We can call [`getServices()`](/docs/cloudrun/getservices) with the `compatibleOnly` flag to get only services with a matching version.
 
 ```ts twoslash
-import {getServices, renderMediaOnCloudrun} from '@remotion/cloudrun/client';
+import {getServices, renderMediaOnCloudrun} from '@picus/cloudrun/client';
 
 const services = await getServices({
   region: 'us-east1',
@@ -303,7 +303,7 @@ const serviceName = services[0].serviceName;
 We can now trigger a render of a video using the [`renderMediaOnCloudrun()`](/docs/cloudrun/rendermediaoncloudrun) function.
 
 ```ts twoslash
-import {renderMediaOnCloudrun} from '@remotion/cloudrun/client';
+import {renderMediaOnCloudrun} from '@picus/cloudrun/client';
 const url = 'string';
 const serviceName = 'string';
 const updateRenderProgress = (progress: number) => {};
@@ -326,12 +326,12 @@ if (result.type === 'success') {
 ```
 
 :::note
-Import from [`@remotion/cloudrun/client`](/docs/cloudrun/light-client) to not import the whole renderer, which cannot be bundled.
+Import from [`@picus/cloudrun/client`](/docs/cloudrun/light-client) to not import the whole renderer, which cannot be bundled.
 :::
 
 The render will now run and after a while the video will be available in your cloud storage bucket. You can keep track of the render progress by passing a function to the [updateRenderProgress](/docs/cloudrun/rendermediaoncloudrun#updaterenderprogress) attribute, to receive progress as a number.
 
-Congrats! [Check your Cloud Storage Bucket](https://console.cloud.google.com/storage/browser) - you just rendered your first video using Remotion Cloud Run 🚀
+Congrats! [Check your Cloud Storage Bucket](https://console.cloud.google.com/storage/browser) - you just rendered your first video using Picus Cloud Run 🚀
 
 </TabItem>
 <TabItem value="still">
@@ -339,7 +339,7 @@ Congrats! [Check your Cloud Storage Bucket](https://console.cloud.google.com/sto
 You already have the service name from a previous step. But since you only need to deploy a service once, it's useful to retrieve the name of your deployed service programmatically before rendering a video in case your Node.JS program restarts. We can call [`getServices()`](/docs/cloudrun/getservices) with the `compatibleOnly` flag to get only services with a matching version.
 
 ```ts twoslash
-import {getServices, renderStillOnCloudrun} from '@remotion/cloudrun';
+import {getServices, renderStillOnCloudrun} from '@picus/cloudrun';
 
 const services = await getServices({
   region: 'us-east1',
@@ -352,7 +352,7 @@ const serviceName = services[0].serviceName;
 We can now trigger a render of a still using the [`renderStillOnCloudrun()`](/docs/cloudrun/renderstilloncloudrun) function.
 
 ```ts twoslash
-import {renderStillOnCloudrun} from '@remotion/cloudrun/client';
+import {renderStillOnCloudrun} from '@picus/cloudrun/client';
 
 const url = 'string';
 const serviceName = 'string';
@@ -374,12 +374,12 @@ if (result.type === 'success') {
 ```
 
 :::note
-Import from [`@remotion/cloudrun/client`](/docs/cloudrun/light-client) to not import the whole renderer, which cannot be bundled.
+Import from [`@picus/cloudrun/client`](/docs/cloudrun/light-client) to not import the whole renderer, which cannot be bundled.
 :::
 
 The render will now run and after a while the image will be available in your cloud storage bucket.
 
-Congrats! [Check your Cloud Storage Bucket](https://console.cloud.google.com/storage/browser) - you just rendered your first still using Remotion Cloud Run 🚀
+Congrats! [Check your Cloud Storage Bucket](https://console.cloud.google.com/storage/browser) - you just rendered your first still using Picus Cloud Run 🚀
 
 </TabItem>
 </Tabs>
@@ -389,7 +389,7 @@ Congrats! [Check your Cloud Storage Bucket](https://console.cloud.google.com/sto
 
 ## Next steps
 
-- Select [which region(s)](/docs/cloudrun/region-selection) you want to run Remotion Cloud Run in.
+- Select [which region(s)](/docs/cloudrun/region-selection) you want to run Picus Cloud Run in.
 - Familiarize yourself with the CLI and the Node.JS APIs (list in sidebar).
-- Learn how to [upgrade Remotion Cloud Run](/docs/cloudrun/upgrading).
+- Learn how to [upgrade Picus Cloud Run](/docs/cloudrun/upgrading).
 - Before going live, go through the [Production checklist](/docs/cloudrun/checklist).

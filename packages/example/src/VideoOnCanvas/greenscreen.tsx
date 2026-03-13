@@ -1,5 +1,5 @@
 import React, {useCallback, useRef} from 'react';
-import {AbsoluteFill, OffthreadVideo, useVideoConfig} from 'remotion';
+import {AbsoluteFill, OffthreadVideo, useVideoConfig} from 'picus';
 
 export const Greenscreen: React.FC = () => {
 	const canvas = useRef<HTMLCanvasElement>(null);
@@ -39,7 +39,7 @@ export const Greenscreen: React.FC = () => {
 			<AbsoluteFill>
 				<OffthreadVideo
 					style={{opacity: 0}}
-					src="https://remotion.media/greenscreen.mp4"
+					src="https://picus.media/greenscreen.mp4"
 					onVideoFrame={onVideoFrame}
 				/>
 			</AbsoluteFill>

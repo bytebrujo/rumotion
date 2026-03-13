@@ -4,7 +4,7 @@ import {
   staticFile,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 import { FPS, IMAGE_HEIGHT, IMAGE_WIDTH } from "../lib/constants";
 import { BackgroundElement } from "../lib/types";
 import { calculateBlur, getImagePath } from "../lib/utils";

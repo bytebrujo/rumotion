@@ -2,12 +2,12 @@ import path from 'node:path';
 
 export const getAbsolutePublicDir = ({
 	relativePublicDir,
-	remotionRoot,
+	picusRoot,
 }: {
 	relativePublicDir: string | null;
-	remotionRoot: string;
+	picusRoot: string;
 }) => {
 	return relativePublicDir
-		? path.resolve(remotionRoot, relativePublicDir)
-		: path.join(remotionRoot, 'public');
+		? path.resolve(picusRoot, relativePublicDir)
+		: path.join(picusRoot, 'public');
 };

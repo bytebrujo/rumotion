@@ -11,10 +11,10 @@ Downloads a rendered video, audio or still to the disk of the machine this API i
 If you want to let the user download a result to their machine, use [`renderMediaOnLambda()` -> `downloadBehavior`](/docs/lambda/rendermediaonlambda#downloadbehavior) instead.
 
 ```ts twoslash
-import {downloadMedia} from '@remotion/lambda';
+import {downloadMedia} from '@picus/lambda';
 
 const {outputPath, sizeInBytes} = await downloadMedia({
-  bucketName: 'remotionlambda-r42fs9fk',
+  bucketName: 'picuslambda-r42fs9fk',
   region: 'us-east-1',
   renderId: '8hfxlw',
   outPath: 'out.mp4',
@@ -23,7 +23,7 @@ const {outputPath, sizeInBytes} = await downloadMedia({
   },
 });
 
-console.log(outputPath); // "/Users/yourname/remotion-project/out.mp4"
+console.log(outputPath); // "/Users/yourname/picus-project/out.mp4"
 console.log(sizeInBytes); // 21249541
 ```
 
@@ -81,6 +81,6 @@ The size of the file in bytes.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/download-media.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/download-media.ts)
 - [renderMediaOnLambda()](/docs/lambda/rendermediaonlambda)
 - [renderStillOnLambda()](/docs/lambda/renderstillonlambda)

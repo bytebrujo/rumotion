@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
@@ -7,7 +7,7 @@ test('junk wav', async () => {
 	let samples = 0;
 	await parseMedia({
 		src: exampleVideos.junk,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 		onAudioTrack: () => {
 			return () => {

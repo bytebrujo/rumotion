@@ -1,7 +1,7 @@
 import type React from 'react';
 import {useCallback, useContext, useEffect} from 'react';
-import type {_InternalTypes} from 'remotion';
-import {Internals} from 'remotion';
+import type {_InternalTypes} from 'picus';
+import {Internals} from 'picus';
 import {useMobileLayout} from '../helpers/mobile-layout';
 import type {ExpandedFoldersState} from '../helpers/persist-open-folders';
 import {getRoute, pushUrl} from '../helpers/url-state';

@@ -2,7 +2,7 @@ import type {
 	MediaParserAudioTrack,
 	MediaParserLogLevel,
 	MediaParserOnAudioSample,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import type {MediaFn} from './create/media-fn';
 import type {ProgressTracker} from './create/progress-tracker';
 import {Log} from './log';

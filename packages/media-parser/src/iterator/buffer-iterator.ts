@@ -570,7 +570,7 @@ export const getArrayBufferIterator = ({
 		getByteString(length: number, trimTrailingZeroes: boolean): string {
 			let bytes = getSlice(length);
 			// This file has trailing zeroes throughout
-			// https://github.com/remotion-dev/remotion/issues/4668#issuecomment-2561904068
+			// https://github.com/picus-dev/picus/issues/4668#issuecomment-2561904068
 			// eslint-disable-next-line no-unmodified-loop-condition
 			while (trimTrailingZeroes && bytes[bytes.length - 1] === 0) {
 				bytes = bytes.slice(0, -1);

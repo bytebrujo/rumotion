@@ -1,5 +1,5 @@
-import type {_InternalOverallRenderProgress} from '@remotion/lambda';
-import {AwsProvider} from '@remotion/lambda-client';
+import type {_InternalOverallRenderProgress} from '@picus/lambda';
+import {AwsProvider} from '@picus/lambda-client';
 import {$} from 'bun';
 
 const progress = (await Bun.file(
@@ -17,6 +17,6 @@ if (progress.renderMetadata.inputProps.type !== 'payload') {
 	throw new Error('Expected payload');
 }
 
-await $`bunx remotion lambda functions rmall -f`;
-await $`bunx remotion lambda functions deploy --memory=${memorySize} --disk=10000 --timeout=${timeoutInSeconds}`;
-await $`bunx remotion lambda render ${progress.renderMetadata.siteId} ${progress.renderMetadata.compositionId} --log=verbose --delete-after="1-day" --props=${progress.renderMetadata.inputProps.payload}`;
+await $`bunx picus lambda functions rmall -f`;
+await $`bunx picus lambda functions deploy --memory=${memorySize} --disk=10000 --timeout=${timeoutInSeconds}`;
+await $`bunx picus lambda render ${progress.renderMetadata.siteId} ${progress.renderMetadata.compositionId} --log=verbose --delete-after="1-day" --props=${progress.renderMetadata.inputProps.payload}`;

@@ -17,8 +17,8 @@ import type {
 	CompProps,
 	LogLevel,
 	TimelineContextValue,
-} from 'remotion';
-import {Internals, random} from 'remotion';
+} from 'picus';
+import {Internals, random} from 'picus';
 import {ThumbnailEmitterContext} from './emitter-context.js';
 import {ThumbnailEmitter} from './event-emitter.js';
 import type {ThumbnailMethods} from './player-methods.js';
@@ -76,7 +76,7 @@ const ThumbnailFn = <
 	if (typeof window !== 'undefined') {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		useLayoutEffect(() => {
-			window.remotion_isPlayer = true;
+			window.picus_isPlayer = true;
 		}, []);
 	}
 
@@ -160,7 +160,7 @@ const forward = forwardRef as <T, P = {}>(
 
 /*
  * @description A component which can be rendered in a regular React App (for example: for example: Next.JS, Vite.js, Create React App) to display a single frame of a video.
- * @see [Documentation](https://www.remotion.dev/docs/player/thumbnail)
+ * @see [Documentation](https://www.picus.dev/docs/player/thumbnail)
  */
 
 export const Thumbnail = forward(ThumbnailFn);

@@ -5,7 +5,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {getReadableColor} from './readable-color';
 import {defaultStyles} from './styles';
 

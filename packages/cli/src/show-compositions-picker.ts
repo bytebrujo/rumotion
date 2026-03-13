@@ -1,4 +1,4 @@
-import type {getCompositions, LogLevel} from '@remotion/renderer';
+import type {getCompositions, LogLevel} from '@picus/renderer';
 import {chalk} from './chalk';
 import {selectAsync} from './composition-prompts';
 type Await<T> = T extends PromiseLike<infer U> ? U : T;

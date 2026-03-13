@@ -2,16 +2,16 @@ import type {GitSource} from './git-source';
 
 export const getProjectName = ({
 	gitSource,
-	resolvedRemotionRoot,
+	resolvedPicusRoot,
 	basename,
 }: {
 	gitSource: GitSource | null;
-	resolvedRemotionRoot: string;
+	resolvedPicusRoot: string;
 	basename: (str: string) => string;
 }) => {
 	// Directory name
 	if (!gitSource) {
-		return basename(resolvedRemotionRoot);
+		return basename(resolvedPicusRoot);
 	}
 
 	// Subfolder name of a Git repo, e.g `example`

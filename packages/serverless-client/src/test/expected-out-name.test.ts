@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import {getExpectedOutName} from '../expected-out-name';
 import type {RenderMetadata} from '../render-metadata';
 
-const bucketName = 'remotionlambda-98fsduf';
+const bucketName = 'picuslambda-98fsduf';
 
 type MockProvider = {
 	type: 'aws';
@@ -29,8 +29,8 @@ const testRenderMetadata: RenderMetadata<MockProvider> = {
 	},
 	lambdaVersion: '2022-02-14',
 	memorySizeInMb: 2048,
-	functionName: 'remotion-render-4-0-187-mem3000mb-disk10000mb-120sec',
-	rendererFunctionName: 'remotion-render-4-0-187-mem3000mb-disk10000mb-120sec',
+	functionName: 'picus-render-4-0-187-mem3000mb-disk10000mb-120sec',
+	rendererFunctionName: 'picus-render-4-0-187-mem3000mb-disk10000mb-120sec',
 	outName: undefined,
 	region: 'eu-central',
 	renderId: '9n8dsfafs',
@@ -61,11 +61,11 @@ test('Should get a custom outname', () => {
 			renderMetadata: testRenderMetadata,
 			bucketName,
 			customCredentials: null,
-			bucketNamePrefix: 'remotionlambda-',
+			bucketNamePrefix: 'picuslambda-',
 		}),
 	).toEqual({
 		customCredentials: null,
-		renderBucketName: 'remotionlambda-98fsduf',
+		renderBucketName: 'picuslambda-98fsduf',
 		key: 'renders/9n8dsfafs/out.mp4',
 	});
 });
@@ -83,7 +83,7 @@ test('Should save to a different outname', () => {
 			renderMetadata: newRenderMetadata,
 			bucketName,
 			customCredentials: null,
-			bucketNamePrefix: 'remotionlambda-',
+			bucketNamePrefix: 'picuslambda-',
 		}),
 	).toEqual({
 		customCredentials: null,
@@ -104,11 +104,11 @@ test('For stills', () => {
 			renderMetadata: newRenderMetadata,
 			bucketName,
 			customCredentials: null,
-			bucketNamePrefix: 'remotionlambda-',
+			bucketNamePrefix: 'picuslambda-',
 		}),
 	).toEqual({
 		customCredentials: null,
-		renderBucketName: 'remotionlambda-98fsduf',
+		renderBucketName: 'picuslambda-98fsduf',
 		key: 'renders/9n8dsfafs/out.png',
 	});
 });
@@ -126,11 +126,11 @@ test('Just a custom name', () => {
 			renderMetadata: newRenderMetadata,
 			bucketName,
 			customCredentials: null,
-			bucketNamePrefix: 'remotionlambda-',
+			bucketNamePrefix: 'picuslambda-',
 		}),
 	).toEqual({
 		customCredentials: null,
-		renderBucketName: 'remotionlambda-98fsduf',
+		renderBucketName: 'picuslambda-98fsduf',
 		key: 'renders/9n8dsfafs/justaname.jpeg',
 	});
 });
@@ -148,7 +148,7 @@ test('Should throw on invalid names', () => {
 			renderMetadata: newRenderMetadata,
 			bucketName,
 			customCredentials: null,
-			bucketNamePrefix: 'remotionlambda-',
+			bucketNamePrefix: 'picuslambda-',
 		});
 	}).toThrow(/The S3 Key must match the RegExp/);
 });
@@ -167,12 +167,12 @@ test('Should allow outName an outname with a slash', () => {
 			renderMetadata: newRenderMetadata,
 			bucketName,
 			customCredentials: null,
-			bucketNamePrefix: 'remotionlambda-',
+			bucketNamePrefix: 'picuslambda-',
 		}),
 	).toEqual({
 		customCredentials: null,
 		key: 'renders/9n8dsfafs/justa/name.jpeg',
-		renderBucketName: 'remotionlambda-98fsduf',
+		renderBucketName: 'picuslambda-98fsduf',
 	});
 });
 
@@ -190,11 +190,11 @@ test('Should allow outName an outname with colon', () => {
 			renderMetadata: newRenderMetadata,
 			bucketName,
 			customCredentials: null,
-			bucketNamePrefix: 'remotionlambda-',
+			bucketNamePrefix: 'picuslambda-',
 		}),
 	).toEqual({
 		customCredentials: null,
 		key: 'renders/9n8dsfafs/ap-east-1:xxxxxx/video/XXXXX-0b9ba84XXXX.mp4',
-		renderBucketName: 'remotionlambda-98fsduf',
+		renderBucketName: 'picuslambda-98fsduf',
 	});
 });

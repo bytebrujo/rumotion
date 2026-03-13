@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-presentations-wipe.png
-crumb: "@remotion/transitions - Presentations"
+crumb: "@picus/transitions - Presentations"
 title: "wipe()"
 ---
 
@@ -11,7 +11,7 @@ A presentation where the entering slide slides over the exiting slide.
 ## Example
 
 ```tsx twoslash title="WipeTransition.tsx"
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -33,8 +33,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import { linearTiming, TransitionSeries } from "@remotion/transitions";
-import { wipe } from "@remotion/transitions/wipe";
+import { linearTiming, TransitionSeries } from "@picus/transitions";
+import { wipe } from "@picus/transitions/wipe";
 
 const BasicTransition = () => {
   return (
@@ -63,7 +63,7 @@ Takes an object with the following properties:
 One of `from-left`, `from-top-left`, `from-top`, `from-top-right`, `from-right`, `from-bottom-right`, `from-bottom`, `from-bottom-left`.
 
 ```tsx twoslash title="TypeScript type"
-import { WipeDirection } from "@remotion/transitions/wipe";
+import { WipeDirection } from "@picus/transitions/wipe";
 
 const wipeDirection: WipeDirection = "from-left";
 ```
@@ -86,5 +86,5 @@ The style of the inner element when the scene is exiting.
 
 ## See also
 
-- [Source code for this presentation](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/presentations/wipe.tsx)
+- [Source code for this presentation](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/presentations/wipe.tsx)
 - [Presentations](/docs/transitions/presentations)

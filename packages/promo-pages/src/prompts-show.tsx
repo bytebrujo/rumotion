@@ -12,7 +12,7 @@ const mockPromptSubmission: PromptSubmission = {
 	muxPlaybackId: 'mock-playback-id',
 	likeCount: 42,
 	createdAt: new Date().toISOString(),
-	githubUsername: 'remotion-dev',
+	githubUsername: 'picus-dev',
 	xUsername: null,
 	customAvatarUrl: null,
 	toolUsed: 'Claude Code',

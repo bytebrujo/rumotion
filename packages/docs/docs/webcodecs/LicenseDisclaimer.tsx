@@ -5,16 +5,16 @@ export const LicenseDisclaimer: React.FC = () => {
 		<>
 			<div>
 				This package is licensed under the{' '}
-				<a href="/docs/license">Remotion License</a>.<br />
+				<a href="/docs/license">Picus License</a>.<br />
 				We consider a team of 4 or more people a "company".
 			</div>
 			<br />
 			<div>
-				<strong>For "companies"</strong>: A Remotion Company license needs to be
+				<strong>For "companies"</strong>: A Picus Company license needs to be
 				obtained to use this package.
 				<br /> In a future version of{' '}
 				<a>
-					<code>@remotion/webcodecs</code>
+					<code>@picus/webcodecs</code>
 				</a>
 				, this package will also require the purchase of a newly created
 				"WebCodecs Conversion Seat". <a href="/contact">Get in touch</a> with us

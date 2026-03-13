@@ -1,6 +1,6 @@
 import {ContactShadows, MeshDistortMaterial} from '@react-three/drei';
-import {Video} from '@remotion/media';
-import {ThreeCanvas} from '@remotion/three';
+import {Video} from '@picus/media';
+import {ThreeCanvas} from '@picus/three';
 import React, {useCallback, useEffect} from 'react';
 import {
 	AbsoluteFill,
@@ -9,7 +9,7 @@ import {
 	useCurrentFrame,
 	useDelayRender,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const Orb: React.FC = () => {
 	const frame = useCurrentFrame();
@@ -158,12 +158,12 @@ const MediaVideos: React.FC = () => {
 	return (
 		<AbsoluteFill>
 			<AbsoluteFill style={{transform: 'scale(0.5)', transformOrigin: '0 0'}}>
-				<Video src="https://remotion.media/video-h264.mp4" />
+				<Video src="https://picus.media/video-h264.mp4" />
 			</AbsoluteFill>
 			<AbsoluteFill
 				style={{transform: 'scale(0.5)', transformOrigin: '100% 0'}}
 			>
-				<Video src="https://remotion.media/video-h265.mp4" />
+				<Video src="https://picus.media/video-h265.mp4" />
 			</AbsoluteFill>
 			<AbsoluteFill
 				style={{

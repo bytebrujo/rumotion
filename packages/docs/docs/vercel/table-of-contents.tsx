@@ -8,11 +8,11 @@ export const TableOfContents: React.FC = () => {
 			<Grid>
 				<TOCItem link="/docs/vercel/create-sandbox">
 					<strong>createSandbox()</strong>
-					<div>Create a sandbox with Remotion installed</div>
+					<div>Create a sandbox with Picus installed</div>
 				</TOCItem>
 				<TOCItem link="/docs/vercel/add-bundle-to-sandbox">
 					<strong>addBundleToSandbox()</strong>
-					<div>Copy a Remotion bundle into a sandbox</div>
+					<div>Copy a Picus bundle into a sandbox</div>
 				</TOCItem>
 				<TOCItem link="/docs/vercel/render-media-on-vercel">
 					<strong>renderMediaOnVercel()</strong>

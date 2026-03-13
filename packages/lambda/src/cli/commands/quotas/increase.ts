@@ -9,12 +9,12 @@ import {
 	AwsRegion,
 	LambdaClientInternals,
 	RequestHandler,
-} from '@remotion/lambda-client';
+} from '@picus/lambda-client';
 import {
 	BINARY_NAME,
 	LAMBDA_CONCURRENCY_LIMIT_QUOTA,
-} from '@remotion/lambda-client/constants';
-import type {LogLevel, LogOptions} from '@remotion/renderer';
+} from '@picus/lambda-client/constants';
+import type {LogLevel, LogOptions} from '@picus/renderer';
 import {QUOTAS_COMMAND} from '.';
 import {forceFlagProvided} from '../../args';
 import {getAwsRegion} from '../../get-aws-region';

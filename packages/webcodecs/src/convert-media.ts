@@ -1,6 +1,6 @@
 /**
- * Copyright (c) 2025 Remotion AG
- * For licensing, see: https://remotion.dev/docs/webcodecs#license
+ * Copyright (c) 2025 Picus AG
+ * For licensing, see: https://picus.dev/docs/webcodecs#license
  */
 
 import type {
@@ -13,15 +13,15 @@ import type {
 	ParseMediaFields,
 	ParseMediaOptions,
 	WriterInterface,
-} from '@remotion/media-parser';
+} from '@picus/media-parser';
 import {
 	defaultSelectM3uAssociatedPlaylists,
 	defaultSelectM3uStreamFn,
 	MediaParserAbortError,
 	MediaParserInternals,
 	type MediaParserOnVideoTrack,
-} from '@remotion/media-parser';
-import {webReader} from '@remotion/media-parser/web';
+} from '@picus/media-parser';
+import {webReader} from '@picus/media-parser/web';
 import {autoSelectWriter} from './auto-select-writer';
 import {calculateProgress} from './calculate-progress';
 import {createMedia} from './create-media';
@@ -301,7 +301,7 @@ export const convertMedia = async function <
 				};
 			});
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		mode: 'query',
 		onDiscardedData: null,
 		onError: () => ({action: 'fail'}),

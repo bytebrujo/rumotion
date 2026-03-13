@@ -5,7 +5,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 import { Logo } from "./Logo";
 import { Subtitle } from "./Subtitle";
 import { Title } from "./Title";

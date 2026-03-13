@@ -1,9 +1,9 @@
-import { Composition, getStaticFiles } from "remotion";
+import { Composition, getStaticFiles } from "picus";
 import { AIVideo, aiVideoSchema } from "./components/AIVideo";
 import { FPS, INTRO_DURATION } from "./lib/constants";
 import { getTimelinePath, loadTimelineFromFile } from "./lib/utils";
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   const staticFiles = getStaticFiles();
   const timelines = staticFiles
     .filter((file) => file.name.endsWith("timeline.json"))

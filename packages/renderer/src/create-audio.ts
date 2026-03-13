@@ -31,7 +31,7 @@ export const createAudio = async ({
 	logLevel,
 	onProgress,
 	downloadMap,
-	remotionRoot,
+	picusRoot,
 	indent,
 	binariesDirectory,
 	audioBitrate,
@@ -48,7 +48,7 @@ export const createAudio = async ({
 	logLevel: LogLevel;
 	onProgress: (progress: number) => void;
 	downloadMap: DownloadMap;
-	remotionRoot: string;
+	picusRoot: string;
 	indent: boolean;
 	binariesDirectory: string | null;
 	audioBitrate: string | null;
@@ -154,7 +154,7 @@ export const createAudio = async ({
 		files: preprocessed,
 		outName: merged,
 		downloadMap,
-		remotionRoot,
+		picusRoot,
 		indent,
 		logLevel,
 		binariesDirectory,

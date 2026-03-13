@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-brownfield-installation.png
 id: brownfield
-title: Installing Remotion in an existing project
+title: Installing Picus in an existing project
 sidebar_label: Installation in existing project
 crumb: 'Brownfield integration'
 ---
@@ -9,25 +9,25 @@ crumb: 'Brownfield integration'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Remotion can be installed into existing projects, such as [Next.JS](https://nextjs.org/), [React Router](https://reactrouter.com/), [Vite](https://vitejs.dev/guide/) or [Create React App](https://create-react-app.dev/), as well as server-only projects that run on Node.JS. Get started by adding the following packages:
+Picus can be installed into existing projects, such as [Next.JS](https://nextjs.org/), [React Router](https://reactrouter.com/), [Vite](https://vitejs.dev/guide/) or [Create React App](https://create-react-app.dev/), as well as server-only projects that run on Node.JS. Get started by adding the following packages:
 
-<Installation pkg="remotion @remotion/cli" />
+<Installation pkg="picus @picus/cli" />
 
-- If you'd like to embed a Remotion video in your existing React app, install [`@remotion/player`](/docs/player/installation) as well.
-- If you'd like to render a video using the Node.JS APIs, install [`@remotion/renderer`](/docs/renderer) as well.
-- If you'd like to trigger a render on Remotion Lambda, install [`@remotion/lambda`](/docs/lambda/setup) as well.
+- If you'd like to embed a Picus video in your existing React app, install [`@picus/player`](/docs/player/installation) as well.
+- If you'd like to render a video using the Node.JS APIs, install [`@picus/renderer`](/docs/renderer) as well.
+- If you'd like to trigger a render on Picus Lambda, install [`@picus/lambda`](/docs/lambda/setup) as well.
 
 ## Setting up the folder structure
 
-Create a new folder for the Remotion files. It can be anywhere and assume any name, in this example we name it `remotion` and put it in the root of our project. Inside the folder you created, create 3 files:
+Create a new folder for the Picus files. It can be anywhere and assume any name, in this example we name it `picus` and put it in the root of our project. Inside the folder you created, create 3 files:
 
-```tsx twoslash title="remotion/Composition.tsx"
+```tsx twoslash title="picus/Composition.tsx"
 export const MyComposition = () => {
   return null;
 };
 ```
 
-```tsx twoslash title="remotion/Root.tsx"
+```tsx twoslash title="picus/Root.tsx"
 // @filename: Composition.tsx
 export const MyComposition: React.FC = () => {
   return null;
@@ -35,10 +35,10 @@ export const MyComposition: React.FC = () => {
 // @filename: Root.tsx
 // ---cut---
 import React from 'react';
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 import {MyComposition} from './Composition';
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition
@@ -54,17 +54,17 @@ export const RemotionRoot: React.FC = () => {
 };
 ```
 
-```ts twoslash title="remotion/index.ts"
+```ts twoslash title="picus/index.ts"
 // @filename: Composition.tsx
 export const MyComposition: React.FC = () => {
   return null;
 };
 // @filename: Root.tsx
 import React from "react";
-import { Composition } from "remotion";
+import { Composition } from "picus";
 import { MyComposition } from "./Composition";
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition
@@ -80,41 +80,41 @@ export const RemotionRoot: React.FC = () => {
 };
 // @filename: index.ts
 // ---cut---
-import { registerRoot } from "remotion";
-import { RemotionRoot } from "./Root";
+import { registerRoot } from "picus";
+import { PicusRoot } from "./Root";
 
-registerRoot(RemotionRoot);
+registerRoot(PicusRoot);
 ```
 
-The file that calls [`registerRoot()`](/docs/register-root) is now your Remotion [**entry point**](/docs/terminology/entry-point).
+The file that calls [`registerRoot()`](/docs/register-root) is now your Picus [**entry point**](/docs/terminology/entry-point).
 
 :::note
-Watch out for import aliases in your `tsconfig.json` that will resolve `import {...} from "remotion"` to the `remotion` folder. We recommend to not use `paths` without a prefix.
+Watch out for import aliases in your `tsconfig.json` that will resolve `import {...} from "picus"` to the `picus` folder. We recommend to not use `paths` without a prefix.
 :::
 
 ## Starting the Studio
 
-Start the Remotion Studio using the following command:
+Start the Picus Studio using the following command:
 
 ```
-npx remotion studio remotion/index.ts
+npx picus studio picus/index.ts
 ```
 
-Replace `remotion/index.ts` with your entrypoint if necessary.
+Replace `picus/index.ts` with your entrypoint if necessary.
 
 ## Render a video
 
 Render our a video using
 
 ```
-npx remotion render remotion/index.ts MyComp out.mp4
+npx picus render picus/index.ts MyComp out.mp4
 ```
 
 Replace the entrypoint, composition name and output filename with the values that correspond to your usecase.
 
 ## Install the ESLint Plugin
 
-Remotion has an ESLint plugin that warns about improper usage of Remotion APIs. To add it to your existing project, install it:
+Picus has an ESLint plugin that warns about improper usage of Picus APIs. To add it to your existing project, install it:
 
 <Tabs
 defaultValue="npm"
@@ -127,7 +127,7 @@ values={[
 <TabItem value="npm">
 
 ```bash
-npm i -D @remotion/eslint-plugin
+npm i -D @picus/eslint-plugin
 ```
 
   </TabItem>
@@ -135,7 +135,7 @@ npm i -D @remotion/eslint-plugin
   <TabItem value="yarn">
 
 ```bash
-yarn add -D @remotion/eslint-plugin
+yarn add -D @picus/eslint-plugin
 ```
 
   </TabItem>
@@ -143,26 +143,26 @@ yarn add -D @remotion/eslint-plugin
   <TabItem value="pnpm">
 
 ```bash
-pnpm i -D @remotion/eslint-plugin
+pnpm i -D @picus/eslint-plugin
 ```
 
   </TabItem>
 </Tabs>
 
-This snippet will enable the recommended rules only for the Remotion files:
+This snippet will enable the recommended rules only for the Picus files:
 
 ```json title=".eslintrc"
 {
-  "plugins": ["@remotion"],
+  "plugins": ["@picus"],
   "overrides": [
     {
-      "files": ["remotion/*.{ts,tsx}"],
-      "extends": ["plugin:@remotion/recommended"]
+      "files": ["picus/*.{ts,tsx}"],
+      "extends": ["plugin:@picus/recommended"]
     }
   ]
 }
 ```
 
-## Embed a Remotion video into your React app
+## Embed a Picus video into your React app
 
-You can use the `<Player>` component to display a Remotion video in your React project. Read the [separate page](/docs/player/integration) about it for instructions.
+You can use the `<Player>` component to display a Picus video in your React project. Read the [separate page](/docs/player/integration) about it for instructions.

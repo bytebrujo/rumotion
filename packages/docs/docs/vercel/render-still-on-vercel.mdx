@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-vercel-render-still-on-vercel.png
 title: renderStillOnVercel()
-crumb: '@remotion/vercel'
+crumb: '@picus/vercel'
 ---
 
 # renderStillOnVercel()<AvailableFrom v="4.0.426" />
@@ -19,7 +19,7 @@ The rendered file stays inside the sandbox. Use [`uploadToVercelBlob()`](/docs/v
 ```ts twoslash title="route.ts"
 // @module: es2022
 // @target: es2022
-import {renderStillOnVercel, addBundleToSandbox, createSandbox} from '@remotion/vercel';
+import {renderStillOnVercel, addBundleToSandbox, createSandbox} from '@picus/vercel';
 const sandbox = await createSandbox();
 // ---cut---
 const {sandboxFilePath} = await renderStillOnVercel({
@@ -40,7 +40,7 @@ A [`Sandbox`](https://vercel.com/docs/vercel-sandbox/sdk-reference#sandbox-class
 
 ### `compositionId`
 
-The ID of the Remotion composition to render.
+The ID of the Picus composition to render.
 
 ### `inputProps`
 
@@ -64,7 +64,7 @@ The output file path inside the sandbox. Default: `"/tmp/still.png"`.
 
 ### `envVariables?`
 
-An object containing key-value pairs of environment variables which will be injected into your Remotion project and which can be accessed by reading the global `process.env` object. Default: `{}`.
+An object containing key-value pairs of environment variables which will be injected into your Picus project and which can be accessed by reading the global `process.env` object. Default: `{}`.
 
 ### `chromiumOptions?`
 
@@ -100,7 +100,7 @@ Allows you to set certain Chromium / Google Chrome flags. See: [Chromium flags](
 
 ### `onProgress?`
 
-_function_ <TsType type="RenderStillOnVercelProgress" source="@remotion/vercel" href="/docs/vercel/types#renderstillonvercelprogress" />
+_function_ <TsType type="RenderStillOnVercelProgress" source="@picus/vercel" href="/docs/vercel/types#renderstillonvercelprogress" />
 
 A callback that receives render progress updates. Every variant includes `overallProgress` (0–1).
 
@@ -120,4 +120,4 @@ The MIME type of the rendered output (e.g. `"image/png"`, `"image/jpeg"`, `"imag
 
 - [`renderMediaOnVercel()`](/docs/vercel/render-media-on-vercel)
 - [`uploadToVercelBlob()`](/docs/vercel/upload-to-vercel-blob)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/vercel/src/render-still-on-vercel.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/vercel/src/render-still-on-vercel.ts)

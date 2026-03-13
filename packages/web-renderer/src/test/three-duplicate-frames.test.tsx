@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
-import {ThreeCanvas} from '@remotion/three';
+import {ThreeCanvas} from '@picus/three';
 import React from 'react';
-import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, useCurrentFrame, useVideoConfig} from 'picus';
 import {expect, test} from 'vitest';
 import {renderMediaOnWeb} from '../render-media-on-web';
 import '../symbol-dispose';

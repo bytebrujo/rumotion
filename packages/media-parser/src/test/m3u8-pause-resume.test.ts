@@ -12,7 +12,7 @@ test(
 		await parseMedia({
 			src: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
 			controller,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			onVideoTrack: () => {
 				return async (sample) => {
 					samples++;

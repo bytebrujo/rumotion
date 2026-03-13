@@ -1,4 +1,4 @@
-import type {MatrixTransform4D, Vector4D} from '@remotion/svg-3d-engine';
+import type {MatrixTransform4D, Vector4D} from '@picus/svg-3d-engine';
 import {
 	reduceMatrices,
 	rotateX,
@@ -8,7 +8,7 @@ import {
 	translateX,
 	translateY,
 	translateZ,
-} from '@remotion/svg-3d-engine';
+} from '@picus/svg-3d-engine';
 import React, {useContext, useMemo} from 'react';
 
 type Context = MatrixTransform4D;

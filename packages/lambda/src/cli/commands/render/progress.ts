@@ -1,9 +1,9 @@
-import {CliInternals} from '@remotion/cli';
-import type {RenderProgress} from '@remotion/lambda-client/constants';
-import {RenderInternals} from '@remotion/renderer';
-import type {CloudProvider, ReceivedArtifact} from '@remotion/serverless';
-import {truthy} from '@remotion/serverless';
-import {NoReactInternals} from 'remotion/no-react';
+import {CliInternals} from '@picus/cli';
+import type {RenderProgress} from '@picus/lambda-client/constants';
+import {RenderInternals} from '@picus/renderer';
+import type {CloudProvider, ReceivedArtifact} from '@picus/serverless';
+import {truthy} from '@picus/serverless';
+import {NoReactInternals} from 'picus/no-react';
 
 type LambdaInvokeProgress = {
 	totalLambdas: number | null;

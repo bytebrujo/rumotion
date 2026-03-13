@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-cloudrun-cli-sites-rm.png
 sidebar_label: rm
-title: 'npx remotion cloudrun sites rm'
+title: 'npx picus cloudrun sites rm'
 slug: /cloudrun/cli/sites/rm
 crumb: 'Cloud Run CLI Reference'
 ---
@@ -13,8 +13,8 @@ crumb: 'Cloud Run CLI Reference'
 </ExperimentalBadge>
 
 ```bash
-npx remotion cloudrun sites rm central-site
-npx remotion cloudrun sites rm central-site another-site # multiple at once
+npx picus cloudrun sites rm central-site
+npx picus cloudrun sites rm central-site another-site # multiple at once
 ```
 
 Removes a site (or multiple) from Cloud Storage by it's ID.
@@ -24,15 +24,15 @@ Removes a site (or multiple) from Cloud Storage by it's ID.
   <pre>
     Site: central-site
     <br />
-    Bucket: remotioncloudrun-abcdefgh
+    Bucket: picuscloudrun-abcdefgh
     <br />
     Region: us-central1
     <br />
-    Serve Url: https://storage.googleapis.com/remotioncloudrun-abcdefgh/sites/central-site/index.html
+    Serve Url: https://storage.googleapis.com/picuscloudrun-abcdefgh/sites/central-site/index.html
     <br />
     <br />
     Delete? (Y/n) Y<br />
-    Deleted site central-site from bucket remotioncloudrun-abcdefgh.
+    Deleted site central-site from bucket picuscloudrun-abcdefgh.
     <br />
   </pre>
 </details>
@@ -50,7 +50,7 @@ The `rm` command does not support the --all-regions flag, as it is possible to h
 Removes a site (or multiple) without asking for confirmation.
 
 ```
-npx remotion cloudrun sites rm central-site -y
+npx picus cloudrun sites rm central-site -y
 ```
 
 ## See also

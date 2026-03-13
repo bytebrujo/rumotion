@@ -1,7 +1,7 @@
 import {
   downloadWhisperModel,
   installWhisperCpp,
-} from "@remotion/install-whisper-cpp";
+} from "@picus/install-whisper-cpp";
 import { WHISPER_MODEL, WHISPER_PATH, WHISPER_REF } from "../../config/whisper";
 
 export const ensureWhisper = async ({

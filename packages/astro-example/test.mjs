@@ -1,12 +1,12 @@
 import assert from 'assert';
-import {Gif} from '@remotion/gif';
-import {Trail} from '@remotion/motion-blur';
-import {Player} from '@remotion/player';
-import {enableSkia} from '@remotion/skia/enable';
-import {ThreeCanvas} from '@remotion/three';
-import {TransitionSeries} from '@remotion/transitions';
-import {interpolate} from 'remotion';
-import {VERSION} from 'remotion/version';
+import {Gif} from '@picus/gif';
+import {Trail} from '@picus/motion-blur';
+import {Player} from '@picus/player';
+import {enableSkia} from '@picus/skia/enable';
+import {ThreeCanvas} from '@picus/three';
+import {TransitionSeries} from '@picus/transitions';
+import {interpolate} from 'picus';
+import {VERSION} from 'picus/version';
 
 const val = interpolate(1, [0, 1], [0, 100]);
 

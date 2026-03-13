@@ -1,4 +1,4 @@
-import type {Dimensions} from '@remotion/layout-utils';
+import type {Dimensions} from '@picus/layout-utils';
 
 type Rect = {
 	width: number;

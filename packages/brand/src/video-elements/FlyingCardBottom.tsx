@@ -4,7 +4,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const POSTERIZE_FRAMES = 3;
 const FONT_SIZE = 80;
@@ -52,7 +52,7 @@ export const FlyingCardBottom: React.FC = () => {
 						whiteSpace: 'nowrap',
 					}}
 				>
-					npx skills add remotion-dev/skills
+					npx skills add picus-dev/skills
 				</span>
 			</div>
 		</AbsoluteFill>

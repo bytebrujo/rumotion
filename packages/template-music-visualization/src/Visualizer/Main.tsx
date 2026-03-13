@@ -1,7 +1,7 @@
 import React from "react";
-import { AbsoluteFill, Sequence, useVideoConfig } from "remotion";
+import { AbsoluteFill, Sequence, useVideoConfig } from "picus";
 
-import { Audio } from "@remotion/media";
+import { Audio } from "@picus/media";
 import { FONT_FAMILY } from "../helpers/font";
 import { AudiogramCompositionSchemaType } from "../helpers/schema";
 import { BassOverlay } from "./BassOverlay";

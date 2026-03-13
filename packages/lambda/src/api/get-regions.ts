@@ -1,16 +1,16 @@
-import type {AwsRegion} from '@remotion/lambda-client';
+import type {AwsRegion} from '@picus/lambda-client';
 import {
 	AWS_REGIONS,
 	DEFAULT_AWS_REGIONS,
-} from '@remotion/lambda-client/regions';
+} from '@picus/lambda-client/regions';
 
 type Options = {
 	enabledByDefaultOnly?: boolean;
 };
 
 /*
- * @description Gets an array of all supported GCP regions of this release of Remotion Cloud Run.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/getregions)
+ * @description Gets an array of all supported GCP regions of this release of Picus Cloud Run.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/getregions)
  */
 export const getRegions = (options?: Options): readonly AwsRegion[] => {
 	const onlyEnabledByDefault = options?.enabledByDefaultOnly ?? false;

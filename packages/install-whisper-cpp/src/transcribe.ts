@@ -94,7 +94,7 @@ const readJson = async (jsonPath: string) => {
 export type TranscribeOnProgress = (progress: number) => void;
 
 // https://github.com/ggerganov/whisper.cpp/blob/fe36c909715e6751277ddb020e7892c7670b61d4/examples/main/main.cpp#L989-L999
-// https://github.com/remotion-dev/remotion/issues/4168
+// https://github.com/picus-dev/picus/issues/4168
 export const modelToDtw = (model: WhisperModel): string => {
 	if (model === 'large-v3-turbo') {
 		return 'large.v3.turbo';
@@ -158,7 +158,7 @@ const transcribeToTemporaryFile = async ({
 		throw new Error(
 			`Error: Model ${model} does not exist at ${
 				modelFolder ? modelFolder : modelPath
-			}. Check out the downloadWhisperModel() API at https://www.remotion.dev/docs/install-whisper-cpp/download-whisper-model to see how to install whisper models`,
+			}. Check out the downloadWhisperModel() API at https://www.picus.dev/docs/install-whisper-cpp/download-whisper-model to see how to install whisper models`,
 		);
 	}
 
@@ -250,7 +250,7 @@ const transcribeToTemporaryFile = async ({
 			if (stderr.includes('must be 16 kHz')) {
 				reject(
 					new Error(
-						'wav file must be 16 kHz - See https://www.remotion.dev/docs/webcodecs/resample-audio-16khz#on-the-server on how to convert your audio to a 16-bit, 16KHz, WAVE file',
+						'wav file must be 16 kHz - See https://www.picus.dev/docs/webcodecs/resample-audio-16khz#on-the-server on how to convert your audio to a 16-bit, 16KHz, WAVE file',
 					),
 				);
 			}
@@ -301,7 +301,7 @@ export const transcribe = async <HasTokenLevelTimestamps extends boolean>({
 }): Promise<TranscriptionJson<HasTokenLevelTimestamps>> => {
 	if (!existsSync(whisperPath)) {
 		throw new Error(
-			`Whisper does not exist at ${whisperPath}. Double-check the passed whisperPath. If you havent installed whisper, check out the installWhisperCpp() API at https://www.remotion.dev/docs/install-whisper-cpp/install-whisper-cpp to see how to install whisper programatically.`,
+			`Whisper does not exist at ${whisperPath}. Double-check the passed whisperPath. If you havent installed whisper, check out the installWhisperCpp() API at https://www.picus.dev/docs/install-whisper-cpp/install-whisper-cpp to see how to install whisper programatically.`,
 		);
 	}
 

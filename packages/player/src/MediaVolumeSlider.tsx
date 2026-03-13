@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo, useRef, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {ICON_SIZE, VolumeOffIcon, VolumeOnIcon} from './icons.js';
 import type {RenderVolumeSlider} from './render-volume-slider.js';
 import {renderDefaultVolumeSlider} from './render-volume-slider.js';

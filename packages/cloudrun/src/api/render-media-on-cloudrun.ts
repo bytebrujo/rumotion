@@ -6,12 +6,12 @@ import {
 	type PixelFormat,
 	type ToOptions,
 	type VideoImageFormat,
-} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {wrapWithErrorHandling} from '@remotion/renderer/error-handling';
-import type {_InternalTypes} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
-import {VERSION} from 'remotion/version';
+} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {wrapWithErrorHandling} from '@picus/renderer/error-handling';
+import type {_InternalTypes} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
+import {VERSION} from 'picus/version';
 import type {z} from 'zod';
 import type {Privacy} from '../defaults';
 import type {
@@ -307,8 +307,8 @@ export const internalRenderMediaOnCloudrun = wrapWithErrorHandling(
 ) as typeof internalRenderMediaOnCloudrunRaw;
 
 /*
- * @description Initiates a media rendering process on the Remotion Cloud Run service, facilitating configurations like service region, project composition, and output settings.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/rendermediaoncloudrun)
+ * @description Initiates a media rendering process on the Picus Cloud Run service, facilitating configurations like service region, project composition, and output settings.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/rendermediaoncloudrun)
  */
 export const renderMediaOnCloudrun = ({
 	cloudRunUrl,

@@ -1,5 +1,5 @@
 import {useContext, useLayoutEffect} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import type {PlayerEmitter, ThumbnailEmitter} from './event-emitter.js';
 
 export const useBufferStateEmitter = (

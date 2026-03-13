@@ -19,10 +19,10 @@ export default () => {
 	return (
 		<Layout>
 			<Head>
-				<title>Remotion Lambda - A distributed video renderer</title>
+				<title>Picus Lambda - A distributed video renderer</title>
 				<meta
 					name="description"
-					content="Render Remotion videos fast and at scale on AWS Lambda."
+					content="Render Picus videos fast and at scale on AWS Lambda."
 				/>
 				<meta name="og:image" content="/img/lambda-og.png" />
 				<meta name="twitter:image" content="/img/lambda-og.png" />

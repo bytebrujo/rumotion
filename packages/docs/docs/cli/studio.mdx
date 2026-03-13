@@ -1,16 +1,16 @@
 ---
 image: /generated/articles-docs-cli-studio.png
-title: npx remotion studio
+title: npx picus studio
 sidebar_label: studio
 crumb: CLI Reference
 ---
 
-_Alias: npx remotion preview_
+_Alias: npx picus preview_
 
-Start the [Remotion Studio](/docs/studio).
+Start the [Picus Studio](/docs/studio).
 
 ```bash
-npx remotion studio <entry-point>?
+npx picus studio <entry-point>?
 ```
 
 You may pass an [entry point](/docs/terminology/entry-point) as an argument, otherwise it will be [determined](/docs/terminology/entry-point#which-entry-point-is-being-used).
@@ -80,7 +80,7 @@ You can also configure the browser via environment variables for backwards compa
 A set of command line flags that should be passed to the browser. Pass them like this:
 
 ```sh
-npx remotion studio --browser-args="--disable-web-security"
+npx picus studio --browser-args="--disable-web-security"
 ```
 
 ### `--beep-on-finish`<AvailableFrom v="4.0.84" />
@@ -88,7 +88,7 @@ npx remotion studio --browser-args="--disable-web-security"
 [Plays a beep sound when the video is finished rendering](/docs/config#setbeeponfinish). This is useful if you are rendering a video in the background and want to be notified when it is finished.
 
 ```sh
-npx remotion studio --beep-on-finish
+npx picus studio --beep-on-finish
 ```
 
 ### `--ipv4`<AvailableFrom v="4.0.125" />
@@ -96,7 +96,7 @@ npx remotion studio --beep-on-finish
 <Options id="ipv4" />
 
 ```sh
-npx remotion studio --ipv4
+npx picus studio --ipv4
 ```
 
 ### `--number-of-shared-audio-tags`<AvailableFrom v="3.3.2" />
@@ -104,7 +104,7 @@ npx remotion studio --ipv4
 <Options id="number-of-shared-audio-tags" />
 
 ```sh
-npx remotion studio --number-of-shared-audio-tags=5
+npx picus studio --number-of-shared-audio-tags=5
 ```
 
 ### `--cross-site-isolation`<AvailableFrom v="4.0.364" />
@@ -112,7 +112,7 @@ npx remotion studio --number-of-shared-audio-tags=5
 [Enable Cross-Site Isolation in the Studio](/docs/config#setenablecrosssiteisolation).
 
 ```sh
-npx remotion studio --enable-cross-site-isolation
+npx picus studio --enable-cross-site-isolation
 ```
 
 ### `--disable-ask-ai`<AvailableFrom v="4.0.407" />
@@ -120,7 +120,7 @@ npx remotion studio --enable-cross-site-isolation
 [Disable the Ask AI modal in the Studio](/docs/config#setaskaienabled).
 
 ```sh
-npx remotion studio --disable-ask-ai
+npx picus studio --disable-ask-ai
 ```
 
 ### `--force-new`<AvailableFrom v="4.0.421" />
@@ -128,7 +128,7 @@ npx remotion studio --disable-ask-ai
 <Options id="force-new" />
 
 ```sh
-npx remotion studio --force-new
+npx picus studio --force-new
 ```
 
 ### `--public-license-key`<AvailableFrom v="4.0.398" />
@@ -136,5 +136,5 @@ npx remotion studio --force-new
 <Options id="public-license-key" />
 
 ```sh
-npx remotion studio --public-license-key="your-license-key"
+npx picus studio --public-license-key="your-license-key"
 ```

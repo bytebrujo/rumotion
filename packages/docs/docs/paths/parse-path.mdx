@@ -1,15 +1,15 @@
 ---
 image: /generated/articles-docs-paths-parse-path.png
 title: parsePath()
-crumb: "@remotion/paths"
+crumb: "@picus/paths"
 ---
 
-_Part of the [`@remotion/paths`](/docs/paths) package. Available from v3.3.40_
+_Part of the [`@picus/paths`](/docs/paths) package. Available from v3.3.40_
 
 Parses an SVG string path into an array of `Instruction`'s.
 
 ```tsx twoslash title="reset-path.ts"
-import { parsePath } from "@remotion/paths";
+import { parsePath } from "@picus/paths";
 
 const newPath = parsePath("M 10 10 L 20 20");
 
@@ -25,10 +25,10 @@ This function will throw if the SVG path is invalid.
 
 ## Return type type
 
-An array of `Instruction`'s. The `Instruction` type can also be imported from `@remotion/paths`:
+An array of `Instruction`'s. The `Instruction` type can also be imported from `@picus/paths`:
 
 ```ts twoslash
-import type { Instruction } from "@remotion/paths";
+import type { Instruction } from "@picus/paths";
 ```
 
 The type has the following shape:
@@ -158,5 +158,5 @@ export type Instruction =
 ## See also
 
 - [`serializeInstructions()`](/docs/paths/serialize-instructions)
-- [`@remotion/paths`](/docs/paths)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/paths/src/parse-path.ts)
+- [`@picus/paths`](/docs/paths)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/paths/src/parse-path.ts)

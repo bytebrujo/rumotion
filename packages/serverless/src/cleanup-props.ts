@@ -2,7 +2,7 @@ import type {
 	CloudProvider,
 	ProviderSpecifics,
 	SerializedInputProps,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	cleanupSerializedInputProps,
 	cleanupSerializedResolvedProps,

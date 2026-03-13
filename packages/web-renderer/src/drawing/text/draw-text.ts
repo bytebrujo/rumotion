@@ -1,5 +1,5 @@
-import type {LogLevel} from 'remotion';
-import {Internals} from 'remotion';
+import type {LogLevel} from 'picus';
+import {Internals} from 'picus';
 import type {DrawFn} from '../drawn-fn';
 import {setFilter} from '../filter';
 import {applyTextTransform} from './apply-text-transform';
@@ -41,9 +41,9 @@ export const drawText = ({
 			Internals.Log.warn(
 				{
 					logLevel,
-					tag: '@remotion/web-renderer',
+					tag: '@picus/web-renderer',
 				},
-				'Detected "writing-mode" CSS property. Vertical text is not yet supported in @remotion/web-renderer',
+				'Detected "writing-mode" CSS property. Vertical text is not yet supported in @picus/web-renderer',
 			);
 			return;
 		}

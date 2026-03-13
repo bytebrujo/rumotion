@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {AbsoluteFill, Series, useBufferState} from 'remotion';
+import {AbsoluteFill, Series, useBufferState} from 'picus';
 
 const Inside: React.FC = () => {
 	const buffer = useBufferState();

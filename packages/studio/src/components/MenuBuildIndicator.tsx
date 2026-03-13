@@ -29,24 +29,24 @@ export const MenuBuildIndicator: React.FC = () => {
 	const [isBuilding, setIsBuilding] = useState(false);
 	const ctx = useContext(StudioServerConnectionCtx).previewServerState;
 
-	const showButton = window.remotion_editorName && ctx.type === 'connected';
+	const showButton = window.picus_editorName && ctx.type === 'connected';
 	useEffect(() => {
-		window.remotion_isBuilding = () => {
+		window.picus_isBuilding = () => {
 			setIsBuilding(true);
 		};
 
-		window.remotion_finishedBuilding = () => {
+		window.picus_finishedBuilding = () => {
 			setIsBuilding(false);
 		};
 
 		return () => {
-			window.remotion_isBuilding = undefined;
-			window.remotion_finishedBuilding = undefined;
+			window.picus_isBuilding = undefined;
+			window.picus_finishedBuilding = undefined;
 		};
 	}, []);
 
 	return (
-		<div style={cwd} title={window.remotion_cwd}>
+		<div style={cwd} title={window.picus_cwd}>
 			{showButton ? <Spacing x={2} /> : null}
 			{isBuilding ? (
 				<div style={spinner}>
@@ -56,11 +56,11 @@ export const MenuBuildIndicator: React.FC = () => {
 				<div style={noSpinner} />
 			)}
 			{showButton ? <Spacing x={0.5} /> : null}
-			{window.remotion_projectName}
+			{window.picus_projectName}
 			{showButton ? <Spacing x={0.25} /> : null}
 			{showButton ? (
 				<OpenEditorButton type="editor" />
-			) : window.remotion_gitSource ? (
+			) : window.picus_gitSource ? (
 				<OpenEditorButton type="git" />
 			) : null}
 		</div>

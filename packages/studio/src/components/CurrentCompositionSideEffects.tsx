@@ -1,6 +1,6 @@
 import type React from 'react';
 import {useCallback, useContext, useEffect} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {StudioServerConnectionCtx} from '../helpers/client-id';
 import {
 	setCurrentCanvasContentId,

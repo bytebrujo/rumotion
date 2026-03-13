@@ -1,6 +1,6 @@
-import {writeStaticFile} from '@remotion/studio';
+import {writeStaticFile} from '@picus/studio';
 import React, {useCallback} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const WriteStaticFile: React.FC = () => {
 	const saveFileRegular = useCallback(async () => {

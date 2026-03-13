@@ -1,7 +1,7 @@
 import {expect, test} from 'bun:test';
-import type {RenderDefaults} from '@remotion/studio-shared';
+import type {RenderDefaults} from '@picus/studio-shared';
 import {
-	getNpmRemotionCommandPrefix,
+	getNpmPicusCommandPrefix,
 	makeReadOnlyStudioRenderCommand,
 	normalizeServeUrlForRenderCommand,
 } from '../helpers/make-render-command';
@@ -56,7 +56,7 @@ const getBaseInput = (): Parameters<
 	typeof makeReadOnlyStudioRenderCommand
 >[0] => {
 	return {
-		remotionVersion: '4.0.431',
+		picusVersion: '4.0.431',
 		locationHref: 'https://example.com/base',
 		compositionId: 'Comp',
 		outName: 'out/video.mp4',
@@ -113,11 +113,11 @@ const getBaseInput = (): Parameters<
 };
 
 test('Should map to npm-based command prefix', () => {
-	expect(getNpmRemotionCommandPrefix('4.0.431')).toBe(
-		'bunx --yes --location=global -p @remotion/cli@4.0.431 remotion',
+	expect(getNpmPicusCommandPrefix('4.0.431')).toBe(
+		'bunx --yes --location=global -p @picus/cli@4.0.431 picus',
 	);
-	expect(getNpmRemotionCommandPrefix('')).toBe(
-		'bunx --yes --location=global -p @remotion/cli remotion',
+	expect(getNpmPicusCommandPrefix('')).toBe(
+		'bunx --yes --location=global -p @picus/cli picus',
 	);
 });
 
@@ -153,7 +153,7 @@ test('Should generate concise read-only render command and omit concurrency', ()
 	});
 
 	expect(command).toContain(
-		"bunx --yes --location=global -p @remotion/cli@4.0.431 remotion render 'https://example.com' 'dynamic-length' 'video.mp4'",
+		"bunx --yes --location=global -p @picus/cli@4.0.431 picus render 'https://example.com' 'dynamic-length' 'video.mp4'",
 	);
 	expect(command).toContain("--frames='10-80'");
 	expect(command).toContain('--muted');
@@ -176,7 +176,7 @@ test('Should generate still command and omit default flags', () => {
 	});
 
 	expect(command).toContain(
-		"bunx --yes --location=global -p @remotion/cli@4.0.431 remotion still 'https://example.com/still' 'StillComp' 'still.png'",
+		"bunx --yes --location=global -p @picus/cli@4.0.431 picus still 'https://example.com/still' 'StillComp' 'still.png'",
 	);
 	expect(command).toContain("--frame='12'");
 	expect(command).not.toContain("--image-format='png'");
@@ -214,7 +214,7 @@ test('Should include advanced flags and env variables', () => {
 		ignoreCertificateErrors: true,
 		headless: false,
 		gl: 'vulkan',
-		userAgent: 'Mozilla/5.0 (Remotion)',
+		userAgent: 'Mozilla/5.0 (Picus)',
 		multiProcessOnLinux: true,
 		darkMode: true,
 		offthreadVideoCacheSizeInBytes: 536870912,
@@ -222,7 +222,7 @@ test('Should include advanced flags and env variables', () => {
 		mediaCacheSizeInBytes: 1000000000,
 		beepOnFinish: true,
 		repro: true,
-		metadata: {artist: 'Remotion'},
+		metadata: {artist: 'Picus'},
 		envVariables: {FOO: 'bar'},
 	});
 
@@ -237,7 +237,7 @@ test('Should include advanced flags and env variables', () => {
 	expect(command).toContain('--ignore-certificate-errors');
 	expect(command).toContain('--disable-headless');
 	expect(command).toContain("--gl='vulkan'");
-	expect(command).toContain("--user-agent='Mozilla/5.0 (Remotion)'");
+	expect(command).toContain("--user-agent='Mozilla/5.0 (Picus)'");
 	expect(command).toContain('--enable-multiprocess-on-linux');
 	expect(command).toContain('--dark-mode');
 	expect(command).toContain("--offthreadvideo-cache-size-in-bytes='536870912'");
@@ -245,5 +245,5 @@ test('Should include advanced flags and env variables', () => {
 	expect(command).toContain("--media-cache-size-in-bytes='1000000000'");
 	expect(command).toContain('--beep-on-finish');
 	expect(command).toContain('--repro');
-	expect(command).toContain("--metadata='artist=Remotion'");
+	expect(command).toContain("--metadata='artist=Picus'");
 });

@@ -1,6 +1,6 @@
 import {mix} from 'polished';
 import React from 'react';
-import {spring, SpringConfig, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, SpringConfig, useCurrentFrame, useVideoConfig} from 'picus';
 import {Tile} from './Tile';
 
 const BRAND_GRADIENT = ['#5851db', '#405de6'];

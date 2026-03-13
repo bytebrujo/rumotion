@@ -2,8 +2,8 @@ import type {
 	WebRendererAudioCodec,
 	WebRendererContainer,
 	WebRendererQuality,
-} from '@remotion/web-renderer';
-import {getSupportedAudioCodecsForContainer} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
+import {getSupportedAudioCodecsForContainer} from '@picus/web-renderer';
 import React, {useMemo} from 'react';
 import {Checkmark} from '../../icons/Checkmark';
 import {Spacing} from '../layout';

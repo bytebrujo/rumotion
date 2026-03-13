@@ -3,7 +3,7 @@ export type GifLoopBehavior =
 	| 'pause-after-finish'
 	| 'unmount-after-finish';
 
-export type RemotionGifProps = {
+export type PicusGifProps = {
 	src: string;
 	width?: number;
 	height?: number;

@@ -1,4 +1,4 @@
-# @remotion/streaming
+# @picus/streaming
 
 Utilities for streaming data between programs
 

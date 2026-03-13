@@ -1,4 +1,4 @@
-import {getRemotionEnvironment} from '../get-remotion-environment.js';
+import {getPicusEnvironment} from '../get-picus-environment.js';
 import {getInputPropsOverride} from '../input-props-override.js';
 import {deserializeJSONWithSpecialTypes} from '../input-props-serialization.js';
 
@@ -28,7 +28,7 @@ export const getInputProps = <
 		return {} as T;
 	}
 
-	if (getRemotionEnvironment().isPlayer) {
+	if (getPicusEnvironment().isPlayer) {
 		throw new Error(
 			'You cannot call `getInputProps()` from a <Player>. Instead, the props are available as React props from component that you passed as `component` prop.',
 		);
@@ -41,14 +41,14 @@ export const getInputProps = <
 
 	if (
 		typeof window === 'undefined' ||
-		typeof window.remotion_inputProps === 'undefined'
+		typeof window.picus_inputProps === 'undefined'
 	) {
 		throw new Error(
-			'Cannot call `getInputProps()` - window.remotion_inputProps is not set. This API is only available if you are in the Studio, or while you are rendering server-side.',
+			'Cannot call `getInputProps()` - window.picus_inputProps is not set. This API is only available if you are in the Studio, or while you are rendering server-side.',
 		);
 	}
 
-	const param = window.remotion_inputProps;
+	const param = window.picus_inputProps;
 	if (!param) {
 		return {} as T;
 	}

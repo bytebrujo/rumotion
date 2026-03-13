@@ -11,8 +11,8 @@ const output = await build({
 		'react/jsx-runtime',
 		'@rive-app/canvas-advanced',
 		'react',
-		'remotion',
-		'remotion/no-react',
+		'picus',
+		'picus/no-react',
 	],
 });
 

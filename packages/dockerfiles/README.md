@@ -1,6 +1,6 @@
-Sample Dockerfiles for different operating systems that show how to install Remotion including the browser.
+Sample Dockerfiles for different operating systems that show how to install Picus including the browser.
 
-Uses `npx remotion browser ensure` to install the browser, which requires some shared libraries.
+Uses `npx picus browser ensure` to install the browser, which requires some shared libraries.
 
 ## Running the tests
 
@@ -12,7 +12,7 @@ This will:
 
 1. Build the browser-test bundle from `packages/example` (using `src/browser-test-entry.ts`)
 2. Build Docker images for each platform (ubuntu24, ubuntu22, debian, nix)
-3. Each Docker build runs `npx remotion compositions` and `npx remotion render`
+3. Each Docker build runs `npx picus compositions` and `npx picus render`
 4. Extract the rendered videos to `out/` directory
 
 Output videos:

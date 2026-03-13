@@ -1,6 +1,6 @@
 import type {StillImageFormat} from '../image-format';
 import {validStillImageFormats} from '../image-format';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let currentStillImageFormat: StillImageFormat | null = null;
 
@@ -17,7 +17,7 @@ export const stillImageFormatOption = {
 		</>
 	),
 	ssrName: 'imageFormat' as const,
-	docLink: 'https://www.remotion.dev/docs/renderer/render-still#imageformat',
+	docLink: 'https://www.picus.dev/docs/renderer/render-still#imageformat',
 	type: null as StillImageFormat | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -71,4 +71,4 @@ export const stillImageFormatOption = {
 		currentStillImageFormat = value;
 	},
 	id: 'still-image-format',
-} satisfies AnyRemotionOption<StillImageFormat | null>;
+} satisfies AnyPicusOption<StillImageFormat | null>;

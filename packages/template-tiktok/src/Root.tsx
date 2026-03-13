@@ -1,4 +1,4 @@
-import { Composition, staticFile } from "remotion";
+import { Composition, staticFile } from "picus";
 import {
   CaptionedVideo,
   calculateCaptionedVideoMetadata,
@@ -7,7 +7,7 @@ import {
 
 // Each <Composition> is an entry in the sidebar!
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <Composition
       id="CaptionedVideo"

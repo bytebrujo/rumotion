@@ -3,8 +3,8 @@ import type {
 	CloudProvider,
 	DeleteAfter,
 	ProviderSpecifics,
-} from '@remotion/serverless-client';
-import {expiryDays, truthy} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {expiryDays, truthy} from '@picus/serverless-client';
 
 const getEnabledLifeCycleRule = ({
 	key,

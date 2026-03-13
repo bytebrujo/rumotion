@@ -1,5 +1,5 @@
 import React from 'react';
-import {Img, staticFile} from 'remotion';
+import {Img, staticFile} from 'picus';
 
 export const StaticDemo: React.FC<{
 	readonly flag: boolean;

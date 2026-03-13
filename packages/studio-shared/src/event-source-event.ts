@@ -1,4 +1,4 @@
-import type {StaticFile} from 'remotion';
+import type {StaticFile} from 'picus';
 import type {
 	CanUpdateSequencePropsResponse,
 	SequenceNodePath,

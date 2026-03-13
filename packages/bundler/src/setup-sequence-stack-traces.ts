@@ -1,7 +1,7 @@
 import React from 'react';
 import JsxRuntimeDev from 'react/jsx-dev-runtime';
 import JsxRuntime from 'react/jsx-runtime';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 
 const componentsToAddStacksTo = Internals.getComponentsToAddStacksTo();
 

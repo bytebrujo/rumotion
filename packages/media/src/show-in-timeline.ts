@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
-import type {LoopDisplay} from 'remotion';
-import {Internals, useVideoConfig} from 'remotion';
+import type {LoopDisplay} from 'picus';
+import {Internals, useVideoConfig} from 'picus';
 
 export const useLoopDisplay = ({
 	loop,

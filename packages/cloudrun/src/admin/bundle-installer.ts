@@ -1,7 +1,7 @@
 import {execSync} from 'child_process';
 import {copyFileSync, mkdirSync, rmSync} from 'fs';
 import path from 'path';
-import {BundlerInternals} from '@remotion/bundler';
+import {BundlerInternals} from '@picus/bundler';
 
 export const hasGTar = () => {
 	try {

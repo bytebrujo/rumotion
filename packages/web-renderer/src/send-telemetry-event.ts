@@ -1,5 +1,5 @@
-import {LicensingInternals} from '@remotion/licensing';
-import {Internals} from 'remotion';
+import {LicensingInternals} from '@picus/licensing';
+import {Internals} from 'picus';
 
 export const sendUsageEvent = async ({
 	licenseKey,
@@ -27,7 +27,7 @@ export const sendUsageEvent = async ({
 	if (licenseKey === null) {
 		Internals.Log.warn(
 			{logLevel: 'warn', tag: 'web-renderer'},
-			`Pass "licenseKey" to ${apiName}(). If you qualify for the Free License (https://remotion.dev/license), pass "free-license" instead.`,
+			`Pass "licenseKey" to ${apiName}(). If you qualify for the Free License (https://picus.dev/license), pass "free-license" instead.`,
 		);
 	}
 

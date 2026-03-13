@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {setUnsavedProps} from '../../../helpers/document-title';
 import {useKeybinding} from '../../../helpers/use-keybinding';
 import {useZodIfPossible} from '../../get-zod-if-possible';

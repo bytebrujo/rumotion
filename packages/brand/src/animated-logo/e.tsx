@@ -1,6 +1,6 @@
-import {evolvePath, reversePath} from '@remotion/paths';
+import {evolvePath, reversePath} from '@picus/paths';
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'picus';
 import {springA} from './springs';
 
 import svg = require('svg-path-properties');

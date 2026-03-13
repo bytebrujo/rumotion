@@ -1,4 +1,4 @@
-export const streamingKey = 'remotion_buffer:';
+export const streamingKey = 'picus_buffer:';
 
 export const makeStreamer = (
 	onMessage: (

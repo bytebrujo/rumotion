@@ -3,8 +3,8 @@
  * and improved: https://discord.com/channels/809501355504959528/833092843290624050/1379446302903107624
  */
 
-import {measureText} from '@remotion/layout-utils';
-import {createRoundedTextBox} from '@remotion/rounded-text-box';
+import {measureText} from '@picus/layout-utils';
+import {createRoundedTextBox} from '@picus/rounded-text-box';
 
 interface TikTokTextBoxProps {
 	lines: string[];

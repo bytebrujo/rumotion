@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, useCurrentFrame, useVideoConfig } from "picus";
 
 function point({
   x,

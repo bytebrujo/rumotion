@@ -11,7 +11,7 @@ test.skip('should be able to select between audio tracks', async () => {
 
 	await parseMedia({
 		src: 'https://cdn.bitmovin.com/content/assets/sintel/hls/playlist.m3u8',
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		controller,
 		onVideoTrack: () => {
 			return () => {
@@ -36,7 +36,7 @@ test.skip('should be able to select between audio tracks', async () => {
 test.skip('should ensure unique track IDs', async () => {
 	const {tracks} = await parseMedia({
 		src: 'https://cdn.bitmovin.com/content/assets/sintel/hls/playlist.m3u8',
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			tracks: true,
 		},

@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {Easing} from 'remotion';
+import {Easing} from 'picus';
 import {interpolateStyles} from '../transformation-helpers/interpolate-styles';
 import {translate} from '../transformation-helpers/make-transform';
 
@@ -326,7 +326,7 @@ test('Should handle negative values in transforms well', () => {
 	});
 });
 
-// Refer https://github.com/remotion-dev/remotion/issues/3922
+// Refer https://github.com/picus-dev/picus/issues/3922
 test("Should assign proper start value from interpolate's inputRange array if first element is greater than input value", () => {
 	expect(
 		interpolateStyles(

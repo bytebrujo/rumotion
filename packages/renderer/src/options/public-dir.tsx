@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'public-dir' as const;
 
@@ -14,13 +14,13 @@ export const publicDirOption = {
 				<a href="/docs/terminology/public-dir">
 					<code>public/ directory</code>
 				</a>
-				. If not defined, Remotion will assume the location is the `public`
-				folder in your Remotion root.
+				. If not defined, Picus will assume the location is the `public`
+				folder in your Picus root.
 			</>
 		);
 	},
 	ssrName: 'publicDir' as const,
-	docLink: 'https://www.remotion.dev/docs/terminology/public-dir',
+	docLink: 'https://www.picus.dev/docs/terminology/public-dir',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -46,4 +46,4 @@ export const publicDirOption = {
 	},
 	type: '' as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

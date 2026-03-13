@@ -1,10 +1,10 @@
 import type {IncomingMessage, ServerResponse} from 'node:http';
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import type {ApiHandler, QueueMethods} from './api-types';
 import {parseRequestBody} from './parse-body';
 
 export const handleRequest = async <Req, Res>({
-	remotionRoot,
+	picusRoot,
 	request,
 	response,
 	entryPoint,
@@ -14,7 +14,7 @@ export const handleRequest = async <Req, Res>({
 	binariesDirectory,
 	publicDir,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	publicDir: string;
 	request: IncomingMessage;
 	response: ServerResponse;
@@ -38,7 +38,7 @@ export const handleRequest = async <Req, Res>({
 
 		const outputData = await handler({
 			entryPoint,
-			remotionRoot,
+			picusRoot,
 			request,
 			response,
 			input: body,

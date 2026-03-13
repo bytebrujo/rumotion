@@ -1,6 +1,6 @@
 /**
  * Use autocomplete to get a list of available regions.
- * @type {import('@remotion/lambda').AwsRegion}
+ * @type {import('@picus/lambda').AwsRegion}
  */
 export const REGION = "us-east-1";
 

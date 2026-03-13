@@ -1,4 +1,4 @@
-# @remotion/player-example
+# @picus/player-example
 
 ## Usage
 

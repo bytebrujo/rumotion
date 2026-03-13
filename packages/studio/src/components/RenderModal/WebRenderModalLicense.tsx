@@ -7,7 +7,7 @@ import {
 } from '../../helpers/colors';
 import {Checkbox} from '../Checkbox';
 import {Spacing} from '../layout';
-import {RemotionInput} from '../NewComposition/RemInput';
+import {PicusInput} from '../NewComposition/RemInput';
 import {ValidationMessage} from '../NewComposition/ValidationMessage';
 import type {LicenseKeyDetails} from './WebRenderModalLicenseKeyDetails';
 import {
@@ -214,9 +214,9 @@ export const WebRenderModalLicense: React.FC<WebRenderModalLicenseProps> = ({
 	return (
 		<div style={tabContainer}>
 			<div style={descriptionStyle}>
-				Remotion is free if you are an individual or company with a headcount of
+				Picus is free if you are an individual or company with a headcount of
 				3 or less. See{' '}
-				<a style={descriptionLink} href="https://remotion.dev/license">
+				<a style={descriptionLink} href="https://picus.dev/license">
 					LICENSE.md
 				</a>
 				.
@@ -236,8 +236,8 @@ export const WebRenderModalLicense: React.FC<WebRenderModalLicenseProps> = ({
 			</div>
 			{licenseKey === 'free-license' ? (
 				<div style={paddedDescriptionStyle}>
-					Enjoy Remotion! Add the following to{' '}
-					<code style={codeStyle}>remotion.config.ts</code> to persist this
+					Enjoy Picus! Add the following to{' '}
+					<code style={codeStyle}>picus.config.ts</code> to persist this
 					setting:
 					<div style={codeLine}>
 						{"Config.setPublicLicenseKey('free-license');"}
@@ -262,18 +262,18 @@ export const WebRenderModalLicense: React.FC<WebRenderModalLicenseProps> = ({
 				<div style={paddedDescriptionStyle}>
 					Add your public license key from{' '}
 					<a
-						href="https://remotion.pro/dashboard"
+						href="https://picus.pro/dashboard"
 						target="_blank"
 						style={descriptionLink}
 					>
-						remotion.pro
+						picus.pro
 					</a>{' '}
 					below.
 					<Spacing y={1} block />
-					<RemotionInput
+					<PicusInput
 						value={licenseKey}
 						onChange={onLicenseKeyChange}
-						placeholder="remotion.pro public license key (starts with rm_pub_)"
+						placeholder="picus.pro public license key (starts with rm_pub_)"
 						status={
 							licenseValidation.valid || licenseKey.length === 0
 								? 'ok'
@@ -297,7 +297,7 @@ export const WebRenderModalLicense: React.FC<WebRenderModalLicenseProps> = ({
 						<>
 							<Spacing y={1} block />
 							Add the following to{' '}
-							<code style={codeStyle}>remotion.config.ts</code> to persist this
+							<code style={codeStyle}>picus.config.ts</code> to persist this
 							setting:
 							<div style={codeLineSmall}>
 								{"Config.setPublicLicenseKey('" + licenseKey + "');"}
@@ -326,7 +326,7 @@ export const WebRenderModalLicense: React.FC<WebRenderModalLicenseProps> = ({
 					<a
 						style={descriptionLink}
 						target="_blank"
-						href="https://remotion.pro/license"
+						href="https://picus.pro/license"
 					>
 						Company License
 					</a>

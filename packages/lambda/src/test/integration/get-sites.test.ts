@@ -1,7 +1,7 @@
 import {expect, test} from 'bun:test';
-import {LambdaClientInternals} from '@remotion/lambda-client';
-import {internalGetOrCreateBucket} from '@remotion/serverless';
-import {VERSION} from 'remotion/version';
+import {LambdaClientInternals} from '@picus/lambda-client';
+import {internalGetOrCreateBucket} from '@picus/serverless';
+import {VERSION} from 'picus/version';
 import {internalDeploySite} from '../../api/deploy-site';
 import {mockFullClientSpecifics} from '../mock-implementation';
 import {mockImplementation} from '../mocks/mock-implementation';
@@ -35,7 +35,7 @@ test('Should have a site after deploying', async () => {
 	});
 	expect(
 		await internalDeploySite({
-			bucketName: 'remotionlambda-eucentral1-abcdef',
+			bucketName: 'picuslambda-eucentral1-abcdef',
 			entryPoint: 'first',
 			region: 'eu-central-1',
 			siteName: 'testing',
@@ -52,7 +52,7 @@ test('Should have a site after deploying', async () => {
 		}),
 	).toEqual({
 		serveUrl:
-			'https://remotionlambda-eucentral1-abcdef.s3.eu-central-1.amazonaws.com/sites/testing/index.html',
+			'https://picuslambda-eucentral1-abcdef.s3.eu-central-1.amazonaws.com/sites/testing/index.html',
 		siteName: 'testing',
 		stats: {
 			deletedFiles: 0,
@@ -73,18 +73,18 @@ test('Should have a site after deploying', async () => {
 		buckets: [
 			{
 				creationDate: 0,
-				name: 'remotionlambda-eucentral1-abcdef',
+				name: 'picuslambda-eucentral1-abcdef',
 				region: 'eu-central-1',
 			},
 		],
 		sites: [
 			{
-				bucketName: 'remotionlambda-eucentral1-abcdef',
+				bucketName: 'picuslambda-eucentral1-abcdef',
 				id: 'testing',
 				lastModified: 0,
 				sizeInBytes: expect.any(Number),
 				serveUrl:
-					'https://remotionlambda-eucentral1-abcdef.s3.eu-central-1.amazonaws.com/sites/testing/index.html',
+					'https://picuslambda-eucentral1-abcdef.s3.eu-central-1.amazonaws.com/sites/testing/index.html',
 				version: VERSION,
 			},
 		],
@@ -104,7 +104,7 @@ test('Should filter sites by compatibleOnly', async () => {
 		logLevel: 'info',
 	});
 	await internalDeploySite({
-		bucketName: 'remotionlambda-eucentral1-abcdef',
+		bucketName: 'picuslambda-eucentral1-abcdef',
 		entryPoint: 'first',
 		region: 'eu-central-1',
 		siteName: 'testing',

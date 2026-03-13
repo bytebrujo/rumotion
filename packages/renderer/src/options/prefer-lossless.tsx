@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'prefer-lossless' as const;
 
@@ -14,7 +14,7 @@ export const preferLosslessAudioOption = {
 			<code>preferLossless</code>.
 		</>
 	),
-	docLink: 'https://www.remotion.dev/docs/encoding',
+	docLink: 'https://www.picus.dev/docs/encoding',
 	type: false as boolean,
 	ssrName: 'preferLossless' as const,
 	getValue: ({commandLine}) => {
@@ -32,4 +32,4 @@ export const preferLosslessAudioOption = {
 		input = val;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

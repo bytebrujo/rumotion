@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { cancelRender, useDelayRender } from "remotion";
+import { cancelRender, useDelayRender } from "picus";
 import { waitForFonts } from "./font";
 
 // Use this component to only mount components once all fonts are loaded

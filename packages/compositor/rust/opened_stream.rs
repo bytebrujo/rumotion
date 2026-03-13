@@ -1,8 +1,8 @@
 use std::{io::ErrorKind, time::SystemTime};
 
 use ffmpeg_next::{ ffi::AVSEEK_FLAG_ANY,  Rational};
-use remotionffmpeg::{codec::Id, frame::Video, media::Type, Dictionary, StreamMut};
-extern crate ffmpeg_next as remotionffmpeg;
+use picusffmpeg::{codec::Id, frame::Video, media::Type, Dictionary, StreamMut};
+extern crate ffmpeg_next as picusffmpeg;
 use std::time::UNIX_EPOCH;
 
 use crate::{
@@ -15,10 +15,10 @@ pub struct OpenedStream {
     pub original_height: u32,
     pub scaled_width: u32,
     pub scaled_height: u32,
-    pub video: remotionffmpeg::codec::decoder::Video,
+    pub video: picusffmpeg::codec::decoder::Video,
     pub src: String,
     pub original_src: String,
-    pub input: remotionffmpeg::format::context::Input,
+    pub input: picusffmpeg::format::context::Input,
     pub last_position: Option<i64>,
     pub duration_or_zero: i64,
     pub duration_in_seconds: Option<f64>,
@@ -242,7 +242,7 @@ impl OpenedStream {
             }
 
             let (stream, packet) = match self.input.get_next_packet() {
-                Err(remotionffmpeg::Error::Eof) => {
+                Err(picusffmpeg::Error::Eof) => {
                     let data = self.handle_eof(
                         target_position,
                         one_frame_in_time_base,
@@ -459,7 +459,7 @@ impl OpenedStream {
             return Err(std::io::Error::new(
                 ErrorKind::Other,
                 format!(
-                    "No frame found at position {} for source {} (original source = {}). See https://remotion.dev/docs/troubleshooting/no-frame-found-at-position for troubleshooting help.",
+                    "No frame found at position {} for source {} (original source = {}). See https://picus.dev/docs/troubleshooting/no-frame-found-at-position for troubleshooting help.",
                     target_position, self.src, self.original_src
                 ),
             ))?;
@@ -501,7 +501,7 @@ pub fn open_stream(
 ) -> Result<OpenedStream, ErrorWithBacktrace> {
     let mut dictionary = Dictionary::new();
     dictionary.set("fflags", "+genpts");
-    let mut input = remotionffmpeg::format::input_with_dictionary(&src, dictionary)?;
+    let mut input = picusffmpeg::format::input_with_dictionary(&src, dictionary)?;
 
     let mut_stream = match input
         .streams_mut()
@@ -531,7 +531,7 @@ pub fn open_stream(
     let mut rotate = Rotate::Rotate0;
 
     for data in side_data {
-        if data.kind() == remotionffmpeg::codec::packet::side_data::Type::DisplayMatrix {
+        if data.kind() == picusffmpeg::codec::packet::side_data::Type::DisplayMatrix {
             let value = data.data();
             let rotate_value = rotation::get_from_side_data(value)?;
             if rotate_value != 0.0 {
@@ -556,9 +556,9 @@ pub fn open_stream(
         true => unsafe {
             let codec_id = (*(*(mut_stream).as_ptr()).codecpar).codec_id;
 
-            if codec_id == remotionffmpeg::codec::id::get_av_codec_id(Id::VP8) {
+            if codec_id == picusffmpeg::codec::id::get_av_codec_id(Id::VP8) {
                 Some("vp8")
-            } else if codec_id == remotionffmpeg::codec::id::get_av_codec_id(Id::VP9) {
+            } else if codec_id == picusffmpeg::codec::id::get_av_codec_id(Id::VP9) {
                 Some("vp9")
             } else {
                 None
@@ -567,7 +567,7 @@ pub fn open_stream(
         false => None,
     };
 
-    let video = remotionffmpeg::codec::context::Context::from_parameters(parameters.clone())?;
+    let video = picusffmpeg::codec::context::Context::from_parameters(parameters.clone())?;
 
     let decoder = match is_vp8_or_vp9 {
         Some("vp8") => video.decoder().video_with_codec("libvpx")?,

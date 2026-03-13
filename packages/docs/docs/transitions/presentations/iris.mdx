@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-presentations-iris.png
-crumb: '@remotion/transitions - Presentations'
+crumb: '@picus/transitions - Presentations'
 title: 'iris()'
 ---
 
@@ -13,7 +13,7 @@ A presentation where the next scene is revealed through a circular mask that exp
 ## Example
 
 ```tsx twoslash title="IrisTransition.tsx"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -35,9 +35,9 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import {linearTiming, TransitionSeries} from '@remotion/transitions';
-import {iris} from '@remotion/transitions/iris';
-import {useVideoConfig} from 'remotion';
+import {linearTiming, TransitionSeries} from '@picus/transitions';
+import {iris} from '@picus/transitions/iris';
+import {useVideoConfig} from 'picus';
 
 const BasicTransition = () => {
   const {width, height} = useVideoConfig();
@@ -86,5 +86,5 @@ The style of the inner element when the scene is exiting.
 
 ## See also
 
-- [Source code for this presentation](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/presentations/iris.tsx)
+- [Source code for this presentation](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/presentations/iris.tsx)
 - [Presentations](/docs/transitions/presentations)

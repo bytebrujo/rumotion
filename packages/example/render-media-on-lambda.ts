@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
-import {deployFunction} from '@remotion/lambda';
+import {deployFunction} from '@picus/lambda';
 import {
 	getRenderProgress,
 	renderMediaOnLambda,
 	speculateFunctionName,
-} from '@remotion/lambda-client';
+} from '@picus/lambda-client';
 import dotenv from 'dotenv';
 dotenv.config({quiet: true});
 
@@ -23,14 +23,14 @@ const functionName = speculateFunctionName({
 });
 
 const {bucketName, renderId, cloudWatchMainLogs} = await renderMediaOnLambda({
-	serveUrl: 'https://remotion-helloworld.vercel.app',
+	serveUrl: 'https://picus-helloworld.vercel.app',
 	functionName,
 	composition: 'HelloWorld',
 	region: 'eu-central-1',
 	codec: 'h264',
 	outName: {
 		// TODO: Use the bucket name from your Supabase Storage settings
-		bucketName: 'remotion-test-bucket',
+		bucketName: 'picus-test-bucket',
 		key: 'out.mp4',
 		s3OutputProvider: {
 			// FIXME: Use the endpoint from your Cloudflare Storage settings

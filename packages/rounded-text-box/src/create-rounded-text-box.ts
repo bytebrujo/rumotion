@@ -1,14 +1,14 @@
-import type {Dimensions} from '@remotion/layout-utils';
+import type {Dimensions} from '@picus/layout-utils';
 import type {
 	BoundingBox,
 	Instruction,
 	ReducedInstruction,
-} from '@remotion/paths';
+} from '@picus/paths';
 import {
 	PathInternals,
 	reduceInstructions,
 	serializeInstructions,
-} from '@remotion/paths';
+} from '@picus/paths';
 
 const clamp = (val: number, min: number, max: number) => {
 	return Math.min(Math.max(val, min), max);

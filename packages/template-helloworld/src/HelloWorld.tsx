@@ -1,4 +1,4 @@
-import { zColor } from "@remotion/zod-types";
+import { zColor } from "@picus/zod-types";
 import {
   AbsoluteFill,
   interpolate,
@@ -6,7 +6,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 import { z } from "zod";
 import { Logo } from "./HelloWorld/Logo";
 import { Subtitle } from "./HelloWorld/Subtitle";

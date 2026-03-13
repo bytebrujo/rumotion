@@ -1,4 +1,4 @@
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 
 export const LINE_WIDTH = 5;
 export const AXIS_LABEL_WIDTH = 40;

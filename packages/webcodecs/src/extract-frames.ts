@@ -1,4 +1,4 @@
-import {parseMedia, type MediaParserLogLevel} from '@remotion/media-parser';
+import {parseMedia, type MediaParserLogLevel} from '@picus/media-parser';
 import {
 	internalExtractFrames,
 	type ExtractFramesTimestampsInSecondsFn,
@@ -9,7 +9,7 @@ export type ExtractFramesProps = {
 	timestampsInSeconds: number[] | ExtractFramesTimestampsInSecondsFn;
 	onFrame: (frame: VideoFrame) => void;
 	signal?: AbortSignal;
-	acknowledgeRemotionLicense?: boolean;
+	acknowledgePicusLicense?: boolean;
 	logLevel?: MediaParserLogLevel;
 };
 
@@ -19,7 +19,7 @@ export const extractFrames: ExtractFrames = (options: ExtractFramesProps) => {
 	return internalExtractFrames({
 		...options,
 		signal: options.signal ?? null,
-		acknowledgeRemotionLicense: options.acknowledgeRemotionLicense ?? false,
+		acknowledgePicusLicense: options.acknowledgePicusLicense ?? false,
 		logLevel: options.logLevel ?? 'info',
 		parseMediaImplementation: parseMedia,
 	});

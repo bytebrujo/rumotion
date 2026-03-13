@@ -1,7 +1,7 @@
 import {
 	getAvailableContainers,
 	getDefaultAudioCodec,
-} from '@remotion/webcodecs';
+} from '@picus/webcodecs';
 import React from 'react';
 
 export const DefaultAudioCodecs: React.FC = () => {

@@ -2,7 +2,7 @@
 image: /generated/articles-docs-player-premounting.png
 title: Premounting
 slug: /player/premounting
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 import {NoPremounting} from '../../components/Premounting/NoPremounting';
@@ -10,14 +10,14 @@ import {Premounting} from '../../components/Premounting/Premounting';
 
 # Premounting<AvailableFrom v="4.0.140"/>
 
-Remotion only ever renders the current frame.  
+Picus only ever renders the current frame.  
 This means when a video or another asset is about to come up, it is not loaded by default.
 
 <NoPremounting />
 
 :::note
 Even though the video is soon about to appear, it is not yet loaded
-because Remotion only ever renders the current time.
+because Picus only ever renders the current time.
 :::
 
 ## What is premounting?
@@ -42,7 +42,7 @@ In v4, add the [`premountFor`](/docs/sequence#premountfor) prop to the [`<Sequen
 The number you pass is the number in frames you premount the component for.
 
 ```tsx twoslash title="Premounted.tsx"
-import {Sequence, staticFile, OffthreadVideo} from 'remotion';
+import {Sequence, staticFile, OffthreadVideo} from 'picus';
 
 // ---cut---
 const MyComp: React.FC = () => {
@@ -54,7 +54,7 @@ const MyComp: React.FC = () => {
 };
 ```
 
-In the [Remotion Studio](/docs/studio), a premounted component is indicated with diagonal stripes:
+In the [Picus Studio](/docs/studio), a premounted component is indicated with diagonal stripes:
 
 <img src="/img/premount.png" />
 <br />
@@ -71,12 +71,12 @@ It is not yet possible to premount a whole [`<Series>`](/docs/series) or [`<Tran
 
 ## Custom premount component
 
-Premounting can also be implemented yourself with the public Remotion APIs.  
+Premounting can also be implemented yourself with the public Picus APIs.  
 Use the following component like you would `<Sequence>`:
 
 ```tsx twoslash title="PremountedSequence.tsx"
 import React, {forwardRef, useMemo} from 'react';
-import {Freeze, Sequence, SequenceProps, useCurrentFrame, useRemotionEnvironment} from 'remotion';
+import {Freeze, Sequence, SequenceProps, useCurrentFrame, usePicusEnvironment} from 'picus';
 
 export type PremountedSequenceProps = SequenceProps & {
   premountFor: number;
@@ -94,7 +94,7 @@ const PremountedSequenceRefForwardingFunction: React.ForwardRefRenderFunction<
     throw new Error('`<Premount>` does not support layout="none"');
   }
 
-  const env = useRemotionEnvironment();
+  const env = usePicusEnvironment();
 
   const {style: passedStyle, from = 0, ...otherProps} = props;
   const active = frame < from && frame >= from - premountFor && !env.isRendering;
@@ -103,7 +103,7 @@ const PremountedSequenceRefForwardingFunction: React.ForwardRefRenderFunction<
     return {
       ...passedStyle,
       opacity: active ? 0 : 1,
-      // @ts-ignore Only in the docs - it will not give a type error in a Remotion project
+      // @ts-ignore Only in the docs - it will not give a type error in a Picus project
       pointerEvents: active ? 'none' : (passedStyle?.pointerEvents ?? 'auto'),
     };
   }, [active, passedStyle]);

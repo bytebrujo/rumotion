@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/google-fonts"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/google-fonts"
 	},
-	"name": "@remotion/google-fonts",
+	"name": "@picus/google-fonts",
 	"version": "4.0.434",
-	"description": "Use Google Fonts in Remotion",
+	"description": "Use Google Fonts in Picus",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.mjs",
 	"scripts": {
@@ -15,7 +15,7 @@
 	},
 	"license": "SEE LICENSE IN LICENSE.md",
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"devDependencies": {
 		"@types/css-font-loading-module": "0.0.14",
@@ -5497,5 +5497,5 @@
 			"import": "./dist/esm/from-info.mjs"
 		}
 	},
-	"homepage": "https://www.remotion.dev/docs/google-fonts"
+	"homepage": "https://www.picus.dev/docs/google-fonts"
 }

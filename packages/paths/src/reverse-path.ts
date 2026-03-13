@@ -85,7 +85,7 @@ function reverseNormalizedPath(instructions: Instruction[]) {
 
 /*
  * @description Reverses a path so the end and start are switched.
- * @see [Documentation](https://www.remotion.dev/docs/paths/reverse-path)
+ * @see [Documentation](https://www.picus.dev/docs/paths/reverse-path)
  */
 export const reversePath = (path: string) => {
 	const parsed = parsePath(path);

@@ -1,4 +1,4 @@
 bindings.rs
-ffmpeg/remotion/include
-ffmpeg/remotion/lib/pkgconfig
-ffmpeg/remotion/lib/*.dll.a
+ffmpeg/picus/include
+ffmpeg/picus/lib/pkgconfig
+ffmpeg/picus/lib/*.dll.a

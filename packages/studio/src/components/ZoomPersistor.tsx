@@ -1,11 +1,11 @@
 import type React from 'react';
 import {useContext, useEffect} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {TimelineZoomCtx} from '../state/timeline-zoom';
 import {deriveCanvasContentFromUrl} from './load-canvas-content-from-url';
 
 const makeKey = () => {
-	return `remotion.zoom-map`;
+	return `picus.zoom-map`;
 };
 
 const persistCurrentZoom = (zoom: Record<string, number>) => {

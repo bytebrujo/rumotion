@@ -5,7 +5,7 @@ import type { ViteDevServer } from "vite";
 
 declare global {
   interface Window {
-    remotionServerEnabled: boolean | undefined;
+    picusServerEnabled: boolean | undefined;
   }
 }
 
@@ -18,8 +18,8 @@ export const indexHtmlDev = (vite: ViteDevServer, viteDir: string) => {
       template,
     );
     const injected = transformed.replace(
-      "<!--remotion-server-placeholder-->",
-      "<script>window.remotionServerEnabled = true</script>",
+      "<!--picus-server-placeholder-->",
+      "<script>window.picusServerEnabled = true</script>",
     );
     response.writeHead(200, {
       "Content-Type": "text/html",

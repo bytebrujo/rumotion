@@ -1,7 +1,7 @@
-import type {AwsRegion, RequestHandler} from '@remotion/lambda-client';
-import {LambdaClientInternals, type AwsProvider} from '@remotion/lambda-client';
-import {getSitesKey} from '@remotion/lambda-client/constants';
-import type {ProviderSpecifics} from '@remotion/serverless';
+import type {AwsRegion, RequestHandler} from '@picus/lambda-client';
+import {LambdaClientInternals, type AwsProvider} from '@picus/lambda-client';
+import {getSitesKey} from '@picus/lambda-client/constants';
+import type {ProviderSpecifics} from '@picus/serverless';
 
 type MandatoryParameters = {
 	bucketName: string;
@@ -81,8 +81,8 @@ export const internalDeleteSite = async ({
 };
 
 /*
- * @description Removes a Remotion project from your Cloud Storage bucket.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/deletesite)
+ * @description Removes a Picus project from your Cloud Storage bucket.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/deletesite)
  */
 export const deleteSite = (
 	props: DeleteSiteOptionalInput,

@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let keyboardShortcutsEnabled = true;
 
@@ -8,10 +8,10 @@ export const keyboardShortcutsOption = {
 	name: 'Disable or Enable keyboard shortcuts',
 	cliFlag,
 	description: () => (
-		<>Enable or disable keyboard shortcuts in the Remotion Studio.</>
+		<>Enable or disable keyboard shortcuts in the Picus Studio.</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setkeyboardshortcutsenabled',
+	docLink: 'https://www.picus.dev/docs/config#setkeyboardshortcutsenabled',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -31,4 +31,4 @@ export const keyboardShortcutsOption = {
 		keyboardShortcutsEnabled = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

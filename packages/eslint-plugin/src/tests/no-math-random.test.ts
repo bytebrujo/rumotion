@@ -5,7 +5,7 @@ const ruleTester = new ESLintUtils.RuleTester({
 });
 
 ruleTester.run('deterministic-randomness', rule, {
-	valid: ['import {random} from "remotion";\nconst hi = random(null)'],
+	valid: ['import {random} from "picus";\nconst hi = random(null)'],
 	invalid: [
 		{
 			code: 'Math.random()',

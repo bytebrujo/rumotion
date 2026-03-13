@@ -1,4 +1,4 @@
-import type {GitSource} from '@remotion/studio-shared';
+import type {GitSource} from '@picus/studio-shared';
 import type {ComboboxValue} from '../components/NewComposition/ComboBox';
 import type {OriginalPosition} from '../error-overlay/react-overlay/utils/get-source-map';
 
@@ -38,17 +38,17 @@ export const getGitRefUrl = (
 };
 
 export const getGitMenuItem = (): ComboboxValue | null => {
-	if (!window.remotion_gitSource) {
+	if (!window.picus_gitSource) {
 		return null;
 	}
 
 	return {
 		id: 'open-git-source',
 		value: 'open-git-source',
-		label: `Open ${getGitSourceName(window.remotion_gitSource)} Repo`,
+		label: `Open ${getGitSourceName(window.picus_gitSource)} Repo`,
 		onClick: () => {
 			window.open(
-				getGitSourceBranchUrl(window.remotion_gitSource as GitSource),
+				getGitSourceBranchUrl(window.picus_gitSource as GitSource),
 				'_blank',
 			);
 		},
@@ -57,7 +57,7 @@ export const getGitMenuItem = (): ComboboxValue | null => {
 		leftItem: null,
 		subMenu: null,
 		quickSwitcherLabel: `Open ${getGitSourceName(
-			window.remotion_gitSource,
+			window.picus_gitSource,
 		)} repo`,
 	};
 };

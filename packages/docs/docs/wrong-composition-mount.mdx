@@ -21,12 +21,12 @@ or, inside a player:
 
 ## Solution
 
-### In the Remotion Studio
+### In the Picus Studio
 
 The cause for the error is that a [`<Composition>`](/docs/composition) was nested inside the `component` that was passed to another `<Composition>`.
 
 ```tsx twoslash title="❌"
-import { Composition } from "remotion";
+import { Composition } from "picus";
 const AnotherComp: React.FC = () => {
   return null;
 };
@@ -61,7 +61,7 @@ const Index: React.FC = () => {
 ```
 
 :::note
-There is no reason to nest compositions in Remotion.
+There is no reason to nest compositions in Picus.
 
 - Do you want to include a component in another? Mount it directly instead by writing: `<AnotherComp />`
 - Do you want to limit the duration or time-shift another component? Look into [`<Sequence>`](/docs/sequence).
@@ -70,13 +70,13 @@ There is no reason to nest compositions in Remotion.
 
 To fix it, you must remove the nested compositions.
 
-### In the Remotion Player
+### In the Picus Player
 
-The cause for the error is that in the component you passed in to the `component` prop of Remotion Player, you are returning a `<Composition>`.
+The cause for the error is that in the component you passed in to the `component` prop of Picus Player, you are returning a `<Composition>`.
 
 ```tsx twoslash title="❌"
-import { Player } from "@remotion/player";
-import { Composition } from "remotion";
+import { Player } from "@picus/player";
+import { Composition } from "picus";
 
 const AnotherComp: React.FC = () => {
   return null;
@@ -111,13 +111,13 @@ const Index: React.FC = () => {
 ```
 
 :::note
-There is no use for compositions in `<Player>`. Only use them during rendering and when using the Remotion Studio.
+There is no use for compositions in `<Player>`. Only use them during rendering and when using the Picus Studio.
 :::
 
 To fix it, pass the component directly to the player's [`component`](/docs/player/player#component-or-lazycomponent) prop and provide the [`durationInFrames`](/docs/player/player#durationinframes), [`fps`](/docs/player/player#fps), [`compositionHeight`](/docs/player/player#compositionheight) and [`compositionWidth`](/docs/player/player#compositionwidth) props to the player.
 
 ```tsx twoslash title="✅"
-import { Player } from "@remotion/player";
+import { Player } from "@picus/player";
 
 const AnotherComp: React.FC = () => {
   return null;

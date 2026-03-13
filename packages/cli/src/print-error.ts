@@ -1,5 +1,5 @@
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {chalk} from './chalk';
 import {printCodeFrameAndStack} from './code-frame';
 import {Log} from './log';

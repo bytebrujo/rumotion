@@ -12,8 +12,8 @@ export type GetServicesInput = {
 };
 
 /*
- * @description Lists Remotion Cloud Run render services deployed to GCP Cloud Run.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/getservices)
+ * @description Lists Picus Cloud Run render services deployed to GCP Cloud Run.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/getservices)
  */
 
 export const getServices = async (
@@ -27,22 +27,22 @@ export const getServices = async (
 		parent,
 	});
 
-	let remotionServices: IService[] = [];
+	let picusServices: IService[] = [];
 
 	if (params.compatibleOnly) {
-		remotionServices = services.filter((s) => {
+		picusServices = services.filter((s) => {
 			return s.name?.startsWith(
 				`${parent}/services/${RENDER_SERVICE_PREFIX}-${serviceVersionString()}-`,
 			);
 		});
 	} else {
-		remotionServices = services.filter((s) => {
+		picusServices = services.filter((s) => {
 			return s.name?.startsWith(`${parent}/services/${RENDER_SERVICE_PREFIX}-`);
 		});
 	}
 
-	return remotionServices.map((service): ServiceInfo => {
-		const {consoleUrl, region, remotionVersion, serviceName} = parseServiceName(
+	return picusServices.map((service): ServiceInfo => {
+		const {consoleUrl, region, picusVersion, serviceName} = parseServiceName(
 			service.name as string,
 			params.region,
 		);
@@ -50,7 +50,7 @@ export const getServices = async (
 		return {
 			consoleUrl,
 			region,
-			remotionVersion,
+			picusVersion,
 			serviceName,
 			timeoutInSeconds: service.template?.timeout?.seconds as number,
 			memoryLimit: service.template?.containers?.[0].resources?.limits

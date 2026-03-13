@@ -1,4 +1,4 @@
-import { loadFont } from "@remotion/google-fonts/Roboto";
+import { loadFont } from "@picus/google-fonts/Roboto";
 import React, { useMemo } from "react";
 import {
   AbsoluteFill,
@@ -6,7 +6,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 
 const { fontFamily } = loadFont("normal", {
   subsets: ["latin"],

@@ -1,9 +1,9 @@
-import {bundle} from '@remotion/bundler';
+import {bundle} from '@picus/bundler';
 import {
 	RenderInternals,
 	renderMedia,
 	selectComposition,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 import {$} from 'bun';
 import path from 'node:path';
 import {webpackOverride} from './src/webpack-override.mjs';
@@ -17,7 +17,7 @@ const composition = await selectComposition({
 	id: 'OffthreadRemoteVideo',
 });
 
-const filelistDir = RenderInternals.tmpDir('remotion-file-lists');
+const filelistDir = RenderInternals.tmpDir('picus-file-lists');
 
 const dur = 120;
 const framesPerLambda = 24;

@@ -1,5 +1,5 @@
-import {CameraMotionBlur} from '@remotion/motion-blur';
-import {Player} from '@remotion/player';
+import {CameraMotionBlur} from '@picus/motion-blur';
+import {Player} from '@picus/player';
 import React, {useState} from 'react';
 import {
 	AbsoluteFill,
@@ -8,7 +8,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const square: React.CSSProperties = {
 	height: 150,
@@ -109,7 +109,7 @@ export const CameraMotionBlurExample: React.FC = () => {
 	return (
 		<div>
 			<Player
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={MyComposition}
 				compositionWidth={1280}
 				compositionHeight={720}

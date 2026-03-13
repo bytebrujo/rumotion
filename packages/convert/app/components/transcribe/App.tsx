@@ -1,5 +1,5 @@
 import type MediaFox from '@mediafox/core';
-import type {DownloadWhisperModelParams} from '@remotion/whisper-web';
+import type {DownloadWhisperModelParams} from '@picus/whisper-web';
 import React, {useState} from 'react';
 import type {Source} from '~/lib/convert-state';
 import Display from './display';

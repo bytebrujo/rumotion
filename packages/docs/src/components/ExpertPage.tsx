@@ -1,7 +1,7 @@
 import Head from '@docusaurus/Head';
 import {useLocation} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {experts} from '@remotion/promo-pages/dist/experts/experts-data.js';
+import {experts} from '@picus/promo-pages/dist/experts/experts-data.js';
 import Layout from '@theme/Layout';
 import React from 'react';
 import {Button} from '../../components/layout/Button';
@@ -117,9 +117,9 @@ export default () => {
 	return (
 		<Layout>
 			<Head>
-				{Seo.renderTitle(`${expert.name} | Remotion Experts`)}
+				{Seo.renderTitle(`${expert.name} | Picus Experts`)}
 				{Seo.renderDescription(
-					`Hire ${expert.name} and other Remotion experts, vetted by Remotion.`,
+					`Hire ${expert.name} and other Picus experts, vetted by Picus.`,
 				)}
 				{Seo.renderImage(imgSrc, context.siteConfig.url)}
 			</Head>
@@ -322,9 +322,9 @@ export default () => {
 							</defs>
 						</svg>
 						<div style={{flex: 1}}>
-							Remotion Experts are independent freelancers with proven Remotion
+							Picus Experts are independent freelancers with proven Picus
 							expertise and portfolios. However,{' '}
-							<strong> perform due diligence </strong> before hiring. Remotion
+							<strong> perform due diligence </strong> before hiring. Picus
 							does not arbitrate disputes between experts and clients.
 						</div>
 					</div>
@@ -342,7 +342,7 @@ export default () => {
 							/>
 						</svg>
 						<div style={{flex: 1}}>
-							To apply as a Remotion Expert, write to hi@remotion.dev.
+							To apply as a Picus Expert, write to hi@picus.dev.
 						</div>
 					</div>
 				</div>

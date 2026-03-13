@@ -1,4 +1,4 @@
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 
 export const getTimeInSeconds = ({
 	loop,

@@ -12,7 +12,7 @@ const Footer = () => {
 				.querySelector('.navbar__logo')!
 				.addEventListener('contextmenu', (e) => {
 					e.preventDefault();
-					window.open('https://remotion.dev/brand', '_blank');
+					window.open('https://picus.dev/brand', '_blank');
 				});
 		}
 	}, []);
@@ -32,4 +32,4 @@ const Footer = () => {
 
 export default React.memo(Footer);
 
-// Right-click on the Remotion logo to get brand
+// Right-click on the Picus logo to get brand

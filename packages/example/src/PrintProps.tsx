@@ -1,5 +1,5 @@
 import React from 'react';
-import {getInputProps} from 'remotion';
+import {getInputProps} from 'picus';
 
 export const PrintProps: React.FC = () => {
 	return (

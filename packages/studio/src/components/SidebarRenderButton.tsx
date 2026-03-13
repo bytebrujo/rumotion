@@ -5,11 +5,11 @@ import type {
 	LogLevel,
 	OpenGlRenderer,
 	X264Preset,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 import type {SVGProps} from 'react';
 import React, {useCallback, useContext, useMemo} from 'react';
-import type {_InternalTypes} from 'remotion';
-import {Internals} from 'remotion';
+import type {_InternalTypes} from 'picus';
+import {Internals} from 'picus';
 import {StudioServerConnectionCtx} from '../helpers/client-id';
 import {useMobileLayout} from '../helpers/mobile-layout';
 import {ThinRenderIcon} from '../icons/render';
@@ -40,7 +40,7 @@ export const SidebarRenderButton: React.FC<{
 
 	const onClick: React.MouseEventHandler<HTMLButtonElement> = useCallback(
 		(e) => {
-			const defaults = window.remotion_renderDefaults;
+			const defaults = window.picus_renderDefaults;
 			if (!defaults) {
 				throw new Error('expected defaults');
 			}

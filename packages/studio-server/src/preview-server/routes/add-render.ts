@@ -1,11 +1,11 @@
-import {makeCancelSignal} from '@remotion/renderer';
-import type {AddRenderRequest} from '@remotion/studio-shared';
+import {makeCancelSignal} from '@picus/renderer';
+import type {AddRenderRequest} from '@picus/studio-shared';
 import type {ApiHandler} from '../api-types';
 
 export const handleAddRender: ApiHandler<AddRenderRequest, undefined> = ({
 	input,
 	entryPoint,
-	remotionRoot,
+	picusRoot,
 	logLevel,
 	binariesDirectory,
 	methods: {addJob},
@@ -14,7 +14,7 @@ export const handleAddRender: ApiHandler<AddRenderRequest, undefined> = ({
 	if (input.type === 'video') {
 		addJob({
 			entryPoint,
-			remotionRoot,
+			picusRoot,
 			job: {
 				cleanup: [],
 				codec: input.codec,
@@ -73,7 +73,7 @@ export const handleAddRender: ApiHandler<AddRenderRequest, undefined> = ({
 	if (input.type === 'sequence') {
 		addJob({
 			entryPoint,
-			remotionRoot,
+			picusRoot,
 			job: {
 				cleanup: [],
 				compositionId: input.compositionId,
@@ -143,7 +143,7 @@ export const handleAddRender: ApiHandler<AddRenderRequest, undefined> = ({
 				mediaCacheSizeInBytes: input.mediaCacheSizeInBytes,
 			},
 			entryPoint,
-			remotionRoot,
+			picusRoot,
 			logLevel,
 		});
 	}

@@ -1,6 +1,6 @@
-import {Polygon} from '@remotion/shapes';
+import {Polygon} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const PolygonDemo: React.FC<{
 	readonly darkMode: boolean;

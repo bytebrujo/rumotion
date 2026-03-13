@@ -10,9 +10,9 @@ const makeContent = (seed: number, duplicateLightLeak: boolean) => {
 		: `<LightLeak durationInFrames={60} seed={${seed}} hueShift={0} />`;
 
 	return `// This file can be changed through the script: packages/example/fast-updates.ts
-import {LightLeak} from '@remotion/light-leaks';
+import {LightLeak} from '@picus/light-leaks';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const FastUpdates: React.FC = () => {
 	return (
@@ -27,7 +27,7 @@ export const FastUpdates: React.FC = () => {
 const makeContentWithoutLightLeak = () => {
 	return `// This file can be changed through the script: packages/example/fast-updates.ts
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const FastUpdates: React.FC = () => {
 	return (

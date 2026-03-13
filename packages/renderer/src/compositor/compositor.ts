@@ -1,6 +1,6 @@
 import {spawn} from 'node:child_process';
 import path from 'node:path';
-import {makeStreamer} from '@remotion/streaming';
+import {makeStreamer} from '@picus/streaming';
 import type {LogLevel} from '../log-level';
 import {isEqualOrBelowLogLevel} from '../log-level';
 import {Log} from '../logger';
@@ -104,7 +104,7 @@ export const startCompositor = <T extends keyof CompositorCommand>({
 			process.platform === 'darwin'
 				? {
 						// Should work out of the box, but sometimes it doesn't
-						// https://github.com/remotion-dev/remotion/issues/3862
+						// https://github.com/picus-dev/picus/issues/3862
 						DYLD_LIBRARY_PATH: cwd,
 					}
 				: undefined,

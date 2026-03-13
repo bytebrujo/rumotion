@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-vercel-create-sandbox.png
 title: createSandbox()
-crumb: '@remotion/vercel'
+crumb: '@picus/vercel'
 ---
 
 # createSandbox()<AvailableFrom v="4.0.426" />
@@ -10,16 +10,16 @@ crumb: '@remotion/vercel'
 Experimental package: We reserve the right to make breaking changes in order to correct bad design decisions until this notice is gone.
 :::
 
-Creates a new [Vercel Sandbox](https://vercel.com/docs/vercel-sandbox) with all Remotion dependencies installed, including system libraries, the compositor, and a browser.  
-After creating the sandbox, call [`addBundleToSandbox()`](/docs/vercel/add-bundle-to-sandbox) to copy your Remotion bundle into it.
+Creates a new [Vercel Sandbox](https://vercel.com/docs/vercel-sandbox) with all Picus dependencies installed, including system libraries, the compositor, and a browser.  
+After creating the sandbox, call [`addBundleToSandbox()`](/docs/vercel/add-bundle-to-sandbox) to copy your Picus bundle into it.
 
 ## Example
 
 ```ts twoslash title="create-snapshot.ts"
 // @module: es2022
 // @target: es2022
-import {addBundleToSandbox, createSandbox} from '@remotion/vercel';
-import type {CreateSandboxOnProgress} from '@remotion/vercel';
+import {addBundleToSandbox, createSandbox} from '@picus/vercel';
+import type {CreateSandboxOnProgress} from '@picus/vercel';
 // ---cut---
 const sandbox = await createSandbox({
   onProgress: async ({progress, message}) => {
@@ -46,7 +46,7 @@ An object with the following properties:
 A callback that receives progress updates during sandbox creation.
 
 ```ts twoslash
-import type {CreateSandboxOnProgress} from '@remotion/vercel';
+import type {CreateSandboxOnProgress} from '@picus/vercel';
 // ---cut---
 const onProgress: CreateSandboxOnProgress = async ({progress, message}) => {
   console.log(`${message} (${Math.round(progress * 100)}%)`);
@@ -62,7 +62,7 @@ Each vCPU gets 2048 MB of memory.
 ```ts twoslash title="custom-resources.ts"
 // @module: es2022
 // @target: es2022
-import {createSandbox} from '@remotion/vercel';
+import {createSandbox} from '@picus/vercel';
 // ---cut---
 const sandbox = await createSandbox({
   resources: {vcpus: 8},
@@ -86,7 +86,7 @@ Manually call `sandbox.stop()` when you are done:
 ```ts twoslash title="manual-cleanup.ts"
 // @module: es2022
 // @target: es2022
-import {createSandbox} from '@remotion/vercel';
+import {createSandbox} from '@picus/vercel';
 // ---cut---
 const sandbox = await createSandbox();
 
@@ -102,7 +102,7 @@ Use `await using` to automatically stop the sandbox when it goes out of scope:
 ```ts twoslash title="auto-cleanup.ts"
 // @module: es2022
 // @target: es2022
-import {createSandbox} from '@remotion/vercel';
+import {createSandbox} from '@picus/vercel';
 // ---cut---
 await using sandbox = await createSandbox();
 
@@ -113,4 +113,4 @@ await using sandbox = await createSandbox();
 ## See also
 
 - [`addBundleToSandbox()`](/docs/vercel/add-bundle-to-sandbox)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/vercel/src/create-sandbox.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/vercel/src/create-sandbox.ts)

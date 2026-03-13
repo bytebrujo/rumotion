@@ -1,4 +1,4 @@
-import {Button} from '@remotion/design';
+import {Button} from '@picus/design';
 import React, {useState} from 'react';
 import {GithubButton} from './GitHubButton';
 
@@ -43,7 +43,7 @@ export const GetStarted: React.FC = () => {
 			<div className="w-2 h-2" />
 			<div className="w-full lg:w-auto">
 				<Button
-					href="https://remotion.dev/discord"
+					href="https://picus.dev/discord"
 					target="_blank"
 					className="w-full"
 				>
@@ -53,7 +53,7 @@ export const GetStarted: React.FC = () => {
 			<div className="w-2 h-2" />
 			<div className="w-full lg:w-auto">
 				<Button
-					href="https://github.com/remotion-dev/remotion"
+					href="https://github.com/picus-dev/picus"
 					target="_blank"
 					className="w-full"
 				>

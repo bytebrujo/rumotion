@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const label: React.CSSProperties = {
 	fontSize: 13,
@@ -47,9 +47,9 @@ export const NoRegisterRoot: React.FC = () => {
 				<a
 					target={'_blank'}
 					style={link}
-					href="https://www.remotion.dev/docs/register-root"
+					href="https://www.picus.dev/docs/register-root"
 				>
-					remotion.dev/docs/register-root
+					picus.dev/docs/register-root
 				</a>
 			</div>
 		</AbsoluteFill>

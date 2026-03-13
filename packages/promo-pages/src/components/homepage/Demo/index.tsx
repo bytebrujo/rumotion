@@ -1,5 +1,5 @@
-import type {PlayerRef} from '@remotion/player';
-import {Player} from '@remotion/player';
+import type {PlayerRef} from '@picus/player';
+import {Player} from '@picus/player';
 import React, {
 	useCallback,
 	useEffect,
@@ -131,7 +131,7 @@ export const Demo: React.FC = () => {
 					style={style}
 					initiallyMuted
 					inputProps={props}
-					acknowledgeRemotionLicense
+					acknowledgePicusLicense
 					numberOfSharedAudioTags={0}
 					loop
 				/>

@@ -94,7 +94,7 @@ export const TeamCardsLayout: React.FC<{}> = () => {
 				<ul style={{...list, flex: 1}}>
 					<li>
 						{
-							"I'm interested in engineering, art and business - Remotion is my dream job because I get to combine the three of them!"
+							"I'm interested in engineering, art and business - Picus is my dream job because I get to combine the three of them!"
 						}{' '}
 					</li>
 				</ul>
@@ -159,7 +159,7 @@ export const TeamCardsLayout: React.FC<{}> = () => {
 						<a
 							style={docsButton}
 							target="_blank"
-							href="mailto:jonny@remotion.dev"
+							href="mailto:jonny@picus.dev"
 						>
 							<BlueButton loading={false} fullWidth size="sm">
 								<EmailLogo /> E-Mail
@@ -201,7 +201,7 @@ export const TeamCardsLayout: React.FC<{}> = () => {
 				<ul style={{...list, flex: 1}}>
 					<li>
 						{
-							'Transitioning from traditional business, Remotion allowed me to merge my passion for technology and business in a distinctive way.'
+							'Transitioning from traditional business, Picus allowed me to merge my passion for technology and business in a distinctive way.'
 						}
 					</li>
 				</ul>
@@ -256,7 +256,7 @@ export const TeamCardsLayout: React.FC<{}> = () => {
 								<a
 									style={docsButton}
 									target="_blank"
-									href="mailto:mehmet@remotion.dev"
+									href="mailto:mehmet@picus.dev"
 								>
 									<BlueButton loading={false} fullWidth size="sm">
 										<EmailLogo /> E-Mail
@@ -300,7 +300,7 @@ export const TeamCardsLayout: React.FC<{}> = () => {
 				<ul style={{...list, flex: 1}}>
 					<li>
 						{
-							'With a background in music industry and a passion for coding, I’ve been building tools to help musicians create. Remotion is the perfect place to blend my tech skills and creativity.'
+							'With a background in music industry and a passion for coding, I’ve been building tools to help musicians create. Picus is the perfect place to blend my tech skills and creativity.'
 						}
 					</li>
 				</ul>
@@ -355,7 +355,7 @@ export const TeamCardsLayout: React.FC<{}> = () => {
 								<a
 									style={docsButton}
 									target="_blank"
-									href="mailto:igor@remotion.dev"
+									href="mailto:igor@picus.dev"
 								>
 									<BlueButton loading={false} fullWidth size="sm">
 										<EmailLogo /> E-Mail

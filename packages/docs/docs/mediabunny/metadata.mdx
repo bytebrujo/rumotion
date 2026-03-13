@@ -47,7 +47,7 @@ export const getMediaMetadata = async (src: string) => {
 
 <details>
   <summary>Explanation</summary>
-  <p>We load a URL (e.g. `https://remotion.media/video.mp4`) and parse it using Mediabunny.</p>
+  <p>We load a URL (e.g. `https://picus.media/video.mp4`) and parse it using Mediabunny.</p>
   <p>We don't care which format, so we load all parsers using `ALL_FORMATS`.</p>
   <p>By setting `getRetryDelay` to `() => null`, we prevent Mediabunny from infinitely retrying if the request fails.</p>
   <p>We compute the duration, the dimensions and the frame rate. If the media file is an audio file, we return `null` for the dimensions and the frame rate.</p>
@@ -88,7 +88,7 @@ export const getMediaMetadata = async (src: string) => {
 // ---cut---
 import {getMediaMetadata} from './get-media-metadata';
 
-const metadata = await getMediaMetadata('https://remotion.media/video.mp4');
+const metadata = await getMediaMetadata('https://picus.media/video.mp4');
 
 console.log(metadata);
 //             ^?
@@ -110,4 +110,4 @@ It can return more metadata than the browser, for example the frame rate or the 
 
 The assets are loaded using `fetch()`, so they must be accessible for the current website and not be blocked by CORS.
 
-In that case, you are better off using the [`getVideoMetadata()`](/docs/get-video-metadata) function from the [`@remotion/media-utils`](/docs/media-utils) package, which uses the `<video>` tag internally.
+In that case, you are better off using the [`getVideoMetadata()`](/docs/get-video-metadata) function from the [`@picus/media-utils`](/docs/media-utils) package, which uses the `<video>` tag internally.

@@ -8,7 +8,7 @@ import { textRotationExample } from "./text-rotation";
 import { typewriterHighlightExample } from "./typewriter-highlight";
 import { wordCarouselExample } from "./word-carousel";
 
-export interface RemotionExample {
+export interface PicusExample {
   id: string;
   name: string;
   description: string;
@@ -18,7 +18,7 @@ export interface RemotionExample {
   category: "Text" | "Charts" | "Animation" | "3D" | "Other";
 }
 
-export const examples: RemotionExample[] = [
+export const examples: PicusExample[] = [
   textRotationExample,
   histogramExample,
   progressBarExample,
@@ -30,12 +30,12 @@ export const examples: RemotionExample[] = [
   wordCarouselExample,
 ];
 
-export function getExampleById(id: string): RemotionExample | undefined {
+export function getExampleById(id: string): PicusExample | undefined {
   return examples.find((e) => e.id === id);
 }
 
 export function getExamplesByCategory(
-  category: RemotionExample["category"],
-): RemotionExample[] {
+  category: PicusExample["category"],
+): PicusExample[] {
   return examples.filter((e) => e.category === category);
 }

@@ -4,7 +4,7 @@ id: best-practices
 sidebar_label: 'Best practices'
 title: 'Player - Best practices'
 slug: /player/best-practices
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 ## Avoid re-renders of the `<Player>`
@@ -13,7 +13,7 @@ The following pattern is not ideal because every time the time updates, the `<Pl
 
 ```tsx twoslash title="❌ Problematic"
 // @allowUmdGlobalAccess
-// @filename: ./remotion/MyVideo.tsx
+// @filename: ./picus/MyVideo.tsx
 export const MyVideo = () => <></>;
 
 // @filename: index.tsx
@@ -23,9 +23,9 @@ const otherProps = {
   compositionHeight: 1080,
   fps: 30,
 } as const;
-import {Player, PlayerRef} from '@remotion/player';
+import {Player, PlayerRef} from '@picus/player';
 import {useEffect, useRef, useState} from 'react';
-import {MyVideo} from './remotion/MyVideo';
+import {MyVideo} from './picus/MyVideo';
 
 // ---cut---
 export const App: React.FC = () => {
@@ -51,7 +51,7 @@ We advise to render your controls and UI as a sibling to the component that rend
 
 ```tsx twoslash title="✅ Better"
 // @allowUmdGlobalAccess
-// @filename: ./remotion/MyVideo.tsx
+// @filename: ./picus/MyVideo.tsx
 export const MyVideo = () => <></>;
 
 // @filename: index.tsx
@@ -61,9 +61,9 @@ const otherProps = {
   compositionHeight: 1080,
   fps: 30,
 } as const;
-import {Player, PlayerRef} from '@remotion/player';
+import {Player, PlayerRef} from '@picus/player';
 import {useEffect, useRef, useState} from 'react';
-import {MyVideo} from './remotion/MyVideo';
+import {MyVideo} from './picus/MyVideo';
 
 // ---cut---
 const PlayerOnly: React.FC<{
@@ -102,7 +102,7 @@ This is much more performant because the `<Player>` gets rerendered less often.
 
 This advice is mainly for frequently updated state like the current time. Keeping state like a `loop` toggle in the parent component is fine, because it is not expected to change frequently.
 
-[A more complex example can be found here.](https://github.com/remotion-dev/remotion/blob/main/packages/player-example/src/App.tsx)
+[A more complex example can be found here.](https://github.com/picus-dev/picus/blob/main/packages/player-example/src/App.tsx)
 
 ## Pass the user interaction event to `play()`
 
@@ -117,14 +117,14 @@ Not memoizing the `inputProps` can cause the whole tree to re-render too many ti
 
 ```tsx twoslash title="Player.tsx"
 // @allowUmdGlobalAccess
-// @filename: ./remotion/MyVideo.tsx
+// @filename: ./picus/MyVideo.tsx
 export const MyVideo = () => <></>;
 
 // @filename: index.tsx
 // ---cut---
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import {useState, useMemo} from 'react';
-import {MyVideo} from './remotion/MyVideo';
+import {MyVideo} from './picus/MyVideo';
 
 export const App: React.FC = () => {
   const [text, setText] = useState('world');

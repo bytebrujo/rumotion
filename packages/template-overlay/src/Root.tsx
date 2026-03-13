@@ -1,7 +1,7 @@
-import { Composition } from "remotion";
+import { Composition } from "picus";
 import { Overlay } from "./Overlay";
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition

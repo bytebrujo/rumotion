@@ -24,9 +24,9 @@ export type {
 	StitchingState,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 
-import type {RenderMediaProgress} from '@remotion/renderer';
+import type {RenderMediaProgress} from '@picus/renderer';
 
 export type RenderMediaOnVercelProgress =
 	| {stage: 'opening-browser'; overallProgress: number}
@@ -44,7 +44,7 @@ export type RenderStillOnVercelProgress =
 export type {
 	HardwareAccelerationOption,
 	ProResProfile,
-} from '@remotion/renderer/client';
+} from '@picus/renderer/client';
 
 export type VercelBlobAccess = 'public' | 'private';
 

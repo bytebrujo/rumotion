@@ -2,7 +2,7 @@ import {beforeAll, describe, expect, test} from 'bun:test';
 import {execSync} from 'child_process';
 import {readFileSync, writeFileSync} from 'fs';
 import path from 'path';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
 import {$} from 'bun';
 
 const referenceVersion = readFileSync(
@@ -25,7 +25,7 @@ describe('These should run serially', () => {
 		const VERSION = `
 <?php
 
-namespace Remotion\\LambdaPhp;
+namespace Picus\\LambdaPhp;
 
 class Semantic
 {
@@ -57,7 +57,7 @@ class Semantic
 			'utf-8',
 		);
 		const composerJsonJson = JSON.parse(composerJson);
-		composerJsonJson.require['remotion/lambda'] = version;
+		composerJsonJson.require['picus/lambda'] = version;
 		writeFileSync(
 			path.join(process.cwd(), '..', 'lambda-php-example', 'composer.json'),
 			JSON.stringify(composerJsonJson, null, 2) + '\n',
@@ -77,7 +77,7 @@ class Semantic
 			await LambdaClientInternals.makeLambdaRenderMediaPayload({
 				region: 'us-east-1',
 				composition: 'react-svg',
-				functionName: 'remotion-render',
+				functionName: 'picus-render',
 				serveUrl: 'testbed',
 				codec: 'h264',
 				inputProps: {
@@ -126,7 +126,7 @@ class Semantic
 				indent: false,
 				forcePathStyle: false,
 				metadata: {
-					Author: 'Remotion',
+					Author: 'Picus',
 				},
 				licenseKey: null,
 				storageClass: null,
@@ -157,8 +157,8 @@ class Semantic
 		const toParse = output[5];
 		const nativeVersion = LambdaClientInternals.getRenderProgressPayload({
 			region: 'us-east-1',
-			functionName: 'remotion-render',
-			bucketName: 'remotion-render',
+			functionName: 'picus-render',
+			bucketName: 'picus-render',
 			renderId: 'abcdef',
 			logLevel: 'info',
 		});

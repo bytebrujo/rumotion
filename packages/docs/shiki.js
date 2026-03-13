@@ -1,3 +1,3 @@
-const {shiki} = require('@remotion/docusaurus-plugin');
+const {shiki} = require('@picus/docusaurus-plugin');
 
 module.exports = shiki;

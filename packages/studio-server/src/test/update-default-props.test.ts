@@ -16,7 +16,7 @@ test('Should be able to update default props', async () => {
 	const update = await updateDefaultProps({
 		input: file,
 		compositionId: 'Comp3',
-		newDefaultProps: {abc: 'def', newDate: 'remotion-date:2022-01-02'},
+		newDefaultProps: {abc: 'def', newDate: 'picus-date:2022-01-02'},
 		enumPaths: [],
 	});
 
@@ -36,7 +36,7 @@ test('Should be able to update default props', async () => {
 	const update = await updateDefaultProps({
 		input: file,
 		compositionId: 'schema-test',
-		newDefaultProps: {abc: 'def', newDate: 'remotion-date:2022-01-02'},
+		newDefaultProps: {abc: 'def', newDate: 'picus-date:2022-01-02'},
 		enumPaths: [],
 	});
 

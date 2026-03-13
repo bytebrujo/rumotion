@@ -1,4 +1,4 @@
-import { interpolate, useCurrentFrame } from "remotion";
+import { interpolate, useCurrentFrame } from "picus";
 import { COLOR_1, FONT_FAMILY } from "./constants";
 
 const subtitle = {

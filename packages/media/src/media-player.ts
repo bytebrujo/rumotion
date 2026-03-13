@@ -1,7 +1,7 @@
 import {ALL_FORMATS, Input, UrlSource} from 'mediabunny';
-import type {LogLevel, useBufferState} from 'remotion';
-import {Internals} from 'remotion';
-import type {ScheduleAudioNodeResult} from 'remotion';
+import type {LogLevel, useBufferState} from 'picus';
+import {Internals} from 'picus';
+import type {ScheduleAudioNodeResult} from 'picus';
 import {
 	audioIteratorManager,
 	type AudioIteratorManager,
@@ -221,7 +221,7 @@ export class MediaPlayer {
 				}
 
 				Internals.Log.error(
-					{logLevel: this.logLevel, tag: '@remotion/media'},
+					{logLevel: this.logLevel, tag: '@picus/media'},
 					`[MediaPlayer] Failed to recognize format for ${this.src}`,
 					error,
 				);
@@ -325,7 +325,7 @@ export class MediaPlayer {
 				}
 
 				Internals.Log.error(
-					{logLevel: this.logLevel, tag: '@remotion/media'},
+					{logLevel: this.logLevel, tag: '@picus/media'},
 					'[MediaPlayer] Failed to start audio and video iterators',
 					error,
 				);
@@ -337,7 +337,7 @@ export class MediaPlayer {
 
 			if (isNetworkError(err)) {
 				Internals.Log.error(
-					{logLevel: this.logLevel, tag: '@remotion/media'},
+					{logLevel: this.logLevel, tag: '@picus/media'},
 					`[MediaPlayer] Network/CORS error for ${this.src}`,
 					err,
 				);
@@ -345,7 +345,7 @@ export class MediaPlayer {
 			}
 
 			Internals.Log.error(
-				{logLevel: this.logLevel, tag: '@remotion/media'},
+				{logLevel: this.logLevel, tag: '@picus/media'},
 				'[MediaPlayer] Failed to initialize',
 				error,
 			);

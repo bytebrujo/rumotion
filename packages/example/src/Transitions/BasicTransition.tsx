@@ -2,10 +2,10 @@ import {
 	springTiming,
 	TransitionSeries,
 	useTransitionProgress,
-} from '@remotion/transitions';
-import {slide} from '@remotion/transitions/slide';
+} from '@picus/transitions';
+import {slide} from '@picus/transitions/slide';
 import React from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {AbsoluteFill, Sequence} from 'picus';
 
 export const Letter: React.FC<{
 	readonly children: React.ReactNode;

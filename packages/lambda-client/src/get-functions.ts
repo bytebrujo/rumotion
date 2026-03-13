@@ -1,7 +1,7 @@
 import type {FunctionConfiguration} from '@aws-sdk/client-lambda';
 import {ListFunctionsCommand} from '@aws-sdk/client-lambda';
-import type {FunctionInfo, LogLevel} from '@remotion/serverless-client';
-import {VERSION} from '@remotion/serverless-client';
+import type {FunctionInfo, LogLevel} from '@picus/serverless-client';
+import {VERSION} from '@picus/serverless-client';
 import {getLambdaClient} from './aws-clients';
 import {DEFAULT_EPHEMERAL_STORAGE_IN_MB, RENDER_FN_PREFIX} from './constants';
 import {getFunctionVersion} from './get-function-version';
@@ -57,8 +57,8 @@ const getAllFunctions = async ({
 };
 
 /*
- * @description Retrieves a list of functions that Remotion deployed to AWS Lambda in a certain region.
- * @see [Documentation](https://remotion.dev/docs/lambda/getfunctions)
+ * @description Retrieves a list of functions that Picus deployed to AWS Lambda in a certain region.
+ * @see [Documentation](https://picus.dev/docs/lambda/getfunctions)
  */
 export const getFunctions = async (
 	params: GetFunctionsInput,
@@ -70,12 +70,12 @@ export const getFunctions = async (
 		requestHandler: params.requestHandler,
 	});
 
-	const remotionLambdas = lambdas.filter((f) => {
+	const picusLambdas = lambdas.filter((f) => {
 		return f.FunctionName?.startsWith(RENDER_FN_PREFIX);
 	});
 
 	const configs = await Promise.all(
-		remotionLambdas.map(async (fn) => {
+		picusLambdas.map(async (fn) => {
 			try {
 				const version = await getFunctionVersion({
 					functionName: fn.FunctionName as string,
@@ -90,7 +90,7 @@ export const getFunctions = async (
 		}),
 	);
 
-	const list = remotionLambdas.map((lambda, i): FunctionInfo => {
+	const list = picusLambdas.map((lambda, i): FunctionInfo => {
 		return {
 			functionName: lambda.FunctionName as string,
 			version: configs[i],

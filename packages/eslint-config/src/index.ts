@@ -1,6 +1,6 @@
 import {allowESLintShareableConfig} from './patch-eslint';
 
-const baseExtends = ['eslint:recommended', 'plugin:@remotion/recommended'];
+const baseExtends = ['eslint:recommended', 'plugin:@picus/recommended'];
 
 const getRules = (typescript: boolean) => {
 	return {
@@ -467,7 +467,7 @@ const getRules = (typescript: boolean) => {
 
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'warn',
-		// Turning off rules that are too strict or don't apply to Remotion
+		// Turning off rules that are too strict or don't apply to Picus
 		'react/jsx-no-constructed-context-values': 'off',
 		'no-console': 'off',
 		'react/react-in-jsx-scope': 'off',
@@ -518,7 +518,7 @@ export = {
 		es6: true,
 		jest: true,
 	},
-	plugins: ['react', 'react-hooks', '@typescript-eslint', '@remotion'],
+	plugins: ['react', 'react-hooks', '@typescript-eslint', '@picus'],
 	extends: baseExtends,
 	parser: require.resolve('@typescript-eslint/parser'),
 	parserOptions: {

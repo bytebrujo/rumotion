@@ -13,7 +13,7 @@ const output = await build({
 		'src/writers/web-fs.ts',
 	],
 	naming: '[name].mjs',
-	external: ['@remotion/media-parser'],
+	external: ['@picus/media-parser'],
 });
 
 if (!output.success) {

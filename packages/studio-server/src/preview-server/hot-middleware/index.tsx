@@ -6,11 +6,11 @@
 
 import type {IncomingMessage, ServerResponse} from 'node:http';
 import {parse} from 'node:url';
-import type {webpack} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {HotMiddlewareMessage, ModuleMap} from '@remotion/studio-shared';
-import {hotMiddlewareOptions} from '@remotion/studio-shared';
+import type {webpack} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {HotMiddlewareMessage, ModuleMap} from '@picus/studio-shared';
+import {hotMiddlewareOptions} from '@picus/studio-shared';
 import {shouldSuppressHmr} from '../hmr-suppression';
 import type {WebpackStats} from './types';
 
@@ -139,8 +139,8 @@ export const webpackHotMiddleware = (
 	let latestStats: webpack.Stats | null = null;
 	let currentBuildSuppressed = false;
 
-	compiler.hooks.invalid.tap('remotion', onInvalid);
-	compiler.hooks.done.tap('remotion', onDone);
+	compiler.hooks.invalid.tap('picus', onInvalid);
+	compiler.hooks.done.tap('picus', onDone);
 
 	function onInvalid(filename: string | null) {
 		if (shouldSuppressHmr(filename)) {

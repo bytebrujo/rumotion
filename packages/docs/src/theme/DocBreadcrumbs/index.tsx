@@ -9,7 +9,7 @@ import {
 	ExternalLinkIcon,
 	MarkdownIcon,
 	OpenAIIcon,
-	RemotionIcon,
+	PicusIcon,
 	VSCodeIcon,
 } from './icons';
 
@@ -171,18 +171,18 @@ export default function DocBreadcrumbsWrapper(props: Props): ReactNode {
 	const handleConnectToCursor = useCallback(() => {
 		const config = {
 			command: 'npx',
-			args: ['@remotion/mcp@latest'],
+			args: ['@picus/mcp@latest'],
 		};
 		const base64Config = btoa(JSON.stringify(config));
-		const cursorUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=remotion-documentation&config=${base64Config}`;
+		const cursorUrl = `cursor://anysphere.cursor-deeplink/mcp/install?name=picus-documentation&config=${base64Config}`;
 		window.location.href = cursorUrl;
 	}, []);
 
 	const handleConnectToVSCode = useCallback(() => {
 		const config = {
-			name: 'remotion-documentation',
+			name: 'picus-documentation',
 			command: 'npx',
-			args: ['@remotion/mcp@latest'],
+			args: ['@picus/mcp@latest'],
 		};
 		const vscodeUrl = `vscode:mcp/install?${encodeURIComponent(JSON.stringify(config))}`;
 		window.location.href = vscodeUrl;
@@ -279,7 +279,7 @@ export default function DocBreadcrumbsWrapper(props: Props): ReactNode {
 							}}
 						>
 							<AiDropdownItemComponent
-								icon={<RemotionIcon />}
+								icon={<PicusIcon />}
 								title="Ask AI"
 								description="Ask a question to our AI assistant"
 								onClick={handleAskAI}

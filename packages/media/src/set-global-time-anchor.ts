@@ -1,4 +1,4 @@
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 
 export const ALLOWED_GLOBAL_TIME_ANCHOR_SHIFT = 0.1;
 

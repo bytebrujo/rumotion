@@ -1,4 +1,4 @@
-import {Button, InlineCode, Link} from '@remotion/design';
+import {Button, InlineCode, Link} from '@picus/design';
 import React, {useEffect, useState} from 'react';
 import {codeToHtml} from 'shikiji';
 import {
@@ -83,7 +83,7 @@ export const CodeModal: React.FC<{
 			<DialogContent className="max-w-2xl max-h-[80vh] flex flex-col">
 				<DialogHeader>
 					<DialogDescription>
-						Copy this code into your Remotion project:
+						Copy this code into your Picus project:
 					</DialogDescription>
 				</DialogHeader>
 				<div className="space-y-4 overflow-y-auto flex-1 min-h-0">
@@ -132,7 +132,7 @@ export const CodeModal: React.FC<{
 				<DialogDescription>
 					<InlineCode>frame</InlineCode> is from the{' '}
 					<Link
-						href="https://www.remotion.dev/docs/use-current-frame"
+						href="https://www.picus.dev/docs/use-current-frame"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -141,7 +141,7 @@ export const CodeModal: React.FC<{
 					hook. <div className="h-[2px]" />
 					<InlineCode>fps</InlineCode> is from the{' '}
 					<Link
-						href="https://www.remotion.dev/docs/use-video-config"
+						href="https://www.picus.dev/docs/use-video-config"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -150,7 +150,7 @@ export const CodeModal: React.FC<{
 					hook. <div className="h-[2px]" />
 					See also:{' '}
 					<Link
-						href="https://www.remotion.dev/docs/animating-properties"
+						href="https://www.picus.dev/docs/animating-properties"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

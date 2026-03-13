@@ -1,12 +1,12 @@
 import {ALL_FORMATS, Input, UrlSource} from 'mediabunny';
-import type {ScheduleAudioNodeResult} from 'remotion';
+import type {ScheduleAudioNodeResult} from 'picus';
 import {expect, test} from 'vitest';
 import {audioIteratorManager} from '../audio-iterator-manager';
 import {makeNonceManager} from '../nonce-manager';
 
 const prepare = async () => {
 	const input = new Input({
-		source: new UrlSource('https://remotion.media/video.mp4'),
+		source: new UrlSource('https://picus.media/video.mp4'),
 		formats: ALL_FORMATS,
 	});
 	const audioTrack = await input.getPrimaryAudioTrack();
@@ -210,10 +210,10 @@ test('should create more iterators when seeking ', async () => {
 	]);
 });
 
-// https://github.com/remotion-dev/remotion/issues/5872#issuecomment-3541004403
+// https://github.com/picus-dev/picus/issues/5872#issuecomment-3541004403
 test('should not schedule duplicate chunks with playbackRate=0.5', async () => {
 	const input = new Input({
-		source: new UrlSource('https://remotion.media/video.mp4'),
+		source: new UrlSource('https://picus.media/video.mp4'),
 		formats: ALL_FORMATS,
 	});
 	const audioTrack = await input.getPrimaryAudioTrack();
@@ -282,7 +282,7 @@ test('should not decode + schedule audio chunks beyond the end time', async () =
 	const fps = 30;
 
 	const input = new Input({
-		source: new UrlSource('https://remotion.media/video.mp4'),
+		source: new UrlSource('https://picus.media/video.mp4'),
 		formats: ALL_FORMATS,
 	});
 	const audioTrack = await input.getPrimaryAudioTrack();

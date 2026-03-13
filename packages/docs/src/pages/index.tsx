@@ -1,15 +1,15 @@
 import {useColorMode} from '@docusaurus/theme-common';
-import '@remotion/promo-pages/dist/Homepage.css';
-import {NewLanding} from '@remotion/promo-pages/dist/Homepage.js';
-import '@remotion/promo-pages/dist/tailwind.css';
+import '@picus/promo-pages/dist/Homepage.css';
+import {NewLanding} from '@picus/promo-pages/dist/Homepage.js';
+import '@picus/promo-pages/dist/tailwind.css';
 import Layout from '@theme/Layout';
 import React from 'react';
 
 if (
 	typeof window !== 'undefined' &&
-	window.location?.origin?.includes('convert.remotion.dev')
+	window.location?.origin?.includes('convert.picus.dev')
 ) {
-	window.location.href = 'https://remotion.dev/convert';
+	window.location.href = 'https://picus.dev/convert';
 }
 
 const Inner: React.FC = () => {

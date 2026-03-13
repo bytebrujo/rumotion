@@ -24,7 +24,7 @@ export const WrappedBanner: React.FC = () => {
 					</p>
 					<p style={{marginBottom: 0}}>
 						Check out #GitHubUnwrapped to get your personal GitHub Year in
-						Review. <br /> Powered by Remotion Player and open source!
+						Review. <br /> Powered by Picus Player and open source!
 					</p>
 				</div>
 				<div className={styles.flexer} />

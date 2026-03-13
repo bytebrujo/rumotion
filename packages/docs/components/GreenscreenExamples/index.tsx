@@ -1,6 +1,6 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React, {useCallback, useRef, useState} from 'react';
-import {AbsoluteFill, OffthreadVideo, useVideoConfig} from 'remotion';
+import {AbsoluteFill, OffthreadVideo, useVideoConfig} from 'picus';
 
 export const Greenscreen: React.FC<{
 	readonly opacity: number;
@@ -44,7 +44,7 @@ export const Greenscreen: React.FC<{
 				<OffthreadVideo
 					style={{opacity: 0}}
 					onVideoFrame={onVideoFrame}
-					src="https://remotion.media/greenscreen.mp4"
+					src="https://picus.media/greenscreen.mp4"
 				/>
 			</AbsoluteFill>
 			<AbsoluteFill>
@@ -83,7 +83,7 @@ export const VideoOnCanvas: React.FC = () => {
 					onVideoFrame={onVideoFrame}
 					style={{opacity: 0}}
 					trimBefore={300}
-					src="https://remotion.media/BigBuckBunny.mp4"
+					src="https://picus.media/BigBuckBunny.mp4"
 				/>
 			</AbsoluteFill>
 			<AbsoluteFill>
@@ -107,7 +107,7 @@ export const VideoCanvasExamples: React.FC<{
 	return (
 		<div>
 			<Player
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={component}
 				compositionWidth={1280}
 				compositionHeight={720}

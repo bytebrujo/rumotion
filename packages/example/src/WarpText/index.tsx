@@ -1,5 +1,5 @@
-import {CameraMotionBlur} from '@remotion/motion-blur';
-import {getBoundingBox, resetPath, warpPath, WarpPathFn} from '@remotion/paths';
+import {CameraMotionBlur} from '@picus/motion-blur';
+import {getBoundingBox, resetPath, warpPath, WarpPathFn} from '@picus/paths';
 import opentype from 'opentype.js';
 import React, {useEffect, useRef, useState} from 'react';
 import {
@@ -8,7 +8,7 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 type FontInfo = {
 	path: string;
@@ -26,7 +26,7 @@ const getPath = () => {
 				return;
 			}
 
-			const path = font.getPath('REMOTION', 0, 150, 72);
+			const path = font.getPath('PICUS', 0, 150, 72);
 			const p = path.toPathData(2);
 			resolve({path: p});
 		});

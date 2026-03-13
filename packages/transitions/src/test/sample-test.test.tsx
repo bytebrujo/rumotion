@@ -1,8 +1,8 @@
 import {expect, test} from 'bun:test';
-import {Thumbnail} from '@remotion/player';
+import {Thumbnail} from '@picus/player';
 import type React from 'react';
 import {renderToString} from 'react-dom/server';
-import {useCurrentFrame} from 'remotion';
+import {useCurrentFrame} from 'picus';
 
 const Comp: React.FC<{}> = () => {
 	const frame = useCurrentFrame();

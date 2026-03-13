@@ -4,7 +4,7 @@ import {$} from 'bun';
 // @ts-ignore outside project
 import * as seo from '../convert/app/seo';
 
-await $`bunx turbo "@remotion/convert#build-spa" "@remotion/brand#bundle"`;
+await $`bunx turbo "@picus/convert#build-spa" "@picus/brand#bundle"`;
 
 const dir = path.join(__dirname, '../convert/spa-dist/client');
 
@@ -54,14 +54,14 @@ const contents = path.join(dir, 'index.html');
 // Replace the text in <title>
 const getContentWithTitle = (title: string, description: string) => {
 	const c = readFileSync(contents, 'utf-8');
-	const matcher = '<title>Remotion Convert</title>';
+	const matcher = '<title>Picus Convert</title>';
 
 	if (!c.includes(matcher)) {
 		throw new Error('Could not find title');
 	}
 
 	const descriptionMatcher =
-		'<meta name="description" content="Remotion Convert"/>';
+		'<meta name="description" content="Picus Convert"/>';
 	if (!c.includes(descriptionMatcher)) {
 		throw new Error('Could not find description');
 	}

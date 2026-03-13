@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {estimatePriceFromMetadata} from '@remotion/serverless-client';
+import {estimatePriceFromMetadata} from '@picus/serverless-client';
 import {awsImplementation} from '../aws-provider';
 
 test('Should not throw while calculating prices when time shifts occur', () => {
@@ -38,8 +38,8 @@ test('Should not throw while calculating prices when time shifts occur', () => {
 			numberOfGifLoops: null,
 			muted: false,
 			metadata: {Author: 'Lunar'},
-			functionName: 'remotion-render-la8ffw',
-			rendererFunctionName: 'remotion-render-la8ffw',
+			functionName: 'picus-render-la8ffw',
+			rendererFunctionName: 'picus-render-la8ffw',
 			dimensions: {
 				height: 1080,
 				width: 1920,

@@ -28,7 +28,7 @@ export const getCrossOriginValue = ({
 	// But this requires CORS, so we cannot default to that.
 
 	// DONT DO THIS:
-	// if (!useRemotionEnvironment().isRendering) {
+	// if (!usePicusEnvironment().isRendering) {
 	// 	return 'anonymous';
 	// }
 

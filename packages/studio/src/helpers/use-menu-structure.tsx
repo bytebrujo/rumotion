@@ -1,6 +1,6 @@
 import {useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+import {Internals} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {restartStudio} from '../api/restart-studio';
 import {askAiModalRef} from '../components/AskAiModal';
 import {Row} from '../components/layout';
@@ -13,7 +13,7 @@ import {showNotification} from '../components/Notifications/NotificationCenter';
 import type {TQuickSwitcherResult} from '../components/QuickSwitcher/QuickSwitcherResult';
 import {getPreviewSizeLabel, getUniqueSizes} from '../components/SizeSelector';
 import {inOutHandles} from '../components/TimelineInOutToggle';
-import {cmdOrCtrlCharacter} from '../error-overlay/remotion-overlay/ShortcutHint';
+import {cmdOrCtrlCharacter} from '../error-overlay/picus-overlay/ShortcutHint';
 import {Checkmark} from '../icons/Checkmark';
 import {drawRef} from '../state/canvas-ref';
 import {CheckerboardContext} from '../state/checkerboard';
@@ -56,7 +56,7 @@ const getFileMenu = ({
 	setSelectedModal: (value: React.SetStateAction<ModalState | null>) => void;
 }) => {
 	const items: ComboboxValue[] = [
-		window.remotion_isReadOnlyStudio
+		window.picus_isReadOnlyStudio
 			? {
 					id: 'input-props-override',
 					value: 'input-props-override',
@@ -120,20 +120,20 @@ const getFileMenu = ({
 					quickSwitcherLabel: 'Render on web...',
 				}
 			: null,
-		window.remotion_editorName && !readOnlyStudio
+		window.picus_editorName && !readOnlyStudio
 			? {
 					type: 'divider' as const,
 					id: 'open-in-editor-divider',
 				}
 			: null,
-		window.remotion_editorName && !readOnlyStudio
+		window.picus_editorName && !readOnlyStudio
 			? {
 					id: 'open-in-editor',
 					value: 'open-in-editor',
-					label: `Open in ${window.remotion_editorName}`,
+					label: `Open in ${window.picus_editorName}`,
 					onClick: async () => {
 						await openInEditor({
-							originalFileName: `${window.remotion_cwd}`,
+							originalFileName: `${window.picus_cwd}`,
 							originalLineNumber: 1,
 							originalColumnNumber: 1,
 							originalFunctionName: null,
@@ -143,7 +143,7 @@ const getFileMenu = ({
 							.then(({success}) => {
 								if (!success) {
 									showNotification(
-										`Could not open ${window.remotion_editorName}`,
+										`Could not open ${window.picus_editorName}`,
 										2000,
 									);
 								}
@@ -152,7 +152,7 @@ const getFileMenu = ({
 								// eslint-disable-next-line no-console
 								console.error(err);
 								showNotification(
-									`Could not open ${window.remotion_editorName}`,
+									`Could not open ${window.picus_editorName}`,
 									2000,
 								);
 							});
@@ -207,7 +207,7 @@ export const useMenuStructure = (
 
 	const isFullscreenSupported = checkFullscreenSupport();
 
-	const {remotion_packageManager} = window;
+	const {picus_packageManager} = window;
 
 	const sizePreselectIndex = sizes.findIndex(
 		(s) => String(size.size) === String(s.size),
@@ -217,7 +217,7 @@ export const useMenuStructure = (
 	const structure = useMemo((): Structure => {
 		let struct: Structure = [
 			{
-				id: 'remotion' as const,
+				id: 'picus' as const,
 				label: (
 					<Row align="center" justify="center">
 						<svg
@@ -241,16 +241,16 @@ export const useMenuStructure = (
 					{
 						id: 'about',
 						value: 'about',
-						label: 'About Remotion',
+						label: 'About Picus',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://remotion.dev');
+							openExternal('https://picus.dev');
 						},
 						type: 'item' as const,
 						keyHint: null,
 						leftItem: null,
 						subMenu: null,
-						quickSwitcherLabel: 'Help: About Remotion',
+						quickSwitcherLabel: 'Help: About Picus',
 					},
 					{
 						id: 'changelog',
@@ -258,7 +258,7 @@ export const useMenuStructure = (
 						label: 'Changelog',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://github.com/remotion-dev/remotion/releases');
+							openExternal('https://github.com/picus-dev/picus/releases');
 						},
 						type: 'item' as const,
 						keyHint: null,
@@ -273,7 +273,7 @@ export const useMenuStructure = (
 						onClick: () => {
 							closeMenu();
 							openExternal(
-								'https://github.com/remotion-dev/remotion/blob/main/LICENSE.md',
+								'https://github.com/picus-dev/picus/blob/main/LICENSE.md',
 							);
 						},
 						type: 'item' as const,
@@ -288,7 +288,7 @@ export const useMenuStructure = (
 						label: 'Acknowledgements',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://remotion.dev/acknowledgements');
+							openExternal('https://picus.dev/acknowledgements');
 						},
 						type: 'item' as const,
 						keyHint: null,
@@ -705,7 +705,7 @@ export const useMenuStructure = (
 						label: 'Timing Editor',
 						onClick: () => {
 							closeMenu();
-							window.open('https://www.remotion.dev/timing-editor', '_blank');
+							window.open('https://www.picus.dev/timing-editor', '_blank');
 						},
 						leftItem: null,
 						keyHint: null,
@@ -716,7 +716,7 @@ export const useMenuStructure = (
 				].filter(Internals.truthy),
 				quickSwitcherLabel: null,
 			},
-			readOnlyStudio || remotion_packageManager === 'unknown'
+			readOnlyStudio || picus_packageManager === 'unknown'
 				? null
 				: {
 						id: 'install' as const,
@@ -731,7 +731,7 @@ export const useMenuStructure = (
 									closeMenu();
 									setSelectedModal({
 										type: 'install-packages',
-										packageManager: remotion_packageManager,
+										packageManager: picus_packageManager,
 									});
 								},
 								type: 'item' as const,
@@ -776,7 +776,7 @@ export const useMenuStructure = (
 						label: 'Docs',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://remotion.dev/docs');
+							openExternal('https://picus.dev/docs');
 						},
 						type: 'item' as const,
 						keyHint: null,
@@ -791,7 +791,7 @@ export const useMenuStructure = (
 						onClick: () => {
 							closeMenu();
 							openExternal(
-								'https://github.com/remotion-dev/remotion/issues/new/choose',
+								'https://github.com/picus-dev/picus/issues/new/choose',
 							);
 						},
 						type: 'item' as const,
@@ -824,13 +824,13 @@ export const useMenuStructure = (
 						label: 'Instagram',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://instagram.com/remotion');
+							openExternal('https://instagram.com/picus');
 						},
 						type: 'item' as const,
 						keyHint: null,
 						leftItem: null,
 						subMenu: null,
-						quickSwitcherLabel: 'Follow Remotion on Instagram',
+						quickSwitcherLabel: 'Follow Picus on Instagram',
 					},
 					{
 						id: 'x',
@@ -838,13 +838,13 @@ export const useMenuStructure = (
 						label: 'X',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://x.com/remotion');
+							openExternal('https://x.com/picus');
 						},
 						type: 'item' as const,
 						keyHint: null,
 						leftItem: null,
 						subMenu: null,
-						quickSwitcherLabel: 'Follow Remotion on X',
+						quickSwitcherLabel: 'Follow Picus on X',
 					},
 					{
 						id: 'youtube',
@@ -852,13 +852,13 @@ export const useMenuStructure = (
 						label: 'YouTube',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://www.youtube.com/@remotion_dev');
+							openExternal('https://www.youtube.com/@picus_dev');
 						},
 						type: 'item' as const,
 						keyHint: null,
 						leftItem: null,
 						subMenu: null,
-						quickSwitcherLabel: 'Watch Remotion on YouTube',
+						quickSwitcherLabel: 'Watch Picus on YouTube',
 					},
 					{
 						id: 'linkedin',
@@ -866,13 +866,13 @@ export const useMenuStructure = (
 						label: 'LinkedIn',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://www.linkedin.com/company/remotion-dev/');
+							openExternal('https://www.linkedin.com/company/picus-dev/');
 						},
 						type: 'item' as const,
 						keyHint: null,
 						leftItem: null,
 						subMenu: null,
-						quickSwitcherLabel: 'Follow Remotion on LinkedIn',
+						quickSwitcherLabel: 'Follow Picus on LinkedIn',
 					},
 					{
 						id: 'tiktok',
@@ -880,13 +880,13 @@ export const useMenuStructure = (
 						label: 'TikTok',
 						onClick: () => {
 							closeMenu();
-							openExternal('https://www.tiktok.com/@remotion');
+							openExternal('https://www.tiktok.com/@picus');
 						},
 						type: 'item' as const,
 						keyHint: null,
 						leftItem: null,
 						subMenu: null,
-						quickSwitcherLabel: 'Follow Remotion on TikTok',
+						quickSwitcherLabel: 'Follow Picus on TikTok',
 					},
 				],
 			},
@@ -932,7 +932,7 @@ export const useMenuStructure = (
 		sidebarCollapsedStateRight,
 		checkerboard,
 		isFullscreenSupported,
-		remotion_packageManager,
+		picus_packageManager,
 		mobileLayout,
 		size.size,
 		setSize,

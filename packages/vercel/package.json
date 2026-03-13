@@ -1,12 +1,12 @@
 {
-	"name": "@remotion/vercel",
+	"name": "@picus/vercel",
 	"version": "4.0.434",
-	"description": "Render Remotion videos on Vercel Sandbox",
+	"description": "Render Picus videos on Vercel Sandbox",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/esm/index.mjs",
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/vercel"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/vercel"
 	},
 	"sideEffects": false,
 	"type": "module",
@@ -17,15 +17,15 @@
 		"watch": "tsgo -w",
 		"make": "bun --env-file=../.env.bundle bundle.ts && tsgo"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
-	"license": "Remotion License",
+	"license": "Picus License",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"@remotion/renderer": "workspace:*",
-		"remotion": "workspace:*"
+		"@picus/renderer": "workspace:*",
+		"picus": "workspace:*"
 	},
 	"peerDependencies": {
 		"@vercel/sandbox": ">=1.0.0"
@@ -39,14 +39,14 @@
 		"./package.json": "./package.json"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"@vercel/blob": "2.3.0",
 		"@vercel/sandbox": "1.6.0",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"vercel",
 		"sandbox",
 		"video"
@@ -54,5 +54,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/vercel/api"
+	"homepage": "https://www.picus.dev/docs/vercel/api"
 }

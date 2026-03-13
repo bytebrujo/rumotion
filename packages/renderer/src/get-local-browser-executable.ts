@@ -56,7 +56,7 @@ export const getLocalBrowserExecutable = ({
 	if (status.type === 'no-browser' || status.type === 'version-mismatch') {
 		throw new TypeError(
 			'No browser found for rendering frames! Please open a GitHub issue and describe ' +
-				'how you reached this error: https://remotion.dev/issue',
+				'how you reached this error: https://picus.dev/issue',
 		);
 	}
 

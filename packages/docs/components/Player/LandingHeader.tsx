@@ -15,7 +15,7 @@ export const LandingHeader: React.FC = () => {
 
 	return (
 		<div className={styles.container}>
-			<div style={logo}>@remotion/player</div>
+			<div style={logo}>@picus/player</div>
 			<h1 className={styles.title}>
 				Dynamic embedded
 				<br />
@@ -46,7 +46,7 @@ export const LandingHeader: React.FC = () => {
 			<br />
 			<br />
 			<p className={styles.p}>
-				With the Remotion Player, you can embed videos that are written in
+				With the Picus Player, you can embed videos that are written in
 				React, and change them at runtime. Connect it to server-side rendering
 				to turn them into real MP4 videos.
 			</p>

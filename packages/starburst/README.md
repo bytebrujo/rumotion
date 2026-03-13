@@ -1,18 +1,18 @@
-# @remotion/starburst
+# @picus/starburst
 
-Starburst ray effect for Remotion
+Starburst ray effect for Picus
 
-[![NPM Downloads](https://img.shields.io/npm/dm/@remotion/starburst.svg?style=flat&color=black&label=Downloads)](https://npmcharts.com/compare/@remotion/starburst?minimal=true)
+[![NPM Downloads](https://img.shields.io/npm/dm/@picus/starburst.svg?style=flat&color=black&label=Downloads)](https://npmcharts.com/compare/@picus/starburst?minimal=true)
 
 ## Installation
 
 ```bash
-npm install @remotion/starburst --save-exact
+npm install @picus/starburst --save-exact
 ```
 
-When installing a Remotion package, make sure to align the version of all `remotion` and `@remotion/*` packages to the same version.
+When installing a Picus package, make sure to align the version of all `picus` and `@picus/*` packages to the same version.
 Remove the `^` character from the version number to use the exact version.
 
 ## Usage
 
-See the [documentation](https://www.remotion.dev/docs/starburst) for more information.
+See the [documentation](https://www.picus.dev/docs/starburst) for more information.

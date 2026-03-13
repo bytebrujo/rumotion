@@ -3,7 +3,7 @@ image: /generated/articles-docs-media-parser-seeking.png
 id: seeking
 title: Seeking
 slug: /media-parser/seeking
-crumb: '@remotion/media-parser'
+crumb: '@picus/media-parser'
 ---
 
 :::warning
@@ -15,7 +15,7 @@ crumb: '@remotion/media-parser'
 In [`parseMedia()`](/docs/media-parser/parse-media), [`parseMediaOnWebWorker()`](/docs/media-parser/parse-media-on-web-worker) and [`parseMediaOnServerWorker()`](/docs/media-parser/parse-media-on-server-worker), you can seek to a different position in the media file.
 
 ```tsx twoslash title="Basic seeking"
-import {parseMedia, mediaParserController} from '@remotion/media-parser';
+import {parseMedia, mediaParserController} from '@picus/media-parser';
 
 const controller = mediaParserController();
 
@@ -24,7 +24,7 @@ const controller = mediaParserController();
 controller.seek(5); // Seek to 5 seconds
 
 await parseMedia({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   controller,
   onVideoTrack: () => {
     return () => {
@@ -43,7 +43,7 @@ There is no guarantee that this is the last keyframe before the time you specifi
 Remember that if you want to decode a video, you always have to start at a keyframe. If you are not interested in the frames before `time`, you still need to decode them, but you may discard them.
 
 ```tsx twoslash title="Seeking to a keyframe"
-import {mediaParserController} from '@remotion/media-parser';
+import {mediaParserController} from '@picus/media-parser';
 
 const controller = mediaParserController();
 
@@ -67,12 +67,12 @@ An error will be thrown if you attempt to do this.
 You can simulate what would happen if you seeked to a certain time.
 
 ```tsx twoslash title="Basic seeking"
-import {parseMedia, mediaParserController} from '@remotion/media-parser';
+import {parseMedia, mediaParserController} from '@picus/media-parser';
 
 const controller = mediaParserController();
 
 await parseMedia({
-  src: 'https://remotion.media/video.mp4',
+  src: 'https://picus.media/video.mp4',
   controller,
   onVideoTrack: () => {
     return async () => {

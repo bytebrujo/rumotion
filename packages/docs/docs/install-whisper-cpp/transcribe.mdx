@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-install-whisper-cpp-transcribe.png
 title: transcribe()
-crumb: '@remotion/install-whisper-cpp'
+crumb: '@picus/install-whisper-cpp'
 ---
 
 # transcribe()<AvailableFrom v="4.0.131 "/>
@@ -15,7 +15,7 @@ This function only works with Whisper.cpp 1.5.5 or later, unless `tokenLevelTime
 
 ```tsx twoslash title="transcribe.mjs"
 import path from 'path';
-import {transcribe} from '@remotion/install-whisper-cpp';
+import {transcribe} from '@picus/install-whisper-cpp';
 
 const {transcription} = await transcribe({
   inputPath: '/path/to/audio.wav',
@@ -59,7 +59,7 @@ Possible values: `tiny`, `tiny.en`, `base`, `base.en`, `small`, `small.en`, `med
 
 Make sure the model you want to use exists in your `whisper.cpp/models` folder. You can ensure a specific model is available locally by utilizing the [downloadWhisperModel()](/docs/install-whisper-cpp/download-whisper-model) API.
 
-Note: `large-v3-turbo` is only working properly from Whisper.cpp versions built from November 2024 or later and Remotion v4.0.229 or greater.
+Note: `large-v3-turbo` is only working properly from Whisper.cpp versions built from November 2024 or later and Picus v4.0.229 or greater.
 
 ### `modelFolder?`
 
@@ -98,7 +98,7 @@ Set this flag to `null`, to use `whisper.cpp`'s default token grouping (useful f
 
 ### `splitOnWord?`<AvailableFrom v="4.0.208" />
 
-[Adds the `--split-on-word` flag to Whisper.cpp](https://github.com/remotion-dev/remotion/pull/4257) for cleaner word-for-word output.
+[Adds the `--split-on-word` flag to Whisper.cpp](https://github.com/picus-dev/picus/pull/4257) for cleaner word-for-word output.
 
 ### `language?`<AvailableFrom v="4.0.142" />
 
@@ -119,7 +119,7 @@ Listen for progress updates from the transcription process.
 The progress is a number between `0` and `1`.
 
 ```tsx twoslash
-import type {TranscribeOnProgress} from '@remotion/install-whisper-cpp';
+import type {TranscribeOnProgress} from '@picus/install-whisper-cpp';
 
 const onProgress: TranscribeOnProgress = (progress) => {
   console.log(`Transcription progress: ${progress * 100}%`);
@@ -221,8 +221,8 @@ Use [`convertToCaptions()`](/docs/install-whisper-cpp/convert-to-captions) to us
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/install-whisper-cpp/src/transcribe.ts)
-- [`@remotion/install-whisper-cpp`](/docs/install-whisper-cpp)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/install-whisper-cpp/src/transcribe.ts)
+- [`@picus/install-whisper-cpp`](/docs/install-whisper-cpp)
 - [`convertToCaptions()`](/docs/install-whisper-cpp/convert-to-captions)
 - [`downloadWhisperModel()`](/docs/install-whisper-cpp/download-whisper-model)
 - [`installWhisperCpp()`](/docs/install-whisper-cpp/install-whisper-cpp)

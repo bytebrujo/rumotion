@@ -2,22 +2,22 @@
 image: /generated/articles-docs-use-video-texture.png
 id: use-video-texture
 sidebar_label: useVideoTexture()
-crumb: '@remotion/three'
+crumb: '@picus/three'
 ---
 
 # ~useVideoTexture()~
 
 :::warning
-Deprecated - we recommend using [`@remotion/media`](/docs/videos/as-threejs-texture) instead.
+Deprecated - we recommend using [`@picus/media`](/docs/videos/as-threejs-texture) instead.
 :::
 
-Allows you to use a video in React Three Fiber that is synchronized with Remotion's `useCurrentFrame()`.
+Allows you to use a video in React Three Fiber that is synchronized with Picus's `useCurrentFrame()`.
 
 To use a video in a Three.JS context, you first have to render it and assign it a ref. If you only want to use it in a React Three Fiber Scene, you can make it invisible by adding a `{position: "absolute", opacity: 0}` style.
 
 ```tsx twoslash
 import {useRef} from 'react';
-import {Html5Video} from 'remotion';
+import {Html5Video} from 'picus';
 import src from './vid.mp4';
 
 const MyVideo = () => {
@@ -33,7 +33,7 @@ To convert the video to a video texture, place the `useVideoTexture()` hook in t
 import React from 'react';
 const videoRef: React.MutableRefObject<HTMLVideoElement | null> = React.useRef(null);
 // ---cut---
-import {useVideoTexture} from '@remotion/three';
+import {useVideoTexture} from '@picus/three';
 
 // ...
 
@@ -44,7 +44,7 @@ The return type of it is a `THREE.VideoTexture | null` which you can assign as a
 
 ```tsx twoslash
 import React from 'react';
-import {useVideoTexture} from '@remotion/three';
+import {useVideoTexture} from '@picus/three';
 const videoRef: React.MutableRefObject<HTMLVideoElement | null> = React.useRef(null);
 const videoTexture = useVideoTexture(videoRef);
 // ---cut---
@@ -55,6 +55,6 @@ const videoTexture = useVideoTexture(videoRef);
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/three/src/use-video-texture.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/three/src/use-video-texture.ts)
 - [Example usage: React Three Fiber template](/templates/three)
 - [`<ThreeCanvas />`](/docs/three-canvas)

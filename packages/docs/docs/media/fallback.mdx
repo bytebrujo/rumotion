@@ -1,16 +1,16 @@
 ---
 image: /generated/articles-docs-media-fallback.png
-title: 'Fallback from @remotion/media to <OffthreadVideo> or <Html5Audio>'
+title: 'Fallback from @picus/media to <OffthreadVideo> or <Html5Audio>'
 sidebar_label: 'Fallback to <OffthreadVideo>'
-crumb: '@remotion/media'
+crumb: '@picus/media'
 ---
 
-Sometimes, a media file cannot be embedded using [`@remotion/media`](/docs/media)'s [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio) tags.  
-In such cases, a fallback to [`<OffthreadVideo>`](/docs/offthreadvideo) or [`<Html5Audio>`](/docs/html5-audio) from the `remotion` package is attempted.
+Sometimes, a media file cannot be embedded using [`@picus/media`](/docs/media)'s [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio) tags.  
+In such cases, a fallback to [`<OffthreadVideo>`](/docs/offthreadvideo) or [`<Html5Audio>`](/docs/html5-audio) from the `picus` package is attempted.
 
 ## When a fallback is attempted
 
-Here are some cases where [`@remotion/media`](/docs/media) may fall back to [`<OffthreadVideo>`](/docs/offthreadvideo) or [`<Html5Audio>`](/docs/html5-audio) from `remotion`:
+Here are some cases where [`@picus/media`](/docs/media) may fall back to [`<OffthreadVideo>`](/docs/offthreadvideo) or [`<Html5Audio>`](/docs/html5-audio) from `picus`:
 
 - The resource fails to load due to [CORS restrictions](/docs/cors-issues)
 - The container format is not supported by [Mediabunny](/docs/mediabunny/formats)
@@ -19,7 +19,7 @@ Here are some cases where [`@remotion/media`](/docs/media) may fall back to [`<O
 
 ## Observing when a fallback happens
 
-If [`@remotion/media`](/docs/media) falls back to another tag, then a warning message will be logged in the render:
+If [`@picus/media`](/docs/media) falls back to another tag, then a warning message will be logged in the render:
 
 ```
 Cannot decode /public/video-h265.mp4, falling back to <OffthreadVideo>
@@ -32,20 +32,20 @@ If you are rendering on an environment where the logs are not immediately visibl
 To prevent [`<Video>`](/docs/media/video) from falling back to [`<OffthreadVideo>`](/docs/offthreadvideo), set the [`disallowFallbackToOffthreadVideo`](/docs/media/video#disallowfallbacktooffthreadvideo) prop:
 
 ```tsx twoslash title="No fallback to OffthreadVideo"
-import {Video} from '@remotion/media';
+import {Video} from '@picus/media';
 
 export const MyComp: React.FC = () => {
-  return <Video src="https://remotion.media/video.mp4" disallowFallbackToOffthreadVideo />;
+  return <Video src="https://picus.media/video.mp4" disallowFallbackToOffthreadVideo />;
 };
 ```
 
-To prevent [`<Audio>`](/docs/media/audio) from falling back to [`<Html5Audio>`](/docs/html5-audio) from [`remotion`](/docs/remotion), set the [`disallowFallbackToHtml5Audio`](/docs/media/audio#disallowfallbacktohtml5audio) prop:
+To prevent [`<Audio>`](/docs/media/audio) from falling back to [`<Html5Audio>`](/docs/html5-audio) from [`picus`](/docs/picus), set the [`disallowFallbackToHtml5Audio`](/docs/media/audio#disallowfallbacktohtml5audio) prop:
 
 ```tsx twoslash title="No fallback to HTML5 audio tag"
-import {Audio} from '@remotion/media';
+import {Audio} from '@picus/media';
 
 export const MyComp: React.FC = () => {
-  return <Audio src="https://remotion.media/audio.mp3" disallowFallbackToHtml5Audio />;
+  return <Audio src="https://picus.media/audio.mp3" disallowFallbackToHtml5Audio />;
 };
 ```
 
@@ -57,7 +57,7 @@ The [`loop`](/docs/media/video#loop) prop of [`<Video>`](/docs/media/video) is h
 
 **During preview**, the fallback uses [`<Html5Video>`](/docs/html5-video), which natively supports the `loop` prop. Looping works as expected.
 
-**During rendering**, [`<OffthreadVideo>`](/docs/offthreadvideo) does not natively support looping. To work around this, `@remotion/media` attempts to determine the duration of the video and automatically wraps [`<OffthreadVideo>`](/docs/offthreadvideo) in a [`<Loop>`](/docs/loop) component.
+**During rendering**, [`<OffthreadVideo>`](/docs/offthreadvideo) does not natively support looping. To work around this, `@picus/media` attempts to determine the duration of the video and automatically wraps [`<OffthreadVideo>`](/docs/offthreadvideo) in a [`<Loop>`](/docs/loop) component.
 
 - In most cases, the duration can be extracted from the media container even if the codec is not supported.
 - If the duration **cannot** be determined (e.g. due to [CORS issues](/docs/cors-issues) or a broken container), the render will fail with an error.
@@ -69,8 +69,8 @@ To ensure looping works reliably during rendering, make sure:
 
 ## Fallback is not possible in client-side rendering
 
-When using [`@remotion/web-renderer`](/docs/web-renderer) for client-side rendering, fallback to [`<OffthreadVideo>`](/docs/offthreadvideo) or [`<Html5Audio>`](/docs/html5-audio) is **not possible**.
+When using [`@picus/web-renderer`](/docs/web-renderer) for client-side rendering, fallback to [`<OffthreadVideo>`](/docs/offthreadvideo) or [`<Html5Audio>`](/docs/html5-audio) is **not possible**.
 
 This is because these fallback components require server-side capabilities that are not available in the browser.
 
-If a media file cannot be rendered using [`@remotion/media`](/docs/media) during client-side rendering, the render will fail with an error message describing the issue.
+If a media file cannot be rendered using [`@picus/media`](/docs/media) during client-side rendering, the render will fail with an error message describing the issue.

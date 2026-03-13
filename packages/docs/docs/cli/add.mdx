@@ -1,16 +1,16 @@
 ---
 image: /generated/articles-docs-cli-add.png
-title: npx remotion add
+title: npx picus add
 sidebar_label: add
 crumb: CLI Reference
 ---
 
-Adds one or more Remotion packages to your project with the same version as your other Remotion packages.
+Adds one or more Picus packages to your project with the same version as your other Picus packages.
 
-Also supports adding `zod` and `mediabunny` with the correct version for your Remotion installation.
+Also supports adding `zod` and `mediabunny` with the correct version for your Picus installation.
 
 ```
-npx remotion add <package-name...>
+npx picus add <package-name...>
 ```
 
 ## Examples
@@ -18,20 +18,20 @@ npx remotion add <package-name...>
 Add a single package:
 
 ```bash
-npx remotion add @remotion/transitions
+npx picus add @picus/transitions
 ```
 
 Add multiple packages at once:
 
 ```bash
-npx remotion add @remotion/transitions @remotion/three @remotion/lottie
+npx picus add @picus/transitions @picus/three @picus/lottie
 ```
 
 This command will:
 
-1. Verify that all package names are valid Remotion packages (or supported extra packages: `zod`, `mediabunny`)
+1. Verify that all package names are valid Picus packages (or supported extra packages: `zod`, `mediabunny`)
 2. Check which packages are already installed (and skip them)
-3. Detect the version of your currently installed Remotion packages
+3. Detect the version of your currently installed Picus packages
 4. Install the specified packages with the matching version
 
 ## Flags
@@ -50,14 +50,14 @@ Any additional arguments you pass to this command will be forwarded as flags to 
 
 ## Use case
 
-This command is useful when you want to add new Remotion packages to your project and ensure they're installed with the same version as your other Remotion packages. This helps avoid version mismatches that could cause compatibility issues.
+This command is useful when you want to add new Picus packages to your project and ensure they're installed with the same version as your other Picus packages. This helps avoid version mismatches that could cause compatibility issues.
 
-For example, if you have `remotion@4.0.100` installed and you want to add `@remotion/transitions`, running `npx remotion add @remotion/transitions` will install `@remotion/transitions@4.0.100`.
+For example, if you have `picus@4.0.100` installed and you want to add `@picus/transitions`, running `npx picus add @picus/transitions` will install `@picus/transitions@4.0.100`.
 
 When adding multiple packages, the command will install all of them in a single operation with the same version number.
 
 ## See also
 
-- [Source code of this command](https://github.com/remotion-dev/remotion/blob/main/packages/cli/src/add.ts)
-- [npx remotion upgrade](/docs/cli/upgrade)
-- [npx remotion versions](/docs/cli/versions)
+- [Source code of this command](https://github.com/picus-dev/picus/blob/main/packages/cli/src/add.ts)
+- [npx picus upgrade](/docs/cli/upgrade)
+- [npx picus versions](/docs/cli/versions)

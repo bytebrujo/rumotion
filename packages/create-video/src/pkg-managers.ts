@@ -114,19 +114,19 @@ export const getRunCommand = (manager: PackageManager) => {
 
 export const getRenderCommand = (manager: PackageManager) => {
 	if (manager === 'npm') {
-		return `npx remotion render`;
+		return `npx picus render`;
 	}
 
 	if (manager === 'yarn') {
-		return `yarn remotion render`;
+		return `yarn picus render`;
 	}
 
 	if (manager === 'pnpm') {
-		return `pnpm exec remotion render`;
+		return `pnpm exec picus render`;
 	}
 
 	if (manager === 'bun') {
-		return `bunx remotion render`;
+		return `bunx picus render`;
 	}
 
 	throw new TypeError('unknown package manager');
@@ -134,19 +134,19 @@ export const getRenderCommand = (manager: PackageManager) => {
 
 export const getUpgradeCommand = (manager: PackageManager) => {
 	if (manager === 'npm') {
-		return `npx remotion upgrade`;
+		return `npx picus upgrade`;
 	}
 
 	if (manager === 'yarn') {
-		return `yarn remotion upgrade`;
+		return `yarn picus upgrade`;
 	}
 
 	if (manager === 'pnpm') {
-		return `pnpm exec remotion upgrade`;
+		return `pnpm exec picus upgrade`;
 	}
 
 	if (manager === 'bun') {
-		return `bunx remotion upgrade`;
+		return `bunx picus upgrade`;
 	}
 
 	throw new TypeError('unknown package manager');

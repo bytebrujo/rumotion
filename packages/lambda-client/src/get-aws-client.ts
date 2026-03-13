@@ -4,7 +4,7 @@ import * as LambdaSDK from '@aws-sdk/client-lambda';
 import * as S3SDK from '@aws-sdk/client-s3';
 import * as ServiceQuotasSDK from '@aws-sdk/client-service-quotas';
 import * as StsSdk from '@aws-sdk/client-sts';
-import type {CustomCredentials} from '@remotion/serverless-client';
+import type {CustomCredentials} from '@picus/serverless-client';
 import type {AwsProvider} from './aws-provider';
 import {getServiceClient, type ServiceMapping} from './get-service-client';
 import type {AwsRegion} from './regions';
@@ -33,8 +33,8 @@ export type GetAwsClientOutput<T extends keyof ServiceMapping> = {
 };
 
 /*
- * @description Exposes full access to the AWS SDK used by Remotion, allowing interaction with AWS infrastructure beyond provided functionalities.
- * @see [Documentation](https://remotion.dev/docs/lambda/getawsclient)
+ * @description Exposes full access to the AWS SDK used by Picus, allowing interaction with AWS infrastructure beyond provided functionalities.
+ * @see [Documentation](https://picus.dev/docs/lambda/getawsclient)
  */
 export const getAwsClient = <T extends keyof ServiceMapping>({
 	region,

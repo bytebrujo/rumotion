@@ -6,13 +6,13 @@ title: Performance Tips
 crumb: 'Need for Speed'
 ---
 
-Video rendering is one of the most heavy workloads a computer can take on. Remotion aims to at least perform similarly than traditional video editing programs.
+Video rendering is one of the most heavy workloads a computer can take on. Picus aims to at least perform similarly than traditional video editing programs.
 
 Your experience is also dependent on your code and the hardware you run it on. Review the following performance insights to find opportunities for speeding up your render.
 
 ## Concurrency
 
-The `--concurrency` flag you set can influence the rendering speed both positively and negatively. A concurrency too high and a concurrency too low can both be coutnerproductive. Use the [`npx remotion benchmark`](/docs/cli/benchmark) command to find the optimal concurrency.
+The `--concurrency` flag you set can influence the rendering speed both positively and negatively. A concurrency too high and a concurrency too low can both be coutnerproductive. Use the [`npx picus benchmark`](/docs/cli/benchmark) command to find the optimal concurrency.
 
 ## GPU effects
 
@@ -30,7 +30,7 @@ Read the [considerations about using the GPU](/docs/gpu).
 
 ## Videos
 
-Both [`<Html5Video>` (formerly just called `<Video>`, from the `remotion` package)] and [`<OffthreadVideo>`](/docs/offthreadvideo) are not optimized.
+Both [`<Html5Video>` (formerly just called `<Video>`, from the `picus` package)] and [`<OffthreadVideo>`](/docs/offthreadvideo) are not optimized.
 
 We made a new [`<Video>`](/docs/media/video) tag that has the optimal performance. Consider using it if you are still using one of the old video tags.
 
@@ -38,7 +38,7 @@ See: [Comparison of video tags](/docs/video-tags)
 
 ## Slow JavaScript code
 
-Remotion can also suffer from JavaScript bottlenecks that are introduced in your code. [Debug your render and log timing information](/docs/troubleshooting/debug-failed-render) to find slow parts of your code.
+Picus can also suffer from JavaScript bottlenecks that are introduced in your code. [Debug your render and log timing information](/docs/troubleshooting/debug-failed-render) to find slow parts of your code.
 
 Use memoization using [`useMemo()`](https://react.dev/reference/react/useMemo) and [`useCallback()`](https://react.dev/reference/react/useCallback) where appropriate to cache expensive computation.
 
@@ -65,11 +65,11 @@ See [this article](/docs/lambda/optimizing-speed) for tips specifically for Lamb
 
 ## Measuring render speed
 
-- Render using [`--log=verbose`](/docs/troubleshooting/debug-failed-render) to list the slowest frames of a Remotion render. Consider that the first frames rendered in a thread might be slow due to initalization.
+- Render using [`--log=verbose`](/docs/troubleshooting/debug-failed-render) to list the slowest frames of a Picus render. Consider that the first frames rendered in a thread might be slow due to initalization.
 
 - Use `console.time` to measure how long an operation takes in your code in order to find the slow parts of your render.
 
-- Use [`npx remotion benchmark`](/docs/cli/benchmark) to try out different values for `--concurrency` to find the optimal value.
+- Use [`npx picus benchmark`](/docs/cli/benchmark) to try out different values for `--concurrency` to find the optimal value.
 
 ## See also
 

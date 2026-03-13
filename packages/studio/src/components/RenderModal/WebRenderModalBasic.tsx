@@ -1,12 +1,12 @@
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import type {
 	RenderStillOnWebImageFormat,
 	WebRendererContainer,
 	WebRendererVideoCodec,
-} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
 import type React from 'react';
 import {useMemo} from 'react';
-import type {VideoConfig} from 'remotion';
+import type {VideoConfig} from 'picus';
 import {Checkmark} from '../../icons/Checkmark';
 import {Spacing} from '../layout';
 import type {ComboboxValue} from '../NewComposition/ComboBox';
@@ -252,7 +252,7 @@ export const WebRenderModalBasic: React.FC<WebRenderModalBasicProps> = ({
 				onValueChange={onOutNameChange}
 				validationMessage={validationMessage}
 				label={
-					window.remotion_isReadOnlyStudio ? 'Download name' : 'Output name'
+					window.picus_isReadOnlyStudio ? 'Download name' : 'Output name'
 				}
 			/>
 			<div style={optionRow}>

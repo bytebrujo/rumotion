@@ -1,6 +1,6 @@
-import { Caption } from "@remotion/captions";
+import { Caption } from "@picus/captions";
 import React, { useMemo } from "react";
-import { Easing, interpolate } from "remotion";
+import { Easing, interpolate } from "picus";
 import { msToFrame } from "../helpers/ms-to-frame";
 
 export const Word: React.FC<{

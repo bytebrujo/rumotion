@@ -1,4 +1,4 @@
-import type {EmojiName} from '@remotion/animated-emoji';
+import type {EmojiName} from '@picus/animated-emoji';
 import React, {
 	forwardRef,
 	useCallback,
@@ -6,7 +6,7 @@ import React, {
 	useImperativeHandle,
 	useRef,
 } from 'react';
-import {AbsoluteFill, useRemotionEnvironment} from 'remotion';
+import {AbsoluteFill, usePicusEnvironment} from 'picus';
 import {DisplayedEmoji} from './DisplayedEmoji';
 
 export type EmojiCardRef = {
@@ -141,7 +141,7 @@ const EmojiCardRefFn: React.ForwardRefRenderFunction<
 		});
 	}, []);
 
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	return (
 		<AbsoluteFill

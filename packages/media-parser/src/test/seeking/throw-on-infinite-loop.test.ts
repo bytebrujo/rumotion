@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../../controller/media-parser-controller';
 import {nodeReader} from '../../node';
 import {parseMedia} from '../../parse-media';
@@ -22,7 +22,7 @@ test('handle seek infinite loop better', async () => {
 					controller.seek(10);
 				};
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	} catch (err) {
 		expect((err as Error).message).toContain(

@@ -7,7 +7,7 @@ title: Limitations of client-side rendering
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.  
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
 The browser must support the [WebCodecs API](https://developer.mozilla.org/en-US/docs/Web/API/WebCodecs_API). See [Browser support](/docs/client-side-rendering#browser-support) for minimum browser versions.
@@ -20,7 +20,7 @@ It is not feasible to support all CSS properties and factors affecting the visua
 
 ### Positioning and layouting properties
 
-Properties such as `margin`, `left`, `display`, `width`, `height`, `flex`, `flex-direction` affect the position and size of the element. Those are all <a style={{color: 'green'}}>supported</a> because Remotion uses [`.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) to obtain the position and size of the element.
+Properties such as `margin`, `left`, `display`, `width`, `height`, `flex`, `flex-direction` affect the position and size of the element. Those are all <a style={{color: 'green'}}>supported</a> because Picus uses [`.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) to obtain the position and size of the element.
 
 The `overflow` property is <a style={{color: 'green'}}>supported</a>.  
 The `object-fit` property is <a style={{color: 'green'}}>supported</a>.  
@@ -102,16 +102,16 @@ Filters are not supported in Safari/WebKit. Use Chrome or Firefox for filter sup
 
 ## Supported elements
 
-The following Remotion components are supported:
+The following Picus components are supported:
 
-The [`<Video>`](/docs/media/video) from `@remotion/media` is <a style={{color: 'green'}}>supported</a>.  
-The [`<Audio>`](/docs/media/audio) from `@remotion/media` is <a style={{color: 'green'}}>supported</a>.  
+The [`<Video>`](/docs/media/video) from `@picus/media` is <a style={{color: 'green'}}>supported</a>.  
+The [`<Audio>`](/docs/media/audio) from `@picus/media` is <a style={{color: 'green'}}>supported</a>.  
 [`<Img>`](/docs/img) is <a style={{color: 'green'}}>supported</a>.  
-[`<Gif>`](/docs/gif) from [`@remotion/gif`](/docs/gif) is <a style={{color: 'green'}}>supported</a>.  
-[`<Rive>`](/docs/rive) from [`@remotion/rive`](/docs/rive) is <a style={{color: 'green'}}>supported</a>.  
-[`<Lottie>`](/docs/lottie) from [`@remotion/lottie`](/docs/lottie) is <a style={{color: 'green'}}>supported</a>.  
-[`<ThreeCanvas>`](/docs/three-canvas) from [`@remotion/three`](/docs/three) is <a style={{color: 'green'}}>supported</a>.  
-[`<SkiaCanvas>`](/docs/skia/skia-canvas) from [`@remotion/skia`](/docs/skia) is <a style={{color: 'green'}}>supported</a>.  
+[`<Gif>`](/docs/gif) from [`@picus/gif`](/docs/gif) is <a style={{color: 'green'}}>supported</a>.  
+[`<Rive>`](/docs/rive) from [`@picus/rive`](/docs/rive) is <a style={{color: 'green'}}>supported</a>.  
+[`<Lottie>`](/docs/lottie) from [`@picus/lottie`](/docs/lottie) is <a style={{color: 'green'}}>supported</a>.  
+[`<ThreeCanvas>`](/docs/three-canvas) from [`@picus/three`](/docs/three) is <a style={{color: 'green'}}>supported</a>.  
+[`<SkiaCanvas>`](/docs/skia/skia-canvas) from [`@picus/skia`](/docs/skia) is <a style={{color: 'green'}}>supported</a>.  
 [`<AnimatedImage>`](/docs/animatedimage) is <a style={{color: 'green'}}>supported</a> when rendering in Chrome.  
 [`<OffthreadVideo>`](/docs/offthreadvideo) is <a style={{color: 'red'}}>not supported</a>.  
  → Use [`<Video>`](/docs/media/video) instead.  
@@ -119,7 +119,7 @@ The [`<Audio>`](/docs/media/audio) from `@remotion/media` is <a style={{color: '
  → Use [`<Video>`](/docs/media/video) instead.  
 [`<Html5Audio>`](/docs/html5-audio) is <a style={{color: 'red'}}>not supported</a>.  
  → Use [`<Audio>`](/docs/media/audio) instead.  
-[`<AnimatedEmoji>`](/docs/animated-emoji) from [`@remotion/animated-emoji`](/docs/animated-emoji) is <a style={{color: 'red'}}>not supported</a>.  
+[`<AnimatedEmoji>`](/docs/animated-emoji) from [`@picus/animated-emoji`](/docs/animated-emoji) is <a style={{color: 'red'}}>not supported</a>.  
 → Use [`<Lottie>`](/docs/lottie) instead.
 
 ## Unsupported styles
@@ -144,7 +144,7 @@ The CSS property `z-index` is not supported.
 To control the order of the elements, [order your elements from back to front](/docs/layers).
 
 ```tsx twoslash title="The blue square will be drawn on top of the red square"
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 // ---cut---
 const MyComp = () => {
@@ -167,7 +167,7 @@ const MyComp = () => {
 
 ## Video and media constraints
 
-The limitations from [`@remotion/media`](/docs/media/support) apply.
+The limitations from [`@picus/media`](/docs/media/support) apply.
 
 ## Firefox does not support AAC encoding
 
@@ -183,7 +183,7 @@ In addition, in the headful browser, GPU is usually available, which brings perf
 
 When the browser tab running the render is moved to the background, browsers throttle `requestAnimationFrame` to conserve resources. This could cause rendering to pause or slow down significantly.
 
-Remotion automatically works around this by using a Web Worker timer as a fallback. When the tab is backgrounded and RAF is throttled, the Worker timer takes over to keep the render progressing.
+Picus automatically works around this by using a Web Worker timer as a fallback. When the tab is backgrounded and RAF is throttled, the Worker timer takes over to keep the render progressing.
 
 The Worker timer is less precise than `requestAnimationFrame`, so rendering in a background tab will be slower than in a foreground tab. For best performance, keep the tab visible during rendering.
 
@@ -192,5 +192,5 @@ The Worker timer is less precise than `requestAnimationFrame`, so rendering in a
 - [Overview](/docs/client-side-rendering)
 - [How it works](/docs/client-side-rendering/how-it-works)
 - [Server-side rendering](/docs/ssr)
-- [`@remotion/renderer`](/docs/renderer)
+- [`@picus/renderer`](/docs/renderer)
 - [`Comparing SSR solutions`](/docs/compare-ssr)

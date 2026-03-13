@@ -24,7 +24,7 @@ export const TableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/lambda/getfunctions">
 					<strong>getFunctions()</strong>
-					<div>Lists available Remotion Lambda functions</div>
+					<div>Lists available Picus Lambda functions</div>
 				</TOCItem>
 				<TOCItem link="/docs/lambda/getcompositionsonlambda">
 					<strong>getCompositionsOnLambda()</strong>
@@ -64,7 +64,7 @@ export const TableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/lambda/getorcreatebucket">
 					<strong>getOrCreateBucket()</strong>
-					<div>Ensure a Remotion S3 bucket exists</div>
+					<div>Ensure a Picus S3 bucket exists</div>
 				</TOCItem>
 				<TOCItem link="/docs/lambda/getrenderprogress">
 					<strong>getRenderProgress()</strong>

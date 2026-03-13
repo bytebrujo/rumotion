@@ -1,4 +1,4 @@
-import {config} from '@remotion/eslint-config-flat';
+import {config} from '@picus/eslint-config-flat';
 
 export default [
 	...config,

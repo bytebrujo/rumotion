@@ -1,16 +1,16 @@
 {
-	"name": "@remotion/design",
+	"name": "@picus/design",
 	"version": "4.0.434",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/esm/index.mjs",
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/design"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/design"
 	},
 	"sideEffects": false,
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"scripts": {
 		"formatting": "oxfmt src --check",
@@ -20,11 +20,11 @@
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
 	"dependencies": {
-		"@remotion/paths": "workspace:*",
-		"@remotion/shapes": "workspace:*",
-		"@remotion/svg-3d-engine": "workspace:*",
+		"@picus/paths": "workspace:*",
+		"@picus/shapes": "workspace:*",
+		"@picus/svg-3d-engine": "workspace:*",
 		"clsx": "^2.1.1",
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"@radix-ui/react-select": "2.1.1",
 		"@radix-ui/react-tabs": "^1.1.0",
 		"lucide-react": "0.439.0"
@@ -34,7 +34,7 @@
 		"react-dom": ">=16.8.0"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"react": "catalog:",
 		"react-dom": "catalog:",
@@ -60,5 +60,5 @@
 		"./tailwind.css": "./dist/tailwind.css"
 	},
 	"description": "Design system",
-	"homepage": "https://www.remotion.dev/design"
+	"homepage": "https://www.picus.dev/design"
 }

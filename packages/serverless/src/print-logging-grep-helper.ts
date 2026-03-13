@@ -1,6 +1,6 @@
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import type {ServerlessRoutines} from '@remotion/serverless-client';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import type {ServerlessRoutines} from '@picus/serverless-client';
 
 export type PrintLoggingHelper = (
 	type: ServerlessRoutines,

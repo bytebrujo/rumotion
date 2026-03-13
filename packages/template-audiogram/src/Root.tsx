@@ -1,11 +1,11 @@
-import { parseMedia } from "@remotion/media-parser";
-import { Composition, staticFile } from "remotion";
+import { parseMedia } from "@picus/media-parser";
+import { Composition, staticFile } from "picus";
 import { Audiogram } from "./Audiogram/Main";
 import { audiogramSchema } from "./Audiogram/schema";
 import { getSubtitles } from "./helpers/fetch-captions";
 import { FPS } from "./helpers/ms-to-frame";
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition
@@ -20,7 +20,7 @@ export const RemotionRoot: React.FC = () => {
           audioFileUrl: staticFile("dialogue.wav"),
           // podcast data
           coverImageUrl: staticFile("podcast-cover.jpeg"),
-          titleText: "Ep 550 - Supper Club × Remotion React",
+          titleText: "Ep 550 - Supper Club × Picus React",
           titleColor: "rgba(186, 186, 186, 0.93)",
           // captions settings
           captions: null,
@@ -43,7 +43,7 @@ export const RemotionRoot: React.FC = () => {
           const captions = await getSubtitles(props.captionsFileName);
           const { slowDurationInSeconds } = await parseMedia({
             src: props.audioFileUrl,
-            acknowledgeRemotionLicense: true,
+            acknowledgePicusLicense: true,
             fields: {
               slowDurationInSeconds: true,
             },

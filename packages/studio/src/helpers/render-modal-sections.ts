@@ -1,4 +1,4 @@
-import type {Codec} from '@remotion/renderer';
+import type {Codec} from '@picus/renderer';
 import {useMemo, useState} from 'react';
 import type {RenderType} from '../components/RenderModal/RenderModalAdvanced';
 

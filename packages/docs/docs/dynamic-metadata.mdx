@@ -48,8 +48,8 @@ export const getMediaMetadata = async (src: string) => {
 // @filename: index.tsx
 // ---cut---
 import React from 'react';
-import {Composition} from 'remotion';
-import {Video} from '@remotion/media';
+import {Composition} from 'picus';
+import {Video} from '@picus/media';
 import {getMediaMetadata} from './get-media-metadata';
 
 type MyCompProps = {
@@ -70,7 +70,7 @@ export const Root: React.FC = () => {
       width={1920}
       height={1080}
       defaultProps={{
-        src: 'https://remotion.media/BigBuckBunny.mp4',
+        src: 'https://picus.media/BigBuckBunny.mp4',
       }}
       calculateMetadata={async ({props}) => {
         const {durationInSeconds} = await getMediaMetadata(props.src);
@@ -97,9 +97,9 @@ It is also possible to transform the props [passed to the component by returning
 
 ## With `useEffect()` and `getInputProps()`
 
-In the following example, Remotion is instructed to wait for the [`getMediaMetadata()`](/docs/mediabunny/metadata) promise to resolve before evaluating the composition.
+In the following example, Picus is instructed to wait for the [`getMediaMetadata()`](/docs/mediabunny/metadata) promise to resolve before evaluating the composition.
 
-By calling [`delayRender()`](/docs/delay-render), Remotion will be blocked from proceeding until [`continueRender()`](/docs/continue-render) is called.
+By calling [`delayRender()`](/docs/delay-render), Picus will be blocked from proceeding until [`continueRender()`](/docs/continue-render) is called.
 
 ```tsx twoslash title="src/Root.tsx"
 // @filename: get-media-metadata.ts
@@ -134,7 +134,7 @@ export const getMediaMetadata = async (src: string) => {
 // @filename: index.tsx
 // ---cut---
 import {useEffect, useState} from 'react';
-import {Composition, continueRender, delayRender} from 'remotion';
+import {Composition, continueRender, delayRender} from 'picus';
 import React from 'react';
 const VideoTesting: React.FC = () => null;
 // ---cut---
@@ -145,7 +145,7 @@ export const Index: React.FC = () => {
   const [duration, setDuration] = useState(1);
 
   useEffect(() => {
-    getMediaMetadata('https://remotion.media/video.mp4')
+    getMediaMetadata('https://picus.media/video.mp4')
       .then(({durationInSeconds}) => {
         setDuration(Math.round(durationInSeconds * 30));
         continueRender(handle);
@@ -166,7 +166,7 @@ See [Getting metadata using Mediabunny](/docs/mediabunny/metadata) for the snipp
 To dynamically pass a video asset, you [may pass input props](/docs/props-resolution) when rendering and retrieve them inside your React code using [`getInputProps()`](/docs/get-input-props).
 
 ```tsx twoslash title="src/Root.tsx"
-import {getInputProps} from 'remotion';
+import {getInputProps} from 'picus';
 
 const inputProps = getInputProps();
 const src = inputProps.src;
@@ -174,7 +174,7 @@ const src = inputProps.src;
 
 ### Drawbacks
 
-This technique is not recommended anymore since v4.0, because the `useEffect()` does not only get executed when Remotion is initially calculating the metadata of the video, but also when spawning a render worker.
+This technique is not recommended anymore since v4.0, because the `useEffect()` does not only get executed when Picus is initially calculating the metadata of the video, but also when spawning a render worker.
 
 Since a render process might be highly concurrent, this might lead to unnecessary API calls and rate limitations.
 
@@ -233,14 +233,14 @@ const VideoTesting: React.FC = () => null;
 // ---cut---
 import React from 'react';
 import {useEffect, useState} from 'react';
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import {getMediaMetadata} from './get-media-metadata';
 
 export const Index: React.FC = () => {
   const [duration, setDuration] = useState(1);
 
   useEffect(() => {
-    getMediaMetadata('https://remotion.media/video.mp4')
+    getMediaMetadata('https://picus.media/video.mp4')
       .then(({durationInSeconds}) => {
         setDuration(Math.round(durationInSeconds * 30));
       })
@@ -254,17 +254,17 @@ export const Index: React.FC = () => {
 ```
 
 <p>
-  <Step>2</Step> Call your own <code>calculateMetadata()</code> function reused from your Remotion project:
+  <Step>2</Step> Call your own <code>calculateMetadata()</code> function reused from your Picus project:
 </p>
 
 ```tsx twoslash title="MyApp.tsx"
 import {useEffect, useState} from 'react';
-import {CalculateMetadataFunction} from 'remotion';
+import {CalculateMetadataFunction} from 'picus';
 
 const VideoTesting: React.FC = () => null;
 
 // ---cut---
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 
 type Props = {};
 

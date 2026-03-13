@@ -1,5 +1,5 @@
 import {createContext, useContext} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 type RegressionTestContext = {
 	hi: () => 'hithere';

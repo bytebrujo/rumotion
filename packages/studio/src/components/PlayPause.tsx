@@ -1,6 +1,6 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import React, {useCallback, useEffect, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {useIsStill} from '../helpers/is-current-selected-still';
 import {useKeybinding} from '../helpers/use-keybinding';
 import {JumpToStart} from '../icons/jump-to-start';

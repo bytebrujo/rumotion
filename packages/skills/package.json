@@ -1,25 +1,25 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/skills"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/skills"
 	},
 	"scripts": {
-		"dev": "remotion studio"
+		"dev": "picus studio"
 	},
-	"name": "@remotion/skills",
+	"name": "@picus/skills",
 	"private": true,
 	"version": "4.0.434",
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
-		"@remotion/bundler": "workspace:*",
-		"remotion": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"picus": "workspace:*",
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"@remotion/shapes": "workspace:*",
-		"@remotion/three": "workspace:*",
-		"@remotion/cli": "workspace:*",
+		"@picus/shapes": "workspace:*",
+		"@picus/three": "workspace:*",
+		"@picus/cli": "workspace:*",
 		"@typescript/native-preview": "catalog:",
-		"@remotion/lottie": "workspace:*",
-		"@remotion/google-fonts": "workspace:*"
+		"@picus/lottie": "workspace:*",
+		"@picus/google-fonts": "workspace:*"
 	}
 }

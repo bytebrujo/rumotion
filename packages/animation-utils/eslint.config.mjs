@@ -1,3 +1,3 @@
-import {remotionFlatConfig} from '@remotion/eslint-config-internal';
+import {picusFlatConfig} from '@picus/eslint-config-internal';
 
-export default remotionFlatConfig({react: true});
+export default picusFlatConfig({react: true});

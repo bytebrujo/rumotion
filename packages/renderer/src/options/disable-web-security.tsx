@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let disableWebSecurity = false;
 
@@ -15,7 +15,7 @@ export const disableWebSecurityOption = {
 	),
 	ssrName: 'disableWebSecurity' as const,
 	docLink:
-		'https://www.remotion.dev/docs/chromium-flags#--disable-web-security',
+		'https://www.picus.dev/docs/chromium-flags#--disable-web-security',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -41,4 +41,4 @@ export const disableWebSecurityOption = {
 		disableWebSecurity = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

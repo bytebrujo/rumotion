@@ -1,4 +1,4 @@
-import type {FrameRange} from '@remotion/renderer';
+import type {FrameRange} from '@picus/renderer';
 
 let imageSequence = false;
 

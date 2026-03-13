@@ -39,7 +39,7 @@ export const startLeakDetection = (
 				console.log(
 					'Leak detected: Lambda function is still running 10s after the render has finished.',
 				);
-				console.log('You may report this to the Remotion team.');
+				console.log('You may report this to the Picus team.');
 				console.log('Include the logs below:');
 				whyIsNodeRunning(leakDetection);
 				console.log('Force-quitting the Lambda function now.');

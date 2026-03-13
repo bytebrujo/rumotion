@@ -36,7 +36,7 @@ export const webpackConfig = async ({
 	onProgress,
 	enableCaching = true,
 	maxTimelineTracks,
-	remotionRoot,
+	picusRoot,
 	keyboardShortcutsEnabled,
 	bufferStateDelayInMilliseconds,
 	poll,
@@ -54,7 +54,7 @@ export const webpackConfig = async ({
 	maxTimelineTracks: number | null;
 	keyboardShortcutsEnabled: boolean;
 	bufferStateDelayInMilliseconds: number | null;
-	remotionRoot: string;
+	picusRoot: string;
 	poll: number | null;
 	askAIEnabled: boolean;
 	experimentalClientSideRenderingEnabled: boolean;
@@ -64,7 +64,7 @@ export const webpackConfig = async ({
 		target: 'chrome85',
 		loader: 'tsx',
 		implementation: esbuild,
-		remotionRoot,
+		picusRoot,
 	};
 
 	let lastProgress = 0;
@@ -166,6 +166,6 @@ export const webpackConfig = async ({
 		enableCaching,
 		environment,
 		outDir,
-		remotionRoot,
+		picusRoot,
 	});
 };

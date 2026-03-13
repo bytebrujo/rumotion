@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-presentations-clock-wipe.png
-crumb: "@remotion/transitions - Presentations"
+crumb: "@picus/transitions - Presentations"
 title: "clockWipe()"
 ---
 
@@ -13,7 +13,7 @@ A presentation where the exiting slide is wiped out in a circular movement, reve
 ## Example
 
 ```tsx twoslash title="ClockWipeTransition.tsx"
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -35,9 +35,9 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import { linearTiming, TransitionSeries } from "@remotion/transitions";
-import { clockWipe } from "@remotion/transitions/clock-wipe";
-import { useVideoConfig } from "remotion";
+import { linearTiming, TransitionSeries } from "@picus/transitions";
+import { clockWipe } from "@picus/transitions/clock-wipe";
+import { useVideoConfig } from "picus";
 
 const BasicTransition = () => {
   const { width, height } = useVideoConfig();
@@ -89,5 +89,5 @@ The style of the inner element when the scene is exiting.
 
 ## See also
 
-- [Source code for this presentation](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/presentations/clock-wipe.tsx)
+- [Source code for this presentation](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/presentations/clock-wipe.tsx)
 - [Presentations](/docs/transitions/presentations)

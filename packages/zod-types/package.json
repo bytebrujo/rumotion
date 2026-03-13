@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/zod-types"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/zod-types"
 	},
-	"name": "@remotion/zod-types",
+	"name": "@picus/zod-types",
 	"version": "4.0.434",
-	"description": "Zod types for Remotion",
+	"description": "Zod types for Picus",
 	"main": "dist/cjs/index.js",
 	"types": "dist/cjs/index.d.ts",
 	"module": "dist/esm/index.mjs",
@@ -19,24 +19,24 @@
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"peerDependencies": {
 		"zod": "catalog:"
 	},
 	"devDependencies": {
 		"zod": "catalog:",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
 		"zod",
 		"color",
-		"remotion"
+		"picus"
 	],
 	"publishConfig": {
 		"access": "public"
@@ -50,5 +50,5 @@
 			"require": "./dist/cjs/index.js"
 		}
 	},
-	"homepage": "https://www.remotion.dev/docs/zod-types"
+	"homepage": "https://www.picus.dev/docs/zod-types"
 }

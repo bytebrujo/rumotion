@@ -1,15 +1,15 @@
 import type {AnimationItem} from 'lottie-web';
 import lottie from 'lottie-web';
 import {useEffect, useRef, useState} from 'react';
-import {useCurrentFrame, useDelayRender} from 'remotion';
+import {useCurrentFrame, useDelayRender} from 'picus';
 import type {LottieProps} from './types';
 import {getLottieFrame} from './utils';
 import {validateLoop} from './validate-loop';
 import {validatePlaybackRate} from './validate-playbackrate';
 
 /**
- * @description	Part of the @remotion/lottie package.
- * @see [Documentation](https://www.remotion.dev/docs/lottie/lottie)
+ * @description	Part of the @picus/lottie package.
+ * @see [Documentation](https://www.picus.dev/docs/lottie/lottie)
  */
 export const Lottie = ({
 	animationData,
@@ -25,7 +25,7 @@ export const Lottie = ({
 }: LottieProps) => {
 	if (typeof animationData !== 'object') {
 		throw new Error(
-			'animationData should be provided as an object. If you only have the path to the JSON file, load it and pass it as animationData. See https://remotion.dev/docs/lottie/lottie#example for more information.',
+			'animationData should be provided as an object. If you only have the path to the JSON file, load it and pass it as animationData. See https://picus.dev/docs/lottie/lottie#example for more information.',
 		);
 	}
 

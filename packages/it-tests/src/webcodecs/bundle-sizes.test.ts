@@ -3,7 +3,7 @@ import {unlinkSync} from 'fs';
 import path from 'node:path';
 
 test('Bundle size of media parser', async () => {
-	const content = `import {parseMedia} from "@remotion/media-parser"; console.log(parseMedia);`;
+	const content = `import {parseMedia} from "@picus/media-parser"; console.log(parseMedia);`;
 	const entryPoint = path.join(__dirname, 'media-parser-index.ts');
 	await Bun.write(entryPoint, content);
 
@@ -23,7 +23,7 @@ test('Bundle size of media parser', async () => {
 });
 
 test('Bundle size of webcodecs', async () => {
-	const content = `import {parseMedia} from "@remotion/media-parser"; console.log(parseMedia); import {convertMedia} from "@remotion/webcodecs"; console.log(convertMedia);`;
+	const content = `import {parseMedia} from "@picus/media-parser"; console.log(parseMedia); import {convertMedia} from "@picus/webcodecs"; console.log(convertMedia);`;
 	const entryPoint = path.join(__dirname, 'media-parser-index.ts');
 	await Bun.write(entryPoint, content);
 

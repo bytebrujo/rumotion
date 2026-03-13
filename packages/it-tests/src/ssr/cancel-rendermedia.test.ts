@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
 import path from 'path';
-import {makeCancelSignal, renderMedia} from '@remotion/renderer';
+import {makeCancelSignal, renderMedia} from '@picus/renderer';
 
 const exampleBuild = path.join(__dirname, '..', '..', '..', 'example', 'build');
 

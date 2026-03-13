@@ -1,11 +1,11 @@
-import type {AnyRemotionOption} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {AnyPicusOption} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import type React from 'react';
 import type {JSX} from 'react';
 
 const options = Object.values(BrowserSafeApis.options);
 
-const getOption = (id: string): AnyRemotionOption<unknown> => {
+const getOption = (id: string): AnyPicusOption<unknown> => {
 	const option = options.find((o) => o.id === id);
 
 	if (!option) {

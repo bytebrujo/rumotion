@@ -71,7 +71,7 @@ export const fetchViaGraphQl = async ({
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      authorization: `token ${process.env.REMOTION_GITHUB_TOKEN}`,
+      authorization: `token ${process.env.PICUS_GITHUB_TOKEN}`,
     },
     signal: abortSignal,
     body: JSON.stringify({ query }),

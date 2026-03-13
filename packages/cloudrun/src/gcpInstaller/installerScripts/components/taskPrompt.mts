@@ -10,7 +10,7 @@ export function taskPrompt(projectID: string) {
 		});
 
 		rl.question(
-			`What would you like to do?\n[1] Setup/Update Cloud Run rendering in ${colorCode.blueText}${projectID}${colorCode.resetText}.\n[2] ${colorCode.blueText}${projectID}${colorCode.resetText} is already set up for Remotion. Manage keys and/or generate a new .env file for the Remotion Service Account.\n${colorCode.blueText}`,
+			`What would you like to do?\n[1] Setup/Update Cloud Run rendering in ${colorCode.blueText}${projectID}${colorCode.resetText}.\n[2] ${colorCode.blueText}${projectID}${colorCode.resetText} is already set up for Picus. Manage keys and/or generate a new .env file for the Picus Service Account.\n${colorCode.blueText}`,
 			async (answer) => {
 				// reset terminal color
 				rl.write(`\n${colorCode.resetText}`);

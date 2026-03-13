@@ -8,8 +8,8 @@ import type {
 	StillImageFormat,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
+} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
 import type {
 	ApplyCodemodRequest,
 	CanUpdateDefaultPropsResponse,
@@ -19,9 +19,9 @@ import type {
 	RenderJob,
 	RequiredChromiumOptions,
 	VisualControlChange,
-} from '@remotion/studio-shared';
-import type {_InternalTypes} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+} from '@picus/studio-shared';
+import type {_InternalTypes} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import {callApi} from '../call-api';
 
 export const addStillRenderJob = ({
@@ -78,7 +78,7 @@ export const addStillRenderJob = ({
 		serializedInputPropsWithCustomSchema:
 			NoReactInternals.serializeJSONWithSpecialTypes({
 				data: inputProps,
-				staticBase: window.remotion_staticBase,
+				staticBase: window.picus_staticBase,
 				indent: undefined,
 			}).serializedString,
 		offthreadVideoCacheSizeInBytes,
@@ -155,7 +155,7 @@ export const addSequenceRenderJob = ({
 		serializedInputPropsWithCustomSchema:
 			NoReactInternals.serializeJSONWithSpecialTypes({
 				data: inputProps,
-				staticBase: window.remotion_staticBase,
+				staticBase: window.picus_staticBase,
 				indent: undefined,
 			}).serializedString,
 		offthreadVideoCacheSizeInBytes,
@@ -283,7 +283,7 @@ export const addVideoRenderJob = ({
 		serializedInputPropsWithCustomSchema:
 			NoReactInternals.serializeJSONWithSpecialTypes({
 				data: inputProps,
-				staticBase: window.remotion_staticBase,
+				staticBase: window.picus_staticBase,
 				indent: undefined,
 			}).serializedString,
 		offthreadVideoCacheSizeInBytes,
@@ -380,7 +380,7 @@ export const callUpdateDefaultPropsApi = (
 		defaultProps: NoReactInternals.serializeJSONWithSpecialTypes({
 			data: defaultProps,
 			indent: undefined,
-			staticBase: window.remotion_staticBase,
+			staticBase: window.picus_staticBase,
 		}).serializedString,
 		enumPaths,
 	});

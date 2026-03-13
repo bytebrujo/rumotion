@@ -5,18 +5,18 @@ title: Version mismatch
 crumb: 'How to fix a'
 ---
 
-It is important that all Remotion packages you install (`remotion`, `@remotion/player`, `@remotion/cli`, etc.) have the same version installed. If the versions differ, the packages might not be able to correctly communicate with each other which can introduce subtle bugs or even complete breakage.
+It is important that all Picus packages you install (`picus`, `@picus/player`, `@picus/cli`, etc.) have the same version installed. If the versions differ, the packages might not be able to correctly communicate with each other which can introduce subtle bugs or even complete breakage.
 
 ## `^` character can be confusing
 
-The following `package.json` does **not** ensure that all Remotion versions are the same:
+The following `package.json` does **not** ensure that all Picus versions are the same:
 
 ```json title="package.json"
 {
   "dependencies": {
-    "remotion": "^2.6.12",
-    "@remotion/player": "^2.6.12",
-    "@remotion/gif": "^2.6.12"
+    "picus": "^2.6.12",
+    "@picus/player": "^2.6.12",
+    "@picus/gif": "^2.6.12"
   }
 }
 ```
@@ -26,40 +26,40 @@ however the following manifest does:
 ```json title="package.json"
 {
   "dependencies": {
-    "remotion": "2.6.12",
-    "@remotion/player": "2.6.12",
-    "@remotion/gif": "2.6.12"
+    "picus": "2.6.12",
+    "@picus/player": "2.6.12",
+    "@picus/gif": "2.6.12"
   }
 }
 ```
 
-This is especially true if the packages are installed over time and not all at once. Removing the `^` character is a good way to ensure all Remotion packages have the same version.
+This is especially true if the packages are installed over time and not all at once. Removing the `^` character is a good way to ensure all Picus packages have the same version.
 
-## Packages that depend on Remotion
+## Packages that depend on Picus
 
-If you make a Remotion library and put it on npm, make Remotion a `peerDependency` and `devDependency` instead of a dependency:
+If you make a Picus library and put it on npm, make Picus a `peerDependency` and `devDependency` instead of a dependency:
 
 ```json title="package.json"
 {
-  "name": "my-remotion-library",
+  "name": "my-picus-library",
   "peerDependencies": {
-    "remotion": "*"
+    "picus": "*"
   },
   "devDependencies": {
-    "remotion": "^2.6.11"
+    "picus": "^2.6.11"
   }
 }
 ```
 
-This will make sure that when you then install `my-remotion-library` into your Remotion project, that no duplicates of Remotion will be introduced:
+This will make sure that when you then install `my-picus-library` into your Picus project, that no duplicates of Picus will be introduced:
 
 ```json
 {
   "dependencies": {
-    // No version mismatch will be introduced because `remotion`
-    // is not a direct dependency of `my-remotion-library`
-    "remotion": "2.7.0",
-    "my-remotion-library": "1.0.0"
+    // No version mismatch will be introduced because `picus`
+    // is not a direct dependency of `my-picus-library`
+    "picus": "2.7.0",
+    "my-picus-library": "1.0.0"
   }
 }
 ```
@@ -69,7 +69,7 @@ This will make sure that when you then install `my-remotion-library` into your R
 Just because the version in the package.json is `^2.6.11` does not mean that the version `2.6.11` got installed. Use the command:
 
 ```bash
-npx remotion versions
+npx picus versions
 ```
 
 to see which packages and versions your project contains.

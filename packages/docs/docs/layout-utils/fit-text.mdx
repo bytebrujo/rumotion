@@ -1,15 +1,15 @@
 ---
 image: /generated/articles-docs-layout-utils-fit-text.png
 title: fitText()
-crumb: "@remotion/layout-utils"
+crumb: "@picus/layout-utils"
 ---
 
-_Part of the [`@remotion/layout-utils`](/docs/layout-utils) package. Available from v4.0.88_
+_Part of the [`@picus/layout-utils`](/docs/layout-utils) package. Available from v4.0.88_
 
 Calculates the `font-size` needed to fit a text into a given width.
 
 ```tsx twoslash title="FitText.tsx"
-import { fitText } from "@remotion/layout-utils";
+import { fitText } from "@picus/layout-utils";
 
 const text = "Hello World";
 const width = 100;
@@ -55,7 +55,7 @@ _number_
 The width to fit the text into.
 
 :::info
-In the default Remotion stylesheet, borders shrink the container due to `box-sizing: border-box`.  
+In the default Picus stylesheet, borders shrink the container due to `box-sizing: border-box`.  
 Subtract any borders, or use `outline` instead of `border`.
 :::
 
@@ -67,7 +67,7 @@ The `font-family` CSS property you are going to assign to the text.
 
 :::info
 The font needs to be loaded before this API is being called.  
-If you use [`@remotion/google-fonts`](/docs/google-fonts), wait until [`waitUntilDone()`](/docs/google-fonts/load-font#waituntildone) resolves first.
+If you use [`@picus/google-fonts`](/docs/google-fonts), wait until [`waitUntilDone()`](/docs/google-fonts/load-font#waituntildone) resolves first.
 :::
 
 ### `fontWeight?`
@@ -113,9 +113,9 @@ An object with `fontSize` in pixels. Assign this to the `style` prop of your tex
 ## Example
 
 ```tsx twoslash
-import { fitText } from "@remotion/layout-utils";
+import { fitText } from "@picus/layout-utils";
 import React from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 
 const boxWidth = 600;
 // Must be loaded before calling fitText()
@@ -165,7 +165,7 @@ Notes:
 - A maximum font size of `80` was specified to prevent the text from becoming too large.
 - The `fontFamily` and `fontWeight` were passed to the `div` element to ensure that the text is rendered with the same font as the one used by `fitText()`.
 - The `outline` CSS property was used instead of `border`.  
-  This is because in Remotion, the border is inside by default and shrinks the container, due to `box-sizing: border-box` being in the default stylesheet.
+  This is because in Picus, the border is inside by default and shrinks the container, due to `box-sizing: border-box` being in the default stylesheet.
 
 ## Important considerations
 
@@ -173,6 +173,6 @@ See [Best practices](/docs/layout-utils/best-practices) to ensure you get correc
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/layout-utils/src/layouts/fit-text.ts)
-- [`@remotion/layout-utils`](/docs/layout-utils)
-- [`@remotion/google-fonts`](/docs/google-fonts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/layout-utils/src/layouts/fit-text.ts)
+- [`@picus/layout-utils`](/docs/layout-utils)
+- [`@picus/google-fonts`](/docs/google-fonts)

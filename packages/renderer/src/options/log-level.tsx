@@ -1,6 +1,6 @@
 import type {LogLevel} from '../log-level';
 import {isValidLogLevel, logLevels} from '../log-level';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let logLevel: LogLevel = 'info';
 
@@ -19,7 +19,7 @@ export const logLevelOption = {
 			<br /> Default <code>info</code>.
 		</>
 	),
-	docLink: 'https://www.remotion.dev/docs/troubleshooting/debug-failed-render',
+	docLink: 'https://www.picus.dev/docs/troubleshooting/debug-failed-render',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag]) {
 			if (!isValidLogLevel(commandLine[cliFlag] as string)) {
@@ -44,4 +44,4 @@ export const logLevelOption = {
 	},
 	type: 'error' as LogLevel,
 	id: cliFlag,
-} satisfies AnyRemotionOption<LogLevel>;
+} satisfies AnyPicusOption<LogLevel>;

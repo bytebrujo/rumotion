@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import React, {
 	useCallback,
 	useContext,
@@ -7,7 +7,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {Internals, useVideoConfig} from 'remotion';
+import {Internals, useVideoConfig} from 'picus';
 import {getXPositionOfItemInTimelineImperatively} from '../../helpers/get-left-of-timeline-slider';
 import {TIMELINE_PADDING} from '../../helpers/timeline-layout';
 import {

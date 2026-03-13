@@ -1,5 +1,5 @@
-import {AwsRegion, LambdaClientInternals} from '@remotion/lambda-client';
-import {DEFAULT_REGION} from '@remotion/lambda-client/constants';
+import {AwsRegion, LambdaClientInternals} from '@picus/lambda-client';
+import {DEFAULT_REGION} from '@picus/lambda-client/constants';
 import {parsedLambdaCli} from './args';
 
 export const getAwsRegion = (): AwsRegion => {
@@ -9,7 +9,7 @@ export const getAwsRegion = (): AwsRegion => {
 	}
 
 	const envVariable =
-		LambdaClientInternals.getEnvVariable('REMOTION_AWS_REGION') ??
+		LambdaClientInternals.getEnvVariable('PICUS_AWS_REGION') ??
 		LambdaClientInternals.getEnvVariable('AWS_REGION');
 	if (envVariable) {
 		LambdaClientInternals.validateAwsRegion(envVariable);

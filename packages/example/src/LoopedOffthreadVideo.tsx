@@ -1,4 +1,4 @@
-import {mediaParserController, parseMedia} from '@remotion/media-parser';
+import {mediaParserController, parseMedia} from '@picus/media-parser';
 import React, {useEffect, useState} from 'react';
 import {
 	cancelRender,
@@ -7,12 +7,12 @@ import {
 	Html5Video,
 	Loop,
 	OffthreadVideo,
-	RemotionOffthreadVideoProps,
-	useRemotionEnvironment,
+	PicusOffthreadVideoProps,
+	usePicusEnvironment,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
-const LoopedOffthreadVideo: React.FC<RemotionOffthreadVideoProps> = (props) => {
+const LoopedOffthreadVideo: React.FC<PicusOffthreadVideoProps> = (props) => {
 	const [duration, setDuration] = useState<number | null>(null);
 	const [handle] = useState(() => delayRender());
 	const {fps} = useVideoConfig();
@@ -22,7 +22,7 @@ const LoopedOffthreadVideo: React.FC<RemotionOffthreadVideoProps> = (props) => {
 
 		parseMedia({
 			src: props.src,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			controller,
 			fields: {
 				slowDurationInSeconds: true,
@@ -54,11 +54,11 @@ const LoopedOffthreadVideo: React.FC<RemotionOffthreadVideoProps> = (props) => {
 };
 
 export const LoopableOffthreadVideo: React.FC<
-	RemotionOffthreadVideoProps & {
+	PicusOffthreadVideoProps & {
 		loop?: boolean;
 	}
 > = ({loop, ...props}) => {
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 	if (env.isRendering) {
 		if (loop) {
 			return <LoopedOffthreadVideo {...props} />;

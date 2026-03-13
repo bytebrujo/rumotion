@@ -3,8 +3,8 @@ import {createReadStream, existsSync, statSync} from 'node:fs';
 import type {IncomingMessage, ServerResponse} from 'node:http';
 import path, {join} from 'node:path';
 import {URLSearchParams} from 'node:url';
-import {BundlerInternals} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
+import {BundlerInternals} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
 import type {
 	ApiRoutes,
 	CompletedClientRender,
@@ -12,8 +12,8 @@ import type {
 	RenderDefaults,
 	RenderJob,
 	SymbolicatedStackFrame,
-} from '@remotion/studio-shared';
-import {SOURCE_MAP_ENDPOINT, getProjectName} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
+import {SOURCE_MAP_ENDPOINT, getProjectName} from '@picus/studio-shared';
 import {
 	addCompletedClientRender,
 	getCompletedClientRenders,
@@ -35,7 +35,7 @@ import type {LiveEventsServer} from './preview-server/live-events';
 import {parseRequestBody} from './preview-server/parse-body';
 import {fetchFolder, getFiles} from './preview-server/public-folder';
 import {serveStatic} from './preview-server/serve-static';
-import type {RemotionConfigResponse} from './remotion-config-response';
+import type {PicusConfigResponse} from './picus-config-response';
 
 const editorGuess = guessEditor();
 
@@ -55,24 +55,24 @@ const output404 = (response: ServerResponse): Promise<void> => {
 	return Promise.resolve();
 };
 
-const handleRemotionConfig = (
+const handlePicusConfig = (
 	response: ServerResponse,
-	remotionRoot: string,
+	picusRoot: string,
 ): Promise<void> => {
 	response.writeHead(200, {
 		'Content-Type': 'application/json',
 	});
-	const body: RemotionConfigResponse = {
-		isRemotion: true,
-		cwd: remotionRoot,
-		version: process.env.REMOTION_VERSION ?? null,
+	const body: PicusConfigResponse = {
+		isPicus: true,
+		cwd: picusRoot,
+		version: process.env.PICUS_VERSION ?? null,
 	};
 	response.end(JSON.stringify(body));
 	return Promise.resolve();
 };
 
 const handleFallback = async ({
-	remotionRoot,
+	picusRoot,
 	hash,
 	response,
 	getCurrentInputProps,
@@ -86,7 +86,7 @@ const handleFallback = async ({
 	logLevel,
 	enableCrossSiteIsolation,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	hash: string;
 	response: ServerResponse;
 	publicDir: string;
@@ -110,14 +110,14 @@ const handleFallback = async ({
 	}
 
 	const packageManager = getPackageManager({
-		remotionRoot,
+		picusRoot,
 		packageManager: undefined,
 		dirUp: 0,
 		logLevel,
 	});
 	fetchFolder({publicDir, staticHash: hash});
 
-	const installedDependencies = getInstalledInstallablePackages(remotionRoot);
+	const installedDependencies = getInstalledInstallablePackages(picusRoot);
 
 	response.end(
 		BundlerInternals.indexHtml({
@@ -126,7 +126,7 @@ const handleFallback = async ({
 			editorName: displayName,
 			envVariables: getEnvVariables(),
 			inputProps: getCurrentInputProps(),
-			remotionRoot,
+			picusRoot,
 			studioServerCommand:
 				packageManager === 'unknown' ? null : packageManager.startCommand,
 			renderQueue: getRenderQueue(),
@@ -134,14 +134,14 @@ const handleFallback = async ({
 			numberOfAudioTags,
 			publicFiles: getFiles(),
 			includeFavicon: true,
-			title: 'Remotion Studio',
+			title: 'Picus Studio',
 			renderDefaults: getRenderDefaults(),
 			publicFolderExists: existsSync(publicDir) ? publicDir : null,
 			gitSource,
 			projectName: getProjectName({
 				basename: path.basename,
 				gitSource,
-				resolvedRemotionRoot: remotionRoot,
+				resolvedPicusRoot: picusRoot,
 			}),
 			installedDependencies,
 			packageManager:
@@ -155,12 +155,12 @@ const handleFallback = async ({
 
 const handleFileSource = async ({
 	method,
-	remotionRoot,
+	picusRoot,
 	search,
 	response,
 }: {
 	method: string;
-	remotionRoot: string;
+	picusRoot: string;
 	search: string;
 	response: ServerResponse;
 }): Promise<void> => {
@@ -180,7 +180,7 @@ const handleFileSource = async ({
 		throw new Error('must pass `f` parameter');
 	}
 
-	const data = await getFileSource(remotionRoot, decodeURIComponent(f));
+	const data = await getFileSource(picusRoot, decodeURIComponent(f));
 	response.writeHead(200);
 	response.write(data);
 	response.end();
@@ -188,7 +188,7 @@ const handleFileSource = async ({
 };
 
 const handleOpenInEditor = async (
-	remotionRoot: string,
+	picusRoot: string,
 	req: IncomingMessage,
 	res: ServerResponse,
 	logLevel: LogLevel,
@@ -213,7 +213,7 @@ const handleOpenInEditor = async (
 		const didOpen = await launchEditor({
 			colNumber: stack.originalColumnNumber as number,
 			editor: guess[0],
-			fileName: path.resolve(remotionRoot, stack.originalFileName as string),
+			fileName: path.resolve(picusRoot, stack.originalFileName as string),
 			lineNumber: stack.originalLineNumber as number,
 			vsCodeNewWindow: false,
 			logLevel,
@@ -295,12 +295,12 @@ const handleUploadOutput = ({
 	req,
 	res,
 	search,
-	remotionRoot,
+	picusRoot,
 }: {
 	req: IncomingMessage;
 	res: ServerResponse;
 	search: string;
-	remotionRoot: string;
+	picusRoot: string;
 }): Promise<void> => {
 	try {
 		validateSameOrigin(req);
@@ -312,7 +312,7 @@ const handleUploadOutput = ({
 			throw new Error('No `filePath` provided');
 		}
 
-		const absolutePath = resolveOutputPath(remotionRoot, filePath);
+		const absolutePath = resolveOutputPath(picusRoot, filePath);
 
 		fs.mkdirSync(path.dirname(absolutePath), {recursive: true});
 
@@ -344,16 +344,16 @@ const handleUploadOutput = ({
 const handleRegisterClientRender = async ({
 	req,
 	res,
-	remotionRoot,
+	picusRoot,
 }: {
 	req: IncomingMessage;
 	res: ServerResponse;
-	remotionRoot: string;
+	picusRoot: string;
 }): Promise<void> => {
 	try {
 		validateSameOrigin(req);
 		const body = (await parseRequestBody(req)) as CompletedClientRender;
-		addCompletedClientRender({render: body, remotionRoot});
+		addCompletedClientRender({render: body, picusRoot});
 
 		res.setHeader('content-type', 'application/json');
 		res.writeHead(200);
@@ -452,7 +452,7 @@ export const handleRoutes = ({
 	liveEventsServer,
 	getCurrentInputProps,
 	getEnvVariables,
-	remotionRoot,
+	picusRoot,
 	entryPoint,
 	publicDir,
 	logLevel,
@@ -474,7 +474,7 @@ export const handleRoutes = ({
 	liveEventsServer: LiveEventsServer;
 	getCurrentInputProps: () => object;
 	getEnvVariables: () => Record<string, string>;
-	remotionRoot: string;
+	picusRoot: string;
 	entryPoint: string;
 	publicDir: string;
 	logLevel: LogLevel;
@@ -491,7 +491,7 @@ export const handleRoutes = ({
 
 	if (url.pathname === '/api/file-source') {
 		return handleFileSource({
-			remotionRoot,
+			picusRoot,
 			search: url.search,
 			method: request.method as string,
 			response,
@@ -499,7 +499,7 @@ export const handleRoutes = ({
 	}
 
 	if (url.pathname === '/api/open-in-editor') {
-		return handleOpenInEditor(remotionRoot, request, response, logLevel);
+		return handleOpenInEditor(picusRoot, request, response, logLevel);
 	}
 
 	if (url.pathname === `${staticHash}/api/add-asset`) {
@@ -516,7 +516,7 @@ export const handleRoutes = ({
 			req: request,
 			res: response,
 			search: url.search,
-			remotionRoot,
+			picusRoot,
 		});
 	}
 
@@ -524,7 +524,7 @@ export const handleRoutes = ({
 		return handleRegisterClientRender({
 			req: request,
 			res: response,
-			remotionRoot,
+			picusRoot,
 		});
 	}
 
@@ -538,7 +538,7 @@ export const handleRoutes = ({
 	for (const [key, value] of Object.entries(allApiRoutes)) {
 		if (url.pathname === key) {
 			return handleRequest({
-				remotionRoot,
+				picusRoot,
 				entryPoint,
 				handler: value as ApiHandler<
 					ApiRoutes[keyof ApiRoutes]['Request'],
@@ -566,8 +566,8 @@ export const handleRoutes = ({
 		return handleWasm(request, response);
 	}
 
-	if (url.pathname === '/__remotion_config') {
-		return handleRemotionConfig(response, remotionRoot);
+	if (url.pathname === '/__picus_config') {
+		return handlePicusConfig(response, picusRoot);
 	}
 
 	if (url.pathname === '/events') {
@@ -599,10 +599,10 @@ export const handleRoutes = ({
 			request.url as string,
 			'http://localhost',
 		).pathname.replace(new RegExp(`^${outputHash}`), '');
-		const filePath = join(remotionRoot, decodeURIComponent(filename));
+		const filePath = join(picusRoot, decodeURIComponent(filename));
 
 		return serveStatic({
-			root: remotionRoot,
+			root: picusRoot,
 			path: filePath,
 			req: request,
 			res: response,
@@ -615,7 +615,7 @@ export const handleRoutes = ({
 	}
 
 	return handleFallback({
-		remotionRoot,
+		picusRoot,
 		hash: staticHash,
 		response,
 		getCurrentInputProps,

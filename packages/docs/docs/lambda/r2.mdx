@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-lambda-r2.png
 id: r2
-title: Using Remotion Lambda with R2
+title: Using Picus Lambda with R2
 sidebar_label: Cloudflare R2
 slug: /lambda/r2
 ---
@@ -13,11 +13,11 @@ Create a Cloudflare bucket and set up an API key with **Object Read & Write** pe
 Use an [`s3OutputProvider`](/docs/lambda/custom-destination#saving-to-another-cloud) to store the rendered video in R2:
 
 ```tsx twoslash
-import {renderMediaOnLambda, speculateFunctionName} from '@remotion/lambda/client';
+import {renderMediaOnLambda, speculateFunctionName} from '@picus/lambda/client';
 
 // ---cut---
 const {bucketName, renderId, cloudWatchMainLogs} = await renderMediaOnLambda({
-  serveUrl: 'https://remotion-helloworld.vercel.app',
+  serveUrl: 'https://picus-helloworld.vercel.app',
   // FIXME: Add your function specs here
   functionName: speculateFunctionName({
     diskSizeInMb: 2048,
@@ -29,7 +29,7 @@ const {bucketName, renderId, cloudWatchMainLogs} = await renderMediaOnLambda({
   codec: 'h264',
   outName: {
     // FIXME: Use the bucket name from your Cloudflare Storage settings
-    bucketName: 'remotion-test-bucket',
+    bucketName: 'picus-test-bucket',
     key: 'out.mp4',
     s3OutputProvider: {
       // FIXME: Use the endpoint from your Cloudflare Storage settings
@@ -45,8 +45,8 @@ const {bucketName, renderId, cloudWatchMainLogs} = await renderMediaOnLambda({
 
 ## Storing the site and assets in R2
 
-[Many Remotion users store](/docs/lambda/data-transfer-cost#option-1-use-an-alternate-cdn-for-storing-assets) their [bundle](/docs/terminology/bundle) and any assets such as input videos in R2, in order to avoid [S3 bandwidth costs](/docs/lambda/data-transfer-cost).
+[Many Picus users store](/docs/lambda/data-transfer-cost#option-1-use-an-alternate-cdn-for-storing-assets) their [bundle](/docs/terminology/bundle) and any assets such as input videos in R2, in order to avoid [S3 bandwidth costs](/docs/lambda/data-transfer-cost).
 
 ## See also
 
-- [Using Remotion Lambda with Supabase](/docs/lambda/supabase)
+- [Using Picus Lambda with Supabase](/docs/lambda/supabase)

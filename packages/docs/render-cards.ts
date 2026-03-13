@@ -2,8 +2,8 @@ import {execSync} from 'child_process';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-import {bundle} from '@remotion/bundler';
-import {getCompositions, renderStill} from '@remotion/renderer';
+import {bundle} from '@picus/bundler';
+import {getCompositions, renderStill} from '@picus/renderer';
 import {readDir} from './get-pages.mjs';
 
 const data: {
@@ -173,7 +173,7 @@ execSync('bun x prettier src/data/articles.ts --write');
 
 // render cards
 const serveUrl = await bundle({
-	entryPoint: path.join(process.cwd(), './src/remotion/entry.ts'),
+	entryPoint: path.join(process.cwd(), './src/picus/entry.ts'),
 	publicDir: path.join(process.cwd(), 'static'),
 });
 const compositions = await getCompositions(serveUrl);

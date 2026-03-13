@@ -7,7 +7,7 @@ crumb: 'Lambda API'
 
 import {MinimumFramesPerLambda} from '../../components/lambda/default-frames-per-lambda';
 
-Kicks off a render process on Remotion Lambda. The progress can be tracked using [getRenderProgress()](/docs/lambda/getrenderprogress).
+Kicks off a render process on Picus Lambda. The progress can be tracked using [getRenderProgress()](/docs/lambda/getrenderprogress).
 
 Requires a [function](/docs/lambda/deployfunction) to already be deployed to execute the render.  
 A [site](/docs/lambda/deploysite) or a [Serve URL](/docs/terminology/serve-url) needs to be specified to determine what will be rendered.
@@ -16,19 +16,19 @@ A [site](/docs/lambda/deploysite) or a [Serve URL](/docs/terminology/serve-url) 
 
 ```tsx twoslash
 // ---cut---
-import {renderMediaOnLambda} from '@remotion/lambda/client';
+import {renderMediaOnLambda} from '@picus/lambda/client';
 
 const {bucketName, renderId} = await renderMediaOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
+  functionName: 'picus-render-bds9aab',
   composition: 'MyVideo',
-  serveUrl: 'https://remotionlambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
+  serveUrl: 'https://picuslambda-qg35eyp1s1.s3.eu-central-1.amazonaws.com/sites/bf2jrbfkw',
   codec: 'h264',
 });
 ```
 
 :::note
-Preferrably import this function from `@remotion/lambda/client` to avoid problems [inside serverless functions](/docs/lambda/light-client).
+Preferrably import this function from `@picus/lambda/client` to avoid problems [inside serverless functions](/docs/lambda/light-client).
 :::
 
 ## Arguments
@@ -37,7 +37,7 @@ An object with the following properties:
 
 ### `region`
 
-In which region your Lambda function is deployed. It's highly recommended that your Remotion site is also in the same region.
+In which region your Lambda function is deployed. It's highly recommended that your Picus site is also in the same region.
 
 ### `privacy?`
 
@@ -69,7 +69,7 @@ The `framesPerLambda` parameter cannot result in more than 200 functions being s
 
 Specify the number of Lambda functions to use for rendering. This is an alternative to `framesPerLambda` that allows you to set the concurrency directly without needing to know the video duration.
 
-The concurrency is defined as `frameCount / framesPerLambda`. Remotion will automatically calculate the appropriate `framesPerLambda` value based on your concurrency setting.
+The concurrency is defined as `frameCount / framesPerLambda`. Picus will automatically calculate the appropriate `framesPerLambda` value based on your concurrency setting.
 
 Maximum value: 200  
 Minimum value: Depends on video length (must result in `framesPerLambda >= 4`)
@@ -84,7 +84,7 @@ Specify a single frame (passing a `number`) or a range of frames (passing a tupl
 
 ### `serveUrl`
 
-A URL pointing to a Remotion project. Use [`deploySite()`](/docs/lambda/deploysite) to deploy a Remotion project.
+A URL pointing to a Picus project. Use [`deploySite()`](/docs/lambda/deploysite) to deploy a Picus project.
 
 ### `composition`
 
@@ -205,7 +205,7 @@ How often a chunk may be retried to render in case the render fails.
 If a rendering of a chunk is failed, the error will be reported in the [`getRenderProgress()`](/docs/lambda/getrenderprogress) object and retried up to as many times as you specify using this option.
 
 :::note
-A retry only gets executed if a the error is in the [list of flaky errors](https://github.com/remotion-dev/remotion/blob/main/packages/lambda-client/src/is-flaky-error.ts).
+A retry only gets executed if a the error is in the [list of flaky errors](https://github.com/picus-dev/picus/blob/main/packages/lambda-client/src/is-flaky-error.ts).
 :::
 
 ### `scale?`
@@ -279,10 +279,10 @@ If you want to use this option, the function must be in the same region, the sam
 
 ### `webhook?`<AvailableFrom v="3.2.30" />
 
-If specified, Remotion will send a POST request to the provided endpoint to notify your application when the Lambda rendering process finishes, errors out or times out.
+If specified, Picus will send a POST request to the provided endpoint to notify your application when the Lambda rendering process finishes, errors out or times out.
 
 ```tsx twoslash
-import {RenderMediaOnLambdaInput} from '@remotion/lambda';
+import {RenderMediaOnLambdaInput} from '@picus/lambda';
 
 const webhook: RenderMediaOnLambdaInput['webhook'] = {
   url: 'https://mapsnap.app/api/webhook',
@@ -297,7 +297,7 @@ const webhook: RenderMediaOnLambdaInput['webhook'] = {
 If you don't want to set up validation, you can set `secret` to null:
 
 ```tsx twoslash
-import {RenderMediaOnLambdaInput} from '@remotion/lambda';
+import {RenderMediaOnLambdaInput} from '@picus/lambda';
 
 const webhook: RenderMediaOnLambdaInput['webhook'] = {
   url: 'https://mapsnap.app/api/webhook',
@@ -309,7 +309,7 @@ const webhook: RenderMediaOnLambdaInput['webhook'] = {
 
 ### `forceBucketName?`<AvailableFrom v="3.3.42" />
 
-Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Remotion discover the right bucket automatically.
+Specify a specific bucket name to be used. [This is not recommended](/docs/lambda/multiple-buckets), instead let Picus discover the right bucket automatically.
 
 ### `logLevel?`
 
@@ -395,5 +395,5 @@ A link to the folder in the AWS console where each chunk and render is located.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda-client/src/render-media-on-lambda.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda-client/src/render-media-on-lambda.ts)
 - [getRenderProgress()](/docs/lambda/getrenderprogress)

@@ -1,6 +1,6 @@
-import { zColor } from "@remotion/zod-types";
+import { zColor } from "@picus/zod-types";
 import React from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 import { z } from "zod";
 import "./fonts.css";
 import { Swirl } from "./Swirl";

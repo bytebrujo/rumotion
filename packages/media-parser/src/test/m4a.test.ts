@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 import {WEBCODECS_TIMESCALE} from '../webcodecs-timescale';
@@ -10,7 +10,7 @@ test('should work on voice note', async () => {
 	const {audioCodec} = await parseMedia({
 		src: exampleVideos.m4a,
 		reader: nodeReader,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		onVideoTrack: () => {
 			throw new Error('No video track');
 		},

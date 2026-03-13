@@ -2,7 +2,7 @@ import {
   AwsRegion,
   getRenderProgress,
   speculateFunctionName,
-} from "@remotion/lambda/client";
+} from "@picus/lambda/client";
 import { DISK, RAM, REGION, TIMEOUT } from "../../../../config.mjs";
 import { ProgressRequest, ProgressResponse } from "../../../../types/schema";
 import { executeApi } from "../../../helpers/api-response";

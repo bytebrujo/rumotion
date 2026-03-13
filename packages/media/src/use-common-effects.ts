@@ -1,7 +1,7 @@
 import type React from 'react';
 import {useContext, useLayoutEffect} from 'react';
-import type {LogLevel} from 'remotion';
-import {Internals} from 'remotion';
+import type {LogLevel} from 'picus';
+import {Internals} from 'picus';
 import type {MediaPlayer} from './media-player';
 import {setGlobalTimeAnchor} from './set-global-time-anchor';
 
@@ -230,7 +230,7 @@ export const useCommonEffects = ({
 			// Might be disposed
 		});
 		Internals.Log.trace(
-			{logLevel, tag: '@remotion/media'},
+			{logLevel, tag: '@picus/media'},
 			`[${label}] Updating target time to ${currentTime.toFixed(3)}s`,
 		);
 	}, [currentTime, logLevel, mediaPlayerReady, label, mediaPlayerRef]);

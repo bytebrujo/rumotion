@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {getTfraBoxes} from '../containers/iso-base-media/traversal';
 import {mediaParserController} from '../controller/media-parser-controller';
 import {nodeReader} from '../node';
@@ -16,7 +16,7 @@ test(
 		const {slowStructure} = await parseMedia({
 			src: video,
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			controller,
 			fields: {
 				durationInSeconds: true,

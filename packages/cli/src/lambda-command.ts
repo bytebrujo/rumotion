@@ -1,21 +1,21 @@
-import type {LogLevel} from '@remotion/renderer';
-import {StudioServerInternals} from '@remotion/studio-server';
+import type {LogLevel} from '@picus/renderer';
+import {StudioServerInternals} from '@picus/studio-server';
 import {Log} from './log';
 
 export const lambdaCommand = async (
-	remotionRoot: string,
+	picusRoot: string,
 	args: string[],
 	logLevel: LogLevel,
 ) => {
 	try {
-		const path = require.resolve('@remotion/lambda', {
-			paths: [remotionRoot],
+		const path = require.resolve('@picus/lambda', {
+			paths: [picusRoot],
 		});
 		const {LambdaInternals} = require(path);
 
 		await LambdaInternals.executeCommand(
 			args,
-			remotionRoot,
+			picusRoot,
 			logLevel,
 			null,
 			null,
@@ -23,7 +23,7 @@ export const lambdaCommand = async (
 		process.exit(0);
 	} catch (err) {
 		const manager = StudioServerInternals.getPackageManager({
-			remotionRoot,
+			picusRoot,
 			packageManager: undefined,
 			dirUp: 0,
 			logLevel,
@@ -31,12 +31,12 @@ export const lambdaCommand = async (
 		const installCommand =
 			manager === 'unknown' ? 'npm i' : manager.installCommand;
 		Log.error({indent: false, logLevel}, err);
-		Log.error({indent: false, logLevel}, 'Remotion Lambda is not installed.');
+		Log.error({indent: false, logLevel}, 'Picus Lambda is not installed.');
 		Log.info({indent: false, logLevel}, '');
 		Log.info({indent: false, logLevel}, 'You can install it using:');
 		Log.info(
 			{indent: false, logLevel},
-			`${installCommand} @remotion/lambda@${StudioServerInternals.getRemotionVersion()}`,
+			`${installCommand} @picus/lambda@${StudioServerInternals.getPicusVersion()}`,
 		);
 		process.exit(1);
 	}

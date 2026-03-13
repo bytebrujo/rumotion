@@ -19,7 +19,7 @@ const container: React.CSSProperties = {
 
 export const Loading: React.FC = () => {
 	return (
-		<AbsoluteFill style={container} id="remotion-comp-loading">
+		<AbsoluteFill style={container} id="picus-comp-loading">
 			<style type="text/css">{`
 				@keyframes anim {
 					from {
@@ -29,7 +29,7 @@ export const Loading: React.FC = () => {
 						opacity: 1
 					}
 				}
-				#remotion-comp-loading {
+				#picus-comp-loading {
 					animation: anim 2s;
 					animation-fill-mode: forwards;
 				}

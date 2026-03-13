@@ -3,7 +3,7 @@ image: /generated/articles-docs-media-parser-selecting-streams.png
 id: stream-selection
 title: Stream selection
 slug: /media-parser/stream-selection
-crumb: '@remotion/media-parser'
+crumb: '@picus/media-parser'
 ---
 
 :::warning
@@ -18,7 +18,7 @@ For example, a `.m3u8` file might contain multiple video streams with different 
 Use the [`selectM3uStream`](/docs/media-parser/parse-media#selectm3ustream) option to select a stream.
 
 ```tsx twoslash Selecting the first stream
-import {parseMedia} from '@remotion/media-parser';
+import {parseMedia} from '@picus/media-parser';
 
 const media = await parseMedia({
   src: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
@@ -46,7 +46,7 @@ If you want an end user to pick the quality, it is recommended that you use two 
 You can extract the streams in the first pass and then show a UI to the user to pick the quality.
 
 ```tsx twoslash Getting the available streams
-import {parseMedia} from '@remotion/media-parser';
+import {parseMedia} from '@picus/media-parser';
 
 const {m3uStreams} = await parseMedia({
   src: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
@@ -61,7 +61,7 @@ const {m3uStreams} = await parseMedia({
 If you want to resort to the default behavior (selecting the stream with the highest resolution), use the `defaultSelectM3uStreamFn` function.
 
 ```tsx twoslash Resorting to default behavior
-import {parseMedia, defaultSelectM3uStreamFn} from '@remotion/media-parser';
+import {parseMedia, defaultSelectM3uStreamFn} from '@picus/media-parser';
 
 const media = await parseMedia({
   src: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
@@ -83,7 +83,7 @@ Once a primary stream has been selected, another callback may get invoked allowi
 An associated playlist is an audio track, but it could in the future also be a subtitle track.
 
 ```tsx twoslash title="Selecting the first stream"
-import {parseMedia} from '@remotion/media-parser';
+import {parseMedia} from '@picus/media-parser';
 
 await parseMedia({
   src: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
@@ -107,7 +107,7 @@ await parseMedia({
 The default behavior is to select the single associated playlist if there is only one, and otherwise select all associated playlists with the `default: true` attribute. The behavior is implemented by the filter function `defaultSelectM3uAssociatedPlaylists`.
 
 ```tsx twoslash Selecting the first stream
-import {parseMedia, defaultSelectM3uAssociatedPlaylists} from '@remotion/media-parser';
+import {parseMedia, defaultSelectM3uAssociatedPlaylists} from '@picus/media-parser';
 
 const media = await parseMedia({
   src: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',

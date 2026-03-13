@@ -1,4 +1,4 @@
-import type {AvailableOptions} from '@remotion/renderer/client';
+import type {AvailableOptions} from '@picus/renderer/client';
 import React, {useCallback} from 'react';
 import {Spacing} from '../layout';
 import {InputDragger} from '../NewComposition/InputDragger';

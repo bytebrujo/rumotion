@@ -1,6 +1,6 @@
-import {deleteStaticFile} from '@remotion/studio';
+import {deleteStaticFile} from '@picus/studio';
 import React, {useCallback} from 'react';
-import {AbsoluteFill, staticFile} from 'remotion';
+import {AbsoluteFill, staticFile} from 'picus';
 
 export const DeleteStaticFile: React.FC = () => {
 	const onDeleteFile = useCallback(async () => {

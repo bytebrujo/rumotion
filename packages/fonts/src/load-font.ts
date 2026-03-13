@@ -1,4 +1,4 @@
-import {cancelRender, continueRender, delayRender} from 'remotion';
+import {cancelRender, continueRender, delayRender} from 'picus';
 import type {FontFormat} from './get-font-format';
 import {getFontFormat} from './get-font-format';
 

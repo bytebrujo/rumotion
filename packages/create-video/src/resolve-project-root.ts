@@ -46,7 +46,7 @@ export const resolveProjectRoot = async (options?: {
 }> => {
 	if (isTmpFlagSelected()) {
 		Log.info('Creating the video in a temporary directory.');
-		const randomName = `remotion-video-${Math.random().toString(36).slice(2)}`;
+		const randomName = `picus-video-${Math.random().toString(36).slice(2)}`;
 		const randomRoot = path.join(tmpdir(), randomName);
 		mkdirp(randomRoot);
 

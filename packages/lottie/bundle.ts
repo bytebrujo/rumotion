@@ -10,8 +10,8 @@ const output = await build({
 	external: [
 		'react/jsx-runtime',
 		'react',
-		'remotion',
-		'remotion/no-react',
+		'picus',
+		'picus/no-react',
 		'lottie-web',
 	],
 });

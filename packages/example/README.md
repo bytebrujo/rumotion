@@ -1,4 +1,4 @@
-# @remotion/example
+# @picus/example
 
 ## Usage
 

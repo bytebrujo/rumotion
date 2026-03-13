@@ -1,12 +1,12 @@
 ---
 image: /generated/articles-docs-studio-app.png
 id: studio-into-app
-title: Converting a Remotion project to an app
+title: Converting a Picus project to an app
 sidebar_label: Convert Studio to an app
-crumb: 'Converting Remotion Projects'
+crumb: 'Converting Picus Projects'
 ---
 
-If you have started from any [Remotion template](/templates) except the Next.js and React Router templates, you currently have an app where you can start the [Remotion Studio](/docs/terminology/studio).
+If you have started from any [Picus template](/templates) except the Next.js and React Router templates, you currently have an app where you can start the [Picus Studio](/docs/terminology/studio).
 
 If you would like to now turn your project into an app, follow these steps.
 
@@ -18,7 +18,7 @@ If you would like to now turn your project into an app, follow these steps.
 - [Next.js (App dir, Rendering in Vercel Sandbox)](/templates/vercel)
 - [React Router 7 (Remix)](/templates/react-router)
 
-<Step>2</Step> In the <code>remotion/Root.tsx</code> file of the new project, replace
+<Step>2</Step> In the <code>picus/Root.tsx</code> file of the new project, replace
 the sample code with the code from <code>src/Root.tsx</code> from your existing project.
 Include all other components recursively, until <code>npx tsc -w</code> does give
 no errors anymore.
@@ -41,22 +41,22 @@ no errors anymore.
 	</li>
 </ul>
 
-Choose the main [composition](/docs/terminology/composition) that you want to render in the Player and include it's <code>component</code> and other metadata in the <code>&lt;Player&gt;</code>. You may import the component from the <code>remotion</code> folder so it is imported in both the Studio and the app.
+Choose the main [composition](/docs/terminology/composition) that you want to render in the Player and include it's <code>component</code> and other metadata in the <code>&lt;Player&gt;</code>. You may import the component from the <code>picus</code> folder so it is imported in both the Studio and the app.
 
 If you want to remove the duplication of metadata, you can define constants such as `DURATION_IN_FRAMES` and `FPS` in a separate file and import the constants in both the Studio and the app.
 
 If you use [`calculateMetadata()`](/docs/dynamic-metadata#with-the-player), see [here](/docs/dynamic-metadata#with-the-player) how you can use it with the Player.
 
-<Step>5</Step> If you have any Webpack override defined in <code>remotion.config.ts</code>
+<Step>5</Step> If you have any Webpack override defined in <code>picus.config.ts</code>
 , look up how to apply it to your framework as well.
 
 ## Next steps
 
 Good luck with your new app!
 
-- [ ] Chat with other builders on [Discord](https://remotion.dev/discord).
-- [ ] Post your app on [`#showcase`](https://remotion.dev/discord) and tag [`@remotion`](https://x.com/remotion) on x.com if you build something!
-- [ ] If you build together with others, ensure you have the proper [Remotion license](/docs/license).
+- [ ] Chat with other builders on [Discord](https://picus.dev/discord).
+- [ ] Post your app on [`#showcase`](https://picus.dev/discord) and tag [`@picus`](https://x.com/picus) on x.com if you build something!
+- [ ] If you build together with others, ensure you have the proper [Picus license](/docs/license).
 
 ## See also
 

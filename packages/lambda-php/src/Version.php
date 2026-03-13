@@ -1,6 +1,6 @@
 <?php
 
-namespace RemotionLambdaPhp;
+namespace PicusLambdaPhp;
 
 class Semantic
 {

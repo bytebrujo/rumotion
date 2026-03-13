@@ -91,7 +91,7 @@ export const makeIoSynchronizer = ({
 				[
 					...makeErrorBanner(),
 					`wanted: <${queueSize} queued items`,
-					`Report this at https://remotion.dev/report`,
+					`Report this at https://picus.dev/report`,
 				].join('\n'),
 			ms: 10000,
 			controller,

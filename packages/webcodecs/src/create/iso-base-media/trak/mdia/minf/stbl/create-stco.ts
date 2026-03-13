@@ -1,4 +1,4 @@
-import type {SamplePosition} from '@remotion/media-parser';
+import type {SamplePosition} from '@picus/media-parser';
 import {combineUint8Arrays} from '../../../../../matroska/matroska-utils';
 import {
 	addSize,

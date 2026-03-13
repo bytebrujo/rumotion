@@ -1,6 +1,6 @@
 import {SimulatePrincipalPolicyCommand} from '@aws-sdk/client-iam';
-import type {AwsRegion, RequestHandler} from '@remotion/lambda-client';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import type {AwsRegion, RequestHandler} from '@picus/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
 
 export type EvalDecision = 'allowed' | 'explicitDeny' | 'implicitDeny';
 

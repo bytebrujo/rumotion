@@ -1,4 +1,4 @@
-import {Thumbnail, ThumbnailRef} from '@remotion/player';
+import {Thumbnail, ThumbnailRef} from '@picus/player';
 import React, {useEffect, useRef} from 'react';
 import {VideoautoplayDemo} from './VideoAutoplay';
 

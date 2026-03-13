@@ -1,7 +1,7 @@
-import { makeConfig } from "@remotion/eslint-config-flat";
+import { makeConfig } from "@picus/eslint-config-flat";
 
 const conf = makeConfig({
-  remotionDir: ["remotion/**"],
+  picusDir: ["picus/**"],
 });
 
 export default conf;

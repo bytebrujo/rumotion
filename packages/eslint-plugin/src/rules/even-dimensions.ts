@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://github.com/remotion-dev/remotion`;
+	return `https://github.com/picus-dev/picus`;
 });
 
 type Options = [];
@@ -9,7 +9,7 @@ type Options = [];
 type MessageIds = 'EvenDimensions';
 
 const EvenDimensions =
-	"Videos rendered in H264/H265 codec do not support dimensions that are not divisible by 2. Remotion will round down your dimensions to satisfy this constraint. Ignore this warning if you don't plan on rendering this video with a H264 or H265 codec.";
+	"Videos rendered in H264/H265 codec do not support dimensions that are not divisible by 2. Picus will round down your dimensions to satisfy this constraint. Ignore this warning if you don't plan on rendering this video with a H264 or H265 codec.";
 
 export default createRule<Options, MessageIds>({
 	name: 'even-dimensions',

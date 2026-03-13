@@ -4,7 +4,7 @@ import {
   ProgressRequest,
   ProgressResponse,
   RenderRequest,
-} from "~/remotion/schemata";
+} from "~/picus/schemata";
 import { RenderResponse } from "./types";
 
 export type ApiResponse<Res> =

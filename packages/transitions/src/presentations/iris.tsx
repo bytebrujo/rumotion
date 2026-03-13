@@ -1,7 +1,7 @@
-import {translatePath} from '@remotion/paths';
-import {makeCircle} from '@remotion/shapes';
+import {translatePath} from '@picus/paths';
+import {makeCircle} from '@picus/shapes';
 import React, {useMemo, useState} from 'react';
-import {AbsoluteFill, random} from 'remotion';
+import {AbsoluteFill, random} from 'picus';
 import type {
 	TransitionPresentation,
 	TransitionPresentationComponentProps,
@@ -91,7 +91,7 @@ const IrisPresentation: React.FC<
 
 /*
  * @description Creates an iris transition that uses a circular mask starting from the center to reveal the underlying scene.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/presentations/iris)
+ * @see [Documentation](https://www.picus.dev/docs/transitions/presentations/iris)
  */
 export const iris = (props: IrisProps): TransitionPresentation<IrisProps> => {
 	return {component: IrisPresentation, props: props ?? {}};

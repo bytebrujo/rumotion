@@ -1,7 +1,7 @@
 import {BufferTarget, StreamTarget} from 'mediabunny';
-import type {CalculateMetadataFunction} from 'remotion';
-import {Internals, type LogLevel} from 'remotion';
-import {VERSION} from 'remotion/version';
+import type {CalculateMetadataFunction} from 'picus';
+import {Internals, type LogLevel} from 'picus';
+import {VERSION} from 'picus/version';
 import type {z} from 'zod';
 import type {$ZodObject} from 'zod/v4/core';
 import {addAudioSample, addVideoSampleAndCloseFrame} from './add-sample';
@@ -228,7 +228,7 @@ const internalRenderMediaOnWeb = async <
 			}
 
 			Internals.Log.warn(
-				{logLevel, tag: '@remotion/web-renderer'},
+				{logLevel, tag: '@picus/web-renderer'},
 				issue.message,
 			);
 		}
@@ -304,7 +304,7 @@ const internalRenderMediaOnWeb = async <
 	});
 
 	outputWithCleanup.output.setMetadataTags({
-		comment: `Made with Remotion ${VERSION}`,
+		comment: `Made with Picus ${VERSION}`,
 	});
 
 	using throttledProgress = createThrottledProgressCallback(onProgress);
@@ -640,7 +640,7 @@ export const renderMediaOnWeb = <
 				...options,
 				delayRenderTimeoutInMilliseconds:
 					options.delayRenderTimeoutInMilliseconds ?? 30000,
-				logLevel: options.logLevel ?? window.remotion_logLevel ?? 'info',
+				logLevel: options.logLevel ?? window.picus_logLevel ?? 'info',
 				schema: options.schema ?? undefined,
 				mediaCacheSizeInBytes: options.mediaCacheSizeInBytes ?? null,
 				videoCodec: codec,

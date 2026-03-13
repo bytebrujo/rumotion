@@ -1,18 +1,18 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/mcp"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/mcp"
 	},
-	"name": "@remotion/mcp",
+	"name": "@picus/mcp",
 	"version": "4.0.434",
-	"description": "Remotion's Model Context Protocol",
+	"description": "Picus's Model Context Protocol",
 	"main": "dist/esm/index.mjs",
 	"sideEffects": false,
 	"type": "module",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"bin": {
-		"remotion-mcp": "./dist/esm/index.mjs"
+		"picus-mcp": "./dist/esm/index.mjs"
 	},
 	"scripts": {
 		"lint": "eslint src",
@@ -21,7 +21,7 @@
 	"files": [
 		"dist"
 	],
-	"author": "Jonny Burger <jonny@remotion.dev>, Pramod Kumar <pramodkumar.damam73@gmail.com>",
+	"author": "Jonny Burger <jonny@picus.dev>, Pramod Kumar <pramodkumar.damam73@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
 		"@modelcontextprotocol/sdk": "1.26.0",
@@ -29,19 +29,19 @@
 	},
 	"peerDependencies": {},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@types/command-line-args": "^5.2.3",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"mcp"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
-	"homepage": "https://www.remotion.dev/docs/ai/mcp",
+	"homepage": "https://www.picus.dev/docs/ai/mcp",
 	"exports": {
 		"./package.json": "./package.json",
 		".": {

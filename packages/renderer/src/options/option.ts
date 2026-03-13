@@ -1,6 +1,6 @@
 import type {TypeOfOption} from '../client';
 
-export type RemotionOption<SsrName extends string, Type> = {
+export type PicusOption<SsrName extends string, Type> = {
 	name: string;
 	cliFlag: string;
 	ssrName: SsrName | null;
@@ -19,10 +19,10 @@ export type RemotionOption<SsrName extends string, Type> = {
 	id: string;
 };
 
-export type AnyRemotionOption<T> = RemotionOption<string, T>;
+export type AnyPicusOption<T> = PicusOption<string, T>;
 
 // Intentional any
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type ToOptions<T extends Record<string, AnyRemotionOption<any>>> = {
+export type ToOptions<T extends Record<string, AnyPicusOption<any>>> = {
 	[K in keyof T]: TypeOfOption<T[K]>;
 };

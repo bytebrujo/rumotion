@@ -19,7 +19,7 @@ type Options = {
 	files: PreprocessedAudioTrack[];
 	outName: string;
 	downloadMap: DownloadMap;
-	remotionRoot: string;
+	picusRoot: string;
 	indent: boolean;
 	logLevel: LogLevel;
 	binariesDirectory: string | null;
@@ -33,7 +33,7 @@ const mergeAudioTrackUnlimited = async ({
 	outName,
 	files,
 	downloadMap,
-	remotionRoot,
+	picusRoot,
 	indent,
 	logLevel,
 	binariesDirectory,
@@ -60,7 +60,7 @@ const mergeAudioTrackUnlimited = async ({
 	// In FFMPEG, the total number of left and right tracks that can be merged at one time is limited to 64
 	if (files.length >= 32) {
 		const chunked = chunk(files, 10);
-		const tempPath = tmpDir('remotion-large-audio-mixing');
+		const tempPath = tmpDir('picus-large-audio-mixing');
 
 		try {
 			const partialProgress = new Array(chunked.length).fill(0);
@@ -82,7 +82,7 @@ const mergeAudioTrackUnlimited = async ({
 						chunkLengthInSeconds,
 						outName: chunkOutname,
 						downloadMap,
-						remotionRoot,
+						picusRoot,
 						indent,
 						logLevel,
 						binariesDirectory,
@@ -107,7 +107,7 @@ const mergeAudioTrackUnlimited = async ({
 				})),
 				outName,
 				downloadMap,
-				remotionRoot,
+				picusRoot,
 				indent,
 				logLevel,
 				binariesDirectory,

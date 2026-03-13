@@ -1,4 +1,4 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {DEFAULT_TIMEOUT} from './browser/TimeoutSettings';
 import {validCodecs} from './codec';
 import {

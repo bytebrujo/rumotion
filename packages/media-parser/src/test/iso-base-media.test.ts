@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -41,7 +41,7 @@ if (process.platform !== 'win32') {
 						audioSamples++;
 					};
 				},
-				acknowledgeRemotionLicense: true,
+				acknowledgePicusLicense: true,
 			});
 			expect(result.dimensions).toEqual({
 				width: 2160,
@@ -79,7 +79,7 @@ if (process.platform !== 'win32') {
 				internalStats: true,
 			},
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 		expect(internalStats).toEqual({
 			finalCursorOffset: 39062928,

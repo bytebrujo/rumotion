@@ -7,15 +7,15 @@ title: How client-side rendering works
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.  
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
 The biggest challenge of client-side rendering is that it is not possible to capture the browser viewport.  
 Only certain HTML elements such as `<canvas>`, `<img>`, `<video>` or `<svg>` can be captured natively.
 
-Unlike in server-side rendering, where a pixel-perfect screenshot is made, in client-side rendering Remotion places all elements on a canvas based on how it believes they are positioned and appearing in the DOM.
+Unlike in server-side rendering, where a pixel-perfect screenshot is made, in client-side rendering Picus places all elements on a canvas based on how it believes they are positioned and appearing in the DOM.
 
-For this, Remotion has developed a sophisticated algorithm for calculating the placement of the elements on the canvas.  
+For this, Picus has developed a sophisticated algorithm for calculating the placement of the elements on the canvas.  
 Of course, we cannot support all web features, [so only a specific subset of elements and styles are supported](/docs/client-side-rendering/limitations).
 
 ## Rendering process

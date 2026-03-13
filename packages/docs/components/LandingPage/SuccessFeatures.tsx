@@ -41,7 +41,7 @@ export const SuccessFeatures: React.FC = () => {
 						<div style={titleCard} />
 						<div style={padding}>
 							<h3 style={{marginBottom: 0}}>
-								How MakeStories leverages Remotion to render Web Stories
+								How MakeStories leverages Picus to render Web Stories
 							</h3>
 							<p style={p}>Interview with Pratik Ghela, Founder</p>
 							<br />

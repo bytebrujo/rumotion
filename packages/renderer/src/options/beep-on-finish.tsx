@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let beepOnFinish = false;
 
@@ -9,11 +9,11 @@ export const beepOnFinishOption = {
 	cliFlag,
 	description: () => (
 		<>
-			Whether the Remotion Studio tab should beep when the render is finished.
+			Whether the Picus Studio tab should beep when the render is finished.
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setbeeponfinish',
+	docLink: 'https://www.picus.dev/docs/config#setbeeponfinish',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -39,4 +39,4 @@ export const beepOnFinishOption = {
 		beepOnFinish = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

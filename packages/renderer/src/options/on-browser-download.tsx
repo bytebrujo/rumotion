@@ -1,5 +1,5 @@
 import type {ChromeMode} from './chrome-mode';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 export type DownloadBrowserProgressFn = (progress: {
 	alreadyAvailable: boolean;
@@ -29,7 +29,7 @@ export const onBrowserDownloadOption = {
 		</>
 	),
 	ssrName: 'onBrowserDownload' as const,
-	docLink: 'https://www.remotion.dev/docs/renderer/ensure-browser',
+	docLink: 'https://www.picus.dev/docs/renderer/ensure-browser',
 	type: undefined as unknown as OnBrowserDownload,
 	getValue: () => {
 		throw new Error('does not support config file');
@@ -38,4 +38,4 @@ export const onBrowserDownloadOption = {
 		throw new Error('does not support config file');
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<OnBrowserDownload>;
+} satisfies AnyPicusOption<OnBrowserDownload>;

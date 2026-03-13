@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 export const AnimationMath: React.FC = () => {
 	const frame = useCurrentFrame();

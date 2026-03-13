@@ -1,8 +1,8 @@
 const cp = require('node:child_process');
 const fs = require('node:fs');
-const {VERSION} = require('remotion');
+const {VERSION} = require('picus');
 
-const versions = [`remotionlambda-arm64.zip`];
+const versions = [`picuslambda-arm64.zip`];
 
 for (const version of versions) {
 	cp.execSync(`unzip -o ${version} -d extracted`);

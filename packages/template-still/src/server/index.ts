@@ -1,9 +1,9 @@
-import { bundle } from "@remotion/bundler";
+import { bundle } from "@picus/bundler";
 import {
   ensureBrowser,
   renderStill,
   selectComposition,
-} from "@remotion/renderer";
+} from "@picus/renderer";
 import dotenv from "dotenv";
 import express from "express";
 import rateLimit from "express-rate-limit";
@@ -23,7 +23,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 const webpackBundling = bundle(path.join(process.cwd(), "src/index.ts"));
-const tmpDir = fs.promises.mkdtemp(path.join(os.tmpdir(), "remotion-"));
+const tmpDir = fs.promises.mkdtemp(path.join(os.tmpdir(), "picus-"));
 
 enum Params {
   compositionname,

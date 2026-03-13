@@ -1,4 +1,4 @@
-# @remotion/skills
+# @picus/skills
 
 ## Usage
 

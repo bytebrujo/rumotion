@@ -1,13 +1,13 @@
-import {CliInternals} from '@remotion/cli';
+import {CliInternals} from '@picus/cli';
 import {
 	AwsProvider,
 	getCompositionsOnLambda,
 	LambdaClientInternals,
-} from '@remotion/lambda-client';
-import {BINARY_NAME} from '@remotion/lambda-client/constants';
-import type {ChromiumOptions, LogLevel} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {ProviderSpecifics} from '@remotion/serverless';
+} from '@picus/lambda-client';
+import {BINARY_NAME} from '@picus/lambda-client/constants';
+import type {ChromiumOptions, LogLevel} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {ProviderSpecifics} from '@picus/serverless';
 import {parsedLambdaCli} from '../../args';
 import {getAwsRegion} from '../../get-aws-region';
 import {findFunctionName} from '../../helpers/find-function-name';
@@ -42,7 +42,7 @@ export const compositionsCommand = async ({
 		Log.error({indent: false, logLevel}, 'No serve URL passed.');
 		Log.info(
 			{indent: false, logLevel},
-			'Pass an additional argument specifying a URL where your Remotion project is hosted.',
+			'Pass an additional argument specifying a URL where your Picus project is hosted.',
 		);
 		Log.info({indent: false, logLevel});
 		Log.info(

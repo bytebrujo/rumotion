@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {addSequenceStackTraces} from '../enable-sequence-stack-traces.js';
 import {Sequence} from '../Sequence.js';
-import {useRemotionEnvironment} from '../use-remotion-environment.js';
+import {usePicusEnvironment} from '../use-picus-environment.js';
 import {validateMediaProps} from '../validate-media-props.js';
 import {
 	resolveTrimProps,
@@ -10,7 +10,7 @@ import {
 import {OffthreadVideoForRendering} from './OffthreadVideoForRendering.js';
 import type {
 	AllOffthreadVideoProps,
-	RemotionOffthreadVideoProps,
+	PicusOffthreadVideoProps,
 } from './props.js';
 import {VideoForPreview} from './VideoForPreview.js';
 
@@ -30,11 +30,11 @@ export const InnerOffthreadVideo: React.FC<AllOffthreadVideoProps> = (
 		showInTimeline,
 		...otherProps
 	} = props;
-	const environment = useRemotionEnvironment();
+	const environment = usePicusEnvironment();
 
 	if (environment.isClientSideRendering) {
 		throw new Error(
-			'<OffthreadVideo> is not supported in @remotion/web-renderer. Use <Video> from @remotion/media instead. See https://remotion.dev/docs/client-side-rendering/limitations',
+			'<OffthreadVideo> is not supported in @picus/web-renderer. Use <Video> from @picus/media instead. See https://picus.dev/docs/client-side-rendering/limitations',
 		);
 	}
 
@@ -115,7 +115,7 @@ export const InnerOffthreadVideo: React.FC<AllOffthreadVideoProps> = (
 
 	return (
 		<VideoForPreview
-			_remotionInternalStack={stack ?? null}
+			_picusInternalStack={stack ?? null}
 			onDuration={onDuration}
 			onlyWarnForMediaSeekingError
 			pauseWhenBuffering={pauseWhenBuffering ?? false}
@@ -124,17 +124,17 @@ export const InnerOffthreadVideo: React.FC<AllOffthreadVideoProps> = (
 			onVideoFrame={onVideoFrame ?? null}
 			crossOrigin={crossOrigin}
 			{...propsForPreview}
-			_remotionInternalNativeLoopPassed={false}
+			_picusInternalNativeLoopPassed={false}
 		/>
 	);
 };
 
 /*
  * @description This method imports and displays a video, similar to <Html5Video />. During rendering, it extracts the exact frame from the video and displays it in an <img> tag
- * @see [Documentation](https://www.remotion.dev/docs/offthreadvideo)
+ * @see [Documentation](https://www.picus.dev/docs/offthreadvideo)
  */
 
-export const OffthreadVideo: React.FC<RemotionOffthreadVideoProps> = ({
+export const OffthreadVideo: React.FC<PicusOffthreadVideoProps> = ({
 	src,
 	acceptableTimeShiftInSeconds,
 	allowAmplificationDuringRender,
@@ -161,7 +161,7 @@ export const OffthreadVideo: React.FC<RemotionOffthreadVideoProps> = ({
 	trimBefore,
 	useWebAudioApi,
 	volume,
-	_remotionInternalNativeLoopPassed,
+	_picusInternalNativeLoopPassed,
 	endAt,
 	stack,
 	startFrom,
@@ -196,8 +196,8 @@ export const OffthreadVideo: React.FC<RemotionOffthreadVideoProps> = ({
 			src={src}
 			stack={stack}
 			startFrom={startFrom}
-			_remotionInternalNativeLoopPassed={
-				_remotionInternalNativeLoopPassed ?? false
+			_picusInternalNativeLoopPassed={
+				_picusInternalNativeLoopPassed ?? false
 			}
 			endAt={endAt}
 			style={style}

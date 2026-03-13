@@ -1,4 +1,4 @@
-import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from 'picus';
 import {MESSAGES} from './messages';
 
 const SPINNER_CHARS = ['·', '✻', '✽', '✶', '✳', '✢'];

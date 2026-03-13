@@ -1,12 +1,12 @@
-import {bundle} from '@remotion/bundler';
-import {renderMedia, selectComposition} from '@remotion/renderer';
+import {bundle} from '@picus/bundler';
+import {renderMedia, selectComposition} from '@picus/renderer';
 import {createRequire} from 'node:module';
 
 const require = createRequire(import.meta.url);
 
 const bundled = await bundle({
 	entryPoint: require.resolve('./src/index.ts'),
-	// If you have a webpack override in remotion.config.ts, pass it here as well.
+	// If you have a webpack override in picus.config.ts, pass it here as well.
 	webpackOverride: (config) => config,
 });
 

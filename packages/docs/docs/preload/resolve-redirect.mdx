@@ -1,7 +1,7 @@
 ---
 id: resolve-redirect
 title: resolveRedirect()
-crumb: '@remotion/player'
+crumb: '@picus/player'
 ---
 
 Follows the redirects of a URL (most commonly a remote video or audio) until the final URL is resolved and returns that.
@@ -9,7 +9,7 @@ Follows the redirects of a URL (most commonly a remote video or audio) until the
 If the resource does not support CORS, the function will throw. **If the resource redirects, and does not support CORS, you cannot preload the asset.**
 
 ```tsx twoslash
-import {resolveRedirect} from '@remotion/preload';
+import {resolveRedirect} from '@picus/preload';
 
 resolveRedirect('https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=175&oauth2_token_id=57447761')
   .then((src) => {
@@ -25,8 +25,8 @@ resolveRedirect('https://player.vimeo.com/external/291648067.hd.mp4?s=9499897168
 This snippet tries to preload a video on a best-effort basis. If the redirect cannot be resolved, it tries to preload the original URL.
 
 ```tsx twoslash
-import {preloadVideo, resolveRedirect} from '@remotion/preload';
-import {OffthreadVideo} from 'remotion';
+import {preloadVideo, resolveRedirect} from '@picus/preload';
+import {OffthreadVideo} from 'picus';
 
 // This code gets executed immediately once the page loads
 let urlToLoad = 'https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=175&oauth2_token_id=57447761';
@@ -57,7 +57,7 @@ const MyComp: React.FC = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/preload/src/resolve-redirect.ts)
-- [Installing `@remotion/preload`](/docs/preload)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/preload/src/resolve-redirect.ts)
+- [Installing `@picus/preload`](/docs/preload)
 - [preloadAudio()](/docs/preload/preload-audio)
 - [preloadVideo()](/docs/preload/preload-video)

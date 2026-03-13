@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {mediaParserController} from '../controller/media-parser-controller';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
@@ -7,7 +7,7 @@ import {parseMedia} from '../parse-media';
 test('Fragmented MP4 with no duration metadata does not have duration', async () => {
 	const result = await parseMedia({
 		src: exampleVideos.fragmentedMp4WithNoDurationMetadata,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			durationInSeconds: true,
 			internalStats: true,
@@ -27,7 +27,7 @@ test('Fragmented MP4 with no duration metadata does have slow duration, and shou
 
 	const result = await parseMedia({
 		src: exampleVideos.fragmentedMp4WithNoDurationMetadata,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			slowDurationInSeconds: true,
 			internalStats: true,

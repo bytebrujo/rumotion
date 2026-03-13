@@ -1,13 +1,13 @@
 from unittest import TestCase
 
-from remotion_lambda.models import RenderStillParams
-from remotion_lambda.remotionclient import RemotionClient
+from picus_lambda.models import RenderStillParams
+from picus_lambda.picusclient import PicusClient
 
 
-class TestRemotionClient(TestCase):
-    def test_remotion_construct_request(self):
-        client = RemotionClient(
-            region="us-east-1", serve_url="testbed", function_name="remotion-render"
+class TestPicusClient(TestCase):
+    def test_picus_construct_request(self):
+        client = PicusClient(
+            region="us-east-1", serve_url="testbed", function_name="picus-render"
         )
         render_still_params = RenderStillParams(
             composition="still-helloworld",

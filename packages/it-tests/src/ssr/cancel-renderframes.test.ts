@@ -4,7 +4,7 @@ import {
 	ensureBrowser,
 	makeCancelSignal,
 	renderFrames,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 
 const exampleBuild = path.join(__dirname, '..', '..', '..', 'example', 'build');
 

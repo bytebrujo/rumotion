@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'public-license-key' as const;
 
@@ -10,12 +10,12 @@ export const publicLicenseKeyOption = {
 	description: () => (
 		<>
 			The public license key for your company license, obtained from the "Usage"
-			tab on <a href="https://remotion.pro/dashboard">remotion.pro</a>. If you
+			tab on <a href="https://picus.pro/dashboard">picus.pro</a>. If you
 			are eligible for the free license, pass "free-license".
 		</>
 	),
 	ssrName: 'publicLicenseKey' as const,
-	docLink: 'https://www.remotion.dev/docs/licensing',
+	docLink: 'https://www.picus.dev/docs/licensing',
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
 			return {
@@ -47,4 +47,4 @@ export const publicLicenseKeyOption = {
 	},
 	type: null as string | null,
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

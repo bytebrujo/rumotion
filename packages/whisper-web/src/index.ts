@@ -30,49 +30,49 @@ import type {
 
 export const transcribe: typeof originalTranscribe = () => {
 	throw new Error(
-		'Loading this module from CommonJS is not supported. Load the ESM version of @remotion/whisper-web.',
+		'Loading this module from CommonJS is not supported. Load the ESM version of @picus/whisper-web.',
 	);
 };
 
 export const downloadWhisperModel: typeof originalDownloadWhisperModel = () => {
 	throw new Error(
-		'Loading this module from CommonJS is not supported. Load the ESM version of @remotion/whisper-web.',
+		'Loading this module from CommonJS is not supported. Load the ESM version of @picus/whisper-web.',
 	);
 };
 
 export const getLoadedModels: typeof originalGetLoadedModels = () => {
 	throw new Error(
-		'Loading this module from CommonJS is not supported. Load the ESM version of @remotion/whisper-web.',
+		'Loading this module from CommonJS is not supported. Load the ESM version of @picus/whisper-web.',
 	);
 };
 
 export const getAvailableModels: typeof originalGetAvailableModels = () => {
 	throw new Error(
-		'Loading this module from CommonJS is not supported. Load the ESM version of @remotion/whisper-web.',
+		'Loading this module from CommonJS is not supported. Load the ESM version of @picus/whisper-web.',
 	);
 };
 
 export const deleteModel: typeof originalDeleteModel = () => {
 	throw new Error(
-		'Loading this module from CommonJS is not supported. Load the ESM version of @remotion/whisper-web.',
+		'Loading this module from CommonJS is not supported. Load the ESM version of @picus/whisper-web.',
 	);
 };
 
 export const canUseWhisperWeb: typeof originalCanUseWhisperWeb = () => {
 	throw new Error(
-		'Loading this module from CommonJS is not supported. Load the ESM version of @remotion/whisper-web.',
+		'Loading this module from CommonJS is not supported. Load the ESM version of @picus/whisper-web.',
 	);
 };
 
 export const resampleTo16Khz: typeof originalResampleTo16Khz = () => {
 	throw new Error(
-		'Loading this module from CommonJS is not supported. Load the ESM version of @remotion/whisper-web.',
+		'Loading this module from CommonJS is not supported. Load the ESM version of @picus/whisper-web.',
 	);
 };
 
 export const toCaptions: typeof originalToCaptions = () => {
 	throw new Error(
-		'Loading this module from CommonJS is not supported. Load the ESM version of @remotion/whisper-web.',
+		'Loading this module from CommonJS is not supported. Load the ESM version of @picus/whisper-web.',
 	);
 };
 

@@ -25,7 +25,7 @@ export const BuildApps: React.FC = () => {
 			<VideoApps active="lambda" />
 			<br />
 			<p style={center}>
-				All Remotion products are source-available, for self-hosting, free for
+				All Picus products are source-available, for self-hosting, free for
 				individuals and small businesses, with company licensing available.
 			</p>
 		</div>

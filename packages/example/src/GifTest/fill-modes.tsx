@@ -1,5 +1,5 @@
-import {Gif} from '@remotion/gif';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {Gif} from '@picus/gif';
+import {AbsoluteFill, Sequence} from 'picus';
 
 const GifTest: React.FC = () => {
 	return (

@@ -2,14 +2,14 @@
 image: /generated/articles-docs-google-fonts-index.png
 id: google-fonts
 sidebar_label: Overview
-title: '@remotion/google-fonts'
+title: '@picus/google-fonts'
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {TableOfContents} from './TableOfContents';
 
-The `@remotion/google-fonts` package provides APIs for easily integrating [Google Fonts](https://fonts.google.com/) into Remotion.
+The `@picus/google-fonts` package provides APIs for easily integrating [Google Fonts](https://fonts.google.com/) into Picus.
 
 ## Installation
 
@@ -24,7 +24,7 @@ values={[
 <TabItem value="npm">
 
 ```bash
-npm i @remotion/google-fonts
+npm i @picus/google-fonts
 ```
 
   </TabItem>
@@ -32,7 +32,7 @@ npm i @remotion/google-fonts
   <TabItem value="yarn">
 
 ```bash
-yarn add @remotion/google-fonts
+yarn add @picus/google-fonts
 ```
 
   </TabItem>
@@ -40,7 +40,7 @@ yarn add @remotion/google-fonts
   <TabItem value="pnpm">
 
 ```bash
-pnpm i @remotion/google-fonts
+pnpm i @picus/google-fonts
 ```
 
   </TabItem>
@@ -48,7 +48,7 @@ pnpm i @remotion/google-fonts
 
 ## Usage
 
-To load a font, import the package `@remotion/google-fonts/<FontName>` and call [`loadFont()`](/docs/google-fonts/load-font).
+To load a font, import the package `@picus/google-fonts/<FontName>` and call [`loadFont()`](/docs/google-fonts/load-font).
 
 For production, start with these defaults:
 
@@ -57,7 +57,7 @@ For production, start with these defaults:
 - If you use text measurement APIs, gate rendering until fonts are ready using a higher-order component.
 
 ```tsx twoslash title="Load one style, weight and subset"
-import {loadFont} from '@remotion/google-fonts/TitanOne';
+import {loadFont} from '@picus/google-fonts/TitanOne';
 
 const {fontFamily} = loadFont('normal', {
   weights: ['400'],
@@ -68,7 +68,7 @@ const {fontFamily} = loadFont('normal', {
 If you want to import multiple fonts and want to avoid a variable name collision, you can import the fonts using an `import * as` statement.
 
 ```tsx twoslash title="Scope loadFont() variable"
-import * as Montserrat from '@remotion/google-fonts/Montserrat';
+import * as Montserrat from '@picus/google-fonts/Montserrat';
 Montserrat.loadFont('normal', {
   weights: ['400'],
   subsets: ['latin'],
@@ -80,7 +80,7 @@ Call [`loadFont()`](/docs/google-fonts/load-font) to start the loading process. 
 Use TypeScript autocomplete to see the available styles. To further narrow down what's being loaded, specify `weights` and `subsets`. If you need multiple styles, call `loadFont()` multiple times.
 
 ```tsx twoslash title="Load multiple styles explicitly"
-import * as Montserrat from '@remotion/google-fonts/Montserrat';
+import * as Montserrat from '@picus/google-fonts/Montserrat';
 
 Montserrat.loadFont('normal', {
   weights: ['400', '700'],
@@ -95,8 +95,8 @@ Montserrat.loadFont('italic', {
 [`loadFont()`](/docs/google-fonts/load-font) returns an object with a `fontFamily` property. You can use the `style` attribute to render text in the font you loaded.
 
 ```tsx twoslash title="Use the fontFamily property"
-import {loadFont} from '@remotion/google-fonts/TitanOne';
-import {AbsoluteFill} from 'remotion';
+import {loadFont} from '@picus/google-fonts/TitanOne';
+import {AbsoluteFill} from 'picus';
 
 const {fontFamily} = loadFont('normal', {
   weights: ['400'],
@@ -119,8 +119,8 @@ export const GoogleFontsDemoComposition = () => {
 If your project uses multiple fonts, define them in one file and export a `waitForFonts()` helper:
 
 ```tsx twoslash title="fonts.ts"
-import {loadFont as loadInter} from '@remotion/google-fonts/Inter';
-import {loadFont as loadRobotoMono} from '@remotion/google-fonts/RobotoMono';
+import {loadFont as loadInter} from '@picus/google-fonts/Inter';
+import {loadFont as loadRobotoMono} from '@picus/google-fonts/RobotoMono';
 
 const inter = loadInter('normal', {
   weights: ['400', '700'],
@@ -141,7 +141,7 @@ If you use text measurement APIs, wrap your content in a component that waits fo
 To get information about a font, you can import the `getInfo()` function:
 
 ```tsx twoslash title="Get info about the font"
-import {getInfo} from '@remotion/google-fonts/Montserrat';
+import {getInfo} from '@picus/google-fonts/Montserrat';
 console.log(getInfo());
 ```
 
@@ -167,10 +167,10 @@ console.log(getInfo());
 }
 ```
 
-To get a list of all available fonts, you can call [`getAvailableFonts()`](/docs/google-fonts/get-available-fonts) imported from `@remotion/google-fonts`:
+To get a list of all available fonts, you can call [`getAvailableFonts()`](/docs/google-fonts/get-available-fonts) imported from `@picus/google-fonts`:
 
 ```ts twoslash
-import {getAvailableFonts} from '@remotion/google-fonts';
+import {getAvailableFonts} from '@picus/google-fonts';
 
 console.log(getAvailableFonts());
 ```

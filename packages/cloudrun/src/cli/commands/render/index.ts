@@ -1,9 +1,9 @@
-import {CliInternals} from '@remotion/cli';
-import {ConfigInternals} from '@remotion/cli/config';
-import type {ChromiumOptions, LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
-import {NoReactInternals} from 'remotion/no-react';
+import {CliInternals} from '@picus/cli';
+import {ConfigInternals} from '@picus/cli/config';
+import type {ChromiumOptions, LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
+import {NoReactInternals} from 'picus/no-react';
 import {downloadFile} from '../../../api/download-file';
 import {internalRenderMediaOnCloudrun} from '../../../api/render-media-on-cloudrun';
 import type {CloudrunCodec} from '../../../shared/validate-gcp-codec';
@@ -53,7 +53,7 @@ const {
 
 export const renderCommand = async (
 	args: string[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 ) => {
 	const {
@@ -184,7 +184,7 @@ export const renderCommand = async (
 			offthreadVideoThreads: 1,
 			indent: false,
 			port: ConfigInternals.getRendererPortFromConfigFileAndCliFlag(),
-			remotionRoot,
+			picusRoot,
 			logLevel,
 			webpackConfigOrServeUrl: serveUrl,
 			offthreadVideoCacheSizeInBytes,

@@ -66,7 +66,7 @@ const startParsing = async (
 	const {payload, src} = message;
 	const {
 		fields,
-		acknowledgeRemotionLicense,
+		acknowledgePicusLicense,
 		logLevel: userLogLevel,
 		progressIntervalInMs,
 		m3uPlaylistContext,
@@ -116,7 +116,7 @@ const startParsing = async (
 		const ret = await internalParseMedia({
 			src,
 			reader,
-			acknowledgeRemotionLicense: Boolean(acknowledgeRemotionLicense),
+			acknowledgePicusLicense: Boolean(acknowledgePicusLicense),
 			onError: () => ({action: 'fail'}),
 			logLevel,
 			fields: fields ?? null,

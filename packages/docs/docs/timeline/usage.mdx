@@ -14,11 +14,11 @@ Import and use the timeline components in your React application.
 For optimal performance and proper functionality, structure your components like this:
 
 ```tsx
-import type {PlayerRef} from '@remotion/player';
-import {Timeline, TimelineContainer} from './timeline/remotion-timeline/components/timeline';
-import {TimelineProvider} from './timeline/remotion-timeline/context/provider';
-import {TimelineSizeProvider} from './timeline/remotion-timeline/context/timeline-size-provider';
-import {TimelineZoomProvider} from './timeline/remotion-timeline/context/timeline-zoom-provider';
+import type {PlayerRef} from '@picus/player';
+import {Timeline, TimelineContainer} from './timeline/picus-timeline/components/timeline';
+import {TimelineProvider} from './timeline/picus-timeline/context/provider';
+import {TimelineSizeProvider} from './timeline/picus-timeline/context/timeline-size-provider';
+import {TimelineZoomProvider} from './timeline/picus-timeline/context/timeline-zoom-provider';
 import {PreviewContainer} from './layout';
 
 export const App = () => {
@@ -62,11 +62,11 @@ This structure ensures:
 
 ## Default state structure
 
-The project includes a predefined state structure for timeline tracks and items. You can check [TimelineProvider component](https://github.com/remotion-dev/timeline/blob/main/src/timeline/remotion-timeline/context/provider.tsx) for the state structure.
+The project includes a predefined state structure for timeline tracks and items. You can check [TimelineProvider component](https://github.com/picus-dev/timeline/blob/main/src/timeline/picus-timeline/context/provider.tsx) for the state structure.
 
 ## Video Preview
 
-This project includes a `CanvasComposition`, a Remotion composition that renders the timeline state in the Remotion Player.
+This project includes a `CanvasComposition`, a Picus composition that renders the timeline state in the Picus Player.
 
 You can:
 

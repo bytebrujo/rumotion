@@ -1,5 +1,5 @@
-import {Video} from '@remotion/media';
-import {AbsoluteFill, staticFile} from 'remotion';
+import {Video} from '@picus/media';
+import {AbsoluteFill, staticFile} from 'picus';
 import {expect, test} from 'vitest';
 import {renderStillOnWeb} from '../render-still-on-web';
 import '../symbol-dispose';

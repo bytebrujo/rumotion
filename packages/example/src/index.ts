@@ -1,6 +1,6 @@
 import {registerAc3Decoder} from '@mediabunny/ac3';
 import {registerAc3Encoder} from '@mediabunny/ac3';
-import {registerRoot} from 'remotion';
+import {registerRoot} from 'picus';
 
 registerAc3Decoder();
 registerAc3Encoder();

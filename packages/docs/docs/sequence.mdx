@@ -15,7 +15,7 @@ const BlueSquare: React.FC = () => <div></div>
 By using a sequence, you can time-shift the display of your components or parts of your animation in the video.
 
 ```tsx twoslash title="MyTrailer.tsx"
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 
 export const Intro = () => <></>;
 export const Clip = () => <></>;
@@ -47,7 +47,7 @@ const MyTrailer = () => {
 All children of a `<Sequence>` that call [`useCurrentFrame()`](/docs/use-current-frame) will receive a value that is shifted by [`from`](#from).
 
 ```tsx twoslash title="MyTrailer.tsx"
-import {Sequence, useCurrentFrame} from 'remotion';
+import {Sequence, useCurrentFrame} from 'picus';
 
 const Intro = () => <div>{useCurrentFrame()}</div>;
 
@@ -100,7 +100,7 @@ If you would like to delay the content by say 30 frames, you can wrap it in <br/
 
 ```tsx twoslash title="delay.tsx"
 // @include: example-BlueSquare
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 // ---cut---
 const MyVideo = () => {
   return (
@@ -120,7 +120,7 @@ Wrap your component in a `<Sequence>` with a finite `durationInFrames` prop to m
 
 ```tsx twoslash title="trim-end.tsx"
 // @include: example-BlueSquare
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 // ---cut---
 const ClipExample: React.FC = () => {
   return (
@@ -160,7 +160,7 @@ To the outer one we pass a positive value `from={30}` to then shift it forwards 
 
 ```tsx twoslash title="trim-and-delay.tsx"
 // @include: example-BlueSquare
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 // ---cut---
 const TrimAndDelayExample: React.FC = () => {
   return (
@@ -202,7 +202,7 @@ Gives the sequence a specific `style={{width: width}}` style and overrides `widt
 
 ### `name?`
 
-You can give your sequence a name and it will be shown as the label of the sequence in the timeline of the Remotion Studio. This property is purely for helping you keep track of sequences in the timeline.
+You can give your sequence a name and it will be shown as the label of the sequence in the timeline of the Picus Studio. This property is purely for helping you keep track of sequences in the timeline.
 
 ### `layout?`
 
@@ -243,7 +243,7 @@ You can add a [React ref](https://react.dev/learn/manipulating-the-dom-with-refs
 
 ```tsx twoslash
 import {useRef} from 'react';
-import {Sequence} from 'remotion';
+import {Sequence} from 'picus';
 
 const content = <div>Hello, World</div>;
 // ---cut---
@@ -257,7 +257,7 @@ const MyComp = () => {
 };
 ```
 
-## Note for `@remotion/three`
+## Note for `@picus/three`
 
 A `<Sequence>` by default will return a `<div>` component which is not allowed inside a [`<ThreeCanvas>`](/docs/three-canvas).  
 Avoid an error by passing `layout="none"` to `<Sequence>`. Example: `<Sequence layout="none">`.
@@ -268,7 +268,7 @@ Avoid an error by passing `layout="none"` to `<Sequence>`. Example: `<Sequence l
 
 ## See also
 
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/Sequence.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/core/src/Sequence.tsx)
 - [Reuse components using Sequences](/docs/reusability)
 - [`<Composition />`](/docs/composition)
 - [`<Series />`](/docs/series)

@@ -1,11 +1,11 @@
 import {spawn} from 'node:child_process';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {
 	extraPackages,
 	type InstallPackageRequest,
 	type InstallPackageResponse,
-} from '@remotion/studio-shared';
-import {VERSION} from 'remotion/version';
+} from '@picus/studio-shared';
+import {VERSION} from 'picus/version';
 import {getInstallCommand} from '../../helpers/install-command';
 import type {ApiHandler} from '../api-types';
 import {getPackageManager, lockFilePaths} from '../get-package-manager';
@@ -24,9 +24,9 @@ const getExtraPackageVersion = (packageName: string): string | null => {
 export const handleInstallPackage: ApiHandler<
 	InstallPackageRequest,
 	InstallPackageResponse
-> = async ({logLevel, remotionRoot, input: {packageNames}}) => {
+> = async ({logLevel, picusRoot, input: {packageNames}}) => {
 	for (const packageName of packageNames) {
-		if (!packageName.startsWith('@remotion/') && !isExtraPackage(packageName)) {
+		if (!packageName.startsWith('@picus/') && !isExtraPackage(packageName)) {
 			return Promise.reject(
 				new Error(`Package ${packageName} is not allowed to be installed.`),
 			);
@@ -34,7 +34,7 @@ export const handleInstallPackage: ApiHandler<
 	}
 
 	const manager = getPackageManager({
-		remotionRoot,
+		picusRoot,
 		packageManager: undefined,
 		dirUp: 0,
 		logLevel,

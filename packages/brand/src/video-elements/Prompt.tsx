@@ -5,7 +5,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {z} from 'zod';
 import {Thinking} from './Thinking';
 

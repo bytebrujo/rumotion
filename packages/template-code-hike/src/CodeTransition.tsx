@@ -1,6 +1,6 @@
 import { AnnotationHandler, HighlightedCode, Pre } from "codehike/code";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
-import { Easing, interpolate, useCurrentFrame, useDelayRender } from "remotion";
+import { Easing, interpolate, useCurrentFrame, useDelayRender } from "picus";
 
 import {
   calculateTransitions,

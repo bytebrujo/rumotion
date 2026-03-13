@@ -12,7 +12,7 @@ export const checkBucketListing = async ({
 		if (res.status === 200) {
 			// eslint-disable-next-line no-console
 			console.warn(
-				`Warning: Your bucket ${bucketName} allows public listing of its contents. See https://remotion.dev/docs/lambda/bucket-security for how to fix this.`,
+				`Warning: Your bucket ${bucketName} allows public listing of its contents. See https://picus.dev/docs/lambda/bucket-security for how to fix this.`,
 			);
 		}
 	} catch {

@@ -1,4 +1,4 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
 export const typewriterHighlightCode = `import React from "react";
 import {
@@ -7,7 +7,7 @@ import {
   AbsoluteFill,
   interpolate,
   spring,
-} from "remotion";
+} from "picus";
 
 export const MyAnimation = () => {
   /*
@@ -188,7 +188,7 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const typewriterHighlightExample: RemotionExample = {
+export const typewriterHighlightExample: PicusExample = {
   id: "typewriter-highlight",
   name: "Typewriter with Highlight",
   description:

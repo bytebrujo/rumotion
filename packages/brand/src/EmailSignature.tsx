@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {AbsoluteFill, Sequence} from 'picus';
 import {AnimatedLogo} from './animated-logo/AnimatedLogo';
 
 export const EmailSignature: React.FC = () => {

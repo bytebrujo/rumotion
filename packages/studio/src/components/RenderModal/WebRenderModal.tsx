@@ -1,5 +1,5 @@
-import type {LogLevel} from '@remotion/renderer';
-import {getDefaultOutLocation} from '@remotion/studio-shared';
+import type {LogLevel} from '@picus/renderer';
+import {getDefaultOutLocation} from '@picus/studio-shared';
 import type {
 	RenderStillOnWebImageFormat,
 	WebRendererAudioCodec,
@@ -7,15 +7,15 @@ import type {
 	WebRendererHardwareAcceleration,
 	WebRendererQuality,
 	WebRendererVideoCodec,
-} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
 import {
 	getDefaultAudioCodecForContainer,
 	getDefaultContainerForCodec,
 	getDefaultVideoCodecForContainer,
 	isAudioOnlyContainer,
-} from '@remotion/web-renderer';
+} from '@picus/web-renderer';
 import {useCallback, useContext, useMemo, useState} from 'react';
-import {ShortcutHint} from '../../error-overlay/remotion-overlay/ShortcutHint';
+import {ShortcutHint} from '../../error-overlay/picus-overlay/ShortcutHint';
 import {AudioIcon} from '../../icons/audio';
 import {CertificateIcon} from '../../icons/certificate';
 import {DataIcon} from '../../icons/data';
@@ -322,10 +322,10 @@ const WebRenderModal: React.FC<WebRenderModalProps> = ({
 						: imageFormat,
 			type: 'asset',
 			compositionDefaultOutName: resolvedComposition.defaultOutName,
-			outputLocation: window.remotion_renderDefaults?.outputLocation ?? null,
+			outputLocation: window.picus_renderDefaults?.outputLocation ?? null,
 		});
 
-		if (window.remotion_isReadOnlyStudio) {
+		if (window.picus_isReadOnlyStudio) {
 			return defaultOut.replace(/^out\//, '');
 		}
 

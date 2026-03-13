@@ -1,16 +1,16 @@
-import {parseMedia} from '@remotion/media-parser';
-import {StudioInternals} from '@remotion/studio';
+import {parseMedia} from '@picus/media-parser';
+import {StudioInternals} from '@picus/studio';
 import {
 	CalculateMetadataFunction,
 	OffthreadVideo,
 	Series,
 	staticFile,
-} from 'remotion';
+} from 'picus';
 
 const fps = 30;
 const sources = [
 	staticFile('bigbuckbunny.mp4'),
-	'https://remotion.media/video.mp4',
+	'https://picus.media/video.mp4',
 ];
 
 type Props = {
@@ -24,7 +24,7 @@ export const calculateMetadataFn: CalculateMetadataFunction<
 		sources.map(async (src) => {
 			const {slowDurationInSeconds, dimensions} = await parseMedia({
 				src,
-				acknowledgeRemotionLicense: true,
+				acknowledgePicusLicense: true,
 				fields: {
 					slowDurationInSeconds: true,
 					dimensions: true,

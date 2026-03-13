@@ -19,12 +19,12 @@ import {
   installWhisperCpp,
   transcribe,
   toCaptions,
-} from "@remotion/install-whisper-cpp";
+} from "@picus/install-whisper-cpp";
 
 const extractToTempAudioFile = (fileToTranscribe, tempOutFile) => {
   // Extracting audio from mp4 and save it as 16khz wav file
   execSync(
-    `npx remotion ffmpeg -i "${fileToTranscribe}" -ar 16000 "${tempOutFile}" -y`,
+    `npx picus ffmpeg -i "${fileToTranscribe}" -ar 16000 "${tempOutFile}" -y`,
     { stdio: ["ignore", "inherit"] },
   );
 };

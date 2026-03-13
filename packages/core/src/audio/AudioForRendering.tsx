@@ -17,10 +17,10 @@ import {useCurrentFrame} from '../use-current-frame.js';
 import {useDelayRender} from '../use-delay-render.js';
 import {evaluateVolume} from '../volume-prop.js';
 import {warnAboutTooHighVolume} from '../volume-safeguard.js';
-import type {RemotionAudioProps} from './props.js';
+import type {PicusAudioProps} from './props.js';
 import {useFrameForVolumeProp} from './use-audio-frame.js';
 
-type AudioForRenderingProps = RemotionAudioProps & {
+type AudioForRenderingProps = PicusAudioProps & {
 	readonly onDuration: (src: string, durationInSeconds: number) => void;
 	readonly onNativeError: React.ReactEventHandler<HTMLAudioElement>;
 };
@@ -37,8 +37,8 @@ const AudioForRenderingRefForwardingFunction: React.ForwardRefRenderFunction<
 		allowAmplificationDuringRender,
 		onDuration,
 		toneFrequency,
-		_remotionInternalNeedsDurationCalculation,
-		_remotionInternalNativeLoopPassed,
+		_picusInternalNeedsDurationCalculation,
+		_picusInternalNativeLoopPassed,
 		acceptableTimeShiftInSeconds,
 		name,
 		onNativeError,
@@ -92,7 +92,7 @@ const AudioForRenderingRefForwardingFunction: React.ForwardRefRenderFunction<
 			throw new Error('No src passed');
 		}
 
-		if (!window.remotion_audioEnabled) {
+		if (!window.picus_audioEnabled) {
 			return;
 		}
 
@@ -139,7 +139,7 @@ const AudioForRenderingRefForwardingFunction: React.ForwardRefRenderFunction<
 	// The <audio> tag is only rendered if the duration needs to be calculated for the `loop`
 	// attribute to work, or if the user assigns a ref to it.
 	const needsToRenderAudioTag =
-		ref || _remotionInternalNeedsDurationCalculation;
+		ref || _picusInternalNeedsDurationCalculation;
 
 	// If audio source switches, make new handle
 	useLayoutEffect(() => {

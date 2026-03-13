@@ -31,7 +31,7 @@ export const injectCSS = (css: string): (() => void) => {
 };
 
 // make object-fit: contain low priority, so it can be overridden by another class name
-export const OBJECTFIT_CONTAIN_CLASS_NAME = '__remotion_objectfitcontain';
+export const OBJECTFIT_CONTAIN_CLASS_NAME = '__picus_objectfitcontain';
 
 export const makeDefaultPreviewCSS = (
 	scope: string | null,

@@ -1,4 +1,4 @@
-import {Img, useVideoConfig} from 'remotion';
+import {Img, useVideoConfig} from 'picus';
 import {z} from 'zod';
 
 export const hugePayloadSchema = z.object({
@@ -22,7 +22,7 @@ export const HugePayload: React.FC<
 		throw new Error('date is not a Date');
 	}
 
-	if (!file.startsWith(window.remotion_staticBase)) {
+	if (!file.startsWith(window.picus_staticBase)) {
 		throw new Error('file does not start with staticBase');
 	}
 
@@ -34,7 +34,7 @@ export const HugePayload: React.FC<
 		throw new Error('date (defaultProps) is not a Date');
 	}
 
-	if (!(defaultProps.file as string).startsWith(window.remotion_staticBase)) {
+	if (!(defaultProps.file as string).startsWith(window.picus_staticBase)) {
 		throw new Error('file (defaultProps) does not start with staticBase');
 	}
 

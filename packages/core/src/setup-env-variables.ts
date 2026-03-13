@@ -1,6 +1,6 @@
-import {getRemotionEnvironment} from './get-remotion-environment.js';
+import {getPicusEnvironment} from './get-picus-environment.js';
 
-// https://github.com/remotion-dev/remotion/issues/3412#issuecomment-1910120552
+// https://github.com/picus-dev/picus/issues/3412#issuecomment-1910120552
 
 function getEnvVar() {
 	const parts = ['proc', 'ess', '.', 'en', 'v', '.', 'NOD', 'E_EN', 'V'];
@@ -8,8 +8,8 @@ function getEnvVar() {
 }
 
 const getEnvVariables = (): Record<string, string> => {
-	if (getRemotionEnvironment().isRendering) {
-		const param = window.remotion_envVariables;
+	if (getPicusEnvironment().isRendering) {
+		const param = window.picus_envVariables;
 		if (!param) {
 			return {};
 		}

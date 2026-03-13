@@ -3,21 +3,21 @@ image: /generated/articles-docs-preload-preload-image.png
 id: preload-image
 slug: preload-image
 title: "preloadImage()"
-crumb: "@remotion/preload"
+crumb: "@picus/preload"
 ---
 
-_This function is part of the [`@remotion/preload`](/docs/preload) package._
+_This function is part of the [`@picus/preload`](/docs/preload) package._
 
 This function preloads an image so that when an [`<Img>`](/docs/img) tag is mounted, it can display immediately.
 
 While preload is not necessary for rendering, it can help with seamless playback in the [`<Player />`](/docs/player) and in the Studio.
 
-An alternative to `preloadImage()` is the [`prefetch()`](/docs/prefetch) API. See [`@remotion/preload` vs `prefetch()`](/docs/player/preloading#remotionpreload-vs-prefetch) to decide which one is better for your usecase.
+An alternative to `preloadImage()` is the [`prefetch()`](/docs/prefetch) API. See [`@picus/preload` vs `prefetch()`](/docs/player/preloading#picuspreload-vs-prefetch) to decide which one is better for your usecase.
 
 ## Usage
 
 ```tsx twoslash
-import { preloadImage } from "@remotion/preload";
+import { preloadImage } from "@picus/preload";
 
 const unpreload = preloadImage(
   "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
@@ -42,8 +42,8 @@ If the resource does not support CORS, `resolveRedirect()` will fail. If the res
 This snippet tries to preload a image on a best-effort basis. If the redirect cannot be resolved, it tries to preload the original URL.
 
 ```tsx twoslash
-import { preloadImage, resolveRedirect } from "@remotion/preload";
-import { Img } from "remotion";
+import { preloadImage, resolveRedirect } from "@picus/preload";
+import { Img } from "picus";
 
 // This code gets executed immediately once the page loads
 let urlToLoad =
@@ -75,4 +75,4 @@ const MyComp: React.FC = () => {
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/preload/src/preload-image.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/preload/src/preload-image.ts)

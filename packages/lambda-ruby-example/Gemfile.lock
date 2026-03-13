@@ -1,7 +1,7 @@
 PATH
   remote: ../lambda-ruby
   specs:
-    remotion_lambda (4.0.379)
+    picus_lambda (4.0.379)
       aws-sdk-lambda (> 1.0.0)
       json (> 2.0.0)
       logger (> 1.0.0)
@@ -34,7 +34,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  remotion_lambda!
+  picus_lambda!
 
 BUNDLED WITH
    2.1.4

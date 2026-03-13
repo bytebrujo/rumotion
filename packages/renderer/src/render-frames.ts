@@ -4,8 +4,8 @@ import type {
 	AudioOrVideoAsset,
 	InlineAudioAsset,
 	VideoConfig,
-} from 'remotion/no-react';
-import {NoReactInternals} from 'remotion/no-react';
+} from 'picus/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {RenderMediaOnDownload} from './assets/download-and-map-assets-to-file';
 import type {DownloadMap} from './assets/download-map';
 import {DEFAULT_BROWSER} from './browser';
@@ -20,7 +20,7 @@ import {DEFAULT_TIMEOUT} from './browser/TimeoutSettings';
 import {getShouldUsePartitionedRendering} from './can-use-parallel-encoding';
 import {cycleBrowserTabs} from './cycle-browser-tabs';
 import {defaultOnLog} from './default-on-log';
-import {findRemotionRoot} from './find-closest-package-json';
+import {findPicusRoot} from './find-closest-package-json';
 import type {FrameRange} from './frame-range';
 import {resolveConcurrency} from './get-concurrency';
 import {getFramesToRender} from './get-duration-from-frame-range';
@@ -45,7 +45,7 @@ import {DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS} from './options/offthread
 import type {ToOptions} from './options/option';
 import type {optionsMap} from './options/options-map';
 import {Pool} from './pool';
-import type {RemotionServer} from './prepare-server';
+import type {PicusServer} from './prepare-server';
 import {makeOrReuseServer} from './prepare-server';
 import {renderFrameAndRetryTargetClose} from './render-frame-and-retry-target-close';
 import type {BrowserReplacer} from './replace-browser';
@@ -90,7 +90,7 @@ type InternalRenderFramesOptions = {
 	cancelSignal: CancelSignal | undefined;
 	composition: Omit<VideoConfig, 'props' | 'defaultProps'>;
 	indent: boolean;
-	server: RemotionServer | undefined;
+	server: PicusServer | undefined;
 	muted: boolean;
 	concurrency: number | string | null;
 	webpackBundleOrServeUrl: string;
@@ -367,7 +367,7 @@ const innerRenderFrames = async ({
 	if (shouldUsePartitionedRendering) {
 		Log.info(
 			{indent, logLevel},
-			'Experimental: Using partitioned rendering (https://github.com/remotion-dev/remotion/pull/4830)',
+			'Experimental: Using partitioned rendering (https://github.com/picus-dev/picus/pull/4830)',
 		);
 	}
 
@@ -553,7 +553,7 @@ const internalRenderFramesRaw = ({
 					{
 						webpackConfigOrServeUrl: webpackBundleOrServeUrl,
 						port,
-						remotionRoot: findRemotionRoot(),
+						picusRoot: findPicusRoot(),
 						offthreadVideoThreads:
 							offthreadVideoThreads ??
 							DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS,
@@ -686,7 +686,7 @@ export const internalRenderFrames = wrapWithErrorHandling(
 
 /*
  * @description Renders a series of images using Puppeteer and computes information for mixing audio.
- * @see [Documentation](https://www.remotion.dev/docs/renderer/render-frames)
+ * @see [Documentation](https://www.picus.dev/docs/renderer/render-frames)
  */
 export const renderFrames = (
 	options: RenderFramesOptions,

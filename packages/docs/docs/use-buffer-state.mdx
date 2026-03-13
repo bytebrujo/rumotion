@@ -11,7 +11,7 @@ You can use this hook inside your [composition](/docs/terminology/composition) t
 
 ```tsx twoslash title="MyComp.tsx"
 import React from 'react';
-import {useBufferState} from 'remotion';
+import {useBufferState} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();
@@ -49,7 +49,7 @@ Use the cleanup function of <code>useEffect()</code> to clear the handle when yo
 
 ```tsx twoslash title="❌ Causes problems with React strict mode"
 import React, {useState} from 'react';
-import {useBufferState} from 'remotion';
+import {useBufferState} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();
@@ -71,7 +71,7 @@ While the following implementation works in production, it fails in development 
 
 ```tsx twoslash title="❌ Doesn't clear the buffer handle when seeking to a different portion of a video"
 import React, {useState} from 'react';
-import {useBufferState} from 'remotion';
+import {useBufferState} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();
@@ -99,7 +99,7 @@ If you are loading data, you might want to both delay the screenshotting of your
 
 ```tsx twoslash title="Using delayRender() and delayPlayback() together"
 import React from 'react';
-import {useBufferState, delayRender, continueRender} from 'remotion';
+import {useBufferState, delayRender, continueRender} from 'picus';
 
 const MyComp: React.FC = () => {
   const buffer = useBufferState();

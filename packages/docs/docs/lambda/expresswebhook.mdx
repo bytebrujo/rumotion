@@ -41,7 +41,7 @@ A function that is called with a [`WebhookTimeoutPayload`](/docs/lambda/webhooks
 Setting up a webhook endpoint in an Express.js server.
 
 ```jsx twoslash title="server.js"
-import {expressWebhook} from '@remotion/lambda/client';
+import {expressWebhook} from '@picus/lambda/client';
 
 const handler = expressWebhook({
   secret: 'mysecret',
@@ -64,4 +64,4 @@ See [Webhooks](/docs/lambda/webhooks) for a detailed example.
 ## See also
 
 - [Webhooks](/docs/lambda/webhooks)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/express-webhook.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/express-webhook.ts)

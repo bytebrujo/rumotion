@@ -1,5 +1,5 @@
-import type {AwsRegion, RuntimePreference} from '@remotion/lambda-client';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import type {AwsRegion, RuntimePreference} from '@picus/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
 import type {AwsLayer} from './hosted-layers';
 import {hostedLayers} from './hosted-layers';
 

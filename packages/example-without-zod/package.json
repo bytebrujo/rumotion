@@ -1,20 +1,20 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/example-without-zod"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/example-without-zod"
 	},
-	"name": "@remotion/example-without-zod",
+	"name": "@picus/example-without-zod",
 	"private": true,
 	"version": "4.0.434",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"author": "Jonny Burger",
 	"main": "dist/index.js",
 	"scripts": {
-		"dev": "remotion studio",
-		"render": "remotion render react-svg"
+		"dev": "picus studio",
+		"render": "picus render react-svg"
 	},
 	"dependencies": {
-		"remotion": "workspace:*",
-		"@remotion/cli": "workspace:*",
+		"picus": "workspace:*",
+		"@picus/cli": "workspace:*",
 		"react": "catalog:",
 		"react-dom": "catalog:"
 	}

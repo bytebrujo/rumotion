@@ -2,7 +2,7 @@ import {beforeAll, expect, test} from 'bun:test';
 import {execSync} from 'child_process';
 import {readFileSync, writeFileSync} from 'fs';
 import path from 'path';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
 
 const PYTHON_OUTPUT_MARKER = 10;
 const referenceVersion = readFileSync(
@@ -29,7 +29,7 @@ test('Set the right version for pytest', () => {
 			process.cwd(),
 			'..',
 			'lambda-python',
-			'remotion_lambda',
+			'picus_lambda',
 			'version.py',
 		),
 		VERSION,
@@ -52,7 +52,7 @@ test('Python package should create the same renderMedia payload as normal Lambda
 			requestHandler: null,
 			region: 'us-east-1',
 			composition: 'react-svg',
-			functionName: 'remotion-render',
+			functionName: 'picus-render',
 			serveUrl: 'testbed',
 			codec: 'h264',
 			inputProps: {
@@ -139,8 +139,8 @@ test('Python package should create the same progress payload as normal Lambda pa
 	const toParse = output[PYTHON_OUTPUT_MARKER];
 	const nativeVersion = LambdaClientInternals.getRenderProgressPayload({
 		region: 'us-east-1',
-		functionName: 'remotion-render',
-		bucketName: 'remotion-render',
+		functionName: 'picus-render',
+		bucketName: 'picus-render',
 		renderId: 'abcdef',
 		logLevel: 'info',
 		s3OutputProvider: {
@@ -171,7 +171,7 @@ test('Python package should create the same renderStill payload as normal Lambda
 		await LambdaClientInternals.makeLambdaRenderStillPayload({
 			region: 'us-east-1',
 			composition: 'still-helloworld',
-			functionName: 'remotion-render',
+			functionName: 'picus-render',
 			serveUrl: 'testbed',
 			inputProps: {
 				message: 'Hello from props!',

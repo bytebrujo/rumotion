@@ -3,7 +3,7 @@ import {
 	reduceMatrices,
 	scaleY,
 	translateZ,
-} from '@remotion/svg-3d-engine';
+} from '@picus/svg-3d-engine';
 import {useTransformations} from './transformation-context';
 
 export const FrontFaceG: React.FC<{

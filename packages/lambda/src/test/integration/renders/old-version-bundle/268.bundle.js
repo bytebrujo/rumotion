@@ -1,6 +1,6 @@
 'use strict';
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[268],
 	{
 		/***/ 7268:
@@ -17,11 +17,11 @@
 				});
 				/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_1__ =
 					__webpack_require__(6416);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_0__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_0___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_0___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_0__,
+						picus__WEBPACK_IMPORTED_MODULE_0__,
 					);
 				var __defProp = Object.defineProperty;
 				var __defProps = Object.defineProperties;
@@ -59,30 +59,30 @@
 				];
 				const DropDots = ({opacity, volume}) => {
 					const frame = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_0__.useCurrentFrame)();
+					picus__WEBPACK_IMPORTED_MODULE_0__.useCurrentFrame)();
 					const cycle = 15;
 					const iteration = Math.floor(frame / cycle);
 					const {height, width} = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_0__.useVideoConfig)();
+					picus__WEBPACK_IMPORTED_MODULE_0__.useVideoConfig)();
 					const dots = new Array(false ? 0 : 45).fill(true).map((x, i) => {
 						const startX =
-							(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 								`x-${i}-${iteration}`,
 							) * width;
 						const startY =
-							(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 								`y-${i}-${iteration}`,
 							) * height;
 						const startRotation =
-							(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 								`rotation-${i}-${iteration}`,
 							) * 360;
 						return {
 							startX,
 							endX:
 								startX +
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-									(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+									(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 										`x-end-${i}-${iteration}`,
 									),
 									[0, 1],
@@ -91,8 +91,8 @@
 							startY,
 							endY:
 								startY +
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-									(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+									(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 										`y-end-${i}-${iteration}`,
 									),
 									[0, 1],
@@ -101,15 +101,15 @@
 							startRotation,
 							endRotation:
 								startRotation +
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-									(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+									(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 										`rotatad-${i}`,
 									),
 									[0, 1],
 									[-180, 180],
 								),
-							size: (0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							size: (0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 									`size-${i}-${iteration}`,
 								),
 								[0, 0.9, 0.901, 1],
@@ -118,33 +118,33 @@
 							background:
 								gradients[
 									Math.floor(
-										(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+										(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 											`color-${i}-${iteration}`,
 										) * gradients.length,
 									)
 								],
-							opacity: (0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							opacity: (0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 									`opacity-${i}-${iteration}`,
 								),
 								[0, 1],
 								[0.83, 0.95],
 							),
-							gradId: (0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							gradId: (0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 								`gradient-${i}-${iteration}`,
 							),
 							hasShine:
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 									`shine-${i}`,
 								) > 0.6,
 							shineOpacity:
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 									`shine-opacity-${i}-${iteration}`,
 								) * 0.7,
 						};
 					});
 					const progress = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+					picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
 						frame % cycle,
 						[0, cycle],
 						[0, 1],
@@ -156,19 +156,19 @@
 						},
 						dots.map((d) => {
 							const left = (0,
-							remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+							picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
 								progress,
 								[0, 1],
 								[d.startX, d.endX],
 							);
 							const top = (0,
-							remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+							picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
 								progress,
 								[0, 1],
 								[d.startY, d.endY],
 							);
 							const rotate = (0,
-							remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+							picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
 								progress,
 								[0, 1],
 								[d.startRotation, d.endRotation],
@@ -270,7 +270,7 @@
 										),
 									},
 									/* @__PURE__ */ React.createElement(
-										remotion__WEBPACK_IMPORTED_MODULE_0__.Img,
+										picus__WEBPACK_IMPORTED_MODULE_0__.Img,
 										{
 											style: {
 												height: (d.size / 3) * 2,
@@ -278,7 +278,7 @@
 												marginLeft: d.size * 0.05,
 												opacity: 0.55,
 											},
-											src: 'https://github.com/remotion-dev/logo/blob/main/monochromatic/element-0.png?raw=true',
+											src: 'https://github.com/picus-dev/logo/blob/main/monochromatic/element-0.png?raw=true',
 										},
 									),
 								),

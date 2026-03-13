@@ -1,7 +1,7 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
-export const fallingSpheresCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
-import { ThreeCanvas } from "@remotion/three";
+export const fallingSpheresCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "picus";
+import { ThreeCanvas } from "@picus/three";
 
 export const MyAnimation = () => {
   const frame = useCurrentFrame();
@@ -105,7 +105,7 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const fallingSpheresExample: RemotionExample = {
+export const fallingSpheresExample: PicusExample = {
   id: "falling-spheres",
   name: "Golden Bouncing Spheres",
   description: "Glowing golden spheres with physics and orbiting camera",

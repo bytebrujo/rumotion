@@ -1,13 +1,13 @@
 ---
 image: /generated/articles-docs-captions-importing.png
 sidebar_label: Importing from .srt
-title: Importing .srt subtitles into Remotion
+title: Importing .srt subtitles into Picus
 crumb: Captions
 ---
 
-# Importing .srt subtitles into Remotion
+# Importing .srt subtitles into Picus
 
-If you have an existing `.srt` subtitle file, you can import it into Remotion using [`parseSrt()`](/docs/captions/parse-srt) from `@remotion/captions`.
+If you have an existing `.srt` subtitle file, you can import it into Picus using [`parseSrt()`](/docs/captions/parse-srt) from `@picus/captions`.
 
 ## Reading an .srt file
 
@@ -15,9 +15,9 @@ Use [`staticFile()`](/docs/staticfile) to reference an `.srt` file in your `publ
 
 ```tsx twoslash title="Importing captions from .srt"
 import {useState, useEffect, useCallback} from 'react';
-import {AbsoluteFill, staticFile, useDelayRender} from 'remotion';
-import {parseSrt} from '@remotion/captions';
-import type {Caption} from '@remotion/captions';
+import {AbsoluteFill, staticFile, useDelayRender} from 'picus';
+import {parseSrt} from '@picus/captions';
+import type {Caption} from '@picus/captions';
 
 export const MyComponent: React.FC = () => {
   const [captions, setCaptions] = useState<Caption[] | null>(null);
@@ -52,7 +52,7 @@ Alternatively, you can also `fetch()` a remote file via URL.
 
 ## Using imported captions
 
-Once parsed, the captions are in the recommended [`Caption`](/docs/captions/caption) format and can be used with all `@remotion/captions` utilities.
+Once parsed, the captions are in the recommended [`Caption`](/docs/captions/caption) format and can be used with all `@picus/captions` utilities.
 
 Possible next steps:
 

@@ -5,11 +5,11 @@ import type {
 	HeadlessBrowser,
 	LogLevel,
 	OnBrowserDownload,
-	RemotionServer,
-} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {StudioServerInternals} from '@remotion/studio-server';
-import type {VideoConfig} from 'remotion';
+	PicusServer,
+} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {StudioServerInternals} from '@picus/studio-server';
+import type {VideoConfig} from 'picus';
 import {Log} from './log';
 import {showSingleCompositionsPicker} from './show-compositions-picker';
 
@@ -78,7 +78,7 @@ export const getCompositionId = async ({
 	serveUrlOrWebpackUrl: string;
 	logLevel: LogLevel;
 	indent: boolean;
-	server: RemotionServer;
+	server: PicusServer;
 	offthreadVideoCacheSizeInBytes: number | null;
 	offthreadVideoThreads: number | null;
 	binariesDirectory: string | null;

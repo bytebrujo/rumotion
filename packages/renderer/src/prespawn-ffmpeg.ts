@@ -1,4 +1,4 @@
-import type {_InternalTypes} from 'remotion';
+import type {_InternalTypes} from 'picus';
 import {callFf} from './call-ffmpeg';
 import type {HardwareAccelerationOption} from './client';
 import type {Codec} from './codec';

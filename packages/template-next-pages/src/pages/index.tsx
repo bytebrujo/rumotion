@@ -1,4 +1,4 @@
-import { Player } from "@remotion/player";
+import { Player } from "@picus/player";
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useMemo, useState } from "react";
@@ -14,7 +14,7 @@ import {
 import { RenderControls } from "../components/RenderControls";
 import { Spacing } from "../components/Spacing";
 import { Tips } from "../components/Tips/Tips";
-import { Main } from "../remotion/MyComp/Main";
+import { Main } from "../picus/MyComp/Main";
 
 const container: React.CSSProperties = {
   maxWidth: 768,
@@ -48,8 +48,8 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Remotion and Next.js</title>
-        <meta name="description" content="Remotion and Next.js" />
+        <title>Picus and Next.js</title>
+        <meta name="description" content="Picus and Next.js" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"

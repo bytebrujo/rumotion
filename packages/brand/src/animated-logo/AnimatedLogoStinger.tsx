@@ -5,7 +5,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {TriangleEntrance} from '../TriangularEntrance';
 import {AnimatedLogo} from './AnimatedLogo';
 

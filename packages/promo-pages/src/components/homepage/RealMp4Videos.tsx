@@ -89,7 +89,7 @@ export const RealMP4Videos: React.FC = () => {
 						className="no-underline text-brand font-brand font-bold inline-flex flex-row items-center"
 						href="/lambda"
 					>
-						Remotion Lambda{' '}
+						Picus Lambda{' '}
 						<svg
 							style={icon}
 							xmlns="http://www.w3.org/2000/svg"

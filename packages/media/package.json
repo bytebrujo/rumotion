@@ -1,15 +1,15 @@
 {
-	"name": "@remotion/media",
+	"name": "@picus/media",
 	"version": "4.0.434",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/esm/index.mjs",
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/media"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/media"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>, Hunain Ahmed <junaidhunain6@gmail.com>",
+	"author": "Jonny Burger <jonny@picus.dev>, Hunain Ahmed <junaidhunain6@gmail.com>",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"type": "module",
 	"scripts": {
@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"mediabunny": "catalog:",
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"zod": "catalog:"
 	},
 	"peerDependencies": {
@@ -31,7 +31,7 @@
 		"react-dom": ">=16.8.0"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"@vitest/browser-webdriverio": "4.0.9",
 		"eslint": "catalog:",
 		"react": "catalog:",
@@ -53,5 +53,5 @@
 		"./package.json": "./package.json"
 	},
 	"description": "Experimental WebCodecs-based media tags",
-	"homepage": "https://remotion.dev/docs/media"
+	"homepage": "https://picus.dev/docs/media"
 }

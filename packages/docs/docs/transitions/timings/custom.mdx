@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-timings-custom.png
-crumb: "@remotion/transitions"
+crumb: "@picus/transitions"
 title: "Custom timings"
 ---
 
@@ -18,7 +18,7 @@ A timing is a configuration which includes:
 To implement a custom timing function, create a function which returns an object `TransitionTiming`.
 
 ```tsx twoslash title="custom-timing.ts"
-import type { TransitionTiming } from "@remotion/transitions";
+import type { TransitionTiming } from "@picus/transitions";
 
 const customTiming = (): TransitionTiming => {
   return {
@@ -43,8 +43,8 @@ In the following example:
 <br />
 
 ```tsx twoslash title="spring-timing-with-pause.ts"
-import type { TransitionTiming } from "@remotion/transitions";
-import { measureSpring, spring, SpringConfig } from "remotion";
+import type { TransitionTiming } from "@picus/transitions";
+import { measureSpring, spring, SpringConfig } from "picus";
 
 const springTimingWithPause = ({
   pauseDuration,
@@ -88,7 +88,7 @@ A `spring()` animation by default goes from 0 to 1, which is why they [can be ad
 You may use a custom timing like any other timing by calling it and passing it to the `timing` prop of `<TransitionSeries.Transition>`.
 
 ```tsx twoslash title="using-custom-timing.tsx" {16}
-import { TransitionPresentation } from "@remotion/transitions";
+import { TransitionPresentation } from "@picus/transitions";
 
 const SlidePresentation: React.FC = () => null;
 type CustomPresentationProps = { direction: "from-left" | "from-right" };
@@ -103,7 +103,7 @@ const Letter: React.FC<{
   color: string;
 }> = () => null;
 
-import type { TransitionTiming } from "@remotion/transitions";
+import type { TransitionTiming } from "@picus/transitions";
 
 const customTiming = (options: { pauseDuration: number }): TransitionTiming => {
   return {
@@ -114,9 +114,9 @@ const customTiming = (options: { pauseDuration: number }): TransitionTiming => {
 
 // ---cut---
 
-import { TransitionSeries } from "@remotion/transitions";
-import { slide } from "@remotion/transitions/slide";
-import { useVideoConfig } from "remotion";
+import { TransitionSeries } from "@picus/transitions";
+import { slide } from "@picus/transitions/slide";
+import { useVideoConfig } from "picus";
 
 export const CustomTransition: React.FC = () => {
   const { width, height } = useVideoConfig();
@@ -144,7 +144,7 @@ Call `.getDurationInFrames({fps})` on any timing function and pass [`fps`](/docs
 
 ## References
 
-See the source code for already implemented timings [here](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/timings).
+See the source code for already implemented timings [here](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/timings).
 
 ## See also
 

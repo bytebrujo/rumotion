@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {Freeze, Sequence, useCurrentFrame} from 'remotion';
+import {Freeze, Sequence, useCurrentFrame} from 'picus';
 
 export const Counter: React.FC = () => {
 	return (

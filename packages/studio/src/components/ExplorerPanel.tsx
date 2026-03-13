@@ -16,7 +16,7 @@ const container: React.CSSProperties = {
 
 type OptionsSidebarPanel = 'compositions' | 'assets';
 
-const localStorageKey = 'remotion.sidebarPanel';
+const localStorageKey = 'picus.sidebarPanel';
 
 const getSelectedPanel = (): OptionsSidebarPanel => {
 	const panel = localStorage.getItem(localStorageKey);

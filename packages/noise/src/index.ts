@@ -1,4 +1,4 @@
-import {random} from 'remotion';
+import {random} from 'picus';
 import type {
 	NoiseFunction2D,
 	NoiseFunction3D,
@@ -60,7 +60,7 @@ const generate4DNoise = (seed: string | number) => {
 
 /*
  * @description Creates 2D noise.
- * @see [Documentation](https://www.remotion.dev/docs/noise/noise-2d)
+ * @see [Documentation](https://www.picus.dev/docs/noise/noise-2d)
  */
 export const noise2D = (
 	seed: string | number,
@@ -72,7 +72,7 @@ export const noise2D = (
 
 /*
  * @description Creates 3D noise.
- * @see [Documentation](https://www.remotion.dev/docs/noise/noise-3d)
+ * @see [Documentation](https://www.picus.dev/docs/noise/noise-3d)
  */
 export const noise3D = (
 	seed: string | number,
@@ -83,7 +83,7 @@ export const noise3D = (
 
 /*
  * @description Creates 4D noise.
- * @see [Documentation](https://www.remotion.dev/docs/noise/noise-4d)
+ * @see [Documentation](https://www.picus.dev/docs/noise/noise-4d)
  */
 export const noise4D = (
 	seed: string | number,

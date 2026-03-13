@@ -1,4 +1,4 @@
-import {Thumbnail} from '@remotion/player';
+import {Thumbnail} from '@picus/player';
 import React from 'react';
 import App from '../src/App';
 import CarSlideshow from '../src/CarSlideshow';

@@ -1,4 +1,4 @@
-import {Button} from '@remotion/design';
+import {Button} from '@picus/design';
 import React, {useCallback, useRef} from 'react';
 import type {Source} from '~/lib/convert-state';
 

@@ -1,8 +1,8 @@
 import {expect, test} from 'bun:test';
 import {existsSync} from 'node:fs';
 import path from 'node:path';
-import {exampleVideos} from '@remotion/example-videos';
-import {VideoMetadata, getVideoMetadata} from '@remotion/renderer';
+import {exampleVideos} from '@picus/example-videos';
+import {VideoMetadata, getVideoMetadata} from '@picus/renderer';
 
 test('Should return video metadata', async () => {
 	const metadataResponse = await getVideoMetadata(exampleVideos.framer24fps, {

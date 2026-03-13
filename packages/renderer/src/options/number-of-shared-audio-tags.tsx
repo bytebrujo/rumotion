@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let numberOfSharedAudioTags = 0;
 
@@ -10,14 +10,14 @@ export const numberOfSharedAudioTagsOption = {
 	description: () => (
 		<>
 			Set number of shared audio tags. See{' '}
-			<a href="https://www.remotion.dev/docs/player/autoplay#using-the-numberofsharedaudiotags-prop">
+			<a href="https://www.picus.dev/docs/player/autoplay#using-the-numberofsharedaudiotags-prop">
 				Using the numberOfSharedAudioTags prop
 			</a>{' '}
 			for more information.
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setnumberofsharedaudiotags',
+	docLink: 'https://www.picus.dev/docs/config#setnumberofsharedaudiotags',
 	type: 0 as number,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -36,4 +36,4 @@ export const numberOfSharedAudioTagsOption = {
 		numberOfSharedAudioTags = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number>;
+} satisfies AnyPicusOption<number>;

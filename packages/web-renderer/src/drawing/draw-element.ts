@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import type {InternalState} from '../internal-state';
 import {parseBorderRadius, setBorderRadius} from './border-radius';
 import {drawBackground} from './draw-background';

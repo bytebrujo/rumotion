@@ -1,4 +1,4 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {TQuickSwitcherResult} from './QuickSwitcherResult';
 
 const ALGOLIA_API_KEY = '3e42dbd4f895fe93ff5cf40d860c4a85';
@@ -44,7 +44,7 @@ export const algoliaSearch = async (
 
 	url.searchParams.set(
 		'x-algolia-agen',
-		encodeURIComponent('Remotion Studio DocSearch'),
+		encodeURIComponent('Picus Studio DocSearch'),
 	);
 	url.searchParams.set('x-algolia-api-key', ALGOLIA_API_KEY);
 	url.searchParams.set('x-algolia-application-id', ALGOLIA_APPLICATION_ID);
@@ -57,7 +57,7 @@ export const algoliaSearch = async (
 			requests: [
 				{
 					query,
-					indexName: 'remotion',
+					indexName: 'picus',
 					params:
 						'attributesToRetrieve=["hierarchy.lvl0","hierarchy.lvl1","hierarchy.lvl2","hierarchy.lvl3","hierarchy.lvl4","hierarchy.lvl5","hierarchy.lvl6","content","type","url"]&attributesToSnippet=["hierarchy.lvl1:10","hierarchy.lvl2:10","hierarchy.lvl3:10","hierarchy.lvl4:10","hierarchy.lvl5:10","hierarchy.lvl6:10","content:10"]&hitsPerPage=20',
 				},

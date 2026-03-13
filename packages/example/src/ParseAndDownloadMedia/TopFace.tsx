@@ -1,5 +1,5 @@
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'picus';
 
 export const TopFace: React.FC<{
 	readonly delay: number;

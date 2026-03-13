@@ -1,6 +1,6 @@
-import {restartStudio} from '@remotion/studio';
+import {restartStudio} from '@picus/studio';
 import React, {useCallback} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 export const ClickUpdate: React.FC = () => {
 	const onClickUpdate = useCallback(() => {

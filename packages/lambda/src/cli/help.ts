@@ -1,6 +1,6 @@
-import {CliInternals} from '@remotion/cli';
-import {BINARY_NAME} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import {BINARY_NAME} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
 import {COMPOSITIONS_COMMAND} from './commands/compositions';
 import {FUNCTIONS_COMMAND} from './commands/functions';
 import {POLICIES_COMMAND} from './commands/policies/policies';
@@ -18,7 +18,7 @@ export const printHelp = (logLevel: LogLevel) => {
 		{indent: false, logLevel},
 		`${BINARY_NAME} ${
 			packagejson.version
-		} © ${new Date().getFullYear()} The Remotion developers`,
+		} © ${new Date().getFullYear()} The Picus developers`,
 	);
 	Log.info({indent: false, logLevel});
 	Log.info({indent: false, logLevel}, 'Available commands:');
@@ -53,7 +53,7 @@ export const printHelp = (logLevel: LogLevel) => {
 	Log.info({indent: false, logLevel}, `${BINARY_NAME} ${SITES_COMMAND}`);
 	Log.info(
 		{indent: false, logLevel},
-		CliInternals.chalk.gray('Deploy and manage Remotion projects.'),
+		CliInternals.chalk.gray('Deploy and manage Picus projects.'),
 	);
 
 	Log.info({indent: false, logLevel});

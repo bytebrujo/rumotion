@@ -1,6 +1,6 @@
-# @remotion/compositor-darwin-arm64
+# @picus/compositor-darwin-arm64
 
-MacOS Apple Silicon binary for the Remotion Rust code
+MacOS Apple Silicon binary for the Picus Rust code
 
 ## Usage
 

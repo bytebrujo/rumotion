@@ -21,7 +21,7 @@ export const BundlerInternals = {
 	internalBundle,
 };
 
-export type {GitSource} from '@remotion/studio-shared';
+export type {GitSource} from '@picus/studio-shared';
 export {
 	bundle,
 	BundleOptions,

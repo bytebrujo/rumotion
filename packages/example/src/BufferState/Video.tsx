@@ -1,11 +1,11 @@
 import React from 'react';
-import {AbsoluteFill, Html5Video, Series} from 'remotion';
+import {AbsoluteFill, Html5Video, Series} from 'picus';
 
 const Inside: React.FC = () => {
 	return (
 		<Html5Video
 			pauseWhenBuffering
-			src="https://remotion.media/BigBuckBunny.mp4"
+			src="https://picus.media/BigBuckBunny.mp4"
 		/>
 	);
 };

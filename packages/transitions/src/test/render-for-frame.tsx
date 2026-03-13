@@ -1,13 +1,13 @@
 import {
 	makeMockCompositionManagerContext,
 	makeTimelineContext,
-} from '@remotion/test-utils';
+} from '@picus/test-utils';
 import {renderToString} from 'react-dom/server';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 
 export const renderForFrame = (frame: number, markup: React.ReactNode) => {
 	return renderToString(
-		<Internals.RemotionEnvironmentContext
+		<Internals.PicusEnvironmentContext
 			value={{
 				isRendering: false,
 				isClientSideRendering: false,
@@ -16,7 +16,7 @@ export const renderForFrame = (frame: number, markup: React.ReactNode) => {
 				isReadOnlyStudio: false,
 			}}
 		>
-			<Internals.CanUseRemotionHooksProvider>
+			<Internals.CanUsePicusHooksProvider>
 				<Internals.CompositionManager.Provider
 					value={makeMockCompositionManagerContext()}
 				>
@@ -26,7 +26,7 @@ export const renderForFrame = (frame: number, markup: React.ReactNode) => {
 						{markup}
 					</Internals.TimelineContext.Provider>
 				</Internals.CompositionManager.Provider>
-			</Internals.CanUseRemotionHooksProvider>
-		</Internals.RemotionEnvironmentContext>,
+			</Internals.CanUsePicusHooksProvider>
+		</Internals.PicusEnvironmentContext>,
 	);
 };

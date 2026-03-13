@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -74,7 +74,7 @@ test('should read MP3 file', async () => {
 				lastSample = sample.timestamp;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(samples).toBe(4788);
@@ -183,7 +183,7 @@ test('should read only metadata', async () => {
 			internalStats: true,
 			metadata: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(internalStats).toEqual({
 		skippedBytes: 5001927,
@@ -198,7 +198,7 @@ test('should read only header', async () => {
 			container: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(internalStats).toEqual({
 		skippedBytes: 5007068,
@@ -213,7 +213,7 @@ test('should read video fields', async () => {
 			fps: true,
 			dimensions: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(dimensions).toEqual(null);
 	expect(fps).toEqual(null);
@@ -228,7 +228,7 @@ test('should read video fields', async () => {
 				slowNumberOfFrames: true,
 			},
 
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		},
 	);
 	expect(slowFps).toEqual(0);
@@ -251,7 +251,7 @@ test('should read short mp3 file', async () => {
 				samples++;
 			};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(samples).toBe(41);
 	expect(durationInSeconds).toBe(0.984);
@@ -270,7 +270,7 @@ test('should read mpeg 1 layer 3 file and album cover', async () => {
 		onAudioTrack: () => {
 			return () => {};
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 	expect(images.length).toBe(1);
 	expect(images[0].data.length).toBe(1286);

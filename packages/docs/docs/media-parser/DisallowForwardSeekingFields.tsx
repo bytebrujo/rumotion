@@ -1,4 +1,4 @@
-import {MediaParserInternals} from '@remotion/media-parser';
+import {MediaParserInternals} from '@picus/media-parser';
 import React from 'react';
 
 export const DisallowForwardSeekingFields = () => {

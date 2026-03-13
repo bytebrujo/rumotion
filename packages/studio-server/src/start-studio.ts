@@ -1,14 +1,14 @@
 import crypto from 'node:crypto';
 import {existsSync} from 'node:fs';
 import path from 'node:path';
-import type {WebpackOverrideFn} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {WebpackOverrideFn} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	GitSource,
 	RenderDefaults,
 	RenderJob,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import {getNetworkAddress} from './get-network-address';
 import {maybeOpenBrowser} from './maybe-open-browser';
 import type {QueueMethods} from './preview-server/api-types';
@@ -35,7 +35,7 @@ export const startStudio = async ({
 	getEnvVariables,
 	desiredPort,
 	maxTimelineTracks,
-	remotionRoot,
+	picusRoot,
 	keyboardShortcutsEnabled,
 	experimentalClientSideRenderingEnabled,
 	experimentalVisualModeEnabled,
@@ -67,7 +67,7 @@ export const startStudio = async ({
 	desiredPort: number | null;
 	maxTimelineTracks: number | null;
 	bufferStateDelayInMilliseconds: number | null;
-	remotionRoot: string;
+	picusRoot: string;
 	keyboardShortcutsEnabled: boolean;
 	experimentalClientSideRenderingEnabled: boolean;
 	experimentalVisualModeEnabled: boolean;
@@ -90,18 +90,18 @@ export const startStudio = async ({
 }): Promise<StartStudioResult> => {
 	try {
 		if (typeof Bun === 'undefined') {
-			process.title = 'node (npx remotion studio)';
+			process.title = 'node (npx picus studio)';
 		} else if (typeof Deno === 'undefined') {
-			process.title = 'deno (npx remotiond studio)';
+			process.title = 'deno (npx picusd studio)';
 		} else {
-			process.title = `bun (bunx remotionb studio)`;
+			process.title = `bun (bunx picusb studio)`;
 		}
 	} catch {}
 
-	watchRootFile(remotionRoot, previewEntry);
+	watchRootFile(picusRoot, previewEntry);
 	const publicDir = getAbsolutePublicDir({
 		relativePublicDir,
-		remotionRoot,
+		picusRoot,
 	});
 	const hash = crypto.randomBytes(6).toString('hex');
 
@@ -113,7 +113,7 @@ export const startStudio = async ({
 
 	initPublicFolderWatch({
 		publicDir,
-		remotionRoot,
+		picusRoot,
 		onUpdate: () => {
 			waitForLiveEventsListener().then((listener) => {
 				const files = getFiles();
@@ -139,7 +139,7 @@ export const startStudio = async ({
 		getEnvVariables,
 		port: desiredPort,
 		maxTimelineTracks,
-		remotionRoot,
+		picusRoot,
 		keyboardShortcutsEnabled,
 		experimentalClientSideRenderingEnabled,
 		experimentalVisualModeEnabled,

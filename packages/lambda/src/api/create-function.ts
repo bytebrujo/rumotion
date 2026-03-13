@@ -11,16 +11,16 @@ import {
 	PutRuntimeManagementConfigCommand,
 	TagResourceCommand,
 } from '@aws-sdk/client-lambda';
-import type {RequestHandler} from '@remotion/lambda-client';
+import type {RequestHandler} from '@picus/lambda-client';
 import {
 	LambdaClientInternals,
 	type AwsRegion,
 	type RuntimePreference,
-} from '@remotion/lambda-client';
-import {LOG_GROUP_PREFIX} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {VERSION} from 'remotion/version';
+} from '@picus/lambda-client';
+import {LOG_GROUP_PREFIX} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {VERSION} from 'picus/version';
 import {getLayers} from '../shared/get-layers';
 import {lambdaInsightsExtensions} from '../shared/lambda-insights-extensions';
 import {ROLE_NAME} from './iam-validation/suggested-policy';
@@ -146,7 +146,7 @@ export const createFunction = async ({
 		: null;
 	if (enableLambdaInsights && !insightsLayer) {
 		throw new Error(
-			`Lambda Insights is not supported by AWS in region ${region}. Please disable Lambda Insights. See http://remotion.dev/docs/lambda/insights#unsupported-regions`,
+			`Lambda Insights is not supported by AWS in region ${region}. Please disable Lambda Insights. See http://picus.dev/docs/lambda/insights#unsupported-regions`,
 		);
 	}
 
@@ -164,7 +164,7 @@ export const createFunction = async ({
 				Handler: 'index.handler',
 				Role: customRoleArn ?? defaultRoleName,
 				Runtime: 'nodejs24.x',
-				Description: 'Renders a Remotion video.',
+				Description: 'Renders a Picus video.',
 				MemorySize: memorySizeInMb,
 				Timeout: timeoutInSeconds,
 				Layers: layers
@@ -192,11 +192,11 @@ export const createFunction = async ({
 			new TagResourceCommand({
 				Resource: FunctionArn,
 				Tags: {
-					'remotion-lambda': 'true',
-					'remotion-version': VERSION,
-					'remotion-memory-in-mb': String(memorySizeInMb),
-					'remotion-timeout-in-seconds': String(timeoutInSeconds),
-					'remotion-ephemereal-storage-in-mb': String(ephemerealStorageInMb),
+					'picus-lambda': 'true',
+					'picus-version': VERSION,
+					'picus-memory-in-mb': String(memorySizeInMb),
+					'picus-timeout-in-seconds': String(timeoutInSeconds),
+					'picus-ephemereal-storage-in-mb': String(ephemerealStorageInMb),
 				},
 			}),
 		);
@@ -214,7 +214,7 @@ export const createFunction = async ({
 
 	RenderInternals.Log.verbose(
 		{indent: false, logLevel},
-		'Disabling function retries (Remotion handles retries itself)...',
+		'Disabling function retries (Picus handles retries itself)...',
 	);
 	await LambdaClientInternals.getLambdaClient(
 		region,
@@ -279,7 +279,7 @@ export const createFunction = async ({
 		);
 	} catch {
 		console.warn(
-			'⚠️ Could not lock the runtime version. We recommend to update your policies to prevent your functions from breaking in the future in case the AWS runtime changes. See https://remotion.dev/docs/lambda/feb-2023-incident for an example on how to update your policy.',
+			'⚠️ Could not lock the runtime version. We recommend to update your policies to prevent your functions from breaking in the future in case the AWS runtime changes. See https://picus.dev/docs/lambda/feb-2023-incident for an example on how to update your policy.',
 		);
 	}
 

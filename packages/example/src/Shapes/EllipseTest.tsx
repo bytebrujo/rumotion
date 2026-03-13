@@ -1,6 +1,6 @@
-import {Ellipse} from '@remotion/shapes';
+import {Ellipse} from '@picus/shapes';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 
 const EllipseTest: React.FC = () => {
 	return (

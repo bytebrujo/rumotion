@@ -1,4 +1,4 @@
-import {AbsoluteFill, Html5Audio, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Audio, staticFile} from 'picus';
 import ReactSvg from '../ReactSvg';
 
 // Short video that is fast to render for testing

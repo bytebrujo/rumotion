@@ -1,6 +1,6 @@
 import React from 'react';
 
-const permissionsJson = require('@remotion/cloudrun/permissions.json');
+const permissionsJson = require('@picus/cloudrun/permissions.json');
 
 type Permission = {
 	name: string;

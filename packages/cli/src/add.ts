@@ -1,19 +1,19 @@
 import {spawn} from 'node:child_process';
 import fs from 'node:fs';
-import {RenderInternals, type LogLevel} from '@remotion/renderer';
-import {StudioServerInternals} from '@remotion/studio-server';
+import {RenderInternals, type LogLevel} from '@picus/renderer';
+import {StudioServerInternals} from '@picus/studio-server';
 import {chalk} from './chalk';
 import {EXTRA_PACKAGES} from './extra-packages';
-import {listOfRemotionPackages} from './list-of-remotion-packages';
+import {listOfPicusPackages} from './list-of-picus-packages';
 import {Log} from './log';
 import {resolveFrom} from './resolve-from';
 
 const getInstalledVersion = (
-	remotionRoot: string,
+	picusRoot: string,
 	pkg: string,
 ): string | null => {
 	try {
-		const pkgJsonPath = resolveFrom(remotionRoot, `${pkg}/package.json`);
+		const pkgJsonPath = resolveFrom(picusRoot, `${pkg}/package.json`);
 		const file = fs.readFileSync(pkgJsonPath, 'utf-8');
 		const packageJson = JSON.parse(file);
 		return packageJson.version;
@@ -23,25 +23,25 @@ const getInstalledVersion = (
 };
 
 export const addCommand = async ({
-	remotionRoot,
+	picusRoot,
 	packageManager,
 	packageNames,
 	logLevel,
 	args,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	packageManager: string | undefined;
 	packageNames: string[];
 	logLevel: LogLevel;
 	args: string[];
 }) => {
-	// Validate that all package names are Remotion packages
+	// Validate that all package names are Picus packages
 	const invalidPackages = packageNames.filter(
-		(pkg) => !listOfRemotionPackages.includes(pkg) && !EXTRA_PACKAGES[pkg],
+		(pkg) => !listOfPicusPackages.includes(pkg) && !EXTRA_PACKAGES[pkg],
 	);
 	if (invalidPackages.length > 0) {
 		throw new Error(
-			`The following packages are not Remotion packages: ${invalidPackages.join(', ')}. Must be one of the Remotion packages or one of the supported extra packages: ${Object.keys(EXTRA_PACKAGES).join(', ')}.`,
+			`The following packages are not Picus packages: ${invalidPackages.join(', ')}. Must be one of the Picus packages or one of the supported extra packages: ${Object.keys(EXTRA_PACKAGES).join(', ')}.`,
 		);
 	}
 
@@ -50,7 +50,7 @@ export const addCommand = async ({
 		devDependencies,
 		optionalDependencies,
 		peerDependencies,
-	} = StudioServerInternals.getInstalledDependencies(remotionRoot);
+	} = StudioServerInternals.getInstalledDependencies(picusRoot);
 
 	// Check if packages are already installed
 	const allDeps = [
@@ -72,7 +72,7 @@ export const addCommand = async ({
 			toInstall.push(pkg);
 		} else if (requiredVersion) {
 			// For extra packages, check if the version is correct
-			const installedVersion = getInstalledVersion(remotionRoot, pkg);
+			const installedVersion = getInstalledVersion(picusRoot, pkg);
 			if (installedVersion !== requiredVersion) {
 				toUpgrade.push({
 					pkg,
@@ -109,15 +109,15 @@ export const addCommand = async ({
 		return;
 	}
 
-	const installedRemotionPackages = listOfRemotionPackages.filter((pkg) =>
+	const installedPicusPackages = listOfPicusPackages.filter((pkg) =>
 		allDeps.includes(pkg),
 	);
 
-	// Get the version from the first installed Remotion package
-	const packageJsonPath = `${remotionRoot}/node_modules/${installedRemotionPackages[0]}/package.json`;
+	// Get the version from the first installed Picus package
+	const packageJsonPath = `${picusRoot}/node_modules/${installedPicusPackages[0]}/package.json`;
 	let targetVersion: string | null = null;
 
-	if (installedRemotionPackages.length > 0) {
+	if (installedPicusPackages.length > 0) {
 		try {
 			const packageJson = require(packageJsonPath);
 			targetVersion = packageJson.version;
@@ -128,21 +128,21 @@ export const addCommand = async ({
 			Log.info({indent: false, logLevel}, `Installing ${packageList}`);
 		} catch (err) {
 			throw new Error(
-				`Could not determine version of installed Remotion packages: ${(err as Error).message}`,
+				`Could not determine version of installed Picus packages: ${(err as Error).message}`,
 			);
 		}
 	} else {
-		// If no Remotion packages are installed, we can only install extra packages
+		// If no Picus packages are installed, we can only install extra packages
 		const notExtraPackages = toInstall.filter((pkg) => !EXTRA_PACKAGES[pkg]);
 		if (notExtraPackages.length > 0) {
 			throw new Error(
-				'No Remotion packages found in your project. Install Remotion first.',
+				'No Picus packages found in your project. Install Picus first.',
 			);
 		}
 	}
 
 	const manager = StudioServerInternals.getPackageManager({
-		remotionRoot,
+		picusRoot,
 		packageManager,
 		dirUp: 0,
 		logLevel,

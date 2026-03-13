@@ -22,10 +22,10 @@ export type CommonVideoProps = {
 	/**
 	 * @deprecated Only for internal `transparent` use
 	 */
-	_remotionInternalNativeLoopPassed: boolean;
+	_picusInternalNativeLoopPassed: boolean;
 };
 
-export type RemotionMainVideoProps = Partial<CommonVideoProps>;
+export type PicusMainVideoProps = Partial<CommonVideoProps>;
 
 export type NativeVideoProps = Omit<
 	React.DetailedHTMLProps<
@@ -40,7 +40,7 @@ export type NativeVideoProps = Omit<
 	| 'disableRemotePlayback'
 >;
 
-export type RemotionVideoProps = NativeVideoProps & {
+export type PicusVideoProps = NativeVideoProps & {
 	name?: string;
 	volume?: VolumeProp;
 	playbackRate?: number;
@@ -103,7 +103,7 @@ export type AllOffthreadVideoProps = MandatoryOffthreadVideoProps &
 	OptionalOffthreadVideoProps &
 	CommonVideoProps;
 
-export type RemotionOffthreadVideoProps = MandatoryOffthreadVideoProps &
+export type PicusOffthreadVideoProps = MandatoryOffthreadVideoProps &
 	Partial<OptionalOffthreadVideoProps> &
 	Partial<CommonVideoProps> &
 	Partial<DeprecatedOffthreadVideoProps>;

@@ -22,20 +22,20 @@ export type GuideState = {
 };
 
 export const persistEditorShowGuidesOption = (option: boolean) => {
-	localStorage.setItem('remotion.editorShowGuides', String(option));
+	localStorage.setItem('picus.editorShowGuides', String(option));
 };
 
 export const loadEditorShowGuidesOption = (): boolean => {
-	const item = localStorage.getItem('remotion.editorShowGuides');
+	const item = localStorage.getItem('picus.editorShowGuides');
 	return item === 'true';
 };
 
 export const persistGuidesList = (guides: Guide[]) => {
-	localStorage.setItem('remotion.guidesList', JSON.stringify(guides));
+	localStorage.setItem('picus.guidesList', JSON.stringify(guides));
 };
 
 export const loadGuidesList = (): Guide[] => {
-	const item = localStorage.getItem('remotion.guidesList');
+	const item = localStorage.getItem('picus.guidesList');
 	return item ? JSON.parse(item) : [];
 };
 

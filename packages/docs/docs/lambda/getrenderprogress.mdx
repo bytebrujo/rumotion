@@ -14,18 +14,18 @@ For renders initiated via [`renderStillOnLambda()`](/docs/lambda/renderstillonla
 ## Example
 
 ```tsx twoslash
-import {getRenderProgress} from '@remotion/lambda/client';
+import {getRenderProgress} from '@picus/lambda/client';
 
 const progress = await getRenderProgress({
   renderId: 'd7nlc2y',
-  bucketName: 'remotionlambda-d9mafgx',
-  functionName: 'remotion-render-la8ffw',
+  bucketName: 'picuslambda-d9mafgx',
+  functionName: 'picus-render-la8ffw',
   region: 'us-east-1',
 });
 ```
 
 :::note
-Preferrably import this function from `@remotion/lambda/client` to avoid problems [inside serverless functions](/docs/lambda/light-client).
+Preferrably import this function from `@picus/lambda/client` to avoid problems [inside serverless functions](/docs/lambda/light-client).
 :::
 
 :::note
@@ -178,5 +178,5 @@ Artifacts that were created so far during the render. [See here for an example o
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/get-render-progress.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/get-render-progress.ts)
 - [renderMediaOnLambda()](/docs/lambda/rendermediaonlambda)

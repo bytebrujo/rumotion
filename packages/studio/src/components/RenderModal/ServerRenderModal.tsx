@@ -9,15 +9,15 @@ import type {
 	StillImageFormat,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import type {
 	RenderDefaults,
 	RequiredChromiumOptions,
 	UiOpenGlOptions,
-} from '@remotion/studio-shared';
-import {getDefaultOutLocation} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
+import {getDefaultOutLocation} from '@picus/studio-shared';
 import React, {
 	useCallback,
 	useContext,
@@ -27,8 +27,8 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import type {_InternalTypes} from 'remotion';
-import {ShortcutHint} from '../../error-overlay/remotion-overlay/ShortcutHint';
+import type {_InternalTypes} from 'picus';
+import {ShortcutHint} from '../../error-overlay/picus-overlay/ShortcutHint';
 import {BLUE, BLUE_DISABLED} from '../../helpers/colors';
 import {
 	envVariablesArrayToObject,
@@ -1170,7 +1170,7 @@ const RenderModal: React.FC<
 		}
 
 		return makeReadOnlyStudioRenderCommand({
-			remotionVersion: window.remotion_version,
+			picusVersion: window.picus_version,
 			locationHref: window.location.href,
 			compositionId: resolvedComposition.id,
 			outName,

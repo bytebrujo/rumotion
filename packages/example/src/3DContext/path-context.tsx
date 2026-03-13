@@ -1,5 +1,5 @@
-import {getBoundingBox} from '@remotion/paths';
-import {makeRect} from '@remotion/shapes';
+import {getBoundingBox} from '@picus/paths';
+import {makeRect} from '@picus/shapes';
 import React, {useMemo} from 'react';
 
 type PathContext = {

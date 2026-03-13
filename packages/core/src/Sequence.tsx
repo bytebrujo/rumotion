@@ -22,7 +22,7 @@ import {
 	useTimelinePosition,
 } from './timeline-position-state.js';
 import {useCurrentFrame} from './use-current-frame';
-import {useRemotionEnvironment} from './use-remotion-environment.js';
+import {usePicusEnvironment} from './use-picus-environment.js';
 import {useVideoConfig} from './use-video-config.js';
 import {ENABLE_V5_BREAKING_CHANGES} from './v5-flag.js';
 
@@ -53,27 +53,27 @@ export type SequencePropsWithoutDuration = {
 	/**
 	 * @deprecated For internal use only.
 	 */
-	readonly _remotionInternalLoopDisplay?: LoopDisplay;
+	readonly _picusInternalLoopDisplay?: LoopDisplay;
 	/**
 	 * @deprecated For internal use only.
 	 */
-	readonly _remotionInternalPremountDisplay?: number | null;
+	readonly _picusInternalPremountDisplay?: number | null;
 	/**
 	 * @deprecated For internal use only.
 	 */
-	readonly _remotionInternalPostmountDisplay?: number | null;
+	readonly _picusInternalPostmountDisplay?: number | null;
 	/**
 	 * @deprecated For internal use only.
 	 */
-	readonly _remotionInternalStack?: string;
+	readonly _picusInternalStack?: string;
 	/**
 	 * @deprecated For internal use only.
 	 */
-	readonly _remotionInternalIsPremounting?: boolean;
+	readonly _picusInternalIsPremounting?: boolean;
 	/**
 	 * @deprecated For internal use only.
 	 */
-	readonly _remotionInternalIsPostmounting?: boolean;
+	readonly _picusInternalIsPostmounting?: boolean;
 } & LayoutAndStyle;
 
 export type SequenceProps = {
@@ -93,10 +93,10 @@ const RegularSequenceRefForwardingFunction: React.ForwardRefRenderFunction<
 		width,
 		showInTimeline = true,
 		controls,
-		_remotionInternalLoopDisplay: loopDisplay,
-		_remotionInternalStack: stack,
-		_remotionInternalPremountDisplay: premountDisplay,
-		_remotionInternalPostmountDisplay: postmountDisplay,
+		_picusInternalLoopDisplay: loopDisplay,
+		_picusInternalStack: stack,
+		_picusInternalPremountDisplay: premountDisplay,
+		_picusInternalPostmountDisplay: postmountDisplay,
 		...other
 	},
 	ref,
@@ -163,17 +163,17 @@ const RegularSequenceRefForwardingFunction: React.ForwardRefRenderFunction<
 		// || is intentional, ?? would not trigger on `false`
 		return (
 			parentSequence?.premounting ||
-			Boolean(other._remotionInternalIsPremounting)
+			Boolean(other._picusInternalIsPremounting)
 		);
-	}, [other._remotionInternalIsPremounting, parentSequence?.premounting]);
+	}, [other._picusInternalIsPremounting, parentSequence?.premounting]);
 
 	const postmounting = useMemo(() => {
 		// || is intentional, ?? would not trigger on `false`
 		return (
 			parentSequence?.postmounting ||
-			Boolean(other._remotionInternalIsPostmounting)
+			Boolean(other._picusInternalIsPostmounting)
 		);
-	}, [other._remotionInternalIsPostmounting, parentSequence?.postmounting]);
+	}, [other._picusInternalIsPostmounting, parentSequence?.postmounting]);
 
 	const contextValue = useMemo((): SequenceContextType => {
 		return {
@@ -207,7 +207,7 @@ const RegularSequenceRefForwardingFunction: React.ForwardRefRenderFunction<
 		return name ?? '';
 	}, [name]);
 
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	const inheritedStack = (other as any)?.stack ?? null;
 
@@ -258,7 +258,7 @@ const RegularSequenceRefForwardingFunction: React.ForwardRefRenderFunction<
 	]);
 
 	// Ceil to support floats
-	// https://github.com/remotion-dev/remotion/issues/2958
+	// https://github.com/picus-dev/picus/issues/2958
 	const endThreshold = Math.ceil(cumulatedFrom + from + durationInFrames - 1);
 	const content =
 		absoluteFrame < cumulatedFrom + from
@@ -384,10 +384,10 @@ const PremountedPostmountedSequenceRefForwardingFunction: React.ForwardRefRender
 					from={from}
 					durationInFrames={durationInFrames}
 					style={style}
-					_remotionInternalPremountDisplay={premountFor}
-					_remotionInternalPostmountDisplay={postmountFor}
-					_remotionInternalIsPremounting={premountingActive}
-					_remotionInternalIsPostmounting={postmountingActive}
+					_picusInternalPremountDisplay={premountFor}
+					_picusInternalPostmountDisplay={postmountFor}
+					_picusInternalIsPremounting={premountingActive}
+					_picusInternalIsPostmounting={postmountingActive}
 					{...otherProps}
 				/>
 			</Freeze>
@@ -403,7 +403,7 @@ const SequenceRefForwardingFunction: React.ForwardRefRenderFunction<
 	HTMLDivElement,
 	SequenceProps
 > = (props, ref) => {
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 	const {fps} = useVideoConfig();
 	if (props.layout !== 'none' && !env.isRendering) {
 		const effectivePremountFor = ENABLE_V5_BREAKING_CHANGES
@@ -425,6 +425,6 @@ const SequenceRefForwardingFunction: React.ForwardRefRenderFunction<
 
 /*
  * @description A component that time-shifts its children and wraps them in an absolutely positioned <div>.
- * @see [Documentation](https://www.remotion.dev/docs/sequence)
+ * @see [Documentation](https://www.picus.dev/docs/sequence)
  */
 export const Sequence = forwardRef(SequenceRefForwardingFunction);

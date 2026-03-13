@@ -5,14 +5,14 @@ title: Chromium flags
 crumb: 'Tweaks'
 ---
 
-We allow you to set the following flags in Chromium and Google Chrome since Remotion 2.6.5:
+We allow you to set the following flags in Chromium and Google Chrome since Picus 2.6.5:
 
 ## `--disable-web-security`
 
 This will most notably disable CORS among other security features.
 
 :::note
-Remotion will automatically append the `--user-data-dir` flag.
+Picus will automatically append the `--user-data-dir` flag.
 :::
 
 ### Via Node.JS APIs
@@ -21,14 +21,14 @@ In [`getCompositions()`](/docs/renderer/get-compositions), [`renderStill()`](/do
 
 ### Via CLI flag
 
-Pass [`--disable-web-security`](/docs/cli/render#--disable-web-security) in one of the following commands: [`remotion render`](/docs/cli/render), [`remotion compositions`](/docs/cli/compositions), [`remotion still`](/docs/cli/still), [`remotion lambda render`](/docs/lambda/cli/render), [`remotion lambda still`](/docs/lambda/cli/still), [`remotion lambda compositions`](/docs/lambda/cli/compositions).
+Pass [`--disable-web-security`](/docs/cli/render#--disable-web-security) in one of the following commands: [`picus render`](/docs/cli/render), [`picus compositions`](/docs/cli/compositions), [`picus still`](/docs/cli/still), [`picus lambda render`](/docs/lambda/cli/render), [`picus lambda still`](/docs/lambda/cli/still), [`picus lambda compositions`](/docs/lambda/cli/compositions).
 
 ### Via config file
 
 Use [setChromiumDisableWebSecurity()](/docs/config#setchromiumdisablewebsecurity).
 
 ```tsx twoslash
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -49,14 +49,14 @@ In [`getCompositions()`](/docs/renderer/get-compositions), [`renderStill()`](/do
 
 ### Via CLI flag
 
-Pass [`--ignore-certificate-errors`](/docs/cli/render#--ignore-certificate-errors) in one of the following commands: [`remotion render`](/docs/cli/render), [`remotion compositions`](/docs/cli/compositions), [`remotion still`](/docs/cli/still), [`remotion lambda render`](/docs/lambda/cli/render), [`remotion lambda still`](/docs/lambda/cli/still), [`remotion lambda compositions`](/docs/lambda/cli/compositions).
+Pass [`--ignore-certificate-errors`](/docs/cli/render#--ignore-certificate-errors) in one of the following commands: [`picus render`](/docs/cli/render), [`picus compositions`](/docs/cli/compositions), [`picus still`](/docs/cli/still), [`picus lambda render`](/docs/lambda/cli/render), [`picus lambda still`](/docs/lambda/cli/still), [`picus lambda compositions`](/docs/lambda/cli/compositions).
 
 ### Via config file
 
 Use [setChromiumIgnoreCertificateErrors()](/docs/config#setchromiumignorecertificateerrors).
 
 ```tsx twoslash
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -77,14 +77,14 @@ In [`getCompositions()`](/docs/renderer/get-compositions), [`renderStill()`](/do
 
 ### Via CLI flag
 
-Pass [`--disable-headless`](/docs/cli/render#--disable-headless) in one of the following commands: [`remotion compositions`](/docs/cli/compositions), [`remotion render`](/docs/cli/render), [`remotion still`](/docs/cli/still).
+Pass [`--disable-headless`](/docs/cli/render#--disable-headless) in one of the following commands: [`picus compositions`](/docs/cli/compositions), [`picus render`](/docs/cli/render), [`picus still`](/docs/cli/still).
 
 ### Via config file
 
 Use [setChromiumHeadlessMode()](/docs/config#setchromiumheadlessmode).
 
 ```tsx twoslash
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -105,12 +105,12 @@ In [`getCompositions()`](/docs/renderer/get-compositions#chromiumoptions), [`ren
 
 ### Via CLI flag
 
-Pass [`--gl=swiftshader`](/docs/cli) in one of the following commands: [`remotion render`](/docs/cli/render), [`remotion compositions`](/docs/cli/compositions), [`remotion still`](/docs/cli/still), [`remotion lambda render`](/docs/lambda/cli/render), [`remotion lambda still`](/docs/lambda/cli/still), [`remotion lambda compositions`](/docs/lambda/cli/compositions).
+Pass [`--gl=swiftshader`](/docs/cli) in one of the following commands: [`picus render`](/docs/cli/render), [`picus compositions`](/docs/cli/compositions), [`picus still`](/docs/cli/still), [`picus lambda render`](/docs/lambda/cli/render), [`picus lambda still`](/docs/lambda/cli/still), [`picus lambda compositions`](/docs/lambda/cli/compositions).
 
 ### Via config file
 
 ```tsx twoslash
-import {Config} from '@remotion/cli/config';
+import {Config} from '@picus/cli/config';
 
 // ---cut---
 
@@ -129,7 +129,7 @@ In [`getCompositions()`](/docs/renderer/get-compositions#chromiumoptions), [`ren
 
 ### Via CLI flag
 
-Pass [`--user-agent`](/docs/cli) in one of the following commands: [`remotion render`](/docs/cli/render), [`remotion compositions`](/docs/cli/compositions), [`remotion still`](/docs/cli/still), [`remotion lambda render`](/docs/lambda/cli/render), [`remotion lambda still`](/docs/lambda/cli/still), [`remotion lambda compositions`](/docs/lambda/cli/compositions).
+Pass [`--user-agent`](/docs/cli) in one of the following commands: [`picus render`](/docs/cli/render), [`picus compositions`](/docs/cli/compositions), [`picus still`](/docs/cli/still), [`picus lambda render`](/docs/lambda/cli/render), [`picus lambda still`](/docs/lambda/cli/still), [`picus lambda compositions`](/docs/lambda/cli/compositions).
 
 ## `--dark-mode`<AvailableFrom v="4.0.381"/>
 
@@ -141,8 +141,8 @@ In [`getCompositions()`](/docs/renderer/get-compositions#chromiumoptions), [`ren
 
 ### Via CLI flag
 
-Pass [`--dark-mode`](/docs/cli) in one of the following commands: [`remotion render`](/docs/cli/render), [`remotion compositions`](/docs/cli/compositions), [`remotion still`](/docs/cli/still), [`remotion lambda render`](/docs/lambda/cli/render), [`remotion lambda still`](/docs/lambda/cli/still), [`remotion lambda compositions`](/docs/lambda/cli/compositions).
+Pass [`--dark-mode`](/docs/cli) in one of the following commands: [`picus render`](/docs/cli/render), [`picus compositions`](/docs/cli/compositions), [`picus still`](/docs/cli/still), [`picus lambda render`](/docs/lambda/cli/render), [`picus lambda still`](/docs/lambda/cli/still), [`picus lambda compositions`](/docs/lambda/cli/compositions).
 
 ## Need more flags?
 
-Open a [GitHub issue](https://github.com/remotion-dev/remotion/issues/new?assignees=&labels=&template=feature_request.md&title=) to request it.
+Open a [GitHub issue](https://github.com/picus-dev/picus/issues/new?assignees=&labels=&template=feature_request.md&title=) to request it.

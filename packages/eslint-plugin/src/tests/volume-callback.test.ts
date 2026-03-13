@@ -13,7 +13,7 @@ const ruleTester = new ESLintUtils.RuleTester({
 ruleTester.run('volume-callback', rule, {
 	valid: [
 		`
-import {Html5Video} from 'remotion';
+import {Html5Video} from 'picus';
 
 export const Re = () => {
   return (
@@ -22,7 +22,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Video} from 'remotion';
+import {Video} from 'picus';
 
 export const Re = () => {
   return (
@@ -31,7 +31,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Video} from '@remotion/media';
+import {Video} from '@picus/media';
 
 export const Re = () => {
   return (
@@ -40,7 +40,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Html5Audio} from 'remotion';
+import {Html5Audio} from 'picus';
 
 export const Re = () => {
   return (
@@ -58,7 +58,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Video} from 'remotion';
+import {Video} from 'picus';
 
 const getVolume = (f) => f / 30;
 
@@ -69,7 +69,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Html5Audio} from 'remotion';
+import {Html5Audio} from 'picus';
 
 export const Re = () => {
   return (
@@ -81,7 +81,7 @@ export const Re = () => {
 	invalid: [
 		{
 			code: `
-import {Video, useCurrentFrame} from 'remotion';
+import {Video, useCurrentFrame} from 'picus';
 
 export const Re = () => {
   const frame = useCurrentFrame();
@@ -99,7 +99,7 @@ export const Re = () => {
 		},
 		{
 			code: `
-import {Html5Video, useCurrentFrame} from 'remotion';
+import {Html5Video, useCurrentFrame} from 'picus';
 
 export const Re = () => {
   const frame = useCurrentFrame();
@@ -117,7 +117,7 @@ export const Re = () => {
 		},
 		{
 			code: `
-import {Video, useCurrentFrame} from 'remotion';
+import {Video, useCurrentFrame} from 'picus';
 
 export const Re = () => {
   const frame = useCurrentFrame();

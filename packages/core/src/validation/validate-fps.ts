@@ -25,7 +25,7 @@ export function validateFps(
 
 	if (isGif && fps > 50) {
 		throw new TypeError(
-			`The FPS for a GIF cannot be higher than 50. Use the --every-nth-frame option to lower the FPS: https://remotion.dev/docs/render-as-gif`,
+			`The FPS for a GIF cannot be higher than 50. Use the --every-nth-frame option to lower the FPS: https://picus.dev/docs/render-as-gif`,
 		);
 	}
 }

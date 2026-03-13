@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let enableFolderExpiry: boolean | null = null;
 
@@ -18,7 +18,7 @@ export const folderExpiryOption = {
 		);
 	},
 	ssrName: 'enableFolderExpiry' as const,
-	docLink: 'https://www.remotion.dev/docs/lambda/autodelete',
+	docLink: 'https://www.picus.dev/docs/lambda/autodelete',
 	type: false as boolean | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -44,4 +44,4 @@ export const folderExpiryOption = {
 		enableFolderExpiry = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean | null>;
+} satisfies AnyPicusOption<boolean | null>;

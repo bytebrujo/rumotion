@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import type {EmittedArtifact, StillImageFormat} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {EmittedArtifact, StillImageFormat} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {
 	CloudProvider,
 	OnStream,
@@ -10,7 +10,7 @@ import type {
 	RenderMetadata,
 	RenderStillFunctionResponsePayload,
 	ServerlessPayload,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {
 	artifactName,
 	decompressInputProps,
@@ -25,7 +25,7 @@ import {
 	validateOutname,
 	validatePrivacy,
 	VERSION,
-} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
 import {cleanupSerializedInputProps} from '../cleanup-serialized-input-props';
 import {getTmpDirStateIfENoSp} from '../get-tmp-dir';
 import {onDownloadsHelper} from '../on-downloads-helpers';
@@ -113,7 +113,7 @@ const innerStillHandler = async <Provider extends CloudProvider>(
 			logLevel: params.logLevel,
 		}).then((b) => b.bucketName);
 
-	const outputDir = RenderInternals.tmpDir('remotion-render-');
+	const outputDir = RenderInternals.tmpDir('picus-render-');
 
 	const outputPath = path.join(outputDir, 'output');
 
@@ -144,7 +144,7 @@ const innerStillHandler = async <Provider extends CloudProvider>(
 				RenderInternals.DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS,
 			indent: false,
 			port: null,
-			remotionRoot: process.cwd(),
+			picusRoot: process.cwd(),
 			logLevel: params.logLevel,
 			webpackConfigOrServeUrl: serveUrl,
 			offthreadVideoCacheSizeInBytes: params.offthreadVideoCacheSizeInBytes,

@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config({quiet: true});
 
 const functionName = execSync(
-	`bunx remotion lambda functions ls -q --compatible-only`,
+	`bunx picus lambda functions ls -q --compatible-only`,
 )
 	.toString('utf8')
 	.trim()
@@ -15,9 +15,9 @@ execSync(`uv run testclient_render_media.py`, {
 	env: {
 		// eslint-disable-next-line no-undef
 		...process.env,
-		REMOTION_APP_REGION: 'us-east-1',
-		REMOTION_APP_FUNCTION_NAME: functionName,
-		REMOTION_APP_SERVE_URL: 'testbed-v6',
+		PICUS_APP_REGION: 'us-east-1',
+		PICUS_APP_FUNCTION_NAME: functionName,
+		PICUS_APP_SERVE_URL: 'testbed-v6',
 	},
 	cwd: '../lambda-python',
 	stdio: 'inherit',
@@ -28,9 +28,9 @@ execSync(`go run main.go`, {
 	env: {
 		// eslint-disable-next-line no-undef
 		...process.env,
-		REMOTION_APP_REGION: 'us-east-1',
-		REMOTION_APP_FUNCTION_NAME: functionName,
-		REMOTION_APP_SERVE_URL: 'testbed-v6',
+		PICUS_APP_REGION: 'us-east-1',
+		PICUS_APP_FUNCTION_NAME: functionName,
+		PICUS_APP_SERVE_URL: 'testbed-v6',
 	},
 	cwd: '../lambda-go-example',
 	stdio: 'inherit',
@@ -44,9 +44,9 @@ execSync(`bundle exec ruby test_render_spec_still.rb`, {
 	env: {
 		// eslint-disable-next-line no-undef
 		...process.env,
-		REMOTION_APP_REGION: 'us-east-1',
-		REMOTION_APP_FUNCTION_NAME: functionName,
-		REMOTION_APP_SERVE_URL: 'testbed-v6',
+		PICUS_APP_REGION: 'us-east-1',
+		PICUS_APP_FUNCTION_NAME: functionName,
+		PICUS_APP_SERVE_URL: 'testbed-v6',
 	},
 	cwd: '../lambda-ruby-example',
 	stdio: 'inherit',
@@ -57,9 +57,9 @@ execSync(`bundle exec ruby test_render_spec_media.rb`, {
 	env: {
 		// eslint-disable-next-line no-undef
 		...process.env,
-		REMOTION_APP_REGION: 'us-east-1',
-		REMOTION_APP_FUNCTION_NAME: functionName,
-		REMOTION_APP_SERVE_URL: 'testbed-v6',
+		PICUS_APP_REGION: 'us-east-1',
+		PICUS_APP_FUNCTION_NAME: functionName,
+		PICUS_APP_SERVE_URL: 'testbed-v6',
 	},
 	cwd: '../lambda-ruby-example',
 	stdio: 'inherit',
@@ -70,9 +70,9 @@ execSync(`php src/render.php`, {
 	env: {
 		// eslint-disable-next-line no-undef
 		...process.env,
-		REMOTION_APP_REGION: 'us-east-1',
-		REMOTION_APP_FUNCTION_NAME: functionName,
-		REMOTION_APP_SERVE_URL: 'testbed-v6',
+		PICUS_APP_REGION: 'us-east-1',
+		PICUS_APP_FUNCTION_NAME: functionName,
+		PICUS_APP_SERVE_URL: 'testbed-v6',
 	},
 	cwd: '../lambda-php-example',
 	stdio: 'inherit',
@@ -83,9 +83,9 @@ execSync(`python testclient_render_still.py`, {
 	env: {
 		// eslint-disable-next-line no-undef
 		...process.env,
-		REMOTION_APP_REGION: 'us-east-1',
-		REMOTION_APP_FUNCTION_NAME: functionName,
-		REMOTION_APP_SERVE_URL: 'testbed-v6',
+		PICUS_APP_REGION: 'us-east-1',
+		PICUS_APP_FUNCTION_NAME: functionName,
+		PICUS_APP_SERVE_URL: 'testbed-v6',
 	},
 	cwd: '../lambda-python',
 	stdio: 'inherit',

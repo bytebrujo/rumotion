@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let forceIPv4 = false;
 
@@ -8,10 +8,10 @@ export const ipv4Option = {
 	name: 'IPv4',
 	cliFlag,
 	description: () => (
-		<>Forces Remotion to bind to an IPv4 interface for the Studio server.</>
+		<>Forces Picus to bind to an IPv4 interface for the Studio server.</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/cli/studio',
+	docLink: 'https://www.picus.dev/docs/cli/studio',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -30,4 +30,4 @@ export const ipv4Option = {
 		forceIPv4 = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

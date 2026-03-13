@@ -12,14 +12,14 @@ import {useDelayRender} from '../use-delay-render.js';
 import {useVideoConfig} from '../use-video-config.js';
 import type {AnimatedImageCanvasRef} from './canvas';
 import {Canvas} from './canvas';
-import type {RemotionImageDecoder} from './decode-image.js';
+import type {PicusImageDecoder} from './decode-image.js';
 import {decodeImage} from './decode-image.js';
-import type {RemotionAnimatedImageProps} from './props';
+import type {PicusAnimatedImageProps} from './props';
 import {resolveAnimatedImageSource} from './resolve-image-source';
 
 export const AnimatedImage = forwardRef<
 	HTMLCanvasElement,
-	RemotionAnimatedImageProps
+	PicusAnimatedImageProps
 >(
 	(
 		{
@@ -46,7 +46,7 @@ export const AnimatedImage = forwardRef<
 
 		const resolvedSrc = resolveAnimatedImageSource(src);
 		const [imageDecoder, setImageDecoder] =
-			useState<RemotionImageDecoder | null>(null);
+			useState<PicusImageDecoder | null>(null);
 		const {delayRender, continueRender} = useDelayRender();
 
 		const [decodeHandle] = useState(() =>

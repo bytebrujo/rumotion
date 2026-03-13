@@ -73,8 +73,8 @@ const fn = (src: string): Promise<VideoMetadata> => {
 
 /**
  * @description Takes a src to a video, loads it and returns metadata for the specified source.
- * @see [Documentation](https://remotion.dev/docs/get-video-metadata)
- * @deprecated Use `parseMedia()` instead: https://www.remotion.dev/docs/miscellaneous/parse-media-vs-get-video-metadata
+ * @see [Documentation](https://picus.dev/docs/get-video-metadata)
+ * @deprecated Use `parseMedia()` instead: https://www.picus.dev/docs/miscellaneous/parse-media-vs-get-video-metadata
  */
 export const getVideoMetadata = (src: string) => {
 	return limit(fn, src);

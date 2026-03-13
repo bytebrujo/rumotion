@@ -1,5 +1,5 @@
-import type {Instruction} from '@remotion/paths';
-import {serializeInstructions} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
+import {serializeInstructions} from '@picus/paths';
 import type {ShapeInfo} from './shape-info';
 
 export type MakeCircleProps = {
@@ -9,7 +9,7 @@ export type MakeCircleProps = {
 /**
  * @description Generates a circle SVG path.
  * @param {Number} radius The radius of the circle.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/make-circle)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/make-circle)
  */
 export const makeCircle = ({radius}: MakeCircleProps): ShapeInfo => {
 	const instructions: Instruction[] = [

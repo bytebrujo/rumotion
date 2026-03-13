@@ -1,5 +1,5 @@
 import React, {createRef, useContext} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {getXPositionOfItemInTimelineImperatively} from '../../helpers/get-left-of-timeline-slider';
 import {useTimelineInOutFramePosition} from '../../state/in-out';
 import {TimelineWidthContext} from './TimelineWidthProvider';

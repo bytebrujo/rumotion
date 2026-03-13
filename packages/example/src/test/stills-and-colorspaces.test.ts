@@ -9,7 +9,7 @@ import {
 	renderStill,
 	selectComposition,
 	StillImageFormat,
-} from '@remotion/renderer';
+} from '@picus/renderer';
 import {$} from 'bun';
 import sharp from 'sharp';
 
@@ -20,7 +20,7 @@ if (process.platform === 'win32') {
 const exampleDir = path.join(__dirname, '..', '..');
 
 beforeAll(async () => {
-	await $`bunx remotion browser ensure`.cwd(exampleDir);
+	await $`bunx picus browser ensure`.cwd(exampleDir);
 });
 
 test(
@@ -32,7 +32,7 @@ test(
 			inputProps: {},
 		});
 
-		const folder = path.join(tmpdir(), 'remotion-test', 'render-still');
+		const folder = path.join(tmpdir(), 'picus-test', 'render-still');
 		const testOut = path.join(folder, 'still.png');
 
 		const fileOSRoot = path.parse(__dirname).root;
@@ -88,11 +88,11 @@ test(
 	'Can render a still pdf using Node.JS APIs',
 	async () => {
 		if (process.platform === 'linux') {
-			// https://github.com/remotion-dev/remotion/issues/6452
+			// https://github.com/picus-dev/picus/issues/6452
 			return;
 		}
 		const imageFormat: StillImageFormat = 'pdf';
-		const folder = path.join(tmpdir(), 'remotion-test', 'render-still');
+		const folder = path.join(tmpdir(), 'picus-test', 'render-still');
 
 		const composition = await selectComposition({
 			serveUrl: path.join(exampleDir, 'build'),
@@ -156,7 +156,7 @@ test('Bt709 encoding should work', async () => {
 
 	writeFileSync('out.mp4', new Uint8Array(buffer as Buffer));
 
-	execSync('bunx remotion ffmpeg -i - -frames:v 1 -c:v png out%02d.png', {
+	execSync('bunx picus ffmpeg -i - -frames:v 1 -c:v png out%02d.png', {
 		input: new Uint8Array(buffer as Buffer),
 		stdio: ['pipe', 'ignore', 'ignore'],
 	});

@@ -1,9 +1,9 @@
 import type * as ff from '@google-cloud/functions-framework';
 import {Storage} from '@google-cloud/storage';
-import type {ChromiumOptions} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {NoReactInternals} from 'remotion/no-react';
-import {VERSION} from 'remotion/version';
+import type {ChromiumOptions} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {NoReactInternals} from 'picus/no-react';
+import {VERSION} from 'picus/version';
 import {Log} from '../cli/log';
 import {randomHash} from '../shared/random-hash';
 import {getCompositionFromBody} from './helpers/get-composition-from-body';
@@ -25,12 +25,12 @@ export const renderStillSingleThread = async (
 	if (body.clientVersion !== VERSION) {
 		if (!body.clientVersion) {
 			throw new Error(
-				`Version mismatch: When calling renderMediaOnCloudRun(), you called a service which has the version ${VERSION} but the @remotion/cloudrun package is an older version. Deploy a new service with matchin version and use it to call renderMediaOnCloudRun().`,
+				`Version mismatch: When calling renderMediaOnCloudRun(), you called a service which has the version ${VERSION} but the @picus/cloudrun package is an older version. Deploy a new service with matchin version and use it to call renderMediaOnCloudRun().`,
 			);
 		}
 
 		throw new Error(
-			`Version mismatch: When calling renderMediaOnCloudRun(), you called a service, which has the version ${VERSION}, but the @remotion/cloudrun package you used to invoke the function has version ${body.clientVersion}. Deploy a new service and use it to call renderMediaOnCloudrun().`,
+			`Version mismatch: When calling renderMediaOnCloudRun(), you called a service, which has the version ${VERSION}, but the @picus/cloudrun package you used to invoke the function has version ${body.clientVersion}. Deploy a new service and use it to call renderMediaOnCloudrun().`,
 		);
 	}
 

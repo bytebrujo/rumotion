@@ -3,8 +3,8 @@ import {
 	AddLayerVersionPermissionCommand,
 	PublishLayerVersionCommand,
 } from '@aws-sdk/client-lambda';
-import {LambdaClientInternals, type AwsRegion} from '@remotion/lambda-client';
-import {VERSION} from 'remotion/version';
+import {LambdaClientInternals, type AwsRegion} from '@picus/lambda-client';
+import {VERSION} from 'picus/version';
 import {getRegions} from '../api/get-regions';
 import {quit} from '../cli/helpers/quit';
 import type {HostedLayers} from '../shared/hosted-layers';
@@ -37,7 +37,7 @@ const layerInfo: HostedLayers = {
 };
 
 const getBucketName = (region: AwsRegion) => {
-	return `remotionlambda-binaries-${region}`;
+	return `picuslambda-binaries-${region}`;
 };
 
 const makeLayerPublic = async () => {
@@ -52,7 +52,7 @@ const makeLayerPublic = async () => {
 	] as const;
 	for (const region of getRegions()) {
 		for (const layer of layers) {
-			const layerName = `remotion-binaries-${layer}-arm64`;
+			const layerName = `picus-binaries-${layer}-arm64`;
 			const {Version, LayerArn} = await LambdaClientInternals.getLambdaClient(
 				region,
 				undefined,
@@ -61,7 +61,7 @@ const makeLayerPublic = async () => {
 				new PublishLayerVersionCommand({
 					Content: {
 						S3Bucket: getBucketName(region),
-						S3Key: `remotion-layer-${layer}-v16-arm64.zip`,
+						S3Key: `picus-layer-${layer}-v16-arm64.zip`,
 					},
 					LayerName: layerName,
 					LicenseInfo:

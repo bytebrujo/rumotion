@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import type {LogLevel} from '../log';
 import {Log} from '../log';
-import {useRemotionEnvironment} from '../use-remotion-environment';
+import {usePicusEnvironment} from '../use-picus-environment';
 
 let warned = false;
 
@@ -30,7 +30,7 @@ export const useSingletonAudioContext = ({
 	latencyHint: AudioContextLatencyCategory;
 	audioEnabled: boolean;
 }) => {
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	const audioContext = useMemo(() => {
 		if (env.isRendering) {
@@ -49,7 +49,7 @@ export const useSingletonAudioContext = ({
 		return new AudioContext({
 			latencyHint,
 			// By default, this can end up being 44100Hz.
-			// Playing a 48000Hz file in a 44100Hz context, such as https://remotion.media/video.mp4 in a @remotion/media tag
+			// Playing a 48000Hz file in a 44100Hz context, such as https://picus.media/video.mp4 in a @picus/media tag
 			// we observe some issues that seem to go away when we set the sample rate to 48000 with Sony LinkBuds Bluetooth headphones.
 			sampleRate: 48000,
 		});

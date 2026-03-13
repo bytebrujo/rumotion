@@ -1,5 +1,5 @@
 import React from 'react';
-import {useCurrentFrame} from 'remotion';
+import {useCurrentFrame} from 'picus';
 
 const Tab: React.FC = () => {
 	return <span style={{width: 18, display: 'inline-block'}}></span>;

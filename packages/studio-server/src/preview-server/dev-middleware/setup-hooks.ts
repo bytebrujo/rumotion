@@ -1,7 +1,7 @@
-import type {webpack} from '@remotion/bundler';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {NoReactInternals} from 'remotion/no-react';
+import type {webpack} from '@picus/bundler';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {NoReactInternals} from 'picus/no-react';
 import type {DevMiddlewareContext} from './types';
 
 export function setupHooks(context: DevMiddlewareContext, logLevel: LogLevel) {
@@ -68,7 +68,7 @@ export function setupHooks(context: DevMiddlewareContext, logLevel: LogLevel) {
 		});
 	}
 
-	context.compiler.hooks.watchRun.tap('remotion', invalid);
-	context.compiler.hooks.invalid.tap('remotion', invalid);
-	context.compiler.hooks.done.tap('remotion', done);
+	context.compiler.hooks.watchRun.tap('picus', invalid);
+	context.compiler.hooks.invalid.tap('picus', invalid);
+	context.compiler.hooks.done.tap('picus', done);
 }

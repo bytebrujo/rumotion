@@ -1,5 +1,5 @@
-import {threeDIntoSvgPath} from '@remotion/svg-3d-engine';
-import type {FaceType} from '@remotion/svg-3d-engine';
+import {threeDIntoSvgPath} from '@picus/svg-3d-engine';
+import type {FaceType} from '@picus/svg-3d-engine';
 import React from 'react';
 
 export const Faces: React.FC<{

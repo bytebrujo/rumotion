@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let encodingMaxRate: string | null = null;
 
@@ -15,7 +15,7 @@ export const encodingMaxRateOption = {
 	),
 	ssrName: 'encodingMaxRate' as const,
 	docLink:
-		'https://www.remotion.dev/docs/renderer/render-media#encodingmaxrate',
+		'https://www.picus.dev/docs/renderer/render-media#encodingmaxrate',
 	type: '' as string | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -41,4 +41,4 @@ export const encodingMaxRateOption = {
 		encodingMaxRate = newMaxRate;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

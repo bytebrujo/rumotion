@@ -2,34 +2,34 @@ import {
 	cancelRenderInternal,
 	getErrorStackWithMessage,
 } from './cancel-render.js';
-import {getRemotionEnvironment} from './get-remotion-environment.js';
+import {getPicusEnvironment} from './get-picus-environment.js';
 import type {LogLevel} from './log.js';
 import {Log} from './log.js';
-import type {RemotionEnvironment} from './remotion-environment-context.js';
+import type {PicusEnvironment} from './picus-environment-context.js';
 import {truthy} from './truthy.js';
 
 export type DelayRenderScope = {
-	remotion_renderReady: boolean;
-	remotion_delayRenderTimeouts: {
+	picus_renderReady: boolean;
+	picus_delayRenderTimeouts: {
 		[key: string]: {
 			label: string | null;
 			timeout: number | Timer;
 			startTime: number;
 		};
 	};
-	remotion_puppeteerTimeout: number;
-	remotion_attempt: number;
-	remotion_delayRenderHandles: number[];
-	remotion_cancelledError?: string;
+	picus_puppeteerTimeout: number;
+	picus_attempt: number;
+	picus_delayRenderHandles: number[];
+	picus_cancelledError?: string;
 };
 
 if (typeof window !== 'undefined') {
-	window.remotion_renderReady = false;
-	if (!window.remotion_delayRenderTimeouts) {
-		window.remotion_delayRenderTimeouts = {};
+	window.picus_renderReady = false;
+	if (!window.picus_delayRenderTimeouts) {
+		window.picus_delayRenderTimeouts = {};
 	}
 
-	window.remotion_delayRenderHandles = [];
+	window.picus_delayRenderHandles = [];
 }
 
 export const DELAY_RENDER_CALLSTACK_TOKEN = 'The delayRender was called:';
@@ -57,7 +57,7 @@ export const delayRenderInternal = ({
 	options,
 }: {
 	scope: DelayRenderScope;
-	environment: RemotionEnvironment;
+	environment: PicusEnvironment;
 	label: string | null;
 	options: DelayRenderOptions;
 }): number => {
@@ -69,23 +69,23 @@ export const delayRenderInternal = ({
 	}
 
 	const handle = Math.random();
-	scope.remotion_delayRenderHandles.push(handle);
+	scope.picus_delayRenderHandles.push(handle);
 	const called = Error().stack?.replace(/^Error/g, '') ?? '';
 
 	if (environment.isRendering) {
 		const timeoutToUse =
 			(options?.timeoutInMilliseconds ??
-				scope.remotion_puppeteerTimeout ??
+				scope.picus_puppeteerTimeout ??
 				defaultTimeout) - 2000;
-		const retriesLeft = (options?.retries ?? 0) - (scope.remotion_attempt - 1);
-		scope.remotion_delayRenderTimeouts[handle] = {
+		const retriesLeft = (options?.retries ?? 0) - (scope.picus_attempt - 1);
+		scope.picus_delayRenderTimeouts[handle] = {
 			label: label ?? null,
 			startTime: Date.now(),
 			timeout: setTimeout(() => {
 				const message = [
 					`A delayRender()`,
 					label ? `"${label}"` : null,
-					`was called but not cleared after ${timeoutToUse}ms. See https://remotion.dev/docs/timeout for help.`,
+					`was called but not cleared after ${timeoutToUse}ms. See https://picus.dev/docs/timeout for help.`,
 					retriesLeft > 0 ? DELAY_RENDER_RETRIES_LEFT + retriesLeft : null,
 					retriesLeft > 0 ? DELAY_RENDER_RETRY_TOKEN : null,
 					DELAY_RENDER_CALLSTACK_TOKEN,
@@ -96,7 +96,7 @@ export const delayRenderInternal = ({
 
 				// in client-side rendering, don't throw (would be uncaught from setTimeout)
 				if (environment.isClientSideRendering) {
-					scope.remotion_cancelledError = getErrorStackWithMessage(
+					scope.picus_cancelledError = getErrorStackWithMessage(
 						Error(message),
 					);
 				} else {
@@ -106,14 +106,14 @@ export const delayRenderInternal = ({
 		};
 	}
 
-	scope.remotion_renderReady = false;
+	scope.picus_renderReady = false;
 
 	return handle;
 };
 
 /*
  * @description Call this function to signal that a frame should not be rendered until an asynchronous task (such as data fetching) is complete. Use continueRender(handle) to proceed with rendering once the task is complete.
- * @see [Documentation](https://remotion.dev/docs/delay-render)
+ * @see [Documentation](https://picus.dev/docs/delay-render)
  */
 export const delayRender = (
 	label?: string,
@@ -125,7 +125,7 @@ export const delayRender = (
 
 	return delayRenderInternal({
 		scope: window,
-		environment: getRemotionEnvironment(),
+		environment: getPicusEnvironment(),
 		label: label ?? null,
 		options: options ?? {},
 	});
@@ -143,7 +143,7 @@ export const continueRenderInternal = ({
 }: {
 	scope: DelayRenderScope;
 	handle: number;
-	environment: RemotionEnvironment;
+	environment: PicusEnvironment;
 	logLevel: LogLevel;
 }): void => {
 	if (typeof handle === 'undefined') {
@@ -159,16 +159,16 @@ export const continueRenderInternal = ({
 		);
 	}
 
-	scope.remotion_delayRenderHandles = scope.remotion_delayRenderHandles.filter(
+	scope.picus_delayRenderHandles = scope.picus_delayRenderHandles.filter(
 		(h) => {
 			if (h === handle) {
 				if (environment.isRendering && scope !== undefined) {
-					if (!scope.remotion_delayRenderTimeouts[handle]) {
+					if (!scope.picus_delayRenderTimeouts[handle]) {
 						return false;
 					}
 
 					const {label, startTime, timeout} =
-						scope.remotion_delayRenderTimeouts[handle];
+						scope.picus_delayRenderTimeouts[handle];
 					clearTimeout(timeout);
 					const message = [
 						label ? `"${label}"` : 'A handle',
@@ -178,7 +178,7 @@ export const continueRenderInternal = ({
 						.filter(truthy)
 						.join(' ');
 					Log.verbose({logLevel, tag: 'delayRender()'}, message);
-					delete scope.remotion_delayRenderTimeouts[handle];
+					delete scope.picus_delayRenderTimeouts[handle];
 				}
 
 				return false;
@@ -188,14 +188,14 @@ export const continueRenderInternal = ({
 		},
 	);
 
-	if (scope.remotion_delayRenderHandles.length === 0) {
-		scope.remotion_renderReady = true;
+	if (scope.picus_delayRenderHandles.length === 0) {
+		scope.picus_renderReady = true;
 	}
 };
 
 /*
  * @description Unblock a render that has been blocked by delayRender().
- * @see [Documentation](https://remotion.dev/docs/continue-render)
+ * @see [Documentation](https://picus.dev/docs/continue-render)
  */
 export const continueRender = (handle: number): void => {
 	if (typeof window === 'undefined') {
@@ -205,7 +205,7 @@ export const continueRender = (handle: number): void => {
 	continueRenderInternal({
 		scope: window,
 		handle,
-		environment: getRemotionEnvironment(),
-		logLevel: window.remotion_logLevel ?? 'info',
+		environment: getPicusEnvironment(),
+		logLevel: window.picus_logLevel ?? 'info',
 	});
 };

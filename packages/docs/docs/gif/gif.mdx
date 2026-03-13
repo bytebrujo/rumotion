@@ -3,18 +3,18 @@ image: /generated/articles-docs-gif-gif.png
 slug: gif
 sidebar_label: '<Gif>'
 title: '<Gif>'
-crumb: '@remotion/gif'
+crumb: '@picus/gif'
 ---
 
-_Part of the [`@remotion/gif`](/docs/gif) package_
+_Part of the [`@picus/gif`](/docs/gif) package_
 
-Displays a GIF that synchronizes with Remotions [`useCurrentFrame()`](/docs/use-current-frame).
+Displays a GIF that synchronizes with Picuss [`useCurrentFrame()`](/docs/use-current-frame).
 
 ```tsx twoslash
 import {useRef} from 'react';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'picus';
 // ---cut---
-import {Gif} from '@remotion/gif';
+import {Gif} from '@picus/gif';
 
 export const MyComponent: React.FC = () => {
   const {width, height} = useVideoConfig();
@@ -46,7 +46,7 @@ Remote GIFs need to support [CORS](https://developer.mozilla.org/en-US/docs/Web/
   <summary>More info</summary>
   <ul>
     <li>
-      Remotion's origin is usually <code>http://localhost:3000</code>, but it
+      Picus's origin is usually <code>http://localhost:3000</code>, but it
       may be different if rendering on Lambda or the port is busy.
     </li>
     <li>
@@ -101,7 +101,7 @@ You can add a [React ref](https://react.dev/learn/manipulating-the-dom-with-refs
 
 ### playbackRate<AvailableFrom v="4.0.44" />
 
-The `playbackRate` prop controls the playback speed of the GIF animation within your Remotion video. It enables you to adjust how fast or slow the GIF animation plays, allowing for precise synchronization with your video content.
+The `playbackRate` prop controls the playback speed of the GIF animation within your Picus video. It enables you to adjust how fast or slow the GIF animation plays, allowing for precise synchronization with your video content.
 
 Default: 1 (Normal speed)
 Values:
@@ -112,7 +112,7 @@ Values:
 
 ### `delayRenderTimeoutInMilliseconds?`<AvailableFrom v="4.0.403" />
 
-Modifies the timeout of the internal [`delayRender()`](/docs/delay-render) call when loading the GIF. By default, Remotion will wait 30 seconds for the GIF to load before timing out. You can increase or decrease this timeout by passing a custom value.
+Modifies the timeout of the internal [`delayRender()`](/docs/delay-render) call when loading the GIF. By default, Picus will wait 30 seconds for the GIF to load before timing out. You can increase or decrease this timeout by passing a custom value.
 
 See: [Modifying the timeout](/docs/delay-render#modifying-the-timeout)
 
@@ -133,4 +133,4 @@ See: [Modifying the timeout](/docs/delay-render#modifying-the-timeout)
 
 - [`<AnimatedImage>`](/docs/animatedimage)
 - [`getGifDurationInSeconds()`](/docs/gif/get-gif-duration-in-seconds)
-- [Source code for this component](https://github.com/remotion-dev/remotion/blob/main/packages/gif/src/Gif.tsx)
+- [Source code for this component](https://github.com/picus-dev/picus/blob/main/packages/gif/src/Gif.tsx)

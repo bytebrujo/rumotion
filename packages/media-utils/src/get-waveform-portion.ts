@@ -1,4 +1,4 @@
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {SampleOutputRange} from './get-wave-form-samples';
 import {getWaveformSamples} from './get-wave-form-samples';
 import type {MediaUtilsAudioData} from './types';
@@ -39,7 +39,7 @@ export type GetWaveformPortion = {
 
 /*
  * @description Takes bulky waveform data (for example fetched by getAudioData()) and returns a trimmed and simplified version of it, for simpler visualization
- * @see [Documentation](https://remotion.dev/docs/get-waveform-portion)
+ * @see [Documentation](https://picus.dev/docs/get-waveform-portion)
  */
 export const getWaveformPortion = ({
 	audioData,

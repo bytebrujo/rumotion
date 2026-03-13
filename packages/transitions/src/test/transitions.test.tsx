@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {fade} from '../presentations/fade.js';
 import {linearTiming} from '../timings/linear-timing.js';
 import {TransitionSeries} from '../TransitionSeries.js';

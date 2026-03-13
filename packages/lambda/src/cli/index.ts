@@ -1,13 +1,13 @@
-import {CliInternals} from '@remotion/cli';
-import {AwsProvider, LambdaClientInternals} from '@remotion/lambda-client';
-import {BINARY_NAME} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import {AwsProvider, LambdaClientInternals} from '@picus/lambda-client';
+import {BINARY_NAME} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {
 	DOCS_URL,
 	FullClientSpecifics,
 	type ProviderSpecifics,
-} from '@remotion/serverless';
+} from '@picus/serverless';
 import {ROLE_NAME} from '../api/iam-validation/suggested-policy';
 import {awsFullClientSpecifics} from '../functions/full-client-implementation';
 import {parsedLambdaCli} from './args';
@@ -48,13 +48,13 @@ const requiresCredentials = (args: string[]) => {
 
 const matchCommand = ({
 	args,
-	remotionRoot,
+	picusRoot,
 	logLevel,
 	providerSpecifics,
 	fullClientSpecifics,
 }: {
 	args: string[];
-	remotionRoot: string;
+	picusRoot: string;
 	logLevel: LogLevel;
 	providerSpecifics: ProviderSpecifics<AwsProvider>;
 	fullClientSpecifics: FullClientSpecifics<AwsProvider>;
@@ -71,7 +71,7 @@ const matchCommand = ({
 	if (args[0] === RENDER_COMMAND) {
 		return renderCommand({
 			args: args.slice(1),
-			remotionRoot,
+			picusRoot,
 			logLevel,
 			providerSpecifics,
 		});
@@ -80,7 +80,7 @@ const matchCommand = ({
 	if (args[0] === STILL_COMMAND) {
 		return stillCommand({
 			args: args.slice(1),
-			remotionRoot,
+			picusRoot,
 			logLevel,
 			providerSpecifics: providerSpecifics,
 		});
@@ -118,7 +118,7 @@ const matchCommand = ({
 	if (args[0] === SITES_COMMAND) {
 		return sitesCommand(
 			args.slice(1),
-			remotionRoot,
+			picusRoot,
 			logLevel,
 			providerSpecifics,
 		);
@@ -128,21 +128,21 @@ const matchCommand = ({
 		Log.info({indent: false, logLevel}, 'The command has been renamed.');
 		Log.info(
 			{indent: false, logLevel},
-			'Before: remotion-lambda upload <entry-point>',
+			'Before: picus-lambda upload <entry-point>',
 		);
 		Log.info(
 			{indent: false, logLevel},
-			'After: remotion lambda sites create <entry-point>',
+			'After: picus lambda sites create <entry-point>',
 		);
 		quit(1);
 	}
 
 	if (args[0] === 'deploy') {
 		Log.info({indent: false, logLevel}, 'The command has been renamed.');
-		Log.info({indent: false, logLevel}, 'Before: remotion-lambda deploy');
+		Log.info({indent: false, logLevel}, 'Before: picus-lambda deploy');
 		Log.info(
 			{indent: false, logLevel},
-			'After: remotion lambda functions deploy',
+			'After: picus lambda functions deploy',
 		);
 		quit(1);
 	}
@@ -175,7 +175,7 @@ const matchCommand = ({
 
 export const executeCommand = async (
 	args: string[],
-	remotionRoot: string,
+	picusRoot: string,
 	logLevel: LogLevel,
 	_providerSpecifics: ProviderSpecifics<AwsProvider> | null,
 	fullClientSpecifics: FullClientSpecifics<AwsProvider> | null,
@@ -185,7 +185,7 @@ export const executeCommand = async (
 			_providerSpecifics ?? LambdaClientInternals.awsImplementation;
 		await matchCommand({
 			args,
-			remotionRoot,
+			picusRoot,
 			logLevel,
 			providerSpecifics: providerSpecifics,
 			fullClientSpecifics: fullClientSpecifics ?? awsFullClientSpecifics,
@@ -202,7 +202,7 @@ export const executeCommand = async (
 					{indent: false, logLevel},
 					`
 	The role "${parsedLambdaCli['custom-role-arn']}" does not exist or has the wrong policy assigned to it. Do either:
-	- Remove the "--custom-role-arn" parameter and set up Remotion Lambda according to the setup guide
+	- Remove the "--custom-role-arn" parameter and set up Picus Lambda according to the setup guide
 	- Make sure the role has the same policy assigned as the one returned by "npx ${BINARY_NAME} ${POLICIES_COMMAND} ${ROLE_SUBCOMMAND}"
 	
 	Revisit ${DOCS_URL}/docs/lambda/setup and make sure you set up the role and role policy correctly. Also see the troubleshooting page: ${DOCS_URL}/docs/lambda/troubleshooting/permissions. The original error message is:
@@ -255,10 +255,10 @@ AWS returned an "ConcurrentInvocationLimitExceeded" error message which could me
 			)
 		) {
 			const keyButDoesntStartWithAki =
-				LambdaClientInternals.getEnvVariable('REMOTION_AWS_ACCESS_KEY_ID') &&
+				LambdaClientInternals.getEnvVariable('PICUS_AWS_ACCESS_KEY_ID') &&
 				!(
 					LambdaClientInternals.getEnvVariable(
-						'REMOTION_AWS_ACCESS_KEY_ID',
+						'PICUS_AWS_ACCESS_KEY_ID',
 					) as string
 				).startsWith('AKI');
 			const pureKeyButDoesntStartWithAki =
@@ -304,12 +304,12 @@ AWS returned an error message "The security token included in the request is inv
 };
 
 export const cli = async (logLevel: LogLevel) => {
-	const remotionRoot = RenderInternals.findRemotionRoot();
-	await CliInternals.initializeCli(remotionRoot);
+	const picusRoot = RenderInternals.findPicusRoot();
+	await CliInternals.initializeCli(picusRoot);
 
 	await executeCommand(
 		parsedLambdaCli._,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		LambdaClientInternals.awsImplementation,
 		awsFullClientSpecifics,

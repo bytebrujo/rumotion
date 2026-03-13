@@ -1,7 +1,7 @@
-import type {SequenceNodePath} from '@remotion/studio-shared';
+import type {SequenceNodePath} from '@picus/studio-shared';
 import React, {useCallback, useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
-import type {CanUpdateSequencePropStatus} from 'remotion';
+import {Internals} from 'picus';
+import type {CanUpdateSequencePropStatus} from 'picus';
 import type {CodePosition} from '../../error-overlay/react-overlay/utils/get-source-map';
 import type {SchemaFieldInfo} from '../../helpers/timeline-layout';
 import {callApi} from '../call-api';

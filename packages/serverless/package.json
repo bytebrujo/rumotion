@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/serverless"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/serverless"
 	},
-	"name": "@remotion/serverless",
+	"name": "@picus/serverless",
 	"version": "4.0.434",
 	"description": "A runtime for distributed rendering",
 	"main": "dist",
@@ -14,23 +14,23 @@
 		"test": "bun test src",
 		"make": "tsgo -d"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"contributors": [],
 	"license": "UNLICENSED",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"dependencies": {
-		"@remotion/renderer": "workspace:*",
-		"@remotion/bundler": "workspace:*",
-		"@remotion/licensing": "workspace:*",
-		"@remotion/serverless-client": "workspace:*"
+		"@picus/renderer": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"@picus/licensing": "workspace:*",
+		"@picus/serverless-client": "workspace:*"
 	},
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},

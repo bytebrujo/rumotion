@@ -1,14 +1,14 @@
 import { execSync } from "child_process";
 
-export function bundleRemotionProject(bundleDir: string): void {
+export function bundlePicusProject(bundleDir: string): void {
   try {
-    execSync(`node_modules/.bin/remotion bundle --out-dir ./${bundleDir}`, {
+    execSync(`node_modules/.bin/picus bundle --out-dir ./${bundleDir}`, {
       cwd: process.cwd(),
       stdio: "inherit",
     });
   } catch (e) {
     const stderr = (e as { stderr?: Buffer }).stderr?.toString() ?? "";
-    throw new Error(`Remotion bundle failed: ${stderr}`);
+    throw new Error(`Picus bundle failed: ${stderr}`);
   }
 }
 

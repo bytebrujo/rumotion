@@ -1,5 +1,5 @@
-import type {Instruction} from '@remotion/paths';
-import {serializeInstructions} from '@remotion/paths';
+import type {Instruction} from '@picus/paths';
+import {serializeInstructions} from '@picus/paths';
 import type {ShapeInfo} from './shape-info';
 
 type ArrowDirection = 'right' | 'left' | 'up' | 'down';
@@ -106,7 +106,7 @@ const buildArrowPath = (
  * @param {Number} shaftWidth The width of the arrow shaft. Default 80.
  * @param {string} direction The direction the arrow points. Default 'right'.
  * @param {Number} cornerRadius Rounds the corner using an arc. Similar to CSS's border-radius.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/make-arrow)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/make-arrow)
  */
 export const makeArrow = ({
 	length = 300,

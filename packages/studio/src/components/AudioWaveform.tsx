@@ -1,7 +1,7 @@
-import type {MediaUtilsAudioData} from '@remotion/media-utils';
-import {getAudioData, getWaveformPortion} from '@remotion/media-utils';
+import type {MediaUtilsAudioData} from '@picus/media-utils';
+import {getAudioData, getWaveformPortion} from '@picus/media-utils';
 import React, {useEffect, useMemo, useRef, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {LIGHT_TRANSPARENT} from '../helpers/colors';
 import {
 	getTimelineLayerHeight,

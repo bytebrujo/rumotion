@@ -1,6 +1,6 @@
 import {GetCallerIdentityCommand} from '@aws-sdk/client-sts';
-import type {AwsRegion, RequestHandler} from '@remotion/lambda-client';
-import {LambdaClientInternals} from '@remotion/lambda-client';
+import type {AwsRegion, RequestHandler} from '@picus/lambda-client';
+import {LambdaClientInternals} from '@picus/lambda-client';
 import type {EvalDecision, SimulationResult} from './simulate-rule';
 import {simulateRule} from './simulate-rule';
 import {requiredPermissions} from './user-permissions';
@@ -30,7 +30,7 @@ export type SimulatePermissionsOutput = {
 
 /*
  * @description Simulates calls using the AWS Simulator to validate the correct permissions.
- * @see [Documentation](https://remotion.dev/docs/lambda/simulatepermissions)
+ * @see [Documentation](https://picus.dev/docs/lambda/simulatepermissions)
  */
 export const simulatePermissions = async (
 	options: SimulatePermissionsInput,

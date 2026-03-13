@@ -1,6 +1,6 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
-import {VERSION} from 'remotion/version';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
+import {VERSION} from 'picus/version';
 import {displayServiceInfo, LEFT_COL} from '.';
 import {internalDeployService} from '../../../api/deploy-service';
 import {
@@ -10,7 +10,7 @@ import {
 } from '../../../shared/constants';
 import {generateServiceName} from '../../../shared/generate-service-name';
 import {validateGcpRegion} from '../../../shared/validate-gcp-region';
-import {validateImageRemotionVersion} from '../../../shared/validate-image-remotion-version';
+import {validateImagePicusVersion} from '../../../shared/validate-image-picus-version';
 import {parsedCloudrunCli} from '../../args';
 import {getGcpRegion} from '../../get-gcp-region';
 import {makeConsoleUrl} from '../../helpers/make-console-url';
@@ -21,7 +21,7 @@ export const CLOUD_RUN_DEPLOY_SUBCOMMAND = 'deploy';
 
 export const cloudRunDeploySubcommand = async (logLevel: LogLevel) => {
 	const region = getGcpRegion();
-	const projectID = process.env.REMOTION_GCP_PROJECT_ID as string;
+	const projectID = process.env.PICUS_GCP_PROJECT_ID as string;
 	const memoryLimit = String(parsedCloudrunCli.memoryLimit ?? '2Gi');
 	const cpuLimit = String(parsedCloudrunCli.cpuLimit ?? '1.0');
 	const minInstances = String(
@@ -42,7 +42,7 @@ export const cloudRunDeploySubcommand = async (logLevel: LogLevel) => {
 Validating Deployment of Cloud Run Service:
 
 ${[
-	'Remotion Version: '.padEnd(LEFT_COL, ' ') + ' ' + VERSION,
+	'Picus Version: '.padEnd(LEFT_COL, ' ') + ' ' + VERSION,
 	'Memory Limit: '.padEnd(LEFT_COL, ' ') + ' ' + memoryLimit,
 	'CPU Limit: '.padEnd(LEFT_COL, ' ') + ' ' + cpuLimit,
 	'Minimum Instances: '.padEnd(LEFT_COL, ' ') + ' ' + minInstances,
@@ -58,12 +58,12 @@ ${[
 	}
 
 	validateGcpRegion(region);
-	await validateImageRemotionVersion();
+	await validateImagePicusVersion();
 
 	if (projectID === undefined) {
 		Log.error(
 			{indent: false, logLevel},
-			`REMOTION_GCP_PROJECT_ID not found in the .env file.`,
+			`PICUS_GCP_PROJECT_ID not found in the .env file.`,
 		);
 		quit(0);
 	}
@@ -137,7 +137,7 @@ ${displayServiceInfo({
 	timeoutInSeconds: timeoutSeconds,
 	memoryLimit,
 	cpuLimit,
-	remotionVersion: VERSION,
+	picusVersion: VERSION,
 	uri: deployResult.uri,
 	region,
 	consoleUrl,
@@ -166,7 +166,7 @@ ${displayServiceInfo({
 	timeoutInSeconds: timeoutSeconds,
 	memoryLimit,
 	cpuLimit,
-	remotionVersion: VERSION,
+	picusVersion: VERSION,
 	uri: deployResult.uri,
 	region,
 	consoleUrl,

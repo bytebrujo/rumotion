@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import useComponentVisible from './utils/use-component-visible.js';
 import type {Size} from './utils/use-element-size.js';
 

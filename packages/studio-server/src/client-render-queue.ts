@@ -1,4 +1,4 @@
-import type {CompletedClientRender} from '@remotion/studio-shared';
+import type {CompletedClientRender} from '@picus/studio-shared';
 import {installFileWatcher} from './file-watcher';
 import {resolveOutputPath} from './helpers/resolve-output-path';
 import {waitForLiveEventsListener} from './preview-server/live-events';
@@ -21,10 +21,10 @@ export const getCompletedClientRenders = (): CompletedClientRender[] => {
 
 export const addCompletedClientRender = ({
 	render,
-	remotionRoot,
+	picusRoot,
 }: {
 	render: CompletedClientRender;
-	remotionRoot: string;
+	picusRoot: string;
 }): void => {
 	if (completedClientRenders.some((r) => r.id === render.id)) {
 		return;
@@ -32,7 +32,7 @@ export const addCompletedClientRender = ({
 
 	completedClientRenders.push(render);
 
-	const filePath = resolveOutputPath(remotionRoot, render.outName);
+	const filePath = resolveOutputPath(picusRoot, render.outName);
 	const {unwatch} = installFileWatcher({
 		file: filePath,
 		onChange: (type) => {

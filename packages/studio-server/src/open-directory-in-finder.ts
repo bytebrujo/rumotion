@@ -1,7 +1,7 @@
 import {spawn} from 'node:child_process';
 import {platform} from 'node:os';
 import path from 'node:path';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 
 export const openDirectoryInFinder = (
 	dirToOpen: string,

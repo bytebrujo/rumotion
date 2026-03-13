@@ -1,4 +1,4 @@
-import {RenderInternals, type LogLevel} from '@remotion/renderer';
+import {RenderInternals, type LogLevel} from '@picus/renderer';
 import type {
 	ChunkRetry,
 	CloudProvider,
@@ -8,8 +8,8 @@ import type {
 	ProviderSpecifics,
 	ReceivedArtifact,
 	RenderMetadata,
-} from '@remotion/serverless-client';
-import {overallProgressKey} from '@remotion/serverless-client';
+} from '@picus/serverless-client';
+import {overallProgressKey} from '@picus/serverless-client';
 
 export type OverallProgressHelper<Provider extends CloudProvider> = {
 	upload: (reason: string) => Promise<void>;

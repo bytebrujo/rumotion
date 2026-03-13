@@ -6,16 +6,16 @@ id: fonts
 crumb: "Techniques"
 ---
 
-Here are some ways how you can use custom fonts in Remotion.
+Here are some ways how you can use custom fonts in Picus.
 
-## Google Fonts using `@remotion/google-fonts`
+## Google Fonts using `@picus/google-fonts`
 
 _available from v3.2.40_
 
-[`@remotion/google-fonts`](/docs/google-fonts) is a type-safe way to load Google fonts without having to create CSS files.
+[`@picus/google-fonts`](/docs/google-fonts) is a type-safe way to load Google fonts without having to create CSS files.
 
 ```tsx title="MyComp.tsx"
-import { loadFont } from "@remotion/google-fonts/TitanOne";
+import { loadFont } from "@picus/google-fonts/TitanOne";
 
 const { fontFamily } = loadFont("normal", {
   weights: ["400"],
@@ -34,7 +34,7 @@ For projects with multiple fonts, load fonts in one shared module and wait until
 Import the CSS that Google Fonts gives you.
 
 :::note
-From version 2.2 on, Remotion will automatically wait until the fonts are loaded.  
+From version 2.2 on, Picus will automatically wait until the fonts are loaded.  
 :::
 
 ```css title="font.css"
@@ -49,7 +49,7 @@ const MyComp: React.FC = () => {
 };
 ```
 
-## Local fonts using `@remotion/fonts`
+## Local fonts using `@picus/fonts`
 
 _available from v4.0.164_
 
@@ -57,8 +57,8 @@ Put the font into your `public/` folder.
 Put the [`loadFont()`](/docs/fonts-api/load-font) call somewhere in your app where it gets executed:
 
 ```tsx twoslash title="load-fonts.ts"
-import { loadFont } from "@remotion/fonts";
-import { staticFile } from "remotion";
+import { loadFont } from "@picus/fonts";
+import { staticFile } from "picus";
 
 const fontFamily = "Inter";
 
@@ -86,7 +86,7 @@ const fontFamily = "Inter";
 You may load fonts by using the web-native [`FontFace`](https://developer.mozilla.org/en-US/docs/Web/API/FontFace) API.
 
 ```tsx twoslash title="load-fonts.ts"
-import { continueRender, delayRender, staticFile } from "remotion";
+import { continueRender, delayRender, staticFile } from "picus";
 
 const waitForFont = delayRender();
 const font = new FontFace(

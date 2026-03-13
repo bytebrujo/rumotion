@@ -1,4 +1,4 @@
-import { Img, useVideoConfig } from "remotion";
+import { Img, useVideoConfig } from "picus";
 import { Stargazer } from "./cache";
 import { RepoHeader } from "./repo-header";
 

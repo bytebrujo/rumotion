@@ -1,5 +1,5 @@
-import type {_InternalTypes} from 'remotion';
-import type {VideoConfig} from 'remotion/no-react';
+import type {_InternalTypes} from 'picus';
+import type {VideoConfig} from 'picus/no-react';
 import type {BrowserLog} from './browser-log';
 import type {OnLog, Page} from './browser/BrowserPage';
 import type {SourceMapGetter} from './browser/source-map-getter';
@@ -104,7 +104,7 @@ export const makePage = async ({
 			defaultPixelFormat: PixelFormat | null,
 			defaultProResProfile: _InternalTypes['ProResProfile'] | null,
 		) => {
-			window.remotion_setBundleMode({
+			window.picus_setBundleMode({
 				type: 'composition',
 				compositionName: id,
 				serializedResolvedPropsWithSchema: props,

@@ -9,9 +9,9 @@ import type {
 	StillImageFormat,
 	VideoImageFormat,
 	X264Preset,
-} from '@remotion/renderer';
-import type {HardwareAccelerationOption} from '@remotion/renderer/client';
-import type {_InternalTypes} from 'remotion';
+} from '@picus/renderer';
+import type {HardwareAccelerationOption} from '@picus/renderer/client';
+import type {_InternalTypes} from 'picus';
 import type {GitSource} from './git-source';
 import type {PackageManager} from './package-manager';
 
@@ -61,9 +61,9 @@ export type RenderDefaults = {
 
 declare global {
 	interface Window {
-		remotion_renderDefaults: RenderDefaults | undefined;
-		remotion_gitSource: GitSource | null;
-		remotion_installedPackages: string[] | null;
-		remotion_packageManager: PackageManager | 'unknown';
+		picus_renderDefaults: RenderDefaults | undefined;
+		picus_gitSource: GitSource | null;
+		picus_installedPackages: string[] | null;
+		picus_packageManager: PackageManager | 'unknown';
 	}
 }

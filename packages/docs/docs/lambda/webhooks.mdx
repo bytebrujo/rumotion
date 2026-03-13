@@ -8,7 +8,7 @@ crumb: 'Lambda'
 
 import {WebhookTest} from '../../components/lambda/webhook-test';
 
-When rendering on AWS Lambda, Remotion can send webhooks to notify you when the render ends, successfully or with failures. This page describes the webhook payloads and how to set up a webhook API endpoint.
+When rendering on AWS Lambda, Picus can send webhooks to notify you when the render ends, successfully or with failures. This page describes the webhook payloads and how to set up a webhook API endpoint.
 
 Refer to the `renderMediaOnLambda()` documentation to [learn how to trigger a render with webhooks enabled](/docs/lambda/rendermediaonlambda#webhook).
 
@@ -27,9 +27,9 @@ Every webhook has the following headers:
 ```json
 {
   "Content-Type": "application/json",
-  "X-Remotion-Mode": "production" | "demo",
-  "X-Remotion-Signature": "sha512=HASHED_SIGNATURE" | "NO_SECRET_PROVIDED",
-  "X-Remotion-Status": "success" | "timeout" | "error",
+  "X-Picus-Mode": "production" | "demo",
+  "X-Picus-Signature": "sha512=HASHED_SIGNATURE" | "NO_SECRET_PROVIDED",
+  "X-Picus-Status": "success" | "timeout" | "error",
 }
 ```
 
@@ -106,19 +106,19 @@ The `errors` array will contain the error message and stack trace of any _fatal_
 
 ## Validate Webhooks
 
-Remotion will sign all webhook requests if you provide a webhook secret in the CLI arguments.
+Picus will sign all webhook requests if you provide a webhook secret in the CLI arguments.
 
 :::warning
-If you don't provide a secret, the `X-Remotion-Signature` will be set to `NO_SECRET_PROVIDED`. It is not possible to verify the authenticity and data integrity of a webhook request that is sent with a `NO_SECRET_PROVIDED` signature. If you want to verify incoming webhooks, you must provide a webhook secret.
+If you don't provide a secret, the `X-Picus-Signature` will be set to `NO_SECRET_PROVIDED`. It is not possible to verify the authenticity and data integrity of a webhook request that is sent with a `NO_SECRET_PROVIDED` signature. If you want to verify incoming webhooks, you must provide a webhook secret.
 :::
 
-Remotion uses [HMAC](https://en.wikipedia.org/wiki/HMAC) with the [SHA-512 algorithm](https://en.wikipedia.org/wiki/SHA-2) to cryptographically sign the webhook requests it sends. This allows you to verify the authenticity and data integrity of incoming webhook requests.
+Picus uses [HMAC](https://en.wikipedia.org/wiki/HMAC) with the [SHA-512 algorithm](https://en.wikipedia.org/wiki/SHA-2) to cryptographically sign the webhook requests it sends. This allows you to verify the authenticity and data integrity of incoming webhook requests.
 
-In order to verify a webhook request, you will need to create a hex digest of a SHA-512 HMAC signature using your provided webhook key and the request body. If it matches the `X-Remotion-Signature` header, the request was indeed sent by Remotion and its request body is complete.
+In order to verify a webhook request, you will need to create a hex digest of a SHA-512 HMAC signature using your provided webhook key and the request body. If it matches the `X-Picus-Signature` header, the request was indeed sent by Picus and its request body is complete.
 
-If it does not match, either the data integrity is compromised and the request body is incomplete or the request was not sent by Remotion.
+If it does not match, either the data integrity is compromised and the request body is incomplete or the request was not sent by Picus.
 
-This is how Remotion calculates the signature:
+This is how Picus calculates the signature:
 
 ```javascript
 import * as Crypto from "crypto";
@@ -147,7 +147,7 @@ const ENABLE_TESTING = false;
 // ---cut---
 import express from 'express';
 import bodyParser from 'body-parser';
-import {expressWebhook} from '@remotion/lambda/client';
+import {expressWebhook} from '@picus/lambda/client';
 
 const router = express();
 const jsonParser = bodyParser.json();
@@ -174,7 +174,7 @@ This can also be done manually, to have the maximum control over the endpoint's 
 ```javascript twoslash title="server.js"
 import express from 'express';
 import bodyParser from 'body-parser';
-import {validateWebhookSignature} from '@remotion/lambda/client';
+import {validateWebhookSignature} from '@picus/lambda/client';
 
 const router = express();
 const jsonParser = bodyParser.json();
@@ -184,9 +184,9 @@ const handler = (req, res) => {
   const ENABLE_TESTING = true;
 
   if (ENABLE_TESTING) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.remotion.dev');
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.picus.dev');
     res.setHeader('Access-Control-Allow-Methods', 'OPTIONS,POST');
-    res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Remotion-Status, X-Remotion-Signature, X-Remotion-Mode');
+    res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Picus-Status, X-Picus-Signature, X-Picus-Mode');
   }
 
   // dont go forward if just testing
@@ -199,7 +199,7 @@ const handler = (req, res) => {
 
   // validate the webhook signature
   validateWebhookSignature({
-    signatureHeader: req.header('X-Remotion-Signature'),
+    signatureHeader: req.header('X-Picus-Signature'),
     body: req.body,
     secret: 'mysecret',
   });
@@ -235,7 +235,7 @@ Similarly, here is an example endpoint in Next.JS for the App Router using [`app
 const ENABLE_TESTING = false;
 
 // ---cut---
-import {appRouterWebhook} from '@remotion/lambda/client';
+import {appRouterWebhook} from '@picus/lambda/client';
 
 export const POST = appRouterWebhook({
   secret: 'mysecret',
@@ -258,7 +258,7 @@ const ENABLE_TESTING = false;
 
 // ---cut---
 
-import {pagesRouterWebhook} from '@remotion/lambda/client';
+import {pagesRouterWebhook} from '@picus/lambda/client';
 
 const handler = pagesRouterWebhook({
   secret: 'mysecret',
@@ -273,14 +273,14 @@ export default handler;
 
 ## Test your webhook endpoint
 
-You can use this tool to verify that your webhook endpoint is working properly. The tool will send an appropriate demo payload and log the response to the screen. All requests sent by this tool will have the `"X-Remotion-Mode"` header set to `"demo"`.
+You can use this tool to verify that your webhook endpoint is working properly. The tool will send an appropriate demo payload and log the response to the screen. All requests sent by this tool will have the `"X-Picus-Mode"` header set to `"demo"`.
 
 :::info
 This tool sends the demo webhook requests directly from your browser, which has the following implications:
 
 - **CORS requirements**:
-  - Make sure your API endpoint is configured to accept requests from `remotion.dev` by setting `"Access-Control-Allow-Origin": "https://www.remotion.dev"`. This is necessary for this tool to work, but **not** for your production webhook endpoint.
-  - You must set `"Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Remotion-Status, X-Remotion-Signature, X-Remotion-Mode"`
+  - Make sure your API endpoint is configured to accept requests from `picus.dev` by setting `"Access-Control-Allow-Origin": "https://www.picus.dev"`. This is necessary for this tool to work, but **not** for your production webhook endpoint.
+  - You must set `"Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Picus-Status, X-Picus-Signature, X-Picus-Mode"`
   - You must set `"Access-Control-Allow-Methods": "OPTIONS,POST"`.
   - Read the error messages in the DevTools to debug potential CORS issues.
 - You can use a server listening on `localhost` and don't need to use a reverse proxy.

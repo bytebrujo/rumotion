@@ -1,7 +1,7 @@
 ---
 image: /generated/articles-docs-vercel-render-media-on-vercel.png
 title: renderMediaOnVercel()
-crumb: '@remotion/vercel'
+crumb: '@picus/vercel'
 ---
 
 # renderMediaOnVercel()<AvailableFrom v="4.0.426" />
@@ -19,7 +19,7 @@ The rendered file stays inside the sandbox. Use [`uploadToVercelBlob()`](/docs/v
 ```ts twoslash title="route.ts"
 // @module: es2022
 // @target: es2022
-import {renderMediaOnVercel, addBundleToSandbox, createSandbox} from '@remotion/vercel';
+import {renderMediaOnVercel, addBundleToSandbox, createSandbox} from '@picus/vercel';
 const sandbox = await createSandbox();
 // ---cut---
 const {sandboxFilePath} = await renderMediaOnVercel({
@@ -45,7 +45,7 @@ A [`Sandbox`](https://vercel.com/docs/vercel-sandbox/sdk-reference#sandbox-class
 
 ### `compositionId`
 
-The ID of the Remotion composition to render.
+The ID of the Picus composition to render.
 
 ### `inputProps`
 
@@ -53,7 +53,7 @@ Props to pass to the composition.
 
 ### `codec?`
 
-_string_ <TsType type="Codec" source="@remotion/renderer" href="/docs/renderer/types#codec" />
+_string_ <TsType type="Codec" source="@picus/renderer" href="/docs/renderer/types#codec" />
 
 Choose a suitable codec for your output media. Refer to the [Encoding guide](/docs/encoding) to find the best codec for your use case. Default: `"h264"`.
 
@@ -83,7 +83,7 @@ See: [Environment variables](/docs/env-variables/)
 
 ### `frameRange?`
 
-_number | [number, number] | [number, null]_ <TsType type="FrameRange" source="@remotion/renderer" href="/docs/renderer/types#framerange" />
+_number | [number, number] | [number, null]_ <TsType type="FrameRange" source="@picus/renderer" href="/docs/renderer/types#framerange" />
 
 Specify a single frame (passing a `number`) or a range of frames (passing a tuple `[number, number]`) to be rendered. By passing `null` (default) all frames of a composition get rendered.
 
@@ -201,12 +201,12 @@ Allows you to set certain Chromium / Google Chrome flags. See: [Chromium flags](
 
 ### `onProgress?`
 
-_function_ <TsType type="RenderMediaOnVercelProgress" source="@remotion/vercel" href="/docs/vercel/types#rendermediaonvercelprogress" />
+_function_ <TsType type="RenderMediaOnVercelProgress" source="@picus/vercel" href="/docs/vercel/types#rendermediaonvercelprogress" />
 
 A callback that receives progress updates. Every variant includes `overallProgress` (0–1).
 
 ```ts twoslash
-import type {RenderMediaOnVercelProgress} from '@remotion/vercel';
+import type {RenderMediaOnVercelProgress} from '@picus/vercel';
 // ---cut---
 const onProgress = async (update: RenderMediaOnVercelProgress) => {
   console.log(`Overall: ${Math.round(update.overallProgress * 100)}%`);
@@ -232,4 +232,4 @@ The MIME type of the rendered output (e.g. `"video/mp4"`, `"video/webm"`, `"imag
 
 - [`renderStillOnVercel()`](/docs/vercel/render-still-on-vercel)
 - [`uploadToVercelBlob()`](/docs/vercel/upload-to-vercel-blob)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/vercel/src/render-media-on-vercel.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/vercel/src/render-media-on-vercel.ts)

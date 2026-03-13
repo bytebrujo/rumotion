@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import {compose} from './compose';
 import type {InternalState} from './internal-state';
 

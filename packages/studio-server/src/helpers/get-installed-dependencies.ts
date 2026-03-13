@@ -9,9 +9,9 @@ type DepsWithVersions = {
 };
 
 export const getInstalledDependenciesWithVersions = (
-	remotionRoot: string,
+	picusRoot: string,
 ): DepsWithVersions => {
-	const packageJsonFilePath = path.join(remotionRoot, 'package.json');
+	const packageJsonFilePath = path.join(picusRoot, 'package.json');
 	const packageJson = JSON.parse(fs.readFileSync(packageJsonFilePath, 'utf-8'));
 
 	return {
@@ -22,8 +22,8 @@ export const getInstalledDependenciesWithVersions = (
 	};
 };
 
-export const getInstalledDependencies = (remotionRoot: string) => {
-	const deps = getInstalledDependenciesWithVersions(remotionRoot);
+export const getInstalledDependencies = (picusRoot: string) => {
+	const deps = getInstalledDependenciesWithVersions(picusRoot);
 
 	return {
 		dependencies: Object.keys(deps.dependencies),

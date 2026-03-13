@@ -1,6 +1,6 @@
 import {expect, test} from 'bun:test';
 import path from 'path';
-import {ServerlessRoutines} from '@remotion/serverless';
+import {ServerlessRoutines} from '@picus/serverless';
 import {mockImplementation} from '../../mocks/mock-implementation';
 
 test(
@@ -53,7 +53,7 @@ test(
 					forceFps: null,
 					forceDurationInFrames: null,
 					rendererFunctionName: null,
-					bucketName: 'remotion-dev-render',
+					bucketName: 'picus-dev-render',
 					audioCodec: null,
 					renderId: 'test',
 					offthreadVideoCacheSizeInBytes: null,
@@ -68,7 +68,7 @@ test(
 					mediaCacheSizeInBytes: null,
 					isProduction: true,
 				},
-				functionName: 'remotion-dev-render',
+				functionName: 'picus-dev-render',
 				region: 'us-east-1',
 				timeoutInTest: 120000,
 				requestHandler: null,

@@ -1,18 +1,18 @@
 /**
- * @description Restarts the Remotion Studio.
- * @see [Documentation](https://www.remotion.dev/docs/studio/restart-studio)
+ * @description Restarts the Picus Studio.
+ * @see [Documentation](https://www.picus.dev/docs/studio/restart-studio)
  */
 
-import type {RestartStudioResponse} from '@remotion/studio-shared';
-import {getRemotionEnvironment} from 'remotion';
+import type {RestartStudioResponse} from '@picus/studio-shared';
+import {getPicusEnvironment} from 'picus';
 import {callApi} from '../components/call-api';
 
 export const restartStudio = (): Promise<RestartStudioResponse> => {
-	if (!getRemotionEnvironment().isStudio) {
+	if (!getPicusEnvironment().isStudio) {
 		throw new Error('restartStudio() is only available in the Studio');
 	}
 
-	if (window.remotion_isReadOnlyStudio) {
+	if (window.picus_isReadOnlyStudio) {
 		throw new Error('restartStudio() is not available in read-only Studio');
 	}
 

@@ -1,4 +1,4 @@
-import type {X264Preset} from '@remotion/renderer';
+import type {X264Preset} from '@picus/renderer';
 
 export const labelx264Preset = (profile: X264Preset) => {
 	if (profile === 'ultrafast') {

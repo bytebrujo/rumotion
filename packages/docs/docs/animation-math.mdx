@@ -8,7 +8,7 @@ You can add, subtract and multiply animation values to create more complex anima
 Consider the following example:
 
 ```tsx twoslash title="Enter and exit"
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig } from "picus";
 
 const frame = useCurrentFrame();
 const { fps, durationInFrames } = useVideoConfig();
@@ -47,7 +47,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 
 export const AnimationMath: React.FC = () => {
   const frame = useCurrentFrame();

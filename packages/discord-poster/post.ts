@@ -3,8 +3,8 @@ const DISCORD_MAX_LENGTH = 2000;
 const tag = process.argv[2];
 
 const url = tag
-	? `https://api.github.com/repos/remotion-dev/remotion/releases/tags/${tag}`
-	: 'https://api.github.com/repos/remotion-dev/remotion/releases?per_page=1';
+	? `https://api.github.com/repos/picus-dev/picus/releases/tags/${tag}`
+	: 'https://api.github.com/repos/picus-dev/picus/releases?per_page=1';
 
 const latestRelease = await fetch(url);
 

@@ -1,6 +1,6 @@
 package lambda_go_sdk
 
-func RenderMediaOnLambda(input RemotionOptions) (*RemotionRenderResponse, error) {
+func RenderMediaOnLambda(input PicusOptions) (*PicusRenderResponse, error) {
 	return invokeRenderLambda(input)
 }
 

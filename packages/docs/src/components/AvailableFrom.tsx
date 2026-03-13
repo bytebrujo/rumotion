@@ -1,5 +1,5 @@
 import React from 'react';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 
 const link: React.CSSProperties = {
 	textDecoration: 'none',
@@ -35,7 +35,7 @@ export const AvailableFrom: React.FC<{
 		<a
 			target={'_blank'}
 			style={link}
-			href={`https://github.com/remotion-dev/remotion/releases/v${v}`}
+			href={`https://github.com/picus-dev/picus/releases/v${v}`}
 		>
 			<span style={label} title={`Added in v${v}`}>
 				v{v}

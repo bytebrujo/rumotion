@@ -1,4 +1,4 @@
-import { staticFile } from "remotion";
+import { staticFile } from "picus";
 import { FPS, INTRO_DURATION } from "./constants";
 import { BackgroundElement, Timeline } from "./types";
 

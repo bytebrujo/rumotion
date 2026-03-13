@@ -11,15 +11,15 @@ import type {
 	LogLevel,
 	RenderMediaOnDownload,
 	StillImageFormat,
-} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import type {
 	AggregateRenderProgress,
 	JobProgressCallback,
-} from '@remotion/studio-server';
-import type {BrowserDownloadState} from '@remotion/studio-shared';
-import {NoReactInternals} from 'remotion/no-react';
+} from '@picus/studio-server';
+import type {BrowserDownloadState} from '@picus/studio-shared';
+import {NoReactInternals} from 'picus/no-react';
 import {defaultBrowserDownloadProgress} from '../browser-download-bar';
 import {chalk} from '../chalk';
 import {registerCleanupJob} from '../cleanup-before-quit';
@@ -49,7 +49,7 @@ import {
 import {addLogToAggregateProgress} from './add-log-to-aggregate-progress';
 
 export const renderStillFlow = async ({
-	remotionRoot,
+	picusRoot,
 	fullEntryPoint,
 	entryPointReason,
 	remainingArgs,
@@ -91,7 +91,7 @@ export const renderStillFlow = async ({
 	keyboardShortcutsEnabled,
 	shouldCache,
 }: {
-	remotionRoot: string;
+	picusRoot: string;
 	fullEntryPoint: string;
 	entryPointReason: string;
 	remainingArgs: (string | number)[];
@@ -206,7 +206,7 @@ export const renderStillFlow = async ({
 	const {cleanup: cleanupBundle, urlOrBundle} = await bundleOnCliOrTakeServeUrl(
 		{
 			fullPath: fullEntryPoint,
-			remotionRoot,
+			picusRoot,
 			publicDir,
 			onProgress: ({copying, bundling}) => {
 				aggregate.bundling = bundling;
@@ -247,7 +247,7 @@ export const renderStillFlow = async ({
 			RenderInternals.DEFAULT_RENDER_FRAMES_OFFTHREAD_VIDEO_THREADS,
 		indent,
 		port,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 		webpackConfigOrServeUrl: urlOrBundle,
 		offthreadVideoCacheSizeInBytes,
@@ -328,7 +328,7 @@ export const renderStillFlow = async ({
 	printFact('info')({
 		indent,
 		left: 'Composition',
-		link: 'https://remotion.dev/docs/terminology/composition',
+		link: 'https://picus.dev/docs/terminology/composition',
 		logLevel,
 		right: [compositionId, isVerbose ? `(${reason})` : null]
 			.filter(truthy)

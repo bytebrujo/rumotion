@@ -1,4 +1,4 @@
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 import type {MockFile, uploadDir as original} from '../../api/upload-dir';
 import {writeMockS3File} from './mock-store';
 
@@ -8,7 +8,7 @@ const mockIndexHtml = `<!DOCTYPE html>
 <body>
 <script>
 	window.siteVersion = '11';
-	window.remotion_version = '${VERSION}';
+	window.picus_version = '${VERSION}';
 </script>
 </body>
 </html>`;

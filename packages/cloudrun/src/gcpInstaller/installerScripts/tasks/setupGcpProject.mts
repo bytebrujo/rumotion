@@ -12,15 +12,15 @@ export async function setupGcpProject(projectID: string) {
 	checkTerraformStateFile(projectID);
 
 	/****************************************
-	 * Check if Remotion Service Account already exists
+	 * Check if Picus Service Account already exists
 	 ****************************************/
-	execSync('echo "Checking if Remotion Service Account already exists..."', {
+	execSync('echo "Checking if Picus Service Account already exists..."', {
 		stdio: 'inherit',
 	});
 
 	const serviceAccountExists =
 		execSync(
-			`gcloud iam service-accounts list --filter="email:remotion-sa@${projectID}.iam.gserviceaccount.com" --project=${projectID}`,
+			`gcloud iam service-accounts list --filter="email:picus-sa@${projectID}.iam.gserviceaccount.com" --project=${projectID}`,
 			{
 				stdio: ['inherit', 'pipe', 'pipe'],
 			},
@@ -30,14 +30,14 @@ export async function setupGcpProject(projectID: string) {
 
 	if (serviceAccountExists) {
 		execSync(
-			`echo "${colorCode.blueText}remotion-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText} found, and does not need to be created.\n"`,
+			`echo "${colorCode.blueText}picus-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText} found, and does not need to be created.\n"`,
 			{
 				stdio: 'inherit',
 			},
 		);
 	} else {
 		execSync(
-			`echo "No service account found, ${colorCode.blueText}remotion-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText} will be created.\n"`,
+			`echo "No service account found, ${colorCode.blueText}picus-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText} will be created.\n"`,
 			{
 				stdio: 'inherit',
 			},
@@ -45,22 +45,22 @@ export async function setupGcpProject(projectID: string) {
 	}
 
 	/****************************************
-	 * Check if Remotion IAM Role already exists
+	 * Check if Picus IAM Role already exists
 	 ****************************************/
-	execSync('echo "Checking if Remotion IAM Role already exists..."', {
+	execSync('echo "Checking if Picus IAM Role already exists..."', {
 		stdio: 'inherit',
 	});
 
 	let iamRoleExists = false;
 	try {
-		execSync(`gcloud iam roles describe RemotionSA --project=${projectID}`, {
+		execSync(`gcloud iam roles describe PicusSA --project=${projectID}`, {
 			stdio: ['inherit', 'pipe', 'pipe'],
 		})
 			.toString()
 			.trim();
 		iamRoleExists = true;
 		execSync(
-			`echo "${colorCode.blueText}RemotionSA${colorCode.resetText} role found, and does not need to be created.\n"`,
+			`echo "${colorCode.blueText}PicusSA${colorCode.resetText} role found, and does not need to be created.\n"`,
 			{
 				stdio: 'inherit',
 			},
@@ -68,7 +68,7 @@ export async function setupGcpProject(projectID: string) {
 	} catch {
 		iamRoleExists = false;
 		execSync(
-			`echo "Role not found, ${colorCode.blueText}RemotionSA${colorCode.resetText} will be created.\n"`,
+			`echo "Role not found, ${colorCode.blueText}PicusSA${colorCode.resetText} will be created.\n"`,
 			{
 				stdio: 'inherit',
 			},
@@ -76,12 +76,12 @@ export async function setupGcpProject(projectID: string) {
 	}
 
 	/****************************************
-	 * Check if Remotion IAM Role already exists
+	 * Check if Picus IAM Role already exists
 	 ****************************************/
 	let iamRoleAttached = false;
 	if (serviceAccountExists && iamRoleExists) {
 		execSync(
-			'echo "Checking if Remotion IAM Role is already attached to Remotion Service Account"',
+			'echo "Checking if Picus IAM Role is already attached to Picus Service Account"',
 			{
 				stdio: 'inherit',
 			},
@@ -91,7 +91,7 @@ export async function setupGcpProject(projectID: string) {
 			serviceAccountExists &&
 			Boolean(
 				execSync(
-					`gcloud projects get-iam-policy ${projectID} --flatten="bindings[].members" --format="table(bindings.role)" --filter="bindings.members:remotion-sa@${projectID}.iam.gserviceaccount.com"`,
+					`gcloud projects get-iam-policy ${projectID} --flatten="bindings[].members" --format="table(bindings.role)" --filter="bindings.members:picus-sa@${projectID}.iam.gserviceaccount.com"`,
 					{
 						stdio: ['inherit', 'pipe', 'pipe'],
 					},
@@ -100,20 +100,20 @@ export async function setupGcpProject(projectID: string) {
 					.trim()
 					.split('\n')
 					.find((role) => {
-						return role === `projects/${projectID}/roles/RemotionSA`;
+						return role === `projects/${projectID}/roles/PicusSA`;
 					}),
 			);
 
 		if (iamRoleAttached) {
 			execSync(
-				`echo "${colorCode.blueText}RemotionSA${colorCode.resetText} role already attached to ${colorCode.blueText}remotion-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText} found, and does not need to be re-attached.\n"`,
+				`echo "${colorCode.blueText}PicusSA${colorCode.resetText} role already attached to ${colorCode.blueText}picus-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText} found, and does not need to be re-attached.\n"`,
 				{
 					stdio: 'inherit',
 				},
 			);
 		} else {
 			execSync(
-				`echo "${colorCode.blueText}RemotionSA${colorCode.resetText} role not attached to ${colorCode.blueText}remotion-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText}, and will be attached now.\n"`,
+				`echo "${colorCode.blueText}PicusSA${colorCode.resetText} role not attached to ${colorCode.blueText}picus-sa@${projectID}.iam.gserviceaccount.com${colorCode.resetText}, and will be attached now.\n"`,
 				{
 					stdio: 'inherit',
 				},
@@ -201,7 +201,7 @@ export async function setupGcpProject(projectID: string) {
 	if (serviceAccountExists) {
 		// If the service account already exists, import the resource so that the permissions can be updated in place
 		execSync(
-			`echo "Attempting to import current state from GCP of ${colorCode.blueText}Remotion Service Account${colorCode.resetText}."`,
+			`echo "Attempting to import current state from GCP of ${colorCode.blueText}Picus Service Account${colorCode.resetText}."`,
 			{
 				stdio: 'inherit',
 			},
@@ -209,12 +209,12 @@ export async function setupGcpProject(projectID: string) {
 
 		// If the service account is already in tfstate file, skip this step. Otherwise, import it to the state file
 		try {
-			execSync('terraform state list google_service_account.remotion_sa', {
+			execSync('terraform state list google_service_account.picus_sa', {
 				stdio: 'pipe',
 			});
 		} catch {
 			execSync(
-				`terraform import ${terraformVariables} google_service_account.remotion_sa projects/${projectID}/serviceAccounts/remotion-sa@${projectID}.iam.gserviceaccount.com`,
+				`terraform import ${terraformVariables} google_service_account.picus_sa projects/${projectID}/serviceAccounts/picus-sa@${projectID}.iam.gserviceaccount.com`,
 				{stdio: 'inherit'},
 			);
 		}
@@ -223,7 +223,7 @@ export async function setupGcpProject(projectID: string) {
 	if (iamRoleExists) {
 		// If the role already exists, import the resource so that the permissions can be updated in place
 		execSync(
-			`echo "Attempting to import current state from GCP of ${colorCode.blueText}Remotion IAM role${colorCode.resetText}."`,
+			`echo "Attempting to import current state from GCP of ${colorCode.blueText}Picus IAM role${colorCode.resetText}."`,
 			{
 				stdio: 'inherit',
 			},
@@ -232,14 +232,14 @@ export async function setupGcpProject(projectID: string) {
 		// If the IAM role is already in tfstate file, skip this step. Otherwise, import it to the state file
 		try {
 			execSync(
-				'terraform state list google_project_iam_custom_role.remotion_sa',
+				'terraform state list google_project_iam_custom_role.picus_sa',
 				{
 					stdio: 'pipe',
 				},
 			);
 		} catch {
 			execSync(
-				`terraform import ${terraformVariables} google_project_iam_custom_role.remotion_sa projects/${projectID}/roles/RemotionSA`,
+				`terraform import ${terraformVariables} google_project_iam_custom_role.picus_sa projects/${projectID}/roles/PicusSA`,
 				{stdio: 'inherit'},
 			);
 		}
@@ -248,7 +248,7 @@ export async function setupGcpProject(projectID: string) {
 	if (iamRoleAttached) {
 		// If the role is already attached, import the resource so that the permissions can be updated in place
 		execSync(
-			`echo "Attempting to import current state from GCP of ${colorCode.blueText}Remotion IAM role <-> Remotion Service Account${colorCode.resetText}."`,
+			`echo "Attempting to import current state from GCP of ${colorCode.blueText}Picus IAM role <-> Picus Service Account${colorCode.resetText}."`,
 			{
 				stdio: 'inherit',
 			},
@@ -256,12 +256,12 @@ export async function setupGcpProject(projectID: string) {
 
 		// If role binding is already in tfstate file, skip this step. Otherwise, import it to the state file
 		try {
-			execSync('terraform state list google_project_iam_member.remotion_sa', {
+			execSync('terraform state list google_project_iam_member.picus_sa', {
 				stdio: 'pipe',
 			});
 		} catch {
 			execSync(
-				`terraform import ${terraformVariables} google_project_iam_member.remotion_sa "${projectID} projects/${projectID}/roles/RemotionSA serviceAccount:remotion-sa@${projectID}.iam.gserviceaccount.com"`,
+				`terraform import ${terraformVariables} google_project_iam_member.picus_sa "${projectID} projects/${projectID}/roles/PicusSA serviceAccount:picus-sa@${projectID}.iam.gserviceaccount.com"`,
 				{stdio: 'inherit'},
 			);
 		}
@@ -316,7 +316,7 @@ export async function setupGcpProject(projectID: string) {
 
 	// Perform Terraform Plan
 
-	execSync(`terraform plan ${terraformVariables} -out=remotion.tfplan`, {
+	execSync(`terraform plan ${terraformVariables} -out=picus.tfplan`, {
 		stdio: 'inherit',
 	});
 
@@ -324,7 +324,7 @@ export async function setupGcpProject(projectID: string) {
 	const applyPlan = await terraformApplyPrompt();
 
 	if (applyPlan) {
-		execSync('terraform apply remotion.tfplan', {stdio: 'inherit'});
+		execSync('terraform apply picus.tfplan', {stdio: 'inherit'});
 		// After the resources are created, prompt the user to generate the .env file or not
 		tfSuccessScreen();
 		const generateEnvFile = await generateEnvPrompt();

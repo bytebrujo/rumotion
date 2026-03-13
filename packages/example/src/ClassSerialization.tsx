@@ -23,7 +23,7 @@ export const ClassSerialization: React.FC = (props) => {
 		<div>
 			<h1>Class Deserialization</h1>
 			<p>
-				Is not supported in Remotion and will result in objects - even in the
+				Is not supported in Picus and will result in objects - even in the
 				studio
 			</p>
 		</div>

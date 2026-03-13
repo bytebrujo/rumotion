@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo, useState} from 'react';
-import {random} from 'remotion';
+import {random} from 'picus';
 import {ICON_SIZE} from './icons';
 import {VOLUME_SLIDER_WIDTH} from './MediaVolumeSlider';
 
@@ -57,7 +57,7 @@ const DefaultVolumeSlider: React.FC<RenderVolumeSliderProps> = ({
 		typeof React.useId === 'undefined' ? 'volume-slider' : React.useId();
 
 	const [randomClass] = useState(() =>
-		`__remotion-volume-slider-${random(randomId)}`.replace('.', ''),
+		`__picus-volume-slider-${random(randomId)}`.replace('.', ''),
 	);
 
 	const onVolumeChange = useCallback(

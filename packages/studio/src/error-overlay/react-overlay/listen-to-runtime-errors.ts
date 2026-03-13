@@ -4,9 +4,9 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import type {SymbolicatedStackFrame} from '@remotion/studio-shared';
+import type {SymbolicatedStackFrame} from '@picus/studio-shared';
 import {reloadUrl} from '../../helpers/url-state';
-import {setErrorsRef} from '../remotion-overlay/Overlay';
+import {setErrorsRef} from '../picus-overlay/Overlay';
 import {massageWarning} from './effects/format-warning';
 import {
 	permanentRegister as permanentRegisterConsole,
@@ -56,7 +56,7 @@ const crashWithFrames = (crash: () => void) => (error: Error) => {
 		error.message.startsWith('Rendered fewer hooks') ||
 		error.message.startsWith('Rendered more hooks');
 
-	const key = 'remotion.lastCrashBecauseOfHooks';
+	const key = 'picus.lastCrashBecauseOfHooks';
 	const previousCrashWasBecauseOfHooks = window.localStorage.getItem(key);
 
 	// When rendering conditional hooks, refreshing does not help.
@@ -66,7 +66,7 @@ const crashWithFrames = (crash: () => void) => (error: Error) => {
 		: false;
 
 	window.localStorage.setItem(
-		'remotion.lastCrashBecauseOfHooks',
+		'picus.lastCrashBecauseOfHooks',
 		String(Date.now()),
 	);
 
@@ -74,7 +74,7 @@ const crashWithFrames = (crash: () => void) => (error: Error) => {
 		// eslint-disable-next-line no-console
 		console.log('Hook order changed. Reloading app...');
 
-		window.remotion_unsavedProps = false;
+		window.picus_unsavedProps = false;
 		reloadUrl();
 	} else {
 		setErrorsRef.current?.addError(error);

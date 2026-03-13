@@ -1,8 +1,8 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/lambda-client"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/lambda-client"
 	},
-	"name": "@remotion/lambda-client",
+	"name": "@picus/lambda-client",
 	"version": "4.0.434",
 	"main": "dist/cjs/index.js",
 	"sideEffects": false,
@@ -13,7 +13,7 @@
 		"lint": "eslint src",
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "UNLICENSED",
 	"dependencies": {},
 	"devDependencies": {
@@ -27,10 +27,10 @@
 		"@aws-sdk/lib-storage": "catalog:",
 		"mime-types": "2.1.34",
 		"@aws-sdk/credential-provider-ini": "catalog:",
-		"@remotion/serverless-client": "workspace:*",
+		"@picus/serverless-client": "workspace:*",
 		"@types/express": "^5.0.0",
 		"express": "4.21.0",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"next": "catalog:",
 		"@types/mime-types": "2.1.1",

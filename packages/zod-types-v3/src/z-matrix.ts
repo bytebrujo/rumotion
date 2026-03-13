@@ -1,7 +1,7 @@
-import {ZodZypesInternals} from '@remotion/zod-types';
+import {ZodZypesInternals} from '@picus/zod-types';
 import {z} from 'zod';
 
-const {REMOTION_MATRIX_BRAND} = ZodZypesInternals;
+const {PICUS_MATRIX_BRAND} = ZodZypesInternals;
 
 export const zMatrix = () =>
 	z
@@ -14,4 +14,4 @@ export const zMatrix = () =>
 			},
 			{message: 'Invalid matrix, must be a square matrix'},
 		)
-		.describe(REMOTION_MATRIX_BRAND);
+		.describe(PICUS_MATRIX_BRAND);

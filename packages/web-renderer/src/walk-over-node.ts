@@ -1,4 +1,4 @@
-import type {LogLevel} from 'remotion';
+import type {LogLevel} from 'picus';
 import {drawDomElement} from './drawing/draw-dom-element';
 import type {ProcessNodeReturnValue} from './drawing/process-node';
 import {processNode} from './drawing/process-node';

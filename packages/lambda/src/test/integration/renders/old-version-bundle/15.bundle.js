@@ -1,5 +1,5 @@
-(this['webpackChunk_remotion_example'] =
-	this['webpackChunk_remotion_example'] || []).push([
+(this['webpackChunk_picus_example'] =
+	this['webpackChunk_picus_example'] || []).push([
 	[15, 268],
 	{
 		/***/ 9015:
@@ -14,21 +14,21 @@
 					/* harmony export */ default: () => __WEBPACK_DEFAULT_EXPORT__,
 					/* harmony export */
 				});
-				/* harmony import */ var _remotion_media_utils__WEBPACK_IMPORTED_MODULE_5__ =
+				/* harmony import */ var _picus_media_utils__WEBPACK_IMPORTED_MODULE_5__ =
 					__webpack_require__(8006);
-				/* harmony import */ var _remotion_media_utils__WEBPACK_IMPORTED_MODULE_5___default =
+				/* harmony import */ var _picus_media_utils__WEBPACK_IMPORTED_MODULE_5___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						_remotion_media_utils__WEBPACK_IMPORTED_MODULE_5__,
+						_picus_media_utils__WEBPACK_IMPORTED_MODULE_5__,
 					);
 				/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_6__ =
 					__webpack_require__(6416);
 				/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(2386);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_4__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_4__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_4___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_4___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_4__,
+						picus__WEBPACK_IMPORTED_MODULE_4__,
 					);
 				/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ =
 					__webpack_require__(2922);
@@ -43,7 +43,7 @@
 
 				const Background = (0,
 				styled_components__WEBPACK_IMPORTED_MODULE_3__ /* ["default"] */.ZP)(
-					remotion__WEBPACK_IMPORTED_MODULE_4__.Img,
+					picus__WEBPACK_IMPORTED_MODULE_4__.Img,
 				)`
 	height: 100%;
 	width: 120%;
@@ -51,13 +51,13 @@
 `;
 				const Blur = (0,
 				styled_components__WEBPACK_IMPORTED_MODULE_3__ /* ["default"] */.ZP)(
-					remotion__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
+					picus__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
 				)`
 	backdrop-filter: blur(5px);
 `;
 				const FullSize = (0,
 				styled_components__WEBPACK_IMPORTED_MODULE_3__ /* ["default"] */.ZP)(
-					remotion__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
+					picus__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
 				)`
 	display: flex;
 	justify-content: center;
@@ -80,10 +80,10 @@
 `;
 				const Text = ({color, transform, blur}) => {
 					const frame = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_4__.useCurrentFrame)();
+					picus__WEBPACK_IMPORTED_MODULE_4__.useCurrentFrame)();
 					const cool = (offset) => Math.sin((frame + offset) / 10);
 					return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-						remotion__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
+						picus__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
 						{
 							style: {
 								textAlign: 'center',
@@ -102,7 +102,7 @@
 									transform: `translateY(${cool(0) * 8}px)`,
 								},
 							},
-							'Remotion',
+							'Picus',
 						),
 						/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
 							'div',
@@ -117,18 +117,18 @@
 				};
 				const AudioVisualization = () => {
 					const frame = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_4__.useCurrentFrame)();
+					picus__WEBPACK_IMPORTED_MODULE_4__.useCurrentFrame)();
 					const {width, height, fps} = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_4__.useVideoConfig)();
+					picus__WEBPACK_IMPORTED_MODULE_4__.useVideoConfig)();
 					const audioData = (0,
-					_remotion_media_utils__WEBPACK_IMPORTED_MODULE_5__.useAudioData)(
+					_picus_media_utils__WEBPACK_IMPORTED_MODULE_5__.useAudioData)(
 						_resources_sound1_mp3__WEBPACK_IMPORTED_MODULE_2___default(),
 					);
 					if (!audioData) {
 						return null;
 					}
 					const visualization = (0,
-					_remotion_media_utils__WEBPACK_IMPORTED_MODULE_5__.visualizeAudio)({
+					_picus_media_utils__WEBPACK_IMPORTED_MODULE_5__.visualizeAudio)({
 						fps,
 						frame,
 						audioData,
@@ -136,7 +136,7 @@
 					});
 					const scale =
 						1 +
-						(0, remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+						(0, picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 							visualization[1],
 							[0.14, 1],
 							[0, 0.6],
@@ -146,14 +146,14 @@
 						);
 					const backgroundScale =
 						1 +
-						(0, remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+						(0, picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 							visualization[visualization.length - 1],
 							[0, 0.7],
 							[0, 1],
 						);
 					const circlesOut = visualization.slice(4);
 					const rgbEffect = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+					picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 						visualization[Math.floor(visualization.length / 3)],
 						[0, 0.5],
 						[0, 30],
@@ -166,7 +166,7 @@
 						dropEnd,
 						dropEnd + 5,
 					];
-					const day = (0, remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+					const day = (0, picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 						frame,
 						dayInterpolation,
 						[1, 0, 0, 1],
@@ -175,7 +175,7 @@
 							extrapolateRight: 'clamp',
 						},
 					);
-					const night = (0, remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+					const night = (0, picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 						frame,
 						dayInterpolation,
 						[0, 1, 1, 0],
@@ -185,14 +185,14 @@
 						},
 					);
 					const orbRgb = Math.round(
-						(0, remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+						(0, picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 							day,
 							[0, 1],
 							[30, 255],
 						),
 					);
 					const textRgb = Math.round(
-						(0, remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+						(0, picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 							night,
 							[0, 1],
 							[0, 255],
@@ -208,10 +208,10 @@
 							style: {flex: 1},
 						},
 						/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
+							picus__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
 							null,
 							/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-								remotion__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
+								picus__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
 								null,
 								/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
 									Background,
@@ -225,7 +225,7 @@
 								),
 							),
 							/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-								remotion__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
+								picus__WEBPACK_IMPORTED_MODULE_4__.AbsoluteFill,
 								null,
 								/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
 									Background,
@@ -247,7 +247,7 @@
 							_DropDots_DropDots__WEBPACK_IMPORTED_MODULE_1__['default'],
 							{
 								opacity: night,
-								volume: (0, remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+								volume: (0, picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 									visualization[1],
 									[0, 0.24],
 									[0, 1],
@@ -258,7 +258,7 @@
 							},
 						),
 						/* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(
-							remotion__WEBPACK_IMPORTED_MODULE_4__.Audio,
+							picus__WEBPACK_IMPORTED_MODULE_4__.Audio,
 							{
 								src: _resources_sound1_mp3__WEBPACK_IMPORTED_MODULE_2___default(),
 							},
@@ -279,7 +279,7 @@
 								const offset =
 									(300 +
 										Math.log(
-											(0, remotion__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
+											(0, picus__WEBPACK_IMPORTED_MODULE_4__.interpolate)(
 												(v + leftNeighbour + rightNeighbour) / 3,
 												[0, 1],
 												[0, 1],
@@ -373,11 +373,11 @@
 				});
 				/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_1__ =
 					__webpack_require__(6416);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_0__ =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_0__ =
 					__webpack_require__(4783);
-				/* harmony import */ var remotion__WEBPACK_IMPORTED_MODULE_0___default =
+				/* harmony import */ var picus__WEBPACK_IMPORTED_MODULE_0___default =
 					/*#__PURE__*/ __webpack_require__.n(
-						remotion__WEBPACK_IMPORTED_MODULE_0__,
+						picus__WEBPACK_IMPORTED_MODULE_0__,
 					);
 				var __defProp = Object.defineProperty;
 				var __defProps = Object.defineProperties;
@@ -415,30 +415,30 @@
 				];
 				const DropDots = ({opacity, volume}) => {
 					const frame = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_0__.useCurrentFrame)();
+					picus__WEBPACK_IMPORTED_MODULE_0__.useCurrentFrame)();
 					const cycle = 15;
 					const iteration = Math.floor(frame / cycle);
 					const {height, width} = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_0__.useVideoConfig)();
+					picus__WEBPACK_IMPORTED_MODULE_0__.useVideoConfig)();
 					const dots = new Array(false ? 0 : 45).fill(true).map((x, i) => {
 						const startX =
-							(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 								`x-${i}-${iteration}`,
 							) * width;
 						const startY =
-							(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 								`y-${i}-${iteration}`,
 							) * height;
 						const startRotation =
-							(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 								`rotation-${i}-${iteration}`,
 							) * 360;
 						return {
 							startX,
 							endX:
 								startX +
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-									(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+									(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 										`x-end-${i}-${iteration}`,
 									),
 									[0, 1],
@@ -447,8 +447,8 @@
 							startY,
 							endY:
 								startY +
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-									(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+									(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 										`y-end-${i}-${iteration}`,
 									),
 									[0, 1],
@@ -457,15 +457,15 @@
 							startRotation,
 							endRotation:
 								startRotation +
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-									(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+									(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 										`rotatad-${i}`,
 									),
 									[0, 1],
 									[-180, 180],
 								),
-							size: (0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							size: (0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 									`size-${i}-${iteration}`,
 								),
 								[0, 0.9, 0.901, 1],
@@ -474,33 +474,33 @@
 							background:
 								gradients[
 									Math.floor(
-										(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+										(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 											`color-${i}-${iteration}`,
 										) * gradients.length,
 									)
 								],
-							opacity: (0, remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							opacity: (0, picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 									`opacity-${i}-${iteration}`,
 								),
 								[0, 1],
 								[0.83, 0.95],
 							),
-							gradId: (0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+							gradId: (0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 								`gradient-${i}-${iteration}`,
 							),
 							hasShine:
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 									`shine-${i}`,
 								) > 0.6,
 							shineOpacity:
-								(0, remotion__WEBPACK_IMPORTED_MODULE_0__.random)(
+								(0, picus__WEBPACK_IMPORTED_MODULE_0__.random)(
 									`shine-opacity-${i}-${iteration}`,
 								) * 0.7,
 						};
 					});
 					const progress = (0,
-					remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+					picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
 						frame % cycle,
 						[0, cycle],
 						[0, 1],
@@ -512,19 +512,19 @@
 						},
 						dots.map((d) => {
 							const left = (0,
-							remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+							picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
 								progress,
 								[0, 1],
 								[d.startX, d.endX],
 							);
 							const top = (0,
-							remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+							picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
 								progress,
 								[0, 1],
 								[d.startY, d.endY],
 							);
 							const rotate = (0,
-							remotion__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
+							picus__WEBPACK_IMPORTED_MODULE_0__.interpolate)(
 								progress,
 								[0, 1],
 								[d.startRotation, d.endRotation],
@@ -626,7 +626,7 @@
 										),
 									},
 									/* @__PURE__ */ React.createElement(
-										remotion__WEBPACK_IMPORTED_MODULE_0__.Img,
+										picus__WEBPACK_IMPORTED_MODULE_0__.Img,
 										{
 											style: {
 												height: (d.size / 3) * 2,
@@ -634,7 +634,7 @@
 												marginLeft: d.size * 0.05,
 												opacity: 0.55,
 											},
-											src: 'https://github.com/remotion-dev/logo/blob/main/monochromatic/element-0.png?raw=true',
+											src: 'https://github.com/picus-dev/logo/blob/main/monochromatic/element-0.png?raw=true',
 										},
 									),
 								),
@@ -1316,7 +1316,7 @@
 				Object.defineProperty(exports, '__esModule', {value: true});
 				exports.useAudioData = void 0;
 				const react_1 = __webpack_require__(2386);
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				const get_audio_data_1 = __webpack_require__(889);
 				const useAudioData = (src) => {
 					if (!src) {
@@ -1332,12 +1332,12 @@
 					}, []);
 					const [metadata, setMetadata] = (0, react_1.useState)(null);
 					const fetchMetadata = (0, react_1.useCallback)(async () => {
-						const handle = (0, remotion_1.delayRender)();
+						const handle = (0, picus_1.delayRender)();
 						const data = await (0, get_audio_data_1.getAudioData)(src);
 						if (mountState.current.isMounted) {
 							setMetadata(data);
 						}
-						(0, remotion_1.continueRender)(handle);
+						(0, picus_1.continueRender)(handle);
 					}, [src]);
 					(0, react_1.useEffect)(() => {
 						fetchMetadata();

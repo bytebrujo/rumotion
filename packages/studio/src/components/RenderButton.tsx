@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import type {
 	AudioCodec,
 	Codec,
@@ -6,13 +6,13 @@ import type {
 	LogLevel,
 	OpenGlRenderer,
 	X264Preset,
-} from '@remotion/renderer';
-import type {RenderStillOnWebImageFormat} from '@remotion/web-renderer';
+} from '@picus/renderer';
+import type {RenderStillOnWebImageFormat} from '@picus/web-renderer';
 import type {SVGProps} from 'react';
 import React, {useCallback, useContext, useMemo, useRef, useState} from 'react';
 import ReactDOM from 'react-dom';
-import type {_InternalTypes} from 'remotion';
-import {Internals} from 'remotion';
+import type {_InternalTypes} from 'picus';
+import {Internals} from 'picus';
 import {StudioServerConnectionCtx} from '../helpers/client-id';
 import {
 	INPUT_BACKGROUND,
@@ -92,7 +92,7 @@ const label: React.CSSProperties = {
 
 export type RenderType = 'server-render' | 'client-render' | 'render-command';
 
-const RENDER_TYPE_STORAGE_KEY = 'remotion.renderType';
+const RENDER_TYPE_STORAGE_KEY = 'picus.renderType';
 
 const getInitialRenderType = (readOnlyStudio: boolean): RenderType => {
 	if (!SHOW_BROWSER_RENDERING) {
@@ -232,7 +232,7 @@ export const RenderButton: React.FC<{readonly readOnlyStudio: boolean}> = ({
 				return null;
 			}
 
-			const defaults = window.remotion_renderDefaults;
+			const defaults = window.picus_renderDefaults;
 
 			if (!defaults) {
 				throw new TypeError('Expected defaults');
@@ -246,7 +246,7 @@ export const RenderButton: React.FC<{readonly readOnlyStudio: boolean}> = ({
 				initialStillImageFormat: defaults.stillImageFormat,
 				initialVideoImageFormat: null,
 				initialJpegQuality: defaults.jpegQuality,
-				initialScale: window.remotion_renderDefaults?.scale ?? 1,
+				initialScale: window.picus_renderDefaults?.scale ?? 1,
 				initialLogLevel: defaults.logLevel as LogLevel,
 				initialConcurrency: defaults.concurrency,
 				maxConcurrency: defaults.maxConcurrency,
@@ -302,7 +302,7 @@ export const RenderButton: React.FC<{readonly readOnlyStudio: boolean}> = ({
 			return null;
 		}
 
-		const defaults = window.remotion_renderDefaults;
+		const defaults = window.picus_renderDefaults;
 
 		if (!defaults) {
 			throw new TypeError('Expected defaults');

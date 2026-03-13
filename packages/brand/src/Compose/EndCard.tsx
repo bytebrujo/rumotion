@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {ExtrudeDiv} from '../3DContext/Div3D';
 import {TranslateX, TranslateY} from '../3DContext/transformation-context';
-import {AtRemotionButton} from './AtRemotionButton';
+import {AtPicusButton} from './AtPicusButton';
 import {DepthContext, JumpThenDisappear} from './JumpThenDisappear';
 import {Rotations} from './Rotations';
 
@@ -127,7 +127,7 @@ export const EndCard: React.FC<{
 						<div style={{position: 'absolute'}}>
 							<JumpThenDisappear delay={8}>
 								<CallToAction cornerRadius={75}>
-									<AtRemotionButton progress={1} />
+									<AtPicusButton progress={1} />
 								</CallToAction>
 							</JumpThenDisappear>
 						</div>

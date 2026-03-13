@@ -1,9 +1,9 @@
 <?php
 
-namespace Remotion\LambdaPhp\Tests;
+namespace Picus\LambdaPhp\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Remotion\LambdaPhp\PHPClient;
+use Picus\LambdaPhp\PHPClient;
 
 class PHPRenderProgressTest extends TestCase
 {
@@ -12,11 +12,11 @@ class PHPRenderProgressTest extends TestCase
         $client = new PHPClient(
             "us-east-1",
             "testbed",
-            "remotion-render",
+            "picus-render",
             null
         );
 
-        $internalParams = $client->makeRenderProgressPayload("abcdef", "remotion-render");
+        $internalParams = $client->makeRenderProgressPayload("abcdef", "picus-render");
 
         $this->assertNotEmpty($internalParams);
 

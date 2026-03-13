@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Html5Video, Series, staticFile} from 'remotion';
+import {AbsoluteFill, Html5Video, Series, staticFile} from 'picus';
 
 export const PremountedRemoteVideos: React.FC = () => {
 	return (
@@ -12,7 +12,7 @@ export const PremountedRemoteVideos: React.FC = () => {
 					<Html5Video
 						pauseWhenBuffering
 						startFrom={1000}
-						src="https://remotion.media/BigBuckBunny.mp4"
+						src="https://picus.media/BigBuckBunny.mp4"
 					/>
 				</Series.Sequence>
 			</Series>

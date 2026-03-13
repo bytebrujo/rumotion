@@ -8,12 +8,12 @@ export const EXTRA_PACKAGES: Record<string, string> = {
 };
 
 export const EXTRA_PACKAGES_DOCS: Record<string, string> = {
-	mediabunny: 'https://www.remotion.dev/docs/mediabunny/version',
+	mediabunny: 'https://www.picus.dev/docs/mediabunny/version',
 	'@mediabunny/ac3':
-		'https://www.remotion.dev/docs/mediabunny/formats#ac-3-and-e-ac-3',
-	'@mediabunny/mp3-encoder': 'https://www.remotion.dev/docs/mediabunny/version',
-	'@mediabunny/aac-encoder': 'https://www.remotion.dev/docs/mediabunny/version',
+		'https://www.picus.dev/docs/mediabunny/formats#ac-3-and-e-ac-3',
+	'@mediabunny/mp3-encoder': 'https://www.picus.dev/docs/mediabunny/version',
+	'@mediabunny/aac-encoder': 'https://www.picus.dev/docs/mediabunny/version',
 	'@mediabunny/flac-encoder':
-		'https://www.remotion.dev/docs/mediabunny/version',
+		'https://www.picus.dev/docs/mediabunny/version',
 	zod: 'https://zod.dev',
 };

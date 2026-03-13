@@ -1,12 +1,12 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
-export const textRotationCode = `import { useCurrentFrame, AbsoluteFill, interpolate } from "remotion";
+export const textRotationCode = `import { useCurrentFrame, AbsoluteFill, interpolate } from "picus";
 
 export const MyAnimation = () => {
   const frame = useCurrentFrame();
 
   // Text content - easily customizable
-  const WORDS = ["This is a", "Text rotation example", "using Remotion!"];
+  const WORDS = ["This is a", "Text rotation example", "using Picus!"];
 
   // Animation timing
   const WORD_DURATION = 60; // frames per word
@@ -72,7 +72,7 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const textRotationExample: RemotionExample = {
+export const textRotationExample: PicusExample = {
   id: "text-rotation",
   name: "Text Rotation",
   description: "Rotating words with dissolve and blur effects",

@@ -6,7 +6,7 @@ await buildPackage({
 		esm: 'build',
 	},
 	external: [
-		'remotion',
+		'picus',
 		'react',
 		'react-dom',
 		'mediabunny',

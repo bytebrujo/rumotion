@@ -3,14 +3,14 @@ import {forwardRef, useEffect, useRef, useState} from 'react';
 import {Canvas} from './canvas';
 import {manuallyManagedGifCache, volatileGifCache} from './gif-cache';
 import {isCorsError} from './is-cors-error';
-import type {GifState, RemotionGifProps} from './props';
+import type {GifState, PicusGifProps} from './props';
 import {parseWithWorker} from './react-tools';
 import {resolveGifSource} from './resolve-gif-source';
 import {useCurrentGifIndex} from './useCurrentGifIndex';
 
 export const GifForDevelopment = forwardRef<
 	HTMLCanvasElement,
-	RemotionGifProps
+	PicusGifProps
 >(
 	(
 		{

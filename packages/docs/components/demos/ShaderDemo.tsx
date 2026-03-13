@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useRef} from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'picus';
 
 const VERTEX_SHADER = `
 attribute vec2 position;

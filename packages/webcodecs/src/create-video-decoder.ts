@@ -1,4 +1,4 @@
-import type {MediaParserLogLevel} from '@remotion/media-parser';
+import type {MediaParserLogLevel} from '@picus/media-parser';
 import type {FlushPending} from './flush-pending';
 import {makeFlushPending} from './flush-pending';
 import {makeIoSynchronizer} from './io-manager/io-synchronizer';

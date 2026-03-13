@@ -1,4 +1,4 @@
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import type {CloudRunPayloadType} from './payloads';
 
 export const getCompositionFromBody = async (body: CloudRunPayloadType) => {

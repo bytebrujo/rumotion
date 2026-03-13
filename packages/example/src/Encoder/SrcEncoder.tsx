@@ -1,12 +1,12 @@
-import {MediaParserVideoTrack} from '@remotion/media-parser';
+import {MediaParserVideoTrack} from '@picus/media-parser';
 import {
 	ConvertMediaProgress,
 	convertMedia,
 	webcodecsController,
-} from '@remotion/webcodecs';
+} from '@picus/webcodecs';
 import React, {useCallback, useRef, useState} from 'react';
 import {flushSync} from 'react-dom';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {fitElementSizeInContainer} from './fit-element-size-in-container';
 
 const CANVAS_WIDTH = 1024 / 4;

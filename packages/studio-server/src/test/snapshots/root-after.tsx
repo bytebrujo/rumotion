@@ -1,5 +1,5 @@
 import React from 'react';
-import {Composition} from 'remotion';
+import {Composition} from 'picus';
 
 const HelloWorld = () => {
 	return <div>Hello World</div>;

@@ -12,9 +12,9 @@ export function expressWebhook(
 		//  add headers to enable  testing
 		if (testing) {
 			const testingheaders = {
-				'Access-Control-Allow-Origin': 'https://www.remotion.dev',
+				'Access-Control-Allow-Origin': 'https://www.picus.dev',
 				'Access-Control-Allow-Headers':
-					'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Remotion-Status, X-Remotion-Signature, X-Remotion-Mode',
+					'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Picus-Status, X-Picus-Signature, X-Picus-Mode',
 				'Access-Control-Allow-Methods': 'OPTIONS,POST',
 			};
 			addHeaders(res, testingheaders);
@@ -32,7 +32,7 @@ export function expressWebhook(
 		try {
 			// validate the webhook signature
 			validateWebhookSignature({
-				signatureHeader: req.header('X-Remotion-Signature') as string,
+				signatureHeader: req.header('X-Picus-Signature') as string,
 				body: req.body,
 				secret,
 			});

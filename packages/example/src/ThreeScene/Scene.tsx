@@ -1,18 +1,18 @@
-import {getVideoMetadata, VideoMetadata} from '@remotion/media-utils';
+import {getVideoMetadata, VideoMetadata} from '@picus/media-utils';
 import {
 	ThreeCanvas,
 	useOffthreadVideoTexture,
 	useVideoTexture,
-} from '@remotion/three';
-import {zColor} from '@remotion/zod-types';
+} from '@picus/three';
+import {zColor} from '@picus/zod-types';
 import React, {useEffect, useRef, useState} from 'react';
 import {
 	AbsoluteFill,
 	Html5Video,
 	staticFile,
-	useRemotionEnvironment,
+	usePicusEnvironment,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {z} from 'zod';
 import {Phone} from './Phone';
 
@@ -38,7 +38,7 @@ const useVideoOrOffthreadVideoTexture = (
 	videoSrc: string,
 	videoRef: React.RefObject<HTMLVideoElement | null>,
 ) => {
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 	if (textureType === 'video') {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		return useVideoTexture(videoRef);
@@ -77,7 +77,7 @@ export const VideoTextureDemo: React.FC<
 		videoRef,
 	);
 
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	return (
 		<AbsoluteFill style={container}>

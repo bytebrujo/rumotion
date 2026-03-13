@@ -2,7 +2,7 @@ import {expect, test} from 'bun:test';
 import type {OpenAiVerboseTranscription} from '../openai-format';
 import {openAiWhisperApiToCaptions} from '../openai-whisper-api-to-captions';
 
-test('foreign API (https://github.com/remotion-dev/remotion/issues/5031)', () => {
+test('foreign API (https://github.com/picus-dev/picus/issues/5031)', () => {
 	const res: OpenAiVerboseTranscription = {
 		text: "Hello world. It's great to finally be here, surrounded by the endless possibilities that this universe has to offer, and I'm excited to see what the future holds for all of us.",
 		task: 'transcribe',

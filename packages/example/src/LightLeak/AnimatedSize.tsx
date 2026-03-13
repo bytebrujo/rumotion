@@ -1,11 +1,11 @@
-import {LightLeak} from '@remotion/light-leaks';
+import {LightLeak} from '@picus/light-leaks';
 import React from 'react';
 import {
 	AbsoluteFill,
 	interpolate,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 export const LightLeakAnimatedSize: React.FC = () => {
 	const frame = useCurrentFrame();

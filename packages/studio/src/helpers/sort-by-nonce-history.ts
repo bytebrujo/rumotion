@@ -1,4 +1,4 @@
-import type {NonceHistory} from 'remotion';
+import type {NonceHistory} from 'picus';
 
 const getSharedEpochOrder = (
 	a: NonceHistory,

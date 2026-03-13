@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {createTikTokStyleCaptions} from '@remotion/captions';
+import {createTikTokStyleCaptions} from '@picus/captions';
 import {convertToCaptions} from '../convert-to-captions';
 import {toCaptions} from '../to-captions';
 import {examplePayload} from './example-payload';

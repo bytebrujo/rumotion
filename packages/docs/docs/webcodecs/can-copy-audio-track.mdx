@@ -3,14 +3,14 @@ image: /generated/articles-docs-webcodecs-can-copy-audio-track.png
 id: can-copy-audio-track
 title: canCopyAudioTrack()
 slug: /webcodecs/can-copy-audio-track
-crumb: '@remotion/webcodecs'
+crumb: '@picus/webcodecs'
 ---
 
 :::warning
-[We are phasing out Remotion WebCodecs and are moving to Mediabunny](/blog/mediabunny)!
+[We are phasing out Picus WebCodecs and are moving to Mediabunny](/blog/mediabunny)!
 :::
 
-_Part of the [`@remotion/webcodecs`](/docs/webcodecs) package._
+_Part of the [`@picus/webcodecs`](/docs/webcodecs) package._
 
 :::warning
 **Unstable API**: This package is experimental. We might change the API at any time, until we remove this notice.
@@ -23,11 +23,11 @@ You can obtain an `AudioTrack` using [`parseMedia()`](/docs/media-parser/parse-m
 ## Examples
 
 ```tsx twoslash title="Check if an audio track can be copied"
-import {parseMedia} from '@remotion/media-parser';
-import {canCopyAudioTrack} from '@remotion/webcodecs';
+import {parseMedia} from '@picus/media-parser';
+import {canCopyAudioTrack} from '@picus/webcodecs';
 
 const {tracks, container} = await parseMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   fields: {
     tracks: true,
     container: true,
@@ -47,10 +47,10 @@ for (const track of audioTracks) {
 ```
 
 ```tsx twoslash title="Copy an audio track to Opus, otherwise drop it"
-import {convertMedia, canCopyAudioTrack} from '@remotion/webcodecs';
+import {convertMedia, canCopyAudioTrack} from '@picus/webcodecs';
 
 await convertMedia({
-  src: 'https://remotion.media/BigBuckBunny.mp4',
+  src: 'https://picus.media/BigBuckBunny.mp4',
   container: 'webm',
   videoCodec: 'vp8',
   audioCodec: 'opus',
@@ -76,25 +76,25 @@ await convertMedia({
 
 ### `inputCodec`
 
-_string_ <TsType type="MediaParserAudioCodec" source="@remotion/media-parser" />
+_string_ <TsType type="MediaParserAudioCodec" source="@picus/media-parser" />
 
 The codec of the input audio track.
 
 ### `inputContainer`
 
-_string_ <TsType type="MediaParserContainer" source="@remotion/media-parser" />
+_string_ <TsType type="MediaParserContainer" source="@picus/media-parser" />
 
 The container format of the input media.
 
 ### `outputContainer`
 
-_string_ <TsType type="ConvertMediaContainer" source="@remotion/webcodecs" />
+_string_ <TsType type="ConvertMediaContainer" source="@picus/webcodecs" />
 
 The container format of the output media.
 
 ### `outputAudioCodec`
 
-_string | null_ <TsType type="ConvertMediaAudioCodec" source="@remotion/webcodecs" />
+_string | null_ <TsType type="ConvertMediaAudioCodec" source="@picus/webcodecs" />
 
 The desired audio codec of the output media. If `null`, it means you don't care about the audio codec as long as it can be copied.
 
@@ -104,7 +104,7 @@ Returns a `boolean`.
 
 ## See also
 
-- [Source code for this function on GitHub](https://github.com/remotion-dev/remotion/blob/main/packages/webcodecs/src/can-copy-audio-track.ts)
+- [Source code for this function on GitHub](https://github.com/picus-dev/picus/blob/main/packages/webcodecs/src/can-copy-audio-track.ts)
 - [`canCopyVideoTrack()`](/docs/webcodecs/can-copy-video-track)
 - [`canReencodeAudioTrack()`](/docs/webcodecs/can-reencode-audio-track)
 - [`convertMedia()`](/docs/webcodecs/convert-media)

@@ -1,4 +1,4 @@
-import type {LogLevel} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
 import {getRolePolicy} from '../../../api/iam-validation/suggested-policy';
 import {Log} from '../../log';
 export const ROLE_SUBCOMMAND = 'role';

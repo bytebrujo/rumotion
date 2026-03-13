@@ -1,5 +1,5 @@
 {
-	"name": "@remotion/animated-emoji",
+	"name": "@picus/animated-emoji",
 	"version": "4.0.434",
 	"main": "dist/cjs/index.js",
 	"types": "dist/cjs/index.d.ts",
@@ -22,27 +22,27 @@
 	},
 	"author": "Yehor Misiats (https://github.com/satelllte)",
 	"maintainers": [
-		"Jonny Burger <jonny@remotion.dev>"
+		"Jonny Burger <jonny@picus.dev>"
 	],
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"keywords": [],
 	"publishConfig": {
 		"access": "public"
 	},
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/animated-emoji"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/animated-emoji"
 	},
-	"homepage": "https://www.remotion.dev/docs/animated-emoji",
-	"description": "Google Fonts Animated Emojis as Remotion components",
+	"homepage": "https://www.picus.dev/docs/animated-emoji",
+	"description": "Google Fonts Animated Emojis as Picus components",
 	"devDependencies": {
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	}

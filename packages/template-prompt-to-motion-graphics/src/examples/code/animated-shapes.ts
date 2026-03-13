@@ -1,7 +1,7 @@
-import { RemotionExample } from "./index";
+import { PicusExample } from "./index";
 
-export const animatedShapesCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
-import { Circle, Triangle, Rect, Star } from "@remotion/shapes";
+export const animatedShapesCode = `import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "picus";
+import { Circle, Triangle, Rect, Star } from "@picus/shapes";
 
 export const MyAnimation = () => {
   const frame = useCurrentFrame();
@@ -82,7 +82,7 @@ export const MyAnimation = () => {
   );
 };`;
 
-export const animatedShapesExample: RemotionExample = {
+export const animatedShapesExample: PicusExample = {
   id: "animated-shapes",
   name: "Animated Shapes",
   description: "Bouncing and rotating SVG shapes with spring animations",

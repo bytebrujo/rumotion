@@ -1,11 +1,11 @@
 ---
 image: /generated/articles-docs-transitions-presentations-cube.png
-crumb: "@remotion/transitions - Presentations"
+crumb: "@picus/transitions - Presentations"
 title: "cube()"
 ---
 
 :::note
-This is a paid item which you can [buy here](https://remotion.pro/cube-transition).
+This is a paid item which you can [buy here](https://picus.pro/cube-transition).
 :::
 
 A presentation where both the entering and exiting scene rotate with 3D perspective.
@@ -15,7 +15,7 @@ A presentation where both the entering and exiting scene rotate with 3D perspect
 ## Example
 
 ```tsx twoslash title="CubeTransition.tsx"
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -37,8 +37,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import { linearTiming, TransitionSeries } from "@remotion/transitions";
-import { cube } from "@remotion-dev/cube-presentation";
+import { linearTiming, TransitionSeries } from "@picus/transitions";
+import { cube } from "@picus-dev/cube-presentation";
 
 const BasicTransition = () => {
   return (
@@ -67,7 +67,7 @@ The `cube()` function does take an object with the following properties:
 One of `from-left`, `from-right`, `from-top`, `from-bottom`.
 
 ```tsx twoslash
-import { CubeDirection } from "@remotion-dev/cube-presentation";
+import { CubeDirection } from "@picus-dev/cube-presentation";
 
 const flipDirection: CubeDirection = "from-left";
 ```

@@ -8,13 +8,13 @@ crumb: "How To"
 import Tabs from "@theme/Tabs";
 import TabItem from '@theme/TabItem';
 
-In Remotion 2.0, the traditional transpilation of Javascript and Typescript using the `babel-loader` has been replaced by the faster `esbuild-loader` by default.
+In Picus 2.0, the traditional transpilation of Javascript and Typescript using the `babel-loader` has been replaced by the faster `esbuild-loader` by default.
 
 If you for some reason need to go back to the previous behavior, you may [override the Webpack configuration](/docs/webpack). Remember that overriding the Webpack configuration works reducer-style, where you get the default configuration in a function argument and you return the modified version of your config.
 
-We provide a compatibility package `@remotion/babel-loader` that you can install into your Remotion project and use the function `replaceLoadersWithBabel()` to swap out the ESBuild loader with the old Babel one that was in Remotion 1.0
+We provide a compatibility package `@picus/babel-loader` that you can install into your Picus project and use the function `replaceLoadersWithBabel()` to swap out the ESBuild loader with the old Babel one that was in Picus 1.0
 
-This should not be necessary in general, it is encouraged to [report issues](https://github.com/remotion-dev/remotion/issues/new) regarding the new ESBuild loader.
+This should not be necessary in general, it is encouraged to [report issues](https://github.com/picus-dev/picus/issues/new) regarding the new ESBuild loader.
 
 ## Example
 
@@ -50,10 +50,10 @@ yarn add babel-loader @babel/preset-env @babel/preset-react
   </TabItem>
 </Tabs>
 
-```ts twoslash title="remotion.config.ts"
-import { Config } from "@remotion/cli/config";
+```ts twoslash title="picus.config.ts"
+import { Config } from "@picus/cli/config";
 // ---cut---
-import { replaceLoadersWithBabel } from "@remotion/babel-loader";
+import { replaceLoadersWithBabel } from "@picus/babel-loader";
 
 Config.overrideWebpackConfig((currentConfiguration) => {
   return replaceLoadersWithBabel(currentConfiguration);
@@ -66,13 +66,13 @@ When using the Node.JS APIs - [`bundle()`](/docs/bundle) for SSR or [`deploySite
 
 ```ts twoslash title="my-script.js"
 // @filename: ./src/webpack-override.ts
-import { WebpackOverrideFn } from "@remotion/bundler";
+import { WebpackOverrideFn } from "@picus/bundler";
 export const webpackOverride: WebpackOverrideFn = (c) => c;
-// @filename: remotion.config.ts
+// @filename: picus.config.ts
 // @target: esnext
 // ---cut---
-import { bundle } from "@remotion/bundler";
-import { replaceLoadersWithBabel } from "@remotion/babel-loader";
+import { bundle } from "@picus/bundler";
+import { replaceLoadersWithBabel } from "@picus/babel-loader";
 
 await bundle({
   entryPoint: require.resolve("./src/index.ts"),

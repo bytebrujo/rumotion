@@ -4,7 +4,7 @@ use crate::opened_stream::calc_position;
 use crate::opened_video_manager::OpenedVideoManager;
 use crate::payloads::payloads::OpenVideoStats;
 use std::io::ErrorKind;
-extern crate ffmpeg_next as remotionffmpeg;
+extern crate ffmpeg_next as picusffmpeg;
 
 pub fn get_open_video_stats(
     frame_cache_manager: &mut FrameCacheManager,

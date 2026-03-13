@@ -1,6 +1,6 @@
 import type {IncomingMessage, ServerResponse} from 'node:http';
-import type {LogLevel} from '@remotion/renderer';
-import type {RenderJobWithCleanup} from '@remotion/studio-shared';
+import type {LogLevel} from '@picus/renderer';
+import type {RenderJobWithCleanup} from '@picus/studio-shared';
 
 export type QueueMethods = {
 	removeJob: (jobId: string) => void;
@@ -8,12 +8,12 @@ export type QueueMethods = {
 	addJob: ({
 		job,
 		entryPoint,
-		remotionRoot,
+		picusRoot,
 		logLevel,
 	}: {
 		job: RenderJobWithCleanup;
 		entryPoint: string;
-		remotionRoot: string;
+		picusRoot: string;
 		logLevel: LogLevel;
 	}) => void;
 };
@@ -21,7 +21,7 @@ export type QueueMethods = {
 export type ApiHandler<ReqData, ResData> = (params: {
 	input: ReqData;
 	entryPoint: string;
-	remotionRoot: string;
+	picusRoot: string;
 	request: IncomingMessage;
 	response: ServerResponse;
 	logLevel: LogLevel;

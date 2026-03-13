@@ -1,5 +1,5 @@
 import React from 'react';
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 
 const bestFramesPerLambdaParam = (frameCount: number) => {
 	// Between 0 and 10 minutes (at 30fps), interpolate the concurrency from 75 to 150

@@ -18,8 +18,8 @@ const scriptMap: Record<string, string> = {
 const generatedDir = path.join('src', 'generated');
 mkdirSync(generatedDir, {recursive: true});
 
-// Bundle each script separately so that `remotion` imports are inlined,
-// while `@remotion/renderer`, `@vercel/blob`, `fs`, etc. stay external.
+// Bundle each script separately so that `picus` imports are inlined,
+// while `@picus/renderer`, `@vercel/blob`, `fs`, etc. stay external.
 const scriptBundles: Record<string, string> = {};
 for (const [name, entrypoint] of Object.entries(scriptMap)) {
 	writeFileSync(
@@ -30,7 +30,7 @@ for (const [name, entrypoint] of Object.entries(scriptMap)) {
 	const scriptOutput = await build({
 		entrypoints: [entrypoint],
 		target: 'node',
-		external: ['@remotion/renderer', '@vercel/blob', 'fs'],
+		external: ['@picus/renderer', '@vercel/blob', 'fs'],
 	});
 
 	if (!scriptOutput.success) {
@@ -46,9 +46,9 @@ const output = await build({
 	naming: '[name].mjs',
 	target: 'node',
 	external: [
-		'remotion',
-		'remotion/no-react',
-		'remotion/version',
+		'picus',
+		'picus/no-react',
+		'picus/version',
 		'@vercel/sandbox',
 		'@vercel/blob',
 	],

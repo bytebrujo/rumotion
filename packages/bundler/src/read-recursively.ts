@@ -1,9 +1,9 @@
 import fs, {statSync} from 'node:fs';
 import path from 'node:path';
-import type {StaticFile} from 'remotion';
+import type {StaticFile} from 'picus';
 
 // There can be symbolic links that point to files that don't exist.
-// https://github.com/remotion-dev/remotion/issues/2587
+// https://github.com/picus-dev/picus/issues/2587
 const statOrNull = (p: string) => {
 	try {
 		return statSync(p);

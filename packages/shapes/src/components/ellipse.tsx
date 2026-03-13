@@ -10,7 +10,7 @@ export type EllipseProps = MakeEllipseOptions & AllShapesProps;
  * @description Renders an SVG element drawing an ellipse.
  * @param {Number} rx The radius of the ellipse on the X axis.
  * @param {Number} ry The radius of the ellipse on the Y axis.
- * @see [Documentation](https://www.remotion.dev/docs/shapes/ellipse)
+ * @see [Documentation](https://www.picus.dev/docs/shapes/ellipse)
  */
 
 export const Ellipse: React.FC<EllipseProps> = ({rx, ry, ...props}) => {

@@ -3,7 +3,7 @@ import path from 'node:path';
 import type {
 	ApplyVisualControlRequest,
 	ApplyVisualControlResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import {parseAst, serializeAst} from '../../codemods/parse-ast';
 import {applyCodemod} from '../../codemods/recast-mods';
 import type {ApiHandler} from '../api-types';
@@ -11,9 +11,9 @@ import type {ApiHandler} from '../api-types';
 export const applyVisualControlHandler: ApiHandler<
 	ApplyVisualControlRequest,
 	ApplyVisualControlResponse
-> = ({input: {fileName, changes}, remotionRoot}) => {
-	const absolutePath = path.resolve(remotionRoot, fileName);
-	const fileRelativeToRoot = path.relative(remotionRoot, absolutePath);
+> = ({input: {fileName, changes}, picusRoot}) => {
+	const absolutePath = path.resolve(picusRoot, fileName);
+	const fileRelativeToRoot = path.relative(picusRoot, absolutePath);
 	if (fileRelativeToRoot.startsWith('..')) {
 		throw new Error(
 			'Cannot apply visual control change to a file outside the project',

@@ -1,7 +1,7 @@
-import type {RecastCodemod} from '@remotion/studio-shared';
+import type {RecastCodemod} from '@picus/studio-shared';
 import type {ChangeEventHandler} from 'react';
 import React, {useCallback, useContext, useMemo, useState} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {pushUrl} from '../../helpers/url-state';
 import {
 	validateCompositionDimension,
@@ -21,7 +21,7 @@ import {Combobox} from './ComboBox';
 import {DismissableModal} from './DismissableModal';
 import {InputDragger} from './InputDragger';
 import {NewCompDuration} from './NewCompDuration';
-import {RemotionInput} from './RemInput';
+import {PicusInput} from './RemInput';
 import {ValidationMessage} from './ValidationMessage';
 
 const content: React.CSSProperties = {
@@ -244,7 +244,7 @@ const DuplicateCompositionLoaded: React.FC<{
 						<div style={label}>ID</div>
 						<div style={rightRow}>
 							<div>
-								<RemotionInput
+								<PicusInput
 									value={newId}
 									onChange={onNameChange}
 									type="text"

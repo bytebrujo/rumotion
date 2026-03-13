@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/three"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/three"
 	},
-	"name": "@remotion/three",
+	"name": "@picus/three",
 	"version": "4.0.434",
-	"description": "Include React Three Fiber components in a Remotion video",
+	"description": "Include React Three Fiber components in a Picus video",
 	"main": "dist/cjs/index.js",
 	"types": "dist/cjs/index.d.ts",
 	"module": "dist/esm/index.mjs",
@@ -19,17 +19,17 @@
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"peerDependencies": {
 		"@react-three/fiber": ">=8.0.0",
 		"react": ">=16.8.0",
 		"react-dom": ">=16.8.0",
 		"three": ">=0.137.0",
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"devDependencies": {
 		"@react-three/fiber": "catalog:",
@@ -38,14 +38,14 @@
 		"@types/web": "catalog:",
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"three": "catalog:",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"ffmpeg",
 		"video",
 		"react",
@@ -64,5 +64,5 @@
 			"require": "./dist/cjs/index.js"
 		}
 	},
-	"homepage": "https://www.remotion.dev/docs/three"
+	"homepage": "https://www.picus.dev/docs/three"
 }

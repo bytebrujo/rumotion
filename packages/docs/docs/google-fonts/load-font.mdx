@@ -1,12 +1,12 @@
 ---
 image: /generated/articles-docs-google-fonts-load-font.png
 title: loadFont()
-crumb: '@remotion/google-fonts'
+crumb: '@picus/google-fonts'
 ---
 
-_Part of the [`@remotion/google-fonts`](/docs/google-fonts) package_
+_Part of the [`@picus/google-fonts`](/docs/google-fonts) package_
 
-Load a [Google Font](https://fonts.google.com) for use in Remotion.
+Load a [Google Font](https://fonts.google.com) for use in Picus.
 
 - Automatically blocks the render until the font is ready
 - Offers a way to narrow down weights, styles and character subsets.
@@ -17,8 +17,8 @@ Load a [Google Font](https://fonts.google.com) for use in Remotion.
 For production, load only the variants you need.
 
 ```tsx twoslash title="Load one style, weight and subset"
-import {loadFont} from '@remotion/google-fonts/Lobster';
-import {AbsoluteFill} from 'remotion';
+import {loadFont} from '@picus/google-fonts/Lobster';
+import {AbsoluteFill} from 'picus';
 
 const {fontFamily} = loadFont('normal', {
   weights: ['400'],
@@ -51,8 +51,8 @@ A large font file paired with limited bandwidth can lead to a render timeout. By
 If you want to load multiple styles, use multiple `loadFont()` statements and narrow each call.
 
 ```tsx twoslash title="Load a specific style, weight and subset"
-import {AbsoluteFill} from 'remotion';
-import {fontFamily, loadFont} from '@remotion/google-fonts/Lobster';
+import {AbsoluteFill} from 'picus';
+import {fontFamily, loadFont} from '@picus/google-fonts/Lobster';
 
 const {waitUntilDone} = loadFont('normal', {
   weights: ['400'],
@@ -149,7 +149,7 @@ Unicode range information about the font.
 A function that returns a promise that resolves when the font is loaded.
 
 ```tsx title="Load a font in the background"
-import {loadFont} from '@remotion/google-fonts/Lobster';
+import {loadFont} from '@picus/google-fonts/Lobster';
 
 loadFont('normal', {
   weights: ['400'],
@@ -164,4 +164,4 @@ loadFont('normal', {
 ## See also
 
 - [Fonts](/docs/fonts)
-- [`@remotion/google-fonts`](/docs/google-fonts)
+- [`@picus/google-fonts`](/docs/google-fonts)

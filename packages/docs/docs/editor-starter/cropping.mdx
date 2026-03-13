@@ -10,7 +10,7 @@ With cropping, users can choose to cut off edges of an item in all 4 directions 
 
 ## State
 
-Cropping was implemented in PR [#415](https://github.com/remotion-dev/editor-starter/pull/415), merged on November 27th, 2025.
+Cropping was implemented in PR [#415](https://github.com/picus-dev/editor-starter/pull/415), merged on November 27th, 2025.
 
 It introduces new fields for items:
 
@@ -21,7 +21,7 @@ If you have existing state without these fields, the Editor Starter should handl
 
 ## Feature Flag
 
-Cropping can be globally disabled by setting the feature flag [`FEATURE_CROPPING`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter%20FEATURE_CROPPING&type=code) to `false`.
+Cropping can be globally disabled by setting the feature flag [`FEATURE_CROPPING`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter%20FEATURE_CROPPING&type=code) to `false`.
 
 ## Items supporting cropping
 
@@ -40,7 +40,7 @@ For example, it should not be possible to have `cropLeft` set to `0.5` and `crop
 
 ## Ways of cropping
 
-Crop can be controlled in the inspector using sliders (feature flag: [`FEATURE_CROP_CONTROL`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter%20FEATURE_CROP_CONTROL&type=code)).  
+Crop can be controlled in the inspector using sliders (feature flag: [`FEATURE_CROP_CONTROL`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter%20FEATURE_CROP_CONTROL&type=code)).  
 Alternatively, cropping can be done on the canvas by activating [Crop Mode](#crop-mode).
 
 ## Crop Mode
@@ -49,13 +49,13 @@ By double-clicking an item that is croppable on the canvas, "Crop Mode" is activ
 
 On any of the 8 handles, the user can drag to control the crop values.
 
-Feature flag: [`FEATURE_DOUBLE_CLICK_TO_CROP`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter%20FEATURE_DOUBLE_CLICK_TO_CROP&type=code)
+Feature flag: [`FEATURE_DOUBLE_CLICK_TO_CROP`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter%20FEATURE_DOUBLE_CLICK_TO_CROP&type=code)
 
 ## Crop Backgrounds
 
 When crop mode is activated, the full uncropped item is shown in the background with reduced opacity, to help the user visualize the cutout area. The actual opacity of the item is overridden to be `1` temporarily to ensure contrast.
 
-Feature flag: [`FEATURE_CROP_BACKGROUNDS`](https://github.com/search?q=repo%3Aremotion-dev%2Feditor-starter%20FEATURE_CROP_BACKGROUNDS&type=code)
+Feature flag: [`FEATURE_CROP_BACKGROUNDS`](https://github.com/search?q=repo%3Apicus-dev%2Feditor-starter%20FEATURE_CROP_BACKGROUNDS&type=code)
 
 ## Negative crop values
 

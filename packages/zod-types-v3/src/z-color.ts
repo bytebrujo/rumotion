@@ -1,7 +1,7 @@
-import {ZodZypesInternals} from '@remotion/zod-types';
+import {ZodZypesInternals} from '@picus/zod-types';
 import {z} from 'zod';
 
-const {parseColor, REMOTION_COLOR_BRAND} = ZodZypesInternals;
+const {parseColor, PICUS_COLOR_BRAND} = ZodZypesInternals;
 
 export const zColor = () =>
 	z
@@ -17,4 +17,4 @@ export const zColor = () =>
 			},
 			{message: 'Invalid color'},
 		)
-		.describe(REMOTION_COLOR_BRAND);
+		.describe(PICUS_COLOR_BRAND);

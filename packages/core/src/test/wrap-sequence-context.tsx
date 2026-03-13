@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {BufferingProvider} from '../buffering.js';
-import {CanUseRemotionHooksProvider} from '../CanUseRemotionHooks.js';
+import {CanUsePicusHooksProvider} from '../CanUsePicusHooks.js';
 import type {CompositionManagerContext} from '../CompositionManagerContext.js';
 import {CompositionManager} from '../CompositionManagerContext.js';
 import type {LoggingContextValue} from '../log-level-context.js';
@@ -84,13 +84,13 @@ export const WrapSequenceContext: React.FC<{
 	return (
 		<LogLevelContext.Provider value={logContext}>
 			<BufferingProvider>
-				<CanUseRemotionHooksProvider>
+				<CanUsePicusHooksProvider>
 					<MaybeTimelineProvider>
 						<CompositionManager.Provider value={mockCompositionContext}>
 							{children}
 						</CompositionManager.Provider>
 					</MaybeTimelineProvider>
-				</CanUseRemotionHooksProvider>
+				</CanUsePicusHooksProvider>
 			</BufferingProvider>
 		</LogLevelContext.Provider>
 	);

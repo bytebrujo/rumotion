@@ -1,4 +1,4 @@
-# @remotion/compositor-win32-x64-msvc
+# @picus/compositor-win32-x64-msvc
 
 ## Usage
 

@@ -1,7 +1,7 @@
 import path from 'node:path';
-import {enableScss} from '@remotion/enable-scss';
-import {enableSkia} from '@remotion/skia/enable';
-import {enableTailwind} from '@remotion/tailwind-v4';
+import {enableScss} from '@picus/enable-scss';
+import {enableSkia} from '@picus/skia/enable';
+import {enableTailwind} from '@picus/tailwind-v4';
 
 const WEBPACK_OR_ESBUILD = 'esbuild';
 
@@ -14,34 +14,34 @@ const resolveCwd = (p) => {
 // this is so the studio live reloads when the CJS modules are changed
 // probably a bad idea and we should slowly get rid of the ones which compile MJS with turbo
 const aliases = {
-	'@remotion/gif': resolveCwd('@remotion/gif'),
-	'@remotion/layout-utils': resolveCwd('@remotion/layout-utils'),
-	'@remotion/lottie': resolveCwd('@remotion/lottie'),
-	'@remotion/media-utils': resolveCwd('@remotion/media-utils'),
-	'@remotion/motion-blur': resolveCwd('@remotion/motion-blur'),
-	'@remotion/noise': resolveCwd('@remotion/noise'),
-	'@remotion/paths': resolveCwd('@remotion/paths'),
-	'@remotion/fonts': resolveCwd('@remotion/fonts'),
-	'@remotion/player': resolveCwd('@remotion/player'),
-	'@remotion/preload': resolveCwd('@remotion/preload'),
-	'@remotion/rive': resolveCwd('@remotion/rive'),
-	'@remotion/shapes': resolveCwd('@remotion/shapes'),
-	'@remotion/animated-emoji': resolveCwd('@remotion/animated-emoji'),
-	'@remotion/skia': resolveCwd('@remotion/skia'),
-	'@remotion/three': resolveCwd('@remotion/three'),
-	'@remotion/transitions/fade': resolveCwd('@remotion/transitions/fade'),
-	'@remotion/transitions/slide': resolveCwd('@remotion/transitions/slide'),
-	'@remotion/transitions/flip': resolveCwd('@remotion/transitions/flip'),
-	'@remotion/transitions/clock-wipe': resolveCwd(
-		'@remotion/transitions/clock-wipe',
+	'@picus/gif': resolveCwd('@picus/gif'),
+	'@picus/layout-utils': resolveCwd('@picus/layout-utils'),
+	'@picus/lottie': resolveCwd('@picus/lottie'),
+	'@picus/media-utils': resolveCwd('@picus/media-utils'),
+	'@picus/motion-blur': resolveCwd('@picus/motion-blur'),
+	'@picus/noise': resolveCwd('@picus/noise'),
+	'@picus/paths': resolveCwd('@picus/paths'),
+	'@picus/fonts': resolveCwd('@picus/fonts'),
+	'@picus/player': resolveCwd('@picus/player'),
+	'@picus/preload': resolveCwd('@picus/preload'),
+	'@picus/rive': resolveCwd('@picus/rive'),
+	'@picus/shapes': resolveCwd('@picus/shapes'),
+	'@picus/animated-emoji': resolveCwd('@picus/animated-emoji'),
+	'@picus/skia': resolveCwd('@picus/skia'),
+	'@picus/three': resolveCwd('@picus/three'),
+	'@picus/transitions/fade': resolveCwd('@picus/transitions/fade'),
+	'@picus/transitions/slide': resolveCwd('@picus/transitions/slide'),
+	'@picus/transitions/flip': resolveCwd('@picus/transitions/flip'),
+	'@picus/transitions/clock-wipe': resolveCwd(
+		'@picus/transitions/clock-wipe',
 	),
-	'@remotion/transitions/wipe': resolveCwd('@remotion/transitions/wipe'),
-	'@remotion/transitions': resolveCwd('@remotion/transitions'),
-	'@remotion/zod-types': resolveCwd('@remotion/zod-types'),
+	'@picus/transitions/wipe': resolveCwd('@picus/transitions/wipe'),
+	'@picus/transitions': resolveCwd('@picus/transitions'),
+	'@picus/zod-types': resolveCwd('@picus/zod-types'),
 };
 
 /**
- * @typedef {import('@remotion/bundler').WebpackOverrideFn} WebpackOverrideFn
+ * @typedef {import('@picus/bundler').WebpackOverrideFn} WebpackOverrideFn
  */
 export const webpackOverride = (currentConfiguration) => {
 	const replaced = (() => {
@@ -54,7 +54,7 @@ export const webpackOverride = (currentConfiguration) => {
 					'..',
 					'example',
 					'node_modules',
-					'@remotion/babel-loader',
+					'@picus/babel-loader',
 				),
 			);
 			return replaceLoadersWithBabel(currentConfiguration);

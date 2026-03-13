@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import type {TSequence} from 'remotion';
+import type {TSequence} from 'picus';
 import {calculateTimeline} from '../helpers/calculate-timeline';
 
 test('Should calculate sequences correctly', () => {

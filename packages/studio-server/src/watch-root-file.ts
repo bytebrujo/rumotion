@@ -3,10 +3,10 @@ import {waitForLiveEventsListener} from './preview-server/live-events';
 import {getProjectInfo} from './preview-server/project-info';
 
 export const watchRootFile = async (
-	remotionRoot: string,
+	picusRoot: string,
 	entryPoint: string,
 ) => {
-	const rootFile = await getProjectInfo(remotionRoot, entryPoint);
+	const rootFile = await getProjectInfo(picusRoot, entryPoint);
 	if (!rootFile.rootFile) {
 		return;
 	}

@@ -3,7 +3,7 @@ import path from 'node:path';
 import type {
 	SaveSequencePropsRequest,
 	SaveSequencePropsResponse,
-} from '@remotion/studio-shared';
+} from '@picus/studio-shared';
 import {updateSequenceProps} from '../../codemods/update-sequence-props';
 import type {ApiHandler} from '../api-types';
 import {suppressHmrForFile} from '../hmr-suppression';
@@ -14,12 +14,12 @@ export const saveSequencePropsHandler: ApiHandler<
 	SaveSequencePropsResponse
 > = async ({
 	input: {fileName, nodePath, key, value, defaultValue},
-	remotionRoot,
+	picusRoot,
 	logLevel,
 }) => {
 	try {
-		const absolutePath = path.resolve(remotionRoot, fileName);
-		const fileRelativeToRoot = path.relative(remotionRoot, absolutePath);
+		const absolutePath = path.resolve(picusRoot, fileName);
+		const fileRelativeToRoot = path.relative(picusRoot, absolutePath);
 		if (fileRelativeToRoot.startsWith('..')) {
 			throw new Error('Cannot modify a file outside the project');
 		}

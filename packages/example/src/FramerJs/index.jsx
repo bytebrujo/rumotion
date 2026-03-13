@@ -1,4 +1,4 @@
-import {random, useCurrentFrame} from 'remotion';
+import {random, useCurrentFrame} from 'picus';
 
 function selectColor(color, frame) {
 	return Math.floor((random(`${color}-${frame}`) * 255) % 255);

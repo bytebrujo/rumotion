@@ -3,13 +3,13 @@ image: /generated/articles-docs-lambda-ruby.png
 title: Triggering renders from Ruby
 slug: /lambda/ruby
 sidebar_label: Rendering from Ruby
-crumb: '@remotion/lambda'
+crumb: '@picus/lambda'
 ---
 
 _available from v4.0.232_
 
-To trigger a Lambda render using Ruby, install the [`remotion_lambda`](https://rubygems.org/gems/remotion_lambda) gem.  
-The version should be the same version of the `@remotion/lambda` NPM package version that you used to deploy your function.
+To trigger a Lambda render using Ruby, install the [`picus_lambda`](https://rubygems.org/gems/picus_lambda) gem.  
+The version should be the same version of the `@picus/lambda` NPM package version that you used to deploy your function.
 
 ## Notes
 
@@ -24,13 +24,13 @@ The version should be the same version of the `@remotion/lambda` NPM package ver
 ## Rendering a video and getting the progress
 
 ```rb title="Rendering a video from Ruby"
-require 'remotion_lambda'
+require 'picus_lambda'
 
-client = RemotionLambda::Client.new(
+client = PicusLambda::Client.new(
   region: 'eu-central-1',
 )
 
-function_name = ENV.fetch('REMOTION_APP_FUNCTION_NAME')
+function_name = ENV.fetch('PICUS_APP_FUNCTION_NAME')
 
 payload = get_render_media_on_lambda_payload(
   composition: "still-helloworld",
@@ -61,13 +61,13 @@ end
 ## Rendering a still
 
 ```ruby title="Rendering a still from Ruby"
-require 'remotion_lambda'
+require 'picus_lambda'
 
-client = RemotionLambda::Client.new(
+client = PicusLambda::Client.new(
   region: 'eu-central-1',
 )
 
-function_name = ENV.fetch('REMOTION_APP_FUNCTION_NAME')
+function_name = ENV.fetch('PICUS_APP_FUNCTION_NAME')
 
 payload = get_render_still_on_lambda_payload(
   composition: "still-helloworld",
@@ -82,5 +82,5 @@ puts res
 
 ## See also
 
-- [Ruby gem `remotion_lambda`](https://rubygems.org/gems/remotion_lambda)
-- [Source code for this SDK](https://github.com/remotion-dev/remotion/tree/main/packages/lambda-ruby)
+- [Ruby gem `picus_lambda`](https://rubygems.org/gems/picus_lambda)
+- [Source code for this SDK](https://github.com/picus-dev/picus/tree/main/packages/lambda-ruby)

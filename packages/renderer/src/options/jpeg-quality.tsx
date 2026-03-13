@@ -1,5 +1,5 @@
 import {DEFAULT_JPEG_QUALITY, validateJpegQuality} from '../jpeg-quality';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const defaultValue = DEFAULT_JPEG_QUALITY;
 let quality: number = defaultValue;
@@ -29,7 +29,7 @@ export const jpegQualityOption = {
 		</>
 	),
 	ssrName: 'jpegQuality',
-	docLink: 'https://www.remotion.dev/docs/renderer/render-media#jpeg-quality',
+	docLink: 'https://www.picus.dev/docs/renderer/render-media#jpeg-quality',
 	type: 0 as number,
 	setConfig: setJpegQuality,
 	getValue: ({commandLine}) => {
@@ -54,4 +54,4 @@ export const jpegQualityOption = {
 		};
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<number>;
+} satisfies AnyPicusOption<number>;

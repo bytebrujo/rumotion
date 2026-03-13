@@ -1,13 +1,13 @@
 {
-  "name": "remotion/lambda-php-example",
+  "name": "picus/lambda-php-example",
   "type": "project",
-  "description": "Example project for using Remotion Lambda PHP",
+  "description": "Example project for using Picus Lambda PHP",
   "scripts": {
     "render": "php src/render.php"
   },
   "autoload": {
     "psr-4": {
-      "remotion\\LambdaPhpExample\\": "src/"
+      "picus\\LambdaPhpExample\\": "src/"
     }
   },
   "authors": [],
@@ -19,6 +19,6 @@
   ],
   "require": {
     "vlucas/phpdotenv": "^5.5",
-    "remotion/lambda": "4.0.434"
+    "picus/lambda": "4.0.434"
   }
 }

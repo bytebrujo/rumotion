@@ -1,9 +1,9 @@
-import {interpolate} from 'remotion';
+import {interpolate} from 'picus';
 import type {TransitionTiming} from '../types.js';
 
 /*
  * @description A timing function for `<TransitionSeries>` based on `interpolate()`.
- * @see [Documentation](https://www.remotion.dev/docs/transitions/timings/lineartiming)
+ * @see [Documentation](https://www.picus.dev/docs/transitions/timings/lineartiming)
  */
 export const linearTiming = (options: {
 	durationInFrames: number;

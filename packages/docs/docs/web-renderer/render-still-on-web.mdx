@@ -2,27 +2,27 @@
 image: /generated/articles-docs-web-renderer-render-still-on-web.png
 id: render-still-on-web
 title: renderStillOnWeb()
-crumb: '@remotion/web-renderer'
+crumb: '@picus/web-renderer'
 ---
 
 # renderStillOnWeb()<AvailableFrom v="4.0.397" />
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.  
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
-_Part of the `@remotion/web-renderer` package._
+_Part of the `@picus/web-renderer` package._
 
 Renders a single frame to an image in the browser.  
 If you want to render a video instead, use [`renderMediaOnWeb()`](/docs/web-renderer/render-media-on-web).
 
 ```tsx twoslash title="Example usage"
-import {renderStillOnWeb} from '@remotion/web-renderer';
-import {Video} from '@remotion/media';
+import {renderStillOnWeb} from '@picus/web-renderer';
+import {Video} from '@picus/media';
 
 const Component: React.FC = () => {
-  return <Video src="https://remotion.media/video.mp4" />;
+  return <Video src="https://picus.media/video.mp4" />;
 };
 
 const {blob} = await renderStillOnWeb({
@@ -64,7 +64,7 @@ Which frame of the composition should be rendered. Frames are zero-indexed.
 
 ### `imageFormat`
 
-_string_ <TsType type="RenderStillOnWebImageFormat" source="@remotion/web-renderer" href="/docs/web-renderer/types#renderstillonwebimageformat" />
+_string_ <TsType type="RenderStillOnWebImageFormat" source="@picus/web-renderer" href="/docs/web-renderer/types#renderstillonwebimageformat" />
 
 The format of the output image.
 
@@ -94,7 +94,7 @@ Default is `30000`.
 
 ### `logLevel?`
 
-_string_ <TsType type="LogLevel" source="remotion" />
+_string_ <TsType type="LogLevel" source="picus" />
 
 Determines how much information is logged during rendering.  
 Default is `"info"`.
@@ -118,7 +118,7 @@ const composition = {
 };
 
 // ---cut---
-import {renderStillOnWeb} from '@remotion/web-renderer';
+import {renderStillOnWeb} from '@picus/web-renderer';
 
 const controller = new AbortController();
 
@@ -187,7 +187,7 @@ const composition = {
 };
 
 // ---cut---
-import {renderStillOnWeb} from '@remotion/web-renderer';
+import {renderStillOnWeb} from '@picus/web-renderer';
 
 const {blob} = await renderStillOnWeb({
   composition,
@@ -204,7 +204,7 @@ document.body.appendChild(img);
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/web-renderer/src/render-still-on-web.tsx)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/web-renderer/src/render-still-on-web.tsx)
 - [Client-side rendering](/docs/client-side-rendering)
 - [`renderMediaOnWeb()`](/docs/web-renderer/render-media-on-web)
 - [`renderStill()`](/docs/renderer/render-still)

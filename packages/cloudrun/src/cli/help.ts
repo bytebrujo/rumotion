@@ -1,5 +1,5 @@
-import {CliInternals} from '@remotion/cli';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import type {LogLevel} from '@picus/renderer';
 import {BINARY_NAME} from '../shared/constants';
 import {PERMISSIONS_COMMAND} from './commands/permissions';
 import {REGIONS_COMMAND} from './commands/regions';
@@ -16,7 +16,7 @@ export const printHelp = (logLevel: LogLevel) => {
 		{indent: false, logLevel},
 		`${BINARY_NAME} ${
 			packagejson.version
-		} © ${new Date().getFullYear()} The Remotion developers`,
+		} © ${new Date().getFullYear()} The Picus developers`,
 	);
 	Log.info({indent: false, logLevel});
 	Log.info({indent: false, logLevel}, 'Available commands:');
@@ -26,14 +26,14 @@ export const printHelp = (logLevel: LogLevel) => {
 	Log.info({indent: false, logLevel}, `${BINARY_NAME} ${RENDER_COMMAND}`);
 	Log.info(
 		{indent: false, logLevel},
-		CliInternals.chalk.gray('Render Remotion media on GCP Cloud Run.'),
+		CliInternals.chalk.gray('Render Picus media on GCP Cloud Run.'),
 	);
 
 	Log.info({indent: false, logLevel});
 	Log.info({indent: false, logLevel}, `${BINARY_NAME} ${STILL_COMMAND}`);
 	Log.info(
 		{indent: false, logLevel},
-		CliInternals.chalk.gray('Render Remotion still on GCP Cloud Run.'),
+		CliInternals.chalk.gray('Render Picus still on GCP Cloud Run.'),
 	);
 
 	Log.info({indent: false, logLevel});
@@ -47,7 +47,7 @@ export const printHelp = (logLevel: LogLevel) => {
 	Log.info({indent: false, logLevel}, `${BINARY_NAME} ${SITES_COMMAND}`);
 	Log.info(
 		{indent: false, logLevel},
-		CliInternals.chalk.gray('Deploy and manage Remotion projects.'),
+		CliInternals.chalk.gray('Deploy and manage Picus projects.'),
 	);
 
 	Log.info({indent: false, logLevel});

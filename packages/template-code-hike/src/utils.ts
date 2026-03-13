@@ -1,5 +1,5 @@
 import { TokenTransition } from "codehike/utils/token-transitions";
-import { interpolate, interpolateColors } from "remotion";
+import { interpolate, interpolateColors } from "picus";
 
 export function applyStyle({
   element,

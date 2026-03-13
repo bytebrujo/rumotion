@@ -46,9 +46,9 @@ test('Parse warning from chrome', () => {
 	});
 });
 
-test('Parse CONSOLE message with Remotion tags', () => {
+test('Parse CONSOLE message with Picus tags', () => {
 	const parsed = parseBrowserLogMessage(
-		'[0130/114618.909798:INFO:CONSOLE:18851] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 59ms", source: http://localhost:3001/bundle.js (18851)',
+		'[0130/114618.909798:INFO:CONSOLE:18851] "Symbol(__picus_tag_delayRender()) Symbol(__picus_level_verbose) "Loading root component - See https://picus.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 59ms", source: http://localhost:3001/bundle.js (18851)',
 	);
 	expect(parsed).toEqual({
 		day: 1,
@@ -61,7 +61,7 @@ test('Parse CONSOLE message with Remotion tags', () => {
 		location: 'CONSOLE',
 		lineNumber: 18851,
 		message:
-			'"Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 59ms", source: http://localhost:3001/bundle.js (18851)',
+			'"Symbol(__picus_tag_delayRender()) Symbol(__picus_level_verbose) "Loading root component - See https://picus.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 59ms", source: http://localhost:3001/bundle.js (18851)',
 	});
 
 	const location = parseChromeLogLocation(parsed?.message ?? '');

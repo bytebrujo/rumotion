@@ -1,6 +1,6 @@
 import {existsSync} from 'node:fs';
 import path from 'node:path';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import type {RenderMediaOnDownload} from './assets/download-and-map-assets-to-file';
 import {attachDownloadListenerToEmitter} from './assets/download-and-map-assets-to-file';
 import type {DownloadMap} from './assets/download-map';
@@ -20,7 +20,7 @@ import {
 } from './symbolicate-stacktrace';
 import {waitForSymbolicationToBeDone} from './wait-for-symbolication-error-to-be-done';
 
-export type RemotionServer = {
+export type PicusServer = {
 	serveUrl: string;
 	closeServer: (force: boolean) => Promise<unknown>;
 	offthreadPort: number;
@@ -32,7 +32,7 @@ export type RemotionServer = {
 type PrepareServerOptions = {
 	webpackConfigOrServeUrl: string;
 	port: number | null;
-	remotionRoot: string;
+	picusRoot: string;
 	offthreadVideoThreads: number;
 	logLevel: LogLevel;
 	indent: boolean;
@@ -44,14 +44,14 @@ type PrepareServerOptions = {
 export const prepareServer = async ({
 	webpackConfigOrServeUrl,
 	port,
-	remotionRoot,
+	picusRoot,
 	offthreadVideoThreads,
 	logLevel,
 	indent,
 	offthreadVideoCacheSizeInBytes,
 	binariesDirectory,
 	forceIPv4,
-}: PrepareServerOptions): Promise<RemotionServer> => {
+}: PrepareServerOptions): Promise<PicusServer> => {
 	const downloadMap = makeDownloadMap();
 	Log.verbose(
 		{indent, logLevel},
@@ -67,7 +67,7 @@ export const prepareServer = async ({
 		} = await serveStatic(null, {
 			port,
 			downloadMap,
-			remotionRoot,
+			picusRoot,
 			offthreadVideoThreads,
 			logLevel,
 			indent,
@@ -141,7 +141,7 @@ export const prepareServer = async ({
 	} = await serveStatic(webpackConfigOrServeUrl, {
 		port,
 		downloadMap,
-		remotionRoot,
+		picusRoot,
 		offthreadVideoThreads,
 		logLevel,
 		indent,
@@ -172,7 +172,7 @@ export const prepareServer = async ({
 };
 
 export const makeOrReuseServer = async (
-	server: RemotionServer | undefined,
+	server: PicusServer | undefined,
 	config: PrepareServerOptions,
 	{
 		onDownload,
@@ -180,7 +180,7 @@ export const makeOrReuseServer = async (
 		onDownload: RenderMediaOnDownload | null;
 	},
 ): Promise<{
-	server: RemotionServer;
+	server: PicusServer;
 	cleanupServer: (force: boolean) => Promise<unknown>;
 }> => {
 	if (server) {

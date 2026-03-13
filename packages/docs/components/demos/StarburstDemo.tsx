@@ -1,6 +1,6 @@
-import {Starburst} from '@remotion/starburst';
+import {Starburst} from '@picus/starburst';
 import React from 'react';
-import {AbsoluteFill, useVideoConfig} from 'remotion';
+import {AbsoluteFill, useVideoConfig} from 'picus';
 
 interface Props {
 	readonly rays: number;

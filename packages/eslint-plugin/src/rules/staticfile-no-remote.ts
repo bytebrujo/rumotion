@@ -1,7 +1,7 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
 const createRule = ESLintUtils.RuleCreator(() => {
-	return `https://remotion.dev/docs/staticfile-remote-urls`;
+	return `https://picus.dev/docs/staticfile-remote-urls`;
 });
 
 type Options = [];
@@ -10,7 +10,7 @@ type MessageIds = 'RelativePathStaticFile';
 
 const RelativePathStaticFile = [
 	"Don't pass a remote URL to staticFile().",
-	'See: https://remotion.dev/docs/staticfile-remote-urls',
+	'See: https://picus.dev/docs/staticfile-remote-urls',
 ].join('\n');
 
 export default createRule<Options, MessageIds>({

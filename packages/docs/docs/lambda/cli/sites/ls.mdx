@@ -1,13 +1,13 @@
 ---
 image: /generated/articles-docs-lambda-cli-sites-ls.png
 sidebar_label: ls
-title: 'npx remotion lambda sites ls'
+title: 'npx picus lambda sites ls'
 slug: /lambda/cli/sites/ls
 crumb: 'Lambda CLI Reference'
 ---
 
 ```
-npx remotion lambda sites ls
+npx picus lambda sites ls
 ```
 
 Get a list of sites. The URL that is printed can be passed to the `render` command to render a video.
@@ -17,13 +17,13 @@ Get a list of sites. The URL that is printed can be passed to the `render` comma
   <pre>
     Site Name Bucket Size Last updated
     <br />
-    pr6fwglz05 remotionlambda-abcdefg 14.7 MB 2021-12-02
+    pr6fwglz05 picuslambda-abcdefg 14.7 MB 2021-12-02
     <br />
-    https://remotionlambda-abcdefg.s3.eu-central-1.amazonaws.com/sites/pr6fwglz05/index.html
+    https://picuslambda-abcdefg.s3.eu-central-1.amazonaws.com/sites/pr6fwglz05/index.html
     <br />
     <br />
-    testbed remotionlambda-abcdefg 14.7 MB 2021-12-02 <br />
-    https://remotionlambda-abcdefg.s3.eu-central-1.amazonaws.com/sites/testbed/index.html
+    testbed picuslambda-abcdefg 14.7 MB 2021-12-02 <br />
+    https://picuslambda-abcdefg.s3.eu-central-1.amazonaws.com/sites/testbed/index.html
     <br />
   </pre>
 </details>
@@ -37,7 +37,7 @@ The [AWS region](/docs/lambda/region-selection) to select. Both project and func
 Returns only a list of space-separated sites.
 
 ```
-npx remotion lambda sites ls -q
+npx picus lambda sites ls -q
 ```
 
 <details>
@@ -50,7 +50,7 @@ npx remotion lambda sites ls -q
 
 ## `--compatible-only`<AvailableFrom v="4.0.435" />
 
-If passed, only sites whose Remotion version matches the installed version of `@remotion/lambda` are returned.
+If passed, only sites whose Picus version matches the installed version of `@picus/lambda` are returned.
 
 ## `--force-path-style`<AvailableFrom v="4.0.202" />
 

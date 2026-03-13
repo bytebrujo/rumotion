@@ -1,10 +1,10 @@
-import {parsePath} from '@remotion/paths';
+import {parsePath} from '@picus/paths';
 import {
 	extrudeAndTransformElement,
 	reduceMatrices,
 	translateX,
 	translateY,
-} from '@remotion/svg-3d-engine';
+} from '@picus/svg-3d-engine';
 import {Faces} from '../3DEngine/Faces';
 import {useRect} from './path-context';
 import {useTransformations} from './transformation-context';

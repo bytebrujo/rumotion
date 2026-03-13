@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useMemo} from 'react';
-import type {_InternalTypes, VideoConfig} from 'remotion';
-import {Internals} from 'remotion';
+import type {_InternalTypes, VideoConfig} from 'picus';
+import {Internals} from 'picus';
 import {LIGHT_TEXT} from '../../helpers/colors';
 import {Spacing} from '../layout';
 import {inlineCodeSnippet} from '../Menu/styles';

@@ -10,7 +10,7 @@ A physics-based animation primitive.
 Example usage:
 
 ```tsx twoslash title="spring-example.ts"
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'picus';
 // ---cut---
 const frame = useCurrentFrame();
 const {fps} = useVideoConfig();
@@ -32,7 +32,7 @@ To disable the default bounce, increase the [`damping`](#damping) parameter.
 
 <Demo type="spring-damping" />
 
-For a more advanced playground, visit [remotion.dev/timing-editor](https://www.remotion.dev/timing-editor).
+For a more advanced playground, visit [picus.dev/timing-editor](https://www.picus.dev/timing-editor).
 
 ## Parameters
 
@@ -95,7 +95,7 @@ Determines whether the animation can shoot over the `to` value. If set to true, 
 Stretches the animation curve so it is exactly as long as you specify.
 
 ```tsx twoslash title="spring-example.ts"
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'picus';
 // ---cut---
 const frame = useCurrentFrame();
 const {fps} = useVideoConfig();
@@ -134,7 +134,7 @@ Here is the order of which the `durationInFrames`, `reverse` and `delay` operati
 
 ## Credit
 
-This function was taken from [Reanimated 2](https://github.com/software-mansion/react-native-reanimated), which in itself was a huge inspiration for Remotion.
+This function was taken from [Reanimated 2](https://github.com/software-mansion/react-native-reanimated), which in itself was a huge inspiration for Picus.
 
 ## Compatibility
 
@@ -143,6 +143,6 @@ This function was taken from [Reanimated 2](https://github.com/software-mansion/
 ## See also
 
 - [Spring animation example](/docs/animating-properties#using-spring-animations)
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/core/src/spring/index.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/core/src/spring/index.ts)
 - [`interpolate()`](/docs/interpolate)
 - [`measureSpring()`](/docs/measure-spring)

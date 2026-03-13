@@ -1,7 +1,7 @@
 import {expect, test} from 'bun:test';
 import {execSync} from 'child_process';
 import path from 'path';
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 
 test('Should be able to call ffmpeg from node_modules (not officially supported)', async () => {
 	const binary = RenderInternals.getExecutablePath({

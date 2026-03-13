@@ -2,14 +2,14 @@
 image: /generated/articles-docs-renderer-combine-chunks.png
 id: combine-chunks
 title: combineChunks()
-crumb: '@remotion/renderer'
+crumb: '@picus/renderer'
 ---
 
 # combineChunks()<AvailableFrom v="4.0.279" />
 
 Combine multiple video or audio chunks into a single output file. This function is useful for decentralized rendering workflows where different parts of a video are rendered separately and need to be combined.
 
-[Remotion Lambda](/docs/lambda) uses this API under the hood to combine chunks that were rendered on individual Lambda functions.
+[Picus Lambda](/docs/lambda) uses this API under the hood to combine chunks that were rendered on individual Lambda functions.
 
 :::note
 **Advanced API:** This is a hard-to-use API that most people should not use directly. Misusage of this API might lead to unpredictable behavior and potential audio and video artifacts. If you want a distributed rendering solution, use [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda). If you just want to render a video with multithreading enabled, use [`renderMedia()`](/docs/renderer/render-media).
@@ -18,7 +18,7 @@ Combine multiple video or audio chunks into a single output file. This function 
 ## Example
 
 ```tsx twoslash title="combine.mjs"
-import {combineChunks} from '@remotion/renderer';
+import {combineChunks} from '@picus/renderer';
 
 // Video files rendered as separate chunks
 const videoFiles = ['/path/to/chunk1.mp4', '/path/to/chunk2.mp4', '/path/to/chunk3.mp4'];
@@ -119,7 +119,7 @@ _function_
 Callback function to track the progress of the combining operation.
 
 ```tsx twoslash
-import {CombineChunksOnProgress} from '@remotion/renderer';
+import {CombineChunksOnProgress} from '@picus/renderer';
 
 const onProgress: CombineChunksOnProgress = ({totalProgress, frames}) => {
   console.log(`Combining is ${totalProgress * 100}% complete`);
@@ -171,5 +171,5 @@ The function returns a Promise that resolves when the combining process is compl
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/renderer/src/combine-chunks.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/renderer/src/combine-chunks.ts)
 - [`renderMedia()`](/docs/renderer/render-media)

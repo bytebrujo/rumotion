@@ -1,4 +1,4 @@
-import {PlayerInternals} from '@remotion/player';
+import {PlayerInternals} from '@picus/player';
 import type {SetStateAction} from 'react';
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import ReactDOM from 'react-dom';
@@ -24,7 +24,7 @@ const container: React.CSSProperties = {
 };
 
 export type MenuId =
-	| 'remotion'
+	| 'picus'
 	| 'file'
 	| 'view'
 	| 'install'

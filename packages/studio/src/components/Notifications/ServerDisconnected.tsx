@@ -39,7 +39,7 @@ window.addEventListener('beforeunload', () => {
 
 export const ServerDisconnected: React.FC = () => {
 	const {previewServerState: ctx} = useContext(StudioServerConnectionCtx);
-	const fav = document.getElementById('__remotion_favicon') as HTMLLinkElement;
+	const fav = document.getElementById('__picus_favicon') as HTMLLinkElement;
 
 	if (ctx.type !== 'disconnected') {
 		fav.setAttribute('href', '/favicon.ico');
@@ -59,11 +59,11 @@ export const ServerDisconnected: React.FC = () => {
 		<div style={container} className="css-reset">
 			<div style={message}>
 				The studio server has disconnected. <br />
-				{window.remotion_studioServerCommand ? (
+				{window.picus_studioServerCommand ? (
 					<span>
 						Run{' '}
 						<code style={inlineCode}>
-							{window.remotion_studioServerCommand}
+							{window.picus_studioServerCommand}
 						</code>{' '}
 						to run it again.
 					</span>

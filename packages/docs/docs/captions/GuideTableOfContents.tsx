@@ -16,7 +16,7 @@ export const GuideTableOfContents: React.FC = () => {
 				</TOCItem>
 				<TOCItem link="/docs/captions/displaying">
 					<strong>{'Displaying captions'}</strong>
-					<div>Render captions in your Remotion video</div>
+					<div>Render captions in your Picus video</div>
 				</TOCItem>
 				<TOCItem link="/docs/captions/exporting">
 					<strong>{'Exporting subtitles'}</strong>

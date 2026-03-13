@@ -1,5 +1,5 @@
-import {Circle} from '@remotion/shapes';
-import {Loop, Sequence, useCurrentFrame} from 'remotion';
+import {Circle} from '@picus/shapes';
+import {Loop, Sequence, useCurrentFrame} from 'picus';
 
 export const Tailwind = () => {
 	const frame = useCurrentFrame();

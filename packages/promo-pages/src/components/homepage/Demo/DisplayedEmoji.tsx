@@ -1,11 +1,11 @@
-import type {EmojiName} from '@remotion/animated-emoji';
+import type {EmojiName} from '@picus/animated-emoji';
 import {
 	getLottieMetadata,
 	Lottie,
 	type LottieAnimationData,
-} from '@remotion/lottie';
+} from '@picus/lottie';
 import React, {useEffect, useMemo, useState} from 'react';
-import {useDelayRender, useVideoConfig} from 'remotion';
+import {useDelayRender, useVideoConfig} from 'picus';
 
 type Data = {
 	duration: number;

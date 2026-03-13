@@ -1,4 +1,4 @@
-import {Internals, type LogLevel} from 'remotion';
+import {Internals, type LogLevel} from 'picus';
 import {keyframeManager} from '../caches';
 import {getSink} from '../get-sink';
 import {getTimeInSeconds} from '../get-time-in-seconds';
@@ -126,7 +126,7 @@ const extractFrameInternal = async ({
 		};
 	} catch (err) {
 		Internals.Log.info(
-			{logLevel, tag: '@remotion/media'},
+			{logLevel, tag: '@picus/media'},
 			`Error decoding ${src} at time ${timeInSeconds}: ${err}`,
 			err,
 		);

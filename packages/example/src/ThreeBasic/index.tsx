@@ -1,6 +1,6 @@
-import {ThreeCanvas} from '@remotion/three';
+import {ThreeCanvas} from '@picus/three';
 import React from 'react';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'picus';
 import {Mesh} from './Mesh';
 
 const ThreeBasic: React.FC = () => {

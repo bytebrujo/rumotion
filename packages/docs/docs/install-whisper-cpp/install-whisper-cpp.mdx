@@ -2,7 +2,7 @@
 image: /generated/articles-docs-install-whisper-cpp-install-whisper-cpp.png
 slug: install-whisper-cpp
 title: installWhisperCpp()
-crumb: '@remotion/install-whisper-cpp'
+crumb: '@picus/install-whisper-cpp'
 ---
 
 # installWhisperCpp()<AvailableFrom v="4.0.115"/>
@@ -11,7 +11,7 @@ Installs a Whisper.cpp version into a folder.
 
 ```tsx twoslash title="install-whisper.mjs"
 import path from 'path';
-import {installWhisperCpp} from '@remotion/install-whisper-cpp';
+import {installWhisperCpp} from '@picus/install-whisper-cpp';
 
 const {alreadyExisted} = await installWhisperCpp({
   to: path.join(process.cwd(), 'whisper.cpp'),
@@ -65,7 +65,7 @@ Whether the folder already existed. If it did, and contains the necessary execut
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/install-whisper-cpp/src/install-whisper-cpp.ts)
-- [`@remotion/install-whisper-cpp`](/docs/install-whisper-cpp)
-- [`@remotion/openai-whisper`](/docs/openai-whisper)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/install-whisper-cpp/src/install-whisper-cpp.ts)
+- [`@picus/install-whisper-cpp`](/docs/install-whisper-cpp)
+- [`@picus/openai-whisper`](/docs/openai-whisper)
 - [`downloadWhisperModel()`](/docs/install-whisper-cpp/download-whisper-model)

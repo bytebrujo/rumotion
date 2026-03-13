@@ -29,11 +29,11 @@ export const patchReadmeMd = (
 				return getDevCommand(packageManager, template);
 			}
 
-			if (c.startsWith('npx remotion render')) {
+			if (c.startsWith('npx picus render')) {
 				return getRenderCommand(packageManager);
 			}
 
-			if (c.startsWith('npx remotion upgrade')) {
+			if (c.startsWith('npx picus upgrade')) {
 				return getUpgradeCommand(packageManager);
 			}
 

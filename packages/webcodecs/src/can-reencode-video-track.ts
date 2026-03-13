@@ -1,4 +1,4 @@
-import type {MediaParserVideoTrack} from '@remotion/media-parser';
+import type {MediaParserVideoTrack} from '@picus/media-parser';
 import type {ConvertMediaVideoCodec} from './get-available-video-codecs';
 import type {ResizeOperation} from './resizing/mode';
 import {calculateNewDimensionsFromRotateAndScale} from './rotation';

@@ -7,7 +7,7 @@ crumb: 'FAQ'
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.  
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
 We try to support as much code that was written for [server-side rendering](/docs/ssr) as possible.  
@@ -15,15 +15,15 @@ Some code is unsupported or may need changing.
 
 You may start future-proofing your code now if you are interested in using [client-side rendering](/docs/client-side-rendering) in the future.
 
-## Use `useRemotionEnvironment()` instead of `getRemotionEnvironment()`
+## Use `usePicusEnvironment()` instead of `getPicusEnvironment()`
 
-[`getRemotionEnvironment()`](/docs/get-remotion-environment) is a global API that may conflict with other Remotion instances in your project, such as when you have a [`<Player>`](/docs/player) mounted on the same page.
+[`getPicusEnvironment()`](/docs/get-picus-environment) is a global API that may conflict with other Picus instances in your project, such as when you have a [`<Player>`](/docs/player) mounted on the same page.
 
-Start using the [`useRemotionEnvironment()`](/docs/use-remotion-environment) hook instead.
+Start using the [`usePicusEnvironment()`](/docs/use-picus-environment) hook instead.
 
 ## Use `useDelayRender()` instead of `delayRender()`, `continueRender()` and `cancelRender()`
 
-If you have multiple renders at the same time or another instance of Remotion on the same page, such as a `<Player>`, the [`delayRender()`](/docs/delay-render), [`continueRender()`](/docs/continue-render) and [`cancelRender()`](/docs/cancel-render) functions may conflict.
+If you have multiple renders at the same time or another instance of Picus on the same page, such as a `<Player>`, the [`delayRender()`](/docs/delay-render), [`continueRender()`](/docs/continue-render) and [`cancelRender()`](/docs/cancel-render) functions may conflict.
 
 Start using the [`useDelayRender()`](/docs/use-delay-render) hook instead, which scopes these functions to a composition.
 
@@ -49,7 +49,7 @@ The image is in a broken state.
 This usually means the image failed to load - check that the URL is valid and accessible.
 ```
 
-## Use `@remotion/media`
+## Use `@picus/media`
 
-The only video and audio tags that are supported are [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio) from `@remotion/media`.  
+The only video and audio tags that are supported are [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio) from `@picus/media`.  
 Migrate any `Html5Video`, `Html5Audio` and `<OffthreadVideo>` tags to [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio).

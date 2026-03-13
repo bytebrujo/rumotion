@@ -13,7 +13,7 @@ const ruleTester = new ESLintUtils.RuleTester({
 ruleTester.run('staticfile-no-relative', rule, {
 	valid: [
 		`
-import {Img, staticFile} from 'remotion';
+import {Img, staticFile} from 'picus';
 
 export const Re = () => {
   return (
@@ -22,7 +22,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Img, staticFile} from 'remotion';
+import {Img, staticFile} from 'picus';
 
 export const LeadingSlash = () => {
   return (
@@ -34,7 +34,7 @@ export const LeadingSlash = () => {
 	invalid: [
 		{
 			code: `
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
 staticFile("./relative.png")
       `,
@@ -46,7 +46,7 @@ staticFile("./relative.png")
 		},
 		{
 			code: `
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
 staticFile("./public/relative.png")
       `,
@@ -58,7 +58,7 @@ staticFile("./public/relative.png")
 		},
 		{
 			code: `
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
 staticFile("public/relative.png")
       `,
@@ -70,9 +70,9 @@ staticFile("public/relative.png")
 		},
 		{
 			code: `
-import {staticFile} from 'remotion';
+import {staticFile} from 'picus';
 
-staticFile("/Users/jonathanburger/remotion/packages/eslint-plugin")
+staticFile("/Users/jonathanburger/picus/packages/eslint-plugin")
       `,
 			errors: [
 				{

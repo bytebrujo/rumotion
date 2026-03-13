@@ -1,9 +1,9 @@
-import { Composition } from "remotion";
+import { Composition } from "picus";
 import { HelloSkia, helloSkiaSchema } from "./HelloSkia";
 
 // Each <Composition> is an entry in the sidebar!
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition

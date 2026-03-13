@@ -1,6 +1,6 @@
-import type {SequenceNodePath} from '@remotion/studio-shared';
+import type {SequenceNodePath} from '@picus/studio-shared';
 import React, {useMemo} from 'react';
-import type {TSequence} from 'remotion';
+import type {TSequence} from 'picus';
 import type {
 	CodePosition,
 	OriginalPosition,

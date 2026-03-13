@@ -1,4 +1,4 @@
-import type {Size} from '@remotion/player';
+import type {Size} from '@picus/player';
 import type {Guide} from '../state/editor-guides';
 import {MINIMUM_VISIBLE_CANVAS_SIZE} from '../state/editor-rulers';
 import {

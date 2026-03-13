@@ -1,5 +1,5 @@
 import type {google} from '@google-cloud/run/build/protos/protos';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 
 // taken from within the @google-cloud/run package, can't import it directly
 enum ExecutionEnvironment {
@@ -33,7 +33,7 @@ export const constructServiceTemplate = ({
 		},
 		containers: [
 			{
-				image: `us-docker.pkg.dev/remotion-dev/${
+				image: `us-docker.pkg.dev/picus-dev/${
 					process.env.ARTIFACT_REGISTRY_ENV ?? 'production'
 				}/render:${VERSION}`,
 				resources: {
@@ -47,6 +47,6 @@ export const constructServiceTemplate = ({
 		],
 		maxInstanceRequestConcurrency: 1,
 		executionEnvironment: ExecutionEnvironment.EXECUTION_ENVIRONMENT_GEN1,
-		serviceAccount: process.env.REMOTION_GCP_CLIENT_EMAIL,
+		serviceAccount: process.env.PICUS_GCP_CLIENT_EMAIL,
 	};
 };

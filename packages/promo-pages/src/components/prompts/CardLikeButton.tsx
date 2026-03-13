@@ -1,6 +1,6 @@
-import {Heart} from '@remotion/shapes';
+import {Heart} from '@picus/shapes';
 import React, {useCallback, useEffect, useState} from 'react';
-import {REMOTION_PRO_ORIGIN} from './config';
+import {PICUS_PRO_ORIGIN} from './config';
 import {
 	formatLikeCount,
 	getLikedIds,
@@ -30,7 +30,7 @@ export const CardLikeButton: React.FC<{
 				removeLikedId(submissionId);
 
 				try {
-					await fetch(`${REMOTION_PRO_ORIGIN}/api/prompts/unlike`, {
+					await fetch(`${PICUS_PRO_ORIGIN}/api/prompts/unlike`, {
 						method: 'POST',
 						headers: {'content-type': 'application/json'},
 						body: JSON.stringify({submissionId}),
@@ -45,7 +45,7 @@ export const CardLikeButton: React.FC<{
 				saveLikedId(submissionId);
 
 				try {
-					await fetch(`${REMOTION_PRO_ORIGIN}/api/prompts/like`, {
+					await fetch(`${PICUS_PRO_ORIGIN}/api/prompts/like`, {
 						method: 'POST',
 						headers: {'content-type': 'application/json'},
 						body: JSON.stringify({submissionId}),

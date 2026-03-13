@@ -13,12 +13,12 @@ window.videoFrames = [];
 window.errors = [];
 
 extractFrames({
-	src: 'https://remotion.media/video.mp4',
+	src: 'https://picus.media/video.mp4',
 	onFrame(frame) {
 		window.videoFrames.push(frame.timestamp);
 	},
 	timestampsInSeconds: [0, 1, 2, 3, 4],
-	acknowledgeRemotionLicense: true,
+	acknowledgePicusLicense: true,
 })
 	.catch((err) => {
 		window.errors.push(err);

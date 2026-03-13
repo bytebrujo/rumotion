@@ -1,12 +1,12 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {nodeReader} from '../node';
 import {parseMedia} from '../parse-media';
 
 test('different mp3 file with no id3 in front', async () => {
 	const {slowDurationInSeconds} = await parseMedia({
 		src: exampleVideos.mp3nomagicword,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 		fields: {
 			slowDurationInSeconds: true,

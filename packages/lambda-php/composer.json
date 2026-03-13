@@ -1,13 +1,13 @@
 {
-  "name": "remotion/lambda",
+  "name": "picus/lambda",
   "type": "library",
   "version": "4.0.434",
-  "description": "A PHP library for working with Remotion Lambda",
+  "description": "A PHP library for working with Picus Lambda",
   "license": "proprietary",
   "autoload": {
     "psr-4": {
-      "Remotion\\LambdaPhp\\": "src/",
-      "Remotion\\LambdaPhp\\Tests\\": "tests/"
+      "Picus\\LambdaPhp\\": "src/",
+      "Picus\\LambdaPhp\\Tests\\": "tests/"
     }
   },
   "require": {

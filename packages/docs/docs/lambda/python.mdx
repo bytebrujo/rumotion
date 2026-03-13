@@ -3,12 +3,12 @@ image: /generated/articles-docs-lambda-python.png
 title: Triggering renders from Python
 slug: /lambda/python
 sidebar_label: Rendering from Python
-crumb: '@remotion/lambda'
+crumb: '@picus/lambda'
 ---
 
 _available from v4.0.15_
 
-To trigger a Lambda render using Python, install the `remotion-lambda` package using `pip`, by executing `pip install remotion-lambda` from your python project. Use the same version as the `remotion` version you are using from NPM, e.g. `pip install remotion-lambda==4.0.15` (see [newest version](https://remotion.dev/changelog)).
+To trigger a Lambda render using Python, install the `picus-lambda` package using `pip`, by executing `pip install picus-lambda` from your python project. Use the same version as the `picus` version you are using from NPM, e.g. `pip install picus-lambda==4.0.15` (see [newest version](https://picus.dev/changelog)).
 
 You first need to [complete the Lambda setup](/docs/lambda/setup).
 
@@ -16,15 +16,15 @@ You first need to [complete the Lambda setup](/docs/lambda/setup).
 
 Before v4.0.315: Sending large input props (>200KB) was not supported.
 
-Starting from v4.0.315, the Python SDK automatically handles large input props by uploading them to S3 when they exceed AWS Lambda payload limits. Props larger than 200KB for video renders and 5MB for still renders are automatically compressed using the same logic as the JavaScript SDK. The SDK will automatically find or create an appropriate S3 bucket following Remotion's naming conventions.
+Starting from v4.0.315, the Python SDK automatically handles large input props by uploading them to S3 when they exceed AWS Lambda payload limits. Props larger than 200KB for video renders and 5MB for still renders are automatically compressed using the same logic as the JavaScript SDK. The SDK will automatically find or create an appropriate S3 bucket following Picus's naming conventions.
 
 ## Rendering a video
 
 Below is a snippet showing how to initiate a render request and get its status.
 
 ```python title="render_media.py"
-from remotion_lambda import RenderMediaParams, Privacy, ValidStillImageFormats
-from remotion_lambda import RemotionClient
+from picus_lambda import RenderMediaParams, Privacy, ValidStillImageFormats
+from picus_lambda import PicusClient
 import os
 from dotenv import load_dotenv
 
@@ -32,22 +32,22 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load env variables
-REMOTION_APP_REGION = os.getenv('REMOTION_APP_REGION')
-if not REMOTION_APP_REGION:
-    raise Exception("REMOTION_APP_REGION is not set")
+PICUS_APP_REGION = os.getenv('PICUS_APP_REGION')
+if not PICUS_APP_REGION:
+    raise Exception("PICUS_APP_REGION is not set")
 
-REMOTION_APP_FUNCTION_NAME = os.getenv('REMOTION_APP_FUNCTION_NAME')
-if not REMOTION_APP_FUNCTION_NAME:
-    raise Exception("REMOTION_APP_FUNCTION_NAME is not set")
+PICUS_APP_FUNCTION_NAME = os.getenv('PICUS_APP_FUNCTION_NAME')
+if not PICUS_APP_FUNCTION_NAME:
+    raise Exception("PICUS_APP_FUNCTION_NAME is not set")
 
-REMOTION_APP_SERVE_URL = os.getenv('REMOTION_APP_SERVE_URL')
-if not REMOTION_APP_SERVE_URL:
-    raise Exception("REMOTION_APP_SERVE_URL is not set")
+PICUS_APP_SERVE_URL = os.getenv('PICUS_APP_SERVE_URL')
+if not PICUS_APP_SERVE_URL:
+    raise Exception("PICUS_APP_SERVE_URL is not set")
 
 # Construct client
-client = RemotionClient(region=REMOTION_APP_REGION,
-                        serve_url=REMOTION_APP_SERVE_URL,
-                        function_name=REMOTION_APP_FUNCTION_NAME)
+client = PicusClient(region=PICUS_APP_REGION,
+                        serve_url=PICUS_APP_SERVE_URL,
+                        function_name=PICUS_APP_FUNCTION_NAME)
 
 # Set render request
 render_params = RenderMediaParams(
@@ -89,7 +89,7 @@ The Python SDK automatically handles large input props by uploading them to S3 w
 - Video/audio renders: Props larger than ~194KB
 - Still renders: Props larger than ~4.9MB
 
-When large props are detected, they are automatically uploaded to S3 and referenced by the Lambda function. The SDK will find an existing Remotion bucket or create a new one automatically, following the same logic as the JavaScript SDK. This process is transparent to the user.
+When large props are detected, they are automatically uploaded to S3 and referenced by the Lambda function. The SDK will find an existing Picus bucket or create a new one automatically, following the same logic as the JavaScript SDK. This process is transparent to the user.
 
 ```python title="large_props_example.py"
 # Large input props are handled automatically
@@ -113,8 +113,8 @@ response = client.render_media_on_lambda(render_params)
 Below is a snippet showing how to initiate a still image render. Note that it does not require monitoring the render progress.
 
 ```python title="render_still.py"
-from remotion_lambda import RenderStillParams, Privacy, ValidStillImageFormats
-from remotion_lambda import RemotionClient
+from picus_lambda import RenderStillParams, Privacy, ValidStillImageFormats
+from picus_lambda import PicusClient
 import os
 from dotenv import load_dotenv
 
@@ -122,22 +122,22 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load env variables
-REMOTION_APP_REGION = os.getenv('REMOTION_APP_REGION')
-if not REMOTION_APP_REGION:
-    raise Exception("REMOTION_APP_REGION is not set")
+PICUS_APP_REGION = os.getenv('PICUS_APP_REGION')
+if not PICUS_APP_REGION:
+    raise Exception("PICUS_APP_REGION is not set")
 
-REMOTION_APP_FUNCTION_NAME = os.getenv('REMOTION_APP_FUNCTION_NAME')
-if not REMOTION_APP_FUNCTION_NAME:
-    raise Exception("REMOTION_APP_FUNCTION_NAME is not set")
+PICUS_APP_FUNCTION_NAME = os.getenv('PICUS_APP_FUNCTION_NAME')
+if not PICUS_APP_FUNCTION_NAME:
+    raise Exception("PICUS_APP_FUNCTION_NAME is not set")
 
-REMOTION_APP_SERVE_URL = os.getenv('REMOTION_APP_SERVE_URL')
-if not REMOTION_APP_SERVE_URL:
-    raise Exception("REMOTION_APP_SERVE_URL is not set")
+PICUS_APP_SERVE_URL = os.getenv('PICUS_APP_SERVE_URL')
+if not PICUS_APP_SERVE_URL:
+    raise Exception("PICUS_APP_SERVE_URL is not set")
 
 # Construct client
-client = RemotionClient(region=REMOTION_APP_REGION,
-                        serve_url=REMOTION_APP_SERVE_URL,
-                        function_name=REMOTION_APP_FUNCTION_NAME,
+client = PicusClient(region=PICUS_APP_REGION,
+                        serve_url=PICUS_APP_SERVE_URL,
+                        function_name=PICUS_APP_FUNCTION_NAME,
                         access_key=None, #  deprecated, use session instead
                         secret_key=None, # deprecated, use session instead
                         force_path_style=False, # By default False
@@ -167,7 +167,7 @@ if render_response:
 
 ### 4.0.380
 
-- Added `config` and `session` parameters to `RemotionClient` constructor.
+- Added `config` and `session` parameters to `PicusClient` constructor.
 - Less error repackaging, redirecting more AWS errors directly to the user.
 
 ### 4.0.82

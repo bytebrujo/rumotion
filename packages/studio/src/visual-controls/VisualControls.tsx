@@ -8,7 +8,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {useRemotionEnvironment} from 'remotion';
+import {usePicusEnvironment} from 'picus';
 import {getZodSchemaFromPrimitive} from '../api/get-zod-schema-from-primitive';
 import {useZodIfPossible} from '../components/get-zod-if-possible';
 import type {AnyZodSchema} from '../components/RenderModal/SchemaEditor/zod-schema-type';
@@ -112,7 +112,7 @@ export const VisualControlsProvider: React.FC<{
 	const z = useZodIfPossible();
 
 	const changedRef = useRef(false);
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	const visualControl = useCallback(
 		// eslint-disable-next-line prefer-arrow-callback

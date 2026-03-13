@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let userAgent: string | null = null;
 
@@ -13,7 +13,7 @@ export const userAgentOption = {
 		</>
 	),
 	ssrName: 'userAgent' as const,
-	docLink: 'https://www.remotion.dev/docs/chromium-flags#--user-agent',
+	docLink: 'https://www.picus.dev/docs/chromium-flags#--user-agent',
 	type: null as string | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -39,4 +39,4 @@ export const userAgentOption = {
 		userAgent = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<string | null>;
+} satisfies AnyPicusOption<string | null>;

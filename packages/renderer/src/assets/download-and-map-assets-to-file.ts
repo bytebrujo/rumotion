@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path, {extname} from 'node:path';
-import type {AudioOrVideoAsset} from 'remotion/no-react';
-import {random} from 'remotion/no-react';
+import type {AudioOrVideoAsset} from 'picus/no-react';
+import {random} from 'picus/no-react';
 import {isAssetCompressed} from '../compress-assets';
 import {ensureOutputDirectory} from '../ensure-output-directory';
 import type {LogLevel} from '../log-level';
@@ -105,7 +105,7 @@ const notifyAssetIsDownloaded = ({
 const validateMimeType = (mimeType: string, src: string) => {
 	if (!mimeType.includes('/')) {
 		const errMessage = [
-			'A data URL was passed but did not have the correct format so that Remotion could convert it for the video to be rendered.',
+			'A data URL was passed but did not have the correct format so that Picus could convert it for the video to be rendered.',
 			'The format of the data URL must be `data:[mime-type];[encoding],[data]`.',
 			'The `mime-type` parameter must be a valid mime type.',
 			'The data that was received is (truncated to 100 characters):',
@@ -135,7 +135,7 @@ function validateBufferEncoding(
 	];
 	if (!validEncodings.find((en) => asserted === en)) {
 		const errMessage = [
-			'A data URL was passed but did not have the correct format so that Remotion could convert it for the video to be rendered.',
+			'A data URL was passed but did not have the correct format so that Picus could convert it for the video to be rendered.',
 			'The format of the data URL must be `data:[mime-type];[encoding],[data]`.',
 			'The `encoding` parameter must be one of the following:',
 			`${validEncodings.join(' ')}.`,
@@ -208,7 +208,7 @@ export const downloadAsset = async ({
 		const [assetDetails, assetData] = src.substring('data:'.length).split(',');
 		if (!assetDetails.includes(';')) {
 			const errMessage = [
-				'A data URL was passed but did not have the correct format so that Remotion could convert it for the video to be rendered.',
+				'A data URL was passed but did not have the correct format so that Picus could convert it for the video to be rendered.',
 				'The format of the data URL must be `data:[mime-type];[encoding],[data]`.',
 				'The data that was received is (truncated to 100 characters):',
 				src.substring(0, 100),

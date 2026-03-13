@@ -1,5 +1,5 @@
 import {memo, useCallback, useContext, useMemo} from 'react';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {SELECTED_GUIDE, UNSELECTED_GUIDE} from '../../helpers/colors';
 import type {Guide} from '../../state/editor-guides';
 import {
@@ -117,16 +117,16 @@ const GuideComp: React.FC<{
 			<div
 				style={guideStyle}
 				onMouseDown={onMouseDown}
-				className="__remotion_editor_guide"
+				className="__picus_editor_guide"
 				onPointerEnter={onPointerEnter}
 				onPointerLeave={onPointerLeave}
 			>
 				<div
 					style={guideContentStyle}
 					className={[
-						'__remotion_editor_guide_content',
+						'__picus_editor_guide_content',
 						selectedGuideId === guide.id || hoveredGuideId === guide.id
-							? '__remotion_editor_guide_selected'
+							? '__picus_editor_guide_selected'
 							: null,
 					]
 						.filter(NoReactInternals.truthy)

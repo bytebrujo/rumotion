@@ -1,6 +1,6 @@
 /*
  * @description Validates that the signature received by a webhook endpoint is authentic. If validation fails, an error is thrown.
- * @see [Documentation](https://remotion.dev/docs/lambda/validatewebhooksignature)
+ * @see [Documentation](https://picus.dev/docs/lambda/validatewebhooksignature)
  */
 export const validateWebhookSignature = ({
 	secret,

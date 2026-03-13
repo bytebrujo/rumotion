@@ -1,8 +1,8 @@
 ---
 image: /generated/articles-docs-studio-deploy-static.png
-title: Deploy Remotion Studio as static site
+title: Deploy Picus Studio as static site
 sidebar_label: Deploy as static site
-crumb: 'Remotion Studio'
+crumb: 'Picus Studio'
 ---
 
 _available from v4.0.97_
@@ -10,17 +10,17 @@ _available from v4.0.97_
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-You can deploy the Remotion Studio as a static site, for example to Vercel or Netlify.  
+You can deploy the Picus Studio as a static site, for example to Vercel or Netlify.  
 Server-side rendering will not be available, but if you enable [client-side rendering](/docs/client-side-rendering), you can render videos directly in the browser.  
 The deployed URL may also be used as a [Serve URL](/docs/terminology/serve-url) to pass to rendering APIs.  
-Make sure you are on at least v4.0.97 to use this feature - use `npx remotion upgrade` to upgrade.
+Make sure you are on at least v4.0.97 to use this feature - use `npx picus upgrade` to upgrade.
 
-## Export the Remotion Studio as a static site
+## Export the Picus Studio as a static site
 
-To export the Remotion Studio as a static site, run the [`remotion bundle`](/docs/cli/bundle) command:
+To export the Picus Studio as a static site, run the [`picus bundle`](/docs/cli/bundle) command:
 
 ```bash
-npx remotion bundle
+npx picus bundle
 ```
 
 The output will be in the `build` folder.  
@@ -32,11 +32,11 @@ To deploy to Vercel, connect your repository to Vercel.
 
 In the "Build and Output" settings, enable "OVERRIDE" and set the following:
 
-- **Build Command**: `bunx remotion bundle`
+- **Build Command**: `bunx picus bundle`
 - **Output Directory**: `build`
 - **Installation Command**: _Leave default_
 
-![Alt text](https://github.com/remotion-dev/remotion/assets/86873911/ac38e1fb-0c95-4f64-b2b9-b72b90d69f22)
+![Alt text](https://github.com/picus-dev/picus/assets/86873911/ac38e1fb-0c95-4f64-b2b9-b72b90d69f22)
 
 :::note
 Using bunx as a script runner is slightly faster than using `npx`.
@@ -47,7 +47,7 @@ Using bunx as a script runner is slightly faster than using `npx`.
 Connect your repository to Netlify.
 
 - **Base directory**: _Leave default_
-- **Build command**: `npx remotion bundle`
+- **Build command**: `npx picus bundle`
 - **Publish directory**: `build`
 - **Functions directory**: _Leave default_
 
@@ -56,7 +56,7 @@ Connect your repository to Netlify.
 <Step>1</Step> Create the following file in your repo:
 
 ```yaml title=".github/workflows/deploy-studio.yml"
-name: Deploy Remotion studio
+name: Deploy Picus studio
 on:
   workflow_dispatch:
   push:
@@ -74,17 +74,17 @@ jobs:
       - name: install packages
         run: npm i
       - name: Bundle Studio
-        run: npx remotion bundle --public-path="./"
+        run: npx picus bundle --public-path="./"
       - name: Deploy Studio
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build
 ```
 
-The above code will deploy the bundled Remotion Studio to a branch `gh-pages`.
+The above code will deploy the bundled Picus Studio to a branch `gh-pages`.
 
 :::note
-The --public-path flag for `npx remotion bundle` is available only from remotion version `4.0.127`
+The --public-path flag for `npx picus bundle` is available only from picus version `4.0.127`
 :::
 
 <Step>3</Step> Go to the settings of your repository (github.com/[username]/[repo]/settings/pages) <br />
@@ -111,13 +111,13 @@ values={[
 Minimal example:
 
 ```bash
-npx remotion render https://remotion-helloworld.vercel.app
+npx picus render https://picus-helloworld.vercel.app
 ```
 
 Specify "HelloWorld" [composition ID](/docs/terminology/composition#composition-id) and [input props](/docs/terminology/input-props):
 
 ```bash
-npx remotion render https://remotion-helloworld.vercel.app HelloWorld --props '{"titleText":"Hello World"}'
+npx picus render https://picus-helloworld.vercel.app HelloWorld --props '{"titleText":"Hello World"}'
 ```
 
   </TabItem>
@@ -126,14 +126,14 @@ npx remotion render https://remotion-helloworld.vercel.app HelloWorld --props '{
 ```tsx twoslash title="render.mjs"
 const outputLocation = '/path/to/frames';
 
-import {renderMedia, selectComposition} from '@remotion/renderer';
+import {renderMedia, selectComposition} from '@picus/renderer';
 
 // ---cut---
 const inputProps = {
   titleText: 'Hello World',
 };
 
-const serveUrl = 'https://remotion-helloworld.vercel.app';
+const serveUrl = 'https://picus-helloworld.vercel.app';
 
 const composition = await selectComposition({
   serveUrl,
@@ -156,18 +156,18 @@ Refer to [`renderMedia()`](/docs/renderer/render-media) to see all available opt
   <TabItem value="lambda">
 
 ```bash title="CLI"
-npx remotion lambda render https://remotion-helloworld.vercel.app HelloWorld --props '{"titleText":"Hello World"}'
+npx picus lambda render https://picus-helloworld.vercel.app HelloWorld --props '{"titleText":"Hello World"}'
 ```
 
 ```tsx twoslash title="Node.js/Bun"
 // ---cut---
-import {renderMediaOnLambda} from '@remotion/lambda/client';
+import {renderMediaOnLambda} from '@picus/lambda/client';
 
 const {bucketName, renderId} = await renderMediaOnLambda({
   region: 'us-east-1',
-  functionName: 'remotion-render-bds9aab',
+  functionName: 'picus-render-bds9aab',
   composition: 'HelloWorld',
-  serveUrl: 'https://remotion-helloworld.vercel.app',
+  serveUrl: 'https://picus-helloworld.vercel.app',
   codec: 'h264',
   inputProps: {
     titleText: 'Hello World',
@@ -175,25 +175,25 @@ const {bucketName, renderId} = await renderMediaOnLambda({
 });
 ```
 
-You need to complete the [Remotion Lambda Setup](/docs/lambda/setup) first.
+You need to complete the [Picus Lambda Setup](/docs/lambda/setup) first.
 
   </TabItem>
 
   <TabItem value="cloudrun">
 
 ```bash title="CLI"
-npx remotion cloudrun render https://remotion-helloworld.vercel.app HelloWorld --props '{"titleText":"Hello World"}'
+npx picus cloudrun render https://picus-helloworld.vercel.app HelloWorld --props '{"titleText":"Hello World"}'
 ```
 
 ```tsx twoslash title="Node.js/Bun"
 // ---cut---
-import {renderMediaOnCloudrun} from '@remotion/cloudrun/client';
+import {renderMediaOnCloudrun} from '@picus/cloudrun/client';
 
 const result = await renderMediaOnCloudrun({
   region: 'us-east1',
-  serviceName: 'remotion-render-bds9aab',
+  serviceName: 'picus-render-bds9aab',
   composition: 'HelloWorld',
-  serveUrl: 'https://remotion-helloworld.vercel.app',
+  serveUrl: 'https://picus-helloworld.vercel.app',
   codec: 'h264',
   inputProps: {
     titleText: 'Hello World!',
@@ -206,7 +206,7 @@ if (result.type === 'success') {
 }
 ```
 
-You need to complete the [Remotion Cloud Run Setup](/docs/cloudrun) first.
+You need to complete the [Picus Cloud Run Setup](/docs/cloudrun) first.
 
   </TabItem>
 </Tabs>

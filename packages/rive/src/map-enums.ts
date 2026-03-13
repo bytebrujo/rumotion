@@ -4,7 +4,7 @@ import type {
 	RiveCanvas,
 } from '@rive-app/canvas-advanced';
 
-export type RemotionRiveCanvasFit =
+export type PicusRiveCanvasFit =
 	| 'contain'
 	| 'cover'
 	| 'fill'
@@ -13,7 +13,7 @@ export type RemotionRiveCanvasFit =
 	| 'scale-down'
 	| 'fit-width';
 
-export const mapToFit = (fit: RemotionRiveCanvasFit, canvas: RiveCanvas) => {
+export const mapToFit = (fit: PicusRiveCanvasFit, canvas: RiveCanvas) => {
 	if (fit === 'contain') {
 		return canvas.Fit.contain;
 	}
@@ -45,7 +45,7 @@ export const mapToFit = (fit: RemotionRiveCanvasFit, canvas: RiveCanvas) => {
 	throw new Error('Invalid fit: ' + fit);
 };
 
-export type RemotionRiveCanvasAlignment =
+export type PicusRiveCanvasAlignment =
 	| 'center'
 	| 'bottom-center'
 	| 'bottom-left'
@@ -57,7 +57,7 @@ export type RemotionRiveCanvasAlignment =
 	| 'top-right';
 
 export const mapToAlignment = (
-	alignment: RemotionRiveCanvasAlignment,
+	alignment: PicusRiveCanvasAlignment,
 	factory: AlignmentFactory,
 ): Alignment => {
 	if (alignment === 'center') {

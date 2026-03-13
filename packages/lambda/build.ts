@@ -1,7 +1,7 @@
 import fs, {cpSync, readdirSync} from 'node:fs';
 import path from 'node:path';
-import {BundlerInternals} from '@remotion/bundler';
-import {dir} from '@remotion/compositor-linux-arm64-gnu';
+import {BundlerInternals} from '@picus/bundler';
+import {dir} from '@picus/compositor-linux-arm64-gnu';
 import {$} from 'bun';
 import {FUNCTION_ZIP_ARM64} from './src/shared/function-zip-path';
 
@@ -32,7 +32,7 @@ await BundlerInternals.esbuild.build({
 const filesInCwd = readdirSync(dir);
 const filesToCopy = filesInCwd.filter(
 	(f) =>
-		f.startsWith('remotion') ||
+		f.startsWith('picus') ||
 		f.endsWith('.so') ||
 		f.endsWith('.dll') ||
 		f.endsWith('.dylib') ||

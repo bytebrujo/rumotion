@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let forceNewEnabled = false;
 
@@ -14,7 +14,7 @@ export const forceNewStudioOption = {
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/config#setforcenewstudioenabled',
+	docLink: 'https://www.picus.dev/docs/config#setforcenewstudioenabled',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -33,4 +33,4 @@ export const forceNewStudioOption = {
 		forceNewEnabled = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

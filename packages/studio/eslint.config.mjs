@@ -1,6 +1,6 @@
-import {remotionFlatConfig} from '@remotion/eslint-config-internal';
+import {picusFlatConfig} from '@picus/eslint-config-internal';
 
-const config = remotionFlatConfig({react: true});
+const config = picusFlatConfig({react: true});
 
 export default {
 	...config,
@@ -11,10 +11,10 @@ export default {
 			'error',
 			{
 				patterns: [
-					'@remotion/*/src',
-					'@remotion/*/src/*',
-					'@remotion/*/dist/*',
-					'remotion/src/*',
+					'@picus/*/src',
+					'@picus/*/src/*',
+					'@picus/*/dist/*',
+					'picus/src/*',
 				],
 			},
 		],
@@ -29,8 +29,8 @@ export default {
 						allowTypeImports: true,
 					},
 					{
-						name: '@remotion/zod-types',
-						message: 'Can only import @remotion/zod-types as a type',
+						name: '@picus/zod-types',
+						message: 'Can only import @picus/zod-types as a type',
 						allowTypeImports: true,
 					},
 				],

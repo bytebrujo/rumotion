@@ -1,4 +1,4 @@
-import type {AudioCodec} from '@remotion/renderer';
+import type {AudioCodec} from '@picus/renderer';
 
 export const humanReadableAudioCodec = (audioCodec: AudioCodec) => {
 	if (audioCodec === 'aac') {

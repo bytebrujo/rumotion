@@ -1,9 +1,9 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react';
-import type {PreviewSize, PreviewSizeCtx} from 'remotion';
-import {Internals} from 'remotion';
+import type {PreviewSize, PreviewSizeCtx} from 'picus';
+import {Internals} from 'picus';
 import {EditorZoomGesturesContext} from './editor-zoom-gestures';
 
-const key = 'remotion.previewSize';
+const key = 'picus.previewSize';
 
 const persistPreviewSizeOption = (option: PreviewSize) => {
 	localStorage.setItem(key, JSON.stringify(option));

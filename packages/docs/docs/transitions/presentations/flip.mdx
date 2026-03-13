@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-presentations-flip.png
-crumb: "@remotion/transitions - Presentations"
+crumb: "@picus/transitions - Presentations"
 title: "flip()"
 ---
 
@@ -13,7 +13,7 @@ A presentation where the exiting slide flips by 180 degrees, revealing the next 
 ## Example
 
 ```tsx twoslash title="SlideTransition.tsx"
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -35,8 +35,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import { linearTiming, TransitionSeries } from "@remotion/transitions";
-import { flip } from "@remotion/transitions/flip";
+import { linearTiming, TransitionSeries } from "@picus/transitions";
+import { flip } from "@picus/transitions/flip";
 
 const BasicTransition = () => {
   return (
@@ -65,7 +65,7 @@ Takes an object with the following properties:
 One of `from-left`, `from-right`, `from-top`, `from-bottom`.
 
 ```tsx twoslash title="TypeScript type"
-import { FlipDirection } from "@remotion/transitions/flip";
+import { FlipDirection } from "@picus/transitions/flip";
 
 const flipDirection: FlipDirection = "from-left";
 ```
@@ -92,5 +92,5 @@ The style of the inner element when the scene is exiting.
 
 ## See also
 
-- [Source code for this presentation](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/presentations/flip.tsx)
+- [Source code for this presentation](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/presentations/flip.tsx)
 - [Presentations](/docs/transitions/presentations)

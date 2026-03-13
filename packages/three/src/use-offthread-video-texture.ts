@@ -3,10 +3,10 @@ import {
 	Internals,
 	useCurrentFrame,
 	useDelayRender,
-	useRemotionEnvironment,
+	usePicusEnvironment,
 	useVideoConfig,
-} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 import type {Texture} from 'three';
 
 export type UseOffthreadVideoTextureOptions = {
@@ -116,8 +116,8 @@ export const useInnerVideoTexture = ({
 };
 
 /*
- * @description Allows you to use a video in React Three Fiber that is synchronized with Remotion's `useCurrentFrame()` using the `<OffthreadVideo>`.
- * @see [Documentation](https://www.remotion.dev/docs/use-offthread-video-texture)
+ * @description Allows you to use a video in React Three Fiber that is synchronized with Picus's `useCurrentFrame()` using the `<OffthreadVideo>`.
+ * @see [Documentation](https://www.picus.dev/docs/use-offthread-video-texture)
  */
 export function useOffthreadVideoTexture({
 	src,
@@ -131,7 +131,7 @@ export function useOffthreadVideoTexture({
 		throw new Error('src must be provided to useOffthreadVideoTexture');
 	}
 
-	const env = useRemotionEnvironment();
+	const env = usePicusEnvironment();
 
 	const {isRendering, isClientSideRendering} = env;
 
@@ -143,7 +143,7 @@ export function useOffthreadVideoTexture({
 
 	if (!isRendering) {
 		throw new Error(
-			'useOffthreadVideoTexture() can only be used during rendering. Use useRemotionEnvironment().isRendering to render it conditionally.',
+			'useOffthreadVideoTexture() can only be used during rendering. Use usePicusEnvironment().isRendering to render it conditionally.',
 		);
 	}
 

@@ -1,6 +1,6 @@
-import type {LogLevel} from '@remotion/renderer';
-import {ensureBrowser} from '@remotion/renderer';
-import {BrowserSafeApis} from '@remotion/renderer/client';
+import type {LogLevel} from '@picus/renderer';
+import {ensureBrowser} from '@picus/renderer';
+import {BrowserSafeApis} from '@picus/renderer/client';
 import {defaultBrowserDownloadProgress} from '../browser-download-bar';
 import {Log} from '../log';
 import {parsedCli, quietFlagProvided} from '../parsed-cli';

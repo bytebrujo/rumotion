@@ -14,7 +14,7 @@ ruleTester.run('use-gif-component', rule, {
 	valid: [
 		// Network image should be allowed
 		`
-import {Img} from 'remotion';
+import {Img} from 'picus';
 
 export const Re = () => {
   return (
@@ -23,7 +23,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Img, staticFile} from 'remotion';
+import {Img, staticFile} from 'picus';
 
 export const Re = () => {
   return (
@@ -32,7 +32,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Img} from 'remotion';
+import {Img} from 'picus';
 
 export const Re = () => {
   return (
@@ -47,7 +47,7 @@ export const Re = () => {
 }
           `,
 		`
-import {Img} from 'remotion';
+import {Img} from 'picus';
 import img from './img.png';
 
 export const Re = () => {
@@ -57,8 +57,8 @@ export const Re = () => {
 }
                 `,
 		`
-import {Gif} from '@remotion/gif';
-import {staticFile} from 'remotion';
+import {Gif} from '@picus/gif';
+import {staticFile} from 'picus';
 
 export const Re = () => {
   return (
@@ -70,7 +70,7 @@ export const Re = () => {
 	invalid: [
 		{
 			code: `
-import {Img} from 'remotion';
+import {Img} from 'picus';
 
 export const Re = () => {
   return (

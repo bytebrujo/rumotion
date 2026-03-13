@@ -1,7 +1,7 @@
-import {fitTextOnNLines, measureText} from '@remotion/layout-utils';
-import {createRoundedTextBox} from '@remotion/rounded-text-box';
+import {fitTextOnNLines, measureText} from '@picus/layout-utils';
+import {createRoundedTextBox} from '@picus/rounded-text-box';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill} from 'picus';
 import {z} from 'zod';
 import {TIKTOK_TEXT_BOX_HORIZONTAL_PADDING} from '../TikTokTextbox/TikTokTextBox';
 

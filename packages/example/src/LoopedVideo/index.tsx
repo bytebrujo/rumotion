@@ -1,5 +1,5 @@
 import React from 'react';
-import {Loop, useCurrentFrame} from 'remotion';
+import {Loop, useCurrentFrame} from 'picus';
 
 const LoopedVideo: React.FC = () => {
 	return (

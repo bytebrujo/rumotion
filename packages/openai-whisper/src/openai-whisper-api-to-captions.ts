@@ -1,4 +1,4 @@
-import type {Caption} from '@remotion/captions';
+import type {Caption} from '@picus/captions';
 import type {OpenAiVerboseTranscription} from './openai-format';
 
 export type OpenAiToCaptionsInput = {
@@ -31,7 +31,7 @@ export const openAiWhisperApiToCaptions = ({
 	for (let i = 0; i < transcription.words.length; i++) {
 		const word = transcription.words[i];
 		const firstWord = i === 0;
-		// https://github.com/remotion-dev/remotion/issues/5031
+		// https://github.com/picus-dev/picus/issues/5031
 		if (firstWord) {
 			word.word = word.word.trimStart();
 		}
@@ -42,7 +42,7 @@ export const openAiWhisperApiToCaptions = ({
 		).exec(remainingText);
 		if (!match) {
 			throw new Error(
-				`Unable to parse punctuation from OpenAI Whisper output. Could not find word "${word.word}" in text "${remainingText.slice(0, 100)}". File an issue under https://remotion.dev/issue and post the input for openAiWhisperApiToCaptions() to ask for a fix.`,
+				`Unable to parse punctuation from OpenAI Whisper output. Could not find word "${word.word}" in text "${remainingText.slice(0, 100)}". File an issue under https://picus.dev/issue and post the input for openAiWhisperApiToCaptions() to ask for a fix.`,
 			);
 		}
 

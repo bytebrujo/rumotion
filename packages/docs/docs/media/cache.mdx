@@ -1,18 +1,18 @@
 ---
 image: /generated/articles-docs-media-cache.png
-title: In-memory cache for @remotion/media
+title: In-memory cache for @picus/media
 sidebar_label: Cache
-crumb: 'API - @remotion/media'
+crumb: 'API - @picus/media'
 ---
 
-[`@remotion/media`](/docs/media) keeps a cache of recently decoded video and audio frames.
+[`@picus/media`](/docs/media) keeps a cache of recently decoded video and audio frames.
 
 ## Mechanism
 
 Video streams consist of key frames and delta frames.  
 In order to decode a delta frame, the last keyframe and all the delta frames since the last keyframe also need to be decoded.
 
-Due to Remotion's [multithreaded rendering and each frame being independent](/docs/flickering), it is not guaranteed that video frames are needed in their natural order.
+Due to Picus's [multithreaded rendering and each frame being independent](/docs/flickering), it is not guaranteed that video frames are needed in their natural order.
 
 The cache is shared across all of the instances of [`<Video>`](/docs/media/video) and [`<Audio>`](/docs/media/audio).  
 Therefore, the settings for the cache are per-render, not per tag.
@@ -36,14 +36,14 @@ The rendering APIs allow you to customize this limit on a per-render basis:
 - [`renderStillOnLambda()` → `mediaCacheSizeInBytes`](/docs/lambda/renderstillonlambda#mediacachesizeinbytes)
 - [`getCompositions()` → `mediaCacheSizeInBytes`](/docs/lambda/getcompositionsonlambda#mediacachesizeinbytes)
 - [`renderFrames()` → `mediaCacheSizeInBytes`](/docs/renderer/render-frames#mediacachesizeinbytes)
-- [`npx remotion benchmark` → `--media-cache-size-in-bytes`](/docs/cli/benchmark#--media-cache-size-in-bytes)
-- [`npx remotion compositions` → `--media-cache-size-in-bytes`](/docs/cli/compositions#--media-cache-size-in-bytes)
-- [`npx remotion render` → `--media-cache-size-in-bytes`](/docs/cli/render#--media-cache-size-in-bytes)
-- [`npx remotion still` → `--media-cache-size-in-bytes`](/docs/cli/still#--media-cache-size-in-bytes)
-- [`npx remotion lambda render` → `--media-cache-size-in-bytes`](/docs/lambda/cli/render#--media-cache-size-in-bytes)
-- [`npx remotion lambda still` → `--media-cache-size-in-bytes`](/docs/lambda/cli/still#--media-cache-size-in-bytes)
-- [`npx remotion lambda compositions` → `--media-cache-size-in-bytes`](/docs/lambda/cli/compositions#--media-cache-size-in-bytes)
-- [`npx remotion cloudrun render` → `--media-cache-size-in-bytes`](/docs/cloudrun/cli/render#--media-cache-size-in-bytes)
-- [`npx remotion cloudrun still` → `--media-cache-size-in-bytes`](/docs/cloudrun/cli/still#--media-cache-size-in-bytes)
-- [`npx remotion cloudrun render` → `--media-cache-size-in-bytes`](/docs/cloudrun/cli/render#--media-cache-size-in-bytes)
-- [Remotion Studio](/docs/studio): Set the cache size under the "Advanced" tab
+- [`npx picus benchmark` → `--media-cache-size-in-bytes`](/docs/cli/benchmark#--media-cache-size-in-bytes)
+- [`npx picus compositions` → `--media-cache-size-in-bytes`](/docs/cli/compositions#--media-cache-size-in-bytes)
+- [`npx picus render` → `--media-cache-size-in-bytes`](/docs/cli/render#--media-cache-size-in-bytes)
+- [`npx picus still` → `--media-cache-size-in-bytes`](/docs/cli/still#--media-cache-size-in-bytes)
+- [`npx picus lambda render` → `--media-cache-size-in-bytes`](/docs/lambda/cli/render#--media-cache-size-in-bytes)
+- [`npx picus lambda still` → `--media-cache-size-in-bytes`](/docs/lambda/cli/still#--media-cache-size-in-bytes)
+- [`npx picus lambda compositions` → `--media-cache-size-in-bytes`](/docs/lambda/cli/compositions#--media-cache-size-in-bytes)
+- [`npx picus cloudrun render` → `--media-cache-size-in-bytes`](/docs/cloudrun/cli/render#--media-cache-size-in-bytes)
+- [`npx picus cloudrun still` → `--media-cache-size-in-bytes`](/docs/cloudrun/cli/still#--media-cache-size-in-bytes)
+- [`npx picus cloudrun render` → `--media-cache-size-in-bytes`](/docs/cloudrun/cli/render#--media-cache-size-in-bytes)
+- [Picus Studio](/docs/studio): Set the cache size under the "Advanced" tab

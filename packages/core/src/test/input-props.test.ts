@@ -18,7 +18,7 @@ describe('input props', () => {
 			firstProperty: 'firstProperty',
 			secondProperty: 'secondProperty',
 		};
-		window.remotion_inputProps = JSON.stringify(JSON.stringify(inputProps));
+		window.picus_inputProps = JSON.stringify(JSON.stringify(inputProps));
 
 		expect(getInputProps()).toEqual(
 			JSON.stringify(inputProps) as unknown as Record<string, unknown>,
@@ -27,7 +27,7 @@ describe('input props', () => {
 
 	test('input props in production env', () => {
 		process.env.NODE_ENV = 'production';
-		window.remotion_inputProps = JSON.stringify({});
+		window.picus_inputProps = JSON.stringify({});
 
 		expect(getInputProps()).toEqual({});
 	});

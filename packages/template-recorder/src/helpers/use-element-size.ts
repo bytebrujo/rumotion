@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import type { Rect } from "../../remotion/layout/layout-types";
+import type { Rect } from "../../picus/layout/layout-types";
 
 // If a pane has been moved, it will cause a layout shift without
 // the window having been resized. Those UI elements can call this API to

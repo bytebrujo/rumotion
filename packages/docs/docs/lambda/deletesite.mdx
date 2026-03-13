@@ -6,7 +6,7 @@ slug: /lambda/deletesite
 crumb: 'Lambda API'
 ---
 
-Removes a Remotion project from your S3 bucket.
+Removes a Picus project from your S3 bucket.
 
 Each project is located in the `sites/` subdirectory of your S3 bucket. Calling this function is equivalent of deleting all files inside a subfolder of your `sites/` subdirectory.
 
@@ -15,7 +15,7 @@ Each project is located in the `sites/` subdirectory of your S3 bucket. Calling 
 Gets all sites and deletes them.
 
 ```ts twoslash
-import {AwsRegion, deleteSite, getSites} from '@remotion/lambda';
+import {AwsRegion, deleteSite, getSites} from '@picus/lambda';
 
 const region: AwsRegion = 'eu-central-1';
 
@@ -71,6 +71,6 @@ The amount of space that was freed by deleting the project.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/delete-site.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/delete-site.ts)
 - [getSites()](/docs/lambda/getsites)
 - [deploySite()](/docs/lambda/deploysite)

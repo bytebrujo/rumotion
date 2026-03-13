@@ -7,19 +7,19 @@ title: Telemetry in client-side rendering
 
 :::warning
 Experimental feature - expect bugs and breaking changes at any time.  
-[Track progress on GitHub](https://github.com/remotion-dev/remotion/issues/5913) and discuss in the [`#web-renderer`](https://remotion.dev/discord) channel on Discord.
+[Track progress on GitHub](https://github.com/picus-dev/picus/issues/5913) and discuss in the [`#web-renderer`](https://picus.dev/discord) channel on Discord.
 :::
 
-[Client-side rendering](/docs/client-side-rendering) has telemetry that sends an event for every render performed using the [`@remotion/licensing`](/docs/licensing) package.
+[Client-side rendering](/docs/client-side-rendering) has telemetry that sends an event for every render performed using the [`@picus/licensing`](/docs/licensing) package.
 
-Remotion has a [license](/docs/license) that makes it free for individuals and small companies but requires a paid license for bigger companies, whose price is determined by the amount of renders.
+Picus has a [license](/docs/license) that makes it free for individuals and small companies but requires a paid license for bigger companies, whose price is determined by the amount of renders.
 
 ## Sent information
 
 The following information is sent:
 
 - IP Address
-- Domain name (e.g. `https://remotion.dev`)
+- Domain name (e.g. `https://picus.dev`)
 - Whether this render was in production or development
 - Whether this render was a video or a still image
 
@@ -53,7 +53,7 @@ const composition = {
 };
 
 // ---cut---
-import {renderMediaOnWeb} from '@remotion/web-renderer';
+import {renderMediaOnWeb} from '@picus/web-renderer';
 
 await renderMediaOnWeb({
   composition,
@@ -62,7 +62,7 @@ await renderMediaOnWeb({
 });
 ```
 
-If you have a Remotion Company License or Enterprise License, go to [remotion.pro](https://remotion.pro) and get your license key from the "Usage" tab.
+If you have a Picus Company License or Enterprise License, go to [picus.pro](https://picus.pro) and get your license key from the "Usage" tab.
 
 ```tsx twoslash title="Set a license key" {6}
 import React from 'react';
@@ -85,7 +85,7 @@ const composition = {
 };
 
 // ---cut---
-import {renderMediaOnWeb} from '@remotion/web-renderer';
+import {renderMediaOnWeb} from '@picus/web-renderer';
 
 await renderMediaOnWeb({
   composition,

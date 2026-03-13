@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-transitions-presentations-fade.png
-crumb: "@remotion/transitions - Presentations"
+crumb: "@picus/transitions - Presentations"
 title: "fade()"
 ---
 
@@ -11,7 +11,7 @@ A simple fade animation. The incoming slide fades in over the outgoing slide, wh
 ## Example
 
 ```tsx twoslash title="FadeTransition.tsx"
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill } from "picus";
 
 const Letter: React.FC<{
   children: React.ReactNode;
@@ -33,8 +33,8 @@ const Letter: React.FC<{
   );
 };
 // ---cut---
-import { linearTiming, TransitionSeries } from "@remotion/transitions";
-import { fade } from "@remotion/transitions/fade";
+import { linearTiming, TransitionSeries } from "@picus/transitions";
+import { fade } from "@picus/transitions/fade";
 
 const BasicTransition = () => {
   return (
@@ -78,5 +78,5 @@ If the scenes are not fully covered (like fading between overlays), we recommend
 
 ## See also
 
-- [Source code for this presentation](https://github.com/remotion-dev/remotion/blob/main/packages/transitions/src/presentations/fade.tsx)
+- [Source code for this presentation](https://github.com/picus-dev/picus/blob/main/packages/transitions/src/presentations/fade.tsx)
 - [Presentations](/docs/transitions/presentations)

@@ -4,7 +4,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import './common.css';
 
 const HeaderAndCredits = ({author}: {readonly author: string}) => {

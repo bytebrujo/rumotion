@@ -6,7 +6,7 @@ import {
 	interpolate,
 	Sequence,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 import {calculateAssetPositions} from '../assets/calculate-asset-positions';
 import type {MediaAsset} from '../assets/types';
 import {onlyAudioAndVideoAssets} from '../filter-asset-types';

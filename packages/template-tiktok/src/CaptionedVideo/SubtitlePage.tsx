@@ -1,11 +1,11 @@
-import { TikTokPage } from "@remotion/captions";
+import { TikTokPage } from "@picus/captions";
 import React from "react";
 import {
   AbsoluteFill,
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "picus";
 import { Page } from "./Page";
 
 const SubtitlePage: React.FC<{ readonly page: TikTokPage }> = ({ page }) => {

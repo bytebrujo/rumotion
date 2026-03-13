@@ -1,4 +1,4 @@
-import type {Size} from '@remotion/player';
+import type {Size} from '@picus/player';
 import React, {
 	useCallback,
 	useContext,
@@ -7,7 +7,7 @@ import React, {
 	useRef,
 	useState,
 } from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {BACKGROUND, RULER_COLOR} from '../../helpers/colors';
 import {drawMarkingOnRulerCanvas} from '../../helpers/editor-ruler';
 import {EditorShowGuidesContext} from '../../state/editor-guides';

@@ -8,7 +8,7 @@ export const handleDrop = async ({
 	file: File;
 	onProgress: OnUploadProgress;
 }) => {
-	const presignedResponse = await fetch('https://www.remotion.pro/api/upload', {
+	const presignedResponse = await fetch('https://www.picus.pro/api/upload', {
 		method: 'POST',
 		body: JSON.stringify({
 			size: file.size,

@@ -1,9 +1,9 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/compositor-darwin-x64"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/compositor-darwin-x64"
 	},
 	"version": "4.0.434",
-	"name": "@remotion/compositor-darwin-x64",
+	"name": "@picus/compositor-darwin-x64",
 	"os": [
 		"darwin"
 	],
@@ -21,5 +21,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"description": "MacOS x64 binary for the Remotion Rust code"
+	"description": "MacOS x64 binary for the Picus Rust code"
 }

@@ -1,5 +1,5 @@
 import {useCallback, useRef} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 
 export type GetCurrentFrame = () => number;
 

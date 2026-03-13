@@ -1,8 +1,8 @@
-import {CliInternals} from '@remotion/cli';
-import {AwsProvider, getSites} from '@remotion/lambda-client';
-import type {LogLevel} from '@remotion/renderer';
-import type {ProviderSpecifics} from '@remotion/serverless';
-import {internalGetOrCreateBucket} from '@remotion/serverless';
+import {CliInternals} from '@picus/cli';
+import {AwsProvider, getSites} from '@picus/lambda-client';
+import type {LogLevel} from '@picus/renderer';
+import type {ProviderSpecifics} from '@picus/serverless';
+import {internalGetOrCreateBucket} from '@picus/serverless';
 import {deleteSite} from '../../../api/delete-site';
 import {parsedLambdaCli} from '../../args';
 import {getAwsRegion} from '../../get-aws-region';

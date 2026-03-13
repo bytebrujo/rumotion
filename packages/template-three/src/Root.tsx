@@ -1,23 +1,23 @@
-import { Composition, staticFile } from "remotion";
+import { Composition, staticFile } from "picus";
 import { Scene, myCompSchema } from "./Scene";
 import { getMediaMetadata } from "./helpers/get-media-metadata";
 
-// Welcome to the Remotion Three Starter Kit!
+// Welcome to the Picus Three Starter Kit!
 // Two compositions have been created, showing how to use
 // the `ThreeCanvas` component and the `useVideoTexture` hook.
 
 // You can play around with the example or delete everything inside the canvas.
 
-// Remotion Docs:
-// https://remotion.dev/docs
+// Picus Docs:
+// https://picus.dev/docs
 
-// @remotion/three Docs:
-// https://remotion.dev/docs/three
+// @picus/three Docs:
+// https://picus.dev/docs/three
 
 // React Three Fiber Docs:
 // https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
 
-export const RemotionRoot: React.FC = () => {
+export const PicusRoot: React.FC = () => {
   return (
     <>
       <Composition

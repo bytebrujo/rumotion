@@ -17,12 +17,12 @@ During rendering, many Lambda functions are spawned:
 The total duration is the sum of execution duration of all of the above Lambda functions.
 This duration can be passed to `estimatePrice()` to estimate the cost of AWS Lambda.
 
-The calculated duration does not include costs for S3 and Remotion licensing fees.
+The calculated duration does not include costs for S3 and Picus licensing fees.
 
 ## Example
 
 ```ts twoslash
-import { estimatePrice } from "@remotion/lambda";
+import { estimatePrice } from "@picus/lambda";
 
 console.log(
   estimatePrice({
@@ -65,4 +65,4 @@ The estimated cost in USD as a `number`.
 
 ## See also
 
-- [Source code for this function](https://github.com/remotion-dev/remotion/blob/main/packages/lambda/src/api/estimate-price.ts)
+- [Source code for this function](https://github.com/picus-dev/picus/blob/main/packages/lambda/src/api/estimate-price.ts)

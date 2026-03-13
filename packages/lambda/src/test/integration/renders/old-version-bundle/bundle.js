@@ -1617,7 +1617,7 @@
 				exports.Homepage = exports.AvailableCompositions = void 0;
 				const jsx_runtime_1 = __webpack_require__(6922);
 				const react_1 = __webpack_require__(2386);
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				const container = {
 					width: 800,
 					margin: 'auto',
@@ -1658,7 +1658,7 @@
 					const showComps = (0, react_1.useCallback)(() => {
 						window.location.search = '?evaluation=true';
 					}, []);
-					if (!remotion_1.Internals.getIsEvaluation()) {
+					if (!picus_1.Internals.getIsEvaluation()) {
 						return (0, jsx_runtime_1.jsx)(
 							'button',
 							Object.assign(
@@ -1714,10 +1714,10 @@
 								children: [
 									(0, jsx_runtime_1.jsx)(
 										'h1',
-										{children: 'Remotion Bundle'},
+										{children: 'Picus Bundle'},
 										void 0,
 									),
-									'This is a website which contains a bundled Remotion video. You can render videos based on this URL.',
+									'This is a website which contains a bundled Picus video. You can render videos based on this URL.',
 									(0, jsx_runtime_1.jsx)(
 										'h2',
 										{children: 'Available compositions'},
@@ -1742,7 +1742,7 @@
 											{style: pre},
 											{
 												children: [
-													'npx remotion render ',
+													'npx picus render ',
 													url,
 													' ',
 													'<comp-name> <output-location>',
@@ -1753,7 +1753,7 @@
 									),
 									(0, jsx_runtime_1.jsx)('br', {}, void 0),
 									(0, jsx_runtime_1.jsx)('br', {}, void 0),
-									'With Remotion Lambda: ',
+									'With Picus Lambda: ',
 									(0, jsx_runtime_1.jsx)('br', {}, void 0),
 									(0, jsx_runtime_1.jsx)('br', {}, void 0),
 									(0, jsx_runtime_1.jsxs)(
@@ -1762,7 +1762,7 @@
 											{style: pre},
 											{
 												children: [
-													'npx remotion lambda render ',
+													'npx picus lambda render ',
 													url,
 													' ',
 													'<comp-name>',
@@ -1824,10 +1824,10 @@
 													'a',
 													Object.assign(
 														{
-															href: 'https://remotion.dev/docs',
+															href: 'https://picus.dev/docs',
 															target: '_blank',
 														},
-														{children: 'remotion.dev/docs'},
+														{children: 'picus.dev/docs'},
 													),
 													void 0,
 												),
@@ -2097,7 +2097,7 @@
 					}, []);
 					(0, react_1.useLayoutEffect)(() => {
 						if (typeof window !== 'undefined') {
-							window.remotion_collectAssets = () => {
+							window.picus_collectAssets = () => {
 								setAssets([]);
 								return assets;
 							};
@@ -2286,7 +2286,7 @@
 				'use strict';
 
 				Object.defineProperty(exports, '__esModule', {value: true});
-				exports.RemotionRoot = void 0;
+				exports.PicusRoot = void 0;
 				const jsx_runtime_1 = __webpack_require__(6922);
 				const react_1 = __webpack_require__(2386);
 				const shared_audio_tags_1 = __webpack_require__(9207);
@@ -2295,13 +2295,13 @@
 				const random_1 = __webpack_require__(9490);
 				const ready_manager_1 = __webpack_require__(2921);
 				const timeline_position_state_1 = __webpack_require__(4930);
-				const RemotionRoot = ({children}) => {
+				const PicusRoot = ({children}) => {
 					var _a;
-					const [remotionRootId] = (0, react_1.useState)(() =>
+					const [picusRootId] = (0, react_1.useState)(() =>
 						String((0, random_1.random)(null)),
 					);
 					const [frame, setFrame] = (0, react_1.useState)(
-						(_a = window.remotion_initialFrame) !== null && _a !== void 0
+						(_a = window.picus_initialFrame) !== null && _a !== void 0
 							? _a
 							: 0,
 					);
@@ -2312,14 +2312,14 @@
 					const audioAndVideoTags = (0, react_1.useRef)([]);
 					(0, react_1.useLayoutEffect)(() => {
 						if (typeof window !== 'undefined') {
-							window.remotion_setFrame = (f) => {
+							window.picus_setFrame = (f) => {
 								const id = (0, ready_manager_1.delayRender)();
 								setFrame(f);
 								requestAnimationFrame(() =>
 									(0, ready_manager_1.continueRender)(id),
 								);
 							};
-							window.remotion_isPlayer = false;
+							window.picus_isPlayer = false;
 						}
 					}, []);
 					const timelineContextValue = (0, react_1.useMemo)(() => {
@@ -2327,12 +2327,12 @@
 							frame,
 							playing,
 							imperativePlaying,
-							rootId: remotionRootId,
+							rootId: picusRootId,
 							playbackRate,
 							setPlaybackRate,
 							audioAndVideoTags,
 						};
-					}, [frame, playbackRate, playing, remotionRootId]);
+					}, [frame, playbackRate, playing, picusRootId]);
 					const setTimelineContextValue = (0, react_1.useMemo)(() => {
 						return {
 							setFrame,
@@ -2394,7 +2394,7 @@
 						void 0,
 					);
 				};
-				exports.RemotionRoot = RemotionRoot;
+				exports.PicusRoot = PicusRoot;
 
 				/***/
 			},
@@ -2519,7 +2519,7 @@
 						);
 					}
 					(0, validate_media_props_1.validateMediaProps)(props, 'Audio');
-					if ((0, get_environment_1.getRemotionEnvironment)() === 'rendering') {
+					if ((0, get_environment_1.getPicusEnvironment)() === 'rendering') {
 						return (0, jsx_runtime_1.jsx)(
 							AudioForRendering_1.AudioForRendering,
 							Object.assign({}, props, {ref, onError}),
@@ -2930,7 +2930,7 @@
 							);
 							if (firstFreeAudio === -1) {
 								throw new Error(
-									`Tried to simultaneously mount ${numberOfAudioTags + 1} <Audio /> tags at the same time. With the current settings, the maximum amount of <Audio /> tags is limited to ${numberOfAudioTags} at the same time. Remotion pre-mounts silent audio tags to help avoid browser autoplay restrictions. See /docs/player/autoplay#use-the-numberofsharedaudiotags-property for more information on how to increase this limit.`,
+									`Tried to simultaneously mount ${numberOfAudioTags + 1} <Audio /> tags at the same time. With the current settings, the maximum amount of <Audio /> tags is limited to ${numberOfAudioTags} at the same time. Picus pre-mounts silent audio tags to help avoid browser autoplay restrictions. See /docs/player/autoplay#use-the-numberofsharedaudiotags-property for more information on how to increase this limit.`,
 								);
 							}
 							const {id, ref} = refs[firstFreeAudio];
@@ -3985,7 +3985,7 @@
 				Object.defineProperty(exports, '__esModule', {value: true});
 				exports.getInputProps = exports.INPUT_PROPS_KEY = void 0;
 				const get_environment_1 = __webpack_require__(103);
-				exports.INPUT_PROPS_KEY = 'remotion.inputProps';
+				exports.INPUT_PROPS_KEY = 'picus.inputProps';
 				let didWarnSSRImport = false;
 				const warnOnceSSRImport = () => {
 					if (didWarnSSRImport) {
@@ -4003,7 +4003,7 @@
 					);
 				};
 				const getInputProps = () => {
-					if ((0, get_environment_1.getRemotionEnvironment)() === 'rendering') {
+					if ((0, get_environment_1.getPicusEnvironment)() === 'rendering') {
 						if (typeof window === 'undefined') {
 							warnOnceSSRImport();
 							return {};
@@ -4015,7 +4015,7 @@
 						const parsed = JSON.parse(param);
 						return parsed;
 					}
-					if ((0, get_environment_1.getRemotionEnvironment)() === 'preview') {
+					if ((0, get_environment_1.getPicusEnvironment)() === 'preview') {
 						return process.env.INPUT_PROPS;
 					}
 					throw new Error(
@@ -4675,22 +4675,22 @@
 				'use strict';
 
 				Object.defineProperty(exports, '__esModule', {value: true});
-				exports.getRemotionEnvironment = void 0;
-				const getRemotionEnvironment = () => {
+				exports.getPicusEnvironment = void 0;
+				const getPicusEnvironment = () => {
 					if (true) {
-						if (typeof window !== 'undefined' && window.remotion_isPlayer) {
+						if (typeof window !== 'undefined' && window.picus_isPlayer) {
 							return 'player-production';
 						}
 						return 'rendering';
 					}
 					if (false) {
 					}
-					if (typeof window !== 'undefined' && window.remotion_isPlayer) {
+					if (typeof window !== 'undefined' && window.picus_isPlayer) {
 						return 'player-development';
 					}
 					return 'preview';
 				};
-				exports.getRemotionEnvironment = getRemotionEnvironment;
+				exports.getPicusEnvironment = getPicusEnvironment;
 
 				/***/
 			},
@@ -4787,7 +4787,7 @@
 						void 0;
 				__webpack_require__(2825);
 				const multiple_versions_warning_1 = __webpack_require__(7370);
-				(0, multiple_versions_warning_1.checkMultipleRemotionVersions)();
+				(0, multiple_versions_warning_1.checkMultiplePicusVersions)();
 				__exportStar(__webpack_require__(1489), exports);
 				__exportStar(__webpack_require__(1055), exports);
 				__exportStar(__webpack_require__(7067), exports);
@@ -4866,7 +4866,7 @@
 				Object.defineProperty(exports, '__esModule', {value: true});
 				exports.setupInitialFrame = exports.INITIAL_FRAME_LOCAL_STORAGE_KEY =
 					void 0;
-				exports.INITIAL_FRAME_LOCAL_STORAGE_KEY = 'remotion.initialFrame';
+				exports.INITIAL_FRAME_LOCAL_STORAGE_KEY = 'picus.initialFrame';
 				const getInitialFrame = () => {
 					const param = localStorage.getItem(
 						exports.INITIAL_FRAME_LOCAL_STORAGE_KEY,
@@ -4874,7 +4874,7 @@
 					return param ? Number(param) : 0;
 				};
 				const setupInitialFrame = () => {
-					window.remotion_initialFrame = getInitialFrame();
+					window.picus_initialFrame = getInitialFrame();
 				};
 				exports.setupInitialFrame = setupInitialFrame;
 
@@ -4985,7 +4985,7 @@
 				const is_audio_codec_1 = __webpack_require__(9714);
 				const perf = __importStar(__webpack_require__(9766));
 				const register_root_1 = __webpack_require__(3798);
-				const RemotionRoot_1 = __webpack_require__(7099);
+				const PicusRoot_1 = __webpack_require__(7099);
 				const sequencing_1 = __webpack_require__(3709);
 				const setup_env_variables_1 = __webpack_require__(7841);
 				const TimelineInOutPosition = __importStar(__webpack_require__(875));
@@ -5002,7 +5002,7 @@
 				const validate_image_format_1 = __webpack_require__(3354);
 				const validate_quality_1 = __webpack_require__(6278);
 				const volume_position_state_1 = __webpack_require__(7635);
-				const wrap_remotion_context_1 = __webpack_require__(3239);
+				const wrap_picus_context_1 = __webpack_require__(3239);
 				const AssetCompression = __importStar(__webpack_require__(488));
 				const timeout_1 = __webpack_require__(960);
 				const timeout_2 = __webpack_require__(1094);
@@ -5019,7 +5019,7 @@
 					useUnsafeVideoConfig: use_unsafe_video_config_1.useUnsafeVideoConfig,
 					Timeline,
 					CompositionManager: CompositionManager_1.CompositionManager,
-					RemotionRoot: RemotionRoot_1.RemotionRoot,
+					PicusRoot: PicusRoot_1.PicusRoot,
 					useVideo: use_video_1.useVideo,
 					getRoot: register_root_1.getRoot,
 					getBrowserExecutable: browser_executable_1.getBrowserExecutable,
@@ -5069,9 +5069,9 @@
 					INPUT_PROPS_KEY: input_props_1.INPUT_PROPS_KEY,
 					Logging,
 					SequenceContext: sequencing_1.SequenceContext,
-					useRemotionContexts: wrap_remotion_context_1.useRemotionContexts,
-					RemotionContextProvider:
-						wrap_remotion_context_1.RemotionContextProvider,
+					usePicusContexts: wrap_picus_context_1.usePicusContexts,
+					PicusContextProvider:
+						wrap_picus_context_1.PicusContextProvider,
 					isPlainIndex: register_root_1.isPlainIndex,
 					CSSUtils,
 					setupEnvVariables: setup_env_variables_1.setupEnvVariables,
@@ -5089,7 +5089,7 @@
 						validate_duration_in_frames_1.validateDurationInFrames,
 					validateFps: validate_fps_1.validateFps,
 					validateDimension: validate_dimensions_1.validateDimension,
-					getRemotionEnvironment: get_environment_1.getRemotionEnvironment,
+					getPicusEnvironment: get_environment_1.getPicusEnvironment,
 					getProResProfile: prores_profile_1.getProResProfile,
 					setProResProfile: prores_profile_1.setProResProfile,
 					validateSelectedCodecAndProResCombination:
@@ -5823,19 +5823,19 @@
 				'use strict';
 
 				Object.defineProperty(exports, '__esModule', {value: true});
-				exports.checkMultipleRemotionVersions = void 0;
-				const checkMultipleRemotionVersions = () => {
+				exports.checkMultiplePicusVersions = void 0;
+				const checkMultiplePicusVersions = () => {
 					if (typeof window === 'undefined') {
 						return;
 					}
-					if (window.remotion_imported) {
+					if (window.picus_imported) {
 						console.error(
-							'\u{1F6A8} Multiple versions of Remotion detected. Multiple versions will cause conflicting React contexts and things may break in an unexpected way. Please check your dependency tree and make sure only one version of Remotion is on the page.',
+							'\u{1F6A8} Multiple versions of Picus detected. Multiple versions will cause conflicting React contexts and things may break in an unexpected way. Please check your dependency tree and make sure only one version of Picus is on the page.',
 						);
 					}
-					window.remotion_imported = true;
+					window.picus_imported = true;
 				};
-				exports.checkMultipleRemotionVersions = checkMultipleRemotionVersions;
+				exports.checkMultiplePicusVersions = checkMultiplePicusVersions;
 
 				/***/
 			},
@@ -6032,14 +6032,14 @@
 								: _a.replace(/^Error/g, '')) !== null && _b !== void 0
 							? _b
 							: '';
-					if ((0, get_environment_1.getRemotionEnvironment)() === 'rendering') {
+					if ((0, get_environment_1.getPicusEnvironment)() === 'rendering') {
 						const timeoutToUse =
 							typeof window === 'undefined'
 								? timeout_1.DEFAULT_PUPPETEER_TIMEOUT
-								: window.remotion_puppeteerTimeout - 2e3;
+								: window.picus_puppeteerTimeout - 2e3;
 						timeouts[handle] = setTimeout(() => {
 							throw new Error(
-								`A delayRender was called but not cleared after ${timeoutToUse}ms. See https://remotion.dev/docs/timeout for help. The delayRender was called: ${called}`,
+								`A delayRender was called but not cleared after ${timeoutToUse}ms. See https://picus.dev/docs/timeout for help. The delayRender was called: ${called}`,
 							);
 						}, timeoutToUse);
 					}
@@ -6053,7 +6053,7 @@
 					handles = handles.filter((h) => {
 						if (h === handle) {
 							if (
-								(0, get_environment_1.getRemotionEnvironment)() === 'rendering'
+								(0, get_environment_1.getPicusEnvironment)() === 'rendering'
 							) {
 								clearTimeout(timeouts[handle]);
 							}
@@ -6534,10 +6534,10 @@
 					exports.ENV_VARIABLES_LOCAL_STORAGE_KEY =
 						void 0;
 				const get_environment_1 = __webpack_require__(103);
-				exports.ENV_VARIABLES_LOCAL_STORAGE_KEY = 'remotion.envVariables';
+				exports.ENV_VARIABLES_LOCAL_STORAGE_KEY = 'picus.envVariables';
 				exports.ENV_VARIABLES_ENV_NAME = 'ENV_VARIABLES';
 				const getEnvVariables = () => {
-					if ((0, get_environment_1.getRemotionEnvironment)() === 'rendering') {
+					if ((0, get_environment_1.getPicusEnvironment)() === 'rendering') {
 						const param = localStorage.getItem(
 							exports.ENV_VARIABLES_LOCAL_STORAGE_KEY,
 						);
@@ -6548,7 +6548,7 @@
 							NODE_ENV: 'production',
 						});
 					}
-					if ((0, get_environment_1.getRemotionEnvironment)() === 'preview') {
+					if ((0, get_environment_1.getPicusEnvironment)() === 'preview') {
 						return __spreadProps(
 							__spreadValues({}, process.env.ENV_VARIABLES),
 							{
@@ -6845,8 +6845,8 @@
 					return path;
 				};
 				const inner = (path) => {
-					if (typeof window !== 'undefined' && window.remotion_staticBase) {
-						return `${window.remotion_staticBase}/${trimLeadingSlash(path)}`;
+					if (typeof window !== 'undefined' && window.picus_staticBase) {
+						return `${window.picus_staticBase}/${trimLeadingSlash(path)}`;
 					}
 					return `/${trimLeadingSlash(path)}`;
 				};
@@ -6971,13 +6971,13 @@
 					exports.DEFAULT_PUPPETEER_TIMEOUT =
 						void 0;
 				exports.DEFAULT_PUPPETEER_TIMEOUT = 3e4;
-				exports.PUPPETEER_TIMEOUT_KEY = 'remotion.puppeteerTimeout';
+				exports.PUPPETEER_TIMEOUT_KEY = 'picus.puppeteerTimeout';
 				const getPuppeteerTimeout = () => {
 					const param = localStorage.getItem(exports.PUPPETEER_TIMEOUT_KEY);
 					return param ? Number(param) : exports.DEFAULT_PUPPETEER_TIMEOUT;
 				};
 				const setupPuppeteerTimeout = () => {
-					window.remotion_puppeteerTimeout = getPuppeteerTimeout();
+					window.picus_puppeteerTimeout = getPuppeteerTimeout();
 				};
 				exports.setupPuppeteerTimeout = setupPuppeteerTimeout;
 
@@ -7175,7 +7175,7 @@
 					(0, react_1.useEffect)(() => {
 						if (typeof volume === 'number' && volume !== initialVolume) {
 							warnOnce(
-								`Remotion: The ${mediaType} with src ${src} has changed it's volume. Prefer the callback syntax for setting volume to get better timeline display: https://www.remotion.dev/docs/using-audio/#controlling-volume`,
+								`Picus: The ${mediaType} with src ${src} has changed it's volume. Prefer the callback syntax for setting volume to get better timeline display: https://www.picus.dev/docs/using-audio/#controlling-volume`,
 							);
 						}
 					}, [initialVolume, mediaType, src, volume]);
@@ -7481,7 +7481,7 @@
 					use_unsafe_video_config_1.useUnsafeVideoConfig)();
 					if (!videoConfig) {
 						throw new Error(
-							'No video config found. You are probably calling useVideoConfig() from a component which has not been registered as a <Composition />. See https://www.remotion.dev/docs/the-fundamentals#defining-compositions for more information.',
+							'No video config found. You are probably calling useVideoConfig() from a component which has not been registered as a <Composition />. See https://www.picus.dev/docs/the-fundamentals#defining-compositions for more information.',
 						);
 					}
 					return videoConfig;
@@ -7919,7 +7919,7 @@
 						);
 					}
 					(0, validate_media_props_1.validateMediaProps)(props, 'Video');
-					if ((0, get_environment_1.getRemotionEnvironment)() === 'rendering') {
+					if ((0, get_environment_1.getPicusEnvironment)() === 'rendering') {
 						return (0, jsx_runtime_1.jsx)(
 							VideoForRendering_1.VideoForRendering,
 							Object.assign({}, otherProps, {ref}),
@@ -8402,7 +8402,7 @@
 						console.error(
 							'The media',
 							ref.src,
-							'does not seem to support seeking. Remotion cannot properly handle it. Please see https://remotion.dev/docs/non-seekable-media for assistance.',
+							'does not seem to support seeking. Picus cannot properly handle it. Please see https://picus.dev/docs/non-seekable-media for assistance.',
 						);
 						alreadyWarned[ref.src] = true;
 					}
@@ -8461,14 +8461,14 @@
 						return result;
 					};
 				Object.defineProperty(exports, '__esModule', {value: true});
-				exports.RemotionContextProvider = exports.useRemotionContexts = void 0;
+				exports.PicusContextProvider = exports.usePicusContexts = void 0;
 				const jsx_runtime_1 = __webpack_require__(6922);
 				const react_1 = __importStar(__webpack_require__(2386));
 				const CompositionManager_1 = __webpack_require__(2532);
 				const nonce_1 = __webpack_require__(2781);
 				const sequencing_1 = __webpack_require__(3709);
 				const timeline_position_state_1 = __webpack_require__(4930);
-				function useRemotionContexts() {
+				function usePicusContexts() {
 					const compositionManagerCtx = react_1.default.useContext(
 						CompositionManager_1.CompositionManager,
 					);
@@ -8499,8 +8499,8 @@
 						],
 					);
 				}
-				exports.useRemotionContexts = useRemotionContexts;
-				const RemotionContextProvider = (props) => {
+				exports.usePicusContexts = usePicusContexts;
+				const PicusContextProvider = (props) => {
 					const {children, contexts} = props;
 					return (0, jsx_runtime_1.jsx)(
 						nonce_1.NonceContext.Provider,
@@ -8548,7 +8548,7 @@
 						void 0,
 					);
 				};
-				exports.RemotionContextProvider = RemotionContextProvider;
+				exports.PicusContextProvider = PicusContextProvider;
 
 				/***/
 			},
@@ -8561,14 +8561,14 @@
 				exports.SuspenseLoader = void 0;
 				const jsx_runtime_1 = __webpack_require__(6922);
 				const react_1 = __webpack_require__(2386);
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				const Unblocker = () => {
 					const [handle] = (0, react_1.useState)(() =>
-						(0, remotion_1.delayRender)(),
+						(0, picus_1.delayRender)(),
 					);
 					(0, react_1.useEffect)(() => {
 						return () => {
-							(0, remotion_1.continueRender)(handle);
+							(0, picus_1.continueRender)(handle);
 						};
 					}, [handle]);
 					return null;
@@ -8631,7 +8631,7 @@
 				const jsx_runtime_1 = __webpack_require__(6922);
 				const fiber_1 = __webpack_require__(1164);
 				const react_1 = __webpack_require__(2386);
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				const SuspenseLoader_1 = __webpack_require__(8295);
 				const Scale = ({width, height}) => {
 					const {set, setSize: threeSetSize} = (0, fiber_1.useThree)();
@@ -8654,19 +8654,19 @@
 							'onCreated',
 						]);
 					const [waitForCreated] = (0, react_1.useState)(() =>
-						(0, remotion_1.delayRender)(),
+						(0, picus_1.delayRender)(),
 					);
-					remotion_1.Internals.validateDimension(
+					picus_1.Internals.validateDimension(
 						width,
 						'width',
 						'of the <ThreeCanvas /> component',
 					);
-					remotion_1.Internals.validateDimension(
+					picus_1.Internals.validateDimension(
 						height,
 						'height',
 						'of the <ThreeCanvas /> component',
 					);
-					const contexts = remotion_1.Internals.useRemotionContexts();
+					const contexts = picus_1.Internals.usePicusContexts();
 					const actualStyle = __spreadValues(
 						{
 							width: props.width,
@@ -8674,9 +8674,9 @@
 						},
 						style !== null && style !== void 0 ? style : {},
 					);
-					const remotion_onCreated = (0, react_1.useCallback)(
+					const picus_onCreated = (0, react_1.useCallback)(
 						(state) => {
-							(0, remotion_1.continueRender)(waitForCreated);
+							(0, picus_1.continueRender)(waitForCreated);
 							onCreated === null || onCreated === void 0
 								? void 0
 								: onCreated(state);
@@ -8691,12 +8691,12 @@
 								Object.assign(
 									{style: actualStyle},
 									rest,
-									{onCreated: remotion_onCreated},
+									{onCreated: picus_onCreated},
 									{
 										children: [
 											(0, jsx_runtime_1.jsx)(Scale, {width, height}, void 0),
 											(0, jsx_runtime_1.jsx)(
-												remotion_1.Internals.RemotionContextProvider,
+												picus_1.Internals.PicusContextProvider,
 												Object.assign({contexts}, {children}),
 												void 0,
 											),
@@ -8790,7 +8790,7 @@
 				Object.defineProperty(exports, '__esModule', {value: true});
 				exports.useVideoTexture = void 0;
 				const react_1 = __importStar(__webpack_require__(2386));
-				const remotion_1 = __webpack_require__(4783);
+				const picus_1 = __webpack_require__(4783);
 				const three_1 = __webpack_require__(6770);
 				let warned = false;
 				const warnAboutRequestVideoFrameCallback = () => {
@@ -8804,10 +8804,10 @@
 				};
 				const useVideoTexture = (videoRef) => {
 					const [loaded] = (0, react_1.useState)(() =>
-						(0, remotion_1.delayRender)(),
+						(0, picus_1.delayRender)(),
 					);
 					const [videoTexture, setVideoTexture] = (0, react_1.useState)(null);
-					const frame = (0, remotion_1.useCurrentFrame)();
+					const frame = (0, picus_1.useCurrentFrame)();
 					const onReady = (0, react_1.useCallback)(() => {
 						if (!videoRef.current) {
 							throw new Error('Video not ready');
@@ -8816,7 +8816,7 @@
 						videoRef.current.width = videoRef.current.videoWidth;
 						videoRef.current.height = videoRef.current.videoHeight;
 						setVideoTexture(vt);
-						(0, remotion_1.continueRender)(loaded);
+						(0, picus_1.continueRender)(loaded);
 					}, [loaded, videoRef]);
 					react_1.default.useEffect(() => {
 						if (!videoRef.current) {
@@ -8850,7 +8850,7 @@
 						typeof HTMLVideoElement === 'undefined' ||
 						!HTMLVideoElement.prototype.requestVideoFrameCallback
 					) {
-						(0, remotion_1.continueRender)(loaded);
+						(0, picus_1.continueRender)(loaded);
 						return null;
 					}
 					return videoTexture;
@@ -81292,7 +81292,7 @@ which can be placed in CurveUtils.
 	/******/ /* webpack/runtime/load script */
 	/******/ (() => {
 		/******/ var inProgress = {};
-		/******/ var dataWebpackPrefix = '@remotion/example:';
+		/******/ var dataWebpackPrefix = '@picus/example:';
 		/******/ // loadScript function to load a script via script tag
 		/******/ __webpack_require__.l = (url, done, key, chunkId) => {
 			/******/ if (inProgress[url]) {
@@ -81547,8 +81547,8 @@ which can be placed in CurveUtils.
 			/******/
 		};
 		/******/
-		/******/ var chunkLoadingGlobal = (this['webpackChunk_remotion_example'] =
-			this['webpackChunk_remotion_example'] || []);
+		/******/ var chunkLoadingGlobal = (this['webpackChunk_picus_example'] =
+			this['webpackChunk_picus_example'] || []);
 		/******/ chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 		/******/ chunkLoadingGlobal.push = webpackJsonpCallback.bind(
 			null,
@@ -81566,11 +81566,11 @@ which can be placed in CurveUtils.
 		var __webpack_unused_export__;
 
 		__webpack_unused_export__ = {value: true};
-		const remotion_1 = __webpack_require__(4783);
-		remotion_1.Internals.setupEnvVariables();
-		remotion_1.Internals.setupInitialFrame();
-		remotion_1.Internals.setupPuppeteerTimeout();
-		remotion_1.Internals.CSSUtils.injectCSS(`
+		const picus_1 = __webpack_require__(4783);
+		picus_1.Internals.setupEnvVariables();
+		picus_1.Internals.setupInitialFrame();
+		picus_1.Internals.setupPuppeteerTimeout();
+		picus_1.Internals.CSSUtils.injectCSS(`
   .css-reset * {
     font-size: 16px;
     line-height: 1;
@@ -83411,41 +83411,41 @@ which can be placed in CurveUtils.
 		const jsx_runtime_1 = __webpack_require__(6922);
 		const react_1 = __webpack_require__(2386);
 		const react_dom_1 = __webpack_require__(5976);
-		const remotion_1 = __webpack_require__(4783);
+		const picus_1 = __webpack_require__(4783);
 		const homepage_1 = __webpack_require__(572);
-		remotion_1.Internals.CSSUtils.injectCSS(
-			remotion_1.Internals.CSSUtils.makeDefaultCSS(null, '#fff'),
+		picus_1.Internals.CSSUtils.injectCSS(
+			picus_1.Internals.CSSUtils.makeDefaultCSS(null, '#fff'),
 		);
-		const Root = remotion_1.Internals.getRoot();
+		const Root = picus_1.Internals.getRoot();
 		if (!Root) {
 			throw new Error('Root has not been registered.');
 		}
-		const handle = (0, remotion_1.delayRender)();
+		const handle = (0, picus_1.delayRender)();
 		const Fallback = () => {
 			(0, react_1.useEffect)(() => {
-				const fallback = (0, remotion_1.delayRender)();
-				return () => (0, remotion_1.continueRender)(fallback);
+				const fallback = (0, picus_1.delayRender)();
+				return () => (0, picus_1.continueRender)(fallback);
 			}, []);
 			return null;
 		};
-		const inputProps = (0, remotion_1.getInputProps)();
+		const inputProps = (0, picus_1.getInputProps)();
 		const GetVideo = () => {
 			var _a;
-			const video = remotion_1.Internals.useVideo();
+			const video = picus_1.Internals.useVideo();
 			const compositions = (0, react_1.useContext)(
-				remotion_1.Internals.CompositionManager,
+				picus_1.Internals.CompositionManager,
 			);
 			const [Component, setComponent] = (0, react_1.useState)(null);
 			(0, react_1.useEffect)(() => {
 				var _a2, _b;
-				if (remotion_1.Internals.getIsEvaluation()) {
+				if (picus_1.Internals.getIsEvaluation()) {
 					return;
 				}
 				if (!video && compositions.compositions.length > 0) {
 					compositions.setCurrentComposition(
 						(_b =
 							(_a2 = compositions.compositions.find(
-								(c) => c.id === remotion_1.Internals.getCompositionName(),
+								(c) => c.id === picus_1.Internals.getCompositionName(),
 							)) === null || _a2 === void 0
 								? void 0
 								: _a2.id) !== null && _b !== void 0
@@ -83467,10 +83467,10 @@ which can be placed in CurveUtils.
 				}
 			}, [fetchComponent, video]);
 			(0, react_1.useEffect)(() => {
-				if (remotion_1.Internals.getIsEvaluation()) {
-					(0, remotion_1.continueRender)(handle);
+				if (picus_1.Internals.getIsEvaluation()) {
+					(0, picus_1.continueRender)(handle);
 				} else if (Component) {
-					(0, remotion_1.continueRender)(handle);
+					(0, picus_1.continueRender)(handle);
 				}
 			}, [Component]);
 			if (!video) {
@@ -83485,7 +83485,7 @@ which can be placed in CurveUtils.
 							'div',
 							Object.assign(
 								{
-									id: 'remotion-canvas',
+									id: 'picus-canvas',
 									style: {
 										width: video.width,
 										height: video.height,
@@ -83519,10 +83519,10 @@ which can be placed in CurveUtils.
 				void 0,
 			);
 		};
-		if (!remotion_1.Internals.isPlainIndex()) {
+		if (!picus_1.Internals.isPlainIndex()) {
 			(0, react_dom_1.render)(
 				(0, jsx_runtime_1.jsxs)(
-					remotion_1.Internals.RemotionRoot,
+					picus_1.Internals.PicusRoot,
 					{
 						children: [
 							(0, jsx_runtime_1.jsx)(Root, {}, void 0),
@@ -83535,8 +83535,8 @@ which can be placed in CurveUtils.
 			);
 		}
 		if (
-			remotion_1.Internals.isPlainIndex() ||
-			remotion_1.Internals.getIsEvaluation()
+			picus_1.Internals.isPlainIndex() ||
+			picus_1.Internals.getIsEvaluation()
 		) {
 			(0, react_dom_1.render)(
 				(0, jsx_runtime_1.jsx)(homepage_1.Homepage, {}, void 0),

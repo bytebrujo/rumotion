@@ -36,15 +36,15 @@ export const createZodValues = (
 	// so they are detected regardless of the underlying type.
 	const description = getZodSchemaDescription(schema);
 	if (zodTypes) {
-		if (description === zodTypes.ZodZypesInternals.REMOTION_COLOR_BRAND) {
+		if (description === zodTypes.ZodZypesInternals.PICUS_COLOR_BRAND) {
 			return '#ffffff';
 		}
 
-		if (description === zodTypes.ZodZypesInternals.REMOTION_TEXTAREA_BRAND) {
+		if (description === zodTypes.ZodZypesInternals.PICUS_TEXTAREA_BRAND) {
 			return '';
 		}
 
-		if (description === zodTypes.ZodZypesInternals.REMOTION_MATRIX_BRAND) {
+		if (description === zodTypes.ZodZypesInternals.PICUS_MATRIX_BRAND) {
 			return [
 				[1, 0, 0],
 				[0, 1, 0],
@@ -87,7 +87,7 @@ export const createZodValues = (
 		case 'date':
 			return new Date();
 		case 'symbol':
-			return Symbol('remotion');
+			return Symbol('picus');
 		case 'undefined':
 		case 'void':
 			return undefined;

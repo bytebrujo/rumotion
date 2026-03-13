@@ -9,7 +9,7 @@ crumb: "Troubleshooting"
 If you experience an error during rendering:
 
 ```
-defaultProps too big - could not serialize - the defaultProps of composition with ID "[composition-id]" - the object that was passed to defaultProps was too big. Learn how to mitigate this error by visiting https://remotion.dev/docs/troubleshooting/serialize-defaultprops
+defaultProps too big - could not serialize - the defaultProps of composition with ID "[composition-id]" - the object that was passed to defaultProps was too big. Learn how to mitigate this error by visiting https://picus.dev/docs/troubleshooting/serialize-defaultprops
 ```
 
 It means the object that was passed to [`defaultProps`](/docs/composition#defaultprops) for the specified composition is too big that Chrome cannot serialize it into a string.
@@ -17,14 +17,14 @@ It means the object that was passed to [`defaultProps`](/docs/composition#defaul
 If you see this variant of the error:
 
 ```
-defaultProps too big - Could not serialize - an object that was passed to defaultProps was too big. Learn how to mitigate this error by visiting https://remotion.dev/docs/troubleshooting/serialize-defaultprops
+defaultProps too big - Could not serialize - an object that was passed to defaultProps was too big. Learn how to mitigate this error by visiting https://picus.dev/docs/troubleshooting/serialize-defaultprops
 ```
 
 The [`defaultProps`](/docs/composition#defaultprops) is not too big, but the list of compositions as a whole is too big to serialize.
 
 ## Why this error occurs
 
-Remotion is trying to gather a list of compositions using [`getCompositions()`](/docs/renderer/get-compositions), and is copying them from the headless browser into Node.JS. During this operation, the JavaScript object needs to be converted into a string. The upper limit for this is 256MB, however dependending on the machine Remotion runs on, the error may also occur on smaller payloads.
+Picus is trying to gather a list of compositions using [`getCompositions()`](/docs/renderer/get-compositions), and is copying them from the headless browser into Node.JS. During this operation, the JavaScript object needs to be converted into a string. The upper limit for this is 256MB, however dependending on the machine Picus runs on, the error may also occur on smaller payloads.
 
 ## How to fix the error
 
@@ -36,7 +36,7 @@ Avoid passing huge data payloads to `defaultProps`. Instead, derive the big data
 Example:
 
 ```tsx twoslash title="❌ Avoid - big data chunk as defaultProps"
-import { AudioData, getAudioData } from "@remotion/media-utils";
+import { AudioData, getAudioData } from "@picus/media-utils";
 import { useEffect, useState } from "react";
 import {
   cancelRender,
@@ -44,7 +44,7 @@ import {
   continueRender,
   delayRender,
   staticFile,
-} from "remotion";
+} from "picus";
 
 // MyComp.tsx
 const MyComp: React.FC<{
@@ -54,7 +54,7 @@ const MyComp: React.FC<{
 };
 
 // src/Root.tsx
-const RemotionRoot = () => {
+const PicusRoot = () => {
   const [audioData, setAudioData] = useState<AudioData | null>(null);
   const [handle] = useState(() => delayRender());
 
@@ -85,10 +85,10 @@ const RemotionRoot = () => {
 };
 ```
 
-This can lead to problems because the `audioData` variable can become very big since it contains raw data about the waveform, and Remotion needs to serialize this data into a string, which is slow and can lead to this error. Instead, pass the audio URL and do the audio data fetching inside the component:
+This can lead to problems because the `audioData` variable can become very big since it contains raw data about the waveform, and Picus needs to serialize this data into a string, which is slow and can lead to this error. Instead, pass the audio URL and do the audio data fetching inside the component:
 
 ```tsx twoslash title="✅ Do - Fetch data inside composition"
-import { getAudioData } from "@remotion/media-utils";
+import { getAudioData } from "@picus/media-utils";
 import { useEffect, useState } from "react";
 import {
   cancelRender,
@@ -96,7 +96,7 @@ import {
   continueRender,
   delayRender,
   staticFile,
-} from "remotion";
+} from "picus";
 
 // MyComp.tsx
 const MyComp: React.FC<{ src: string }> = ({ src }) => {
@@ -118,7 +118,7 @@ const MyComp: React.FC<{ src: string }> = ({ src }) => {
 };
 
 // src/Root.tsx
-const RemotionRoot = () => {
+const PicusRoot = () => {
   return (
     <Composition
       id="my-comp"

@@ -5,7 +5,7 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 import {z} from 'zod';
 import {BLUE} from '../../colors';
 import {loadFont} from '../../load-font';

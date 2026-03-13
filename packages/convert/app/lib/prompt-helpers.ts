@@ -7,7 +7,7 @@ export const formatLikeCount = (n: number): string => {
 	return `${(n / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
 };
 
-const LIKED_KEY = 'remotion-prompt-likes';
+const LIKED_KEY = 'picus-prompt-likes';
 
 export const getLikedIds = (): Set<string> => {
 	try {

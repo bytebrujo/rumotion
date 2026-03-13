@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/lambda"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/lambda"
 	},
-	"name": "@remotion/lambda",
+	"name": "@picus/lambda",
 	"version": "4.0.434",
-	"description": "Render Remotion videos on AWS Lambda",
+	"description": "Render Picus videos on AWS Lambda",
 	"main": "dist/index.js",
 	"sideEffects": false,
 	"scripts": {
@@ -17,7 +17,7 @@
 		"makeruntime": "bun build.ts",
 		"prepublishOnly": "bun build.ts && bun ensure-version-match.js"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>",
+	"author": "Jonny Burger <jonny@picus.dev>",
 	"license": "SEE LICENSE IN LICENSE.md",
 	"dependencies": {
 		"@aws-sdk/s3-request-presigner": "catalog:",
@@ -29,22 +29,22 @@
 		"@aws-sdk/client-cloudwatch-logs": "catalog:",
 		"@aws-sdk/client-service-quotas": "catalog:",
 		"@aws-sdk/lib-storage": "catalog:",
-		"@remotion/bundler": "workspace:*",
-		"@remotion/cli": "workspace:*",
-		"@remotion/lambda-client": "workspace:*",
-		"@remotion/renderer": "workspace:*",
-		"@remotion/serverless": "workspace:*",
-		"@remotion/streaming": "workspace:*",
+		"@picus/bundler": "workspace:*",
+		"@picus/cli": "workspace:*",
+		"@picus/lambda-client": "workspace:*",
+		"@picus/renderer": "workspace:*",
+		"@picus/serverless": "workspace:*",
+		"@picus/streaming": "workspace:*",
 		"@smithy/abort-controller": "4.0.1",
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"zod": "catalog:"
 	},
 	"devDependencies": {
-		"@remotion/bundler": "workspace:*",
+		"@picus/bundler": "workspace:*",
 		"@types/express": "^5.0.0",
 		"express": "4.21.0",
-		"@remotion/compositor-linux-arm64-gnu": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/compositor-linux-arm64-gnu": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"mime-types": "2.1.34",
 		"@types/mime-types": "2.1.1",
 		"@types/minimist": "1.2.2",
@@ -55,7 +55,7 @@
 		"@typescript/native-preview": "catalog:"
 	},
 	"peerDependencies": {
-		"@remotion/bundler": "workspace:*"
+		"@picus/bundler": "workspace:*"
 	},
 	"publishConfig": {
 		"access": "public"
@@ -91,5 +91,5 @@
 			]
 		}
 	},
-	"homepage": "https://www.remotion.dev/docs/lambda"
+	"homepage": "https://www.picus.dev/docs/lambda"
 }

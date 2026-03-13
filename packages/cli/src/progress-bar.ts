@@ -1,16 +1,16 @@
-import type {CancelSignal, LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
-import {NoReactAPIs} from '@remotion/renderer/pure';
+import type {CancelSignal, LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
+import {NoReactAPIs} from '@picus/renderer/pure';
 import type {
 	AggregateRenderProgress,
 	BundlingState,
 	CopyingState,
 	RenderingProgressInput,
 	StitchingProgressInput,
-} from '@remotion/studio-server';
-import {StudioServerInternals} from '@remotion/studio-server';
-import type {BrowserProgressLog} from '@remotion/studio-shared';
-import {formatBytes, type ArtifactProgress} from '@remotion/studio-shared';
+} from '@picus/studio-server';
+import {StudioServerInternals} from '@picus/studio-server';
+import type {BrowserProgressLog} from '@picus/studio-shared';
+import {formatBytes, type ArtifactProgress} from '@picus/studio-shared';
 import {chalk} from './chalk';
 import {
 	getFileSizeDownloadBar,

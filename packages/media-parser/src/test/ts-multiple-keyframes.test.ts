@@ -1,5 +1,5 @@
 import {beforeAll, expect, test} from 'bun:test';
-import {getRemoteExampleVideo} from '@remotion/example-videos';
+import {getRemoteExampleVideo} from '@picus/example-videos';
 import {mediaParserController} from '../controller/media-parser-controller';
 import {hasBeenAborted} from '../errors';
 import {nodeReader} from '../node';
@@ -42,7 +42,7 @@ test('Should be able to seek back based on already observed keyframes', async ()
 			},
 			controller: controller1,
 			reader: nodeReader,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 
 		expect(keyframes).toBe(78);
@@ -81,7 +81,7 @@ test('should be able to use seeking hints from previous parse', async () => {
 		await parseMedia({
 			src: await getRemoteExampleVideo('tsKeyframes'),
 			seekingHints: hints,
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 			reader: nodeReader,
 			controller: controller2,
 			onVideoTrack: () => {

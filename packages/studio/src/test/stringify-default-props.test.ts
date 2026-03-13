@@ -1,7 +1,7 @@
 import {expect, test} from 'bun:test';
-import {stringifyDefaultProps} from '@remotion/studio-shared';
+import {stringifyDefaultProps} from '@picus/studio-shared';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import * as zodTypes from '@remotion/zod-types';
+import * as zodTypes from '@picus/zod-types';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import {z} from 'zod';
 import {createZodValues} from '../components/RenderModal/SchemaEditor/create-zod-values';
@@ -11,7 +11,7 @@ test('Should stringify default props correctly', () => {
 	const result = stringifyDefaultProps({
 		props: {
 			abc: 'def',
-			newDate: 'remotion-date:2022-01-02',
+			newDate: 'picus-date:2022-01-02',
 		},
 		enumPaths: [],
 	});

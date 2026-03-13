@@ -1,16 +1,16 @@
-import {parseMedia} from '@remotion/media-parser';
-import {StudioInternals} from '@remotion/studio';
-import {CalculateMetadataFunction, Html5Audio} from 'remotion';
+import {parseMedia} from '@picus/media-parser';
+import {StudioInternals} from '@picus/studio';
+import {CalculateMetadataFunction, Html5Audio} from 'picus';
 
 const fps = 30;
-const src = 'https://remotion.media/multiple-audio-streams.mov';
+const src = 'https://picus.media/multiple-audio-streams.mov';
 
 export const calculateMetadataFn: CalculateMetadataFunction<
 	Record<string, unknown>
 > = async () => {
 	const {slowDurationInSeconds} = await parseMedia({
 		src,
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		fields: {
 			slowDurationInSeconds: true,
 		},

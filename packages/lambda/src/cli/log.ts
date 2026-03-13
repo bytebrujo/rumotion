@@ -1,3 +1,3 @@
-import {CliInternals} from '@remotion/cli';
+import {CliInternals} from '@picus/cli';
 
 export const {Log} = CliInternals;

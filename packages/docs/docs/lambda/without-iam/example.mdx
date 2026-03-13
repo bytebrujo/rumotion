@@ -64,14 +64,14 @@ npx aws-cdk deploy \
   --outputs-file ./cdk-outputs.json
 ```
 
-The Remotion packages are also bundled into the stack, these ensures that [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda) can be executed by the [Lambda function](https://github.com/alexfernandez803/example-lambda/blob/main/src/render-function/index.ts).
+The Picus packages are also bundled into the stack, these ensures that [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda) can be executed by the [Lambda function](https://github.com/alexfernandez803/example-lambda/blob/main/src/render-function/index.ts).
 
 ```json title="package.json"
 {
   "dependencies": {
     ...
-    "remotion": "^3.3.33",
-    "@remotion/lambda": "^3.3.33",
+    "picus": "^3.3.33",
+    "@picus/lambda": "^3.3.33",
   }
 }
 
@@ -138,7 +138,7 @@ npx aws-cdk destroy
 
 ## Lambda role
 
-The CDK creates an IAM role named `remotionLambdaServerlessRole` which needs the Remotion policy [setup](/docs/lambda/without-iam).
+The CDK creates an IAM role named `picusLambdaServerlessRole` which needs the Picus policy [setup](/docs/lambda/without-iam).
 
 ## Test your endpoint
 
@@ -203,7 +203,7 @@ curl --location --request POST 'https://du7jfr6.execute-api.us-east-1.amazonaws.
 #### Response
 
 ```bash
-{"message":"SUCCESS","bucketName":"remotionlambda-apsoutheast2-5essis84y1","renderId":"1pwhfhh11z"}
+{"message":"SUCCESS","bucketName":"picuslambda-apsoutheast2-5essis84y1","renderId":"1pwhfhh11z"}
 ```
 
 That's it! You now have an API that you can use to invoke the rendering of a video.
@@ -216,7 +216,7 @@ The function uses version 2 of the CDK, which is still being actively developed.
 ## Next Steps
 
 - [Customize the Lambda function](https://github.com/alexfernandez803/example-lambda/blob/main/src/render-function/index.ts) so that the rendered video will be moved to another directory.
-- Try assigning the Remotion [role](/docs/lambda/without-iam#1-create-role-policy) via CDK [`code`](https://github.com/alexfernandez803/example-lambda/blob/main/lib/remotion-cdk-starter-stack.ts).
+- Try assigning the Picus [role](/docs/lambda/without-iam#1-create-role-policy) via CDK [`code`](https://github.com/alexfernandez803/example-lambda/blob/main/lib/picus-cdk-starter-stack.ts).
 - Add request parameters to the Lambda function as input parameters for [`renderMediaOnLambda()`](/docs/lambda/rendermediaonlambda).
 
 ## See also

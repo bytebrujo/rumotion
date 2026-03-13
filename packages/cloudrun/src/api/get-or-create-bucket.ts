@@ -1,8 +1,8 @@
 import type {GcpRegion} from '../pricing/gcp-regions';
-import {REMOTION_BUCKET_PREFIX} from '../shared/constants';
+import {PICUS_BUCKET_PREFIX} from '../shared/constants';
 import {makeBucketName} from '../shared/validate-bucketname';
 import {createBucket} from './create-bucket';
-import {getRemotionStorageBuckets} from './get-buckets';
+import {getPicusStorageBuckets} from './get-buckets';
 
 export type GetOrCreateBucketInput = {
 	region: GcpRegion;
@@ -20,28 +20,28 @@ export type GetOrCreateBucketOutput = {
 	alreadyExisted: boolean;
 };
 /*
- * @description Creates a Cloud Storage bucket for Remotion Cloud Run in your GCP project. If one already exists, it will get returned instead.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/getorcreatebucket)
+ * @description Creates a Cloud Storage bucket for Picus Cloud Run in your GCP project. If one already exists, it will get returned instead.
+ * @see [Documentation](https://picus.dev/docs/cloudrun/getorcreatebucket)
  */
 export const getOrCreateBucket = async (
 	params: GetOrCreateBucketInput,
 ): Promise<GetOrCreateBucketOutput> => {
-	const {remotionBuckets} = await getRemotionStorageBuckets(params.region);
+	const {picusBuckets} = await getPicusStorageBuckets(params.region);
 
-	if (remotionBuckets.length > 1) {
+	if (picusBuckets.length > 1) {
 		throw new Error(
-			`You have multiple buckets (${remotionBuckets
+			`You have multiple buckets (${picusBuckets
 				.map((b) => b.name)
 				.join(', ')}) in your Cloud Storage region (${
 				params.region
-			}) starting with "${REMOTION_BUCKET_PREFIX}". This is an error, please delete buckets so that you have one maximum.`,
+			}) starting with "${PICUS_BUCKET_PREFIX}". This is an error, please delete buckets so that you have one maximum.`,
 		);
 	}
 
-	if (remotionBuckets.length === 1) {
+	if (picusBuckets.length === 1) {
 		params?.updateBucketState?.('Used bucket');
 		return {
-			bucketName: remotionBuckets[0].name,
+			bucketName: picusBuckets[0].name,
 			alreadyExisted: true,
 		};
 	}

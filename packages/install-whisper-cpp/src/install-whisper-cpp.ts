@@ -63,12 +63,12 @@ const installForWindows = async ({
 }) => {
 	if (!getIsSemVer(version)) {
 		throw new Error(`Non-semantic version provided. Only releases of Whisper.cpp are supported on Windows (e.g., 1.5.4). Provided version:
-		${version}. See https://www.remotion.dev/docs/install-whisper-cpp/install-whisper-cpp#version for more information.`);
+		${version}. See https://www.picus.dev/docs/install-whisper-cpp/install-whisper-cpp#version for more information.`);
 	}
 
 	const url =
 		version === '1.5.5'
-			? 'https://remotion-ffmpeg-binaries.s3.eu-central-1.amazonaws.com/whisper-bin-x64-1-5-5.zip'
+			? 'https://picus-ffmpeg-binaries.s3.eu-central-1.amazonaws.com/whisper-bin-x64-1-5-5.zip'
 			: `https://github.com/ggerganov/whisper.cpp/releases/download/v${version}/whisper-bin-x64.zip`;
 
 	const filePath = path.join(process.cwd(), 'whisper-bin-x64.zip');

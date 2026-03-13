@@ -1,4 +1,4 @@
-import {getBoundingBox, scalePath, translatePath} from '@remotion/paths';
+import {getBoundingBox, scalePath, translatePath} from '@picus/paths';
 import React, {useMemo} from 'react';
 import {SvgExtrusion} from '../3DContext/Extrusion';
 import {FrontFaceG} from '../3DContext/FrontFaceG';

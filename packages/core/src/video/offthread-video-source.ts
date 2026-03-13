@@ -12,7 +12,7 @@ export const getOffthreadVideoSource = ({
 	toneMapped: boolean;
 }) => {
 	return `http://localhost:${
-		window.remotion_proxyPort
+		window.picus_proxyPort
 	}/proxy?src=${encodeURIComponent(
 		getAbsoluteSrc(src),
 	)}&time=${encodeURIComponent(Math.max(0, currentTime))}&transparent=${String(

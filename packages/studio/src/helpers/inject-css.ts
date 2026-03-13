@@ -1,4 +1,4 @@
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {DEFAULT_PROPS_PATH_ACTIVE_CLASSNAME} from '../components/RenderModal/SchemaEditor/scroll-to-default-props-path';
 
 const makeDefaultGlobalCSS = () => {
@@ -10,8 +10,8 @@ const makeDefaultGlobalCSS = () => {
 
 	return `
   html {
-    --remotion-cli-internals-blue: #0b84f3;
-    --remotion-cli-internals-blue-hovered: #4da3f7;
+    --picus-cli-internals-blue: #0b84f3;
+    --picus-cli-internals-blue-hovered: #4da3f7;
     overscroll-behavior-y: none;
     overscroll-behavior-x: none;
   }
@@ -23,12 +23,12 @@ const makeDefaultGlobalCSS = () => {
     position: static !important;
   }
 
-  .remotion-splitter {
+  .picus-splitter {
     user-select: none;
     -webkit-user-select: none;
   }
   
-  .remotion-splitter-horizontal {
+  .picus-splitter-horizontal {
     transform: scaleY(${unhoveredDragAreaFactor});
     background: linear-gradient(
       to bottom,
@@ -39,12 +39,12 @@ const makeDefaultGlobalCSS = () => {
     );
   }
   
-  .remotion-splitter-horizontal.remotion-splitter-active, .remotion-splitter-horizontal.remotion-splitter-hover {
+  .picus-splitter-horizontal.picus-splitter-active, .picus-splitter-horizontal.picus-splitter-hover {
     background: linear-gradient(
       to bottom,
       transparent ${50 - fromMiddleHovered}%,
-      var(--remotion-cli-internals-blue) ${50 - fromMiddleHovered}%,
-      var(--remotion-cli-internals-blue) ${50 + fromMiddleHovered}%,
+      var(--picus-cli-internals-blue) ${50 - fromMiddleHovered}%,
+      var(--picus-cli-internals-blue) ${50 + fromMiddleHovered}%,
       transparent ${50 + fromMiddleHovered}%
     );
     cursor: row-resize;
@@ -52,7 +52,7 @@ const makeDefaultGlobalCSS = () => {
     z-index: 1000;
   }
   
-  .remotion-splitter-vertical {
+  .picus-splitter-vertical {
     transform: scaleX(${unhoveredDragAreaFactor});
     background: linear-gradient(
       to right,
@@ -63,12 +63,12 @@ const makeDefaultGlobalCSS = () => {
     );
   }
   
-  .remotion-splitter-vertical.remotion-splitter-active, .remotion-splitter-vertical.remotion-splitter-hover {
+  .picus-splitter-vertical.picus-splitter-active, .picus-splitter-vertical.picus-splitter-hover {
     background: linear-gradient(
       to right,
       transparent ${50 - fromMiddleHovered}%,
-      var(--remotion-cli-internals-blue) ${50 - fromMiddleHovered}%,
-      var(--remotion-cli-internals-blue) ${50 + fromMiddleHovered}%,
+      var(--picus-cli-internals-blue) ${50 - fromMiddleHovered}%,
+      var(--picus-cli-internals-blue) ${50 + fromMiddleHovered}%,
       transparent ${50 + fromMiddleHovered}%
     );
     transform: scaleX(${hoveredDragAreaFactor});
@@ -84,7 +84,7 @@ const makeDefaultGlobalCSS = () => {
   
   input:focus,
   textarea:focus,
-  button:focus:not(.__remotion_input_dragger),
+  button:focus:not(.__picus_input_dragger),
   a:focus {
     outline: none;
     box-shadow:
@@ -94,20 +94,20 @@ const makeDefaultGlobalCSS = () => {
       inset -1px 1px #555;
   }
   
-  input[type='color'].__remotion_color_picker::-webkit-color-swatch-wrapper {
+  input[type='color'].__picus_color_picker::-webkit-color-swatch-wrapper {
     padding: 0;
   }
-  input[type='color'].__remotion_color_picker::-webkit-color-swatch {
+  input[type='color'].__picus_color_picker::-webkit-color-swatch {
     border: none;
   }
   
-  .__remotion_thumb,
-  .__remotion_thumb::-webkit-slider-thumb {
+  .__picus_thumb,
+  .__picus_thumb::-webkit-slider-thumb {
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
   }
   
-  .__remotion_thumb {
+  .__picus_thumb {
     pointer-events: none;
     position: absolute;
     height: 0;
@@ -119,7 +119,7 @@ const makeDefaultGlobalCSS = () => {
   }
   
   /* For Firefox browsers */
-  .__remotion_thumb::-moz-range-thumb {
+  .__picus_thumb::-moz-range-thumb {
     border: 1px solid black;
     border-radius: 2px;
     cursor: pointer;
@@ -132,7 +132,7 @@ const makeDefaultGlobalCSS = () => {
   }
   
   /* For Chrome browsers */
-  .__remotion_thumb::-webkit-slider-thumb {
+  .__picus_thumb::-webkit-slider-thumb {
     border: 1px solid black;
     border-radius: 2px;
     cursor: pointer;
@@ -144,12 +144,12 @@ const makeDefaultGlobalCSS = () => {
     position: relative;
   }  
 
-  .__remotion_input_dragger:hover span {
-    color: var(--remotion-cli-internals-blue-hovered) !important;
+  .__picus_input_dragger:hover span {
+    color: var(--picus-cli-internals-blue-hovered) !important;
   }
 
   .${DEFAULT_PROPS_PATH_ACTIVE_CLASSNAME} span {
-    color: var(--remotion-cli-internals-blue) !important;
+    color: var(--picus-cli-internals-blue) !important;
     transition: color 0.2s ease-in-out;
   }
   `.trim();

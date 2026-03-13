@@ -1,5 +1,5 @@
 import {expect, test} from 'bun:test';
-import {exampleVideos} from '@remotion/example-videos';
+import {exampleVideos} from '@picus/example-videos';
 import {parseMedia} from '../parse-media';
 import {nodeReader} from '../readers/from-node';
 
@@ -11,7 +11,7 @@ test('Parse only header of WebM', async () => {
 			internalStats: true,
 			container: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -31,7 +31,7 @@ test('Parse WebM partially', async () => {
 			sampleRate: true,
 			numberOfAudioChannels: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		reader: nodeReader,
 	});
 
@@ -50,7 +50,7 @@ test('Parse WebM fully', async () => {
 			tracks: true,
 			internalStats: true,
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 		onVideoTrack: () => () => undefined,
 		reader: nodeReader,
 	});

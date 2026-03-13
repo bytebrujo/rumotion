@@ -1,4 +1,4 @@
-import {Triangle} from '@remotion/shapes';
+import {Triangle} from '@picus/shapes';
 import React from 'react';
 import {
 	AbsoluteFill,
@@ -6,7 +6,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
+} from 'picus';
 
 const TriangleTest: React.FC = () => {
 	const frame = useCurrentFrame();

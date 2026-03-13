@@ -1,4 +1,4 @@
-import {Artifact, useCurrentFrame} from 'remotion';
+import {Artifact, useCurrentFrame} from 'picus';
 import {expect, test} from 'vitest';
 import type {EmittedArtifact} from '../artifact';
 import {renderMediaOnWeb} from '../render-media-on-web';
@@ -65,7 +65,7 @@ test('should fail to render multiple artifacts with the same filename', async (t
 			t.task.file.projectName === 'webkit' ? 'arraybuffer' : 'web-fs',
 	});
 	await expect(prom).rejects.toThrow(
-		'An artifact with output "test.txt" was already registered at frame 0, but now registered again at frame 1. Artifacts must have unique names. https://remotion.dev/docs/artifacts',
+		'An artifact with output "test.txt" was already registered at frame 0, but now registered again at frame 1. Artifacts must have unique names. https://picus.dev/docs/artifacts',
 	);
 });
 

@@ -59,7 +59,7 @@ export const PlayerFeatures: React.FC = () => {
 						Extremely <span className={styles.keyword}>customizable</span>
 					</h2>
 					<p>
-						The Remotion Player is inspired by the browsers native{' '}
+						The Picus Player is inspired by the browsers native{' '}
 						<code>&lt;video&gt;</code> tag. Get started by adding the{' '}
 						<code>controls</code> prop, or build your own UI using our flexible
 						APIs.{' '}
@@ -86,7 +86,7 @@ export const PlayerFeatures: React.FC = () => {
 						Turn it into real <span className={styles.keyword}> videos</span>
 					</h2>
 					<p>
-						Connect to the Remotion server-side rendering APIs to turn the
+						Connect to the Picus server-side rendering APIs to turn the
 						preview into real videos. We have support for audio and various
 						codecs, and allow rendering in Node.JS or AWS Lambda.
 					</p>

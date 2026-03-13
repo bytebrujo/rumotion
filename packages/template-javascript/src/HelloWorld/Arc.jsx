@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { random, useVideoConfig } from "remotion";
+import { random, useVideoConfig } from "picus";
 import { COLOR_1, COLOR_2 } from "./constants";
 
 const getCircumferenceOfArc = (rx, ry) => {

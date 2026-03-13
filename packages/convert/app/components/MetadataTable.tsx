@@ -1,7 +1,7 @@
 import type {MetadataTags} from 'mediabunny';
 import React from 'react';
 import {
-	parseIsMadeWithRemotion,
+	parseIsMadeWithPicus,
 	renderMetadataLabel,
 	renderMetadataValue,
 } from '~/lib/render-metadata-label';
@@ -28,7 +28,7 @@ export const MetadataDisplay: React.FC<{
 					return null;
 				}
 
-				const version = parseIsMadeWithRemotion(key, value);
+				const version = parseIsMadeWithPicus(key, value);
 
 				return (
 					<TableRow key={key}>
@@ -42,7 +42,7 @@ export const MetadataDisplay: React.FC<{
 								{version ? (
 									<a
 										className="inline-flex flex-row items-center text-brand"
-										href={`https://github.com/remotion-dev/remotion/releases/v${version}`}
+										href={`https://github.com/picus-dev/picus/releases/v${version}`}
 										target="_blank"
 									>
 										<svg

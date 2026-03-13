@@ -1,5 +1,5 @@
-import {Lottie} from '@remotion/lottie';
-import {AbsoluteFill, useVideoConfig} from 'remotion';
+import {Lottie} from '@picus/lottie';
+import {AbsoluteFill, useVideoConfig} from 'picus';
 
 const lottie = {
 	v: '5.5.2',
@@ -16,7 +16,7 @@ const lottie = {
 			w: 500,
 			h: 500,
 			u: '',
-			p: 'https://www.remotion.dev/img/new-logo.png',
+			p: 'https://www.picus.dev/img/new-logo.png',
 			e: 1,
 		},
 	],

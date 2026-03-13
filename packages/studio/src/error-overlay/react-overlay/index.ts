@@ -1,4 +1,4 @@
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 import {listenToRuntimeErrors} from './listen-to-runtime-errors';
 
 let stopListeningToRuntimeErrors: null | (() => void) = null;

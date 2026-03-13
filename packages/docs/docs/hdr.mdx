@@ -1,6 +1,6 @@
 ---
 image: /generated/articles-docs-hdr.png
-title: High Dynamic Range and Remotion
+title: High Dynamic Range and Picus
 sidebar_label: HDR
 id: hdr
 crumb: 'How to deal with HDR'
@@ -8,7 +8,7 @@ crumb: 'How to deal with HDR'
 
 High Dynamic Range (HDR) is a feature that allows for a wider range of colors and brightnesses than standard dynamic range (SDR).
 
-Remotion uses a headless Chrome browser to render, which does not support HDR.  
+Picus uses a headless Chrome browser to render, which does not support HDR.  
 Frames are always rendered in sRGB, which is standard dynamic range.
 
 ## Embedding HDR videos
@@ -22,17 +22,17 @@ However, the `--gl` flag is relevant and may influence the colors.
 
 Tip: **Setting the `--gl=angle` will result in much better colors when embedding an HDR video (tested on macOS).**  
 We have not yet experimented with this enough to give a recommendation on which `--gl` flag to use.  
-The Remotion team is keen to hear your experiences.
+The Picus team is keen to hear your experiences.
 
 ### In `<OffthreadVideo />`
 
 By default, color conversion is applied automatically to HDR videos.  
-Remotion tries to use FFmpeg and the `zscale` library to preserve the colors as well as possible when converting the video to SDR.
+Picus tries to use FFmpeg and the `zscale` library to preserve the colors as well as possible when converting the video to SDR.
 
 There is no configuration, but it is possible to disable this feature:
 
 ```tsx twoslash title="Disabling color conversion"
-import {OffthreadVideo} from 'remotion';
+import {OffthreadVideo} from 'picus';
 
 export const MyComp = () => {
   return <OffthreadVideo src="https://example.com/hdr.mp4" toneMapped={false} />;
@@ -41,7 +41,7 @@ export const MyComp = () => {
 
 ## Outputting HDR videos
 
-Because all frames are rendered in SDR, **it doesn't make sense to output an HDR video with Remotion.**
+Because all frames are rendered in SDR, **it doesn't make sense to output an HDR video with Picus.**
 
 It is better to accept the loss and output an SDR video, rather than trying to convert the frames to HDR again, which would lead to more loss.
 

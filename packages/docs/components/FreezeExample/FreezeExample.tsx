@@ -1,4 +1,4 @@
-import {Player} from '@remotion/player';
+import {Player} from '@picus/player';
 import React, {useState} from 'react';
 import {
 	AbsoluteFill,
@@ -6,7 +6,7 @@ import {
 	interpolate,
 	spring,
 	useCurrentFrame,
-} from 'remotion';
+} from 'picus';
 
 const BlueSquare: React.FC = () => {
 	const frame = useCurrentFrame();
@@ -63,7 +63,7 @@ export const FreezeExample: React.FC = () => {
 	return (
 		<div>
 			<Player
-				acknowledgeRemotionLicense
+				acknowledgePicusLicense
 				component={BlueSquareFreeze}
 				compositionWidth={1280}
 				compositionHeight={720}

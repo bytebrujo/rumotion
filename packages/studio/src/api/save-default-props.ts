@@ -1,4 +1,4 @@
-import {getRemotionEnvironment} from 'remotion';
+import {getPicusEnvironment} from 'picus';
 import type {ZodTypesType} from '../components/get-zod-if-possible';
 import {extractEnumJsonPaths} from '../components/RenderModal/SchemaEditor/extract-enum-json-paths';
 import {callUpdateDefaultPropsApi} from '../components/RenderQueue/actions';
@@ -7,7 +7,7 @@ import {calcNewProps} from './helpers/calc-new-props';
 
 /*
  * @description Saves the defaultProps for a composition back to the root file.
- * @see [Documentation](https://www.remotion.dev/docs/studio/save-default-props)
+ * @see [Documentation](https://www.picus.dev/docs/studio/save-default-props)
  */
 export const saveDefaultProps = async ({
 	compositionId,
@@ -16,11 +16,11 @@ export const saveDefaultProps = async ({
 	compositionId: string;
 	defaultProps: UpdateDefaultPropsFunction;
 }) => {
-	if (!getRemotionEnvironment().isStudio) {
+	if (!getPicusEnvironment().isStudio) {
 		throw new Error('saveDefaultProps() is only available in the Studio');
 	}
 
-	if (window.remotion_isReadOnlyStudio) {
+	if (window.picus_isReadOnlyStudio) {
 		throw new Error('saveDefaultProps() is not available in read-only Studio');
 	}
 
@@ -35,7 +35,7 @@ export const saveDefaultProps = async ({
 	const z = await import('zod');
 	let zodTypes: ZodTypesType | null = null;
 	try {
-		zodTypes = await import('@remotion/zod-types');
+		zodTypes = await import('@picus/zod-types');
 	} catch {}
 
 	const {generatedDefaultProps, composition} = calcNewProps(

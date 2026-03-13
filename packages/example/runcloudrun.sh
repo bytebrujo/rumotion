@@ -11,7 +11,7 @@ ARTIFACT_REGISTRY_ENV=development node submit.mjs
 cd ..
 cd ..
 cd example
-bunx remotion cloudrun services rmall -f
-bunx remotion cloudrun sites create --site-name=testbed
-ARTIFACT_REGISTRY_ENV=development bunx remotion cloudrun services deploy --cpuLimit=4.0
-bunx remotion cloudrun render testbed OffthreadRemoteVideo --log=verbose
+bunx picus cloudrun services rmall -f
+bunx picus cloudrun sites create --site-name=testbed
+ARTIFACT_REGISTRY_ENV=development bunx picus cloudrun services deploy --cpuLimit=4.0
+bunx picus cloudrun render testbed OffthreadRemoteVideo --log=verbose

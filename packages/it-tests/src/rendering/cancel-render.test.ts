@@ -23,7 +23,7 @@ test(
 			'bun',
 			[
 				'x',
-				'remotion',
+				'picus',
 				'render',
 				'./build',
 				'cancel-render',

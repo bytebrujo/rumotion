@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/transitions"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/transitions"
 	},
-	"name": "@remotion/transitions",
+	"name": "@picus/transitions",
 	"version": "4.0.434",
-	"description": "Library for creating transitions in Remotion",
+	"description": "Library for creating transitions in Picus",
 	"sideEffects": false,
 	"main": "dist/esm/index.mjs",
 	"module": "dist/esm/index.js",
@@ -20,21 +20,21 @@
 	"contributors": [],
 	"license": "UNLICENSED",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*",
-		"@remotion/shapes": "workspace:*",
-		"@remotion/paths": "workspace:*"
+		"picus": "workspace:*",
+		"@picus/shapes": "workspace:*",
+		"@picus/paths": "workspace:*"
 	},
 	"devDependencies": {
 		"@happy-dom/global-registrator": "14.5.1",
-		"remotion": "workspace:*",
+		"picus": "workspace:*",
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"@remotion/test-utils": "workspace:*",
-		"@remotion/player": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"@picus/test-utils": "workspace:*",
+		"@picus/player": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
@@ -43,7 +43,7 @@
 		"react-dom": ">=16.8.0"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"transitions"
 	],
 	"publishConfig": {
@@ -125,5 +125,5 @@
 			]
 		}
 	},
-	"homepage": "https://www.remotion.dev/transitions"
+	"homepage": "https://www.picus.dev/transitions"
 }

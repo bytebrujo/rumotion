@@ -1,4 +1,4 @@
-import {RenderInternals} from '@remotion/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {chalk} from './chalk';
 
 const full = '━';

@@ -16,8 +16,8 @@ import util from 'node:util';
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import type {LogLevel} from '@remotion/renderer';
-import {RenderInternals} from '@remotion/renderer';
+import type {LogLevel} from '@picus/renderer';
+import {RenderInternals} from '@picus/renderer';
 import {openInEditorViaUrlScheme} from './open-in-editor-url-scheme';
 
 const {Log} = RenderInternals;

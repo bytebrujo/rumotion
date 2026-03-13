@@ -1,19 +1,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {listOfRemotionPackages} from './list-of-remotion-packages';
+import {listOfPicusPackages} from './list-of-picus-packages';
 import type {PackageManager} from './pkg-managers';
 
 export const patchPackageJson = (
 	{
 		projectRoot,
 		projectName,
-		latestRemotionVersion,
+		latestPicusVersion,
 		packageManager,
 		addTailwind,
 	}: {
 		projectRoot: string;
 		projectName: string;
-		latestRemotionVersion: string;
+		latestPicusVersion: string;
 		packageManager: PackageManager;
 		addTailwind: boolean;
 	},
@@ -36,8 +36,8 @@ export const patchPackageJson = (
 	].map((depsField) => {
 		return Object.keys(depsField)
 			.map((d) => {
-				if (listOfRemotionPackages.includes(d)) {
-					return [d, latestRemotionVersion];
+				if (listOfPicusPackages.includes(d)) {
+					return [d, latestPicusVersion];
 				}
 
 				return [d, depsField[d]];
@@ -49,13 +49,13 @@ export const patchPackageJson = (
 
 	const updateScripts = (scriptsToUpdate: Record<string, string>) => {
 		for (const [key, value] of Object.entries(scriptsToUpdate)) {
-			scriptsToUpdate[key] = value.replace(/remotion\b/g, 'remotionb');
+			scriptsToUpdate[key] = value.replace(/picus\b/g, 'picusb');
 		}
 
 		return scriptsToUpdate;
 	};
 
-	// update scripts to use "remotionb" instead of "remotion" if Bun is used
+	// update scripts to use "picusb" instead of "picus" if Bun is used
 	// matching '@' as well to prevent conflicts with similarly named packages.
 	const newScripts = packageManager.startsWith('bun')
 		? updateScripts(scripts)
@@ -64,7 +64,7 @@ export const patchPackageJson = (
 	const newDependenciesWithTailwind = addTailwind
 		? {
 				...newDependencies,
-				'@remotion/tailwind-v4': latestRemotionVersion,
+				'@picus/tailwind-v4': latestPicusVersion,
 				tailwindcss: '4.0.0',
 			}
 		: newDependencies;

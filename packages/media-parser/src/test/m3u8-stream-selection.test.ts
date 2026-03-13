@@ -14,7 +14,7 @@ test('m3u8 stream selection 1', async () => {
 			expect(streams[1].dimensions?.height).toBe(720);
 			return streams[1].id;
 		},
-		acknowledgeRemotionLicense: true,
+		acknowledgePicusLicense: true,
 	});
 
 	expect(called).toBe(true);
@@ -31,7 +31,7 @@ test('m3u8 stream selection 2', () => {
 			selectM3uStream: () => {
 				return 9999;
 			},
-			acknowledgeRemotionLicense: true,
+			acknowledgePicusLicense: true,
 		});
 	}).toThrow('No stream with the id 9999 found');
 });

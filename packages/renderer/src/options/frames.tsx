@@ -1,6 +1,6 @@
 import type {FrameRange} from '../frame-range';
 import {validateFrameRange} from '../frame-range';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 const cliFlag = 'frames' as const;
 
@@ -89,7 +89,7 @@ export const framesOption = {
 		</>
 	),
 	ssrName: 'frameRange' as const,
-	docLink: 'https://www.remotion.dev/docs/config#setframerange',
+	docLink: 'https://www.picus.dev/docs/config#setframerange',
 	type: null as FrameRange | null,
 	getValue: ({commandLine}) => {
 		if (commandLine[cliFlag] !== undefined) {
@@ -116,4 +116,4 @@ export const framesOption = {
 		frameRange = value;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<FrameRange | null>;
+} satisfies AnyPicusOption<FrameRange | null>;

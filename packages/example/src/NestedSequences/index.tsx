@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sequence, useCurrentFrame} from 'remotion';
+import {Sequence, useCurrentFrame} from 'picus';
 
 const NestedSequences: React.FC = () => {
 	return (

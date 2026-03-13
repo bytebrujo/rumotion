@@ -15,17 +15,17 @@ import type {
 	BundleCompositionState,
 	BundleState,
 	VideoConfigWithSerializedProps,
-} from 'remotion';
+} from 'picus';
 import {
 	AbsoluteFill,
 	getInputProps,
-	getRemotionEnvironment,
+	getPicusEnvironment,
 	continueRender as globalContinueRender,
 	delayRender as globalDelayRender,
 	Internals,
 	useDelayRender,
-} from 'remotion';
-import {NoReactInternals} from 'remotion/no-react';
+} from 'picus';
+import {NoReactInternals} from 'picus/no-react';
 
 let currentBundleMode: BundleState = {
 	type: 'index',
@@ -58,7 +58,7 @@ const getCanSerializeDefaultProps = (object: unknown) => {
 };
 
 const isInHeadlessBrowser = () => {
-	return typeof window.remotion_puppeteerTimeout !== 'undefined';
+	return typeof window.picus_puppeteerTimeout !== 'undefined';
 };
 
 const DelayedSpinner: React.FC = () => {
@@ -162,7 +162,7 @@ const GetVideoComposition: React.FC<{
 	return (
 		<div
 			ref={portalContainer}
-			id="remotion-canvas"
+			id="picus-canvas"
 			style={{
 				width: currentCompositionMetadata.width,
 				height: currentCompositionMetadata.height,
@@ -176,12 +176,12 @@ const GetVideoComposition: React.FC<{
 const DEFAULT_ROOT_COMPONENT_TIMEOUT = 10000;
 
 const waitForRootHandle = globalDelayRender(
-	'Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout',
+	'Loading root component - See https://picus.dev/docs/troubleshooting/loading-root-component if you experience a timeout',
 	{
 		timeoutInMilliseconds:
 			typeof window === 'undefined'
 				? DEFAULT_ROOT_COMPONENT_TIMEOUT
-				: (window.remotion_puppeteerTimeout ?? DEFAULT_ROOT_COMPONENT_TIMEOUT),
+				: (window.picus_puppeteerTimeout ?? DEFAULT_ROOT_COMPONENT_TIMEOUT),
 	},
 );
 
@@ -204,7 +204,7 @@ const renderToDOM = (content: React.ReactElement) => {
 	if (!ReactDOM.createRoot) {
 		if (NoReactInternals.ENABLE_V5_BREAKING_CHANGES) {
 			throw new Error(
-				'Remotion 5.0 does only support React 18+. However, ReactDOM.createRoot() is undefined.',
+				'Picus 5.0 does only support React 18+. However, ReactDOM.createRoot() is undefined.',
 			);
 		}
 
@@ -243,20 +243,20 @@ const renderContent = (Root: React.FC) => {
 				}}
 				initialCompositions={[]}
 			>
-				<Internals.RemotionRootContexts
+				<Internals.PicusRootContexts
 					frameState={null}
-					audioEnabled={window.remotion_audioEnabled}
-					videoEnabled={window.remotion_videoEnabled}
-					logLevel={window.remotion_logLevel}
+					audioEnabled={window.picus_audioEnabled}
+					videoEnabled={window.picus_videoEnabled}
+					logLevel={window.picus_logLevel}
 					numberOfAudioTags={0}
-					audioLatencyHint={window.remotion_audioLatencyHint ?? 'interactive'}
+					audioLatencyHint={window.picus_audioLatencyHint ?? 'interactive'}
 					visualModeEnabled={false}
 				>
 					<Internals.RenderAssetManagerProvider collectAssets={null}>
 						<Root />
 						<GetVideoComposition state={bundleMode} />
 					</Internals.RenderAssetManagerProvider>
-				</Internals.RemotionRootContexts>
+				</Internals.PicusRootContexts>
 			</Internals.CompositionManagerProvider>
 		);
 
@@ -271,19 +271,19 @@ const renderContent = (Root: React.FC) => {
 				currentCompositionMetadata={null}
 				initialCompositions={[]}
 			>
-				<Internals.RemotionRootContexts
+				<Internals.PicusRootContexts
 					frameState={null}
-					audioEnabled={window.remotion_audioEnabled}
-					videoEnabled={window.remotion_videoEnabled}
-					logLevel={window.remotion_logLevel}
+					audioEnabled={window.picus_audioEnabled}
+					videoEnabled={window.picus_videoEnabled}
+					logLevel={window.picus_logLevel}
 					numberOfAudioTags={0}
-					audioLatencyHint={window.remotion_audioLatencyHint ?? 'interactive'}
+					audioLatencyHint={window.picus_audioLatencyHint ?? 'interactive'}
 					visualModeEnabled={false}
 				>
 					<Internals.RenderAssetManagerProvider collectAssets={null}>
 						<Root />
 					</Internals.RenderAssetManagerProvider>
-				</Internals.RemotionRootContexts>
+				</Internals.PicusRootContexts>
 			</Internals.CompositionManagerProvider>
 		);
 
@@ -302,9 +302,9 @@ const renderContent = (Root: React.FC) => {
 		);
 		import('./internals')
 			.then(({StudioInternals}) => {
-				window.remotion_isStudio = true;
-				window.remotion_isReadOnlyStudio = true;
-				window.remotion_inputProps = '{}';
+				window.picus_isStudio = true;
+				window.picus_isReadOnlyStudio = true;
+				window.picus_inputProps = '{}';
 
 				renderToDOM(
 					<StudioInternals.Studio
@@ -315,7 +315,7 @@ const renderContent = (Root: React.FC) => {
 				);
 			})
 			.catch((err) => {
-				renderToDOM(<div>Failed to load Remotion Studio: {err.message}</div>);
+				renderToDOM(<div>Failed to load Picus Studio: {err.message}</div>);
 			});
 	}
 };
@@ -328,7 +328,7 @@ Internals.waitForRoot((Root) => {
 export const setBundleModeAndUpdate = (state: BundleState) => {
 	setBundleMode(state);
 	const delay = globalDelayRender(
-		'Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout',
+		'Waiting for root component to load - See https://picus.dev/docs/troubleshooting/loading-root-component if you experience a timeout',
 	);
 	Internals.waitForRoot((Root) => {
 		renderContent(Root);
@@ -342,7 +342,7 @@ if (typeof window !== 'undefined') {
 	const getUnevaluatedComps = () => {
 		if (!Internals.getRoot()) {
 			throw new Error(
-				'registerRoot() was never called. 1. Make sure you specified the correct entrypoint for your bundle. 2. If your registerRoot() call is deferred, use the delayRender/continueRender pattern to tell Remotion to wait.',
+				'registerRoot() was never called. 1. Make sure you specified the correct entrypoint for your bundle. 2. If your registerRoot() call is deferred, use the delayRender/continueRender pattern to tell Picus to wait.',
 			);
 		}
 
@@ -355,29 +355,29 @@ if (typeof window !== 'undefined') {
 		const canSerializeDefaultProps = getCanSerializeDefaultProps(compositions);
 		if (!canSerializeDefaultProps) {
 			Internals.Log.warn(
-				{logLevel: window.remotion_logLevel, tag: null},
+				{logLevel: window.picus_logLevel, tag: null},
 				'defaultProps are too big to serialize - trying to find the problematic composition...',
 			);
 			Internals.Log.warn(
-				{logLevel: window.remotion_logLevel, tag: null},
+				{logLevel: window.picus_logLevel, tag: null},
 				'Serialization:',
 				compositions,
 			);
 			for (const comp of compositions) {
 				if (!getCanSerializeDefaultProps(comp)) {
 					throw new Error(
-						`defaultProps too big - could not serialize - the defaultProps of composition with ID ${comp.id} - the object that was passed to defaultProps was too big. Learn how to mitigate this error by visiting https://remotion.dev/docs/troubleshooting/serialize-defaultprops`,
+						`defaultProps too big - could not serialize - the defaultProps of composition with ID ${comp.id} - the object that was passed to defaultProps was too big. Learn how to mitigate this error by visiting https://picus.dev/docs/troubleshooting/serialize-defaultprops`,
 					);
 				}
 			}
 
 			Internals.Log.warn(
-				{logLevel: window.remotion_logLevel, tag: null},
+				{logLevel: window.picus_logLevel, tag: null},
 				'Could not single out a problematic composition -  The composition list as a whole is too big to serialize.',
 			);
 
 			throw new Error(
-				'defaultProps too big - Could not serialize - an object that was passed to defaultProps was too big. Learn how to mitigate this error by visiting https://remotion.dev/docs/troubleshooting/serialize-defaultprops',
+				'defaultProps too big - Could not serialize - an object that was passed to defaultProps was too big. Learn how to mitigate this error by visiting https://picus.dev/docs/troubleshooting/serialize-defaultprops',
 			);
 		}
 
@@ -390,7 +390,7 @@ if (typeof window !== 'undefined') {
 		const compositions = getUnevaluatedComps();
 
 		const inputProps =
-			typeof window === 'undefined' || getRemotionEnvironment().isPlayer
+			typeof window === 'undefined' || getPicusEnvironment().isPlayer
 				? {}
 				: (getInputProps() ?? {});
 
@@ -440,11 +440,11 @@ if (typeof window !== 'undefined') {
 		);
 	};
 
-	window.remotion_getCompositionNames = () => {
+	window.picus_getCompositionNames = () => {
 		return getUnevaluatedComps().map((c) => c.id);
 	};
 
-	window.remotion_calculateComposition = async (compId: string) => {
+	window.picus_calculateComposition = async (compId: string) => {
 		const compositions = getUnevaluatedComps();
 		const selectedComp = compositions.find((c) => c.id === compId);
 		if (!selectedComp) {
@@ -461,7 +461,7 @@ if (typeof window !== 'undefined') {
 		);
 
 		const inputProps =
-			typeof window === 'undefined' || getRemotionEnvironment().isPlayer
+			typeof window === 'undefined' || getPicusEnvironment().isPlayer
 				? {}
 				: (getInputProps() ?? {});
 
@@ -503,5 +503,5 @@ if (typeof window !== 'undefined') {
 		};
 	};
 
-	window.remotion_setBundleMode = setBundleModeAndUpdate;
+	window.picus_setBundleMode = setBundleModeAndUpdate;
 }

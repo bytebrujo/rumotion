@@ -6,7 +6,7 @@ import {
 	makeFileExtensionMap,
 } from '../get-extension-from-codec';
 import {getExtensionOfFilename} from '../get-extension-of-filename';
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let codec: CodecOrUndefined;
 
@@ -60,7 +60,7 @@ export const videoCodecOption = {
 		</>
 	),
 	ssrName: 'codec',
-	docLink: 'https://www.remotion.dev/docs/encoding/#choosing-a-codec',
+	docLink: 'https://www.picus.dev/docs/encoding/#choosing-a-codec',
 	type: '' as Codec,
 	getValue: (
 		{commandLine}: {commandLine: Record<string, unknown>},
@@ -179,4 +179,4 @@ export const videoCodecOption = {
 	},
 	setConfig: setCodec,
 	id: cliFlag,
-} satisfies AnyRemotionOption<Codec>;
+} satisfies AnyPicusOption<Codec>;

@@ -12,7 +12,7 @@ for (const toolchain of toolchains) {
 	process.stdout.write(toolchain + '...');
 
 	execSync(
-		`curl https://remotion-ffmpeg-binaries.s3.eu-central-1.amazonaws.com/${toolchain}.zip -o ${toolchain}.zip`,
+		`curl https://picus-ffmpeg-binaries.s3.eu-central-1.amazonaws.com/${toolchain}.zip -o ${toolchain}.zip`,
 	);
 
 	if (!existsSync('toolchains')) {

@@ -1,10 +1,10 @@
 {
 	"repository": {
-		"url": "https://github.com/remotion-dev/remotion/tree/main/packages/skia"
+		"url": "https://github.com/picus-dev/picus/tree/main/packages/skia"
 	},
-	"name": "@remotion/skia",
+	"name": "@picus/skia",
 	"version": "4.0.434",
-	"description": "Include React Native Skia components in a Remotion video",
+	"description": "Include React Native Skia components in a Picus video",
 	"main": "dist/cjs/index.js",
 	"types": "dist/cjs/index.d.ts",
 	"module": "dist/esm/index.mjs",
@@ -15,14 +15,14 @@
 		"lint": "eslint src",
 		"make": "tsgo -d && bun --env-file=../.env.bundle bundle.ts"
 	},
-	"author": "Jonny Burger <jonny@remotion.dev>, William Candillon <wcandillon@gmail.com>",
+	"author": "Jonny Burger <jonny@picus.dev>, William Candillon <wcandillon@gmail.com>",
 	"contributors": [],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/remotion-dev/remotion/issues"
+		"url": "https://github.com/picus-dev/picus/issues"
 	},
 	"dependencies": {
-		"remotion": "workspace:*"
+		"picus": "workspace:*"
 	},
 	"peerDependencies": {
 		"@shopify/react-native-skia": ">=0.1.191",
@@ -30,19 +30,19 @@
 		"react-dom": ">=16.8.0"
 	},
 	"devDependencies": {
-		"@remotion/bundler": "workspace:*",
+		"@picus/bundler": "workspace:*",
 		"@shopify/react-native-skia": "2.0.0",
 		"canvaskit-wasm": "0.40.0",
 		"@types/react-native": "^0.69.2",
 		"react": "catalog:",
 		"react-dom": "catalog:",
-		"remotion": "workspace:*",
-		"@remotion/eslint-config-internal": "workspace:*",
+		"picus": "workspace:*",
+		"@picus/eslint-config-internal": "workspace:*",
 		"eslint": "catalog:",
 		"@typescript/native-preview": "catalog:"
 	},
 	"keywords": [
-		"remotion",
+		"picus",
 		"skia"
 	],
 	"publishConfig": {
@@ -70,5 +70,5 @@
 			]
 		}
 	},
-	"homepage": "https://www.remotion.dev/docs/skia"
+	"homepage": "https://www.picus.dev/docs/skia"
 }

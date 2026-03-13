@@ -1,6 +1,6 @@
-import {CliInternals} from '@remotion/cli';
-import {BINARY_NAME} from '@remotion/lambda-client/constants';
-import type {LogLevel} from '@remotion/renderer';
+import {CliInternals} from '@picus/cli';
+import {BINARY_NAME} from '@picus/lambda-client/constants';
+import type {LogLevel} from '@picus/renderer';
 import {quit} from '../../helpers/quit';
 import {Log} from '../../log';
 import {ROLE_SUBCOMMAND, roleSubcommand} from './role';

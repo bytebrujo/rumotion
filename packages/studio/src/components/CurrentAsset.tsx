@@ -1,7 +1,7 @@
-import {formatBytes} from '@remotion/studio-shared';
+import {formatBytes} from '@picus/studio-shared';
 import {ALL_FORMATS, Input, UrlSource} from 'mediabunny';
 import React, {useContext, useEffect, useMemo, useState} from 'react';
-import {Internals, staticFile} from 'remotion';
+import {Internals, staticFile} from 'picus';
 import {BACKGROUND, BORDER_COLOR} from '../helpers/colors';
 import {useStaticFiles} from './use-static-files';
 

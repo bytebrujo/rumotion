@@ -1,6 +1,6 @@
 import type React from 'react';
 import {createContext, useContext, useMemo} from 'react';
-import {Internals} from 'remotion';
+import {Internals} from 'picus';
 
 export type InOutValue = {
 	inFrame: number | null;

@@ -9,7 +9,7 @@ export type ServiceInfo = {
 	timeoutInSeconds: number;
 	memoryLimit: string;
 	cpuLimit: string;
-	remotionVersion: string | null;
+	picusVersion: string | null;
 	uri: string;
 	region: GcpRegion;
 	consoleUrl: string;
@@ -21,7 +21,7 @@ export type GetServiceInfoInput = {
 };
 /*
  * @description Retrieves detailed information about a specific Cloud Run service using the service name and region.
- * @see [Documentation](https://remotion.dev/docs/cloudrun/getserviceinfo)
+ * @see [Documentation](https://picus.dev/docs/cloudrun/getserviceinfo)
  */
 
 export const getServiceInfo = async ({
@@ -40,7 +40,7 @@ export const getServiceInfo = async ({
 
 	const {
 		region: deployedRegion,
-		remotionVersion,
+		picusVersion,
 		serviceName: deployedServiceName,
 	} = parseServiceName(service.name as string, region);
 
@@ -51,7 +51,7 @@ export const getServiceInfo = async ({
 			?.memory as string,
 		cpuLimit: service.template?.containers?.[0].resources?.limits
 			?.cpu as string,
-		remotionVersion,
+		picusVersion,
 		uri: service.uri as string,
 		region: deployedRegion,
 		consoleUrl: makeConsoleUrl(deployedRegion, deployedServiceName),

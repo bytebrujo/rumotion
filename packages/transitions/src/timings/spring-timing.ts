@@ -1,5 +1,5 @@
-import type {SpringConfig} from 'remotion';
-import {measureSpring, spring} from 'remotion';
+import type {SpringConfig} from 'picus';
+import {measureSpring, spring} from 'picus';
 import type {TransitionTiming} from '../types.js';
 
 export const springTiming = (

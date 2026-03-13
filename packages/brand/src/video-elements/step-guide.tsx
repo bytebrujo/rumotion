@@ -5,10 +5,10 @@ import {
 	staticFile,
 	useCurrentFrame,
 	useVideoConfig,
-} from 'remotion';
-import {Video} from '@remotion/media';
+} from 'picus';
+import {Video} from '@picus/media';
 import {z} from 'zod';
-import {loadFont} from '@remotion/fonts';
+import {loadFont} from '@picus/fonts';
 
 const fontFamily = 'GTPlanar';
 

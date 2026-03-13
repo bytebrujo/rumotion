@@ -1,6 +1,6 @@
 import {mkdirSync} from 'node:fs';
 import path from 'node:path';
-import {VERSION} from 'remotion/version';
+import {VERSION} from 'picus/version';
 import {deleteDirectory} from '../delete-directory';
 import {OffthreadVideoServerEmitter} from '../offthread-video-server';
 import type {FrameAndAssets} from '../render-frames';
@@ -70,7 +70,7 @@ export const makeAndReturn = (dir: string, name: string) => {
 };
 
 export const makeDownloadMap = (): DownloadMap => {
-	const dir = tmpDir(`remotion-v${VERSION}-assets`);
+	const dir = tmpDir(`picus-v${VERSION}-assets`);
 
 	let prevented = false;
 
@@ -82,13 +82,13 @@ export const makeDownloadMap = (): DownloadMap => {
 		id: String(Math.random()),
 		assetDir: dir,
 		downloadListeners: [],
-		downloadDir: makeAndReturn(dir, 'remotion-assets-dir'),
-		complexFilter: makeAndReturn(dir, 'remotion-complex-filter'),
+		downloadDir: makeAndReturn(dir, 'picus-assets-dir'),
+		complexFilter: makeAndReturn(dir, 'picus-complex-filter'),
 		preEncode: makeAndReturn(dir, 'pre-encode'),
-		audioMixing: makeAndReturn(dir, 'remotion-audio-mixing'),
-		audioPreprocessing: makeAndReturn(dir, 'remotion-audio-preprocessing'),
-		stitchFrames: makeAndReturn(dir, 'remotion-stitch-temp-dir'),
-		compositingDir: makeAndReturn(dir, 'remotion-compositing-temp-dir'),
+		audioMixing: makeAndReturn(dir, 'picus-audio-mixing'),
+		audioPreprocessing: makeAndReturn(dir, 'picus-audio-preprocessing'),
+		stitchFrames: makeAndReturn(dir, 'picus-stitch-temp-dir'),
+		compositingDir: makeAndReturn(dir, 'picus-compositing-temp-dir'),
 		emitter: new OffthreadVideoServerEmitter(),
 		preventCleanup: () => {
 			prevented = true;

@@ -1,5 +1,5 @@
 import React, {createRef, useContext, useMemo} from 'react';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig} from 'picus';
 import {LIGHT_TRANSPARENT} from '../../helpers/colors';
 import {getXPositionOfItemInTimelineImperatively} from '../../helpers/get-left-of-timeline-slider';
 import {TimelineWidthContext} from './TimelineWidthProvider';

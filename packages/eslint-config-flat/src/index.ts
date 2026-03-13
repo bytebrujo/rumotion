@@ -1,14 +1,14 @@
 import eslint from '@eslint/js';
-import remotionPlugin from '@remotion/eslint-plugin';
+import picusPlugin from '@picus/eslint-plugin';
 import type {Linter} from 'eslint';
 import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';
 
 export const makeConfig = ({
-	remotionDir,
+	picusDir,
 }: {
-	remotionDir: string | undefined;
+	picusDir: string | undefined;
 }): Linter.Config[] =>
 	tseslint.config(
 		{
@@ -17,8 +17,8 @@ export const makeConfig = ({
 				'**/dist/**',
 				'**/out/**',
 				'eslint.config.mjs',
-				'remotion.config.ts',
-				'remotion.config.js',
+				'picus.config.ts',
+				'picus.config.js',
 			],
 		},
 		eslint.configs.recommended,
@@ -41,7 +41,7 @@ export const makeConfig = ({
 				...(reactPlugin.configs.flat
 					.rules as unknown as typeof reactPlugin.configs.flat.rules.rules),
 				...hooksPlugin.configs.recommended.rules,
-				// Turning off rules that are too strict or don't apply to Remotion
+				// Turning off rules that are too strict or don't apply to Picus
 				'no-console': 'off',
 				'react/jsx-key': 'off',
 				'react/jsx-no-target-blank': 'off',
@@ -59,13 +59,13 @@ export const makeConfig = ({
 		},
 		{
 			plugins: {
-				'@remotion': remotionPlugin,
+				'@picus': picusPlugin,
 			},
-			rules: remotionPlugin.configs.recommended.rules,
-			...(remotionDir ? {files: [remotionDir]} : {}),
+			rules: picusPlugin.configs.recommended.rules,
+			...(picusDir ? {files: [picusDir]} : {}),
 		},
 	) as Linter.Config[];
 
 export const config: Linter.Config[] = makeConfig({
-	remotionDir: undefined,
+	picusDir: undefined,
 });

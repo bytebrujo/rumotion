@@ -1,5 +1,5 @@
 import path from 'path';
-import {NoReactInternals} from 'remotion/no-react';
+import {NoReactInternals} from 'picus/no-react';
 import {isServeUrl} from './is-serve-url';
 
 const map = (webpackBundleOrServeUrl: string, suffix: string) => {

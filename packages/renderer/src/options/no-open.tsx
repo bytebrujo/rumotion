@@ -1,4 +1,4 @@
-import type {AnyRemotionOption} from './option';
+import type {AnyPicusOption} from './option';
 
 let shouldOpenBrowser = true;
 
@@ -9,12 +9,12 @@ export const noOpenOption = {
 	cliFlag,
 	description: () => (
 		<>
-			If specified, Remotion will not open a browser window when starting the
+			If specified, Picus will not open a browser window when starting the
 			Studio.
 		</>
 	),
 	ssrName: null,
-	docLink: 'https://www.remotion.dev/docs/cli/studio#--no-open',
+	docLink: 'https://www.picus.dev/docs/cli/studio#--no-open',
 	type: false as boolean,
 	getValue: ({commandLine}) => {
 		// Minimist quirk: `--no-open` sets `open` to `false`.
@@ -34,4 +34,4 @@ export const noOpenOption = {
 		shouldOpenBrowser = shouldOpen;
 	},
 	id: cliFlag,
-} satisfies AnyRemotionOption<boolean>;
+} satisfies AnyPicusOption<boolean>;

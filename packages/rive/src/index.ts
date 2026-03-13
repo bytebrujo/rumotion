@@ -1,1 +1,1 @@
-export {RemotionRiveCanvas, RiveCanvasRef} from './RemotionRiveCanvas.js';
+export {PicusRiveCanvas, RiveCanvasRef} from './PicusRiveCanvas.js';
